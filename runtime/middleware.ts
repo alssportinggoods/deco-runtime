@@ -14,6 +14,7 @@ import {
 } from "../deps.ts";
 import { startObserve } from "../observability/http.ts";
 import { logger } from "../observability/mod.ts";
+import { withRequestContext } from "../observability/otel/context.ts";
 import { HttpError } from "../runtime/errors.ts";
 import type { AppManifest } from "../types.ts";
 import { isAdminOrLocalhost } from "../utils/admin.ts";
@@ -330,7 +331,20 @@ export const middlewareFor = <TAppManifest extends AppManifest = AppManifest>(
         });
       }
 
-      await next();
+      // Store request context in AsyncLocalStorage for reliable access
+      const requestContext = {
+        url: ctx.req.raw.url,
+        method: ctx.req.raw.method,
+        pathname: url.pathname,
+        userAgent: ctx.req.raw.headers.get("user-agent") || undefined,
+        correlationId: ctx.var.correlationId,
+        ip: ctx.req.raw.headers.get("x-forwarded-for") || undefined,
+      };
+
+      await withRequestContext(requestContext, async () => {
+        await next();
+      });
+
       // enable or disable debugging
       if (ctx.req.raw.headers.get("upgrade") === "websocket") {
         return;
