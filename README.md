@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://deco.cx">deco.cx</a>
   ·
-  <a href="https://deco.cx/docs/en">docs</a>
+  <a href="https://docs.deco.cx/">docs</a>
   ·
   <a href="https://admin.deco.cx">login</a>
   ·
@@ -138,7 +138,7 @@ export default function ProductShelf(props: Props) {
 
 Explore the capabilities of Deco further in our comprehensive documentation.
 Learn how to craft Sections, Loaders, Apps and much more. Go to
-[deco.cx/docs/en](https://deco.cx/docs/en).
+[deco.cx/docs/en](https://docs.deco.cx/).
 
 ## Motivation
 
