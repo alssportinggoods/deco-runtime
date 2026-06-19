@@ -1,0 +1,27 @@
+{
+  "projectRoot": "C:/Users/vitoo/code/als/deco",
+  "batchFiles": [
+{"path":"commons/jwt/engine.ts","language":"typescript","sizeLines":35,"fileCategory":"code"},
+{"path":"commons/jwt/jwks.ts","language":"typescript","sizeLines":77,"fileCategory":"code"},
+{"path":"commons/jwt/jwt.ts","language":"typescript","sizeLines":93,"fileCategory":"code"},
+{"path":"commons/jwt/keys.ts","language":"typescript","sizeLines":77,"fileCategory":"code"},
+{"path":"commons/jwt/trusted.ts","language":"typescript","sizeLines":28,"fileCategory":"code"},
+{"path":"daemon/ai/github.ts","language":"typescript","sizeLines":210,"fileCategory":"code"},
+{"path":"daemon/ai/handlers.ts","language":"typescript","sizeLines":231,"fileCategory":"code"},
+{"path":"daemon/ai/repoUrl.ts","language":"typescript","sizeLines":12,"fileCategory":"code"},
+{"path":"daemon/ai/task.ts","language":"typescript","sizeLines":739,"fileCategory":"code"},
+{"path":"daemon/ai/task_test.ts","language":"typescript","sizeLines":68,"fileCategory":"code"},
+{"path":"daemon/async.ts","language":"typescript","sizeLines":56,"fileCategory":"code"},
+{"path":"daemon/auth.ts","language":"typescript","sizeLines":53,"fileCategory":"code"},
+{"path":"daemon/cache.ts","language":"typescript","sizeLines":116,"fileCategory":"code"},
+{"path":"daemon/cmd.ts","language":"typescript","sizeLines":31,"fileCategory":"code"},
+{"path":"daemon/daemon.ts","language":"typescript","sizeLines":109,"fileCategory":"code"},
+{"path":"daemon/fs/api.ts","language":"typescript","sizeLines":333,"fileCategory":"code"},
+{"path":"daemon/fs/common.ts","language":"typescript","sizeLines":146,"fileCategory":"code"},
+{"path":"daemon/fs/grep.ts","language":"typescript","sizeLines":411,"fileCategory":"code"},
+{"path":"daemon/git.ts","language":"typescript","sizeLines":912,"fileCategory":"code"},
+{"path":"daemon/githubApp.ts","language":"typescript","sizeLines":351,"fileCategory":"code"},
+{"path":"daemon/loggings/stream.ts","language":"typescript","sizeLines":114,"fileCategory":"code"}
+  ],
+  "batchImportData":{"commons/jwt/engine.ts":["commons/jwt/jwt.ts"],"commons/jwt/jwks.ts":["commons/jwt/jwt.ts","commons/jwt/keys.ts"],"commons/jwt/jwt.ts":["commons/jwt/keys.ts"],"commons/jwt/keys.ts":[],"commons/jwt/trusted.ts":["commons/jwt/jwt.ts"],"daemon/ai/github.ts":[],"daemon/ai/handlers.ts":["daemon/ai/task.ts"],"daemon/ai/repoUrl.ts":[],"daemon/ai/task.ts":["daemon/ai/github.ts","daemon/ai/repoUrl.ts","daemon/git.ts","daemon/githubApp.ts","daemon/monitor.ts","daemon/pty/session.ts"],"daemon/ai/task_test.ts":["daemon/ai/repoUrl.ts"],"daemon/async.ts":[],"daemon/auth.ts":["commons/jwt/engine.ts","commons/jwt/jwt.ts","commons/jwt/trusted.ts"],"daemon/cache.ts":[],"daemon/cmd.ts":["daemon/loggings/stream.ts"],"daemon/daemon.ts":["daemon/auth.ts","daemon/cmd.ts","daemon/fs/api.ts","daemon/git.ts","daemon/loggings/stream.ts","daemon/realtime/app.ts","daemon/sse/api.ts","engine/decofile/constants.ts"],"daemon/fs/api.ts":["daemon/async.ts","daemon/fs/common.ts","daemon/fs/grep.ts","daemon/git.ts","daemon/main.ts","daemon/meta.ts","daemon/sse/channel.ts","runtime/deps.ts"],"daemon/fs/common.ts":[],"daemon/fs/grep.ts":["daemon/main.ts"],"daemon/git.ts":["daemon/async.ts","daemon/daemon.ts","daemon/githubApp.ts","daemon/loggings/stream.ts","daemon/main.ts"],"daemon/githubApp.ts":[],"daemon/loggings/stream.ts":[]}
+}

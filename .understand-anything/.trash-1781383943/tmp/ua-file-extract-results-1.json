@@ -1,0 +1,4987 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "engine/decofile/constants.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 7,
+      "exports": [
+        {
+          "name": "ENTRYPOINT",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "ENV_SITE_NAME",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "DECO_FOLDER",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "BLOCKS_FOLDER",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "METADATA_FOLDER",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "BLOCKS_JSON",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "METADATA_PATH",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/decofile/deconfig.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 193,
+      "nonEmptyLines": 181,
+      "functions": [
+        {
+          "name": "toAsyncIterator",
+          "startLine": 57,
+          "endLine": 92,
+          "params": [
+            "emitter"
+          ]
+        },
+        {
+          "name": "createClient",
+          "startLine": 94,
+          "endLine": 143,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "deconfigFs",
+          "startLine": 145,
+          "endLine": 193,
+          "params": [
+            "uri"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Deconfig",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "toAsyncIterator",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "deconfigFs",
+          "line": 145,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "triggerLoop",
+          "callee": "waitPromise",
+          "lineNumber": 64
+        },
+        {
+          "caller": "toAsyncIterator",
+          "callee": "emitter.addEventListener",
+          "lineNumber": 69
+        },
+        {
+          "caller": "toAsyncIterator",
+          "callee": "queue.push",
+          "lineNumber": 70
+        },
+        {
+          "caller": "toAsyncIterator",
+          "callee": "JSON.parse",
+          "lineNumber": 70
+        },
+        {
+          "caller": "toAsyncIterator",
+          "callee": "triggerLoop",
+          "lineNumber": 71
+        },
+        {
+          "caller": "toAsyncIterator",
+          "callee": "emitter.addEventListener",
+          "lineNumber": 74
+        },
+        {
+          "caller": "toAsyncIterator",
+          "callee": "triggerLoop",
+          "lineNumber": 76
+        },
+        {
+          "caller": "toAsyncIterator",
+          "callee": "queue.shift",
+          "lineNumber": 82
+        },
+        {
+          "caller": "callTool",
+          "callee": "fetch",
+          "lineNumber": 103
+        },
+        {
+          "caller": "callTool",
+          "callee": "JSON.stringify",
+          "lineNumber": 107
+        },
+        {
+          "caller": "callTool",
+          "callee": "response.json",
+          "lineNumber": 118
+        },
+        {
+          "caller": "createClient",
+          "callee": "callTool",
+          "lineNumber": 127
+        },
+        {
+          "caller": "createClient",
+          "callee": "url.searchParams.set",
+          "lineNumber": 133
+        },
+        {
+          "caller": "createClient",
+          "callee": "url.searchParams.set",
+          "lineNumber": 134
+        },
+        {
+          "caller": "createClient",
+          "callee": "url.searchParams.set",
+          "lineNumber": 135
+        },
+        {
+          "caller": "createClient",
+          "callee": "url.searchParams.set",
+          "lineNumber": 136
+        },
+        {
+          "caller": "createClient",
+          "callee": "toAsyncIterator",
+          "lineNumber": 138
+        },
+        {
+          "caller": "deconfigFs",
+          "callee": "Deconfig.parseUri",
+          "lineNumber": 146
+        },
+        {
+          "caller": "deconfigFs",
+          "callee": "createClient",
+          "lineNumber": 147
+        },
+        {
+          "caller": "deconfigFs",
+          "callee": "Promise.resolve",
+          "lineNumber": 151
+        },
+        {
+          "caller": "deconfigFs",
+          "callee": "client.LIST_FILES",
+          "lineNumber": 153
+        },
+        {
+          "caller": "deconfigFs",
+          "callee": "Object.entries",
+          "lineNumber": 158
+        },
+        {
+          "caller": "deconfigFs",
+          "callee": "atob",
+          "lineNumber": 161
+        },
+        {
+          "caller": "deconfigFs",
+          "callee": "filePath.replace",
+          "lineNumber": 165
+        },
+        {
+          "caller": "deconfigFs",
+          "callee": "client.READ_FILE",
+          "lineNumber": 169
+        },
+        {
+          "caller": "deconfigFs",
+          "callee": "client.PUT_FILE",
+          "lineNumber": 177
+        },
+        {
+          "caller": "deconfigFs",
+          "callee": "watcher",
+          "lineNumber": 181
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/decofile/fetcher.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 251,
+      "nonEmptyLines": 242,
+      "functions": [
+        {
+          "name": "fetchFromHttp",
+          "startLine": 21,
+          "endLine": 62,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "fromEventSource",
+          "startLine": 65,
+          "endLine": 133,
+          "params": [
+            "es"
+          ]
+        },
+        {
+          "name": "fromHttpContent",
+          "startLine": 134,
+          "endLine": 138,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "fromJSON",
+          "startLine": 140,
+          "endLine": 167,
+          "params": [
+            "parsed",
+            "revision"
+          ]
+        },
+        {
+          "name": "decofileLoader",
+          "startLine": 168,
+          "endLine": 214,
+          "params": [
+            "endpointSpecifier"
+          ]
+        },
+        {
+          "name": "fromEndpoint",
+          "startLine": 216,
+          "endLine": 251,
+          "params": [
+            "endpoint"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "fromHttpContent",
+          "line": 134,
+          "isDefault": false
+        },
+        {
+          "name": "fromJSON",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "fromEndpoint",
+          "line": 216,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fetchFromHttp",
+          "callee": "fetch(String(url), { redirect: \"follow\" })\n    .then((response) => {\n      if (!response.ok) {\n        console.log(\n          \"error when trying fetch from, retrying\",\n          url,\n          response.status,\n        );\n        return fetch(String(url), { redirect: \"follow\" });\n      }\n      return response;\n    })\n    .catch",
+          "lineNumber": 24
+        },
+        {
+          "caller": "fetchFromHttp",
+          "callee": "fetch(String(url), { redirect: \"follow\" })\n    .then",
+          "lineNumber": 24
+        },
+        {
+          "caller": "fetchFromHttp",
+          "callee": "fetch",
+          "lineNumber": 24
+        },
+        {
+          "caller": "fetchFromHttp",
+          "callee": "String",
+          "lineNumber": 24
+        },
+        {
+          "caller": "fetchFromHttp",
+          "callee": "console.log",
+          "lineNumber": 27
+        },
+        {
+          "caller": "fetchFromHttp",
+          "callee": "fetch",
+          "lineNumber": 32
+        },
+        {
+          "caller": "fetchFromHttp",
+          "callee": "String",
+          "lineNumber": 32
+        },
+        {
+          "caller": "fetchFromHttp",
+          "callee": "console.log",
+          "lineNumber": 38
+        },
+        {
+          "caller": "fetchFromHttp",
+          "callee": "fetch",
+          "lineNumber": 39
+        },
+        {
+          "caller": "fetchFromHttp",
+          "callee": "String",
+          "lineNumber": 39
+        },
+        {
+          "caller": "fetchFromHttp",
+          "callee": "response.text().catch",
+          "lineNumber": 42
+        },
+        {
+          "caller": "fetchFromHttp",
+          "callee": "response.text",
+          "lineNumber": 42
+        },
+        {
+          "caller": "fetchFromHttp",
+          "callee": "console.log",
+          "lineNumber": 43
+        },
+        {
+          "caller": "fetchFromHttp",
+          "callee": "console.error",
+          "lineNumber": 48
+        },
+        {
+          "caller": "fetchFromHttp",
+          "callee": "console.error",
+          "lineNumber": 54
+        },
+        {
+          "caller": "fetchFromHttp",
+          "callee": "Deno.exit",
+          "lineNumber": 55
+        },
+        {
+          "caller": "fetchFromHttp",
+          "callee": "response.headers.get(\"etag\")?.replaceAll",
+          "lineNumber": 60
+        },
+        {
+          "caller": "fetchFromHttp",
+          "callee": "response.headers.get",
+          "lineNumber": 60
+        },
+        {
+          "caller": "fromEventSource",
+          "callee": "esURL.searchParams.set",
+          "lineNumber": 72
+        },
+        {
+          "caller": "fetchLastState",
+          "callee": "fetchFromHttp(esURL).then((httpContent) => {\n      if (!httpContent) {\n        return {\n          data: null,\n          error: null,\n        };\n      }\n      return {\n        data: {\n          state: JSON.parse(httpContent.text),\n          revision: httpContent.etag ?? ulid(),\n        },\n        error: null,\n      };\n    }).catch",
+          "lineNumber": 75
+        },
+        {
+          "caller": "fetchLastState",
+          "callee": "fetchFromHttp(esURL).then",
+          "lineNumber": 75
+        },
+        {
+          "caller": "fetchLastState",
+          "callee": "fetchFromHttp",
+          "lineNumber": 75
+        },
+        {
+          "caller": "fetchLastState",
+          "callee": "JSON.parse",
+          "lineNumber": 84
+        },
+        {
+          "caller": "fetchLastState",
+          "callee": "ulid",
+          "lineNumber": 85
+        },
+        {
+          "caller": "fetchLastState",
+          "callee": "console.log",
+          "lineNumber": 90
+        },
+        {
+          "caller": "fromEventSource",
+          "callee": "es.addEventListener",
+          "lineNumber": 97
+        },
+        {
+          "caller": "fromEventSource",
+          "callee": "JSON.parse",
+          "lineNumber": 101
+        },
+        {
+          "caller": "fromEventSource",
+          "callee": "decodeURIComponent",
+          "lineNumber": 101
+        },
+        {
+          "caller": "fromEventSource",
+          "callee": "ulid",
+          "lineNumber": 102
+        },
+        {
+          "caller": "fromEventSource",
+          "callee": "fetchLastState",
+          "lineNumber": 105
+        },
+        {
+          "caller": "fromEventSource",
+          "callee": "onChange",
+          "lineNumber": 112
+        },
+        {
+          "caller": "fromEventSource",
+          "callee": "onError",
+          "lineNumber": 115
+        },
+        {
+          "caller": "fromEventSource",
+          "callee": "es.close",
+          "lineNumber": 124
+        },
+        {
+          "caller": "fromEventSource",
+          "callee": "fetchLastState",
+          "lineNumber": 130
+        },
+        {
+          "caller": "fromHttpContent",
+          "callee": "fromJSON",
+          "lineNumber": 137
+        },
+        {
+          "caller": "fromHttpContent",
+          "callee": "JSON.parse",
+          "lineNumber": 137
+        },
+        {
+          "caller": "fromJSON",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 146
+        },
+        {
+          "caller": "fromJSON",
+          "callee": "Promise.resolve",
+          "lineNumber": 148
+        },
+        {
+          "caller": "fromJSON",
+          "callee": "cbs.push",
+          "lineNumber": 150
+        },
+        {
+          "caller": "fromJSON",
+          "callee": "cbs.splice",
+          "lineNumber": 153
+        },
+        {
+          "caller": "fromJSON",
+          "callee": "cbs.indexOf",
+          "lineNumber": 153
+        },
+        {
+          "caller": "fromJSON",
+          "callee": "Promise.all(cbs.map((cb) => cb())).then",
+          "lineNumber": 158
+        },
+        {
+          "caller": "fromJSON",
+          "callee": "Promise.all",
+          "lineNumber": 158
+        },
+        {
+          "caller": "fromJSON",
+          "callee": "cbs.map",
+          "lineNumber": 158
+        },
+        {
+          "caller": "fromJSON",
+          "callee": "cb",
+          "lineNumber": 158
+        },
+        {
+          "caller": "fromJSON",
+          "callee": "Promise.resolve",
+          "lineNumber": 160
+        },
+        {
+          "caller": "set",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 163
+        },
+        {
+          "caller": "set",
+          "callee": "Promise.all(cbs.map((cb) => cb())).then",
+          "lineNumber": 164
+        },
+        {
+          "caller": "set",
+          "callee": "Promise.all",
+          "lineNumber": 164
+        },
+        {
+          "caller": "set",
+          "callee": "cbs.map",
+          "lineNumber": 164
+        },
+        {
+          "caller": "set",
+          "callee": "cb",
+          "lineNumber": 164
+        },
+        {
+          "caller": "assertAllowedAuthority",
+          "callee": "assertAllowedAuthorityFor",
+          "lineNumber": 173
+        },
+        {
+          "caller": "decofileLoader",
+          "callee": "newFsFolderProviderFromPath",
+          "lineNumber": 178
+        },
+        {
+          "caller": "decofileLoader",
+          "callee": "endpointSpecifier.replace",
+          "lineNumber": 179
+        },
+        {
+          "caller": "decofileLoader",
+          "callee": "newFsProviderFromPath",
+          "lineNumber": 183
+        },
+        {
+          "caller": "decofileLoader",
+          "callee": "fromFileUrl",
+          "lineNumber": 183
+        },
+        {
+          "caller": "decofileLoader",
+          "callee": "assertAllowedAuthority",
+          "lineNumber": 187
+        },
+        {
+          "caller": "decofileLoader",
+          "callee": "url.searchParams.set",
+          "lineNumber": 188
+        },
+        {
+          "caller": "decofileLoader",
+          "callee": "url.href.replace(\"sse:\", \"http:\").replace",
+          "lineNumber": 190
+        },
+        {
+          "caller": "decofileLoader",
+          "callee": "url.href.replace",
+          "lineNumber": 190
+        },
+        {
+          "caller": "decofileLoader",
+          "callee": "fromEventSource",
+          "lineNumber": 192
+        },
+        {
+          "caller": "decofileLoader",
+          "callee": "newRealtime",
+          "lineNumber": 193
+        },
+        {
+          "caller": "decofileLoader",
+          "callee": "assertAllowedAuthority",
+          "lineNumber": 197
+        },
+        {
+          "caller": "decofileLoader",
+          "callee": "fetchFromHttp",
+          "lineNumber": 198
+        },
+        {
+          "caller": "decofileLoader",
+          "callee": "fromHttpContent",
+          "lineNumber": 199
+        },
+        {
+          "caller": "decofileLoader",
+          "callee": "newFsFolderProviderFromPath",
+          "lineNumber": 202
+        },
+        {
+          "caller": "decofileLoader",
+          "callee": "deconfigFs",
+          "lineNumber": 204
+        },
+        {
+          "caller": "decofileLoader",
+          "callee": "console.error",
+          "lineNumber": 211
+        },
+        {
+          "caller": "fromEndpoint",
+          "callee": "decofileLoader",
+          "lineNumber": 217
+        },
+        {
+          "caller": "fromEndpoint",
+          "callee": "decofileCache[endpoint]\n      .then",
+          "lineNumber": 219
+        },
+        {
+          "caller": "set",
+          "callee": "decofileProviderPromise.then",
+          "lineNumber": 230
+        },
+        {
+          "caller": "set",
+          "callee": "r?.set",
+          "lineNumber": 230
+        },
+        {
+          "caller": "notify",
+          "callee": "decofileProviderPromise.then",
+          "lineNumber": 233
+        },
+        {
+          "caller": "notify",
+          "callee": "r?.notify",
+          "lineNumber": 234
+        },
+        {
+          "caller": "notify",
+          "callee": "Promise.resolve",
+          "lineNumber": 234
+        },
+        {
+          "caller": "fromEndpoint",
+          "callee": "decofileProviderPromise.then",
+          "lineNumber": 237
+        },
+        {
+          "caller": "fromEndpoint",
+          "callee": "r.state",
+          "lineNumber": 237
+        },
+        {
+          "caller": "fromEndpoint",
+          "callee": "decofileProviderPromise.then",
+          "lineNumber": 239
+        },
+        {
+          "caller": "fromEndpoint",
+          "callee": "r.onChange",
+          "lineNumber": 239
+        },
+        {
+          "caller": "fromEndpoint",
+          "callee": "decofileProviderPromise.then",
+          "lineNumber": 245
+        },
+        {
+          "caller": "fromEndpoint",
+          "callee": "r.revision",
+          "lineNumber": 245
+        },
+        {
+          "caller": "fromEndpoint",
+          "callee": "decofileProviderPromise.then",
+          "lineNumber": 247
+        },
+        {
+          "caller": "fromEndpoint",
+          "callee": "r?.dispose",
+          "lineNumber": 247
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 3,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/decofile/fs.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 170,
+      "nonEmptyLines": 157,
+      "functions": [
+        {
+          "name": "hashState",
+          "startLine": 25,
+          "endLine": 31,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "copyFrom",
+          "startLine": 33,
+          "endLine": 39,
+          "params": [
+            "appName"
+          ]
+        },
+        {
+          "name": "readAndDecompressFile",
+          "startLine": 41,
+          "endLine": 61,
+          "params": [
+            "filePath"
+          ]
+        },
+        {
+          "name": "newFsProviderFromPath",
+          "startLine": 65,
+          "endLine": 163,
+          "params": [
+            "fullPath",
+            "appName"
+          ]
+        },
+        {
+          "name": "newFsProvider",
+          "startLine": 164,
+          "endLine": 170,
+          "params": [
+            "path",
+            "appName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DECO_FILE_NAME",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "newFsProviderFromPath",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "newFsProvider",
+          "line": 164,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "hashState",
+          "callee": "stableStringify",
+          "lineNumber": 26
+        },
+        {
+          "caller": "hashState",
+          "callee": "hash.hash",
+          "lineNumber": 27
+        },
+        {
+          "caller": "hashState",
+          "callee": "hash.result",
+          "lineNumber": 28
+        },
+        {
+          "caller": "hashState",
+          "callee": "hash.reset",
+          "lineNumber": 29
+        },
+        {
+          "caller": "copyFrom",
+          "callee": "fetch(`https://${appName.replace(\"/\", \"-\")}.deno.dev/live/release`)\n    .then((response) => response.json() as Promise<Record<string, unknown>>)\n    .catch",
+          "lineNumber": 34
+        },
+        {
+          "caller": "copyFrom",
+          "callee": "fetch(`https://${appName.replace(\"/\", \"-\")}.deno.dev/live/release`)\n    .then",
+          "lineNumber": 34
+        },
+        {
+          "caller": "copyFrom",
+          "callee": "fetch",
+          "lineNumber": 34
+        },
+        {
+          "caller": "copyFrom",
+          "callee": "appName.replace",
+          "lineNumber": 34
+        },
+        {
+          "caller": "copyFrom",
+          "callee": "response.json",
+          "lineNumber": 35
+        },
+        {
+          "caller": "readAndDecompressFile",
+          "callee": "extname",
+          "lineNumber": 42
+        },
+        {
+          "caller": "readAndDecompressFile",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 46
+        },
+        {
+          "caller": "readAndDecompressFile",
+          "callee": "Uint8Array.from",
+          "lineNumber": 47
+        },
+        {
+          "caller": "readAndDecompressFile",
+          "callee": "atob",
+          "lineNumber": 48
+        },
+        {
+          "caller": "readAndDecompressFile",
+          "callee": "c.charCodeAt",
+          "lineNumber": 49
+        },
+        {
+          "caller": "readAndDecompressFile",
+          "callee": "decompress",
+          "lineNumber": 51
+        },
+        {
+          "caller": "readAndDecompressFile",
+          "callee": "textDecoder.decode",
+          "lineNumber": 53
+        },
+        {
+          "caller": "readAndDecompressFile",
+          "callee": "JSON.parse",
+          "lineNumber": 54
+        },
+        {
+          "caller": "readAndDecompressFile",
+          "callee": "Deno.readTextFile(filePath).then",
+          "lineNumber": 57
+        },
+        {
+          "caller": "readAndDecompressFile",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 57
+        },
+        {
+          "caller": "readAndDecompressFile",
+          "callee": "JSON.parse",
+          "lineNumber": 58
+        },
+        {
+          "caller": "doUpdateState",
+          "callee": "readAndDecompressFile(fullPath)\n      .catch",
+          "lineNumber": 73
+        },
+        {
+          "caller": "doUpdateState",
+          "callee": "readAndDecompressFile",
+          "lineNumber": 73
+        },
+        {
+          "caller": "doUpdateState",
+          "callee": "equal",
+          "lineNumber": 79
+        },
+        {
+          "caller": "doUpdateState",
+          "callee": "Promise.resolve",
+          "lineNumber": 83
+        },
+        {
+          "caller": "doUpdateState",
+          "callee": "hashState",
+          "lineNumber": 85
+        },
+        {
+          "caller": "doUpdateState",
+          "callee": "cb",
+          "lineNumber": 88
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "debounce",
+          "lineNumber": 92
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "Promise.resolve",
+          "lineNumber": 93
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "copyFrom",
+          "lineNumber": 93
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "exists(fullPath, {\n    isFile: true,\n    isReadable: true,\n  }).then(\n    async (exists) => {\n      if (!exists) {\n        const data = getDecofileJSONFromDecofile(await copyDecoState, appName);\n        return Deno.writeTextFile(\n          fullPath,\n          stringifyForWrite(data),\n        ).then(() => {\n          previousState = data;\n          return { state: data, revision: hashState(data) };\n        });\n      }\n      const state = await readAndDecompressFile(fullPath);\n      previousState = state;\n      return {\n        state,\n        revision: hashState(state),\n      };\n    },\n  ).then",
+          "lineNumber": 94
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "exists(fullPath, {\n    isFile: true,\n    isReadable: true,\n  }).then",
+          "lineNumber": 94
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "exists",
+          "lineNumber": 94
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "getDecofileJSONFromDecofile",
+          "lineNumber": 100
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "Deno.writeTextFile(\n          fullPath,\n          stringifyForWrite(data),\n        ).then",
+          "lineNumber": 101
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 101
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "stringifyForWrite",
+          "lineNumber": 103
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "hashState",
+          "lineNumber": 106
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "readAndDecompressFile",
+          "lineNumber": 109
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "hashState",
+          "lineNumber": 113
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "(async () => {\n      const watcher = Deno.watchFs(fullPath);\n      for await (const _event of watcher) {\n        updateState();\n      }\n    })",
+          "lineNumber": 117
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "Deno.watchFs",
+          "lineNumber": 118
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "updateState",
+          "lineNumber": 120
+        },
+        {
+          "caller": "state",
+          "callee": "readAndDecompressFile",
+          "lineNumber": 129
+        },
+        {
+          "caller": "state",
+          "callee": "decofile.then",
+          "lineNumber": 132
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "doUpdateState",
+          "lineNumber": 140
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "Promise.resolve",
+          "lineNumber": 144
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "hashState",
+          "lineNumber": 146
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "cb",
+          "lineNumber": 149
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "Promise.resolve",
+          "lineNumber": 151
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "onChangeCbs.push",
+          "lineNumber": 154
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "onChangeCbs.splice",
+          "lineNumber": 157
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "onChangeCbs.indexOf",
+          "lineNumber": 157
+        },
+        {
+          "caller": "newFsProviderFromPath",
+          "callee": "decofile.then",
+          "lineNumber": 161
+        },
+        {
+          "caller": "newFsProvider",
+          "callee": "join",
+          "lineNumber": 168
+        },
+        {
+          "caller": "newFsProvider",
+          "callee": "Deno.cwd",
+          "lineNumber": 168
+        },
+        {
+          "caller": "newFsProvider",
+          "callee": "newFsProviderFromPath",
+          "lineNumber": 169
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 3,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/decofile/fsFolder.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 247,
+      "nonEmptyLines": 224,
+      "functions": [
+        {
+          "name": "hashState",
+          "startLine": 26,
+          "endLine": 32,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "parseBlockId",
+          "startLine": 34,
+          "endLine": 35,
+          "params": [
+            "filename"
+          ]
+        },
+        {
+          "name": "inferBlockType",
+          "startLine": 37,
+          "endLine": 43,
+          "params": [
+            "resolveType",
+            "knownBlockTypes"
+          ]
+        },
+        {
+          "name": "inferMetadata",
+          "startLine": 45,
+          "endLine": 71,
+          "params": [
+            "content",
+            "knownBlockTypes"
+          ]
+        },
+        {
+          "name": "genMetadata",
+          "startLine": 87,
+          "endLine": 121,
+          "params": [
+            "fs"
+          ]
+        },
+        {
+          "name": "newFsFolderProviderFromPath",
+          "startLine": 123,
+          "endLine": 226,
+          "params": [
+            "fullPath",
+            "fs"
+          ]
+        },
+        {
+          "name": "newFsFolderProvider",
+          "startLine": 241,
+          "endLine": 247,
+          "params": [
+            "path",
+            "fs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "parseBlockId",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "genMetadata",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "newFsFolderProviderFromPath",
+          "line": 123,
+          "isDefault": false
+        },
+        {
+          "name": "newFsFolderProvider",
+          "line": 241,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "hashState",
+          "callee": "stableStringify",
+          "lineNumber": 27
+        },
+        {
+          "caller": "hashState",
+          "callee": "hash.hash",
+          "lineNumber": 28
+        },
+        {
+          "caller": "hashState",
+          "callee": "hash.result",
+          "lineNumber": 29
+        },
+        {
+          "caller": "hashState",
+          "callee": "hash.reset",
+          "lineNumber": 30
+        },
+        {
+          "caller": "parseBlockId",
+          "callee": "decodeURIComponent",
+          "lineNumber": 35
+        },
+        {
+          "caller": "parseBlockId",
+          "callee": "filename.slice",
+          "lineNumber": 35
+        },
+        {
+          "caller": "inferBlockType",
+          "callee": "resolveType.split",
+          "lineNumber": 38
+        },
+        {
+          "caller": "inferBlockType",
+          "callee": "segments.find",
+          "lineNumber": 40
+        },
+        {
+          "caller": "inferBlockType",
+          "callee": "knownBlockTypes.has",
+          "lineNumber": 40
+        },
+        {
+          "caller": "inferMetadata",
+          "callee": "inferBlockType",
+          "lineNumber": 48
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "getBlocks().map",
+          "lineNumber": 89
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "getBlocks",
+          "lineNumber": 89
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "walk",
+          "lineNumber": 92
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "join",
+          "lineNumber": 92
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "paths.push",
+          "lineNumber": 99
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "Promise.all",
+          "lineNumber": 102
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "paths.map",
+          "lineNumber": 103
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "path.replaceAll",
+          "lineNumber": 105
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "JSON.parse",
+          "lineNumber": 106
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "fs.readTextFile",
+          "lineNumber": 106
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "Object.fromEntries",
+          "lineNumber": 111
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "entries.map",
+          "lineNumber": 111
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "inferMetadata",
+          "lineNumber": 113
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "join",
+          "lineNumber": 115
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "fs.cwd",
+          "lineNumber": 115
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "fs.ensureFile",
+          "lineNumber": 116
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "fs.writeTextFile",
+          "lineNumber": 117
+        },
+        {
+          "caller": "genMetadata",
+          "callee": "JSON.stringify",
+          "lineNumber": 117
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "exists(fullPath, {\n    isDirectory: true,\n    isReadable: true,\n  }).then(\n    async () => {\n      const decofile: Decofile = {};\n      const files = fs.readDir(fullPath);\n      const promises: Promise<unknown>[] = [];\n      for await (const file of files) {\n        promises.push(\n          fs.readTextFile(join(fullPath, file))\n            .then(JSON.parse)\n            .then((content) => {\n              if (content !== null) {\n                decofile[parseBlockId(file)] = content;\n              }\n            })\n            .catch(() => null),\n        );\n      }\n      await Promise.all(promises);\n\n      return {\n        state: decofile,\n        revision: hashState(decofile),\n      };\n    },\n  ).then",
+          "lineNumber": 128
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "exists(fullPath, {\n    isDirectory: true,\n    isReadable: true,\n  }).then",
+          "lineNumber": 128
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "exists",
+          "lineNumber": 128
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "fs.readDir",
+          "lineNumber": 134
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "promises.push",
+          "lineNumber": 137
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "fs.readTextFile(join(fullPath, file))\n            .then(JSON.parse)\n            .then((content) => {\n              if (content !== null) {\n                decofile[parseBlockId(file)] = content;\n              }\n            })\n            .catch",
+          "lineNumber": 138
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "fs.readTextFile(join(fullPath, file))\n            .then(JSON.parse)\n            .then",
+          "lineNumber": 138
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "fs.readTextFile(join(fullPath, file))\n            .then",
+          "lineNumber": 138
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "fs.readTextFile",
+          "lineNumber": 138
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "join",
+          "lineNumber": 138
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "parseBlockId",
+          "lineNumber": 142
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "Promise.all",
+          "lineNumber": 148
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "hashState",
+          "lineNumber": 152
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "(async () => {\n      const limiter = new Mutex();\n      const watcher = fs.watchFs(fullPath);\n      let filesChangedBatch: string[] = [];\n      const updateState = debounce(async () => {\n        using _lock = await limiter.acquire();\n\n        // for each filesChangedBatch read them all\n        // and update the state\n        // make filesChangedBatch empty\n        if (filesChangedBatch.length === 0) {\n          return;\n        }\n        const copied = [...new Set(filesChangedBatch)];\n        filesChangedBatch.length = 0;\n        filesChangedBatch = [];\n        const { state: prevState } = await decofile;\n        const changedBlocks: Decofile = {};\n        await Promise.all(\n          copied.map(async (filePath) => {\n            const content = await fs.readTextFile(filePath)\n              .then(JSON.parse)\n              .catch(() => null);\n            changedBlocks[parseBlockId(basename(filePath))] = content;\n          }),\n        );\n        const newState = { ...prevState, ...changedBlocks };\n        decofile = Promise.resolve({\n          state: newState,\n          revision: hashState(newState),\n        });\n        for (const cb of onChangeCbs) {\n          cb();\n        }\n      }, 300);\n      for await (const event of watcher) {\n        filesChangedBatch.push(...event.paths);\n        updateState();\n      }\n    })",
+          "lineNumber": 156
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "fs.watchFs",
+          "lineNumber": 158
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "debounce",
+          "lineNumber": 160
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "limiter.acquire",
+          "lineNumber": 161
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "Promise.all",
+          "lineNumber": 174
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "copied.map",
+          "lineNumber": 175
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "fs.readTextFile(filePath)\n              .then(JSON.parse)\n              .catch",
+          "lineNumber": 176
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "fs.readTextFile(filePath)\n              .then",
+          "lineNumber": 176
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "fs.readTextFile",
+          "lineNumber": 176
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "parseBlockId",
+          "lineNumber": 179
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "basename",
+          "lineNumber": 179
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "Promise.resolve",
+          "lineNumber": 183
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "hashState",
+          "lineNumber": 185
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "cb",
+          "lineNumber": 188
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "filesChangedBatch.push",
+          "lineNumber": 192
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "updateState",
+          "lineNumber": 193
+        },
+        {
+          "caller": "state",
+          "callee": "decofile.then",
+          "lineNumber": 201
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "Promise.resolve",
+          "lineNumber": 207
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "hashState",
+          "lineNumber": 209
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "cb",
+          "lineNumber": 212
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "Promise.resolve",
+          "lineNumber": 214
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "onChangeCbs.push",
+          "lineNumber": 217
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "onChangeCbs.splice",
+          "lineNumber": 220
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "onChangeCbs.indexOf",
+          "lineNumber": 220
+        },
+        {
+          "caller": "newFsFolderProviderFromPath",
+          "callee": "decofile.then",
+          "lineNumber": 224
+        },
+        {
+          "caller": "newFsFolderProvider",
+          "callee": "join",
+          "lineNumber": 245
+        },
+        {
+          "caller": "newFsFolderProvider",
+          "callee": "fs.cwd",
+          "lineNumber": 245
+        },
+        {
+          "caller": "newFsFolderProvider",
+          "callee": "newFsFolderProviderFromPath",
+          "lineNumber": 246
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 4,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/decofile/json.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "getDecofileJSONFromDecofile",
+          "startLine": 1,
+          "endLine": 43,
+          "params": [
+            "decofile",
+            "appName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getDecofileJSONFromDecofile",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/decofile/provider.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 156,
+      "nonEmptyLines": 143,
+      "functions": [
+        {
+          "name": "isSelectionConfig",
+          "startLine": 31,
+          "endLine": 37,
+          "params": [
+            "config"
+          ]
+        },
+        {
+          "name": "mergeEntrypoints",
+          "startLine": 39,
+          "endLine": 50,
+          "params": [
+            "config",
+            "other"
+          ]
+        },
+        {
+          "name": "compose",
+          "startLine": 52,
+          "endLine": 97,
+          "params": [
+            "...providers"
+          ]
+        },
+        {
+          "name": "getProvider",
+          "startLine": 121,
+          "endLine": 156,
+          "params": [
+            "localStorageOnly"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "compose",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "getProvider",
+          "line": 121,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mergeEntrypoints",
+          "callee": "isSelectionConfig",
+          "lineNumber": 43
+        },
+        {
+          "caller": "mergeEntrypoints",
+          "callee": "isSelectionConfig",
+          "lineNumber": 43
+        },
+        {
+          "caller": "compose",
+          "callee": "providers.reduce",
+          "lineNumber": 53
+        },
+        {
+          "caller": "compose",
+          "callee": "providers?.dispose",
+          "lineNumber": 56
+        },
+        {
+          "caller": "compose",
+          "callee": "current?.dispose",
+          "lineNumber": 57
+        },
+        {
+          "caller": "compose",
+          "callee": "providers.onChange",
+          "lineNumber": 60
+        },
+        {
+          "caller": "compose",
+          "callee": "current.onChange",
+          "lineNumber": 61
+        },
+        {
+          "caller": "compose",
+          "callee": "disposable[Symbol.dispose]",
+          "lineNumber": 64
+        },
+        {
+          "caller": "compose",
+          "callee": "currentDisposable[Symbol.dispose]",
+          "lineNumber": 65
+        },
+        {
+          "caller": "compose",
+          "callee": "Promise.all",
+          "lineNumber": 70
+        },
+        {
+          "caller": "compose",
+          "callee": "providers.notify",
+          "lineNumber": 71
+        },
+        {
+          "caller": "compose",
+          "callee": "current.notify",
+          "lineNumber": 72
+        },
+        {
+          "caller": "compose",
+          "callee": "Promise.all([\n          providers.revision(),\n          current.revision(),\n        ]).then",
+          "lineNumber": 76
+        },
+        {
+          "caller": "compose",
+          "callee": "Promise.all",
+          "lineNumber": 76
+        },
+        {
+          "caller": "compose",
+          "callee": "providers.revision",
+          "lineNumber": 77
+        },
+        {
+          "caller": "compose",
+          "callee": "current.revision",
+          "lineNumber": 78
+        },
+        {
+          "caller": "compose",
+          "callee": "revisions.join",
+          "lineNumber": 79
+        },
+        {
+          "caller": "compose",
+          "callee": "Promise.all",
+          "lineNumber": 82
+        },
+        {
+          "caller": "compose",
+          "callee": "providers.state",
+          "lineNumber": 83
+        },
+        {
+          "caller": "compose",
+          "callee": "current.state",
+          "lineNumber": 84
+        },
+        {
+          "caller": "compose",
+          "callee": "mergeEntrypoints",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getProvider",
+          "callee": "Deno.env.has",
+          "lineNumber": 126
+        },
+        {
+          "caller": "getProvider",
+          "callee": "newFsProvider",
+          "lineNumber": 127
+        },
+        {
+          "caller": "getProvider",
+          "callee": "respectDecofileProviders.some",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getProvider",
+          "callee": "DECOFILE_PATH_FROM_ENV?.startsWith",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getProvider",
+          "callee": "console.info",
+          "lineNumber": 139
+        },
+        {
+          "caller": "getProvider",
+          "callee": "colors.brightCyan",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getProvider",
+          "callee": "colors.brightGreen",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getProvider",
+          "callee": "providers.push",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getProvider",
+          "callee": "fromEndpoint",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getProvider",
+          "callee": "Deno.env.has",
+          "lineNumber": 149
+        },
+        {
+          "caller": "getProvider",
+          "callee": "providers.push",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getProvider",
+          "callee": "newFsProvider",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getProvider",
+          "callee": "compose",
+          "lineNumber": 153
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/decofile/realtime.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 183,
+      "nonEmptyLines": 173,
+      "functions": [
+        {
+          "name": "sleep",
+          "startLine": 31,
+          "endLine": 33,
+          "params": [
+            "ms"
+          ]
+        },
+        {
+          "name": "newRealtime",
+          "startLine": 49,
+          "endLine": 183,
+          "params": [
+            "provider",
+            "backgroundUpdate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "newRealtime",
+          "line": 49,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sleep",
+          "callee": "setTimeout",
+          "lineNumber": 32
+        },
+        {
+          "caller": "notify",
+          "callee": "Promise.all(onChangeCbs.map((cb) => cb())).then",
+          "lineNumber": 56
+        },
+        {
+          "caller": "notify",
+          "callee": "Promise.all",
+          "lineNumber": 56
+        },
+        {
+          "caller": "notify",
+          "callee": "onChangeCbs.map",
+          "lineNumber": 56
+        },
+        {
+          "caller": "notify",
+          "callee": "cb",
+          "lineNumber": 56
+        },
+        {
+          "caller": "tryResolveFirstLoad",
+          "callee": "reject",
+          "lineNumber": 74
+        },
+        {
+          "caller": "tryResolveFirstLoad",
+          "callee": "provider.get",
+          "lineNumber": 77
+        },
+        {
+          "caller": "tryResolveFirstLoad",
+          "callee": "sleep",
+          "lineNumber": 81
+        },
+        {
+          "caller": "tryResolveFirstLoad",
+          "callee": "tryResolveFirstLoad",
+          "lineNumber": 82
+        },
+        {
+          "caller": "tryResolveFirstLoad",
+          "callee": "resolve",
+          "lineNumber": 85
+        },
+        {
+          "caller": "updateInternalState",
+          "callee": "provider.get",
+          "lineNumber": 101
+        },
+        {
+          "caller": "updateInternalState",
+          "callee": "logger.error",
+          "lineNumber": 104
+        },
+        {
+          "caller": "updateInternalState",
+          "callee": "console.error",
+          "lineNumber": 105
+        },
+        {
+          "caller": "updateInternalState",
+          "callee": "ulid",
+          "lineNumber": 109
+        },
+        {
+          "caller": "updateInternalState",
+          "callee": "currResolvables.then((r) => r.revision).catch",
+          "lineNumber": 111
+        },
+        {
+          "caller": "updateInternalState",
+          "callee": "currResolvables.then",
+          "lineNumber": 111
+        },
+        {
+          "caller": "updateInternalState",
+          "callee": "Promise.resolve",
+          "lineNumber": 114
+        },
+        {
+          "caller": "updateInternalState",
+          "callee": "notify",
+          "lineNumber": 119
+        },
+        {
+          "caller": "trySubscribeOrFetch",
+          "callee": "provider.subscribe",
+          "lineNumber": 130
+        },
+        {
+          "caller": "trySubscribeOrFetch",
+          "callee": "console.debug",
+          "lineNumber": 131
+        },
+        {
+          "caller": "trySubscribeOrFetch",
+          "callee": "Object.keys",
+          "lineNumber": 133
+        },
+        {
+          "caller": "trySubscribeOrFetch",
+          "callee": "Promise.resolve",
+          "lineNumber": 135
+        },
+        {
+          "caller": "trySubscribeOrFetch",
+          "callee": "notify",
+          "lineNumber": 136
+        },
+        {
+          "caller": "trySubscribeOrFetch",
+          "callee": "logger.error",
+          "lineNumber": 141
+        },
+        {
+          "caller": "trySubscribeOrFetch",
+          "callee": "console.error",
+          "lineNumber": 142
+        },
+        {
+          "caller": "trySubscribeOrFetch",
+          "callee": "updateInternalState().finally",
+          "lineNumber": 144
+        },
+        {
+          "caller": "trySubscribeOrFetch",
+          "callee": "updateInternalState",
+          "lineNumber": 144
+        },
+        {
+          "caller": "trySubscribeOrFetch",
+          "callee": "Math.floor",
+          "lineNumber": 145
+        },
+        {
+          "caller": "trySubscribeOrFetch",
+          "callee": "Math.random",
+          "lineNumber": 145
+        },
+        {
+          "caller": "trySubscribeOrFetch",
+          "callee": "sleep(refetchIntervalMSDeploy + jitter).then",
+          "lineNumber": 146
+        },
+        {
+          "caller": "trySubscribeOrFetch",
+          "callee": "sleep",
+          "lineNumber": 146
+        },
+        {
+          "caller": "trySubscribeOrFetch",
+          "callee": "trySubscribeOrFetch",
+          "lineNumber": 147
+        },
+        {
+          "caller": "newRealtime",
+          "callee": "currResolvables.then",
+          "lineNumber": 153
+        },
+        {
+          "caller": "newRealtime",
+          "callee": "onChangeCbs.push",
+          "lineNumber": 157
+        },
+        {
+          "caller": "newRealtime",
+          "callee": "onChangeCbs.splice",
+          "lineNumber": 160
+        },
+        {
+          "caller": "newRealtime",
+          "callee": "onChangeCbs.indexOf",
+          "lineNumber": 160
+        },
+        {
+          "caller": "notify",
+          "callee": "notify",
+          "lineNumber": 165
+        },
+        {
+          "caller": "newRealtime",
+          "callee": "currResolvables.then((r) => r.revision).catch",
+          "lineNumber": 168
+        },
+        {
+          "caller": "newRealtime",
+          "callee": "currResolvables.then",
+          "lineNumber": 168
+        },
+        {
+          "caller": "newRealtime",
+          "callee": "updateInternalState",
+          "lineNumber": 174
+        },
+        {
+          "caller": "newRealtime",
+          "callee": "provider?.unsubscribe",
+          "lineNumber": 180
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/trustedAuthority.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 13,
+      "functions": [
+        {
+          "name": "getAllowedAuthorities",
+          "startLine": 6,
+          "endLine": 6,
+          "params": []
+        },
+        {
+          "name": "assertAllowedAuthority",
+          "startLine": 8,
+          "endLine": 15,
+          "params": [
+            "urlOrString"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getAllowedAuthorities",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "assertAllowedAuthority",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "assertAllowedAuthority",
+          "callee": "ALLOWED_AUTHORITIES.includes",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/apps/bundle.lib.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "bundleApp",
+          "startLine": 7,
+          "endLine": 20,
+          "params": [
+            "dir"
+          ]
+        },
+        {
+          "name": "bundleApps",
+          "startLine": 22,
+          "endLine": 34,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "bundleApp",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "bundleApps",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "bundleApp",
+          "callee": "console.log",
+          "lineNumber": 8
+        },
+        {
+          "caller": "bundleApp",
+          "callee": "colors.bgBrightGreen",
+          "lineNumber": 8
+        },
+        {
+          "caller": "bundleApp",
+          "callee": "join",
+          "lineNumber": 9
+        },
+        {
+          "caller": "bundleApp",
+          "callee": "decoManifestBuilder",
+          "lineNumber": 10
+        },
+        {
+          "caller": "bundleApp",
+          "callee": "join",
+          "lineNumber": 12
+        },
+        {
+          "caller": "bundleApp",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 13
+        },
+        {
+          "caller": "bundleApp",
+          "callee": "format",
+          "lineNumber": 15
+        },
+        {
+          "caller": "bundleApp",
+          "callee": "manifest.build",
+          "lineNumber": 15
+        },
+        {
+          "caller": "bundleApp",
+          "callee": "console.log",
+          "lineNumber": 17
+        },
+        {
+          "caller": "bundleApp",
+          "callee": "colors.brightBlue",
+          "lineNumber": 18
+        },
+        {
+          "caller": "bundleApps",
+          "callee": "Deno.cwd",
+          "lineNumber": 23
+        },
+        {
+          "caller": "bundleApps",
+          "callee": "console.log",
+          "lineNumber": 24
+        },
+        {
+          "caller": "bundleApps",
+          "callee": "colors.brightGreen",
+          "lineNumber": 24
+        },
+        {
+          "caller": "bundleApps",
+          "callee": "getDecoConfig",
+          "lineNumber": 25
+        },
+        {
+          "caller": "bundleApps",
+          "callee": "console.debug",
+          "lineNumber": 27
+        },
+        {
+          "caller": "bundleApps",
+          "callee": "colors.brightBlue",
+          "lineNumber": 29
+        },
+        {
+          "caller": "bundleApps",
+          "callee": "(decoConfig?.apps ?? []).length.toString",
+          "lineNumber": 29
+        },
+        {
+          "caller": "bundleApps",
+          "callee": "Promise.all",
+          "lineNumber": 33
+        },
+        {
+          "caller": "bundleApps",
+          "callee": "(decoConfig?.apps ?? []).map",
+          "lineNumber": 33
+        },
+        {
+          "caller": "bundleApps",
+          "callee": "bundleApp",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/apps/bundle.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 2,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/apps/config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "workspaceConfig",
+          "startLine": 14,
+          "endLine": 38,
+          "params": [
+            "appLocation"
+          ]
+        },
+        {
+          "name": "getDecoConfig",
+          "startLine": 39,
+          "endLine": 65,
+          "params": [
+            "appLocation",
+            "appName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getDecoConfig",
+          "line": 39,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "workspaceConfig",
+          "callee": "join",
+          "lineNumber": 15
+        },
+        {
+          "caller": "workspaceConfig",
+          "callee": "Deno.readTextFile(\n    denoJSONPath,\n  ).then(JSON.parse).catch",
+          "lineNumber": 16
+        },
+        {
+          "caller": "workspaceConfig",
+          "callee": "Deno.readTextFile(\n    denoJSONPath,\n  ).then",
+          "lineNumber": 16
+        },
+        {
+          "caller": "workspaceConfig",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 16
+        },
+        {
+          "caller": "workspaceConfig",
+          "callee": "Promise.all",
+          "lineNumber": 21
+        },
+        {
+          "caller": "workspaceConfig",
+          "callee": "denoJSON.workspace.map",
+          "lineNumber": 22
+        },
+        {
+          "caller": "workspaceConfig",
+          "callee": "Deno.readTextFile(join(appLocation, dir, DENO_JSON_FILE_NAME))\n            .then((denoJSONStr) => JSON.parse(denoJSONStr) as { name: string })\n            .then(\n              (denoJSON) => ({\n                name: denoJSON?.name?.replace(\"@deco/\", \"\"),\n                dir,\n              }),\n            ).catch",
+          "lineNumber": 23
+        },
+        {
+          "caller": "workspaceConfig",
+          "callee": "Deno.readTextFile(join(appLocation, dir, DENO_JSON_FILE_NAME))\n            .then((denoJSONStr) => JSON.parse(denoJSONStr) as { name: string })\n            .then",
+          "lineNumber": 23
+        },
+        {
+          "caller": "workspaceConfig",
+          "callee": "Deno.readTextFile(join(appLocation, dir, DENO_JSON_FILE_NAME))\n            .then",
+          "lineNumber": 23
+        },
+        {
+          "caller": "workspaceConfig",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 23
+        },
+        {
+          "caller": "workspaceConfig",
+          "callee": "join",
+          "lineNumber": 23
+        },
+        {
+          "caller": "workspaceConfig",
+          "callee": "JSON.parse",
+          "lineNumber": 24
+        },
+        {
+          "caller": "workspaceConfig",
+          "callee": "denoJSON?.name?.replace",
+          "lineNumber": 27
+        },
+        {
+          "caller": "workspaceConfig",
+          "callee": "appsDenoJSON.filter",
+          "lineNumber": 33
+        },
+        {
+          "caller": "getDecoConfig",
+          "callee": "workspaceConfig",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getDecoConfig",
+          "callee": "import(\n    appLocation.startsWith(\"http\")\n      ? `${appLocation}/${DECO_TS_FILE_NAME}`\n      : toFileUrl(join(appLocation, DECO_TS_FILE_NAME)).toString()\n  )\n    .then((file) => file.default).catch",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getDecoConfig",
+          "callee": "import(\n    appLocation.startsWith(\"http\")\n      ? `${appLocation}/${DECO_TS_FILE_NAME}`\n      : toFileUrl(join(appLocation, DECO_TS_FILE_NAME)).toString()\n  )\n    .then",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getDecoConfig",
+          "callee": "import",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getDecoConfig",
+          "callee": "appLocation.startsWith",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getDecoConfig",
+          "callee": "toFileUrl(join(appLocation, DECO_TS_FILE_NAME)).toString",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getDecoConfig",
+          "callee": "toFileUrl",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getDecoConfig",
+          "callee": "join",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/apps/context.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/apps/dev.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "resolveAppLocation",
+          "startLine": 6,
+          "endLine": 17,
+          "params": [
+            "appLocation"
+          ]
+        },
+        {
+          "name": "dev",
+          "startLine": 18,
+          "endLine": 89,
+          "params": [
+            "appName",
+            "target",
+            "link",
+            "_appLocation"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "dev",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolveAppLocation",
+          "callee": "appLocation.startsWith",
+          "lineNumber": 7
+        },
+        {
+          "caller": "resolveAppLocation",
+          "callee": "Deno.stat(appLocation).then((_r) => true).catch",
+          "lineNumber": 10
+        },
+        {
+          "caller": "resolveAppLocation",
+          "callee": "Deno.stat(appLocation).then",
+          "lineNumber": 10
+        },
+        {
+          "caller": "resolveAppLocation",
+          "callee": "Deno.stat",
+          "lineNumber": 10
+        },
+        {
+          "caller": "dev",
+          "callee": "console.error",
+          "lineNumber": 25
+        },
+        {
+          "caller": "dev",
+          "callee": "colors.red",
+          "lineNumber": 26
+        },
+        {
+          "caller": "dev",
+          "callee": "resolveAppLocation",
+          "lineNumber": 32
+        },
+        {
+          "caller": "dev",
+          "callee": "join",
+          "lineNumber": 33
+        },
+        {
+          "caller": "dev",
+          "callee": "Deno.stat(importMap).then((s) => !s.isDirectory).catch",
+          "lineNumber": 34
+        },
+        {
+          "caller": "dev",
+          "callee": "Deno.stat(importMap).then",
+          "lineNumber": 34
+        },
+        {
+          "caller": "dev",
+          "callee": "Deno.stat",
+          "lineNumber": 34
+        },
+        {
+          "caller": "dev",
+          "callee": "console.error",
+          "lineNumber": 38
+        },
+        {
+          "caller": "dev",
+          "callee": "colors.red",
+          "lineNumber": 39
+        },
+        {
+          "caller": "dev",
+          "callee": "getDecoConfig",
+          "lineNumber": 45
+        },
+        {
+          "caller": "dev",
+          "callee": "(config?.apps ?? []).filter",
+          "lineNumber": 47
+        },
+        {
+          "caller": "dev",
+          "callee": "Deno\n      .readTextFile(importMap).then",
+          "lineNumber": 52
+        },
+        {
+          "caller": "dev",
+          "callee": "Deno\n      .readTextFile",
+          "lineNumber": 52
+        },
+        {
+          "caller": "dev",
+          "callee": "JSON.parse",
+          "lineNumber": 53
+        },
+        {
+          "caller": "dev",
+          "callee": "join",
+          "lineNumber": 56
+        },
+        {
+          "caller": "dev",
+          "callee": "Deno.mkdir(appsDirectory).catch",
+          "lineNumber": 58
+        },
+        {
+          "caller": "dev",
+          "callee": "Deno.mkdir",
+          "lineNumber": 58
+        },
+        {
+          "caller": "dev",
+          "callee": "changes.push",
+          "lineNumber": 63
+        },
+        {
+          "caller": "dev",
+          "callee": "(async () => {\n      importMapContent.imports[`${app.name}/`] = link\n        ? `${join(appLocation, app.dir)}/`.replace(Deno.cwd(), \".\")\n        : undefined;\n\n      const appFile = join(\n        appsDirectory,\n        `${app.name.replaceAll(\"/\", \"_\")}.ts`,\n      );\n      if (link) {\n        await Deno.writeTextFile(\n          appFile,\n          `export { default } from \"${app.name}/mod.ts\";`,\n          { create: true },\n        );\n      } else {\n        await Deno.remove(appFile);\n      }\n    })",
+          "lineNumber": 63
+        },
+        {
+          "caller": "dev",
+          "callee": "`${join(appLocation, app.dir)}/`.replace",
+          "lineNumber": 65
+        },
+        {
+          "caller": "dev",
+          "callee": "join",
+          "lineNumber": 65
+        },
+        {
+          "caller": "dev",
+          "callee": "Deno.cwd",
+          "lineNumber": 65
+        },
+        {
+          "caller": "dev",
+          "callee": "join",
+          "lineNumber": 68
+        },
+        {
+          "caller": "dev",
+          "callee": "app.name.replaceAll",
+          "lineNumber": 70
+        },
+        {
+          "caller": "dev",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 73
+        },
+        {
+          "caller": "dev",
+          "callee": "Deno.remove",
+          "lineNumber": 79
+        },
+        {
+          "caller": "dev",
+          "callee": "Promise.all",
+          "lineNumber": 84
+        },
+        {
+          "caller": "dev",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 85
+        },
+        {
+          "caller": "dev",
+          "callee": "stringifyForWrite",
+          "lineNumber": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/apps/init.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 83,
+      "functions": [
+        {
+          "name": "isTemplateName",
+          "startLine": 10,
+          "endLine": 12,
+          "params": [
+            "ref"
+          ]
+        },
+        {
+          "name": "createFromTemplates",
+          "startLine": 14,
+          "endLine": 21,
+          "params": [
+            "templates",
+            "dir",
+            "ctx",
+            "refPrefix"
+          ]
+        },
+        {
+          "name": "createFromTemplate",
+          "startLine": 22,
+          "endLine": 57,
+          "params": [
+            "ctx",
+            "dir",
+            "refPrefix"
+          ]
+        },
+        {
+          "name": "init",
+          "startLine": 68,
+          "endLine": 83,
+          "params": [
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "init",
+          "line": 68,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createFromTemplates",
+          "callee": "Promise.all",
+          "lineNumber": 20
+        },
+        {
+          "caller": "createFromTemplates",
+          "callee": "templates.map",
+          "lineNumber": 20
+        },
+        {
+          "caller": "createFromTemplates",
+          "callee": "createFromTemplate",
+          "lineNumber": 20
+        },
+        {
+          "caller": "createFromTemplate",
+          "callee": "isTemplateName",
+          "lineNumber": 25
+        },
+        {
+          "caller": "createFromTemplate",
+          "callee": "import",
+          "lineNumber": 26
+        },
+        {
+          "caller": "createFromTemplate",
+          "callee": "func.default",
+          "lineNumber": 29
+        },
+        {
+          "caller": "createFromTemplate",
+          "callee": "join",
+          "lineNumber": 30
+        },
+        {
+          "caller": "createFromTemplate",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 31
+        },
+        {
+          "caller": "createFromTemplate",
+          "callee": "Object.keys",
+          "lineNumber": 35
+        },
+        {
+          "caller": "createFromTemplate",
+          "callee": "subTemplates.push",
+          "lineNumber": 36
+        },
+        {
+          "caller": "createFromTemplate",
+          "callee": "(async () => {\n        const subDir = join(dir, key);\n        const newPrefix = `${refPrefix}${key}.`;\n        await Deno.mkdir(subDir);\n        const subTemplateCreate = createFromTemplate(\n          ctx,\n          subDir,\n          newPrefix,\n        );\n        const subTemplates = ref[key];\n        await (Array.isArray(subTemplates)\n          ? createFromTemplates(\n            subTemplates,\n            subDir,\n            ctx,\n            newPrefix,\n          )\n          : subTemplateCreate(subTemplates));\n      })",
+          "lineNumber": 36
+        },
+        {
+          "caller": "createFromTemplate",
+          "callee": "join",
+          "lineNumber": 37
+        },
+        {
+          "caller": "createFromTemplate",
+          "callee": "Deno.mkdir",
+          "lineNumber": 39
+        },
+        {
+          "caller": "createFromTemplate",
+          "callee": "createFromTemplate",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createFromTemplate",
+          "callee": "Array.isArray",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createFromTemplate",
+          "callee": "createFromTemplates",
+          "lineNumber": 47
+        },
+        {
+          "caller": "createFromTemplate",
+          "callee": "subTemplateCreate",
+          "lineNumber": 53
+        },
+        {
+          "caller": "createFromTemplate",
+          "callee": "Promise.all",
+          "lineNumber": 56
+        },
+        {
+          "caller": "init",
+          "callee": "lookup(\n    \"https://cdn.jsdelivr.net/gh/deco-cx/deco@main/\",\n    REGISTRIES,\n  )\n    ?.all().then",
+          "lineNumber": 69
+        },
+        {
+          "caller": "init",
+          "callee": "lookup(\n    \"https://cdn.jsdelivr.net/gh/deco-cx/deco@main/\",\n    REGISTRIES,\n  )\n    ?.all",
+          "lineNumber": 69
+        },
+        {
+          "caller": "init",
+          "callee": "lookup",
+          "lineNumber": 69
+        },
+        {
+          "caller": "init",
+          "callee": "join",
+          "lineNumber": 75
+        },
+        {
+          "caller": "init",
+          "callee": "Deno.cwd",
+          "lineNumber": 75
+        },
+        {
+          "caller": "init",
+          "callee": "Deno.mkdir",
+          "lineNumber": 76
+        },
+        {
+          "caller": "init",
+          "callee": "createFromTemplates",
+          "lineNumber": 82
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/apps/install.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/apps/link.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/apps/templates/app.loaders.bin.ts.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 17,
+      "functions": [
+        {
+          "name": "AppLoadersBin",
+          "startLine": 4,
+          "endLine": 18,
+          "params": [
+            "_init"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppLoadersBin",
+          "line": 4,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AppLoadersBin",
+          "callee": "format",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/apps/templates/app.mod.ts.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "AppMod",
+          "startLine": 4,
+          "endLine": 27,
+          "params": [
+            "_ctx"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AppMod",
+          "line": 4,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AppMod",
+          "callee": "format",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/apps/templates/deco.ts.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "Deco",
+          "startLine": 4,
+          "endLine": 17,
+          "params": [
+            "{ appName }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Deco",
+          "line": 4,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Deco",
+          "callee": "format",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/apps/templates/deno.json.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "DenoJson",
+          "startLine": 3,
+          "endLine": 44,
+          "params": [
+            "{ decoVersion }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DenoJson",
+          "line": 3,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DenoJson",
+          "callee": "JSON.stringify",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/apps/uninstall.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/apps/unlink.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/formatter.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "exports": [
+        {
+          "name": "format",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/init.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 247,
+      "nonEmptyLines": 208,
+      "functions": [
+        {
+          "name": "progress",
+          "startLine": 61,
+          "endLine": 66,
+          "params": [
+            "msg"
+          ]
+        },
+        {
+          "name": "initProject",
+          "startLine": 68,
+          "endLine": 129,
+          "params": [
+            "name",
+            "config"
+          ]
+        },
+        {
+          "name": "logInstructions",
+          "startLine": 131,
+          "endLine": 158,
+          "params": [
+            "root"
+          ]
+        },
+        {
+          "name": "initSite",
+          "startLine": 160,
+          "endLine": 210,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 214,
+          "endLine": 245,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "progress",
+          "callee": "Deno.stdout.write",
+          "lineNumber": 62
+        },
+        {
+          "caller": "progress",
+          "callee": "textEncoder.encode",
+          "lineNumber": 62
+        },
+        {
+          "caller": "progress",
+          "callee": "promise.then",
+          "lineNumber": 65
+        },
+        {
+          "caller": "progress",
+          "callee": "Deno.stdout.write",
+          "lineNumber": 65
+        },
+        {
+          "caller": "progress",
+          "callee": "textEncoder.encode",
+          "lineNumber": 65
+        },
+        {
+          "caller": "initProject",
+          "callee": "join",
+          "lineNumber": 69
+        },
+        {
+          "caller": "initProject",
+          "callee": "Deno.cwd",
+          "lineNumber": 69
+        },
+        {
+          "caller": "initProject",
+          "callee": "exists",
+          "lineNumber": 71
+        },
+        {
+          "caller": "initProject",
+          "callee": "console.warn",
+          "lineNumber": 72
+        },
+        {
+          "caller": "initProject",
+          "callee": "ensureDir",
+          "lineNumber": 77
+        },
+        {
+          "caller": "initProject",
+          "callee": "console.log",
+          "lineNumber": 79
+        },
+        {
+          "caller": "initProject",
+          "callee": "progress",
+          "lineNumber": 82
+        },
+        {
+          "caller": "initProject",
+          "callee": "fetch(config.git).then",
+          "lineNumber": 83
+        },
+        {
+          "caller": "initProject",
+          "callee": "fetch",
+          "lineNumber": 83
+        },
+        {
+          "caller": "initProject",
+          "callee": "res.blob",
+          "lineNumber": 83
+        },
+        {
+          "caller": "initProject",
+          "callee": "done",
+          "lineNumber": 84
+        },
+        {
+          "caller": "initProject",
+          "callee": "progress",
+          "lineNumber": 86
+        },
+        {
+          "caller": "initProject",
+          "callee": "zipReader.getEntries",
+          "lineNumber": 88
+        },
+        {
+          "caller": "initProject",
+          "callee": "entries.shift",
+          "lineNumber": 90
+        },
+        {
+          "caller": "initProject",
+          "callee": "console.error",
+          "lineNumber": 93
+        },
+        {
+          "caller": "initProject",
+          "callee": "join",
+          "lineNumber": 101
+        },
+        {
+          "caller": "initProject",
+          "callee": "filename.replace",
+          "lineNumber": 101
+        },
+        {
+          "caller": "initProject",
+          "callee": "ensureFile",
+          "lineNumber": 103
+        },
+        {
+          "caller": "initProject",
+          "callee": "Deno.open",
+          "lineNumber": 104
+        },
+        {
+          "caller": "initProject",
+          "callee": "getData",
+          "lineNumber": 105
+        },
+        {
+          "caller": "initProject",
+          "callee": "zipReader.close",
+          "lineNumber": 107
+        },
+        {
+          "caller": "initProject",
+          "callee": "done",
+          "lineNumber": 108
+        },
+        {
+          "caller": "initProject",
+          "callee": "progress",
+          "lineNumber": 110
+        },
+        {
+          "caller": "initProject",
+          "callee": "fetch(config.release).then",
+          "lineNumber": 111
+        },
+        {
+          "caller": "initProject",
+          "callee": "fetch",
+          "lineNumber": 111
+        },
+        {
+          "caller": "initProject",
+          "callee": "res.json",
+          "lineNumber": 111
+        },
+        {
+          "caller": "initProject",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 113
+        },
+        {
+          "caller": "initProject",
+          "callee": "join",
+          "lineNumber": 114
+        },
+        {
+          "caller": "initProject",
+          "callee": "JSON.stringify",
+          "lineNumber": 115
+        },
+        {
+          "caller": "initProject",
+          "callee": "getDecofileJSONFromDecofile",
+          "lineNumber": 116
+        },
+        {
+          "caller": "initProject",
+          "callee": "done",
+          "lineNumber": 124
+        },
+        {
+          "caller": "initProject",
+          "callee": "console.log",
+          "lineNumber": 126
+        },
+        {
+          "caller": "logInstructions",
+          "callee": "root.replace",
+          "lineNumber": 132
+        },
+        {
+          "caller": "logInstructions",
+          "callee": "Deno.cwd",
+          "lineNumber": 132
+        },
+        {
+          "caller": "logInstructions",
+          "callee": "console.log",
+          "lineNumber": 134
+        },
+        {
+          "caller": "logInstructions",
+          "callee": "colors.cyan",
+          "lineNumber": 134
+        },
+        {
+          "caller": "logInstructions",
+          "callee": "console.log",
+          "lineNumber": 135
+        },
+        {
+          "caller": "logInstructions",
+          "callee": "console.log",
+          "lineNumber": 138
+        },
+        {
+          "caller": "logInstructions",
+          "callee": "console.log",
+          "lineNumber": 140
+        },
+        {
+          "caller": "logInstructions",
+          "callee": "Toggle.prompt",
+          "lineNumber": 142
+        },
+        {
+          "caller": "logInstructions",
+          "callee": "new Deno.Command(Deno.execPath(), {\n      args: [\"task\", \"play\"],\n      cwd: root,\n      stdout: \"inherit\",\n      stderr: \"inherit\",\n      stdin: \"inherit\",\n    }).spawn",
+          "lineNumber": 148
+        },
+        {
+          "caller": "logInstructions",
+          "callee": "Deno.execPath",
+          "lineNumber": 148
+        },
+        {
+          "caller": "logInstructions",
+          "callee": "console.log",
+          "lineNumber": 156
+        },
+        {
+          "caller": "logInstructions",
+          "callee": "colors.green",
+          "lineNumber": 156
+        },
+        {
+          "caller": "initSite",
+          "callee": "prompt",
+          "lineNumber": 161
+        },
+        {
+          "caller": "initSite",
+          "callee": "next",
+          "lineNumber": 185
+        },
+        {
+          "caller": "initSite",
+          "callee": "console.warn",
+          "lineNumber": 200
+        },
+        {
+          "caller": "initSite",
+          "callee": "initProject",
+          "lineNumber": 205
+        },
+        {
+          "caller": "initSite",
+          "callee": "logInstructions",
+          "lineNumber": 209
+        },
+        {
+          "caller": "main",
+          "callee": "colors.setColorEnabled",
+          "lineNumber": 215
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 217
+        },
+        {
+          "caller": "main",
+          "callee": "prompt",
+          "lineNumber": 219
+        },
+        {
+          "caller": "main",
+          "callee": "initApp",
+          "lineNumber": 241
+        },
+        {
+          "caller": "main",
+          "callee": "initSite",
+          "lineNumber": 243
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/order_imports.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "orderImports",
+          "startLine": 3,
+          "endLine": 32,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "orderImports",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "orderImports",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 4
+        },
+        {
+          "caller": "orderImports",
+          "callee": "JSON.parse",
+          "lineNumber": 5
+        },
+        {
+          "caller": "orderImports",
+          "callee": "Object.keys",
+          "lineNumber": 8
+        },
+        {
+          "caller": "orderImports",
+          "callee": "value.startsWith",
+          "lineNumber": 10
+        },
+        {
+          "caller": "orderImports",
+          "callee": "value.replace",
+          "lineNumber": 14
+        },
+        {
+          "caller": "orderImports",
+          "callee": "Object.entries",
+          "lineNumber": 21
+        },
+        {
+          "caller": "orderImports",
+          "callee": "imports.sort",
+          "lineNumber": 22
+        },
+        {
+          "caller": "orderImports",
+          "callee": "a.localeCompare",
+          "lineNumber": 22
+        },
+        {
+          "caller": "orderImports",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 28
+        },
+        {
+          "caller": "orderImports",
+          "callee": "stringifyForWrite",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/pkg.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "eligibleLatestVersion",
+          "startLine": 12,
+          "endLine": 16,
+          "params": [
+            "versions",
+            "allowPre"
+          ]
+        },
+        {
+          "name": "pkgInfo",
+          "startLine": 18,
+          "endLine": 36,
+          "params": [
+            "importUrl",
+            "allowPre"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "pkgInfo",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "eligibleLatestVersion",
+          "callee": "versions.find",
+          "lineNumber": 15
+        },
+        {
+          "caller": "eligibleLatestVersion",
+          "callee": "semver.parse",
+          "lineNumber": 15
+        },
+        {
+          "caller": "pkgInfo",
+          "callee": "lookup",
+          "lineNumber": 22
+        },
+        {
+          "caller": "pkgInfo",
+          "callee": "url.all",
+          "lineNumber": 26
+        },
+        {
+          "caller": "pkgInfo",
+          "callee": "url.version",
+          "lineNumber": 27
+        },
+        {
+          "caller": "pkgInfo",
+          "callee": "eligibleLatestVersion",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/registry.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/release.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 127,
+      "nonEmptyLines": 102,
+      "functions": [
+        {
+          "name": "exists",
+          "startLine": 13,
+          "endLine": 27,
+          "params": [
+            "dir"
+          ]
+        },
+        {
+          "name": "bump",
+          "startLine": 69,
+          "endLine": 98,
+          "params": [
+            "...denoJSONPaths"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "exists",
+          "callee": "Deno.stat",
+          "lineNumber": 15
+        },
+        {
+          "caller": "bump",
+          "callee": "exists",
+          "lineNumber": 71
+        },
+        {
+          "caller": "bump",
+          "callee": "Deno\n        .readTextFile(\n          denoJSONPath,\n        ).then",
+          "lineNumber": 72
+        },
+        {
+          "caller": "bump",
+          "callee": "Deno\n        .readTextFile",
+          "lineNumber": 72
+        },
+        {
+          "caller": "bump",
+          "callee": "console.log",
+          "lineNumber": 78
+        },
+        {
+          "caller": "bump",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 80
+        },
+        {
+          "caller": "bump",
+          "callee": "JSON.stringify",
+          "lineNumber": 82
+        },
+        {
+          "caller": "bump",
+          "callee": "console.log",
+          "lineNumber": 86
+        },
+        {
+          "caller": "bump",
+          "callee": "exec",
+          "lineNumber": 88
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/upgrade.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 885,
+      "nonEmptyLines": 804,
+      "functions": [
+        {
+          "name": "getLatestVersion",
+          "startLine": 15,
+          "endLine": 26,
+          "params": [
+            "locator"
+          ]
+        },
+        {
+          "name": "withSlashAtEnd",
+          "startLine": 38,
+          "endLine": 39,
+          "params": [
+            "str"
+          ]
+        },
+        {
+          "name": "withoutSlashAtEnd",
+          "startLine": 41,
+          "endLine": 42,
+          "params": [
+            "str"
+          ]
+        },
+        {
+          "name": "namespaceFromGit",
+          "startLine": 44,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "getDenoJson",
+          "startLine": 663,
+          "endLine": 675,
+          "params": []
+        },
+        {
+          "name": "_requiresMinDecoVer",
+          "startLine": 676,
+          "endLine": 691,
+          "params": [
+            "ver"
+          ]
+        },
+        {
+          "name": "isDelete",
+          "startLine": 759,
+          "endLine": 761,
+          "params": [
+            "f"
+          ]
+        },
+        {
+          "name": "applyPatch",
+          "startLine": 762,
+          "endLine": 772,
+          "params": [
+            "p"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UpgradeError",
+          "startLine": 92,
+          "endLine": 96,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getLatestVersion",
+          "callee": "lookup(locator, REGISTRIES)?.all",
+          "lineNumber": 16
+        },
+        {
+          "caller": "getLatestVersion",
+          "callee": "lookup",
+          "lineNumber": 16
+        },
+        {
+          "caller": "getLatestVersion",
+          "callee": "versions?.at",
+          "lineNumber": 17
+        },
+        {
+          "caller": "getLatestVersion",
+          "callee": "locator.split(\"@\").reverse",
+          "lineNumber": 20
+        },
+        {
+          "caller": "getLatestVersion",
+          "callee": "locator.split",
+          "lineNumber": 20
+        },
+        {
+          "caller": "getLatestVersion",
+          "callee": "tail.reverse().join",
+          "lineNumber": 22
+        },
+        {
+          "caller": "getLatestVersion",
+          "callee": "tail.reverse",
+          "lineNumber": 22
+        },
+        {
+          "caller": "withSlashAtEnd",
+          "callee": "str?.endsWith",
+          "lineNumber": 39
+        },
+        {
+          "caller": "withoutSlashAtEnd",
+          "callee": "str?.endsWith",
+          "lineNumber": 42
+        },
+        {
+          "caller": "withoutSlashAtEnd",
+          "callee": "str.substring",
+          "lineNumber": 42
+        },
+        {
+          "caller": "namespaceFromGit",
+          "callee": "(await exec(`git config --get remote.origin.url`)).stdout.split",
+          "lineNumber": 45
+        },
+        {
+          "caller": "namespaceFromGit",
+          "callee": "exec",
+          "lineNumber": 45
+        },
+        {
+          "caller": "namespaceFromGit",
+          "callee": "fetchUrlLine.startsWith",
+          "lineNumber": 52
+        },
+        {
+          "caller": "namespaceFromGit",
+          "callee": "fetchUrl.pathname.substring(1).replace(\".git\", \"\").trimEnd",
+          "lineNumber": 55
+        },
+        {
+          "caller": "namespaceFromGit",
+          "callee": "fetchUrl.pathname.substring(1).replace",
+          "lineNumber": 55
+        },
+        {
+          "caller": "namespaceFromGit",
+          "callee": "fetchUrl.pathname.substring",
+          "lineNumber": 55
+        },
+        {
+          "caller": "namespaceFromGit",
+          "callee": "fetchUrlLine.startsWith",
+          "lineNumber": 57
+        },
+        {
+          "caller": "namespaceFromGit",
+          "callee": "fetchUrlLine.split",
+          "lineNumber": 58
+        },
+        {
+          "caller": "namespaceFromGit",
+          "callee": "nsAndGit.split",
+          "lineNumber": 59
+        },
+        {
+          "caller": "namespaceFromGit",
+          "callee": "namespace.trimEnd",
+          "lineNumber": 60
+        },
+        {
+          "caller": "namespaceFromGit",
+          "callee": "fetchUrlLine.replace(\":\", \"/\").trimEnd",
+          "lineNumber": 62
+        },
+        {
+          "caller": "namespaceFromGit",
+          "callee": "fetchUrlLine.replace",
+          "lineNumber": 62
+        },
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 94
+        },
+        {
+          "caller": "updateDevTsImports",
+          "callee": "join",
+          "lineNumber": 106
+        },
+        {
+          "caller": "updateDevTsImports",
+          "callee": "Deno.cwd",
+          "lineNumber": 106
+        },
+        {
+          "caller": "updateDevTsImports",
+          "callee": "exists",
+          "lineNumber": 107
+        },
+        {
+          "caller": "updateDevTsImports",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 110
+        },
+        {
+          "caller": "updateDevTsImports",
+          "callee": "devTsContent.replaceAll",
+          "lineNumber": 111
+        },
+        {
+          "caller": "readImportMap",
+          "callee": "[\n        \"import_map.json\",\n        \"deno.json\",\n      ].map",
+          "lineNumber": 124
+        },
+        {
+          "caller": "readImportMap",
+          "callee": "join",
+          "lineNumber": 127
+        },
+        {
+          "caller": "readImportMap",
+          "callee": "Deno.cwd",
+          "lineNumber": 127
+        },
+        {
+          "caller": "readImportMap",
+          "callee": "Promise.all",
+          "lineNumber": 129
+        },
+        {
+          "caller": "readImportMap",
+          "callee": "Deno.readTextFile(importmapPath).then(JSON.parse).catch",
+          "lineNumber": 130
+        },
+        {
+          "caller": "readImportMap",
+          "callee": "Deno.readTextFile(importmapPath).then",
+          "lineNumber": 130
+        },
+        {
+          "caller": "readImportMap",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 130
+        },
+        {
+          "caller": "readImportMap",
+          "callee": "Deno.readTextFile(denojsonPath).then(JSON.parse).catch",
+          "lineNumber": 131
+        },
+        {
+          "caller": "readImportMap",
+          "callee": "Deno.readTextFile(denojsonPath).then",
+          "lineNumber": 131
+        },
+        {
+          "caller": "readImportMap",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 131
+        },
+        {
+          "caller": "updateImportMap",
+          "callee": "readImportMap",
+          "lineNumber": 145
+        },
+        {
+          "caller": "updateImportMap",
+          "callee": "JSON.stringify",
+          "lineNumber": 157
+        },
+        {
+          "caller": "siteId",
+          "callee": "join",
+          "lineNumber": 174
+        },
+        {
+          "caller": "siteId",
+          "callee": "Deno.cwd",
+          "lineNumber": 174
+        },
+        {
+          "caller": "siteId",
+          "callee": "exists",
+          "lineNumber": 175
+        },
+        {
+          "caller": "siteId",
+          "callee": "reg.exec",
+          "lineNumber": 179
+        },
+        {
+          "caller": "siteId",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 179
+        },
+        {
+          "caller": "createRuntimeTS",
+          "callee": "join",
+          "lineNumber": 186
+        },
+        {
+          "caller": "createRuntimeTS",
+          "callee": "Deno.cwd",
+          "lineNumber": 186
+        },
+        {
+          "caller": "createRuntimeTS",
+          "callee": "Promise.resolve",
+          "lineNumber": 188
+        },
+        {
+          "caller": "createSiteJson",
+          "callee": "siteId",
+          "lineNumber": 197
+        },
+        {
+          "caller": "createSiteJson",
+          "callee": "console.warn",
+          "lineNumber": 199
+        },
+        {
+          "caller": "createSiteJson",
+          "callee": "join",
+          "lineNumber": 201
+        },
+        {
+          "caller": "createSiteJson",
+          "callee": "Deno.cwd",
+          "lineNumber": 201
+        },
+        {
+          "caller": "createSiteJson",
+          "callee": "JSON.stringify",
+          "lineNumber": 202
+        },
+        {
+          "caller": "createSiteJson",
+          "callee": "withoutSlashAtEnd",
+          "lineNumber": 205
+        },
+        {
+          "caller": "addMainTsLiveEntrypoint",
+          "callee": "join",
+          "lineNumber": 220
+        },
+        {
+          "caller": "addMainTsLiveEntrypoint",
+          "callee": "Deno.cwd",
+          "lineNumber": 220
+        },
+        {
+          "caller": "addMainTsLiveEntrypoint",
+          "callee": "exists",
+          "lineNumber": 221
+        },
+        {
+          "caller": "addMainTsLiveEntrypoint",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 224
+        },
+        {
+          "caller": "addMainTsLiveEntrypoint",
+          "callee": "mainTsContent\n            .replace(\n              `import manifest from \"./fresh.gen.ts\";\\n`,\n              `import manifest from \"./live.gen.ts\";\\nimport { $live } from \"$live/mod.ts\";\\nimport site from \"./site.json\" assert { type: \"json\" };\\n`,\n            )\n            .replace",
+          "lineNumber": 230
+        },
+        {
+          "caller": "addMainTsLiveEntrypoint",
+          "callee": "mainTsContent\n            .replace",
+          "lineNumber": 230
+        },
+        {
+          "caller": "removeRoutesAndFreshGenTs",
+          "callee": "[\n        [\"routes\", \"[...catchall].tsx\"],\n        [\"routes\", \"_middleware.ts\"],\n        [\"routes\", \"index.tsx\"],\n        [\"fresh.gen.ts\"],\n      ].map",
+          "lineNumber": 243
+        },
+        {
+          "caller": "removeRoutesAndFreshGenTs",
+          "callee": "join",
+          "lineNumber": 248
+        },
+        {
+          "caller": "removeRoutesAndFreshGenTs",
+          "callee": "Deno.cwd",
+          "lineNumber": 248
+        },
+        {
+          "caller": "createSiteTs",
+          "callee": "join",
+          "lineNumber": 281
+        },
+        {
+          "caller": "createSiteTs",
+          "callee": "Deno.cwd",
+          "lineNumber": 281
+        },
+        {
+          "caller": "createSiteTs",
+          "callee": "format",
+          "lineNumber": 286
+        },
+        {
+          "caller": "createDecohubTs",
+          "callee": "join",
+          "lineNumber": 315
+        },
+        {
+          "caller": "createDecohubTs",
+          "callee": "Deno.cwd",
+          "lineNumber": 315
+        },
+        {
+          "caller": "createDecohubTs",
+          "callee": "format",
+          "lineNumber": 320
+        },
+        {
+          "caller": "createSWJs",
+          "callee": "join",
+          "lineNumber": 327
+        },
+        {
+          "caller": "createSWJs",
+          "callee": "Deno.cwd",
+          "lineNumber": 327
+        },
+        {
+          "caller": "createSWJs",
+          "callee": "format",
+          "lineNumber": 332
+        },
+        {
+          "caller": "overrideDevTs",
+          "callee": "join",
+          "lineNumber": 344
+        },
+        {
+          "caller": "overrideDevTs",
+          "callee": "Deno.cwd",
+          "lineNumber": 344
+        },
+        {
+          "caller": "overrideDevTs",
+          "callee": "format",
+          "lineNumber": 350
+        },
+        {
+          "caller": "overrideDenoJson",
+          "callee": "join",
+          "lineNumber": 361
+        },
+        {
+          "caller": "overrideDenoJson",
+          "callee": "Deno.cwd",
+          "lineNumber": 361
+        },
+        {
+          "caller": "overrideDenoJson",
+          "callee": "join",
+          "lineNumber": 362
+        },
+        {
+          "caller": "overrideDenoJson",
+          "callee": "Deno.cwd",
+          "lineNumber": 362
+        },
+        {
+          "caller": "overrideDenoJson",
+          "callee": "JSON.parse",
+          "lineNumber": 363
+        },
+        {
+          "caller": "overrideDenoJson",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 364
+        },
+        {
+          "caller": "overrideDenoJson",
+          "callee": "Deno.readTextFile(denoJson).then(JSON.parse).catch",
+          "lineNumber": 367
+        },
+        {
+          "caller": "overrideDenoJson",
+          "callee": "Deno.readTextFile(denoJson).then",
+          "lineNumber": 367
+        },
+        {
+          "caller": "overrideDenoJson",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 367
+        },
+        {
+          "caller": "overrideDenoJson",
+          "callee": "JSON.stringify",
+          "lineNumber": 375
+        },
+        {
+          "caller": "changeMainTs",
+          "callee": "join",
+          "lineNumber": 416
+        },
+        {
+          "caller": "changeMainTs",
+          "callee": "Deno.cwd",
+          "lineNumber": 416
+        },
+        {
+          "caller": "changeMainTs",
+          "callee": "format",
+          "lineNumber": 422
+        },
+        {
+          "caller": "changeRuntimeTs",
+          "callee": "join",
+          "lineNumber": 449
+        },
+        {
+          "caller": "changeRuntimeTs",
+          "callee": "Deno.cwd",
+          "lineNumber": 449
+        },
+        {
+          "caller": "changeRuntimeTs",
+          "callee": "format",
+          "lineNumber": 455
+        },
+        {
+          "caller": "deleteSiteJson",
+          "callee": "join",
+          "lineNumber": 467
+        },
+        {
+          "caller": "deleteSiteJson",
+          "callee": "Deno.cwd",
+          "lineNumber": 467
+        },
+        {
+          "caller": "deleteLiveGenTs",
+          "callee": "join",
+          "lineNumber": 472
+        },
+        {
+          "caller": "deleteLiveGenTs",
+          "callee": "Deno.cwd",
+          "lineNumber": 472
+        },
+        {
+          "caller": "createDecoDeploy",
+          "callee": "join",
+          "lineNumber": 555
+        },
+        {
+          "caller": "createDecoDeploy",
+          "callee": "Deno.cwd",
+          "lineNumber": 555
+        },
+        {
+          "caller": "createDecoDeploy",
+          "callee": "join",
+          "lineNumber": 557
+        },
+        {
+          "caller": "createDecoDeploy",
+          "callee": "Deno.cwd",
+          "lineNumber": 557
+        },
+        {
+          "caller": "createFreshConfigTs",
+          "callee": "Deno.readTextFile(\n        join(Deno.cwd(), \"main.ts\"),\n      )\n        .catch(() => \"\")\n        .then((src) =>\n          src.replace(\n            \"await start(manifest,\",\n            `import { defineConfig } from \"$fresh/server.ts\"\\nexport default defineConfig(`,\n          )\n        )\n        .then((src) =>\n          src.replace(\n            \"plugins: [\",\n            'build: { target: [\"chrome99\", \"firefox99\", \"safari12\"] },\\nplugins: [',\n          )\n        )\n        .then((src) =>\n          src.replace(`import { start } from \"$fresh/server.ts\";`, \"\")\n        )\n        .then",
+          "lineNumber": 583
+        },
+        {
+          "caller": "createFreshConfigTs",
+          "callee": "Deno.readTextFile(\n        join(Deno.cwd(), \"main.ts\"),\n      )\n        .catch(() => \"\")\n        .then((src) =>\n          src.replace(\n            \"await start(manifest,\",\n            `import { defineConfig } from \"$fresh/server.ts\"\\nexport default defineConfig(`,\n          )\n        )\n        .then((src) =>\n          src.replace(\n            \"plugins: [\",\n            'build: { target: [\"chrome99\", \"firefox99\", \"safari12\"] },\\nplugins: [',\n          )\n        )\n        .then",
+          "lineNumber": 583
+        },
+        {
+          "caller": "createFreshConfigTs",
+          "callee": "Deno.readTextFile(\n        join(Deno.cwd(), \"main.ts\"),\n      )\n        .catch(() => \"\")\n        .then((src) =>\n          src.replace(\n            \"await start(manifest,\",\n            `import { defineConfig } from \"$fresh/server.ts\"\\nexport default defineConfig(`,\n          )\n        )\n        .then",
+          "lineNumber": 583
+        },
+        {
+          "caller": "createFreshConfigTs",
+          "callee": "Deno.readTextFile(\n        join(Deno.cwd(), \"main.ts\"),\n      )\n        .catch(() => \"\")\n        .then",
+          "lineNumber": 583
+        },
+        {
+          "caller": "createFreshConfigTs",
+          "callee": "Deno.readTextFile(\n        join(Deno.cwd(), \"main.ts\"),\n      )\n        .catch",
+          "lineNumber": 583
+        },
+        {
+          "caller": "createFreshConfigTs",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 583
+        },
+        {
+          "caller": "createFreshConfigTs",
+          "callee": "join",
+          "lineNumber": 584
+        },
+        {
+          "caller": "createFreshConfigTs",
+          "callee": "Deno.cwd",
+          "lineNumber": 584
+        },
+        {
+          "caller": "createFreshConfigTs",
+          "callee": "src.replace",
+          "lineNumber": 588
+        },
+        {
+          "caller": "createFreshConfigTs",
+          "callee": "src.replace",
+          "lineNumber": 594
+        },
+        {
+          "caller": "createFreshConfigTs",
+          "callee": "src.replace",
+          "lineNumber": 600
+        },
+        {
+          "caller": "createFreshConfigTs",
+          "callee": "src.replace",
+          "lineNumber": 603
+        },
+        {
+          "caller": "createFreshConfigTs",
+          "callee": "join",
+          "lineNumber": 607
+        },
+        {
+          "caller": "createFreshConfigTs",
+          "callee": "Deno.cwd",
+          "lineNumber": 607
+        },
+        {
+          "caller": "createFreshConfigTs",
+          "callee": "join",
+          "lineNumber": 609
+        },
+        {
+          "caller": "createFreshConfigTs",
+          "callee": "Deno.cwd",
+          "lineNumber": 609
+        },
+        {
+          "caller": "createFreshConfigTs",
+          "callee": "format",
+          "lineNumber": 610
+        },
+        {
+          "caller": "createMainTS",
+          "callee": "join",
+          "lineNumber": 615
+        },
+        {
+          "caller": "createMainTS",
+          "callee": "Deno.cwd",
+          "lineNumber": 615
+        },
+        {
+          "caller": "createMainTS",
+          "callee": "join",
+          "lineNumber": 617
+        },
+        {
+          "caller": "createMainTS",
+          "callee": "Deno.cwd",
+          "lineNumber": 617
+        },
+        {
+          "caller": "createMainTS",
+          "callee": "format",
+          "lineNumber": 618
+        },
+        {
+          "caller": "createDevTS",
+          "callee": "join",
+          "lineNumber": 627
+        },
+        {
+          "caller": "createDevTS",
+          "callee": "Deno.cwd",
+          "lineNumber": 627
+        },
+        {
+          "caller": "createDevTS",
+          "callee": "join",
+          "lineNumber": 629
+        },
+        {
+          "caller": "createDevTS",
+          "callee": "Deno.cwd",
+          "lineNumber": 629
+        },
+        {
+          "caller": "createDevTS",
+          "callee": "format",
+          "lineNumber": 630
+        },
+        {
+          "caller": "createDotEnv",
+          "callee": "join",
+          "lineNumber": 645
+        },
+        {
+          "caller": "createDotEnv",
+          "callee": "Deno.cwd",
+          "lineNumber": 645
+        },
+        {
+          "caller": "createDotEnv",
+          "callee": "join",
+          "lineNumber": 647
+        },
+        {
+          "caller": "createDotEnv",
+          "callee": "Deno.cwd",
+          "lineNumber": 647
+        },
+        {
+          "caller": "createDotEnv",
+          "callee": "ns.split",
+          "lineNumber": 648
+        },
+        {
+          "caller": "getDenoJson",
+          "callee": "Promise.all(\n    paths.map((path) =>\n      Deno.readTextFile(join(Deno.cwd(), path)).then(JSON.parse).catch(() =>\n        null\n      )\n    ),\n  ).then",
+          "lineNumber": 665
+        },
+        {
+          "caller": "getDenoJson",
+          "callee": "Promise.all",
+          "lineNumber": 665
+        },
+        {
+          "caller": "getDenoJson",
+          "callee": "paths.map",
+          "lineNumber": 666
+        },
+        {
+          "caller": "getDenoJson",
+          "callee": "Deno.readTextFile(join(Deno.cwd(), path)).then(JSON.parse).catch",
+          "lineNumber": 667
+        },
+        {
+          "caller": "getDenoJson",
+          "callee": "Deno.readTextFile(join(Deno.cwd(), path)).then",
+          "lineNumber": 667
+        },
+        {
+          "caller": "getDenoJson",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 667
+        },
+        {
+          "caller": "getDenoJson",
+          "callee": "join",
+          "lineNumber": 667
+        },
+        {
+          "caller": "getDenoJson",
+          "callee": "Deno.cwd",
+          "lineNumber": 667
+        },
+        {
+          "caller": "getDenoJson",
+          "callee": "denoJSONs.findIndex",
+          "lineNumber": 672
+        },
+        {
+          "caller": "getDenoJson",
+          "callee": "join",
+          "lineNumber": 673
+        },
+        {
+          "caller": "getDenoJson",
+          "callee": "Deno.cwd",
+          "lineNumber": 673
+        },
+        {
+          "caller": "_requiresMinDecoVer",
+          "callee": "getDenoJson",
+          "lineNumber": 678
+        },
+        {
+          "caller": "_requiresMinDecoVer",
+          "callee": "lookup",
+          "lineNumber": 683
+        },
+        {
+          "caller": "_requiresMinDecoVer",
+          "callee": "url?.version",
+          "lineNumber": 684
+        },
+        {
+          "caller": "_requiresMinDecoVer",
+          "callee": "semver.lessThan",
+          "lineNumber": 689
+        },
+        {
+          "caller": "_requiresMinDecoVer",
+          "callee": "semver.parse",
+          "lineNumber": 689
+        },
+        {
+          "caller": "_requiresMinDecoVer",
+          "callee": "semver.parse",
+          "lineNumber": 689
+        },
+        {
+          "caller": "addNewTasks",
+          "callee": "getDenoJson",
+          "lineNumber": 710
+        },
+        {
+          "caller": "addNewTasks",
+          "callee": "exists",
+          "lineNumber": 711
+        },
+        {
+          "caller": "addNewTasks",
+          "callee": "join",
+          "lineNumber": 711
+        },
+        {
+          "caller": "addNewTasks",
+          "callee": "Deno.cwd",
+          "lineNumber": 711
+        },
+        {
+          "caller": "addNewTasks",
+          "callee": "JSON.stringify",
+          "lineNumber": 724
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "isDelete",
+          "lineNumber": 763
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "Deno.remove(p.path).catch",
+          "lineNumber": 764
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "Deno.remove",
+          "lineNumber": 764
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "Deno.remove(p.from).catch",
+          "lineNumber": 767
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "Deno.remove",
+          "lineNumber": 767
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "ensureFile",
+          "lineNumber": 769
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 770
+        },
+        {
+          "caller": "denoRun",
+          "callee": "new Deno.Command(Deno.execPath(), {\n        args: [\"run\", \"-Ar\", ...cmd.split(\" \")],\n        stdout: \"inherit\",\n      }).spawn",
+          "lineNumber": 782
+        },
+        {
+          "caller": "denoRun",
+          "callee": "Deno.execPath",
+          "lineNumber": 782
+        },
+        {
+          "caller": "denoRun",
+          "callee": "cmd.split",
+          "lineNumber": 783
+        },
+        {
+          "caller": "denoRun",
+          "callee": "setTimeout",
+          "lineNumber": 786
+        },
+        {
+          "caller": "denoRun",
+          "callee": "process.kill",
+          "lineNumber": 788
+        },
+        {
+          "caller": "denoRun",
+          "callee": "console.error",
+          "lineNumber": 790
+        },
+        {
+          "caller": "denoRun",
+          "callee": "console.error",
+          "lineNumber": 800
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "scripts/utils.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "splitCommand",
+          "startLine": 1,
+          "endLine": 27,
+          "params": [
+            "command"
+          ]
+        },
+        {
+          "name": "exec",
+          "startLine": 28,
+          "endLine": 74,
+          "params": [
+            "command"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "exec",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "splitCommand",
+          "callee": "args.push",
+          "lineNumber": 12
+        },
+        {
+          "caller": "splitCommand",
+          "callee": "args.push",
+          "lineNumber": 23
+        },
+        {
+          "caller": "exec",
+          "callee": "command.split(\"|\").map",
+          "lineNumber": 31
+        },
+        {
+          "caller": "exec",
+          "callee": "command.split",
+          "lineNumber": 31
+        },
+        {
+          "caller": "exec",
+          "callee": "cmd.trim",
+          "lineNumber": 31
+        },
+        {
+          "caller": "exec",
+          "callee": "splitCommand",
+          "lineNumber": 37
+        },
+        {
+          "caller": "exec",
+          "callee": "new Deno.Command(cmdName, {\n        args: cmdArgs,\n        stdin: \"piped\",\n        stdout: \"piped\",\n        stderr: \"piped\",\n      }).spawn",
+          "lineNumber": 40
+        },
+        {
+          "caller": "exec",
+          "callee": "cmdProcess.stdin!.getWriter",
+          "lineNumber": 46
+        },
+        {
+          "caller": "exec",
+          "callee": "writer.write",
+          "lineNumber": 47
+        },
+        {
+          "caller": "exec",
+          "callee": "writer.close",
+          "lineNumber": 48
+        },
+        {
+          "caller": "exec",
+          "callee": "new Deno.Command(cmdName, {\n        args: cmdArgs,\n        stdout: \"piped\",\n        stderr: \"piped\",\n      }).spawn",
+          "lineNumber": 51
+        },
+        {
+          "caller": "exec",
+          "callee": "lastProcess.output",
+          "lineNumber": 58
+        },
+        {
+          "caller": "exec",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 63
+        },
+        {
+          "caller": "exec",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 66
+        },
+        {
+          "caller": "exec",
+          "callee": "console.error",
+          "lineNumber": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/filesystem.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "functions": [
+        {
+          "name": "fileSeparatorToSlash",
+          "startLine": 4,
+          "endLine": 6,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "fromFileUrlOrNoop",
+          "startLine": 8,
+          "endLine": 14,
+          "params": [
+            "urlString"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "exists",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "fileSeparatorToSlash",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "fromFileUrlOrNoop",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fileSeparatorToSlash",
+          "callee": "path.replaceAll",
+          "lineNumber": 5
+        },
+        {
+          "caller": "fromFileUrlOrNoop",
+          "callee": "fileSeparatorToSlash",
+          "lineNumber": 11
+        },
+        {
+          "caller": "fromFileUrlOrNoop",
+          "callee": "fromFileUrl",
+          "lineNumber": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/hasher.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 137,
+      "nonEmptyLines": 118,
+      "classes": [
+        {
+          "name": "MurmurHash3",
+          "startLine": 20,
+          "endLine": 137,
+          "methods": [
+            "constructor",
+            "hash",
+            "result",
+            "reset"
+          ],
+          "properties": [
+            "len",
+            "rem",
+            "h1",
+            "k1"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MurmurHash3",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this.reset",
+          "lineNumber": 32
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.hash",
+          "lineNumber": 34
+        },
+        {
+          "caller": "hash",
+          "callee": "key.charCodeAt",
+          "lineNumber": 54
+        },
+        {
+          "caller": "hash",
+          "callee": "key.charCodeAt",
+          "lineNumber": 56
+        },
+        {
+          "caller": "hash",
+          "callee": "key.charCodeAt",
+          "lineNumber": 58
+        },
+        {
+          "caller": "hash",
+          "callee": "key.charCodeAt",
+          "lineNumber": 60
+        },
+        {
+          "caller": "hash",
+          "callee": "key.charCodeAt",
+          "lineNumber": 61
+        },
+        {
+          "caller": "hash",
+          "callee": "key.charCodeAt",
+          "lineNumber": 81
+        },
+        {
+          "caller": "hash",
+          "callee": "key.charCodeAt",
+          "lineNumber": 82
+        },
+        {
+          "caller": "hash",
+          "callee": "key.charCodeAt",
+          "lineNumber": 83
+        },
+        {
+          "caller": "hash",
+          "callee": "key.charCodeAt",
+          "lineNumber": 84
+        },
+        {
+          "caller": "hash",
+          "callee": "key.charCodeAt",
+          "lineNumber": 91
+        },
+        {
+          "caller": "hash",
+          "callee": "key.charCodeAt",
+          "lineNumber": 93
+        },
+        {
+          "caller": "hash",
+          "callee": "key.charCodeAt",
+          "lineNumber": 95
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "utils/json.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "stringifyForWrite",
+          "startLine": 1,
+          "endLine": 5,
+          "params": [
+            "object"
+          ]
+        },
+        {
+          "name": "stableStringify",
+          "startLine": 12,
+          "endLine": 28,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "stringifyForWrite",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "stableStringify",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "stringifyForWrite",
+          "callee": "JSON.stringify",
+          "lineNumber": 4
+        },
+        {
+          "caller": "stableStringify",
+          "callee": "JSON.stringify",
+          "lineNumber": 14
+        },
+        {
+          "caller": "stableStringify",
+          "callee": "Array.isArray",
+          "lineNumber": 17
+        },
+        {
+          "caller": "stableStringify",
+          "callee": "value.map((item) => stableStringify(item)).join",
+          "lineNumber": 18
+        },
+        {
+          "caller": "stableStringify",
+          "callee": "value.map",
+          "lineNumber": 18
+        },
+        {
+          "caller": "stableStringify",
+          "callee": "stableStringify",
+          "lineNumber": 18
+        },
+        {
+          "caller": "stableStringify",
+          "callee": "Object.keys(value).sort",
+          "lineNumber": 21
+        },
+        {
+          "caller": "stableStringify",
+          "callee": "Object.keys",
+          "lineNumber": 21
+        },
+        {
+          "caller": "stableStringify",
+          "callee": "sortedKeys.map",
+          "lineNumber": 22
+        },
+        {
+          "caller": "stableStringify",
+          "callee": "JSON.stringify",
+          "lineNumber": 24
+        },
+        {
+          "caller": "stableStringify",
+          "callee": "stableStringify",
+          "lineNumber": 24
+        },
+        {
+          "caller": "stableStringify",
+          "callee": "pairs.join",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/rand.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "functions": [
+        {
+          "name": "randId",
+          "startLine": 4,
+          "endLine": 6,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "randId",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "randId",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

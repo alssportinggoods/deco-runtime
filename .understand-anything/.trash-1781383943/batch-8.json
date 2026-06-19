@@ -1,0 +1,479 @@
+{
+  "nodes": [
+    {
+      "id": "file:blocks/mod.ts",
+      "type": "file",
+      "name": "mod.ts",
+      "filePath": "blocks/mod.ts",
+      "summary": "Barrel module re-exporting all block type definitions (loaders, sections, pages, matchers, handlers, flags, workflows) and their associated types for the Deco block system.",
+      "tags": ["barrel", "entry-point", "type-definition", "block-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:blocks/page.tsx",
+      "type": "file",
+      "name": "page.tsx",
+      "filePath": "blocks/page.tsx",
+      "summary": "Defines the Page block type, wrapping section blocks into renderable route-level page components.",
+      "tags": ["block-system", "page", "component", "data-model"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:hooks/useScript.ts",
+      "type": "file",
+      "name": "useScript.ts",
+      "filePath": "hooks/useScript.ts",
+      "summary": "Preact hook that serializes a function to a minified client-side script string (with caching) and exposes it as inline JS or a data URI for HTMX-driven interactivity.",
+      "tags": ["hook", "utility", "serialization", "minification"],
+      "complexity": "moderate",
+      "languageNotes": "Uses terser to minify serialized function bodies with an in-memory promise cache."
+    },
+    {
+      "id": "file:mod.ts",
+      "type": "file",
+      "name": "mod.ts",
+      "filePath": "mod.ts",
+      "summary": "Top-level public entry point of @deco/deco, re-exporting the core framework surface: Deco class, context, blocks, resolver, schema, and fetch utilities.",
+      "tags": ["barrel", "entry-point", "public-api"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:observability/mod.ts",
+      "type": "file",
+      "name": "mod.ts",
+      "filePath": "observability/mod.ts",
+      "summary": "Observability barrel exporting the OpenTelemetry logger, meter, and ValueType used across the framework for tracing and metrics.",
+      "tags": ["barrel", "observability", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/deps.ts",
+      "type": "file",
+      "name": "deps.ts",
+      "filePath": "runtime/deps.ts",
+      "summary": "Runtime dependency barrel re-exporting Hono types and the Deno serveStatic/upgradeWebSocket helpers used by the HTTP runtime.",
+      "tags": ["barrel", "dependencies", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/errors.ts",
+      "type": "file",
+      "name": "errors.ts",
+      "filePath": "runtime/errors.ts",
+      "summary": "HTTP error primitives: an HttpError class plus status/short-circuit/redirect helpers for producing structured error responses in the request pipeline.",
+      "tags": ["utility", "error-handling", "http", "validation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:runtime/features/preview.tsx",
+      "type": "file",
+      "name": "preview.tsx",
+      "filePath": "runtime/features/preview.tsx",
+      "summary": "Implements the block preview feature, parsing preview URLs and resolving a block instance for rendering in the CMS preview surface.",
+      "tags": ["feature", "preview", "block-system"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:runtime/features/render.tsx",
+      "type": "file",
+      "name": "render.tsx",
+      "filePath": "runtime/features/render.tsx",
+      "summary": "Core render feature that resolves a page from the request URL, walks the resolve chain, handles errors/redirects, and produces the final HTML response with injected scripts.",
+      "tags": ["feature", "rendering", "resolver", "ssr"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:runtime/features/styles.css.ts",
+      "type": "file",
+      "name": "styles.css.ts",
+      "filePath": "runtime/features/styles.css.ts",
+      "summary": "Loads the framework's bundled CSS stylesheet from disk to serve as the preview/editor styles.",
+      "tags": ["utility", "styles", "feature"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/fetch/fetchLog.ts",
+      "type": "file",
+      "name": "fetchLog.ts",
+      "filePath": "runtime/fetch/fetchLog.ts",
+      "summary": "Wraps a fetcher to log outgoing fetch requests with timing information via the configurable logger.",
+      "tags": ["utility", "logging", "fetch", "instrumentation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/fetch/mod.ts",
+      "type": "file",
+      "name": "mod.ts",
+      "filePath": "runtime/fetch/mod.ts",
+      "summary": "Fetch module entry point exposing the logging-instrumented fetch wrapper for runtime HTTP calls.",
+      "tags": ["barrel", "fetch", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/handler.tsx",
+      "type": "file",
+      "name": "handler.tsx",
+      "filePath": "runtime/handler.tsx",
+      "summary": "HTTP handler factory that wires the Hono app with Deco middleware, the framework renderer, route handlers, and HTMX bindings into a single fetch handler.",
+      "tags": ["api-handler", "factory", "http", "middleware"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:runtime/htmx/Bindings.tsx",
+      "type": "file",
+      "name": "Bindings.tsx",
+      "filePath": "runtime/htmx/Bindings.tsx",
+      "summary": "Provides HTMX framework bindings including the Head component and section binding helpers used to integrate HTMX with Deco sections.",
+      "tags": ["htmx", "component", "binding", "integration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/htmx/Renderer.tsx",
+      "type": "file",
+      "name": "Renderer.tsx",
+      "filePath": "runtime/htmx/Renderer.tsx",
+      "summary": "HTMX renderer that serializes a page component to an HTML string, injecting collected head elements into the document.",
+      "tags": ["htmx", "rendering", "ssr"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:runtime/htmx/fileCache.ts",
+      "type": "file",
+      "name": "fileCache.ts",
+      "filePath": "runtime/htmx/fileCache.ts",
+      "summary": "In-memory static file cache that reads files from disk, computes ETags, and serves cached file content for the HTMX static asset server.",
+      "tags": ["utility", "caching", "static-assets"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:runtime/htmx/mod.tsx",
+      "type": "file",
+      "name": "mod.tsx",
+      "filePath": "runtime/htmx/mod.tsx",
+      "summary": "HTMX framework integration entry point that sets up the renderer, static file serving, and a WebSocket-based hot-module-reload channel for the Deco runtime.",
+      "tags": ["htmx", "integration", "entry-point", "websocket"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:runtime/htmx/serveStatic.ts",
+      "type": "file",
+      "name": "serveStatic.ts",
+      "filePath": "runtime/htmx/serveStatic.ts",
+      "summary": "Static asset middleware that resolves cache-busted asset URLs, serves cached files with content-type and caching headers, and handles redirects for the HTMX runtime.",
+      "tags": ["middleware", "static-assets", "caching", "http"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:runtime/middleware.ts",
+      "type": "file",
+      "name": "middleware.ts",
+      "filePath": "runtime/middleware.ts",
+      "summary": "Central request middleware pipeline: prepares request-scoped state, sets up OpenTelemetry tracing, handles cookies/flags, CORS, server-timing, and assembles the response headers for every Deco request.",
+      "tags": ["middleware", "request-pipeline", "observability", "http"],
+      "complexity": "complex",
+      "languageNotes": "Largest file in the batch; orchestrates the full per-request lifecycle including span management and segment cookies."
+    },
+
+    {
+      "id": "function:hooks/useScript.ts:minify",
+      "type": "function",
+      "name": "minify",
+      "filePath": "hooks/useScript.ts",
+      "lineRange": [60, 78],
+      "summary": "Minifies a JS code string using terser, memoizing results in a cache to avoid repeated work.",
+      "tags": ["utility", "minification", "caching"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:hooks/useScript.ts:useScript",
+      "type": "function",
+      "name": "useScript",
+      "filePath": "hooks/useScript.ts",
+      "lineRange": [88, 95],
+      "summary": "Serializes a function to a minified, parameter-bound inline script string for client-side execution.",
+      "tags": ["hook", "serialization"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:runtime/errors.ts:status",
+      "type": "function",
+      "name": "status",
+      "filePath": "runtime/errors.ts",
+      "lineRange": [24, 39],
+      "summary": "Builds a short-circuiting HTTP response for a given status code with JSON body and headers.",
+      "tags": ["utility", "http", "error-handling"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:runtime/errors.ts:HttpError",
+      "type": "class",
+      "name": "HttpError",
+      "filePath": "runtime/errors.ts",
+      "lineRange": [4, 10],
+      "summary": "Error subclass carrying an HTTP status code for structured error propagation through the request pipeline.",
+      "tags": ["error-handling", "data-model", "http"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:runtime/features/preview.tsx:preview",
+      "type": "function",
+      "name": "preview",
+      "filePath": "runtime/features/preview.tsx",
+      "lineRange": [25, 60],
+      "summary": "Resolves a block from a preview URL and props, rendering it for the CMS preview surface.",
+      "tags": ["feature", "preview", "resolver"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/features/render.tsx:render",
+      "type": "function",
+      "name": "render",
+      "filePath": "runtime/features/render.tsx",
+      "lineRange": [36, 171],
+      "summary": "Resolves a page from the request, processes the resolve chain with error/redirect handling, and returns the final SSR HTML response.",
+      "tags": ["feature", "rendering", "resolver", "ssr"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:runtime/fetch/fetchLog.ts:createFetch",
+      "type": "function",
+      "name": "createFetch",
+      "filePath": "runtime/fetch/fetchLog.ts",
+      "lineRange": [7, 26],
+      "summary": "Wraps a fetcher to time and log outgoing requests via the configured logger.",
+      "tags": ["utility", "logging", "fetch"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:runtime/handler.tsx:handlerFor",
+      "type": "function",
+      "name": "handlerFor",
+      "filePath": "runtime/handler.tsx",
+      "lineRange": [131, 179],
+      "summary": "Constructs the Hono fetch handler for a Deco instance, registering middleware, renderer, routes, and optional HTMX bindings.",
+      "tags": ["api-handler", "factory", "http"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/handler.tsx:useFramework",
+      "type": "function",
+      "name": "useFramework",
+      "filePath": "runtime/handler.tsx",
+      "lineRange": [120, 122],
+      "summary": "Hook exposing the current framework context to components and routes.",
+      "tags": ["hook", "context"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:runtime/htmx/Renderer.tsx:renderFn",
+      "type": "function",
+      "name": "renderFn",
+      "filePath": "runtime/htmx/Renderer.tsx",
+      "lineRange": [10, 59],
+      "summary": "Serializes a page component to an HTML string and injects collected head elements into the document.",
+      "tags": ["htmx", "rendering", "ssr"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/htmx/fileCache.ts:readFile",
+      "type": "function",
+      "name": "readFile",
+      "filePath": "runtime/htmx/fileCache.ts",
+      "lineRange": [19, 31],
+      "summary": "Reads a file from disk, computes its ETag, and stores the content in the in-memory file cache.",
+      "tags": ["utility", "caching", "static-assets"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:runtime/htmx/mod.tsx:HTMX",
+      "type": "function",
+      "name": "HTMX",
+      "filePath": "runtime/htmx/mod.tsx",
+      "lineRange": [86, 130],
+      "summary": "Configures the HTMX framework binding: registers static file serving, the renderer, and a WebSocket HMR endpoint on the Hono app.",
+      "tags": ["htmx", "integration", "websocket"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/htmx/serveStatic.ts:staticFiles",
+      "type": "function",
+      "name": "staticFiles",
+      "filePath": "runtime/htmx/serveStatic.ts",
+      "lineRange": [50, 118],
+      "summary": "Hono middleware serving cached static assets with content-type detection, cache-busting, and caching headers.",
+      "tags": ["middleware", "static-assets", "http"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:runtime/htmx/serveStatic.ts:asset",
+      "type": "function",
+      "name": "asset",
+      "filePath": "runtime/htmx/serveStatic.ts",
+      "lineRange": [26, 46],
+      "summary": "Rewrites asset URLs to include cache-bust query parameters for deterministic caching.",
+      "tags": ["utility", "static-assets", "caching"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/middleware.ts:middlewareFor",
+      "type": "function",
+      "name": "middlewareFor",
+      "filePath": "runtime/middleware.ts",
+      "lineRange": [217, 477],
+      "summary": "Builds the main per-request middleware for a Deco instance, handling state preparation, tracing spans, cookies, flags, CORS, server-timing, and response header assembly.",
+      "tags": ["middleware", "request-pipeline", "observability"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:runtime/middleware.ts:createHandler",
+      "type": "function",
+      "name": "createHandler",
+      "filePath": "runtime/middleware.ts",
+      "lineRange": [79, 106],
+      "summary": "Wraps a handler with error capture and UUID-tagged error logging for the middleware pipeline.",
+      "tags": ["middleware", "error-handling", "factory"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/middleware.ts:proxyState",
+      "type": "function",
+      "name": "proxyState",
+      "filePath": "runtime/middleware.ts",
+      "lineRange": [34, 51],
+      "summary": "Creates a proxy over the request context state so reads/writes route through Hono's context and route params.",
+      "tags": ["utility", "context", "request-pipeline"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {"source": "file:blocks/page.tsx", "target": "file:blocks/section.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:blocks/page.tsx", "target": "file:engine/block.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/deps.ts", "target": "file:blocks/page.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/features/preview.tsx", "target": "file:blocks/page.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/features/preview.tsx", "target": "file:runtime/mod.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/features/preview.tsx", "target": "file:types.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/features/render.tsx", "target": "file:blocks/page.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/features/render.tsx", "target": "file:components/section.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/features/render.tsx", "target": "file:engine/core/resolver.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/features/render.tsx", "target": "file:engine/errors.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/features/render.tsx", "target": "file:hooks/useScript.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/features/render.tsx", "target": "file:observability/mod.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/features/render.tsx", "target": "file:runtime/handler.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/features/render.tsx", "target": "file:runtime/mod.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/features/render.tsx", "target": "file:types.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/fetch/fetchLog.ts", "target": "file:utils/log.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/fetch/mod.ts", "target": "file:runtime/fetch/fetchLog.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/handler.tsx", "target": "file:components/section.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:runtime/deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:runtime/htmx/mod.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:runtime/middleware.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:runtime/mod.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:runtime/routes/_meta.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:runtime/routes/batchInvoke.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:runtime/routes/blockPreview.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:runtime/routes/entrypoint.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:runtime/routes/inspect.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:runtime/routes/invoke.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:runtime/routes/previews.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:runtime/routes/release.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:runtime/routes/reload.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:runtime/routes/render.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:runtime/routes/styles.css.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:runtime/routes/workflow.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:types.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/handler.tsx", "target": "file:utils/patched_fetch.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/htmx/Bindings.tsx", "target": "file:components/section.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/htmx/Bindings.tsx", "target": "file:hooks/useSection.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/htmx/Renderer.tsx", "target": "file:runtime/deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/htmx/Renderer.tsx", "target": "file:runtime/htmx/Bindings.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/htmx/mod.tsx", "target": "file:deco.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/htmx/mod.tsx", "target": "file:runtime/deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/htmx/mod.tsx", "target": "file:runtime/handler.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/htmx/mod.tsx", "target": "file:runtime/htmx/Bindings.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/htmx/mod.tsx", "target": "file:runtime/htmx/Renderer.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/htmx/mod.tsx", "target": "file:runtime/htmx/serveStatic.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/htmx/mod.tsx", "target": "file:runtime/middleware.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/htmx/mod.tsx", "target": "file:types.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/htmx/serveStatic.ts", "target": "file:deco.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/htmx/serveStatic.ts", "target": "file:runtime/deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/htmx/serveStatic.ts", "target": "file:runtime/htmx/fileCache.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/middleware.ts", "target": "file:blocks/matcher.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middleware.ts", "target": "file:blocks/utils.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middleware.ts", "target": "file:deco.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middleware.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middleware.ts", "target": "file:observability/http.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middleware.ts", "target": "file:observability/mod.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middleware.ts", "target": "file:observability/otel/context.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middleware.ts", "target": "file:runtime/deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middleware.ts", "target": "file:runtime/errors.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middleware.ts", "target": "file:runtime/fetch/fetchLog.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middleware.ts", "target": "file:runtime/middlewares/liveness.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middleware.ts", "target": "file:runtime/mod.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middleware.ts", "target": "file:types.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middleware.ts", "target": "file:utils/admin.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middleware.ts", "target": "file:utils/cookies.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middleware.ts", "target": "file:utils/http.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middleware.ts", "target": "file:utils/log.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middleware.ts", "target": "file:utils/object.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:hooks/useScript.ts", "target": "function:hooks/useScript.ts:minify", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:hooks/useScript.ts", "target": "function:hooks/useScript.ts:useScript", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:hooks/useScript.ts", "target": "function:hooks/useScript.ts:minify", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:hooks/useScript.ts", "target": "function:hooks/useScript.ts:useScript", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:runtime/errors.ts", "target": "class:runtime/errors.ts:HttpError", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/errors.ts", "target": "function:runtime/errors.ts:status", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/errors.ts", "target": "class:runtime/errors.ts:HttpError", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:runtime/errors.ts", "target": "function:runtime/errors.ts:status", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:runtime/features/preview.tsx", "target": "function:runtime/features/preview.tsx:preview", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/features/preview.tsx", "target": "function:runtime/features/preview.tsx:preview", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:runtime/features/render.tsx", "target": "function:runtime/features/render.tsx:render", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/features/render.tsx", "target": "function:runtime/features/render.tsx:render", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:runtime/fetch/fetchLog.ts", "target": "function:runtime/fetch/fetchLog.ts:createFetch", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/fetch/fetchLog.ts", "target": "function:runtime/fetch/fetchLog.ts:createFetch", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:runtime/handler.tsx", "target": "function:runtime/handler.tsx:handlerFor", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/handler.tsx", "target": "function:runtime/handler.tsx:useFramework", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/handler.tsx", "target": "function:runtime/handler.tsx:handlerFor", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:runtime/handler.tsx", "target": "function:runtime/handler.tsx:useFramework", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:runtime/htmx/Renderer.tsx", "target": "function:runtime/htmx/Renderer.tsx:renderFn", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/htmx/Renderer.tsx", "target": "function:runtime/htmx/Renderer.tsx:renderFn", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:runtime/htmx/fileCache.ts", "target": "function:runtime/htmx/fileCache.ts:readFile", "type": "contains", "direction": "forward", "weight": 1.0},
+
+    {"source": "file:runtime/htmx/mod.tsx", "target": "function:runtime/htmx/mod.tsx:HTMX", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/htmx/mod.tsx", "target": "function:runtime/htmx/mod.tsx:HTMX", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:runtime/htmx/serveStatic.ts", "target": "function:runtime/htmx/serveStatic.ts:staticFiles", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/htmx/serveStatic.ts", "target": "function:runtime/htmx/serveStatic.ts:asset", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/htmx/serveStatic.ts", "target": "function:runtime/htmx/serveStatic.ts:staticFiles", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:runtime/htmx/serveStatic.ts", "target": "function:runtime/htmx/serveStatic.ts:asset", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:runtime/middleware.ts", "target": "function:runtime/middleware.ts:middlewareFor", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/middleware.ts", "target": "function:runtime/middleware.ts:createHandler", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/middleware.ts", "target": "function:runtime/middleware.ts:proxyState", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/middleware.ts", "target": "function:runtime/middleware.ts:middlewareFor", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:runtime/middleware.ts", "target": "function:runtime/middleware.ts:createHandler", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:runtime/middleware.ts", "target": "function:runtime/middleware.ts:proxyState", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "function:runtime/htmx/serveStatic.ts:staticFiles", "target": "function:runtime/htmx/fileCache.ts:readFile", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:runtime/features/render.tsx:render", "target": "function:hooks/useScript.ts:useScript", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:runtime/htmx/mod.tsx:HTMX", "target": "function:runtime/htmx/Renderer.tsx:renderFn", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:runtime/htmx/mod.tsx:HTMX", "target": "function:runtime/htmx/serveStatic.ts:staticFiles", "type": "calls", "direction": "forward", "weight": 0.8}
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "fixedSectionOk": true,
+  "nodesRecovered": 17,
+  "edgesRestored": 27,
+  "crossBatchEdgesAdded": 0,
+  "typesRemapped": 0,
+  "complexityRemapped": 0,
+  "notes": [
+    "Merge script's mechanical fixes look reasonable; assembled graph had 0 dangling edges on entry.",
+    "Recovered 17 function nodes that were referenced by exports/contains/calls edges but never emitted as nodes. All 17 verified to genuinely exist in source. Synthesized with summary='No summary available', tags=['untagged'], complexity='moderate'.",
+    "1 referenced function was a hallucination and was NOT recovered: function:runtime/caches/cacheWriteWorker.ts:createFileSystemCache. createFileSystemCache exists only in runtime/caches/fileSystem.ts (already a node), not in cacheWriteWorker.ts. Its dropped edge stays dropped.",
+    "1 tested_by edge (test-test orphan pair) reported dropped by the merge script was not recoverable and remains dropped.",
+    "Fixed 5 imports edges that pointed to non-existent 'file:deno.json' by retargeting to existing 'config:deno.json' (observability/otel/config.ts, runtime/features/meta.ts, utils/http.ts, scripts/dev.ts, scripts/run.ts). Restored as part of the 27 edges.",
+    "Cross-batch import-map verification: all file-to-file import relationships in import-map.json already had corresponding imports edges; no speculative edges added.",
+    "Final graph: 648 nodes, 1389 edges, 0 dangling edges.",
+    "No unknown node types or unknown complexity values were present, so no type/complexity remapping was needed."
+  ]
+}

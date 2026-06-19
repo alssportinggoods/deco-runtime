@@ -1,0 +1,241 @@
+{
+  "nodes": [
+    {
+      "id": "file:scripts/dev.ts",
+      "type": "file",
+      "name": "dev.ts",
+      "filePath": "scripts/dev.ts",
+      "summary": "Development entry-point script that bootstraps a local Deco engine for running against a deco site during development.",
+      "tags": ["entry-point", "script", "development"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/run.ts",
+      "type": "file",
+      "name": "run.ts",
+      "filePath": "scripts/run.ts",
+      "summary": "Small runner script that launches the Deco engine using configuration from deno.json.",
+      "tags": ["entry-point", "script", "runner"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/tailwindChecker.ts",
+      "type": "file",
+      "name": "tailwindChecker.ts",
+      "filePath": "scripts/tailwindChecker.ts",
+      "summary": "Utility script that compares Tailwind CSS classes referenced in source code against those present in a compiled CSS file to detect missing or unused classes.",
+      "tags": ["script", "tooling", "validation", "tailwind"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:scripts/test-sandbox-ai.ts",
+      "type": "file",
+      "name": "test-sandbox-ai.ts",
+      "filePath": "scripts/test-sandbox-ai.ts",
+      "summary": "Integration test script that drives a sandbox AI environment, waiting for Git readiness and issuing HTTP requests to validate behavior.",
+      "tags": ["script", "test", "integration", "ai"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:scripts/update.run.ts",
+      "type": "file",
+      "name": "update.run.ts",
+      "filePath": "scripts/update.run.ts",
+      "summary": "Thin runner that invokes the codemod-based update routine.",
+      "tags": ["entry-point", "script", "codemod"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/update.ts",
+      "type": "file",
+      "name": "update.ts",
+      "filePath": "scripts/update.ts",
+      "summary": "Single-line update script entry that re-exports or triggers the update workflow.",
+      "tags": ["script", "update", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:utils/dataURI.ts",
+      "type": "file",
+      "name": "dataURI.ts",
+      "filePath": "utils/dataURI.ts",
+      "summary": "Helpers for building data URIs, including encoding inline scripts with parameters as base64 data URIs for client-side embedding.",
+      "tags": ["utility", "encoding", "serialization"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:utils/device.ts",
+      "type": "file",
+      "name": "device.ts",
+      "filePath": "utils/device.ts",
+      "summary": "Defines the Device type used to represent client device categories across the framework.",
+      "tags": ["utility", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:utils/encoding.ts",
+      "type": "file",
+      "name": "encoding.ts",
+      "filePath": "utils/encoding.ts",
+      "summary": "Encoding helper that computes a hex-encoded SHA-256 hash of a string for cache keys and content addressing.",
+      "tags": ["utility", "encoding", "hashing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:utils/fetchAPI.ts",
+      "type": "file",
+      "name": "fetchAPI.ts",
+      "filePath": "utils/fetchAPI.ts",
+      "summary": "Thin fetch wrapper that performs an HTTP request and returns parsed JSON with basic error handling.",
+      "tags": ["utility", "fetch", "api-handler"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:utils/page.ts",
+      "type": "file",
+      "name": "page.ts",
+      "filePath": "utils/page.ts",
+      "summary": "Page-related utilities including entity-name regex, blocked island schemas, filename extraction, and island validation helpers.",
+      "tags": ["utility", "validation", "page"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:utils/unique.ts",
+      "type": "file",
+      "name": "unique.ts",
+      "filePath": "utils/unique.ts",
+      "summary": "Array de-duplication helpers: unique for primitive arrays and uniqBy for keyed deduplication.",
+      "tags": ["utility", "array", "deduplication"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/tailwindChecker.ts:getAllClassesInCss",
+      "type": "function",
+      "name": "getAllClassesInCss",
+      "filePath": "scripts/tailwindChecker.ts",
+      "lineRange": [13, 30],
+      "summary": "Fetches a CSS file by URL and extracts the set of Tailwind class names defined within it.",
+      "tags": ["utility", "tailwind", "parsing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/tailwindChecker.ts:getAllClassesInCode",
+      "type": "function",
+      "name": "getAllClassesInCode",
+      "filePath": "scripts/tailwindChecker.ts",
+      "lineRange": [32, 88],
+      "summary": "Walks source folders, extracts Tailwind class usages from code, and collects classes not present in the compiled CSS.",
+      "tags": ["utility", "tailwind", "filesystem", "parsing"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/tailwindChecker.ts:compareClasses",
+      "type": "function",
+      "name": "compareClasses",
+      "filePath": "scripts/tailwindChecker.ts",
+      "lineRange": [107, 138],
+      "summary": "Orchestrates the comparison between CSS and code-referenced Tailwind classes and reports missing classes to the console.",
+      "tags": ["utility", "tailwind", "reporting"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/tailwindChecker.ts:showLoadingAnimation",
+      "type": "function",
+      "name": "showLoadingAnimation",
+      "filePath": "scripts/tailwindChecker.ts",
+      "lineRange": [93, 105],
+      "summary": "Renders an animated spinner to stdout while class comparison runs.",
+      "tags": ["utility", "cli", "animation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/test-sandbox-ai.ts:waitForGitReady",
+      "type": "function",
+      "name": "waitForGitReady",
+      "filePath": "scripts/test-sandbox-ai.ts",
+      "lineRange": [42, 77],
+      "summary": "Polls the sandbox endpoint with a timeout until Git is reported ready, aborting on failure.",
+      "tags": ["test", "polling", "git"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/test-sandbox-ai.ts:request",
+      "type": "function",
+      "name": "request",
+      "filePath": "scripts/test-sandbox-ai.ts",
+      "lineRange": [26, 35],
+      "summary": "Helper that issues an HTTP request to the sandbox under test and logs the response.",
+      "tags": ["test", "fetch", "helper"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:utils/dataURI.ts:scriptAsDataURI",
+      "type": "function",
+      "name": "scriptAsDataURI",
+      "filePath": "utils/dataURI.ts",
+      "lineRange": [7, 15],
+      "summary": "Serializes a function and its parameters into a base64 JavaScript data URI for inline client embedding.",
+      "tags": ["utility", "serialization", "encoding"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:utils/encoding.ts:stringToHexSha256",
+      "type": "function",
+      "name": "stringToHexSha256",
+      "filePath": "utils/encoding.ts",
+      "lineRange": [11, 17],
+      "summary": "Computes the SHA-256 digest of a string and returns it as a hex-encoded string.",
+      "tags": ["utility", "hashing", "encoding"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:utils/fetchAPI.ts:fetchAPI",
+      "type": "function",
+      "name": "fetchAPI",
+      "filePath": "utils/fetchAPI.ts",
+      "lineRange": [1, 19],
+      "summary": "Performs an HTTP request and returns the parsed JSON response, logging errors on failure.",
+      "tags": ["utility", "fetch", "api-handler"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:utils/unique.ts:uniqBy",
+      "type": "function",
+      "name": "uniqBy",
+      "filePath": "utils/unique.ts",
+      "lineRange": [3, 9],
+      "summary": "Returns a de-duplicated array based on a key-selector function, keeping the first occurrence per key.",
+      "tags": ["utility", "array", "deduplication"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {"source": "file:scripts/dev.ts", "target": "file:deno.json", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:scripts/run.ts", "target": "file:deno.json", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:scripts/update.run.ts", "target": "file:scripts/codemod.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:scripts/update.run.ts", "target": "function:scripts/codemod.ts:runCodeMod", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:scripts/tailwindChecker.ts", "target": "function:scripts/tailwindChecker.ts:getAllClassesInCss", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:scripts/tailwindChecker.ts", "target": "function:scripts/tailwindChecker.ts:getAllClassesInCode", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:scripts/tailwindChecker.ts", "target": "function:scripts/tailwindChecker.ts:compareClasses", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:scripts/tailwindChecker.ts", "target": "function:scripts/tailwindChecker.ts:showLoadingAnimation", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "function:scripts/tailwindChecker.ts:compareClasses", "target": "function:scripts/tailwindChecker.ts:getAllClassesInCss", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:scripts/tailwindChecker.ts:compareClasses", "target": "function:scripts/tailwindChecker.ts:getAllClassesInCode", "type": "calls", "direction": "forward", "weight": 0.8},
+    {"source": "function:scripts/tailwindChecker.ts:compareClasses", "target": "function:scripts/tailwindChecker.ts:showLoadingAnimation", "type": "calls", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:scripts/test-sandbox-ai.ts", "target": "function:scripts/test-sandbox-ai.ts:waitForGitReady", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:scripts/test-sandbox-ai.ts", "target": "function:scripts/test-sandbox-ai.ts:request", "type": "contains", "direction": "forward", "weight": 1.0},
+
+    {"source": "file:utils/dataURI.ts", "target": "function:utils/dataURI.ts:scriptAsDataURI", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:utils/dataURI.ts", "target": "function:utils/dataURI.ts:scriptAsDataURI", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:utils/encoding.ts", "target": "function:utils/encoding.ts:stringToHexSha256", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:utils/encoding.ts", "target": "function:utils/encoding.ts:stringToHexSha256", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:utils/fetchAPI.ts", "target": "function:utils/fetchAPI.ts:fetchAPI", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:utils/fetchAPI.ts", "target": "function:utils/fetchAPI.ts:fetchAPI", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:utils/unique.ts", "target": "function:utils/unique.ts:uniqBy", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:utils/unique.ts", "target": "function:utils/unique.ts:uniqBy", "type": "exports", "direction": "forward", "weight": 0.8}
+  ]
+}

@@ -1,0 +1,925 @@
+{
+ "nodes": [
+  {
+   "id": "file:components/LiveControls.tsx",
+   "type": "file",
+   "name": "LiveControls.tsx",
+   "filePath": "components/LiveControls.tsx",
+   "summary": "Client-side island that wires up live editing controls: listens for editor postMessages, keyboard shortcuts, and DOM inspection to enable in-browser CMS interactivity.",
+   "tags": [
+    "component",
+    "event-handler",
+    "client-side",
+    "htmx",
+    "cms"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:components/LiveControls.tsx:main",
+   "type": "function",
+   "name": "main",
+   "filePath": "components/LiveControls.tsx",
+   "lineRange": [
+    66,
+    174
+   ],
+   "summary": "Browser entrypoint that installs keydown and message listeners to bridge the live editor with the rendered page, handling navigation, scrolling, and DOM inspector toggling.",
+   "tags": [
+    "event-handler",
+    "client-side",
+    "bootstrap"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:components/LiveControls.tsx:LiveControls",
+   "type": "function",
+   "name": "LiveControls",
+   "filePath": "components/LiveControls.tsx",
+   "lineRange": [
+    176,
+    194
+   ],
+   "summary": "Preact component that serializes site/page/flags state and injects the main client script for live editing.",
+   "tags": [
+    "component",
+    "serialization"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:deco.ts",
+   "type": "file",
+   "name": "deco.ts",
+   "filePath": "deco.ts",
+   "summary": "Defines the global DecoContext and request-scoped RequestContext using AsyncLocalStorage, exposing deployment info, platform detection, and active-request accessors.",
+   "tags": [
+    "singleton",
+    "context",
+    "entry-point",
+    "config"
+   ],
+   "complexity": "moderate",
+   "languageNotes": "Uses AsyncLocalStorage for request-scoped context propagation."
+  },
+  {
+   "id": "class:deco.ts:Context",
+   "type": "class",
+   "name": "Context",
+   "filePath": "deco.ts",
+   "lineRange": [
+    125,
+    152
+   ],
+   "summary": "Global Deco context holder providing access to the active deployment, site, and platform configuration.",
+   "tags": [
+    "singleton",
+    "context"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:deco.ts:RequestContext",
+   "type": "class",
+   "name": "RequestContext",
+   "filePath": "deco.ts",
+   "lineRange": [
+    152,
+    203
+   ],
+   "summary": "Request-scoped context backed by AsyncLocalStorage exposing the active signal, framework, and block id for the in-flight request.",
+   "tags": [
+    "context",
+    "singleton",
+    "request-scoped"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:engine/importmap/_util.ts",
+   "type": "file",
+   "name": "_util.ts",
+   "filePath": "engine/importmap/_util.ts",
+   "summary": "Type-guard and normalization helpers for validating import map structures (imports, scopes, specifier maps) and sorting keys.",
+   "tags": [
+    "utility",
+    "validation",
+    "type-guard",
+    "import-map"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:engine/importmap/_util.ts:isURL",
+   "type": "function",
+   "name": "isURL",
+   "filePath": "engine/importmap/_util.ts",
+   "lineRange": [
+    50,
+    57
+   ],
+   "summary": "Type guard that checks whether a string is a parseable URL.",
+   "tags": [
+    "utility",
+    "type-guard"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:engine/importmap/builder.ts",
+   "type": "file",
+   "name": "builder.ts",
+   "filePath": "engine/importmap/builder.ts",
+   "summary": "Builds and resolves import maps, providing a native resolver that handles file, npm/esm, and jsr specifiers for module resolution.",
+   "tags": [
+    "factory",
+    "import-map",
+    "resolver",
+    "service"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "class:engine/importmap/builder.ts:NativeImportMapResolver",
+   "type": "class",
+   "name": "NativeImportMapResolver",
+   "filePath": "engine/importmap/builder.ts",
+   "lineRange": [
+    54,
+    79
+   ],
+   "summary": "Resolver that maps module specifiers to URLs, delegating to safeImportResolve and JSR resolution for various specifier schemes.",
+   "tags": [
+    "resolver",
+    "import-map"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:engine/importmap/builder.ts:safeImportResolve",
+   "type": "function",
+   "name": "safeImportResolve",
+   "filePath": "engine/importmap/builder.ts",
+   "lineRange": [
+    36,
+    51
+   ],
+   "summary": "Resolves an import specifier via import.meta.resolve, gracefully falling back when resolution fails.",
+   "tags": [
+    "utility",
+    "resolver"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:engine/importmap/jsr.ts",
+   "type": "file",
+   "name": "jsr.ts",
+   "filePath": "engine/importmap/jsr.ts",
+   "summary": "Resolves JSR package specifiers by fetching and caching package _meta.json export maps from jsr.io.",
+   "tags": [
+    "utility",
+    "resolver",
+    "jsr",
+    "fetch"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:engine/importmap/jsr.ts:resolveJsrSpecifier",
+   "type": "function",
+   "name": "resolveJsrSpecifier",
+   "filePath": "engine/importmap/jsr.ts",
+   "lineRange": [
+    47,
+    60
+   ],
+   "summary": "Parses a jsr: specifier and resolves it to a concrete file URL using the package's cached export metadata.",
+   "tags": [
+    "resolver",
+    "jsr"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:engine/importmap/jsr.ts:fetchMetaExports",
+   "type": "function",
+   "name": "fetchMetaExports",
+   "filePath": "engine/importmap/jsr.ts",
+   "lineRange": [
+    25,
+    46
+   ],
+   "summary": "Fetches and caches the exports map from a JSR package's _meta.json, deduplicating concurrent requests.",
+   "tags": [
+    "fetch",
+    "caching",
+    "jsr"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:engine/importmap/mod.ts",
+   "type": "file",
+   "name": "mod.ts",
+   "filePath": "engine/importmap/mod.ts",
+   "summary": "Implementation of the WHATWG import map resolution algorithm: normalizes specifier maps and scopes and resolves module specifiers against a base URL.",
+   "tags": [
+    "import-map",
+    "resolver",
+    "utility",
+    "spec-impl"
+   ],
+   "complexity": "complex",
+   "languageNotes": "Mirrors the WHATWG import maps spec algorithm for specifier resolution."
+  },
+  {
+   "id": "function:engine/importmap/mod.ts:resolveImportMap",
+   "type": "function",
+   "name": "resolveImportMap",
+   "filePath": "engine/importmap/mod.ts",
+   "lineRange": [
+    210,
+    251
+   ],
+   "summary": "Validates and normalizes a raw import map into sorted imports and scopes relative to a base URL.",
+   "tags": [
+    "import-map",
+    "validation"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:engine/importmap/mod.ts:resolveModuleSpecifier",
+   "type": "function",
+   "name": "resolveModuleSpecifier",
+   "filePath": "engine/importmap/mod.ts",
+   "lineRange": [
+    253,
+    293
+   ],
+   "summary": "Resolves a module specifier to a URL by matching it against scopes and imports of a normalized import map.",
+   "tags": [
+    "import-map",
+    "resolver"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:engine/importmap/mod.ts:resolveImportsMatch",
+   "type": "function",
+   "name": "resolveImportsMatch",
+   "filePath": "engine/importmap/mod.ts",
+   "lineRange": [
+    151,
+    207
+   ],
+   "summary": "Finds the best matching specifier-map entry for a given normalized specifier following the import map matching rules.",
+   "tags": [
+    "import-map",
+    "resolver"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:engine/manifest/manifestBuilder.ts",
+   "type": "file",
+   "name": "manifestBuilder.ts",
+   "filePath": "engine/manifest/manifestBuilder.ts",
+   "summary": "Provides a fluent ManifestBuilder that accumulates imports, statements, and manifest values and stringifies them into a TypeScript manifest source file.",
+   "tags": [
+    "factory",
+    "code-generation",
+    "manifest",
+    "builder"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:engine/manifest/manifestBuilder.ts:newManifestBuilder",
+   "type": "function",
+   "name": "newManifestBuilder",
+   "filePath": "engine/manifest/manifestBuilder.ts",
+   "lineRange": [
+    256,
+    412
+   ],
+   "summary": "Factory producing an immutable manifest builder whose chained methods add imports, exports, and manifest keys and emit generated source.",
+   "tags": [
+    "factory",
+    "builder",
+    "code-generation"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:engine/manifest/manifestBuilder.ts:stringify",
+   "type": "function",
+   "name": "stringify",
+   "filePath": "engine/manifest/manifestBuilder.ts",
+   "lineRange": [
+    209,
+    246
+   ],
+   "summary": "Serializes the accumulated manifest data structure (imports, manifest object, statements, exports) into a TypeScript source string.",
+   "tags": [
+    "code-generation",
+    "serialization"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:engine/manifest/manifestGen.ts",
+   "type": "file",
+   "name": "manifestGen.ts",
+   "filePath": "engine/manifest/manifestGen.ts",
+   "summary": "Walks a deco site directory to discover block files and assembles a DecoManifest builder with definitions for each block type.",
+   "tags": [
+    "code-generation",
+    "manifest",
+    "filesystem"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:engine/manifest/manifestGen.ts:decoManifestBuilder",
+   "type": "function",
+   "name": "decoManifestBuilder",
+   "filePath": "engine/manifest/manifestGen.ts",
+   "lineRange": [
+    69,
+    120
+   ],
+   "summary": "Scans the given directory for block modules and builds a manifest builder containing a definition entry for each discovered block.",
+   "tags": [
+    "code-generation",
+    "manifest",
+    "filesystem"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:engine/manifest/manifestGen.ts:resolveAny",
+   "type": "function",
+   "name": "resolveAny",
+   "filePath": "engine/manifest/manifestGen.ts",
+   "lineRange": [
+    42,
+    49
+   ],
+   "summary": "Resolves the first matching import string for a block by probing known import specifiers.",
+   "tags": [
+    "utility",
+    "resolver"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:engine/schema/builder.ts",
+   "type": "file",
+   "name": "builder.ts",
+   "filePath": "engine/schema/builder.ts",
+   "summary": "Schema builder that accumulates block modules and schemeables and emits a combined JSON Schema describing all block inputs and the resolve graph.",
+   "tags": [
+    "factory",
+    "schema",
+    "json-schema",
+    "builder"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:engine/schema/builder.ts:newSchemaBuilder",
+   "type": "function",
+   "name": "newSchemaBuilder",
+   "filePath": "engine/schema/builder.ts",
+   "lineRange": [
+    174,
+    396
+   ],
+   "summary": "Factory for an immutable schema builder providing methods to register schemeables and block schemas and to build the final JSON Schema document.",
+   "tags": [
+    "factory",
+    "builder",
+    "json-schema"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:engine/schema/comments.ts",
+   "type": "file",
+   "name": "comments.ts",
+   "filePath": "engine/schema/comments.ts",
+   "summary": "Assigns source comments to AST spannable nodes and converts JSDoc comments into JSON Schema annotations.",
+   "tags": [
+    "schema",
+    "parsing",
+    "jsdoc",
+    "ast"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:engine/schema/comments.ts:assignCommentsForSpannable",
+   "type": "function",
+   "name": "assignCommentsForSpannable",
+   "filePath": "engine/schema/comments.ts",
+   "lineRange": [
+    90,
+    120
+   ],
+   "summary": "Recursively walks an AST span tree distributing leading comments to their nearest child nodes.",
+   "tags": [
+    "ast",
+    "parsing"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:engine/schema/comments.ts:getChildren",
+   "type": "function",
+   "name": "getChildren",
+   "filePath": "engine/schema/comments.ts",
+   "lineRange": [
+    32,
+    73
+   ],
+   "summary": "Returns the child spannable nodes of a given AST node for comment-assignment traversal.",
+   "tags": [
+    "ast",
+    "parsing"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:engine/schema/deps.ts",
+   "type": "file",
+   "name": "deps.ts",
+   "filePath": "engine/schema/deps.ts",
+   "summary": "Re-exports the source parser and ParsedSource type used by the schema engine.",
+   "tags": [
+    "barrel",
+    "type-definition"
+   ],
+   "complexity": "simple"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:components/LiveControls.tsx",
+   "target": "function:components/LiveControls.tsx:main",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:components/LiveControls.tsx",
+   "target": "function:components/LiveControls.tsx:LiveControls",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:components/LiveControls.tsx",
+   "target": "file:deco.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:components/LiveControls.tsx",
+   "target": "file:deps.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:components/LiveControls.tsx",
+   "target": "file:types.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:deco.ts",
+   "target": "class:deco.ts:Context",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:deco.ts",
+   "target": "class:deco.ts:RequestContext",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:deco.ts",
+   "target": "class:deco.ts:Context",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:deco.ts",
+   "target": "class:deco.ts:RequestContext",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:deco.ts",
+   "target": "file:blocks/app.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:deco.ts",
+   "target": "file:blocks/utils.tsx",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:deco.ts",
+   "target": "file:engine/block.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:deco.ts",
+   "target": "file:engine/core/mod.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:deco.ts",
+   "target": "file:engine/decofile/provider.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:deco.ts",
+   "target": "file:types.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:deco.ts",
+   "target": "file:utils/patched_fetch.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:deco.ts",
+   "target": "file:utils/rand.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/importmap/_util.ts",
+   "target": "function:engine/importmap/_util.ts:isURL",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/importmap/builder.ts",
+   "target": "class:engine/importmap/builder.ts:NativeImportMapResolver",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/importmap/builder.ts",
+   "target": "function:engine/importmap/builder.ts:safeImportResolve",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/importmap/builder.ts",
+   "target": "function:engine/importmap/builder.ts:safeImportResolve",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/importmap/builder.ts",
+   "target": "file:engine/importmap/jsr.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/importmap/builder.ts",
+   "target": "file:engine/importmap/mod.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "class:engine/importmap/builder.ts:NativeImportMapResolver",
+   "target": "function:engine/importmap/jsr.ts:resolveJsrSpecifier",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/importmap/jsr.ts",
+   "target": "function:engine/importmap/jsr.ts:resolveJsrSpecifier",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/importmap/jsr.ts",
+   "target": "function:engine/importmap/jsr.ts:fetchMetaExports",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/importmap/jsr.ts",
+   "target": "function:engine/importmap/jsr.ts:resolveJsrSpecifier",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/importmap/mod.ts",
+   "target": "function:engine/importmap/mod.ts:resolveImportMap",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/importmap/mod.ts",
+   "target": "function:engine/importmap/mod.ts:resolveModuleSpecifier",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/importmap/mod.ts",
+   "target": "function:engine/importmap/mod.ts:resolveImportsMatch",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/importmap/mod.ts",
+   "target": "function:engine/importmap/mod.ts:resolveImportMap",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/importmap/mod.ts",
+   "target": "function:engine/importmap/mod.ts:resolveModuleSpecifier",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/importmap/mod.ts",
+   "target": "file:engine/importmap/_util.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/manifest/manifestBuilder.ts",
+   "target": "function:engine/manifest/manifestBuilder.ts:newManifestBuilder",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/manifest/manifestBuilder.ts",
+   "target": "function:engine/manifest/manifestBuilder.ts:stringify",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/manifest/manifestBuilder.ts",
+   "target": "function:engine/manifest/manifestBuilder.ts:newManifestBuilder",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/manifest/manifestBuilder.ts",
+   "target": "function:engine/manifest/manifestBuilder.ts:stringify",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/manifest/manifestBuilder.ts",
+   "target": "file:blocks/appsUtil.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/manifest/manifestBuilder.ts",
+   "target": "file:engine/importmap/builder.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/manifest/manifestBuilder.ts",
+   "target": "file:types.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "function:engine/manifest/manifestBuilder.ts:newManifestBuilder",
+   "target": "function:engine/importmap/builder.ts:safeImportResolve",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/manifest/manifestGen.ts",
+   "target": "function:engine/manifest/manifestGen.ts:decoManifestBuilder",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/manifest/manifestGen.ts",
+   "target": "function:engine/manifest/manifestGen.ts:resolveAny",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/manifest/manifestGen.ts",
+   "target": "function:engine/manifest/manifestGen.ts:resolveAny",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/manifest/manifestGen.ts",
+   "target": "function:engine/manifest/manifestGen.ts:decoManifestBuilder",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/manifest/manifestGen.ts",
+   "target": "file:blocks/appsUtil.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/manifest/manifestGen.ts",
+   "target": "file:blocks/index.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/manifest/manifestGen.ts",
+   "target": "file:engine/block.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/manifest/manifestGen.ts",
+   "target": "file:engine/importmap/builder.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/manifest/manifestGen.ts",
+   "target": "file:engine/manifest/manifestBuilder.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/manifest/manifestGen.ts",
+   "target": "file:utils/filesystem.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "function:engine/manifest/manifestGen.ts:decoManifestBuilder",
+   "target": "function:engine/manifest/manifestBuilder.ts:newManifestBuilder",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/schema/builder.ts",
+   "target": "function:engine/schema/builder.ts:newSchemaBuilder",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/builder.ts",
+   "target": "function:engine/schema/builder.ts:newSchemaBuilder",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/schema/builder.ts",
+   "target": "file:deps.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/builder.ts",
+   "target": "file:engine/importmap/builder.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/builder.ts",
+   "target": "file:engine/schema/merge.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/builder.ts",
+   "target": "file:engine/schema/schemeable.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/builder.ts",
+   "target": "file:engine/schema/transform.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "function:engine/schema/builder.ts:newSchemaBuilder",
+   "target": "function:engine/schema/schemeable.ts:schemeableToJSONSchema",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/schema/comments.ts",
+   "target": "function:engine/schema/comments.ts:assignCommentsForSpannable",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/comments.ts",
+   "target": "function:engine/schema/comments.ts:getChildren",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/comments.ts",
+   "target": "file:deps.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/comments.ts",
+   "target": "file:engine/schema/deps.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/comments.ts",
+   "target": "file:engine/schema/utils.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  }
+ ]
+}

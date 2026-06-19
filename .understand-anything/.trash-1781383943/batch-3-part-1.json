@@ -1,0 +1,884 @@
+{
+  "nodes": [
+    {
+      "id": "file:blocks/account.ts",
+      "type": "file",
+      "name": "account.ts",
+      "filePath": "blocks/account.ts",
+      "summary": "Defines the Account block type, registering accounts as a serializable, configurable block in the Deco engine.",
+      "tags": [
+        "data-model",
+        "block-definition",
+        "engine"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:blocks/action.ts",
+      "type": "file",
+      "name": "action.ts",
+      "filePath": "blocks/action.ts",
+      "summary": "Defines the Action block type for server-side mutations, wiring it into the engine block registry with preview support.",
+      "tags": [
+        "block-definition",
+        "action",
+        "engine"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:blocks/app.ts",
+      "type": "file",
+      "name": "app.ts",
+      "filePath": "blocks/app.ts",
+      "summary": "Implements the App block: merges app manifests and runtimes, injects app state into loaders and resolvers, and builds composed app runtimes from dependencies.",
+      "tags": [
+        "block-definition",
+        "app",
+        "manifest",
+        "runtime"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Heavy use of generics and manifest-merging type gymnastics over DecoManifest."
+    },
+    {
+      "id": "function:blocks/app.ts:mergeManifests",
+      "type": "function",
+      "name": "mergeManifests",
+      "filePath": "blocks/app.ts",
+      "lineRange": [
+        124,
+        140
+      ],
+      "summary": "Function mergeManifests in app.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/app.ts:mergeRuntimes",
+      "type": "function",
+      "name": "mergeRuntimes",
+      "filePath": "blocks/app.ts",
+      "lineRange": [
+        147,
+        178
+      ],
+      "summary": "Function mergeRuntimes in app.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:blocks/app.ts:injectAppStateOnManifest",
+      "type": "function",
+      "name": "injectAppStateOnManifest",
+      "filePath": "blocks/app.ts",
+      "lineRange": [
+        190,
+        231
+      ],
+      "summary": "Function injectAppStateOnManifest in app.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:blocks/app.ts:appMiddlewareToResolverMiddleware",
+      "type": "function",
+      "name": "appMiddlewareToResolverMiddleware",
+      "filePath": "blocks/app.ts",
+      "lineRange": [
+        240,
+        270
+      ],
+      "summary": "Function appMiddlewareToResolverMiddleware in app.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:blocks/app.ts:buildRuntimeFromApp",
+      "type": "function",
+      "name": "buildRuntimeFromApp",
+      "filePath": "blocks/app.ts",
+      "lineRange": [
+        271,
+        305
+      ],
+      "summary": "Function buildRuntimeFromApp in app.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:blocks/app.ts:injectAppState",
+      "type": "function",
+      "name": "injectAppState",
+      "filePath": "blocks/app.ts",
+      "lineRange": [
+        343,
+        361
+      ],
+      "summary": "Function injectAppState in app.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/app.ts:injectAppStateOnInlineLoader",
+      "type": "function",
+      "name": "injectAppStateOnInlineLoader",
+      "filePath": "blocks/app.ts",
+      "lineRange": [
+        363,
+        384
+      ],
+      "summary": "Function injectAppStateOnInlineLoader in app.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:blocks/app.ts:buildApp",
+      "type": "function",
+      "name": "buildApp",
+      "filePath": "blocks/app.ts",
+      "lineRange": [
+        386,
+        404
+      ],
+      "summary": "Function buildApp in app.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/app.ts:validMethods",
+      "type": "function",
+      "name": "validMethods",
+      "filePath": "blocks/app.ts",
+      "lineRange": [
+        425,
+        436
+      ],
+      "summary": "Function validMethods in app.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/app.ts:toAppModule",
+      "type": "function",
+      "name": "toAppModule",
+      "filePath": "blocks/app.ts",
+      "lineRange": [
+        440,
+        493
+      ],
+      "summary": "Function toAppModule in app.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:blocks/appsUtil.ts",
+      "type": "file",
+      "name": "appsUtil.ts",
+      "filePath": "blocks/appsUtil.ts",
+      "summary": "Utility helpers for building app runtimes: resolves blocks into resolvers, handles local module references, and composes manifests with import maps.",
+      "tags": [
+        "utility",
+        "app",
+        "manifest",
+        "resolver"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:blocks/appsUtil.ts:shouldBeLocal",
+      "type": "function",
+      "name": "shouldBeLocal",
+      "filePath": "blocks/appsUtil.ts",
+      "lineRange": [
+        42,
+        46
+      ],
+      "summary": "Function shouldBeLocal in appsUtil.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/appsUtil.ts:withoutLocalModules",
+      "type": "function",
+      "name": "withoutLocalModules",
+      "filePath": "blocks/appsUtil.ts",
+      "lineRange": [
+        48,
+        56
+      ],
+      "summary": "Function withoutLocalModules in appsUtil.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/appsUtil.ts:resolversFrom",
+      "type": "function",
+      "name": "resolversFrom",
+      "filePath": "blocks/appsUtil.ts",
+      "lineRange": [
+        58,
+        81
+      ],
+      "summary": "Function resolversFrom in appsUtil.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:blocks/appsUtil.ts:buildRuntime",
+      "type": "function",
+      "name": "buildRuntime",
+      "filePath": "blocks/appsUtil.ts",
+      "lineRange": [
+        82,
+        169
+      ],
+      "summary": "Function buildRuntime in appsUtil.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:blocks/flag.ts",
+      "type": "file",
+      "name": "flag.ts",
+      "filePath": "blocks/flag.ts",
+      "summary": "Defines the Flag block for feature toggles, supporting multivariate variants matched by device and user-agent criteria.",
+      "tags": [
+        "block-definition",
+        "flag",
+        "feature-toggle"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:blocks/function.ts",
+      "type": "file",
+      "name": "function.ts",
+      "filePath": "blocks/function.ts",
+      "summary": "Legacy Function block definition, aliasing handler and loader behavior for backward-compatible block resolution.",
+      "tags": [
+        "block-definition",
+        "legacy",
+        "engine"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:blocks/handler.ts",
+      "type": "file",
+      "name": "handler.ts",
+      "filePath": "blocks/handler.ts",
+      "summary": "Defines the Handler block type for custom HTTP endpoints, integrating resolver context and request handling.",
+      "tags": [
+        "block-definition",
+        "handler",
+        "http"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:blocks/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "blocks/index.ts",
+      "summary": "Barrel module aggregating all built-in block definitions and exposing defineBlock for registering user-defined blocks.",
+      "tags": [
+        "barrel",
+        "entry-point",
+        "block-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/index.ts:defineBlock",
+      "type": "function",
+      "name": "defineBlock",
+      "filePath": "blocks/index.ts",
+      "lineRange": [
+        16,
+        18
+      ],
+      "summary": "Function defineBlock in index.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:blocks/account.ts",
+      "target": "file:components/JsonViewer.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/account.ts",
+      "target": "file:engine/block.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/action.ts",
+      "target": "file:blocks/utils.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/action.ts",
+      "target": "file:components/JsonViewer.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/action.ts",
+      "target": "file:engine/block.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "function:blocks/app.ts:mergeManifests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "function:blocks/app.ts:mergeManifests",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "function:blocks/app.ts:mergeRuntimes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "function:blocks/app.ts:mergeRuntimes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "function:blocks/app.ts:injectAppStateOnManifest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "function:blocks/app.ts:appMiddlewareToResolverMiddleware",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "function:blocks/app.ts:buildRuntimeFromApp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "function:blocks/app.ts:injectAppState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "function:blocks/app.ts:injectAppStateOnInlineLoader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "function:blocks/app.ts:buildApp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "function:blocks/app.ts:validMethods",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "function:blocks/app.ts:toAppModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "file:blocks/appsUtil.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "file:blocks/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "file:blocks/loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "file:blocks/propsLoader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "file:blocks/section.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "file:blocks/utils.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "file:engine/block.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "file:engine/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "file:engine/core/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "file:engine/importmap/builder.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "file:engine/middleware.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/app.ts",
+      "target": "file:types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/appsUtil.ts",
+      "target": "function:blocks/appsUtil.ts:shouldBeLocal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/appsUtil.ts",
+      "target": "function:blocks/appsUtil.ts:shouldBeLocal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/appsUtil.ts",
+      "target": "function:blocks/appsUtil.ts:withoutLocalModules",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/appsUtil.ts",
+      "target": "function:blocks/appsUtil.ts:withoutLocalModules",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/appsUtil.ts",
+      "target": "function:blocks/appsUtil.ts:resolversFrom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/appsUtil.ts",
+      "target": "function:blocks/appsUtil.ts:resolversFrom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/appsUtil.ts",
+      "target": "function:blocks/appsUtil.ts:buildRuntime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/appsUtil.ts",
+      "target": "function:blocks/appsUtil.ts:buildRuntime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/appsUtil.ts",
+      "target": "file:blocks/utils.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/appsUtil.ts",
+      "target": "file:engine/block.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/appsUtil.ts",
+      "target": "file:engine/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/appsUtil.ts",
+      "target": "file:engine/core/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/appsUtil.ts",
+      "target": "file:engine/manifest/defaults.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/appsUtil.ts",
+      "target": "file:engine/manifest/manifest.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/appsUtil.ts",
+      "target": "file:engine/middleware.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/appsUtil.ts",
+      "target": "file:types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/flag.ts",
+      "target": "file:blocks/matcher.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/flag.ts",
+      "target": "file:blocks/utils.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/flag.ts",
+      "target": "file:components/JsonViewer.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/flag.ts",
+      "target": "file:engine/block.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/flag.ts",
+      "target": "file:engine/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/flag.ts",
+      "target": "file:utils/userAgent.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/function.ts",
+      "target": "file:blocks/handler.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/function.ts",
+      "target": "file:blocks/loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/function.ts",
+      "target": "file:blocks/utils.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/function.ts",
+      "target": "file:components/JsonViewer.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/function.ts",
+      "target": "file:engine/block.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/function.ts",
+      "target": "file:engine/manifest/manifest.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/function.ts",
+      "target": "file:types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/handler.ts",
+      "target": "file:blocks/utils.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/handler.ts",
+      "target": "file:deps.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/handler.ts",
+      "target": "file:engine/block.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/handler.ts",
+      "target": "file:engine/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/handler.ts",
+      "target": "file:engine/core/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/handler.ts",
+      "target": "file:types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/index.ts",
+      "target": "function:blocks/index.ts:defineBlock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/index.ts",
+      "target": "function:blocks/index.ts:defineBlock",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/index.ts",
+      "target": "file:blocks/account.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/index.ts",
+      "target": "file:blocks/action.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/index.ts",
+      "target": "file:blocks/app.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/index.ts",
+      "target": "file:blocks/flag.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/index.ts",
+      "target": "file:blocks/function.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/index.ts",
+      "target": "file:blocks/handler.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/index.ts",
+      "target": "file:blocks/loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/index.ts",
+      "target": "file:blocks/matcher.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/index.ts",
+      "target": "file:blocks/page.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/index.ts",
+      "target": "file:blocks/section.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/index.ts",
+      "target": "file:blocks/workflow.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/index.ts",
+      "target": "file:engine/block.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

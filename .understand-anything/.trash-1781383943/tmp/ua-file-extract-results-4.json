@@ -1,0 +1,2991 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 24,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "engine/core/resolver.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 775,
+      "nonEmptyLines": 707,
+      "functions": [
+        {
+          "name": "isResolvable",
+          "startLine": 193,
+          "endLine": 207,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "withResolveChain",
+          "startLine": 256,
+          "endLine": 265,
+          "params": [
+            "ctx",
+            "...resolverType"
+          ]
+        },
+        {
+          "name": "withResolveChainOfType",
+          "startLine": 267,
+          "endLine": 289,
+          "params": [
+            "ctx",
+            "...resolverType"
+          ]
+        },
+        {
+          "name": "asResolved",
+          "startLine": 296,
+          "endLine": 302,
+          "params": [
+            "data",
+            "deferred"
+          ]
+        },
+        {
+          "name": "isDeferred",
+          "startLine": 313,
+          "endLine": 317,
+          "params": [
+            "f"
+          ]
+        },
+        {
+          "name": "isResolved",
+          "startLine": 324,
+          "endLine": 329,
+          "params": [
+            "resolvable"
+          ]
+        },
+        {
+          "name": "resolveTypeOf",
+          "startLine": 331,
+          "endLine": 353,
+          "params": [
+            "resolvable"
+          ]
+        },
+        {
+          "name": "resolvePropsWithHints",
+          "startLine": 360,
+          "endLine": 436,
+          "params": [
+            "_props",
+            "hints",
+            "_ctx",
+            "opts"
+          ]
+        },
+        {
+          "name": "invokeResolverWithProps",
+          "startLine": 441,
+          "endLine": 587,
+          "params": [
+            "props",
+            "resolver",
+            "__resolveType",
+            "ctx"
+          ]
+        },
+        {
+          "name": "resolveWithType",
+          "startLine": 594,
+          "endLine": 649,
+          "params": [
+            "resolveType",
+            "props",
+            "context",
+            "opts"
+          ]
+        },
+        {
+          "name": "resolveResolvable",
+          "startLine": 651,
+          "endLine": 673,
+          "params": [
+            "resolveType",
+            "context",
+            "opts"
+          ]
+        },
+        {
+          "name": "resolveAny",
+          "startLine": 675,
+          "endLine": 700,
+          "params": [
+            "maybeResolvable",
+            "context",
+            "opts",
+            "hints"
+          ]
+        },
+        {
+          "name": "resolve",
+          "startLine": 740,
+          "endLine": 775,
+          "params": [
+            "maybeResolvable",
+            "context",
+            "resolveOptions"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DanglingReference",
+          "startLine": 9,
+          "endLine": 15,
+          "methods": [
+            "constructor"
+          ],
+          "properties": [
+            "resolverType"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DanglingReference",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "FieldResolver",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "isResolvable",
+          "line": 193,
+          "isDefault": false
+        },
+        {
+          "name": "withResolveChain",
+          "line": 256,
+          "isDefault": false
+        },
+        {
+          "name": "withResolveChainOfType",
+          "line": 267,
+          "isDefault": false
+        },
+        {
+          "name": "RESOLVE_SHORTCIRCUIT",
+          "line": 291,
+          "isDefault": false
+        },
+        {
+          "name": "asResolved",
+          "line": 296,
+          "isDefault": false
+        },
+        {
+          "name": "isDeferred",
+          "line": 313,
+          "isDefault": false
+        },
+        {
+          "name": "isResolved",
+          "line": 324,
+          "isDefault": false
+        },
+        {
+          "name": "resolveAny",
+          "line": 675,
+          "isDefault": false
+        },
+        {
+          "name": "resolve",
+          "line": 740,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 12
+        },
+        {
+          "caller": "withResolveChain",
+          "callee": "ctx.resolveChain.concat",
+          "lineNumber": 263
+        },
+        {
+          "caller": "withResolveChainOfType",
+          "callee": "ctx.resolveChain.concat",
+          "lineNumber": 274
+        },
+        {
+          "caller": "withResolveChainOfType",
+          "callee": "resolverType.map",
+          "lineNumber": 275
+        },
+        {
+          "caller": "isResolved",
+          "callee": "isResolvable",
+          "lineNumber": 327
+        },
+        {
+          "caller": "resolveTypeOf",
+          "callee": "isResolvable",
+          "lineNumber": 345
+        },
+        {
+          "caller": "resolvePropsWithHints",
+          "callee": "resolveTypeOf",
+          "lineNumber": 364
+        },
+        {
+          "caller": "resolvePropsWithHints",
+          "callee": "onBeforeResolveProps",
+          "lineNumber": 369
+        },
+        {
+          "caller": "resolvePropsWithHints",
+          "callee": "withResolveChainOfType",
+          "lineNumber": 370
+        },
+        {
+          "caller": "resolvePropsWithHints",
+          "callee": "Object.entries",
+          "lineNumber": 373
+        },
+        {
+          "caller": "proceed",
+          "callee": "Promise.all",
+          "lineNumber": 376
+        },
+        {
+          "caller": "proceed",
+          "callee": "hintsEntries.map",
+          "lineNumber": 377
+        },
+        {
+          "caller": "proceed",
+          "callee": "resolvePropsWithHints",
+          "lineNumber": 381
+        },
+        {
+          "caller": "proceed",
+          "callee": "withResolveChain",
+          "lineNumber": 384
+        },
+        {
+          "caller": "resolvePropsWithHints",
+          "callee": "Array.isArray",
+          "lineNumber": 405
+        },
+        {
+          "caller": "resolvePropsWithHints",
+          "callee": "propsResolveStart",
+          "lineNumber": 411
+        },
+        {
+          "caller": "resolvePropsWithHints",
+          "callee": "proceed",
+          "lineNumber": 418
+        },
+        {
+          "caller": "resolvePropsWithHints",
+          "callee": "await resolveWithType",
+          "lineNumber": 430
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "isResolvable",
+          "lineNumber": 450
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "resolverIdFromResolveChain",
+          "lineNumber": 455
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "ctx.resolveChain.findLast",
+          "lineNumber": 461
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "ctx.resolveChain.findLast",
+          "lineNumber": 464
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "ctx.resolveChain.findLast",
+          "lineNumber": 467
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "parts.push",
+          "lineNumber": 471
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "parts.push",
+          "lineNumber": 474
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "Object.keys(obj).slice",
+          "lineNumber": 487
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "Object.keys",
+          "lineNumber": 487
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "keys.join",
+          "lineNumber": 488
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "String",
+          "lineNumber": 491
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "parts.push",
+          "lineNumber": 493
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "resolverId.includes",
+          "lineNumber": 496
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "Object.keys(obj).slice(0, 3).join",
+          "lineNumber": 508
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "Object.keys(obj).slice",
+          "lineNumber": 508
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "Object.keys",
+          "lineNumber": 508
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "parts.push",
+          "lineNumber": 517
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "resolverId.includes",
+          "lineNumber": 521
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "parts.join",
+          "lineNumber": 528
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "ctx.monitoring?.timings.start",
+          "lineNumber": 540
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "resolver",
+          "lineNumber": 551
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "Object.assign",
+          "lineNumber": 553
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "isAwaitable",
+          "lineNumber": 556
+        },
+        {
+          "caller": "resolve",
+          "callee": "original",
+          "lineNumber": 566
+        },
+        {
+          "caller": "resolve",
+          "callee": "timing?.end",
+          "lineNumber": 568
+        },
+        {
+          "caller": "resolve",
+          "callee": "timing?.end",
+          "lineNumber": 572
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "metricsFunc",
+          "lineNumber": 577
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "resolve",
+          "lineNumber": 579
+        },
+        {
+          "caller": "invokeResolverWithProps",
+          "callee": "timing?.end",
+          "lineNumber": 584
+        },
+        {
+          "caller": "resolveWithType",
+          "callee": "resolveResolvable",
+          "lineNumber": 606
+        },
+        {
+          "caller": "proceed",
+          "callee": "invokeResolverWithProps",
+          "lineNumber": 614
+        },
+        {
+          "caller": "resolveWithType",
+          "callee": "resolveStart",
+          "lineNumber": 622
+        },
+        {
+          "caller": "resolveWithType",
+          "callee": "proceed",
+          "lineNumber": 629
+        },
+        {
+          "caller": "resolveWithType",
+          "callee": "withResolveChain",
+          "lineNumber": 632
+        },
+        {
+          "caller": "resolveWithType",
+          "callee": "opts?.hooks?.onDanglingReference",
+          "lineNumber": 638
+        },
+        {
+          "caller": "resolveWithType",
+          "callee": "Promise.resolve",
+          "lineNumber": 639
+        },
+        {
+          "caller": "resolveWithType",
+          "callee": "ctx.danglingRecover",
+          "lineNumber": 645
+        },
+        {
+          "caller": "resolveResolvable",
+          "callee": "traverseAny",
+          "lineNumber": 663
+        },
+        {
+          "caller": "resolveResolvable",
+          "callee": "resolveAny",
+          "lineNumber": 667
+        },
+        {
+          "caller": "resolveAny",
+          "callee": "Promise.resolve",
+          "lineNumber": 690
+        },
+        {
+          "caller": "resolveAny",
+          "callee": "resolvePropsWithHints",
+          "lineNumber": 692
+        },
+        {
+          "caller": "resolveAny",
+          "callee": "traverseAny",
+          "lineNumber": 694
+        },
+        {
+          "caller": "resolve",
+          "callee": "isResolvable",
+          "lineNumber": 753
+        },
+        {
+          "caller": "resolve",
+          "callee": "resolveWithType",
+          "lineNumber": 757
+        },
+        {
+          "caller": "resolve",
+          "callee": "resolveWithType",
+          "lineNumber": 767
+        },
+        {
+          "caller": "resolve",
+          "callee": "resolveAny",
+          "lineNumber": 774
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 11,
+        "functionCount": 13,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "engine/core/utils.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "isAwaitable",
+          "startLine": 8,
+          "endLine": 10,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "mapObjKeys",
+          "startLine": 12,
+          "endLine": 26,
+          "params": [
+            "obj",
+            "mapper"
+          ]
+        },
+        {
+          "name": "waitKeys",
+          "startLine": 32,
+          "endLine": 44,
+          "params": [
+            "p"
+          ]
+        },
+        {
+          "name": "notUndefined",
+          "startLine": 46,
+          "endLine": 50,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "isPrimitive",
+          "startLine": 52,
+          "endLine": 54,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "singleFlight",
+          "startLine": 67,
+          "endLine": 82,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "isAwaitable",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "mapObjKeys",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "waitKeys",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "notUndefined",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "isPrimitive",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "singleFlight",
+          "line": 67,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mapObjKeys",
+          "callee": "Object.entries",
+          "lineNumber": 17
+        },
+        {
+          "caller": "mapObjKeys",
+          "callee": "entries.map",
+          "lineNumber": 19
+        },
+        {
+          "caller": "mapObjKeys",
+          "callee": "mapper",
+          "lineNumber": 20
+        },
+        {
+          "caller": "mapObjKeys",
+          "callee": "keyValues.reduce",
+          "lineNumber": 23
+        },
+        {
+          "caller": "waitKeys",
+          "callee": "Object.entries",
+          "lineNumber": 33
+        },
+        {
+          "caller": "waitKeys",
+          "callee": "Promise.all",
+          "lineNumber": 35
+        },
+        {
+          "caller": "waitKeys",
+          "callee": "entries.map",
+          "lineNumber": 36
+        },
+        {
+          "caller": "waitKeys",
+          "callee": "isAwaitable",
+          "lineNumber": 37
+        },
+        {
+          "caller": "waitKeys",
+          "callee": "v.then",
+          "lineNumber": 37
+        },
+        {
+          "caller": "waitKeys",
+          "callee": "keyResults.reduce",
+          "lineNumber": 41
+        },
+        {
+          "caller": "isPrimitive",
+          "callee": "Array.isArray",
+          "lineNumber": 53
+        },
+        {
+          "caller": "sfDo",
+          "callee": "f().finally",
+          "lineNumber": 74
+        },
+        {
+          "caller": "sfDo",
+          "callee": "f",
+          "lineNumber": 74
+        },
+        {
+          "caller": "singleFlight",
+          "callee": "sfDo",
+          "lineNumber": 79
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/errors.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 14,
+      "exports": [
+        {
+          "name": "badRequest",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "forbidden",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "HttpError",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "notFound",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "redirect",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "shortcircuit",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "status",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "unauthorized",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "HttpErrorMessage",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "ResponseErrorBuilder",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/integrity.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "integrityCheckRec",
+          "startLine": 4,
+          "endLine": 33,
+          "params": [
+            "resolvers",
+            "resolvables",
+            "obj",
+            "key"
+          ]
+        },
+        {
+          "name": "integrityCheck",
+          "startLine": 35,
+          "endLine": 40,
+          "params": [
+            "resolvers",
+            "resolvables"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "integrityCheck",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "integrityCheckRec",
+          "callee": "Array.isArray",
+          "lineNumber": 13
+        },
+        {
+          "caller": "integrityCheckRec",
+          "callee": "integrityCheckRec",
+          "lineNumber": 15
+        },
+        {
+          "caller": "integrityCheckRec",
+          "callee": "Array.isArray",
+          "lineNumber": 18
+        },
+        {
+          "caller": "integrityCheckRec",
+          "callee": "console.warn",
+          "lineNumber": 23
+        },
+        {
+          "caller": "integrityCheckRec",
+          "callee": "brightYellow",
+          "lineNumber": 24
+        },
+        {
+          "caller": "integrityCheckRec",
+          "callee": "bgBrightRed",
+          "lineNumber": 25
+        },
+        {
+          "caller": "integrityCheckRec",
+          "callee": "brightYellow",
+          "lineNumber": 26
+        },
+        {
+          "caller": "integrityCheckRec",
+          "callee": "Object.entries",
+          "lineNumber": 29
+        },
+        {
+          "caller": "integrityCheckRec",
+          "callee": "integrityCheckRec",
+          "lineNumber": 30
+        },
+        {
+          "caller": "integrityCheck",
+          "callee": "integrityCheckRec",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/manifest/defaults.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 216,
+      "nonEmptyLines": 211,
+      "functions": [
+        {
+          "name": "createDeferred",
+          "startLine": 25,
+          "endLine": 46,
+          "params": [
+            "props",
+            "resolveFunc",
+            "resolveChain"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PREVIEW_PREFIX_KEY",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "INVOKE_PREFIX_KEY",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "deferred",
+          "callee": "resolveFunc",
+          "lineNumber": 35
+        },
+        {
+          "caller": "createDeferred",
+          "callee": "isResolvable",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/manifest/fresh.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 10,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/manifest/manifest.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 497,
+      "nonEmptyLines": 468,
+      "functions": [
+        {
+          "name": "newFakeContext",
+          "startLine": 70,
+          "endLine": 89,
+          "params": []
+        },
+        {
+          "name": "buildDanglingRecover",
+          "startLine": 90,
+          "endLine": 105,
+          "params": [
+            "recovers"
+          ]
+        },
+        {
+          "name": "siteNameFromEnv",
+          "startLine": 107,
+          "endLine": 107,
+          "params": []
+        },
+        {
+          "name": "siteName",
+          "startLine": 108,
+          "endLine": 119,
+          "params": []
+        },
+        {
+          "name": "initContext",
+          "startLine": 121,
+          "endLine": 130,
+          "params": [
+            "m",
+            "currentImportMap",
+            "release"
+          ]
+        },
+        {
+          "name": "installAppsForResolver",
+          "startLine": 132,
+          "endLine": 264,
+          "params": [
+            "resolver",
+            "initialManifest",
+            "initialImportMap"
+          ]
+        },
+        {
+          "name": "fulfillContext",
+          "startLine": 265,
+          "endLine": 401,
+          "params": [
+            "ctx",
+            "initialManifest",
+            "currentImportMap",
+            "release"
+          ]
+        },
+        {
+          "name": "newContext",
+          "startLine": 403,
+          "endLine": 427,
+          "params": [
+            "m",
+            "currentImportMap",
+            "release",
+            "instanceId",
+            "site",
+            "namespace",
+            "visibilityOverrides"
+          ]
+        },
+        {
+          "name": "$live",
+          "startLine": 429,
+          "endLine": 469,
+          "params": [
+            "m",
+            "siteInfo",
+            "release"
+          ]
+        },
+        {
+          "name": "findResolver",
+          "startLine": 471,
+          "endLine": 497,
+          "params": [
+            "currResolvers",
+            "currentResolveType",
+            "currResolvables"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "buildDanglingRecover",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "siteNameFromEnv",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "siteName",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "initContext",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "fulfillContext",
+          "line": 265,
+          "isDefault": false
+        },
+        {
+          "name": "newContext",
+          "line": 403,
+          "isDefault": false
+        },
+        {
+          "name": "$live",
+          "line": 429,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "newFakeContext",
+          "callee": "baseState",
+          "lineNumber": 79
+        },
+        {
+          "caller": "newFakeContext",
+          "callee": "Promise.resolve",
+          "lineNumber": 83
+        },
+        {
+          "caller": "buildDanglingRecover",
+          "callee": "ctx.resolveChain.findLast",
+          "lineNumber": 92
+        },
+        {
+          "caller": "buildDanglingRecover",
+          "callee": "JSON.stringify",
+          "lineNumber": 95
+        },
+        {
+          "caller": "buildDanglingRecover",
+          "callee": "recoverable",
+          "lineNumber": 99
+        },
+        {
+          "caller": "buildDanglingRecover",
+          "callee": "recover",
+          "lineNumber": 100
+        },
+        {
+          "caller": "siteNameFromEnv",
+          "callee": "Deno.env.get",
+          "lineNumber": 107
+        },
+        {
+          "caller": "siteName",
+          "callee": "Context.active",
+          "lineNumber": 109
+        },
+        {
+          "caller": "siteName",
+          "callee": "siteNameFromEnv",
+          "lineNumber": 110
+        },
+        {
+          "caller": "siteName",
+          "callee": "context.namespace!.split",
+          "lineNumber": 117
+        },
+        {
+          "caller": "initContext",
+          "callee": "fulfillContext",
+          "lineNumber": 128
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "newFakeContext",
+          "lineNumber": 139
+        },
+        {
+          "caller": "getState",
+          "callee": "currentResolver.resolve",
+          "lineNumber": 145
+        },
+        {
+          "caller": "installInstallableApps",
+          "callee": "Promise.all",
+          "lineNumber": 159
+        },
+        {
+          "caller": "installInstallableApps",
+          "callee": "apps.map",
+          "lineNumber": 159
+        },
+        {
+          "caller": "installInstallableApps",
+          "callee": "currentResolver.resolve",
+          "lineNumber": 160
+        },
+        {
+          "caller": "installInstallableApps",
+          "callee": "unresolved[resolveType].add",
+          "lineNumber": 169
+        },
+        {
+          "caller": "installInstallableApps",
+          "callee": "_installedApps.filter",
+          "lineNumber": 176
+        },
+        {
+          "caller": "installInstallableApps",
+          "callee": "installedApps\n      .filter(Boolean)\n      .reduce",
+          "lineNumber": 186
+        },
+        {
+          "caller": "installInstallableApps",
+          "callee": "installedApps\n      .filter",
+          "lineNumber": 186
+        },
+        {
+          "caller": "installInstallableApps",
+          "callee": "mergeManifests",
+          "lineNumber": 191
+        },
+        {
+          "caller": "installInstallableApps",
+          "callee": "currentResolver.with",
+          "lineNumber": 197
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "getState",
+          "lineNumber": 203
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "Object.entries",
+          "lineNumber": 207
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "isResolvable",
+          "lineNumber": 208
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "findResolver",
+          "lineNumber": 211
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "Object.values",
+          "lineNumber": 224
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "installInstallableApps",
+          "lineNumber": 225
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "Object.entries",
+          "lineNumber": 231
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "currentResolver.getResolvers",
+          "lineNumber": 233
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "newAvailableAppsToInstall.add",
+          "lineNumber": 234
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "installInstallableApps",
+          "lineNumber": 240
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "Object.keys",
+          "lineNumber": 243
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "console.error",
+          "lineNumber": 244
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "red",
+          "lineNumber": 245
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "Object.entries",
+          "lineNumber": 250
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "table[type].push",
+          "lineNumber": 254
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "console.table",
+          "lineNumber": 257
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "Object.entries(table).map",
+          "lineNumber": 258
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "Object.entries",
+          "lineNumber": 258
+        },
+        {
+          "caller": "installAppsForResolver",
+          "callee": "keys.join",
+          "lineNumber": 259
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "siteName",
+          "lineNumber": 273
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "Deno.env.has",
+          "lineNumber": 274
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "randomSiteName",
+          "lineNumber": 280
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "newFsProvider",
+          "lineNumber": 281
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "getProvider",
+          "lineNumber": 285
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "deferred",
+          "lineNumber": 286
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "runtimePromise.finally",
+          "lineNumber": 287
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "deferred",
+          "lineNumber": 296
+        },
+        {
+          "caller": "installApps",
+          "callee": "(blocks() ?? []).reduce",
+          "lineNumber": 298
+        },
+        {
+          "caller": "installApps",
+          "callee": "blocks",
+          "lineNumber": 298
+        },
+        {
+          "caller": "installApps",
+          "callee": "buildRuntime",
+          "lineNumber": 299
+        },
+        {
+          "caller": "installApps",
+          "callee": "installAppsForResolver",
+          "lineNumber": 315
+        },
+        {
+          "caller": "installApps",
+          "callee": "resolver.with",
+          "lineNumber": 316
+        },
+        {
+          "caller": "installApps",
+          "callee": "buildDanglingRecover",
+          "lineNumber": 319
+        },
+        {
+          "caller": "installApps",
+          "callee": "Object.values",
+          "lineNumber": 325
+        },
+        {
+          "caller": "installApps",
+          "callee": "runtimePromise.resolve",
+          "lineNumber": 327
+        },
+        {
+          "caller": "installApps",
+          "callee": "buildImportMap",
+          "lineNumber": 330
+        },
+        {
+          "caller": "installApps",
+          "callee": "firstInstallAppsPromise.resolve",
+          "lineNumber": 332
+        },
+        {
+          "caller": "installApps",
+          "callee": "Object.keys",
+          "lineNumber": 335
+        },
+        {
+          "caller": "installApps",
+          "callee": "appNames.reduce",
+          "lineNumber": 336
+        },
+        {
+          "caller": "installApps",
+          "callee": "console.log",
+          "lineNumber": 342
+        },
+        {
+          "caller": "installApps",
+          "callee": "green",
+          "lineNumber": 343
+        },
+        {
+          "caller": "installApps",
+          "callee": "green",
+          "lineNumber": 343
+        },
+        {
+          "caller": "installApps",
+          "callee": "appNames.map((name) =>\n          `\\n${green(name.padEnd(longerName))} - ${\n            gray(allAppsMap[name].__resolveType)\n          }`\n        ).join",
+          "lineNumber": 344
+        },
+        {
+          "caller": "installApps",
+          "callee": "appNames.map",
+          "lineNumber": 344
+        },
+        {
+          "caller": "installApps",
+          "callee": "green",
+          "lineNumber": 345
+        },
+        {
+          "caller": "installApps",
+          "callee": "name.padEnd",
+          "lineNumber": 345
+        },
+        {
+          "caller": "installApps",
+          "callee": "gray",
+          "lineNumber": 346
+        },
+        {
+          "caller": "installApps",
+          "callee": "mergeManifests",
+          "lineNumber": 357
+        },
+        {
+          "caller": "installApps",
+          "callee": "runtimePromise.resolve",
+          "lineNumber": 362
+        },
+        {
+          "caller": "installApps",
+          "callee": "Promise.resolve",
+          "lineNumber": 364
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "deferred",
+          "lineNumber": 367
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "provider.onChange",
+          "lineNumber": 368
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "Promise.all([appsInstallationMutex, firstInstallAppsPromise]).then",
+          "lineNumber": 370
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "Promise.all",
+          "lineNumber": 370
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "deferred",
+          "lineNumber": 372
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "installApps().finally",
+          "lineNumber": 375
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "installApps",
+          "lineNumber": 375
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "provider.state().then(() => {\n    installApps().then(firstInstallAppsPromise.resolve).catch(\n      firstInstallAppsPromise.reject,\n    ).then(appsInstallationMutex.resolve);\n  }).catch",
+          "lineNumber": 379
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "provider.state().then",
+          "lineNumber": 379
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "provider.state",
+          "lineNumber": 379
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "installApps().then(firstInstallAppsPromise.resolve).catch(\n      firstInstallAppsPromise.reject,\n    ).then",
+          "lineNumber": 380
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "installApps().then(firstInstallAppsPromise.resolve).catch",
+          "lineNumber": 380
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "installApps().then",
+          "lineNumber": 380
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "installApps",
+          "lineNumber": 380
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "provider.state().then",
+          "lineNumber": 386
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "provider.state",
+          "lineNumber": 386
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "integrityCheck",
+          "lineNumber": 388
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "resolver.getResolvers",
+          "lineNumber": 388
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "performance.now",
+          "lineNumber": 392
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "firstInstallAppsPromise.then(() => {\n    console.log(\n      `[${green(ctx.site)}]: the apps has been installed in ${\n        (performance.now() - start).toFixed(0)\n      }ms`,\n    );\n    return runtimePromise.then((runtime) => runtime.resolver);\n  }).then",
+          "lineNumber": 393
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "firstInstallAppsPromise.then",
+          "lineNumber": 393
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "console.log",
+          "lineNumber": 394
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "green",
+          "lineNumber": 395
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "(performance.now() - start).toFixed",
+          "lineNumber": 396
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "performance.now",
+          "lineNumber": 396
+        },
+        {
+          "caller": "fulfillContext",
+          "callee": "runtimePromise.then",
+          "lineNumber": 399
+        },
+        {
+          "caller": "newContext",
+          "callee": "Context.active",
+          "lineNumber": 414
+        },
+        {
+          "caller": "newContext",
+          "callee": "randId",
+          "lineNumber": 420
+        },
+        {
+          "caller": "newContext",
+          "callee": "fulfillContext",
+          "lineNumber": 426
+        },
+        {
+          "caller": "$live",
+          "callee": "siteName",
+          "lineNumber": 435
+        },
+        {
+          "caller": "$live",
+          "callee": "(blocks() ?? []).reduce",
+          "lineNumber": 443
+        },
+        {
+          "caller": "$live",
+          "callee": "blocks",
+          "lineNumber": 443
+        },
+        {
+          "caller": "$live",
+          "callee": "buildRuntime",
+          "lineNumber": 444
+        },
+        {
+          "caller": "$live",
+          "callee": "getProvider",
+          "lineNumber": 447
+        },
+        {
+          "caller": "$live",
+          "callee": "buildDanglingRecover",
+          "lineNumber": 453
+        },
+        {
+          "caller": "$live",
+          "callee": "Promise.resolve",
+          "lineNumber": 458
+        },
+        {
+          "caller": "$live",
+          "callee": "buildImportMap",
+          "lineNumber": 461
+        },
+        {
+          "caller": "$live",
+          "callee": "console.log",
+          "lineNumber": 464
+        },
+        {
+          "caller": "findResolver",
+          "callee": "seen.has",
+          "lineNumber": 479
+        },
+        {
+          "caller": "findResolver",
+          "callee": "console.warn",
+          "lineNumber": 480
+        },
+        {
+          "caller": "findResolver",
+          "callee": "seen.add",
+          "lineNumber": 485
+        },
+        {
+          "caller": "findResolver",
+          "callee": "isResolvable",
+          "lineNumber": 491
+        }
+      ],
+      "metrics": {
+        "importCount": 18,
+        "exportCount": 7,
+        "functionCount": 10,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/manifest/utils.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "randomSiteName",
+          "startLine": 9,
+          "endLine": 15,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "randomSiteName",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "randomSiteName",
+          "callee": "uniqueNamesGenerator",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/middleware.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "compose",
+          "startLine": 17,
+          "endLine": 39,
+          "params": [
+            "...middlewares"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "compose",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "dispatch",
+          "callee": "last",
+          "lineNumber": 31
+        },
+        {
+          "caller": "next",
+          "callee": "dispatch",
+          "lineNumber": 33
+        },
+        {
+          "caller": "dispatch",
+          "callee": "resolver",
+          "lineNumber": 34
+        },
+        {
+          "caller": "compose",
+          "callee": "dispatch",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "hooks/useDevice.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "useDevice",
+          "startLine": 12,
+          "endLine": 24,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "useDevice",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useDevice",
+          "callee": "useContext",
+          "lineNumber": 13
+        },
+        {
+          "caller": "useDevice",
+          "callee": "console.warn",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "hooks/useSection.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 148,
+      "nonEmptyLines": 128,
+      "functions": [
+        {
+          "name": "addBlockedQS",
+          "startLine": 57,
+          "endLine": 59,
+          "params": [
+            "queryStrings"
+          ]
+        },
+        {
+          "name": "addBlockedQSPrefix",
+          "startLine": 61,
+          "endLine": 71,
+          "params": [
+            "prefixes"
+          ]
+        },
+        {
+          "name": "addAllowedQS",
+          "startLine": 73,
+          "endLine": 75,
+          "params": [
+            "queryStrings"
+          ]
+        },
+        {
+          "name": "createStableHref",
+          "startLine": 78,
+          "endLine": 95,
+          "params": [
+            "href"
+          ]
+        },
+        {
+          "name": "useSection",
+          "startLine": 105,
+          "endLine": 148,
+          "params": [
+            "{ props = {}, href }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "addBlockedQS",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "addBlockedQSPrefix",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "addAllowedQS",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "useSection",
+          "line": 105,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "addBlockedQS",
+          "callee": "queryStrings.forEach",
+          "lineNumber": 58
+        },
+        {
+          "caller": "addBlockedQS",
+          "callee": "BLOCKED_QS.add",
+          "lineNumber": 58
+        },
+        {
+          "caller": "addBlockedQSPrefix",
+          "callee": "BLOCKED_QS_PREFIXES.includes",
+          "lineNumber": 67
+        },
+        {
+          "caller": "addBlockedQSPrefix",
+          "callee": "BLOCKED_QS_PREFIXES.push",
+          "lineNumber": 68
+        },
+        {
+          "caller": "addAllowedQS",
+          "callee": "queryStrings.forEach",
+          "lineNumber": 74
+        },
+        {
+          "caller": "addAllowedQS",
+          "callee": "ALLOWED_QS.add",
+          "lineNumber": 74
+        },
+        {
+          "caller": "createStableHref",
+          "callee": "hrefUrl.searchParams.keys",
+          "lineNumber": 80
+        },
+        {
+          "caller": "createStableHref",
+          "callee": "qsList.forEach",
+          "lineNumber": 82
+        },
+        {
+          "caller": "createStableHref",
+          "callee": "ALLOWED_QS.has",
+          "lineNumber": 84
+        },
+        {
+          "caller": "createStableHref",
+          "callee": "BLOCKED_QS.has",
+          "lineNumber": 85
+        },
+        {
+          "caller": "createStableHref",
+          "callee": "BLOCKED_QS_PREFIXES.some",
+          "lineNumber": 86
+        },
+        {
+          "caller": "createStableHref",
+          "callee": "qsName.startsWith",
+          "lineNumber": 86
+        },
+        {
+          "caller": "createStableHref",
+          "callee": "hrefUrl.searchParams.delete",
+          "lineNumber": 89
+        },
+        {
+          "caller": "createStableHref",
+          "callee": "hrefUrl.searchParams.sort",
+          "lineNumber": 93
+        },
+        {
+          "caller": "useSection",
+          "callee": "useContext",
+          "lineNumber": 108
+        },
+        {
+          "caller": "useSection",
+          "callee": "ctx?.context.state.vary.build",
+          "lineNumber": 117
+        },
+        {
+          "caller": "useSection",
+          "callee": "createStableHref",
+          "lineNumber": 121
+        },
+        {
+          "caller": "useSection",
+          "callee": "[\n    revisionId,\n    vary,\n    stableHref,\n    ctx?.deploymentId,\n  ].join",
+          "lineNumber": 122
+        },
+        {
+          "caller": "useSection",
+          "callee": "hasher.hash",
+          "lineNumber": 128
+        },
+        {
+          "caller": "useSection",
+          "callee": "hasher.result",
+          "lineNumber": 129
+        },
+        {
+          "caller": "useSection",
+          "callee": "hasher.reset",
+          "lineNumber": 130
+        },
+        {
+          "caller": "useSection",
+          "callee": "JSON.stringify",
+          "lineNumber": 133
+        },
+        {
+          "caller": "useSection",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 136
+        },
+        {
+          "caller": "useSection",
+          "callee": "params.set",
+          "lineNumber": 141
+        },
+        {
+          "caller": "useSection",
+          "callee": "JSON.stringify",
+          "lineNumber": 143
+        },
+        {
+          "caller": "useSection",
+          "callee": "FieldResolver.minify",
+          "lineNumber": 143
+        },
+        {
+          "caller": "useSection",
+          "callee": "ctx.resolveChain.slice",
+          "lineNumber": 143
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "hooks/useSetEarlyHints.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "functions": [
+        {
+          "name": "useSetEarlyHints",
+          "startLine": 10,
+          "endLine": 14,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "useSetEarlyHints",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useSetEarlyHints",
+          "callee": "useContext",
+          "lineNumber": 11
+        },
+        {
+          "caller": "useSetEarlyHints",
+          "callee": "ctx?.context.state.response.headers.append",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/features/invoke.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 129,
+      "nonEmptyLines": 122,
+      "functions": [
+        {
+          "name": "wrapInvokeErr",
+          "startLine": 13,
+          "endLine": 42,
+          "params": [
+            "correlationId",
+            "path"
+          ]
+        },
+        {
+          "name": "isInvokeFunc",
+          "startLine": 43,
+          "endLine": 47,
+          "params": [
+            "p"
+          ]
+        },
+        {
+          "name": "payloadToResolvable",
+          "startLine": 55,
+          "endLine": 82,
+          "params": [
+            "p"
+          ]
+        },
+        {
+          "name": "batchInvoke",
+          "startLine": 91,
+          "endLine": 101,
+          "params": [
+            "payload",
+            "state"
+          ]
+        },
+        {
+          "name": "invoke",
+          "startLine": 112,
+          "endLine": 129,
+          "params": [
+            "key",
+            "props",
+            "select",
+            "state"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "wrapInvokeErr",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "payloadToResolvable",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "batchInvoke",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "invoke",
+          "line": 112,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "wrapInvokeErr",
+          "callee": "logger.error",
+          "lineNumber": 17
+        },
+        {
+          "caller": "wrapInvokeErr",
+          "callee": "console.error",
+          "lineNumber": 21
+        },
+        {
+          "caller": "wrapInvokeErr",
+          "callee": "JSON.stringify",
+          "lineNumber": 25
+        },
+        {
+          "caller": "payloadToResolvable",
+          "callee": "isInvokeFunc",
+          "lineNumber": 58
+        },
+        {
+          "caller": "payloadToResolvable",
+          "callee": "payloadForFunc",
+          "lineNumber": 59
+        },
+        {
+          "caller": "payloadToResolvable",
+          "callee": "Array.isArray",
+          "lineNumber": 63
+        },
+        {
+          "caller": "payloadToResolvable",
+          "callee": "Object.entries",
+          "lineNumber": 78
+        },
+        {
+          "caller": "payloadToResolvable",
+          "callee": "payloadToResolvable",
+          "lineNumber": 79
+        },
+        {
+          "caller": "batchInvoke",
+          "callee": "state.resolve(\n    payloadToResolvable(payload),\n    {\n      resolveChain: [{ type: \"resolver\", value: \"invoke\" }],\n    },\n  ).catch",
+          "lineNumber": 95
+        },
+        {
+          "caller": "batchInvoke",
+          "callee": "state.resolve",
+          "lineNumber": 95
+        },
+        {
+          "caller": "batchInvoke",
+          "callee": "payloadToResolvable",
+          "lineNumber": 96
+        },
+        {
+          "caller": "batchInvoke",
+          "callee": "wrapInvokeErr",
+          "lineNumber": 100
+        },
+        {
+          "caller": "batchInvoke",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 100
+        },
+        {
+          "caller": "invoke",
+          "callee": "state.resolve(payloadToResolvable(invokeFunc), {\n    resolveChain: [{ type: \"resolver\", value: \"invoke\" }],\n  }).catch",
+          "lineNumber": 124
+        },
+        {
+          "caller": "invoke",
+          "callee": "state.resolve",
+          "lineNumber": 124
+        },
+        {
+          "caller": "invoke",
+          "callee": "payloadToResolvable",
+          "lineNumber": 124
+        },
+        {
+          "caller": "invoke",
+          "callee": "wrapInvokeErr",
+          "lineNumber": 127
+        },
+        {
+          "caller": "invoke",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 127
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 4,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/utils.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 22,
+      "functions": [
+        {
+          "name": "baseState",
+          "startLine": 6,
+          "endLine": 25,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "baseState",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "baseState",
+          "callee": "Context.active",
+          "lineNumber": 7
+        },
+        {
+          "caller": "baseState",
+          "callee": "vary",
+          "lineNumber": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "types.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 165,
+      "nonEmptyLines": 152,
+      "exports": [
+        {
+          "name": "App",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "ErrorBoundaryComponent",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "ErrorBoundaryParams",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "AppContext",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "AppManifest",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "AppModule",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "AppRuntime",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "JSONSchema7",
+          "line": 137,
+          "isDefault": false
+        },
+        {
+          "name": "PropsLoader",
+          "line": 138,
+          "isDefault": false
+        },
+        {
+          "name": "LoadingFallbackProps",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "SectionProps",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "FnContext",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "ResolveOptions",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "ResolveFunc",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "RouteContext",
+          "line": 143,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 21,
+        "exportCount": 15,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/invoke.server.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "sanitizer",
+          "startLine": 9,
+          "endLine": 10,
+          "params": [
+            "str"
+          ]
+        },
+        {
+          "name": "payloadForFunc",
+          "startLine": 12,
+          "endLine": 22,
+          "params": [
+            "func"
+          ]
+        },
+        {
+          "name": "buildInvokeFunc",
+          "startLine": 24,
+          "endLine": 57,
+          "params": [
+            "resolver",
+            "options",
+            "partialCtx"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "payloadForFunc",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "buildInvokeFunc",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sanitizer",
+          "callee": "str.startsWith",
+          "lineNumber": 10
+        },
+        {
+          "caller": "sanitizer",
+          "callee": "str.substring",
+          "lineNumber": 10
+        },
+        {
+          "caller": "payloadForFunc",
+          "callee": "sanitizer",
+          "lineNumber": 18
+        },
+        {
+          "caller": "invoker",
+          "callee": "resolver",
+          "lineNumber": 40
+        },
+        {
+          "caller": "invoker",
+          "callee": "payloadForFunc",
+          "lineNumber": 41
+        },
+        {
+          "caller": "buildInvokeFunc",
+          "callee": "newHandler",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/invoke.types.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 257,
+      "nonEmptyLines": 236,
+      "exports": [
+        {
+          "name": "AvailableInvocations",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "InvocationFuncFor",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/metabase.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "metabasePreview",
+          "startLine": 10,
+          "endLine": 22,
+          "params": [
+            "iframeSrc"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "metabasePreview",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/object.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 148,
+      "nonEmptyLines": 137,
+      "functions": [
+        {
+          "name": "pickPath",
+          "startLine": 34,
+          "endLine": 69,
+          "params": [
+            "obj",
+            "current",
+            "keys"
+          ]
+        },
+        {
+          "name": "pickPaths",
+          "startLine": 100,
+          "endLine": 112,
+          "params": [
+            "obj",
+            "paths"
+          ]
+        },
+        {
+          "name": "buildObj",
+          "startLine": 118,
+          "endLine": 138,
+          "params": [
+            "partial",
+            "[keys, value]"
+          ]
+        },
+        {
+          "name": "identity",
+          "startLine": 140,
+          "endLine": 140,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "tryOrDefault",
+          "startLine": 142,
+          "endLine": 148,
+          "params": [
+            "fn",
+            "defaultValue"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "pickPaths",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "buildObj",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "identity",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "tryOrDefault",
+          "line": 142,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "pickPath",
+          "callee": "Array.isArray",
+          "lineNumber": 39
+        },
+        {
+          "caller": "pickPath",
+          "callee": "Array.isArray",
+          "lineNumber": 43
+        },
+        {
+          "caller": "pickPath",
+          "callee": "pickPath",
+          "lineNumber": 44
+        },
+        {
+          "caller": "pickPath",
+          "callee": "Array.isArray",
+          "lineNumber": 56
+        },
+        {
+          "caller": "pickPath",
+          "callee": "pickPath",
+          "lineNumber": 62
+        },
+        {
+          "caller": "pickPath",
+          "callee": "pickPath",
+          "lineNumber": 68
+        },
+        {
+          "caller": "pickPaths",
+          "callee": "Array.isArray",
+          "lineNumber": 104
+        },
+        {
+          "caller": "pickPaths",
+          "callee": "pickPath",
+          "lineNumber": 108
+        },
+        {
+          "caller": "pickPaths",
+          "callee": "(path as string).split",
+          "lineNumber": 108
+        },
+        {
+          "caller": "buildObj",
+          "callee": "first.endsWith",
+          "lineNumber": 124
+        },
+        {
+          "caller": "buildObj",
+          "callee": "first.split",
+          "lineNumber": 125
+        },
+        {
+          "caller": "buildObj",
+          "callee": "idx.substring",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildObj",
+          "callee": "rest.unshift",
+          "lineNumber": 128
+        },
+        {
+          "caller": "buildObj",
+          "callee": "idxNumber.toString",
+          "lineNumber": 128
+        },
+        {
+          "caller": "buildObj",
+          "callee": "isNumber.test",
+          "lineNumber": 134
+        },
+        {
+          "caller": "buildObj",
+          "callee": "buildObj",
+          "lineNumber": 137
+        },
+        {
+          "caller": "tryOrDefault",
+          "callee": "fn",
+          "lineNumber": 144
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/promise.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "deferred",
+          "startLine": 32,
+          "endLine": 47,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "deferred",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "deferred",
+          "callee": "Promise.withResolvers",
+          "lineNumber": 33
+        },
+        {
+          "caller": "deferred",
+          "callee": "Object.defineProperty",
+          "lineNumber": 35
+        },
+        {
+          "caller": "deferred",
+          "callee": "Object.assign",
+          "lineNumber": 36
+        },
+        {
+          "caller": "deferred",
+          "callee": "resolve",
+          "lineNumber": 38
+        },
+        {
+          "caller": "deferred",
+          "callee": "reject",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/segment.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "segmentFor",
+          "startLine": 12,
+          "endLine": 51,
+          "params": [
+            "state",
+            "url"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "segmentFor",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "segmentFor",
+          "callee": "Context.active",
+          "lineNumber": 16
+        },
+        {
+          "caller": "segmentFor",
+          "callee": "getSetCookies",
+          "lineNumber": 17
+        },
+        {
+          "caller": "segmentFor",
+          "callee": "cookies.toSorted",
+          "lineNumber": 20
+        },
+        {
+          "caller": "segmentFor",
+          "callee": "cookieA.name.localeCompare",
+          "lineNumber": 21
+        },
+        {
+          "caller": "segmentFor",
+          "callee": "cookie.name.startsWith",
+          "lineNumber": 24
+        },
+        {
+          "caller": "segmentFor",
+          "callee": "hasher.hash",
+          "lineNumber": 25
+        },
+        {
+          "caller": "segmentFor",
+          "callee": "state?.flags?.toSorted",
+          "lineNumber": 30
+        },
+        {
+          "caller": "segmentFor",
+          "callee": "flagA.name.localeCompare",
+          "lineNumber": 31
+        },
+        {
+          "caller": "segmentFor",
+          "callee": "hasher.hash",
+          "lineNumber": 34
+        },
+        {
+          "caller": "segmentFor",
+          "callee": "hasher.hash",
+          "lineNumber": 38
+        },
+        {
+          "caller": "segmentFor",
+          "callee": "hasher.hash",
+          "lineNumber": 42
+        },
+        {
+          "caller": "segmentFor",
+          "callee": "context.release.revision",
+          "lineNumber": 42
+        },
+        {
+          "caller": "segmentFor",
+          "callee": "hasher.hash",
+          "lineNumber": 44
+        },
+        {
+          "caller": "segmentFor",
+          "callee": "hasher.result",
+          "lineNumber": 46
+        },
+        {
+          "caller": "segmentFor",
+          "callee": "hasher.reset",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/sync.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "once",
+          "startLine": 14,
+          "endLine": 31,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "once",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "once",
+          "callee": "cb",
+          "lineNumber": 21
+        },
+        {
+          "caller": "once",
+          "callee": "isAwaitable",
+          "lineNumber": 22
+        },
+        {
+          "caller": "once",
+          "callee": "resp.catch",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/userAgent.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "deviceOf",
+          "startLine": 18,
+          "endLine": 33,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "isBot",
+          "startLine": 39,
+          "endLine": 55,
+          "params": [
+            "req"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "deviceOf",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "isBot",
+          "line": 39,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "deviceOf",
+          "callee": "request.headers.get",
+          "lineNumber": 20
+        },
+        {
+          "caller": "deviceOf",
+          "callee": "request.headers.get",
+          "lineNumber": 22
+        },
+        {
+          "caller": "deviceOf",
+          "callee": "new UAParser(ua).getDevice",
+          "lineNumber": 26
+        },
+        {
+          "caller": "deviceOf",
+          "callee": "url.searchParams.get",
+          "lineNumber": 27
+        },
+        {
+          "caller": "isBot",
+          "callee": "req.headers.get",
+          "lineNumber": 40
+        },
+        {
+          "caller": "isBot",
+          "callee": "KNOWN_BOTS.some",
+          "lineNumber": 46
+        },
+        {
+          "caller": "isBot",
+          "callee": "req.headers.get(\"user-agent\")?.includes",
+          "lineNumber": 46
+        },
+        {
+          "caller": "isBot",
+          "callee": "req.headers.get",
+          "lineNumber": 46
+        },
+        {
+          "caller": "isBot",
+          "callee": "req.headers.get",
+          "lineNumber": 50
+        },
+        {
+          "caller": "isBot",
+          "callee": "UABotParser.setUA(ua).getBrowser",
+          "lineNumber": 51
+        },
+        {
+          "caller": "isBot",
+          "callee": "UABotParser.setUA",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/vary.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "vary",
+          "startLine": 17,
+          "endLine": 33,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "vary",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "vary",
+          "callee": "vary.push",
+          "lineNumber": 22
+        },
+        {
+          "caller": "vary",
+          "callee": "vary.sort().join",
+          "lineNumber": 24
+        },
+        {
+          "caller": "vary",
+          "callee": "vary.sort",
+          "lineNumber": 24
+        },
+        {
+          "caller": "vary",
+          "callee": "debug.push",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

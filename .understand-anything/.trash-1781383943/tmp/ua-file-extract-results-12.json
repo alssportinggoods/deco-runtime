@@ -1,0 +1,249 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 7,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".github/workflows/ci.yaml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 49,
+      "nonEmptyLines": 47,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "on",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "jobs",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": ".github/workflows/issues.yaml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 18,
+      "nonEmptyLines": 18,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "on",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "jobs",
+          "level": 1,
+          "line": 7
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": ".github/workflows/publish-ai.yaml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 188,
+      "nonEmptyLines": 148,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "on",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "env",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "jobs",
+          "level": 1,
+          "line": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": ".github/workflows/publish.yaml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 156,
+      "nonEmptyLines": 121,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "on",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "env",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "jobs",
+          "level": 1,
+          "line": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": ".github/workflows/release.yaml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 45,
+      "nonEmptyLines": 41,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "on",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "permissions",
+          "level": 1,
+          "line": 14
+        },
+        {
+          "heading": "jobs",
+          "level": 1,
+          "line": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": ".github/workflows/releaser.yaml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 375,
+      "nonEmptyLines": 337,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "on",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "permissions",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "jobs",
+          "level": 1,
+          "line": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": ".github/workflows/update.yml",
+      "language": "yaml",
+      "fileCategory": "infra",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "on",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "permissions",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "jobs",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    }
+  ]
+}

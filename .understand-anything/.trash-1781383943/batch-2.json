@@ -1,0 +1,655 @@
+{
+  "nodes": [
+    {
+      "id": "file:commons/workflows/initialize.ts",
+      "type": "file",
+      "name": "initialize.ts",
+      "filePath": "commons/workflows/initialize.ts",
+      "summary": "Lazily initializes the durable workflow runtime exactly once when running outside daemon mode, deriving worker identity from environment variables.",
+      "tags": ["workflow", "initialization", "singleton", "service"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:commons/workflows/initialize.ts:initOnce",
+      "type": "function",
+      "name": "initOnce",
+      "filePath": "commons/workflows/initialize.ts",
+      "lineRange": [22, 44],
+      "summary": "Initializes the workflow engine a single time, wiring worker name and concurrency from the active context and Deno environment.",
+      "tags": ["workflow", "initialization", "singleton"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:commons/workflows/types.ts",
+      "type": "file",
+      "name": "types.ts",
+      "filePath": "commons/workflows/types.ts",
+      "summary": "Defines workflow query-string parsing types and helpers that convert persisted workflow records into execution objects, stripping resolver metadata.",
+      "tags": ["workflow", "type-definition", "serialization"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:commons/workflows/types.ts:toExecution",
+      "type": "function",
+      "name": "toExecution",
+      "filePath": "commons/workflows/types.ts",
+      "lineRange": [54, 78],
+      "summary": "Maps a stored workflow record to a normalized execution object, removing __resolveType fields from input.",
+      "tags": ["workflow", "serialization", "mapping"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:deps.ts",
+      "type": "file",
+      "name": "deps.ts",
+      "filePath": "deps.ts",
+      "summary": "Central dependency barrel that re-exports OpenTelemetry, crypto, cookie, JSON-schema, and instrumentation APIs from third-party modules for use across the framework.",
+      "tags": ["barrel", "dependencies", "entry-point", "type-definition"],
+      "complexity": "moderate",
+      "languageNotes": "Acts as a single import surface so the rest of the codebase pins external versions in one place."
+    },
+    {
+      "id": "file:observability/http.ts",
+      "type": "file",
+      "name": "http.ts",
+      "filePath": "observability/http.ts",
+      "summary": "Provides a small helper to start measuring HTTP request duration and record it to the OpenTelemetry httpDuration histogram.",
+      "tags": ["observability", "metrics", "http", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:observability/observe.ts",
+      "type": "file",
+      "name": "observe.ts",
+      "filePath": "observability/observe.ts",
+      "summary": "Wraps an async operation to record its duration and error status to OpenTelemetry operation-duration metrics.",
+      "tags": ["observability", "metrics", "instrumentation", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:observability/observe.ts:observe",
+      "type": "function",
+      "name": "observe",
+      "filePath": "observability/observe.ts",
+      "lineRange": [14, 37],
+      "summary": "Executes a function, measures elapsed time, and records duration plus success/error labels to the operation duration metric.",
+      "tags": ["observability", "metrics", "instrumentation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:observability/otel/config.ts",
+      "type": "file",
+      "name": "config.ts",
+      "filePath": "observability/otel/config.ts",
+      "summary": "Central OpenTelemetry configuration: builds the resource descriptor, tracer, sampling strategy, and exposes flags indicating whether tracing is enabled and recording.",
+      "tags": ["observability", "configuration", "tracing", "otel"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:observability/otel/context.ts",
+      "type": "file",
+      "name": "context.ts",
+      "filePath": "observability/otel/context.ts",
+      "summary": "Defines OpenTelemetry context keys and an AsyncLocalStorage-backed store for propagating request context through trace spans.",
+      "tags": ["observability", "context", "tracing", "otel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:observability/otel/instrumentation/deno-runtime.ts",
+      "type": "file",
+      "name": "deno-runtime.ts",
+      "filePath": "observability/otel/instrumentation/deno-runtime.ts",
+      "summary": "Custom OpenTelemetry instrumentation that exposes Deno runtime memory metrics as observable gauges and counters.",
+      "tags": ["observability", "instrumentation", "metrics", "otel"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:observability/otel/instrumentation/deno-runtime.ts:DenoRuntimeInstrumentation",
+      "type": "class",
+      "name": "DenoRuntimeInstrumentation",
+      "filePath": "observability/otel/instrumentation/deno-runtime.ts",
+      "lineRange": [15, 69],
+      "summary": "Instrumentation class registering observable memory-usage metrics for the Deno runtime via the OpenTelemetry meter.",
+      "tags": ["observability", "instrumentation", "metrics"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:observability/otel/logger.ts",
+      "type": "file",
+      "name": "logger.ts",
+      "filePath": "observability/otel/logger.ts",
+      "summary": "Custom logging handler that forwards log records to an OpenTelemetry LoggerProvider, enriching them with request context and severity mapping.",
+      "tags": ["observability", "logging", "otel", "service"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:observability/otel/logger.ts:OpenTelemetryHandler",
+      "type": "class",
+      "name": "OpenTelemetryHandler",
+      "filePath": "observability/otel/logger.ts",
+      "lineRange": [67, 185],
+      "summary": "Log handler that sets up an OTLP log exporter, maps severities, extracts request context, and emits structured log records.",
+      "tags": ["observability", "logging", "otel"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:observability/otel/metrics.ts",
+      "type": "file",
+      "name": "metrics.ts",
+      "filePath": "observability/otel/metrics.ts",
+      "summary": "Configures the OpenTelemetry meter and metric exporter, including export interval and extra-metrics flag, plus header parsing helpers.",
+      "tags": ["observability", "metrics", "configuration", "otel"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:observability/otel/samplers/debug.ts",
+      "type": "file",
+      "name": "debug.ts",
+      "filePath": "observability/otel/samplers/debug.ts",
+      "summary": "Trace sampler that forces sampling when a debug header is present on the request, delegating to an inner sampler otherwise.",
+      "tags": ["observability", "tracing", "sampler", "otel"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:observability/otel/samplers/debug.ts:DebugSampler",
+      "type": "class",
+      "name": "DebugSampler",
+      "filePath": "observability/otel/samplers/debug.ts",
+      "lineRange": [13, 53],
+      "summary": "Sampler wrapper that records spans when a debug request header is set, otherwise defers to the wrapped sampler.",
+      "tags": ["observability", "tracing", "sampler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:observability/otel/samplers/urlBased.ts",
+      "type": "file",
+      "name": "urlBased.ts",
+      "filePath": "observability/otel/samplers/urlBased.ts",
+      "summary": "Trace sampler that applies per-URL-pattern sampling ratios, matching request path segments against configured glob-like patterns.",
+      "tags": ["observability", "tracing", "sampler", "otel"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:observability/otel/samplers/urlBased.ts:URLBasedSampler",
+      "type": "class",
+      "name": "URLBasedSampler",
+      "filePath": "observability/otel/samplers/urlBased.ts",
+      "lineRange": [24, 68],
+      "summary": "Sampler that selects a sampling probability based on matching the request URL path against compiled URL patterns.",
+      "tags": ["observability", "tracing", "sampler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:observability/probes/handler.ts",
+      "type": "file",
+      "name": "handler.ts",
+      "filePath": "observability/probes/handler.ts",
+      "summary": "Defines the probe checker interface and a helper to read numeric probe thresholds from environment variables.",
+      "tags": ["observability", "probes", "type-definition", "health-check"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:observability/probes/medianLatency.ts",
+      "type": "file",
+      "name": "medianLatency.ts",
+      "filePath": "observability/probes/medianLatency.ts",
+      "summary": "Liveness probe checker that fails when the rolling median request latency exceeds a configured threshold.",
+      "tags": ["observability", "probes", "health-check", "metrics"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:observability/probes/memory.ts",
+      "type": "file",
+      "name": "memory.ts",
+      "filePath": "observability/probes/memory.ts",
+      "summary": "Liveness probe checker that reports unhealthy when process memory usage crosses a configured threshold.",
+      "tags": ["observability", "probes", "health-check", "memory"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:observability/probes/reqCount.ts",
+      "type": "file",
+      "name": "reqCount.ts",
+      "filePath": "observability/probes/reqCount.ts",
+      "summary": "Liveness probe checker tracking total request count against a configured threshold.",
+      "tags": ["observability", "probes", "health-check", "metrics"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:observability/probes/reqInflight.ts",
+      "type": "file",
+      "name": "reqInflight.ts",
+      "filePath": "observability/probes/reqInflight.ts",
+      "summary": "Liveness probe checker that monitors the number of in-flight requests against a configured limit.",
+      "tags": ["observability", "probes", "health-check", "metrics"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:observability/probes/uptime.ts",
+      "type": "file",
+      "name": "uptime.ts",
+      "filePath": "observability/probes/uptime.ts",
+      "summary": "Liveness probe checker reporting process uptime, used to gate readiness during early startup.",
+      "tags": ["observability", "probes", "health-check", "uptime"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/caches/cacheWriteWorker.ts",
+      "type": "file",
+      "name": "cacheWriteWorker.ts",
+      "filePath": "runtime/caches/cacheWriteWorker.ts",
+      "summary": "Web Worker that writes cache entries to the file system off the main thread, handling directory creation, hashing, and combined buffer generation.",
+      "tags": ["cache", "worker", "filesystem", "service"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:runtime/caches/common.ts",
+      "type": "file",
+      "name": "common.ts",
+      "filePath": "runtime/caches/common.ts",
+      "summary": "Wraps a cache storage with OpenTelemetry instrumentation, recording cache hit/miss status and span timing for match/put/delete operations.",
+      "tags": ["cache", "instrumentation", "observability", "middleware"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/caches/common.ts:withInstrumentation",
+      "type": "function",
+      "name": "withInstrumentation",
+      "filePath": "runtime/caches/common.ts",
+      "lineRange": [27, 64],
+      "summary": "Decorates a CacheStorage with tracing spans and cache-hit metrics around match operations.",
+      "tags": ["cache", "instrumentation", "observability"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:runtime/caches/compose.ts",
+      "type": "file",
+      "name": "compose.ts",
+      "filePath": "runtime/caches/compose.ts",
+      "summary": "Composes multiple cache storages into one, racing reads and fanning out writes/deletes across the layered caches.",
+      "tags": ["cache", "composition", "factory"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/caches/compose.ts:compose",
+      "type": "function",
+      "name": "compose",
+      "filePath": "runtime/caches/compose.ts",
+      "lineRange": [10, 117],
+      "summary": "Reduces a list of cache storages into a single composed storage that reads from the fastest and back-fills missing layers.",
+      "tags": ["cache", "composition", "factory"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:runtime/caches/fileSystem.ts",
+      "type": "file",
+      "name": "fileSystem.ts",
+      "filePath": "runtime/caches/fileSystem.ts",
+      "summary": "File-system-backed CacheStorage implementation that serializes responses with headers into combined buffers and offloads writes to a worker.",
+      "tags": ["cache", "filesystem", "serialization", "service"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:runtime/caches/fileSystem.ts:createFileSystemCache",
+      "type": "function",
+      "name": "createFileSystemCache",
+      "filePath": "runtime/caches/fileSystem.ts",
+      "lineRange": [102, 294],
+      "summary": "Builds the file-system cache storage with match/put/delete operations, combined-buffer encoding, and worker-based writes.",
+      "tags": ["cache", "filesystem", "factory"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:runtime/caches/headerscache.ts",
+      "type": "file",
+      "name": "headerscache.ts",
+      "filePath": "runtime/caches/headerscache.ts",
+      "summary": "Cache storage decorator that tracks expiration via response headers and an LRU index, delegating to an inner cache storage.",
+      "tags": ["cache", "lru", "headers", "decorator"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/caches/headerscache.ts:createLruCacheStorage",
+      "type": "function",
+      "name": "createLruCacheStorage",
+      "filePath": "runtime/caches/headerscache.ts",
+      "lineRange": [10, 81],
+      "summary": "Wraps an inner cache storage with header-based expiry tracking and LRU eviction over cache keys.",
+      "tags": ["cache", "lru", "headers"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:runtime/caches/lrucache.ts",
+      "type": "file",
+      "name": "lrucache.ts",
+      "filePath": "runtime/caches/lrucache.ts",
+      "summary": "LRU cache storage decorator using an in-memory key index with TTL tracking to bound entries from an inner cache storage.",
+      "tags": ["cache", "lru", "decorator", "ttl"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/caches/lrucache.ts:createLruCacheStorage",
+      "type": "function",
+      "name": "createLruCacheStorage",
+      "filePath": "runtime/caches/lrucache.ts",
+      "lineRange": [39, 102],
+      "summary": "Creates an LRU-bounded cache storage layered over an inner storage, maintaining a key set with TTL for eviction.",
+      "tags": ["cache", "lru", "ttl"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:runtime/caches/mod.ts",
+      "type": "file",
+      "name": "mod.ts",
+      "filePath": "runtime/caches/mod.ts",
+      "summary": "Cache subsystem entry point that selects cache implementations by engine, exposes the loader-cache flag and revalidation locker, and builds the tiered cache storage.",
+      "tags": ["cache", "entry-point", "factory", "barrel"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:runtime/caches/redis.ts",
+      "type": "file",
+      "name": "redis.ts",
+      "filePath": "runtime/caches/redis.ts",
+      "summary": "Redis-backed cache storage with pluggable compression codecs (lz4/zstd), sentinel support, command timeouts, and a distributed revalidation locker.",
+      "tags": ["cache", "redis", "compression", "service"],
+      "complexity": "complex",
+      "languageNotes": "Supports multiple compression codecs selected at runtime and guards Redis commands with timeout races."
+    },
+    {
+      "id": "function:runtime/caches/redis.ts:create",
+      "type": "function",
+      "name": "create",
+      "filePath": "runtime/caches/redis.ts",
+      "lineRange": [306, 403],
+      "summary": "Builds the Redis CacheStorage implementing match/put/delete with key namespacing, serialization, TTL, and command timeouts.",
+      "tags": ["cache", "redis", "factory"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:runtime/caches/redis.ts:createRevalidationLocker",
+      "type": "function",
+      "name": "createRevalidationLocker",
+      "filePath": "runtime/caches/redis.ts",
+      "lineRange": [181, 204],
+      "summary": "Creates a Redis-based lock used to coordinate stale-while-revalidate refreshes across instances.",
+      "tags": ["cache", "redis", "locking"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/caches/redis.ts:_compress",
+      "type": "function",
+      "name": "_compress",
+      "filePath": "runtime/caches/redis.ts",
+      "lineRange": [97, 137],
+      "summary": "Compresses serialized cache payloads using the selected codec (lz4, zstd, or gzip stream), prefixing the codec marker.",
+      "tags": ["cache", "compression", "serialization"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/caches/redis.ts:_decompress",
+      "type": "function",
+      "name": "_decompress",
+      "filePath": "runtime/caches/redis.ts",
+      "lineRange": [139, 165],
+      "summary": "Decompresses cache payloads by reading the codec marker and applying the matching decompression routine.",
+      "tags": ["cache", "compression", "serialization"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:runtime/caches/tiered.ts",
+      "type": "file",
+      "name": "tiered.ts",
+      "filePath": "runtime/caches/tiered.ts",
+      "summary": "Tiered cache storage that reads from the fastest available tier and propagates fresh entries back to faster tiers on miss.",
+      "tags": ["cache", "tiered", "factory"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/caches/tiered.ts:createTieredCache",
+      "type": "function",
+      "name": "createTieredCache",
+      "filePath": "runtime/caches/tiered.ts",
+      "lineRange": [31, 170],
+      "summary": "Composes ordered cache tiers, serving the first valid match and back-filling earlier tiers from later ones.",
+      "tags": ["cache", "tiered", "factory"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:runtime/caches/utils.ts",
+      "type": "file",
+      "name": "utils.ts",
+      "filePath": "runtime/caches/utils.ts",
+      "summary": "Shared cache helpers: SHA-1 hashing with an LRU memo, base cache storage scaffolding, request key derivation, and cacheability assertions.",
+      "tags": ["cache", "utility", "hashing", "validation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/caches/utils.ts:createBaseCacheStorage",
+      "type": "function",
+      "name": "createBaseCacheStorage",
+      "filePath": "runtime/caches/utils.ts",
+      "lineRange": [52, 87],
+      "summary": "Provides a base CacheStorage scaffold delegating to an inner storage and an openCache factory.",
+      "tags": ["cache", "factory", "utility"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/caches/utils.ts:assertCanBeCached",
+      "type": "function",
+      "name": "assertCanBeCached",
+      "filePath": "runtime/caches/utils.ts",
+      "lineRange": [114, 127],
+      "summary": "Validates that a request/response pair is eligible for caching, checking the URL scheme and response constraints.",
+      "tags": ["cache", "validation", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/middlewares/liveness.ts",
+      "type": "file",
+      "name": "liveness.ts",
+      "filePath": "runtime/middlewares/liveness.ts",
+      "summary": "Hono middleware exposing a liveness endpoint that runs probe checkers, records probe metrics, and triggers graceful shutdown on termination signals.",
+      "tags": ["middleware", "health-check", "observability", "probes"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/middlewares/liveness.ts:buildHandler",
+      "type": "function",
+      "name": "buildHandler",
+      "filePath": "runtime/middlewares/liveness.ts",
+      "lineRange": [50, 117],
+      "summary": "Builds the liveness middleware that serves probe results, records metrics, and wires signal-based shutdown.",
+      "tags": ["middleware", "health-check", "probes"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:runtime/routes/workflow.ts",
+      "type": "file",
+      "name": "workflow.ts",
+      "filePath": "runtime/routes/workflow.ts",
+      "summary": "HTTP route handler that resolves workflow props and streams workflow execution commands back to the client.",
+      "tags": ["workflow", "api-handler", "route", "streaming"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:utils/stat.ts",
+      "type": "file",
+      "name": "stat.ts",
+      "filePath": "utils/stat.ts",
+      "summary": "Statistics utilities implementing max/min heaps and a sliding-window Median calculator used by latency probes.",
+      "tags": ["utility", "statistics", "data-structure", "algorithm"],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:utils/stat.ts:MaxHeap",
+      "type": "class",
+      "name": "MaxHeap",
+      "filePath": "utils/stat.ts",
+      "lineRange": [3, 86],
+      "summary": "Binary max-heap supporting insert, extract-max, and arbitrary removal for streaming median computation.",
+      "tags": ["data-structure", "heap", "algorithm"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:utils/stat.ts:MinHeap",
+      "type": "class",
+      "name": "MinHeap",
+      "filePath": "utils/stat.ts",
+      "lineRange": [88, 171],
+      "summary": "Binary min-heap supporting insert, extract-min, and arbitrary removal for streaming median computation.",
+      "tags": ["data-structure", "heap", "algorithm"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:utils/stat.ts:Median",
+      "type": "class",
+      "name": "Median",
+      "filePath": "utils/stat.ts",
+      "lineRange": [173, 244],
+      "summary": "Sliding-window median calculator balancing a max-heap and min-heap to track the median of recent values.",
+      "tags": ["statistics", "algorithm", "data-structure"],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {"source": "file:commons/workflows/initialize.ts", "target": "function:commons/workflows/initialize.ts:initOnce", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:commons/workflows/initialize.ts", "target": "function:commons/workflows/initialize.ts:initOnce", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:commons/workflows/initialize.ts", "target": "file:deco.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:commons/workflows/initialize.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:commons/workflows/types.ts", "target": "function:commons/workflows/types.ts:toExecution", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:commons/workflows/types.ts", "target": "function:commons/workflows/types.ts:toExecution", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:commons/workflows/types.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:commons/workflows/types.ts", "target": "file:engine/core/resolver.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:observability/http.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/http.ts", "target": "file:observability/otel/metrics.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:observability/observe.ts", "target": "function:observability/observe.ts:observe", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:observability/observe.ts", "target": "function:observability/observe.ts:observe", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:observability/observe.ts", "target": "file:blocks/loader.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/observe.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/observe.ts", "target": "file:observability/otel/metrics.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:observability/otel/config.ts", "target": "file:deco.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/otel/config.ts", "target": "file:deno.json", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/otel/config.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/otel/config.ts", "target": "file:engine/decofile/constants.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/otel/config.ts", "target": "file:engine/importmap/builder.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/otel/config.ts", "target": "file:observability/otel/instrumentation/deno-runtime.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/otel/config.ts", "target": "file:observability/otel/logger.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/otel/config.ts", "target": "file:observability/otel/samplers/debug.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/otel/config.ts", "target": "file:observability/otel/samplers/urlBased.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/otel/config.ts", "target": "file:utils/patched_fetch.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:observability/otel/context.ts", "target": "function:observability/otel/context.ts:withRequestContext", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:observability/otel/context.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:observability/otel/instrumentation/deno-runtime.ts", "target": "class:observability/otel/instrumentation/deno-runtime.ts:DenoRuntimeInstrumentation", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:observability/otel/instrumentation/deno-runtime.ts", "target": "class:observability/otel/instrumentation/deno-runtime.ts:DenoRuntimeInstrumentation", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:observability/otel/instrumentation/deno-runtime.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:observability/otel/logger.ts", "target": "class:observability/otel/logger.ts:OpenTelemetryHandler", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:observability/otel/logger.ts", "target": "class:observability/otel/logger.ts:OpenTelemetryHandler", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:observability/otel/logger.ts", "target": "file:deco.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/otel/logger.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/otel/logger.ts", "target": "file:observability/otel/context.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:observability/otel/metrics.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/otel/metrics.ts", "target": "file:observability/otel/config.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:observability/otel/samplers/debug.ts", "target": "class:observability/otel/samplers/debug.ts:DebugSampler", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:observability/otel/samplers/debug.ts", "target": "class:observability/otel/samplers/debug.ts:DebugSampler", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:observability/otel/samplers/debug.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/otel/samplers/debug.ts", "target": "file:observability/otel/context.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/otel/samplers/debug.ts", "target": "file:types.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:observability/otel/samplers/urlBased.ts", "target": "class:observability/otel/samplers/urlBased.ts:URLBasedSampler", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:observability/otel/samplers/urlBased.ts", "target": "class:observability/otel/samplers/urlBased.ts:URLBasedSampler", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:observability/otel/samplers/urlBased.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/otel/samplers/urlBased.ts", "target": "file:observability/otel/context.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:observability/probes/medianLatency.ts", "target": "file:observability/probes/handler.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/probes/medianLatency.ts", "target": "file:utils/stat.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/probes/medianLatency.ts", "target": "class:utils/stat.ts:Median", "type": "depends_on", "direction": "forward", "weight": 0.6},
+
+    {"source": "file:observability/probes/memory.ts", "target": "file:observability/probes/handler.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/probes/reqCount.ts", "target": "file:observability/probes/handler.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/probes/reqInflight.ts", "target": "file:observability/probes/handler.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/probes/uptime.ts", "target": "file:deco.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:observability/probes/uptime.ts", "target": "file:observability/probes/handler.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/caches/cacheWriteWorker.ts", "target": "function:runtime/caches/cacheWriteWorker.ts:createFileSystemCache", "type": "contains", "direction": "forward", "weight": 1.0},
+
+    {"source": "file:runtime/caches/common.ts", "target": "function:runtime/caches/common.ts:withInstrumentation", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/caches/common.ts", "target": "function:runtime/caches/common.ts:withInstrumentation", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:runtime/caches/common.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/caches/common.ts", "target": "file:observability/otel/config.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/caches/common.ts", "target": "file:observability/otel/metrics.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/caches/common.ts", "target": "file:runtime/caches/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/caches/compose.ts", "target": "function:runtime/caches/compose.ts:compose", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/caches/compose.ts", "target": "function:runtime/caches/compose.ts:compose", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:runtime/caches/compose.ts", "target": "file:observability/otel/config.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/caches/fileSystem.ts", "target": "function:runtime/caches/fileSystem.ts:createFileSystemCache", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/caches/fileSystem.ts", "target": "file:observability/otel/config.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/caches/fileSystem.ts", "target": "file:runtime/caches/cacheWriteWorker.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/caches/fileSystem.ts", "target": "file:runtime/caches/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/caches/headerscache.ts", "target": "function:runtime/caches/headerscache.ts:createLruCacheStorage", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/caches/headerscache.ts", "target": "file:runtime/caches/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/caches/lrucache.ts", "target": "function:runtime/caches/lrucache.ts:createLruCacheStorage", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/caches/lrucache.ts", "target": "file:runtime/caches/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/caches/mod.ts", "target": "function:runtime/caches/tiered.ts:createTieredCache", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "file:runtime/caches/mod.ts", "target": "file:runtime/caches/common.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/caches/mod.ts", "target": "file:runtime/caches/fileSystem.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/caches/mod.ts", "target": "file:runtime/caches/headerscache.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/caches/mod.ts", "target": "file:runtime/caches/lrucache.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/caches/mod.ts", "target": "file:runtime/caches/redis.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/caches/mod.ts", "target": "file:runtime/caches/tiered.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/caches/redis.ts", "target": "function:runtime/caches/redis.ts:create", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/caches/redis.ts", "target": "function:runtime/caches/redis.ts:createRevalidationLocker", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/caches/redis.ts", "target": "function:runtime/caches/redis.ts:_compress", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/caches/redis.ts", "target": "function:runtime/caches/redis.ts:_decompress", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/caches/redis.ts", "target": "function:runtime/caches/redis.ts:create", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:runtime/caches/redis.ts", "target": "function:runtime/caches/redis.ts:createRevalidationLocker", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:runtime/caches/redis.ts", "target": "function:runtime/caches/redis.ts:_compress", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:runtime/caches/redis.ts", "target": "function:runtime/caches/redis.ts:_decompress", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:runtime/caches/redis.ts", "target": "file:runtime/caches/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/caches/tiered.ts", "target": "function:runtime/caches/tiered.ts:createTieredCache", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/caches/tiered.ts", "target": "function:runtime/caches/tiered.ts:createTieredCache", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:runtime/caches/utils.ts", "target": "function:runtime/caches/utils.ts:createBaseCacheStorage", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/caches/utils.ts", "target": "function:runtime/caches/utils.ts:assertCanBeCached", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/caches/utils.ts", "target": "function:runtime/caches/utils.ts:createBaseCacheStorage", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:runtime/caches/utils.ts", "target": "function:runtime/caches/utils.ts:assertCanBeCached", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:runtime/middlewares/liveness.ts", "target": "function:runtime/middlewares/liveness.ts:buildHandler", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/middlewares/liveness.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middlewares/liveness.ts", "target": "file:observability/otel/config.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middlewares/liveness.ts", "target": "file:observability/otel/metrics.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middlewares/liveness.ts", "target": "file:observability/probes/memory.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middlewares/liveness.ts", "target": "file:observability/probes/reqCount.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middlewares/liveness.ts", "target": "file:observability/probes/reqInflight.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middlewares/liveness.ts", "target": "file:observability/probes/uptime.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/middlewares/liveness.ts", "target": "file:runtime/middleware.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/routes/workflow.ts", "target": "file:blocks/workflow.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/workflow.ts", "target": "file:commons/workflows/initialize.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/workflow.ts", "target": "file:commons/workflows/types.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/workflow.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/workflow.ts", "target": "file:runtime/middleware.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/workflow.ts", "target": "file:types.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:utils/stat.ts", "target": "class:utils/stat.ts:MaxHeap", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:utils/stat.ts", "target": "class:utils/stat.ts:MinHeap", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:utils/stat.ts", "target": "class:utils/stat.ts:Median", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:utils/stat.ts", "target": "class:utils/stat.ts:Median", "type": "exports", "direction": "forward", "weight": 0.8}
+  ]
+}

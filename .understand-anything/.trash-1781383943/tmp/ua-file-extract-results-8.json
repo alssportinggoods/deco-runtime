@@ -1,0 +1,2374 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 19,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "blocks/mod.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 34,
+      "exports": [
+        {
+          "name": "WorkflowGen",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "SectionContext",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "SectionCtx",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "ComponentFunc",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "ComponentMetadata",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "Resolvable",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "Accounts",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "AppManifest",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "AppMiddleware",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "AppMiddlewareContext",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "Apps",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "ImportMap",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "ManifestOf",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "Flag",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "FlagObj",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "MultivariateFlag",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "Variant",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "Handler",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "blocks",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "defineBlock",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "Loader",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "MatchContext",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "Matcher",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "Page",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "isSection",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "Section",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "applyProps",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "buildImportMap",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "buildImportMapWith",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "createBagKey",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "PAGE_CACHE_ALLOWED_KEY",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "PAGE_DIRTY_KEY",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "FnProps",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "WorkflowContext",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "Workflow",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "WorkflowFn",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 36,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "blocks/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 37,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "hooks/useScript.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 85,
+      "functions": [
+        {
+          "name": "timings",
+          "startLine": 18,
+          "endLine": 29,
+          "params": [
+            "js"
+          ]
+        },
+        {
+          "name": "_minify",
+          "startLine": 31,
+          "endLine": 52,
+          "params": [
+            "js"
+          ]
+        },
+        {
+          "name": "minify",
+          "startLine": 60,
+          "endLine": 78,
+          "params": [
+            "code"
+          ]
+        },
+        {
+          "name": "useScript",
+          "startLine": 88,
+          "endLine": 95,
+          "params": [
+            "fn",
+            "...params"
+          ]
+        },
+        {
+          "name": "useScriptAsDataURI",
+          "startLine": 97,
+          "endLine": 102,
+          "params": [
+            "fn",
+            "...params"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "minify",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "useScript",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "useScriptAsDataURI",
+          "line": 97,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "timings",
+          "callee": "performance.now",
+          "lineNumber": 19
+        },
+        {
+          "caller": "timings",
+          "callee": "performance.now",
+          "lineNumber": 22
+        },
+        {
+          "caller": "timings",
+          "callee": "console.log",
+          "lineNumber": 23
+        },
+        {
+          "caller": "timings",
+          "callee": "js.slice(0, 38).replace",
+          "lineNumber": 25
+        },
+        {
+          "caller": "timings",
+          "callee": "js.slice",
+          "lineNumber": 25
+        },
+        {
+          "caller": "_minify",
+          "callee": "timings",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_minify",
+          "callee": "terserMinify",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_minify",
+          "callee": "result?.code?.replace",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_minify",
+          "callee": "log",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_minify",
+          "callee": "console.error",
+          "lineNumber": 48
+        },
+        {
+          "caller": "minify",
+          "callee": "cache.get",
+          "lineNumber": 61
+        },
+        {
+          "caller": "minify",
+          "callee": "_minify",
+          "lineNumber": 61
+        },
+        {
+          "caller": "minify",
+          "callee": "cache.set",
+          "lineNumber": 64
+        },
+        {
+          "caller": "minify",
+          "callee": "cached.then",
+          "lineNumber": 66
+        },
+        {
+          "caller": "minify",
+          "callee": "cache.delete",
+          "lineNumber": 68
+        },
+        {
+          "caller": "minify",
+          "callee": "cache.set",
+          "lineNumber": 70
+        },
+        {
+          "caller": "useScript",
+          "callee": "fn.toString",
+          "lineNumber": 92
+        },
+        {
+          "caller": "useScript",
+          "callee": "minify",
+          "lineNumber": 93
+        },
+        {
+          "caller": "useScript",
+          "callee": "params.map((p) => JSON.stringify(p)).join",
+          "lineNumber": 94
+        },
+        {
+          "caller": "useScript",
+          "callee": "params.map",
+          "lineNumber": 94
+        },
+        {
+          "caller": "useScript",
+          "callee": "JSON.stringify",
+          "lineNumber": 94
+        },
+        {
+          "caller": "useScriptAsDataURI",
+          "callee": "encodeURIComponent",
+          "lineNumber": 101
+        },
+        {
+          "caller": "useScriptAsDataURI",
+          "callee": "useScript",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "mod.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 57,
+      "exports": [
+        {
+          "name": "AppMiddlewareContext",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "ManifestOf",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "MatchContext",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "WorkflowContext",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "Framework",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "Context",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "ValueType",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "WorkflowGen",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "Block",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "BlockFromKey",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "BlockFunc",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "BlockKeys",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "BlockModule",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "InstanceOf",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "IntrospectParams",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "PreactComponent",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "ResolvableOf",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "ResolverLike",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "HintNode",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "asResolved",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "isDeferred",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "isResolvable",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "BaseContext",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "Resolvable",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "Resolved",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "$live",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "initContext",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "newContext",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "lazySchemaFor",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "Schemas",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "fetch",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "useFramework",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "DecoRouteState",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "Deco",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "PageData",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "allowCorsFor",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "StreamProps",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "AvailableActions",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "AvailableInvocations",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "AvailableLoaders",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "onFetch",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "FetchCompleteEvent",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "FetchEvent",
+          "line": 57,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 43,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "observability/mod.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "exports": [
+        {
+          "name": "ValueType",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "logger",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "meter",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/deps.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 23,
+      "exports": [
+        {
+          "name": "Hono",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "Context",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "Handler",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "Input",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "MiddlewareHandler",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "Env",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "serveStatic",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "upgradeWebSocket",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 8,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/errors.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 71,
+      "functions": [
+        {
+          "name": "status",
+          "startLine": 24,
+          "endLine": 39,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "shortcircuit",
+          "startLine": 65,
+          "endLine": 67,
+          "params": [
+            "resp"
+          ]
+        },
+        {
+          "name": "redirect",
+          "startLine": 72,
+          "endLine": 79,
+          "params": [
+            "url",
+            "status"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HttpError",
+          "startLine": 4,
+          "endLine": 10,
+          "methods": [
+            "constructor"
+          ],
+          "properties": [
+            "status"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HttpError",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "status",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "forbidden",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "unauthorized",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "notFound",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "badRequest",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "shortcircuit",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "redirect",
+          "line": 72,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 7
+        },
+        {
+          "caller": "status",
+          "callee": "mHeaders.set",
+          "lineNumber": 31
+        },
+        {
+          "caller": "status",
+          "callee": "shortcircuit",
+          "lineNumber": 33
+        },
+        {
+          "caller": "status",
+          "callee": "JSON.stringify",
+          "lineNumber": 34
+        },
+        {
+          "caller": "redirect",
+          "callee": "shortcircuit",
+          "lineNumber": 73
+        },
+        {
+          "caller": "redirect",
+          "callee": "url.toString",
+          "lineNumber": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "runtime/features/preview.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "paramsFromUrl",
+          "startLine": 8,
+          "endLine": 20,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "addLocal",
+          "startLine": 22,
+          "endLine": 23,
+          "params": [
+            "block"
+          ]
+        },
+        {
+          "name": "preview",
+          "startLine": 25,
+          "endLine": 60,
+          "params": [
+            "req",
+            "previewUrl",
+            "props",
+            "ctx"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "preview",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "paramsFromUrl",
+          "callee": "url.searchParams.get",
+          "lineNumber": 11
+        },
+        {
+          "caller": "paramsFromUrl",
+          "callee": "url.searchParams.get",
+          "lineNumber": 12
+        },
+        {
+          "caller": "paramsFromUrl",
+          "callee": "urlPattern.exec",
+          "lineNumber": 18
+        },
+        {
+          "caller": "addLocal",
+          "callee": "block.startsWith",
+          "lineNumber": 23
+        },
+        {
+          "caller": "addLocal",
+          "callee": "block.endsWith",
+          "lineNumber": 23
+        },
+        {
+          "caller": "preview",
+          "callee": "addLocal",
+          "lineNumber": 33
+        },
+        {
+          "caller": "preview",
+          "callee": "decodeURIComponent",
+          "lineNumber": 34
+        },
+        {
+          "caller": "preview",
+          "callee": "url.pathname.replace",
+          "lineNumber": 34
+        },
+        {
+          "caller": "preview",
+          "callee": "paramsFromUrl",
+          "lineNumber": 37
+        },
+        {
+          "caller": "preview",
+          "callee": "await resolve",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/features/render.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 171,
+      "nonEmptyLines": 155,
+      "functions": [
+        {
+          "name": "snippet",
+          "startLine": 28,
+          "endLine": 30,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "render",
+          "startLine": 36,
+          "endLine": 171,
+          "params": [
+            "req",
+            "opts",
+            "state"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "render",
+          "line": 36,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "render",
+          "callee": "new URLPattern({\n    pathname: urlPathTemplate.pathname,\n    ...(urlPathTemplate.search ? { search: urlPathTemplate.search } : {}),\n  }).exec",
+          "lineNumber": 54
+        },
+        {
+          "caller": "render",
+          "callee": "state.resolve",
+          "lineNumber": 59
+        },
+        {
+          "caller": "render",
+          "callee": "resolveChain.findLastIndex",
+          "lineNumber": 66
+        },
+        {
+          "caller": "render",
+          "callee": "resolveChain\n          .slice(0, it + 1)\n          .map((r) => `${r.type}:${r.value}`)\n          .join",
+          "lineNumber": 81
+        },
+        {
+          "caller": "render",
+          "callee": "resolveChain\n          .slice(0, it + 1)\n          .map",
+          "lineNumber": 81
+        },
+        {
+          "caller": "render",
+          "callee": "resolveChain\n          .slice",
+          "lineNumber": 81
+        },
+        {
+          "caller": "render",
+          "callee": "logger.warn",
+          "lineNumber": 85
+        },
+        {
+          "caller": "render",
+          "callee": "url.toString",
+          "lineNumber": 87
+        },
+        {
+          "caller": "render",
+          "callee": "state.resolve",
+          "lineNumber": 116
+        },
+        {
+          "caller": "render",
+          "callee": "logger.error",
+          "lineNumber": 123
+        },
+        {
+          "caller": "render",
+          "callee": "url.toString",
+          "lineNumber": 126
+        },
+        {
+          "caller": "render",
+          "callee": "getSectionID",
+          "lineNumber": 142
+        },
+        {
+          "caller": "render",
+          "callee": "err.resp.headers.get",
+          "lineNumber": 149
+        },
+        {
+          "caller": "render",
+          "callee": "useFramework",
+          "lineNumber": 152
+        },
+        {
+          "caller": "render",
+          "callee": "useScriptAsDataURI",
+          "lineNumber": 160
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/features/styles.css.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 8,
+      "functions": [
+        {
+          "name": "styles",
+          "startLine": 9,
+          "endLine": 12,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "styles",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "styles",
+          "callee": "Deno.readTextFile(TO).catch",
+          "lineNumber": 10
+        },
+        {
+          "caller": "styles",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/fetch/fetchLog.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "setLogger",
+          "startLine": 5,
+          "endLine": 5,
+          "params": [
+            "loggerLike"
+          ]
+        },
+        {
+          "name": "createFetch",
+          "startLine": 7,
+          "endLine": 26,
+          "params": [
+            "fetcher"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "setLogger",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "createFetch",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createFetch",
+          "callee": "performance.now",
+          "lineNumber": 12
+        },
+        {
+          "caller": "createFetch",
+          "callee": "fetcher",
+          "lineNumber": 13
+        },
+        {
+          "caller": "createFetch",
+          "callee": "logger",
+          "lineNumber": 16
+        },
+        {
+          "caller": "createFetch",
+          "callee": "formatOutgoingFetch",
+          "lineNumber": 17
+        },
+        {
+          "caller": "createFetch",
+          "callee": "performance.now",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/fetch/mod.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 20,
+      "exports": [
+        {
+          "name": "fetch",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/handler.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 179,
+      "nonEmptyLines": 171,
+      "functions": [
+        {
+          "name": "useFramework",
+          "startLine": 120,
+          "endLine": 122,
+          "params": []
+        },
+        {
+          "name": "handlerFor",
+          "startLine": 131,
+          "endLine": 179,
+          "params": [
+            "deco"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FrameworkContext",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "useFramework",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "handlerFor",
+          "line": 131,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useFramework",
+          "callee": "useContext",
+          "lineNumber": 121
+        },
+        {
+          "caller": "handlerFor",
+          "callee": "hono.use",
+          "lineNumber": 139
+        },
+        {
+          "caller": "handlerFor",
+          "callee": "renderFn",
+          "lineNumber": 146
+        },
+        {
+          "caller": "handlerFor",
+          "callee": "ctx.setRenderer",
+          "lineNumber": 161
+        },
+        {
+          "caller": "handlerFor",
+          "callee": "ctx.set",
+          "lineNumber": 167
+        },
+        {
+          "caller": "handlerFor",
+          "callee": "next",
+          "lineNumber": 169
+        },
+        {
+          "caller": "handlerFor",
+          "callee": "hono.use",
+          "lineNumber": 171
+        },
+        {
+          "caller": "handlerFor",
+          "callee": "middlewareFor",
+          "lineNumber": 171
+        },
+        {
+          "caller": "handlerFor",
+          "callee": "bindings?.useServer",
+          "lineNumber": 172
+        },
+        {
+          "caller": "handlerFor",
+          "callee": "hono.all",
+          "lineNumber": 175
+        },
+        {
+          "caller": "handlerFor",
+          "callee": "hono.fetch.bind",
+          "lineNumber": 178
+        }
+      ],
+      "metrics": {
+        "importCount": 19,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/htmx/Bindings.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 40,
+      "functions": [
+        {
+          "name": "Head",
+          "startLine": 8,
+          "endLine": 10,
+          "params": [
+            "_"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Head",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/htmx/Renderer.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 57,
+      "functions": [
+        {
+          "name": "renderFn",
+          "startLine": 10,
+          "endLine": 59,
+          "params": [
+            "{ page }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Head",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "renderFn",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "renderFn",
+          "callee": "htmlHead.push",
+          "lineNumber": 23
+        },
+        {
+          "caller": "renderFn",
+          "callee": "original",
+          "lineNumber": 25
+        },
+        {
+          "caller": "renderFn",
+          "callee": "renderToString",
+          "lineNumber": 27
+        },
+        {
+          "caller": "renderFn",
+          "callee": "renderToString",
+          "lineNumber": 39
+        },
+        {
+          "caller": "renderFn",
+          "callee": "((htmlHead ??\n            []) as ComponentChildren[]).map",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/htmx/fileCache.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "generateEtag",
+          "startLine": 7,
+          "endLine": 17,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "readFile",
+          "startLine": 19,
+          "endLine": 31,
+          "params": [
+            "root",
+            "pathname"
+          ]
+        },
+        {
+          "name": "initializeFileCache",
+          "startLine": 33,
+          "endLine": 39,
+          "params": [
+            "root"
+          ]
+        },
+        {
+          "name": "getFileFromCache",
+          "startLine": 41,
+          "endLine": 43,
+          "params": [
+            "pathname"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "initializeFileCache",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "getFileFromCache",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateEtag",
+          "callee": "crypto.subtle.digest",
+          "lineNumber": 8
+        },
+        {
+          "caller": "generateEtag",
+          "callee": "Array.from",
+          "lineNumber": 12
+        },
+        {
+          "caller": "generateEtag",
+          "callee": "hashArray.map((b) => b.toString(16).padStart(2, \"0\")).join",
+          "lineNumber": 13
+        },
+        {
+          "caller": "generateEtag",
+          "callee": "hashArray.map",
+          "lineNumber": 13
+        },
+        {
+          "caller": "generateEtag",
+          "callee": "b.toString(16).padStart",
+          "lineNumber": 13
+        },
+        {
+          "caller": "generateEtag",
+          "callee": "b.toString",
+          "lineNumber": 13
+        },
+        {
+          "caller": "readFile",
+          "callee": "join",
+          "lineNumber": 20
+        },
+        {
+          "caller": "readFile",
+          "callee": "Deno.open",
+          "lineNumber": 22
+        },
+        {
+          "caller": "readFile",
+          "callee": "readAll",
+          "lineNumber": 23
+        },
+        {
+          "caller": "readFile",
+          "callee": "generateEtag",
+          "lineNumber": 24
+        },
+        {
+          "caller": "readFile",
+          "callee": "fileCache.set",
+          "lineNumber": 26
+        },
+        {
+          "caller": "readFile",
+          "callee": "file.close",
+          "lineNumber": 27
+        },
+        {
+          "caller": "readFile",
+          "callee": "console.error",
+          "lineNumber": 29
+        },
+        {
+          "caller": "initializeFileCache",
+          "callee": "Deno.readDir",
+          "lineNumber": 34
+        },
+        {
+          "caller": "initializeFileCache",
+          "callee": "readFile",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getFileFromCache",
+          "callee": "fileCache.get",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/htmx/mod.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 143,
+      "nonEmptyLines": 132,
+      "functions": [
+        {
+          "name": "HTMX",
+          "startLine": 86,
+          "endLine": 130,
+          "params": [
+            "opts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HTMX",
+          "line": 86,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "HTMX",
+          "callee": "hono.get",
+          "lineNumber": 90
+        },
+        {
+          "caller": "HTMX",
+          "callee": "upgradeWebSocket",
+          "lineNumber": 92
+        },
+        {
+          "caller": "HTMX",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 93
+        },
+        {
+          "caller": "HTMX",
+          "callee": "sockets.set",
+          "lineNumber": 96
+        },
+        {
+          "caller": "HTMX",
+          "callee": "sockets.delete",
+          "lineNumber": 99
+        },
+        {
+          "caller": "HTMX",
+          "callee": "hono.use",
+          "lineNumber": 104
+        },
+        {
+          "caller": "HTMX",
+          "callee": "staticFiles",
+          "lineNumber": 104
+        },
+        {
+          "caller": "HTMX",
+          "callee": "Context.active",
+          "lineNumber": 111
+        },
+        {
+          "caller": "HTMX",
+          "callee": "active.release?.revision",
+          "lineNumber": 112
+        },
+        {
+          "caller": "HTMX",
+          "callee": "renderFn",
+          "lineNumber": 113
+        },
+        {
+          "caller": "onHMR",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 136
+        },
+        {
+          "caller": "onHMR",
+          "callee": "sockets.values",
+          "lineNumber": 137
+        },
+        {
+          "caller": "onHMR",
+          "callee": "socket.send",
+          "lineNumber": 138
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/htmx/serveStatic.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 118,
+      "nonEmptyLines": 106,
+      "functions": [
+        {
+          "name": "asset",
+          "startLine": 26,
+          "endLine": 46,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "staticFiles",
+          "startLine": 50,
+          "endLine": 118,
+          "params": [
+            "root"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ASSET_CACHE_BUST_KEY",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "FRSH_ASSET_CACHE_BUST_KEY",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "asset",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "BUILD_ID",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "staticFiles",
+          "line": 50,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "asset",
+          "callee": "path.startsWith",
+          "lineNumber": 27
+        },
+        {
+          "caller": "asset",
+          "callee": "path.startsWith",
+          "lineNumber": 27
+        },
+        {
+          "caller": "asset",
+          "callee": "url.searchParams.has",
+          "lineNumber": 32
+        },
+        {
+          "caller": "asset",
+          "callee": "url.searchParams.has",
+          "lineNumber": 33
+        },
+        {
+          "caller": "asset",
+          "callee": "url.searchParams.set",
+          "lineNumber": 37
+        },
+        {
+          "caller": "asset",
+          "callee": "console.warn",
+          "lineNumber": 40
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "initializeFileCache(root).catch",
+          "lineNumber": 52
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "initializeFileCache",
+          "lineNumber": 52
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "getFileFromCache",
+          "lineNumber": 59
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "c.notFound",
+          "lineNumber": 62
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "next",
+          "lineNumber": 64
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "next",
+          "lineNumber": 68
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "c.text",
+          "lineNumber": 73
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "url.searchParams.get",
+          "lineNumber": 76
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "url.searchParams.delete",
+          "lineNumber": 78
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "c.redirect",
+          "lineNumber": 80
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "extname",
+          "lineNumber": 83
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "getContentType",
+          "lineNumber": 85
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "headers.append",
+          "lineNumber": 92
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "req.raw.headers.get",
+          "lineNumber": 97
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "headers.set",
+          "lineNumber": 104
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "headers.set",
+          "lineNumber": 107
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "String",
+          "lineNumber": 107
+        },
+        {
+          "caller": "staticFiles",
+          "callee": "headers.append",
+          "lineNumber": 111
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 5,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/middleware.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 477,
+      "nonEmptyLines": 440,
+      "functions": [
+        {
+          "name": "proxyState",
+          "startLine": 34,
+          "endLine": 51,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "createHandler",
+          "startLine": 79,
+          "endLine": 106,
+          "params": [
+            "handler"
+          ]
+        },
+        {
+          "name": "addHours",
+          "startLine": 114,
+          "endLine": 117,
+          "params": [
+            "date",
+            "h"
+          ]
+        },
+        {
+          "name": "isMonitoringRobots",
+          "startLine": 188,
+          "endLine": 194,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "reduceServerTimingsTo",
+          "startLine": 208,
+          "endLine": 215,
+          "params": [
+            "timings",
+            "size"
+          ]
+        },
+        {
+          "name": "middlewareFor",
+          "startLine": 217,
+          "endLine": 477,
+          "params": [
+            "deco"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DECO_SEGMENT",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "proxyState",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "createHandler",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "DEBUG_QS",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "DEBUG",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "middlewareFor",
+          "line": 217,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "set",
+          "callee": "ctx.set",
+          "lineNumber": 39
+        },
+        {
+          "caller": "proxyState",
+          "callee": "Reflect.get",
+          "lineNumber": 42
+        },
+        {
+          "caller": "proxyState",
+          "callee": "ctx.req.param",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createHandler",
+          "callee": "handler",
+          "lineNumber": 84
+        },
+        {
+          "caller": "createHandler",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 90
+        },
+        {
+          "caller": "createHandler",
+          "callee": "console.error",
+          "lineNumber": 91
+        },
+        {
+          "caller": "createHandler",
+          "callee": "logger.error",
+          "lineNumber": 94
+        },
+        {
+          "caller": "addHours",
+          "callee": "date.setTime",
+          "lineNumber": 115
+        },
+        {
+          "caller": "addHours",
+          "callee": "date.getTime",
+          "lineNumber": 115
+        },
+        {
+          "caller": "isMonitoringRobots",
+          "callee": "req.headers.get",
+          "lineNumber": 189
+        },
+        {
+          "caller": "isMonitoringRobots",
+          "callee": "wellKnownMonitoringRobotsUA.some",
+          "lineNumber": 193
+        },
+        {
+          "caller": "isMonitoringRobots",
+          "callee": "ua.includes",
+          "lineNumber": 193
+        },
+        {
+          "caller": "reduceServerTimingsTo",
+          "callee": "timings.substring",
+          "lineNumber": 211
+        },
+        {
+          "caller": "reduceServerTimingsTo",
+          "callee": "timings.lastIndexOf",
+          "lineNumber": 213
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "DEBUG.fromRequest",
+          "lineNumber": 225
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "deco.prepareState",
+          "lineNumber": 229
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "Object.entries",
+          "lineNumber": 233
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "ctx.set",
+          "lineNumber": 234
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "url.pathname.startsWith",
+          "lineNumber": 238
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "ctx.req.raw.headers.get",
+          "lineNumber": 252
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "ctx.req.raw.headers.get",
+          "lineNumber": 254
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "withRequestContext",
+          "lineNumber": 257
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "next",
+          "lineNumber": 258
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "ctx.req.raw.headers.get",
+          "lineNumber": 262
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "action",
+          "lineNumber": 265
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "setLogger",
+          "lineNumber": 266
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "Context.active",
+          "lineNumber": 271
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "ctx.var.monitoring.tracer.startActiveSpan",
+          "lineNumber": 272
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "ctx.req.raw.headers.get",
+          "lineNumber": 280
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "ctx.req.raw.headers.get",
+          "lineNumber": 285
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "ctx.req.raw.headers.has",
+          "lineNumber": 287
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "performance.now",
+          "lineNumber": 294
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "startObserve",
+          "lineNumber": 295
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "next",
+          "lineNumber": 297
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "span.recordException",
+          "lineNumber": 299
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "span.setStatus",
+          "lineNumber": 304
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "span.setAttribute",
+          "lineNumber": 307
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "span.updateName",
+          "lineNumber": 310
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "span.setAttribute",
+          "lineNumber": 311
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "end",
+          "lineNumber": 312
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "span.updateName",
+          "lineNumber": 318
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "span.end",
+          "lineNumber": 320
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "url.pathname.startsWith",
+          "lineNumber": 321
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "console.info",
+          "lineNumber": 322
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "formatLog",
+          "lineNumber": 323
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "ctx.var.monitoring.timings.get",
+          "lineNumber": 327
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "isMonitoringRobots",
+          "lineNumber": 337
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "isAdminOrLocalhost",
+          "lineNumber": 344
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "next().then",
+          "lineNumber": 348
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "next",
+          "lineNumber": 348
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "ctx.req.raw.headers.get",
+          "lineNumber": 351
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "newHeaders.set",
+          "lineNumber": 359
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "url.pathname.startsWith",
+          "lineNumber": 362
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "url.searchParams.has",
+          "lineNumber": 363
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "url.searchParams.get",
+          "lineNumber": 364
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "url.pathname.startsWith",
+          "lineNumber": 365
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "Object.entries(allowCorsFor(ctx.req.raw)).map",
+          "lineNumber": 368
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "Object.entries",
+          "lineNumber": 368
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "allowCorsFor",
+          "lineNumber": 368
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "newHeaders.set",
+          "lineNumber": 369
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "ctx.var.response.headers.forEach",
+          "lineNumber": 372
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "newHeaders.append",
+          "lineNumber": 373
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "reduceServerTimingsTo",
+          "lineNumber": 377
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "printTimings",
+          "lineNumber": 377
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "newHeaders.set",
+          "lineNumber": 378
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "url.pathname.startsWith",
+          "lineNumber": 383
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "[400, 404, 500].includes",
+          "lineNumber": 384
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "newHeaders.set",
+          "lineNumber": 386
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "newHeaders.append",
+          "lineNumber": 391
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "getCookies",
+          "lineNumber": 399
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "tryOrDefault",
+          "lineNumber": 400
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "decodeCookie",
+          "lineNumber": 401
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "tryOrDefault",
+          "lineNumber": 404
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "JSON.parse",
+          "lineNumber": 404
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "active.add",
+          "lineNumber": 411
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "inactiveDrawn.delete",
+          "lineNumber": 412
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "active.delete",
+          "lineNumber": 414
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "inactiveDrawn.add",
+          "lineNumber": 415
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "[...active].sort",
+          "lineNumber": 420
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "[...inactiveDrawn].sort",
+          "lineNumber": 421
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "JSON.stringify",
+          "lineNumber": 423
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "date.setTime",
+          "lineNumber": 428
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "date.getTime",
+          "lineNumber": 428
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "setCookie",
+          "lineNumber": 429
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "getSetCookies",
+          "lineNumber": 443
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "newHeaders.get",
+          "lineNumber": 444
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "contentType.includes",
+          "lineNumber": 445
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "ctx.var.bag?.has",
+          "lineNumber": 446
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "newHeaders.set",
+          "lineNumber": 450
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "flags.every",
+          "lineNumber": 454
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "newHeaders.set",
+          "lineNumber": 458
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "newHeaders.has",
+          "lineNumber": 462
+        },
+        {
+          "caller": "middlewareFor",
+          "callee": "newHeaders.set",
+          "lineNumber": 463
+        }
+      ],
+      "metrics": {
+        "importCount": 18,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    }
+  ]
+}

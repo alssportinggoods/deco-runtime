@@ -1,0 +1,2360 @@
+{
+  "scriptCompleted": true,
+  "entryPointCandidates": [
+    {
+      "id": "file:blocks/app.ts",
+      "score": 5,
+      "name": "app.ts",
+      "summary": "Implements the App block: merges app manifests and runtimes, injects app state into loaders and resolvers, and builds composed app runtimes from dependencies."
+    },
+    {
+      "id": "file:blocks/index.ts",
+      "score": 5,
+      "name": "index.ts",
+      "summary": "Barrel module aggregating all built-in block definitions and exposing defineBlock for registering user-defined blocks."
+    },
+    {
+      "id": "file:daemon/main.ts",
+      "score": 5,
+      "name": "main.ts",
+      "summary": "Entry point of the development daemon: bootstraps Git readiness, manifest/blocks generation, file watching, worker spawning, tunnel registration, and the site Hono app that proxies requests to the running site worker."
+    },
+    {
+      "id": "file:hypervisor/main.ts",
+      "score": 5,
+      "name": "main.ts",
+      "summary": "Thin hypervisor entry point that re-exports/runs the daemon main module."
+    },
+    {
+      "id": "file:runtime/mod.ts",
+      "score": 5,
+      "name": "mod.ts",
+      "summary": "Defines the main `Deco` class that bootstraps a site: initializes the manifest, decofile provider, and resolver, and exposes high-level operations (handler, fetch, resolve, render, preview, invoke, batchInvoke) plus per-request state preparation."
+    },
+    {
+      "id": "document:README.md",
+      "score": 5,
+      "name": "README.md",
+      "summary": "Primary project overview with getting-started instructions, local engine setup, TypeScript-to-visual-editor explanation, key features, deployment options, and cache env vars."
+    }
+  ],
+  "fanInRanking": [
+    {
+      "id": "file:deps.ts",
+      "fanIn": 40,
+      "name": "deps.ts"
+    },
+    {
+      "id": "file:engine/core/resolver.ts",
+      "fanIn": 29,
+      "name": "resolver.ts"
+    },
+    {
+      "id": "file:types.ts",
+      "fanIn": 26,
+      "name": "types.ts"
+    },
+    {
+      "id": "file:deco.ts",
+      "fanIn": 25,
+      "name": "deco.ts"
+    },
+    {
+      "id": "file:engine/block.ts",
+      "fanIn": 24,
+      "name": "block.ts"
+    },
+    {
+      "id": "file:blocks/utils.tsx",
+      "fanIn": 19,
+      "name": "utils.tsx"
+    },
+    {
+      "id": "file:engine/core/utils.ts",
+      "fanIn": 15,
+      "name": "utils.ts"
+    },
+    {
+      "id": "file:runtime/middleware.ts",
+      "fanIn": 15,
+      "name": "middleware.ts"
+    },
+    {
+      "id": "file:blocks/app.ts",
+      "fanIn": 12,
+      "name": "app.ts"
+    },
+    {
+      "id": "file:engine/decofile/provider.ts",
+      "fanIn": 10,
+      "name": "provider.ts"
+    },
+    {
+      "id": "file:blocks/handler.ts",
+      "fanIn": 10,
+      "name": "handler.ts"
+    },
+    {
+      "id": "file:utils/invoke.types.ts",
+      "fanIn": 10,
+      "name": "invoke.types.ts"
+    },
+    {
+      "id": "file:runtime/mod.ts",
+      "fanIn": 10,
+      "name": "mod.ts"
+    },
+    {
+      "id": "file:utils/http.ts",
+      "fanIn": 10,
+      "name": "http.ts"
+    },
+    {
+      "id": "file:observability/otel/config.ts",
+      "fanIn": 9,
+      "name": "config.ts"
+    },
+    {
+      "id": "config:deno.json",
+      "fanIn": 9,
+      "name": "deno.json"
+    },
+    {
+      "id": "file:components/section.tsx",
+      "fanIn": 8,
+      "name": "section.tsx"
+    },
+    {
+      "id": "file:utils/object.ts",
+      "fanIn": 8,
+      "name": "object.ts"
+    },
+    {
+      "id": "file:blocks/page.tsx",
+      "fanIn": 8,
+      "name": "page.tsx"
+    },
+    {
+      "id": "file:runtime/deps.ts",
+      "fanIn": 8,
+      "name": "deps.ts"
+    }
+  ],
+  "fanOutRanking": [
+    {
+      "id": "file:runtime/mod.ts",
+      "fanOut": 24,
+      "name": "mod.ts"
+    },
+    {
+      "id": "file:types.ts",
+      "fanOut": 21,
+      "name": "types.ts"
+    },
+    {
+      "id": "file:runtime/handler.tsx",
+      "fanOut": 19,
+      "name": "handler.tsx"
+    },
+    {
+      "id": "file:engine/manifest/manifest.ts",
+      "fanOut": 18,
+      "name": "manifest.ts"
+    },
+    {
+      "id": "file:daemon/main.ts",
+      "fanOut": 18,
+      "name": "main.ts"
+    },
+    {
+      "id": "file:runtime/middleware.ts",
+      "fanOut": 18,
+      "name": "middleware.ts"
+    },
+    {
+      "id": "file:blocks/loader.ts",
+      "fanOut": 17,
+      "name": "loader.ts"
+    },
+    {
+      "id": "file:blocks/utils.tsx",
+      "fanOut": 16,
+      "name": "utils.tsx"
+    },
+    {
+      "id": "file:blocks/app.ts",
+      "fanOut": 12,
+      "name": "app.ts"
+    },
+    {
+      "id": "file:blocks/index.ts",
+      "fanOut": 12,
+      "name": "index.ts"
+    },
+    {
+      "id": "file:blocks/section.ts",
+      "fanOut": 11,
+      "name": "section.ts"
+    },
+    {
+      "id": "file:observability/otel/config.ts",
+      "fanOut": 10,
+      "name": "config.ts"
+    },
+    {
+      "id": "file:blocks/matcher.ts",
+      "fanOut": 10,
+      "name": "matcher.ts"
+    },
+    {
+      "id": "file:components/section.tsx",
+      "fanOut": 10,
+      "name": "section.tsx"
+    },
+    {
+      "id": "file:engine/schema/lazy.ts",
+      "fanOut": 10,
+      "name": "lazy.ts"
+    },
+    {
+      "id": "file:engine/schema/gen.ts",
+      "fanOut": 9,
+      "name": "gen.ts"
+    },
+    {
+      "id": "file:runtime/features/render.tsx",
+      "fanOut": 9,
+      "name": "render.tsx"
+    },
+    {
+      "id": "file:engine/decofile/fetcher.ts",
+      "fanOut": 8,
+      "name": "fetcher.ts"
+    },
+    {
+      "id": "file:runtime/middlewares/liveness.ts",
+      "fanOut": 8,
+      "name": "liveness.ts"
+    },
+    {
+      "id": "file:blocks/appsUtil.ts",
+      "fanOut": 8,
+      "name": "appsUtil.ts"
+    }
+  ],
+  "bfsTraversal": {
+    "startNode": "file:blocks/app.ts",
+    "order": [
+      "file:blocks/app.ts",
+      "file:blocks/appsUtil.ts",
+      "file:blocks/index.ts",
+      "file:blocks/loader.ts",
+      "file:blocks/propsLoader.ts",
+      "file:blocks/section.ts",
+      "file:blocks/utils.tsx",
+      "file:engine/block.ts",
+      "file:engine/core/resolver.ts",
+      "file:engine/core/utils.ts",
+      "file:engine/importmap/builder.ts",
+      "file:engine/middleware.ts",
+      "file:types.ts",
+      "file:engine/manifest/defaults.ts",
+      "file:engine/manifest/manifest.ts",
+      "file:blocks/account.ts",
+      "file:blocks/action.ts",
+      "file:blocks/flag.ts",
+      "file:blocks/function.ts",
+      "file:blocks/handler.ts",
+      "file:blocks/matcher.ts",
+      "file:blocks/page.tsx",
+      "file:blocks/workflow.ts",
+      "file:components/JsonViewer.tsx",
+      "file:deco.ts",
+      "file:deps.ts",
+      "file:engine/decofile/provider.ts",
+      "file:engine/errors.ts",
+      "file:mod.ts",
+      "file:observability/otel/config.ts",
+      "file:observability/otel/metrics.ts",
+      "file:runtime/caches/mod.ts",
+      "file:runtime/caches/utils.ts",
+      "file:utils/vary.ts",
+      "file:components/section.tsx",
+      "file:components/StubSection.tsx",
+      "file:clients/withManifest.ts",
+      "file:utils/http.ts",
+      "file:utils/invoke.server.ts",
+      "file:utils/invoke.types.ts",
+      "file:utils/userAgent.ts",
+      "file:engine/core/hints.ts",
+      "file:engine/schema/transform.ts",
+      "file:engine/core/mod.ts",
+      "file:utils/object.ts",
+      "file:utils/timings.ts",
+      "file:engine/importmap/jsr.ts",
+      "file:engine/importmap/mod.ts",
+      "file:runtime/mod.ts",
+      "file:components/PreviewNotAvailable.tsx",
+      "file:engine/decofile/constants.ts",
+      "file:engine/decofile/fs.ts",
+      "file:engine/integrity.ts",
+      "file:engine/manifest/fresh.ts",
+      "file:engine/manifest/utils.ts",
+      "file:runtime/utils.ts",
+      "file:utils/promise.ts",
+      "file:utils/rand.ts",
+      "file:runtime/handler.tsx",
+      "file:utils/patched_fetch.ts",
+      "file:engine/decofile/fetcher.ts",
+      "file:observability/otel/instrumentation/deno-runtime.ts",
+      "file:observability/otel/logger.ts",
+      "file:observability/otel/samplers/debug.ts",
+      "file:observability/otel/samplers/urlBased.ts",
+      "config:deno.json",
+      "file:runtime/caches/common.ts",
+      "file:runtime/caches/fileSystem.ts",
+      "file:runtime/caches/headerscache.ts",
+      "file:runtime/caches/lrucache.ts",
+      "file:runtime/caches/redis.ts",
+      "file:runtime/caches/tiered.ts",
+      "file:clients/formdata.ts",
+      "file:clients/proxy.ts",
+      "file:utils/admin.ts",
+      "file:engine/schema/comments.ts",
+      "file:engine/schema/deps.ts",
+      "file:engine/schema/parser.ts",
+      "file:engine/schema/utils.ts",
+      "file:utils/sync.ts",
+      "file:engine/importmap/_util.ts",
+      "file:blocks/mod.ts",
+      "file:observability/observe.ts",
+      "file:observability/otel/context.ts",
+      "file:runtime/deps.ts",
+      "file:runtime/features/invoke.ts",
+      "file:runtime/features/meta.ts",
+      "file:runtime/features/preview.tsx",
+      "file:runtime/features/render.tsx",
+      "file:runtime/features/styles.css.ts",
+      "file:engine/decofile/json.ts",
+      "file:engine/decofile/realtime.ts",
+      "file:utils/filesystem.ts",
+      "file:utils/hasher.ts",
+      "file:utils/json.ts",
+      "file:runtime/htmx/mod.tsx",
+      "file:runtime/middleware.ts",
+      "file:runtime/routes/_meta.ts",
+      "file:runtime/routes/batchInvoke.ts",
+      "file:runtime/routes/blockPreview.tsx",
+      "file:runtime/routes/entrypoint.tsx",
+      "file:runtime/routes/inspect.ts",
+      "file:runtime/routes/invoke.ts",
+      "file:runtime/routes/previews.tsx",
+      "file:runtime/routes/release.ts",
+      "file:runtime/routes/reload.ts",
+      "file:runtime/routes/render.tsx",
+      "file:runtime/routes/styles.css.ts",
+      "file:runtime/routes/workflow.ts",
+      "file:engine/decofile/deconfig.ts",
+      "file:engine/decofile/fsFolder.ts",
+      "file:engine/trustedAuthority.ts",
+      "file:runtime/caches/cacheWriteWorker.ts",
+      "file:observability/mod.ts",
+      "file:engine/schema/builder.ts",
+      "file:engine/schema/gen.ts",
+      "file:engine/schema/lazy.ts",
+      "file:hooks/useScript.ts",
+      "file:runtime/htmx/Bindings.tsx",
+      "file:runtime/htmx/Renderer.tsx",
+      "file:runtime/htmx/serveStatic.ts",
+      "file:observability/http.ts",
+      "file:runtime/errors.ts",
+      "file:runtime/fetch/fetchLog.ts",
+      "file:runtime/middlewares/liveness.ts",
+      "file:utils/cookies.ts",
+      "file:utils/log.ts",
+      "file:utils/invoke.ts",
+      "file:components/LiveControls.tsx",
+      "file:utils/mod.ts",
+      "file:commons/workflows/initialize.ts",
+      "file:commons/workflows/types.ts",
+      "file:engine/schema/merge.ts",
+      "file:engine/schema/schemeable.ts",
+      "file:engine/schema/reader.ts",
+      "file:hooks/useSection.ts",
+      "file:runtime/htmx/fileCache.ts",
+      "file:observability/probes/memory.ts",
+      "file:observability/probes/reqCount.ts",
+      "file:observability/probes/reqInflight.ts",
+      "file:observability/probes/uptime.ts",
+      "file:observability/probes/handler.ts"
+    ],
+    "depthMap": {
+      "file:blocks/app.ts": 0,
+      "file:blocks/appsUtil.ts": 1,
+      "file:blocks/index.ts": 1,
+      "file:blocks/loader.ts": 1,
+      "file:blocks/propsLoader.ts": 1,
+      "file:blocks/section.ts": 1,
+      "file:blocks/utils.tsx": 1,
+      "file:engine/block.ts": 1,
+      "file:engine/core/resolver.ts": 1,
+      "file:engine/core/utils.ts": 1,
+      "file:engine/importmap/builder.ts": 1,
+      "file:engine/middleware.ts": 1,
+      "file:types.ts": 1,
+      "file:engine/manifest/defaults.ts": 2,
+      "file:engine/manifest/manifest.ts": 2,
+      "file:blocks/account.ts": 2,
+      "file:blocks/action.ts": 2,
+      "file:blocks/flag.ts": 2,
+      "file:blocks/function.ts": 2,
+      "file:blocks/handler.ts": 2,
+      "file:blocks/matcher.ts": 2,
+      "file:blocks/page.tsx": 2,
+      "file:blocks/workflow.ts": 2,
+      "file:components/JsonViewer.tsx": 2,
+      "file:deco.ts": 2,
+      "file:deps.ts": 2,
+      "file:engine/decofile/provider.ts": 2,
+      "file:engine/errors.ts": 2,
+      "file:mod.ts": 2,
+      "file:observability/otel/config.ts": 2,
+      "file:observability/otel/metrics.ts": 2,
+      "file:runtime/caches/mod.ts": 2,
+      "file:runtime/caches/utils.ts": 2,
+      "file:utils/vary.ts": 2,
+      "file:components/section.tsx": 2,
+      "file:components/StubSection.tsx": 2,
+      "file:clients/withManifest.ts": 2,
+      "file:utils/http.ts": 2,
+      "file:utils/invoke.server.ts": 2,
+      "file:utils/invoke.types.ts": 2,
+      "file:utils/userAgent.ts": 2,
+      "file:engine/core/hints.ts": 2,
+      "file:engine/schema/transform.ts": 2,
+      "file:engine/core/mod.ts": 2,
+      "file:utils/object.ts": 2,
+      "file:utils/timings.ts": 2,
+      "file:engine/importmap/jsr.ts": 2,
+      "file:engine/importmap/mod.ts": 2,
+      "file:runtime/mod.ts": 2,
+      "file:components/PreviewNotAvailable.tsx": 3,
+      "file:engine/decofile/constants.ts": 3,
+      "file:engine/decofile/fs.ts": 3,
+      "file:engine/integrity.ts": 3,
+      "file:engine/manifest/fresh.ts": 3,
+      "file:engine/manifest/utils.ts": 3,
+      "file:runtime/utils.ts": 3,
+      "file:utils/promise.ts": 3,
+      "file:utils/rand.ts": 3,
+      "file:runtime/handler.tsx": 3,
+      "file:utils/patched_fetch.ts": 3,
+      "file:engine/decofile/fetcher.ts": 3,
+      "file:observability/otel/instrumentation/deno-runtime.ts": 3,
+      "file:observability/otel/logger.ts": 3,
+      "file:observability/otel/samplers/debug.ts": 3,
+      "file:observability/otel/samplers/urlBased.ts": 3,
+      "config:deno.json": 3,
+      "file:runtime/caches/common.ts": 3,
+      "file:runtime/caches/fileSystem.ts": 3,
+      "file:runtime/caches/headerscache.ts": 3,
+      "file:runtime/caches/lrucache.ts": 3,
+      "file:runtime/caches/redis.ts": 3,
+      "file:runtime/caches/tiered.ts": 3,
+      "file:clients/formdata.ts": 3,
+      "file:clients/proxy.ts": 3,
+      "file:utils/admin.ts": 3,
+      "file:engine/schema/comments.ts": 3,
+      "file:engine/schema/deps.ts": 3,
+      "file:engine/schema/parser.ts": 3,
+      "file:engine/schema/utils.ts": 3,
+      "file:utils/sync.ts": 3,
+      "file:engine/importmap/_util.ts": 3,
+      "file:blocks/mod.ts": 3,
+      "file:observability/observe.ts": 3,
+      "file:observability/otel/context.ts": 3,
+      "file:runtime/deps.ts": 3,
+      "file:runtime/features/invoke.ts": 3,
+      "file:runtime/features/meta.ts": 3,
+      "file:runtime/features/preview.tsx": 3,
+      "file:runtime/features/render.tsx": 3,
+      "file:runtime/features/styles.css.ts": 3,
+      "file:engine/decofile/json.ts": 4,
+      "file:engine/decofile/realtime.ts": 4,
+      "file:utils/filesystem.ts": 4,
+      "file:utils/hasher.ts": 4,
+      "file:utils/json.ts": 4,
+      "file:runtime/htmx/mod.tsx": 4,
+      "file:runtime/middleware.ts": 4,
+      "file:runtime/routes/_meta.ts": 4,
+      "file:runtime/routes/batchInvoke.ts": 4,
+      "file:runtime/routes/blockPreview.tsx": 4,
+      "file:runtime/routes/entrypoint.tsx": 4,
+      "file:runtime/routes/inspect.ts": 4,
+      "file:runtime/routes/invoke.ts": 4,
+      "file:runtime/routes/previews.tsx": 4,
+      "file:runtime/routes/release.ts": 4,
+      "file:runtime/routes/reload.ts": 4,
+      "file:runtime/routes/render.tsx": 4,
+      "file:runtime/routes/styles.css.ts": 4,
+      "file:runtime/routes/workflow.ts": 4,
+      "file:engine/decofile/deconfig.ts": 4,
+      "file:engine/decofile/fsFolder.ts": 4,
+      "file:engine/trustedAuthority.ts": 4,
+      "file:runtime/caches/cacheWriteWorker.ts": 4,
+      "file:observability/mod.ts": 4,
+      "file:engine/schema/builder.ts": 4,
+      "file:engine/schema/gen.ts": 4,
+      "file:engine/schema/lazy.ts": 4,
+      "file:hooks/useScript.ts": 4,
+      "file:runtime/htmx/Bindings.tsx": 5,
+      "file:runtime/htmx/Renderer.tsx": 5,
+      "file:runtime/htmx/serveStatic.ts": 5,
+      "file:observability/http.ts": 5,
+      "file:runtime/errors.ts": 5,
+      "file:runtime/fetch/fetchLog.ts": 5,
+      "file:runtime/middlewares/liveness.ts": 5,
+      "file:utils/cookies.ts": 5,
+      "file:utils/log.ts": 5,
+      "file:utils/invoke.ts": 5,
+      "file:components/LiveControls.tsx": 5,
+      "file:utils/mod.ts": 5,
+      "file:commons/workflows/initialize.ts": 5,
+      "file:commons/workflows/types.ts": 5,
+      "file:engine/schema/merge.ts": 5,
+      "file:engine/schema/schemeable.ts": 5,
+      "file:engine/schema/reader.ts": 5,
+      "file:hooks/useSection.ts": 6,
+      "file:runtime/htmx/fileCache.ts": 6,
+      "file:observability/probes/memory.ts": 6,
+      "file:observability/probes/reqCount.ts": 6,
+      "file:observability/probes/reqInflight.ts": 6,
+      "file:observability/probes/uptime.ts": 6,
+      "file:observability/probes/handler.ts": 7
+    },
+    "byDepth": {
+      "0": [
+        "file:blocks/app.ts"
+      ],
+      "1": [
+        "file:blocks/appsUtil.ts",
+        "file:blocks/index.ts",
+        "file:blocks/loader.ts",
+        "file:blocks/propsLoader.ts",
+        "file:blocks/section.ts",
+        "file:blocks/utils.tsx",
+        "file:engine/block.ts",
+        "file:engine/core/resolver.ts",
+        "file:engine/core/utils.ts",
+        "file:engine/importmap/builder.ts",
+        "file:engine/middleware.ts",
+        "file:types.ts"
+      ],
+      "2": [
+        "file:engine/manifest/defaults.ts",
+        "file:engine/manifest/manifest.ts",
+        "file:blocks/account.ts",
+        "file:blocks/action.ts",
+        "file:blocks/flag.ts",
+        "file:blocks/function.ts",
+        "file:blocks/handler.ts",
+        "file:blocks/matcher.ts",
+        "file:blocks/page.tsx",
+        "file:blocks/workflow.ts",
+        "file:components/JsonViewer.tsx",
+        "file:deco.ts",
+        "file:deps.ts",
+        "file:engine/decofile/provider.ts",
+        "file:engine/errors.ts",
+        "file:mod.ts",
+        "file:observability/otel/config.ts",
+        "file:observability/otel/metrics.ts",
+        "file:runtime/caches/mod.ts",
+        "file:runtime/caches/utils.ts",
+        "file:utils/vary.ts",
+        "file:components/section.tsx",
+        "file:components/StubSection.tsx",
+        "file:clients/withManifest.ts",
+        "file:utils/http.ts",
+        "file:utils/invoke.server.ts",
+        "file:utils/invoke.types.ts",
+        "file:utils/userAgent.ts",
+        "file:engine/core/hints.ts",
+        "file:engine/schema/transform.ts",
+        "file:engine/core/mod.ts",
+        "file:utils/object.ts",
+        "file:utils/timings.ts",
+        "file:engine/importmap/jsr.ts",
+        "file:engine/importmap/mod.ts",
+        "file:runtime/mod.ts"
+      ],
+      "3": [
+        "file:components/PreviewNotAvailable.tsx",
+        "file:engine/decofile/constants.ts",
+        "file:engine/decofile/fs.ts",
+        "file:engine/integrity.ts",
+        "file:engine/manifest/fresh.ts",
+        "file:engine/manifest/utils.ts",
+        "file:runtime/utils.ts",
+        "file:utils/promise.ts",
+        "file:utils/rand.ts",
+        "file:runtime/handler.tsx",
+        "file:utils/patched_fetch.ts",
+        "file:engine/decofile/fetcher.ts",
+        "file:observability/otel/instrumentation/deno-runtime.ts",
+        "file:observability/otel/logger.ts",
+        "file:observability/otel/samplers/debug.ts",
+        "file:observability/otel/samplers/urlBased.ts",
+        "config:deno.json",
+        "file:runtime/caches/common.ts",
+        "file:runtime/caches/fileSystem.ts",
+        "file:runtime/caches/headerscache.ts",
+        "file:runtime/caches/lrucache.ts",
+        "file:runtime/caches/redis.ts",
+        "file:runtime/caches/tiered.ts",
+        "file:clients/formdata.ts",
+        "file:clients/proxy.ts",
+        "file:utils/admin.ts",
+        "file:engine/schema/comments.ts",
+        "file:engine/schema/deps.ts",
+        "file:engine/schema/parser.ts",
+        "file:engine/schema/utils.ts",
+        "file:utils/sync.ts",
+        "file:engine/importmap/_util.ts",
+        "file:blocks/mod.ts",
+        "file:observability/observe.ts",
+        "file:observability/otel/context.ts",
+        "file:runtime/deps.ts",
+        "file:runtime/features/invoke.ts",
+        "file:runtime/features/meta.ts",
+        "file:runtime/features/preview.tsx",
+        "file:runtime/features/render.tsx",
+        "file:runtime/features/styles.css.ts"
+      ],
+      "4": [
+        "file:engine/decofile/json.ts",
+        "file:engine/decofile/realtime.ts",
+        "file:utils/filesystem.ts",
+        "file:utils/hasher.ts",
+        "file:utils/json.ts",
+        "file:runtime/htmx/mod.tsx",
+        "file:runtime/middleware.ts",
+        "file:runtime/routes/_meta.ts",
+        "file:runtime/routes/batchInvoke.ts",
+        "file:runtime/routes/blockPreview.tsx",
+        "file:runtime/routes/entrypoint.tsx",
+        "file:runtime/routes/inspect.ts",
+        "file:runtime/routes/invoke.ts",
+        "file:runtime/routes/previews.tsx",
+        "file:runtime/routes/release.ts",
+        "file:runtime/routes/reload.ts",
+        "file:runtime/routes/render.tsx",
+        "file:runtime/routes/styles.css.ts",
+        "file:runtime/routes/workflow.ts",
+        "file:engine/decofile/deconfig.ts",
+        "file:engine/decofile/fsFolder.ts",
+        "file:engine/trustedAuthority.ts",
+        "file:runtime/caches/cacheWriteWorker.ts",
+        "file:observability/mod.ts",
+        "file:engine/schema/builder.ts",
+        "file:engine/schema/gen.ts",
+        "file:engine/schema/lazy.ts",
+        "file:hooks/useScript.ts"
+      ],
+      "5": [
+        "file:runtime/htmx/Bindings.tsx",
+        "file:runtime/htmx/Renderer.tsx",
+        "file:runtime/htmx/serveStatic.ts",
+        "file:observability/http.ts",
+        "file:runtime/errors.ts",
+        "file:runtime/fetch/fetchLog.ts",
+        "file:runtime/middlewares/liveness.ts",
+        "file:utils/cookies.ts",
+        "file:utils/log.ts",
+        "file:utils/invoke.ts",
+        "file:components/LiveControls.tsx",
+        "file:utils/mod.ts",
+        "file:commons/workflows/initialize.ts",
+        "file:commons/workflows/types.ts",
+        "file:engine/schema/merge.ts",
+        "file:engine/schema/schemeable.ts",
+        "file:engine/schema/reader.ts"
+      ],
+      "6": [
+        "file:hooks/useSection.ts",
+        "file:runtime/htmx/fileCache.ts",
+        "file:observability/probes/memory.ts",
+        "file:observability/probes/reqCount.ts",
+        "file:observability/probes/reqInflight.ts",
+        "file:observability/probes/uptime.ts"
+      ],
+      "7": [
+        "file:observability/probes/handler.ts"
+      ]
+    }
+  },
+  "nonCodeFiles": {
+    "documentation": [
+      {
+        "id": "document:CLAUDE.md",
+        "name": "CLAUDE.md",
+        "type": "document",
+        "summary": "Guidance document for Claude Code describing the Deco framework's architecture, common Deno tasks, block system, engine, runtime, and cache environment variables."
+      },
+      {
+        "id": "document:CODE_OF_CONDUCT.md",
+        "name": "CODE_OF_CONDUCT.md",
+        "type": "document",
+        "summary": "Contributor Covenant Code of Conduct defining community standards, enforcement responsibilities, and graduated enforcement guidelines for the project."
+      },
+      {
+        "id": "document:CONTRIBUTING.md",
+        "name": "CONTRIBUTING.md",
+        "type": "document",
+        "summary": "Contribution guide explaining the stable and prerelease release channels, branch targeting, prerelease consumption, and manual release fallback for @deco/deco."
+      },
+      {
+        "id": "document:DIFF_MAIN.md",
+        "name": "DIFF_MAIN.md",
+        "type": "document",
+        "summary": "Detailed changelog comparing the als-storefront branch against main, breaking down per-file changes, functional summaries, and post-merge validation suggestions."
+      },
+      {
+        "id": "document:MAINTAINERS.txt",
+        "name": "MAINTAINERS.txt",
+        "type": "document",
+        "summary": "Short plaintext listing of the project's maintainers."
+      },
+      {
+        "id": "document:README.md",
+        "name": "README.md",
+        "type": "document",
+        "summary": "Primary project overview with getting-started instructions, local engine setup, TypeScript-to-visual-editor explanation, key features, deployment options, and cache env vars."
+      },
+      {
+        "id": "document:blocks/README.md",
+        "name": "README.md",
+        "type": "document",
+        "summary": "Documentation explaining the Deco Block system: what blocks are, their structure, specialized block types, and a loader block example."
+      },
+      {
+        "id": "document:engine/core/README.md",
+        "name": "README.md",
+        "type": "document",
+        "summary": "Documentation for the Deco runtime config resolver engine, covering resolvers, resolvables, the resolution algorithm, parallelism, and dangling reference handling."
+      }
+    ],
+    "infrastructure": [
+      {
+        "id": "pipeline:.github/workflows/ci.yaml",
+        "name": "ci.yaml",
+        "type": "pipeline",
+        "summary": "Continuous integration workflow that builds the Deno module, fetches dependencies, and runs tests, benchmarks, lint, and formatting checks on push and pull requests to main across Ubuntu and Windows runners."
+      },
+      {
+        "id": "pipeline:.github/workflows/issues.yaml",
+        "name": "issues.yaml",
+        "type": "pipeline",
+        "summary": "Issue automation workflow that applies a 'triage' label to newly opened or reopened GitHub issues via the gh CLI."
+      },
+      {
+        "id": "pipeline:.github/workflows/publish-ai.yaml",
+        "name": "publish-ai.yaml",
+        "type": "pipeline",
+        "summary": "Release publishing workflow that builds and pushes multi-arch AI daemon Docker images (Deno 1.x and 2.x variants, bundled with Node, GitHub CLI, and Claude Code) to GitHub Container Registry on tag push."
+      },
+      {
+        "id": "pipeline:.github/workflows/publish.yaml",
+        "name": "publish.yaml",
+        "type": "pipeline",
+        "summary": "Release publishing workflow that publishes the main, scripts, and dev packages to JSR and builds/pushes multi-arch builder Docker images (Deno 1.x and 2.x) to GitHub Container Registry on tag push."
+      },
+      {
+        "id": "pipeline:.github/workflows/release.yaml",
+        "name": "release.yaml",
+        "type": "pipeline",
+        "summary": "Release workflow that creates a GitHub Release with auto-generated notes for pushed tags, marking prerelease when the tag contains rc-, preview, beta, alpha, or next."
+      },
+      {
+        "id": "pipeline:.github/workflows/releaser.yaml",
+        "name": "releaser.yaml",
+        "type": "pipeline",
+        "summary": "Release tagging workflow that opens version-bump discussion comments on PRs (emoji-voting for patch/minor/major) and, on merge to main or next, determines and pushes the appropriate semantic version or prerelease tag."
+      },
+      {
+        "id": "pipeline:.github/workflows/update.yml",
+        "name": "update.yml",
+        "type": "pipeline",
+        "summary": "Scheduled daily workflow that runs the boywithkeyboard/updater action to open dependency-update pull requests."
+      },
+      {
+        "id": "step:.github/workflows/releaser.yaml:tag-discussion",
+        "name": "tag-discussion",
+        "type": "pipeline",
+        "summary": "Job that calculates next patch/minor/major versions from git tags and posts a tagging-options discussion comment on PRs targeting main."
+      },
+      {
+        "id": "step:.github/workflows/releaser.yaml:prerelease-tag-discussion",
+        "name": "prerelease-tag-discussion",
+        "type": "pipeline",
+        "summary": "Job that posts a prerelease tagging-options discussion comment on PRs targeting the next branch."
+      },
+      {
+        "id": "step:.github/workflows/releaser.yaml:determine-tag",
+        "name": "determine-tag",
+        "type": "pipeline",
+        "summary": "Job that runs on push to main to determine and push the chosen semantic version tag based on the PR's emoji votes."
+      },
+      {
+        "id": "step:.github/workflows/releaser.yaml:determine-prerelease-tag",
+        "name": "determine-prerelease-tag",
+        "type": "pipeline",
+        "summary": "Job that runs on push to next to determine and push the appropriate prerelease tag."
+      }
+    ],
+    "data": [],
+    "config": [
+      {
+        "id": "config:deno.json",
+        "name": "deno.json",
+        "type": "config",
+        "summary": "Deno project configuration defining the @deco/deco package name, version, JSR export map, build/check/test tasks, import map, and Preact JSX compiler options."
+      },
+      {
+        "id": "config:.github/release.yaml",
+        "name": "release.yaml",
+        "type": "config",
+        "summary": "GitHub release configuration defining changelog categorization rules for auto-generated release notes."
+      },
+      {
+        "id": "config:.understand-anything/config.json",
+        "name": "config.json",
+        "type": "config",
+        "summary": "Configuration for the Understand-Anything tool, including the output language setting."
+      },
+      {
+        "id": "config:dev/deno.json",
+        "name": "deno.json",
+        "type": "config",
+        "summary": "Deno package manifest for the dev tooling package, declaring its name, version, exports, and import map."
+      },
+      {
+        "id": "config:scripts/deno.json",
+        "name": "deno.json",
+        "type": "config",
+        "summary": "Deno package manifest for the scripts package, declaring name, version, exports, publish settings, and import map."
+      }
+    ]
+  },
+  "clusters": [
+    {
+      "nodes": [
+        "file:engine/decofile/fetcher.ts",
+        "file:engine/decofile/provider.ts"
+      ],
+      "edgeCount": 2
+    },
+    {
+      "nodes": [
+        "file:engine/decofile/fs.ts",
+        "file:engine/decofile/provider.ts"
+      ],
+      "edgeCount": 2
+    },
+    {
+      "nodes": [
+        "file:blocks/app.ts",
+        "file:blocks/index.ts"
+      ],
+      "edgeCount": 2
+    },
+    {
+      "nodes": [
+        "file:blocks/app.ts",
+        "file:blocks/section.ts"
+      ],
+      "edgeCount": 2
+    },
+    {
+      "nodes": [
+        "file:blocks/app.ts",
+        "file:blocks/utils.tsx"
+      ],
+      "edgeCount": 2
+    },
+    {
+      "nodes": [
+        "file:blocks/app.ts",
+        "file:types.ts"
+      ],
+      "edgeCount": 2
+    },
+    {
+      "nodes": [
+        "file:blocks/appsUtil.ts",
+        "file:engine/manifest/manifest.ts"
+      ],
+      "edgeCount": 2
+    },
+    {
+      "nodes": [
+        "file:blocks/function.ts",
+        "file:types.ts"
+      ],
+      "edgeCount": 2
+    },
+    {
+      "nodes": [
+        "file:blocks/handler.ts",
+        "file:blocks/utils.tsx"
+      ],
+      "edgeCount": 2
+    },
+    {
+      "nodes": [
+        "file:blocks/handler.ts",
+        "file:types.ts"
+      ],
+      "edgeCount": 2
+    }
+  ],
+  "layers": {
+    "count": 10,
+    "list": [
+      {
+        "id": "layer:core",
+        "name": "Core & Entry Points",
+        "description": "Top-level framework entry modules (mod.ts, live.ts, types, deps) and the AsyncLocalStorage-based context system in deco.ts that wires blocks, engine, and runtime together."
+      },
+      {
+        "id": "layer:blocks",
+        "name": "Block System",
+        "description": "Serializable, composable typed blocks — loaders, actions, sections, pages, handlers, matchers, apps, and flags — that form Deco’s fundamental building units."
+      },
+      {
+        "id": "layer:engine",
+        "name": "Engine",
+        "description": "Resolver, manifest handling, JSON-schema generation from TypeScript types, and the Git-based decofile CMS file provider."
+      },
+      {
+        "id": "layer:runtime",
+        "name": "Runtime",
+        "description": "Deco HTTP server, middleware pipeline, Fresh and HTMX integration, and loader caching, together with the Preact components, hooks, and clients used for server-side rendering."
+      },
+      {
+        "id": "layer:daemon",
+        "name": "Daemon & Dev Tooling",
+        "description": "Development daemon (Git ops, AI, realtime sync, PTY, SSE, workers), hypervisor process manager, CLI scripts, and local dev utilities."
+      },
+      {
+        "id": "layer:observability",
+        "name": "Observability",
+        "description": "OpenTelemetry-based distributed tracing, metrics, and health probes."
+      },
+      {
+        "id": "layer:utility",
+        "name": "Shared Utilities",
+        "description": "Cross-cutting helpers and common utilities (JWT, workflows) plus plugin extensions imported broadly across the framework."
+      },
+      {
+        "id": "layer:infrastructure",
+        "name": "Infrastructure & CI/CD",
+        "description": "GitHub Actions workflows and release automation for building, testing, and publishing the @deco/deco package."
+      },
+      {
+        "id": "layer:documentation",
+        "name": "Documentation",
+        "description": "Project documentation, contribution guides, and module-level READMEs."
+      },
+      {
+        "id": "layer:config",
+        "name": "Configuration",
+        "description": "Deno project manifests and tooling configuration across the repository."
+      }
+    ]
+  },
+  "nodeSummaryIndex": {
+    "file:engine/decofile/constants.ts": {
+      "name": "constants.ts",
+      "type": "file",
+      "summary": "Defines shared constant identifiers (folder names, JSON file names, entrypoint key) used across the decofile provider system."
+    },
+    "file:engine/decofile/deconfig.ts": {
+      "name": "deconfig.ts",
+      "type": "file",
+      "summary": "Implements a Deconfig client that reads/writes blocks over HTTP and exposes a watchable filesystem-like provider via an event-source iterator."
+    },
+    "file:engine/decofile/fetcher.ts": {
+      "name": "fetcher.ts",
+      "type": "file",
+      "summary": "Loads decofile state from HTTP endpoints, event sources, JSON, or local providers, dispatching to the appropriate provider based on the endpoint specifier."
+    },
+    "file:engine/decofile/fs.ts": {
+      "name": "fs.ts",
+      "type": "file",
+      "summary": "Filesystem-backed decofile provider that reads, decompresses, hashes, and watches a single .decofile JSON for changes."
+    },
+    "file:engine/decofile/fsFolder.ts": {
+      "name": "fsFolder.ts",
+      "type": "file",
+      "summary": "Folder-based decofile provider that loads each block from individual JSON files, infers metadata by block type, and watches the directory for changes."
+    },
+    "file:engine/decofile/json.ts": {
+      "name": "json.ts",
+      "type": "file",
+      "summary": "Transforms a Decofile object into the JSON release format consumed by the engine, scoping block references under the app name."
+    },
+    "file:engine/decofile/provider.ts": {
+      "name": "provider.ts",
+      "type": "file",
+      "summary": "Composes multiple decofile providers into one and selects the active provider (filesystem, folder, or endpoint) based on environment configuration."
+    },
+    "file:engine/decofile/realtime.ts": {
+      "name": "realtime.ts",
+      "type": "file",
+      "summary": "Wraps a decofile provider with realtime subscription, polling fallback with jittered retry, and change notification to subscribers."
+    },
+    "file:engine/trustedAuthority.ts": {
+      "name": "trustedAuthority.ts",
+      "type": "file",
+      "summary": "Asserts that a given URL belongs to the configured allow-list of trusted authorities before it is used for remote decofile fetching."
+    },
+    "file:scripts/apps/bundle.lib.ts": {
+      "name": "bundle.lib.ts",
+      "type": "file",
+      "summary": "Builds and writes the generated manifest for each configured app by running the deco manifest builder and formatting the output."
+    },
+    "file:scripts/apps/bundle.ts": {
+      "name": "bundle.ts",
+      "type": "file",
+      "summary": "CLI entrypoint that invokes the app bundling routine to regenerate manifests."
+    },
+    "file:scripts/apps/config.ts": {
+      "name": "config.ts",
+      "type": "file",
+      "summary": "Resolves the deco app configuration by reading workspace deno.json files and dynamically importing the deco.ts config module."
+    },
+    "file:scripts/apps/context.ts": {
+      "name": "context.ts",
+      "type": "file",
+      "summary": "Provides shared context constants and types for the app scaffolding template scripts."
+    },
+    "file:scripts/apps/dev.ts": {
+      "name": "dev.ts",
+      "type": "file",
+      "summary": "Development helper that links or unlinks local deco apps by editing the import map and generating per-app entry files."
+    },
+    "file:scripts/apps/init.ts": {
+      "name": "init.ts",
+      "type": "file",
+      "summary": "Scaffolds a new deco app from templates, recursively writing template files and subdirectories into the target project."
+    },
+    "file:scripts/apps/install.ts": {
+      "name": "install.ts",
+      "type": "file",
+      "summary": "CLI entrypoint that installs deco app links by delegating to the dev helper."
+    },
+    "file:scripts/apps/link.ts": {
+      "name": "link.ts",
+      "type": "file",
+      "summary": "CLI entrypoint that links a local deco app via the dev helper."
+    },
+    "file:scripts/apps/templates/app.loaders.bin.ts.ts": {
+      "name": "app.loaders.bin.ts.ts",
+      "type": "file",
+      "summary": "Template generator emitting the loaders binary module source for a scaffolded deco app."
+    },
+    "file:scripts/apps/templates/app.mod.ts.ts": {
+      "name": "app.mod.ts.ts",
+      "type": "file",
+      "summary": "Template generator emitting the app mod.ts module source for a scaffolded deco app."
+    },
+    "file:scripts/apps/templates/deco.ts.ts": {
+      "name": "deco.ts.ts",
+      "type": "file",
+      "summary": "Template generator emitting the deco.ts configuration module source for a scaffolded deco app."
+    },
+    "file:scripts/apps/templates/deno.json.ts": {
+      "name": "deno.json.ts",
+      "type": "file",
+      "summary": "Template generator emitting the deno.json manifest source for a scaffolded deco app pinned to a specific deco version."
+    },
+    "file:scripts/apps/uninstall.ts": {
+      "name": "uninstall.ts",
+      "type": "file",
+      "summary": "CLI entrypoint that uninstalls deco app links via the dev helper."
+    },
+    "file:scripts/apps/unlink.ts": {
+      "name": "unlink.ts",
+      "type": "file",
+      "summary": "CLI entrypoint that unlinks a local deco app via the dev helper."
+    },
+    "file:scripts/formatter.ts": {
+      "name": "formatter.ts",
+      "type": "file",
+      "summary": "Re-exports a source code formatting helper used by template generators and bundling scripts."
+    },
+    "file:scripts/init.ts": {
+      "name": "init.ts",
+      "type": "file",
+      "summary": "Interactive CLI that initializes a new deco site by downloading a template archive, generating the decofile JSON, and printing setup instructions."
+    },
+    "file:scripts/order_imports.ts": {
+      "name": "order_imports.ts",
+      "type": "file",
+      "summary": "Sorts and normalizes import map entries in deno.json, deduplicating and alphabetizing specifiers before writing back."
+    },
+    "file:scripts/pkg.ts": {
+      "name": "pkg.ts",
+      "type": "file",
+      "summary": "Resolves package version information from a registry import URL, selecting the latest eligible (optionally pre-release) version."
+    },
+    "file:scripts/registry.ts": {
+      "name": "registry.ts",
+      "type": "file",
+      "summary": "Defines the set of registries used for resolving deco package versions."
+    },
+    "file:scripts/release.ts": {
+      "name": "release.ts",
+      "type": "file",
+      "summary": "Release automation script that bumps version numbers across deno.json files and commits the changes."
+    },
+    "file:scripts/upgrade.ts": {
+      "name": "upgrade.ts",
+      "type": "file",
+      "summary": "Comprehensive migration tool that upgrades a deco site to a new version by rewriting import maps, entrypoints, config files, and applying patches."
+    },
+    "file:scripts/utils.ts": {
+      "name": "utils.ts",
+      "type": "file",
+      "summary": "Shared script utilities for splitting and executing shell commands, capturing stdout/stderr."
+    },
+    "file:utils/filesystem.ts": {
+      "name": "filesystem.ts",
+      "type": "file",
+      "summary": "Filesystem helpers for path separator normalization and tolerant file-URL conversion."
+    },
+    "file:utils/hasher.ts": {
+      "name": "hasher.ts",
+      "type": "file",
+      "summary": "MurmurHash3 implementation providing fast incremental non-cryptographic hashing used for revision/state hashing."
+    },
+    "file:utils/json.ts": {
+      "name": "json.ts",
+      "type": "file",
+      "summary": "JSON serialization helpers providing stable (key-sorted) stringification and a write-friendly formatter."
+    },
+    "file:utils/rand.ts": {
+      "name": "rand.ts",
+      "type": "file",
+      "summary": "Generates short random identifiers used for transient keys across the runtime."
+    },
+    "file:commons/workflows/initialize.ts": {
+      "name": "initialize.ts",
+      "type": "file",
+      "summary": "Lazily initializes the durable workflow runtime exactly once when running outside daemon mode, deriving worker identity from environment variables."
+    },
+    "file:commons/workflows/types.ts": {
+      "name": "types.ts",
+      "type": "file",
+      "summary": "Defines workflow query-string parsing types and helpers that convert persisted workflow records into execution objects, stripping resolver metadata."
+    },
+    "file:deps.ts": {
+      "name": "deps.ts",
+      "type": "file",
+      "summary": "Central dependency barrel that re-exports OpenTelemetry, crypto, cookie, JSON-schema, and instrumentation APIs from third-party modules for use across the framework."
+    },
+    "file:observability/http.ts": {
+      "name": "http.ts",
+      "type": "file",
+      "summary": "Provides a small helper to start measuring HTTP request duration and record it to the OpenTelemetry httpDuration histogram."
+    },
+    "file:observability/observe.ts": {
+      "name": "observe.ts",
+      "type": "file",
+      "summary": "Wraps an async operation to record its duration and error status to OpenTelemetry operation-duration metrics."
+    },
+    "file:observability/otel/config.ts": {
+      "name": "config.ts",
+      "type": "file",
+      "summary": "Central OpenTelemetry configuration: builds the resource descriptor, tracer, sampling strategy, and exposes flags indicating whether tracing is enabled and recording."
+    },
+    "file:observability/otel/context.ts": {
+      "name": "context.ts",
+      "type": "file",
+      "summary": "Defines OpenTelemetry context keys and an AsyncLocalStorage-backed store for propagating request context through trace spans."
+    },
+    "file:observability/otel/instrumentation/deno-runtime.ts": {
+      "name": "deno-runtime.ts",
+      "type": "file",
+      "summary": "Custom OpenTelemetry instrumentation that exposes Deno runtime memory metrics as observable gauges and counters."
+    },
+    "file:observability/otel/logger.ts": {
+      "name": "logger.ts",
+      "type": "file",
+      "summary": "Custom logging handler that forwards log records to an OpenTelemetry LoggerProvider, enriching them with request context and severity mapping."
+    },
+    "file:observability/otel/metrics.ts": {
+      "name": "metrics.ts",
+      "type": "file",
+      "summary": "Configures the OpenTelemetry meter and metric exporter, including export interval and extra-metrics flag, plus header parsing helpers."
+    },
+    "file:observability/otel/samplers/debug.ts": {
+      "name": "debug.ts",
+      "type": "file",
+      "summary": "Trace sampler that forces sampling when a debug header is present on the request, delegating to an inner sampler otherwise."
+    },
+    "file:observability/otel/samplers/urlBased.ts": {
+      "name": "urlBased.ts",
+      "type": "file",
+      "summary": "Trace sampler that applies per-URL-pattern sampling ratios, matching request path segments against configured glob-like patterns."
+    },
+    "file:observability/probes/handler.ts": {
+      "name": "handler.ts",
+      "type": "file",
+      "summary": "Defines the probe checker interface and a helper to read numeric probe thresholds from environment variables."
+    },
+    "file:observability/probes/medianLatency.ts": {
+      "name": "medianLatency.ts",
+      "type": "file",
+      "summary": "Liveness probe checker that fails when the rolling median request latency exceeds a configured threshold."
+    },
+    "file:observability/probes/memory.ts": {
+      "name": "memory.ts",
+      "type": "file",
+      "summary": "Liveness probe checker that reports unhealthy when process memory usage crosses a configured threshold."
+    },
+    "file:observability/probes/reqCount.ts": {
+      "name": "reqCount.ts",
+      "type": "file",
+      "summary": "Liveness probe checker tracking total request count against a configured threshold."
+    },
+    "file:observability/probes/reqInflight.ts": {
+      "name": "reqInflight.ts",
+      "type": "file",
+      "summary": "Liveness probe checker that monitors the number of in-flight requests against a configured limit."
+    },
+    "file:observability/probes/uptime.ts": {
+      "name": "uptime.ts",
+      "type": "file",
+      "summary": "Liveness probe checker reporting process uptime, used to gate readiness during early startup."
+    },
+    "file:runtime/caches/cacheWriteWorker.ts": {
+      "name": "cacheWriteWorker.ts",
+      "type": "file",
+      "summary": "Web Worker that writes cache entries to the file system off the main thread, handling directory creation, hashing, and combined buffer generation."
+    },
+    "file:runtime/caches/common.ts": {
+      "name": "common.ts",
+      "type": "file",
+      "summary": "Wraps a cache storage with OpenTelemetry instrumentation, recording cache hit/miss status and span timing for match/put/delete operations."
+    },
+    "file:runtime/caches/compose.ts": {
+      "name": "compose.ts",
+      "type": "file",
+      "summary": "Composes multiple cache storages into one, racing reads and fanning out writes/deletes across the layered caches."
+    },
+    "file:runtime/caches/fileSystem.ts": {
+      "name": "fileSystem.ts",
+      "type": "file",
+      "summary": "File-system-backed CacheStorage implementation that serializes responses with headers into combined buffers and offloads writes to a worker."
+    },
+    "file:runtime/caches/headerscache.ts": {
+      "name": "headerscache.ts",
+      "type": "file",
+      "summary": "Cache storage decorator that tracks expiration via response headers and an LRU index, delegating to an inner cache storage."
+    },
+    "file:runtime/caches/lrucache.ts": {
+      "name": "lrucache.ts",
+      "type": "file",
+      "summary": "LRU cache storage decorator using an in-memory key index with TTL tracking to bound entries from an inner cache storage."
+    },
+    "file:runtime/caches/mod.ts": {
+      "name": "mod.ts",
+      "type": "file",
+      "summary": "Cache subsystem entry point that selects cache implementations by engine, exposes the loader-cache flag and revalidation locker, and builds the tiered cache storage."
+    },
+    "file:runtime/caches/redis.ts": {
+      "name": "redis.ts",
+      "type": "file",
+      "summary": "Redis-backed cache storage with pluggable compression codecs (lz4/zstd), sentinel support, command timeouts, and a distributed revalidation locker."
+    },
+    "file:runtime/caches/tiered.ts": {
+      "name": "tiered.ts",
+      "type": "file",
+      "summary": "Tiered cache storage that reads from the fastest available tier and propagates fresh entries back to faster tiers on miss."
+    },
+    "file:runtime/caches/utils.ts": {
+      "name": "utils.ts",
+      "type": "file",
+      "summary": "Shared cache helpers: SHA-1 hashing with an LRU memo, base cache storage scaffolding, request key derivation, and cacheability assertions."
+    },
+    "file:runtime/middlewares/liveness.ts": {
+      "name": "liveness.ts",
+      "type": "file",
+      "summary": "Hono middleware exposing a liveness endpoint that runs probe checkers, records probe metrics, and triggers graceful shutdown on termination signals."
+    },
+    "file:runtime/routes/workflow.ts": {
+      "name": "workflow.ts",
+      "type": "file",
+      "summary": "HTTP route handler that resolves workflow props and streams workflow execution commands back to the client."
+    },
+    "file:utils/stat.ts": {
+      "name": "stat.ts",
+      "type": "file",
+      "summary": "Statistics utilities implementing max/min heaps and a sliding-window Median calculator used by latency probes."
+    },
+    "file:blocks/account.ts": {
+      "name": "account.ts",
+      "type": "file",
+      "summary": "Defines the Account block type, registering accounts as a serializable, configurable block in the Deco engine."
+    },
+    "file:blocks/action.ts": {
+      "name": "action.ts",
+      "type": "file",
+      "summary": "Defines the Action block type for server-side mutations, wiring it into the engine block registry with preview support."
+    },
+    "file:blocks/app.ts": {
+      "name": "app.ts",
+      "type": "file",
+      "summary": "Implements the App block: merges app manifests and runtimes, injects app state into loaders and resolvers, and builds composed app runtimes from dependencies."
+    },
+    "file:blocks/appsUtil.ts": {
+      "name": "appsUtil.ts",
+      "type": "file",
+      "summary": "Utility helpers for building app runtimes: resolves blocks into resolvers, handles local module references, and composes manifests with import maps."
+    },
+    "file:blocks/flag.ts": {
+      "name": "flag.ts",
+      "type": "file",
+      "summary": "Defines the Flag block for feature toggles, supporting multivariate variants matched by device and user-agent criteria."
+    },
+    "file:blocks/function.ts": {
+      "name": "function.ts",
+      "type": "file",
+      "summary": "Legacy Function block definition, aliasing handler and loader behavior for backward-compatible block resolution."
+    },
+    "file:blocks/handler.ts": {
+      "name": "handler.ts",
+      "type": "file",
+      "summary": "Defines the Handler block type for custom HTTP endpoints, integrating resolver context and request handling."
+    },
+    "file:blocks/index.ts": {
+      "name": "index.ts",
+      "type": "file",
+      "summary": "Barrel module aggregating all built-in block definitions and exposing defineBlock for registering user-defined blocks."
+    },
+    "file:blocks/loader.ts": {
+      "name": "loader.ts",
+      "type": "file",
+      "summary": "Implements the Loader block: async data fetchers with caching, stale-while-revalidate, single-flight dedup, error wrapping, and observability."
+    },
+    "file:blocks/matcher.ts": {
+      "name": "matcher.ts",
+      "type": "file",
+      "summary": "Defines the Matcher block for route and audience matching, supporting sticky sessions and cookie-based segment persistence."
+    },
+    "file:blocks/propsLoader.ts": {
+      "name": "propsLoader.ts",
+      "type": "file",
+      "summary": "Resolves props for blocks by detecting loader functions versus object loaders and awaiting nested loader keys."
+    },
+    "file:blocks/section.ts": {
+      "name": "section.ts",
+      "type": "file",
+      "summary": "Defines the Section block factory, wrapping Preact components with prop loading, error boundaries, and preview rendering."
+    },
+    "file:blocks/utils.tsx": {
+      "name": "utils.tsx",
+      "type": "file",
+      "summary": "Shared block utilities: applying props and config, building FnContext from HTTP context, single-flight groups, import-map building, and visibility gatekeeping."
+    },
+    "file:blocks/workflow.ts": {
+      "name": "workflow.ts",
+      "type": "file",
+      "summary": "Defines the Workflow block and WorkflowContext, enabling durable invocation of loaders and actions within workflow execution."
+    },
+    "file:clients/formdata.ts": {
+      "name": "formdata.ts",
+      "type": "file",
+      "summary": "Bidirectional conversion between block props objects and FormData, with dot-escaping for nested keys and file handling."
+    },
+    "file:clients/proxy.ts": {
+      "name": "proxy.ts",
+      "type": "file",
+      "summary": "Builds typed proxy invokers via InvokeAwaiter, deferring invocation until awaited and routing through the manifest invoke handler."
+    },
+    "file:clients/withManifest.ts": {
+      "name": "withManifest.ts",
+      "type": "file",
+      "summary": "Typed manifest client: invokes loaders and actions over HTTP with prop serialization, streaming detection, batch invoke, and proxy generation."
+    },
+    "file:components/JsonViewer.tsx": {
+      "name": "JsonViewer.tsx",
+      "type": "file",
+      "summary": "Preact component rendering a collapsible JSON tree using jQuery JSONView loaded from CDN, used for block previews."
+    },
+    "file:components/PreviewNotAvailable.tsx": {
+      "name": "PreviewNotAvailable.tsx",
+      "type": "file",
+      "summary": "Fallback Preact component shown when a block has no preview implementation."
+    },
+    "file:components/StubSection.tsx": {
+      "name": "StubSection.tsx",
+      "type": "file",
+      "summary": "Minimal stub section components used as placeholders during section rendering."
+    },
+    "file:components/section.tsx": {
+      "name": "section.tsx",
+      "type": "file",
+      "summary": "Core section rendering wrapper: provides SectionContext, error boundary, device detection, preview handling, and lazy section hydration."
+    },
+    "file:engine/block.ts": {
+      "name": "block.ts",
+      "type": "file",
+      "summary": "Engine block type definitions and introspection: type guards, resolver wiring, and schema transform integration for all block kinds."
+    },
+    "file:engine/core/hints.ts": {
+      "name": "hints.ts",
+      "type": "file",
+      "summary": "Generates resolve hints by traversing resolvable maps to pre-compute paths of nested resolvables for faster resolution."
+    },
+    "file:engine/core/mod.ts": {
+      "name": "mod.ts",
+      "type": "file",
+      "summary": "Defines ReleaseResolver, the core engine resolver that manages resolvables, resolver overrides, hints, and per-release caching."
+    },
+    "file:engine/core/resolver.ts": {
+      "name": "resolver.ts",
+      "type": "file",
+      "summary": "Core resolver engine that executes resolvables — composable async operations with field-level resolution, resolve chains, middleware, monitoring timings, and dangling-reference recovery."
+    },
+    "file:engine/core/utils.ts": {
+      "name": "utils.ts",
+      "type": "file",
+      "summary": "Utility helpers for the resolver engine: awaitable detection, object key mapping, async key resolution, primitive checks, and single-flight deduplication."
+    },
+    "file:engine/errors.ts": {
+      "name": "errors.ts",
+      "type": "file",
+      "summary": "Re-exports HTTP error helpers and types (badRequest, forbidden, notFound, redirect, etc.) used to signal HTTP-level errors from blocks."
+    },
+    "file:engine/integrity.ts": {
+      "name": "integrity.ts",
+      "type": "file",
+      "summary": "Recursively verifies that every __resolveType reference in the resolvables tree points to a registered resolver, warning on missing ones."
+    },
+    "file:engine/manifest/defaults.ts": {
+      "name": "defaults.ts",
+      "type": "file",
+      "summary": "Default resolvers and preview/invoke prefix keys for the manifest, including deferred resolvable creation."
+    },
+    "file:engine/manifest/fresh.ts": {
+      "name": "fresh.ts",
+      "type": "file",
+      "summary": "Fresh framework manifest glue that wires default resolvers into a Fresh-compatible manifest."
+    },
+    "file:engine/manifest/manifest.ts": {
+      "name": "manifest.ts",
+      "type": "file",
+      "summary": "Builds and fulfills the Deco runtime context from a manifest: installs apps, resolves the decofile provider, merges runtimes/import maps, and wires the resolver."
+    },
+    "file:engine/manifest/utils.ts": {
+      "name": "utils.ts",
+      "type": "file",
+      "summary": "Generates a random human-readable site name using a unique-names generator."
+    },
+    "file:engine/middleware.ts": {
+      "name": "middleware.ts",
+      "type": "file",
+      "summary": "Provides a Koa-style middleware composition function for chaining resolver middlewares."
+    },
+    "file:hooks/useDevice.ts": {
+      "name": "useDevice.ts",
+      "type": "file",
+      "summary": "Preact hook that returns the current device (mobile/tablet/desktop) from section context."
+    },
+    "file:hooks/useSection.ts": {
+      "name": "useSection.ts",
+      "type": "file",
+      "summary": "Preact hook and helpers that build a stable, cacheable href for re-rendering a section partial, managing allowed/blocked query strings and segment hashing."
+    },
+    "file:hooks/useSetEarlyHints.ts": {
+      "name": "useSetEarlyHints.ts",
+      "type": "file",
+      "summary": "Preact hook that appends HTTP early-hint (Link) headers to the section response."
+    },
+    "file:runtime/features/invoke.ts": {
+      "name": "invoke.ts",
+      "type": "file",
+      "summary": "Runtime invoke feature that converts invocation payloads into resolvables and executes single or batch invocations with error wrapping and observability."
+    },
+    "file:runtime/utils.ts": {
+      "name": "utils.ts",
+      "type": "file",
+      "summary": "Builds the base request-scoped runtime state (vary, response headers, flags) from the active Deco context."
+    },
+    "file:types.ts": {
+      "name": "types.ts",
+      "type": "file",
+      "summary": "Central public type re-exports for the framework: App, AppContext, AppManifest, FnContext, SectionProps, ResolveFunc, and related block types."
+    },
+    "file:utils/invoke.server.ts": {
+      "name": "invoke.server.ts",
+      "type": "file",
+      "summary": "Server-side invoke helpers that build typed invocation functions and sanitize/serialize payloads for resolver execution."
+    },
+    "file:utils/invoke.types.ts": {
+      "name": "invoke.types.ts",
+      "type": "file",
+      "summary": "Type-level machinery deriving available invocations and invocation function signatures from an app manifest."
+    },
+    "file:utils/metabase.tsx": {
+      "name": "metabase.tsx",
+      "type": "file",
+      "summary": "Renders a Metabase dashboard preview as an embedded iframe for block previews."
+    },
+    "file:utils/object.ts": {
+      "name": "object.ts",
+      "type": "file",
+      "summary": "Object path utilities for picking nested values by path, building objects from path/value pairs, and safe try-or-default execution."
+    },
+    "file:utils/promise.ts": {
+      "name": "promise.ts",
+      "type": "file",
+      "summary": "Creates a deferred promise object exposing resolve/reject and a settled state flag."
+    },
+    "file:utils/segment.ts": {
+      "name": "segment.ts",
+      "type": "file",
+      "summary": "Computes a stable segment hash for a request from cookies, flags, and release revision for cache keying."
+    },
+    "file:utils/sync.ts": {
+      "name": "sync.ts",
+      "type": "file",
+      "summary": "Provides a once wrapper that runs a callback a single time, caching its (possibly async) result."
+    },
+    "file:utils/userAgent.ts": {
+      "name": "userAgent.ts",
+      "type": "file",
+      "summary": "User-agent parsing helpers that detect device type and identify bot requests."
+    },
+    "file:utils/vary.ts": {
+      "name": "vary.ts",
+      "type": "file",
+      "summary": "Builds a Vary tracker accumulating the request dimensions a response depends on for cache segmentation."
+    },
+    "file:commons/jwt/engine.ts": {
+      "name": "engine.ts",
+      "type": "file",
+      "summary": "Validates JWTs against a site by matching URN parts in the token subject, granting access when the site URN matches the token scope."
+    },
+    "file:commons/jwt/jwks.ts": {
+      "name": "jwks.ts",
+      "type": "file",
+      "summary": "Builds a trusted JWKS issuer that fetches public keys from a remote JWKS endpoint by key id, with fallback key support."
+    },
+    "file:commons/jwt/jwt.ts": {
+      "name": "jwt.ts",
+      "type": "file",
+      "summary": "Provides factories for JWT verifiers and issuers built on imported crypto keys, supporting sign/verify with RSA/ES keys."
+    },
+    "file:commons/jwt/keys.ts": {
+      "name": "keys.ts",
+      "type": "file",
+      "summary": "Cryptographic key utilities: generates ECDSA key pairs, imports JWKs, and resolves the daemon key pair from environment variables."
+    },
+    "file:commons/jwt/trusted.ts": {
+      "name": "trusted.ts",
+      "type": "file",
+      "summary": "Maintains the registry of trusted JWT issuers and resolves a cached verifier for a given issuer."
+    },
+    "file:daemon/ai/github.ts": {
+      "name": "github.ts",
+      "type": "file",
+      "summary": "GitHub integration helpers for AI tasks: parses issue URLs, fetches issues via gh CLI, builds prompts, opens PRs, and comments on issues."
+    },
+    "file:daemon/ai/handlers.ts": {
+      "name": "handlers.ts",
+      "type": "file",
+      "summary": "Hono HTTP/WebSocket handlers for managing AI tasks: create, list, inspect, stream a PTY session, and dispose tasks."
+    },
+    "file:daemon/ai/repoUrl.ts": {
+      "name": "repoUrl.ts",
+      "type": "file",
+      "summary": "Parses a repository URL into owner and repo components."
+    },
+    "file:daemon/ai/task.ts": {
+      "name": "task.ts",
+      "type": "file",
+      "summary": "Core AI task orchestrator: sets up scoped GitHub tokens and git env, runs an agent in a PTY session, monitors activity, and reports task lifecycle."
+    },
+    "file:daemon/ai/task_test.ts": {
+      "name": "task_test.ts",
+      "type": "file",
+      "summary": "Unit tests for repository URL parsing used by AI tasks."
+    },
+    "file:daemon/async.ts": {
+      "name": "async.ts",
+      "type": "file",
+      "summary": "Concurrency primitives: a read/write lock and a chained locker built on disposable semaphores."
+    },
+    "file:daemon/auth.ts": {
+      "name": "auth.ts",
+      "type": "file",
+      "summary": "Daemon authentication middleware that extracts and verifies the request JWT against trusted issuers and validates site access."
+    },
+    "file:daemon/cache.ts": {
+      "name": "cache.ts",
+      "type": "file",
+      "summary": "Downloads and extracts a pre-built site cache archive from remote storage into the local Deno dir."
+    },
+    "file:daemon/cmd.ts": {
+      "name": "cmd.ts",
+      "type": "file",
+      "summary": "Spawns a Deno subprocess and registers its stdout/stderr with the logging interface."
+    },
+    "file:daemon/daemon.ts": {
+      "name": "daemon.ts",
+      "type": "file",
+      "summary": "Assembles the daemon's Hono application, wiring auth, git, filesystem, realtime, SSE, and logging APIs behind site routing."
+    },
+    "file:daemon/fs/api.ts": {
+      "name": "api.ts",
+      "type": "file",
+      "summary": "Filesystem HTTP API for the daemon: reads, patches, deletes, and greps project files with per-path read/write locking and block metadata inference."
+    },
+    "file:daemon/fs/common.ts": {
+      "name": "common.ts",
+      "type": "file",
+      "summary": "Shared filesystem patch utilities for applying and generating JSON Patch / text-line patches against file content."
+    },
+    "file:daemon/fs/grep.ts": {
+      "name": "grep.ts",
+      "type": "file",
+      "summary": "Project-wide text search that prefers the system grep binary and falls back to a pure-Deno recursive walk when unavailable."
+    },
+    "file:daemon/git.ts": {
+      "name": "git.ts",
+      "type": "file",
+      "summary": "Git operations backbone for the daemon: clone/ensure repo, diff/status/log, publish, discard, rebase with conflict resolution, GitHub token/netrc setup, and the git HTTP API."
+    },
+    "file:daemon/githubApp.ts": {
+      "name": "githubApp.ts",
+      "type": "file",
+      "summary": "GitHub App integration: mints scoped installation tokens from a PEM private key, manages branch protection, resolves default branch, and writes App-auth netrc."
+    },
+    "file:daemon/loggings/stream.ts": {
+      "name": "stream.ts",
+      "type": "file",
+      "summary": "In-memory log streaming interface that buffers process output, mirrors it to console, and dispatches log events to readers."
+    },
+    "file:components/LiveControls.tsx": {
+      "name": "LiveControls.tsx",
+      "type": "file",
+      "summary": "Client-side island that wires up live editing controls: listens for editor postMessages, keyboard shortcuts, and DOM inspection to enable in-browser CMS interactivity."
+    },
+    "file:deco.ts": {
+      "name": "deco.ts",
+      "type": "file",
+      "summary": "Defines the global DecoContext and request-scoped RequestContext using AsyncLocalStorage, exposing deployment info, platform detection, and active-request accessors."
+    },
+    "file:engine/importmap/_util.ts": {
+      "name": "_util.ts",
+      "type": "file",
+      "summary": "Type-guard and normalization helpers for validating import map structures (imports, scopes, specifier maps) and sorting keys."
+    },
+    "file:engine/importmap/builder.ts": {
+      "name": "builder.ts",
+      "type": "file",
+      "summary": "Builds and resolves import maps, providing a native resolver that handles file, npm/esm, and jsr specifiers for module resolution."
+    },
+    "file:engine/importmap/jsr.ts": {
+      "name": "jsr.ts",
+      "type": "file",
+      "summary": "Resolves JSR package specifiers by fetching and caching package _meta.json export maps from jsr.io."
+    },
+    "file:engine/importmap/mod.ts": {
+      "name": "mod.ts",
+      "type": "file",
+      "summary": "Implementation of the WHATWG import map resolution algorithm: normalizes specifier maps and scopes and resolves module specifiers against a base URL."
+    },
+    "file:engine/manifest/manifestBuilder.ts": {
+      "name": "manifestBuilder.ts",
+      "type": "file",
+      "summary": "Provides a fluent ManifestBuilder that accumulates imports, statements, and manifest values and stringifies them into a TypeScript manifest source file."
+    },
+    "file:engine/manifest/manifestGen.ts": {
+      "name": "manifestGen.ts",
+      "type": "file",
+      "summary": "Walks a deco site directory to discover block files and assembles a DecoManifest builder with definitions for each block type."
+    },
+    "file:engine/schema/builder.ts": {
+      "name": "builder.ts",
+      "type": "file",
+      "summary": "Schema builder that accumulates block modules and schemeables and emits a combined JSON Schema describing all block inputs and the resolve graph."
+    },
+    "file:engine/schema/comments.ts": {
+      "name": "comments.ts",
+      "type": "file",
+      "summary": "Assigns source comments to AST spannable nodes and converts JSDoc comments into JSON Schema annotations."
+    },
+    "file:engine/schema/deps.ts": {
+      "name": "deps.ts",
+      "type": "file",
+      "summary": "Re-exports the source parser and ParsedSource type used by the schema engine."
+    },
+    "file:engine/schema/gen.ts": {
+      "name": "gen.ts",
+      "type": "file",
+      "summary": "Generates the complete JSON Schema for a manifest by resolving each block module, introspecting its types, and building the schema document."
+    },
+    "file:engine/schema/lazy.ts": {
+      "name": "lazy.ts",
+      "type": "file",
+      "summary": "Provides a request-scoped lazy schema that merges runtime-saved blocks from the active release into the generated base schema, cached by revision."
+    },
+    "file:engine/schema/merge.ts": {
+      "name": "merge.ts",
+      "type": "file",
+      "summary": "Merges multiple JSON Schema definition objects by combining their anyOf branches and deduplicating entries."
+    },
+    "file:engine/schema/parser.ts": {
+      "name": "parser.ts",
+      "type": "file",
+      "summary": "TypeScript source loader and parser with caching and .d.ts resolution that produces parsed AST programs for schema introspection."
+    },
+    "file:engine/schema/reader.ts": {
+      "name": "reader.ts",
+      "type": "file",
+      "summary": "Thin wrapper that generates schemas from a manifest and cleans up stale generated schema cache files."
+    },
+    "file:engine/schema/schemeable.ts": {
+      "name": "schemeable.ts",
+      "type": "file",
+      "summary": "Converts internal schemeable type representations into JSON Schema, handling unions, arrays, objects, inheritance, and recursion via a seen map."
+    },
+    "file:engine/schema/transform.ts": {
+      "name": "transform.ts",
+      "type": "file",
+      "summary": "Core TypeScript-to-schemeable transformer that walks the parsed AST resolving type names, interfaces, well-known types, and block functions into schemeable representations."
+    },
+    "file:engine/schema/utils.ts": {
+      "name": "utils.ts",
+      "type": "file",
+      "summary": "Schema-engine helpers for parsing JSDoc attributes, beautifying property names, and async/sync AST visiting."
+    },
+    "file:runtime/features/meta.ts": {
+      "name": "meta.ts",
+      "type": "file",
+      "summary": "Implements the meta endpoint that exposes the site's manifest blocks and lazy schema, with long-polling support for schema changes via ETag."
+    },
+    "file:utils/patched_fetch.ts": {
+      "name": "patched_fetch.ts",
+      "type": "file",
+      "summary": "Instruments the global fetch with listener hooks and observability metadata extraction (app name, url parts, method) for outbound requests."
+    },
+    "file:daemon/main.ts": {
+      "name": "main.ts",
+      "type": "file",
+      "summary": "Entry point of the development daemon: bootstraps Git readiness, manifest/blocks generation, file watching, worker spawning, tunnel registration, and the site Hono app that proxies requests to the running site worker."
+    },
+    "file:daemon/meta.ts": {
+      "name": "meta.ts",
+      "type": "file",
+      "summary": "Maintains the daemon's view of the site's schema/manifest metadata by polling the worker's /meta endpoint with ETag caching and broadcasting updates over the SSE channel."
+    },
+    "file:daemon/monitor.ts": {
+      "name": "monitor.ts",
+      "type": "file",
+      "summary": "Activity monitor and self-scaling logic: tracks request activity and, when idle, scales the daemon's own Kubernetes deployment to zero via the in-pod ServiceAccount or notifies an external endpoint."
+    },
+    "file:daemon/pty/manager.ts": {
+      "name": "manager.ts",
+      "type": "file",
+      "summary": "Manages pseudo-terminal sessions, spawning, retrieving, listing, killing, and disposing PtySession instances keyed by id."
+    },
+    "file:daemon/pty/session.ts": {
+      "name": "session.ts",
+      "type": "file",
+      "summary": "Wraps a native pseudo-terminal process with lazy native module loading, exposing read/write/resize/kill and output buffering for a single interactive session."
+    },
+    "file:daemon/realtime/app.ts": {
+      "name": "app.ts",
+      "type": "file",
+      "summary": "Realtime collaboration API: a Hono app exposing WebSocket and HTTP endpoints for file-system broadcast, JSON patching, and CRDT text editing of the site's decofile."
+    },
+    "file:daemon/realtime/crdt/bit.ts": {
+      "name": "bit.ts",
+      "type": "file",
+      "summary": "Binary Indexed Tree (Fenwick tree) implementation used by the CRDT text engine to compute cumulative offset sums efficiently."
+    },
+    "file:daemon/realtime/crdt/text.ts": {
+      "name": "text.ts",
+      "type": "file",
+      "summary": "CRDT text engine providing LCS-based diffing, operation shrinking, and offset-aware patch application for concurrent collaborative text editing."
+    },
+    "file:daemon/realtime/types.ts": {
+      "name": "types.ts",
+      "type": "file",
+      "summary": "Type definitions and type-guard helpers for realtime file patch operations (JSON file patches and text file sets)."
+    },
+    "file:daemon/sandbox.ts": {
+      "name": "sandbox.ts",
+      "type": "file",
+      "summary": "Sandbox-mode deploy/undeploy HTTP handlers that validate a deploy payload (repo, branch, run command, envs) and switch the daemon's active site dynamically."
+    },
+    "file:daemon/sse/api.ts": {
+      "name": "api.ts",
+      "type": "file",
+      "summary": "Server-Sent Events endpoint that streams daemon events (file-system, worker, and meta changes) to connected clients over a ReadableStream."
+    },
+    "file:daemon/sse/channel.ts": {
+      "name": "channel.ts",
+      "type": "file",
+      "summary": "Shared in-process event channel and broadcast helper used to fan daemon events out to SSE subscribers."
+    },
+    "file:daemon/tunnel.ts": {
+      "name": "tunnel.ts",
+      "type": "file",
+      "summary": "Establishes and maintains the deco tunnel connection that exposes the local daemon under a public preview domain, retrying automatically on disconnect."
+    },
+    "file:daemon/worker.ts": {
+      "name": "worker.ts",
+      "type": "file",
+      "summary": "Manages the site worker lifecycle: lazily initializes the worker process, exposes a Hono proxy middleware to it, and tracks/broadcasts worker readiness state."
+    },
+    "file:daemon/workers/denoRun.ts": {
+      "name": "denoRun.ts",
+      "type": "file",
+      "summary": "Spawns and supervises a site as an isolated Deno child process, building permission flags, proxying HTTP/WebSocket traffic, tracking inflight requests, and disposing cleanly when idle."
+    },
+    "file:daemon/workers/isolate.ts": {
+      "name": "isolate.ts",
+      "type": "file",
+      "summary": "Small isolate worker module wiring log streaming for an isolated worker variant."
+    },
+    "file:daemon/workers/portpool.ts": {
+      "name": "portpool.ts",
+      "type": "file",
+      "summary": "Allocates and frees TCP ports from a bounded range for worker subprocesses, probing port availability before handing them out."
+    },
+    "file:daemon/workers/utils.ts": {
+      "name": "utils.ts",
+      "type": "file",
+      "summary": "Worker helper utilities for probing whether a TCP port is listening and waiting until a worker port becomes ready."
+    },
+    "file:hypervisor/main.ts": {
+      "name": "main.ts",
+      "type": "file",
+      "summary": "Thin hypervisor entry point that re-exports/runs the daemon main module."
+    },
+    "file:utils/async.ts": {
+      "name": "async.ts",
+      "type": "file",
+      "summary": "Small async utilities: a promise-chaining throttle that coalesces calls and a delay helper."
+    },
+    "file:blocks/mod.ts": {
+      "name": "mod.ts",
+      "type": "file",
+      "summary": "Barrel module re-exporting all block type definitions (loaders, sections, pages, matchers, handlers, flags, workflows) and their associated types for the Deco block system."
+    },
+    "file:blocks/page.tsx": {
+      "name": "page.tsx",
+      "type": "file",
+      "summary": "Defines the Page block type, wrapping section blocks into renderable route-level page components."
+    },
+    "file:hooks/useScript.ts": {
+      "name": "useScript.ts",
+      "type": "file",
+      "summary": "Preact hook that serializes a function to a minified client-side script string (with caching) and exposes it as inline JS or a data URI for HTMX-driven interactivity."
+    },
+    "file:mod.ts": {
+      "name": "mod.ts",
+      "type": "file",
+      "summary": "Top-level public entry point of @deco/deco, re-exporting the core framework surface: Deco class, context, blocks, resolver, schema, and fetch utilities."
+    },
+    "file:observability/mod.ts": {
+      "name": "mod.ts",
+      "type": "file",
+      "summary": "Observability barrel exporting the OpenTelemetry logger, meter, and ValueType used across the framework for tracing and metrics."
+    },
+    "file:runtime/deps.ts": {
+      "name": "deps.ts",
+      "type": "file",
+      "summary": "Runtime dependency barrel re-exporting Hono types and the Deno serveStatic/upgradeWebSocket helpers used by the HTTP runtime."
+    },
+    "file:runtime/errors.ts": {
+      "name": "errors.ts",
+      "type": "file",
+      "summary": "HTTP error primitives: an HttpError class plus status/short-circuit/redirect helpers for producing structured error responses in the request pipeline."
+    },
+    "file:runtime/features/preview.tsx": {
+      "name": "preview.tsx",
+      "type": "file",
+      "summary": "Implements the block preview feature, parsing preview URLs and resolving a block instance for rendering in the CMS preview surface."
+    },
+    "file:runtime/features/render.tsx": {
+      "name": "render.tsx",
+      "type": "file",
+      "summary": "Core render feature that resolves a page from the request URL, walks the resolve chain, handles errors/redirects, and produces the final HTML response with injected scripts."
+    },
+    "file:runtime/features/styles.css.ts": {
+      "name": "styles.css.ts",
+      "type": "file",
+      "summary": "Loads the framework's bundled CSS stylesheet from disk to serve as the preview/editor styles."
+    },
+    "file:runtime/fetch/fetchLog.ts": {
+      "name": "fetchLog.ts",
+      "type": "file",
+      "summary": "Wraps a fetcher to log outgoing fetch requests with timing information via the configurable logger."
+    },
+    "file:runtime/fetch/mod.ts": {
+      "name": "mod.ts",
+      "type": "file",
+      "summary": "Fetch module entry point exposing the logging-instrumented fetch wrapper for runtime HTTP calls."
+    },
+    "file:runtime/handler.tsx": {
+      "name": "handler.tsx",
+      "type": "file",
+      "summary": "HTTP handler factory that wires the Hono app with Deco middleware, the framework renderer, route handlers, and HTMX bindings into a single fetch handler."
+    },
+    "file:runtime/htmx/Bindings.tsx": {
+      "name": "Bindings.tsx",
+      "type": "file",
+      "summary": "Provides HTMX framework bindings including the Head component and section binding helpers used to integrate HTMX with Deco sections."
+    },
+    "file:runtime/htmx/Renderer.tsx": {
+      "name": "Renderer.tsx",
+      "type": "file",
+      "summary": "HTMX renderer that serializes a page component to an HTML string, injecting collected head elements into the document."
+    },
+    "file:runtime/htmx/fileCache.ts": {
+      "name": "fileCache.ts",
+      "type": "file",
+      "summary": "In-memory static file cache that reads files from disk, computes ETags, and serves cached file content for the HTMX static asset server."
+    },
+    "file:runtime/htmx/mod.tsx": {
+      "name": "mod.tsx",
+      "type": "file",
+      "summary": "HTMX framework integration entry point that sets up the renderer, static file serving, and a WebSocket-based hot-module-reload channel for the Deco runtime."
+    },
+    "file:runtime/htmx/serveStatic.ts": {
+      "name": "serveStatic.ts",
+      "type": "file",
+      "summary": "Static asset middleware that resolves cache-busted asset URLs, serves cached files with content-type and caching headers, and handles redirects for the HTMX runtime."
+    },
+    "file:runtime/middleware.ts": {
+      "name": "middleware.ts",
+      "type": "file",
+      "summary": "Central request middleware pipeline: prepares request-scoped state, sets up OpenTelemetry tracing, handles cookies/flags, CORS, server-timing, and assembles the response headers for every Deco request."
+    },
+    "file:runtime/mod.ts": {
+      "name": "mod.ts",
+      "type": "file",
+      "summary": "Defines the main `Deco` class that bootstraps a site: initializes the manifest, decofile provider, and resolver, and exposes high-level operations (handler, fetch, resolve, render, preview, invoke, batchInvoke) plus per-request state preparation."
+    },
+    "file:runtime/routes/_meta.ts": {
+      "name": "_meta.ts",
+      "type": "file",
+      "summary": "Route handler exposing the site's meta information (schema and block metadata) over HTTP."
+    },
+    "file:runtime/routes/batchInvoke.ts": {
+      "name": "batchInvoke.ts",
+      "type": "file",
+      "summary": "Route handler that converts batch invocation payloads into resolvables and executes multiple block invocations in a single request."
+    },
+    "file:runtime/routes/blockPreview.tsx": {
+      "name": "blockPreview.tsx",
+      "type": "file",
+      "summary": "Route handler and rendering logic that previews an individual block from a serialized payload, building a fresh resolver scope for the preview."
+    },
+    "file:runtime/routes/entrypoint.tsx": {
+      "name": "entrypoint.tsx",
+      "type": "file",
+      "summary": "Catch-all page entrypoint route exposing page/router Preact context hooks and the default Render component plus the HTTP handler."
+    },
+    "file:runtime/routes/inspect.ts": {
+      "name": "inspect.ts",
+      "type": "file",
+      "summary": "Thin route handler delegating to the DOM inspector handler for live-editing inspection."
+    },
+    "file:runtime/routes/invoke.ts": {
+      "name": "invoke.ts",
+      "type": "file",
+      "summary": "Single-invocation route handler that selects a props-parsing strategy (JSON or form data) based on content type and executes the requested block."
+    },
+    "file:runtime/routes/previews.tsx": {
+      "name": "previews.tsx",
+      "type": "file",
+      "summary": "Route handler rendering page previews with live controls, deriving the page id from resolver metadata."
+    },
+    "file:runtime/routes/release.ts": {
+      "name": "release.ts",
+      "type": "file",
+      "summary": "Route handler exposing the current decofile release state, guarded by trusted-authority checks."
+    },
+    "file:runtime/routes/reload.ts": {
+      "name": "reload.ts",
+      "type": "file",
+      "summary": "Route handler that triggers a live reload, typically used by the development daemon to refresh the running site."
+    },
+    "file:runtime/routes/render.tsx": {
+      "name": "render.tsx",
+      "type": "file",
+      "summary": "Route handler that reconstructs a render request from query/body params and renders the resolved section, with validation of required fields."
+    },
+    "file:runtime/routes/styles.css.ts": {
+      "name": "styles.css.ts",
+      "type": "file",
+      "summary": "Route handler serving the generated CSS stylesheet for the running site."
+    },
+    "file:utils/admin.ts": {
+      "name": "admin.ts",
+      "type": "file",
+      "summary": "Helpers for detecting admin/landing-page domains, building admin URLs, and constructing resolvable references used by the Deco admin UI."
+    },
+    "file:utils/cookies.ts": {
+      "name": "cookies.ts",
+      "type": "file",
+      "summary": "Cookie utilities for size-aware setting, base64 encode/decode of values, and enforcing maximum cookie size."
+    },
+    "file:utils/http.ts": {
+      "name": "http.ts",
+      "type": "file",
+      "summary": "Broad HTTP utility module: cache-control parsing/merging, Vary handling, CSP headers, CORS helpers, HTTPS enforcement, and request body extraction from URLs."
+    },
+    "file:utils/invoke.ts": {
+      "name": "invoke.ts",
+      "type": "file",
+      "summary": "Converts invocation results into HTTP responses, streaming Server-Sent Events for stream props and falling back to JSON otherwise."
+    },
+    "file:utils/log.ts": {
+      "name": "log.ts",
+      "type": "file",
+      "summary": "Console logging formatters for request/response lines, status colors, latency bars, and server-timing progress visualizations."
+    },
+    "file:utils/mod.ts": {
+      "name": "mod.ts",
+      "type": "file",
+      "summary": "Barrel module re-exporting commonly used utility helpers and types (admin, streams, timings, JSON viewer, manifest builder)."
+    },
+    "file:utils/timings.ts": {
+      "name": "timings.ts",
+      "type": "file",
+      "summary": "Provides createServerTimings to record named timing spans and emit a Server-Timing header string for request observability."
+    },
+    "file:hooks/usePartialSection.ts": {
+      "name": "usePartialSection.ts",
+      "type": "file",
+      "summary": "Preact hook that wraps useSection to render a section as an HTMX partial, wiring up the async dispatch trigger mode for client-side rendering."
+    },
+    "file:runtime/fresh/Bindings.tsx": {
+      "name": "Bindings.tsx",
+      "type": "file",
+      "summary": "Defines Fresh framework bindings that connect Deco rendering primitives to the DispatchAsyncRender island for partial/async section dispatch."
+    },
+    "file:runtime/fresh/islands/DispatchAsyncRender.tsx": {
+      "name": "DispatchAsyncRender.tsx",
+      "type": "file",
+      "summary": "Fresh island that triggers asynchronous partial rendering on the client by clicking a hidden HTMX trigger element, either immediately or lazily via an IntersectionObserver."
+    },
+    "file:runtime/fresh/plugin.tsx": {
+      "name": "plugin.tsx",
+      "type": "file",
+      "summary": "Fresh plugin that initializes a Deco instance and wires its HTTP handler and rendering into the Fresh framework lifecycle."
+    },
+    "file:plugins/deco.ts": {
+      "name": "deco.ts",
+      "type": "file",
+      "summary": "Backwards-compatibility shim for the legacy Fresh+Deco plugin; re-exports the runtime Fresh plugin and wraps it in a `plugins()` array factory."
+    },
+    "file:plugins/fresh.ts": {
+      "name": "fresh.ts",
+      "type": "file",
+      "summary": "Convenience entry that composes the Tailwind and Deco Fresh plugins into a single plugin array for Fresh server configuration."
+    },
+    "file:runtime/fresh/plugin.ts": {
+      "name": "plugin.ts",
+      "type": "file",
+      "summary": "Thin re-export module exposing the runtime Fresh plugin implementation as the default export."
+    },
+    "pipeline:.github/workflows/ci.yaml": {
+      "name": "ci.yaml",
+      "type": "pipeline",
+      "summary": "Continuous integration workflow that builds the Deno module, fetches dependencies, and runs tests, benchmarks, lint, and formatting checks on push and pull requests to main across Ubuntu and Windows runners."
+    },
+    "pipeline:.github/workflows/issues.yaml": {
+      "name": "issues.yaml",
+      "type": "pipeline",
+      "summary": "Issue automation workflow that applies a 'triage' label to newly opened or reopened GitHub issues via the gh CLI."
+    },
+    "pipeline:.github/workflows/publish-ai.yaml": {
+      "name": "publish-ai.yaml",
+      "type": "pipeline",
+      "summary": "Release publishing workflow that builds and pushes multi-arch AI daemon Docker images (Deno 1.x and 2.x variants, bundled with Node, GitHub CLI, and Claude Code) to GitHub Container Registry on tag push."
+    },
+    "pipeline:.github/workflows/publish.yaml": {
+      "name": "publish.yaml",
+      "type": "pipeline",
+      "summary": "Release publishing workflow that publishes the main, scripts, and dev packages to JSR and builds/pushes multi-arch builder Docker images (Deno 1.x and 2.x) to GitHub Container Registry on tag push."
+    },
+    "pipeline:.github/workflows/release.yaml": {
+      "name": "release.yaml",
+      "type": "pipeline",
+      "summary": "Release workflow that creates a GitHub Release with auto-generated notes for pushed tags, marking prerelease when the tag contains rc-, preview, beta, alpha, or next."
+    },
+    "pipeline:.github/workflows/releaser.yaml": {
+      "name": "releaser.yaml",
+      "type": "pipeline",
+      "summary": "Release tagging workflow that opens version-bump discussion comments on PRs (emoji-voting for patch/minor/major) and, on merge to main or next, determines and pushes the appropriate semantic version or prerelease tag."
+    },
+    "pipeline:.github/workflows/update.yml": {
+      "name": "update.yml",
+      "type": "pipeline",
+      "summary": "Scheduled daily workflow that runs the boywithkeyboard/updater action to open dependency-update pull requests."
+    },
+    "step:.github/workflows/releaser.yaml:tag-discussion": {
+      "name": "tag-discussion",
+      "type": "pipeline",
+      "summary": "Job that calculates next patch/minor/major versions from git tags and posts a tagging-options discussion comment on PRs targeting main."
+    },
+    "step:.github/workflows/releaser.yaml:prerelease-tag-discussion": {
+      "name": "prerelease-tag-discussion",
+      "type": "pipeline",
+      "summary": "Job that posts a prerelease tagging-options discussion comment on PRs targeting the next branch."
+    },
+    "step:.github/workflows/releaser.yaml:determine-tag": {
+      "name": "determine-tag",
+      "type": "pipeline",
+      "summary": "Job that runs on push to main to determine and push the chosen semantic version tag based on the PR's emoji votes."
+    },
+    "step:.github/workflows/releaser.yaml:determine-prerelease-tag": {
+      "name": "determine-prerelease-tag",
+      "type": "pipeline",
+      "summary": "Job that runs on push to next to determine and push the appropriate prerelease tag."
+    },
+    "document:CLAUDE.md": {
+      "name": "CLAUDE.md",
+      "type": "document",
+      "summary": "Guidance document for Claude Code describing the Deco framework's architecture, common Deno tasks, block system, engine, runtime, and cache environment variables."
+    },
+    "document:CODE_OF_CONDUCT.md": {
+      "name": "CODE_OF_CONDUCT.md",
+      "type": "document",
+      "summary": "Contributor Covenant Code of Conduct defining community standards, enforcement responsibilities, and graduated enforcement guidelines for the project."
+    },
+    "document:CONTRIBUTING.md": {
+      "name": "CONTRIBUTING.md",
+      "type": "document",
+      "summary": "Contribution guide explaining the stable and prerelease release channels, branch targeting, prerelease consumption, and manual release fallback for @deco/deco."
+    },
+    "document:DIFF_MAIN.md": {
+      "name": "DIFF_MAIN.md",
+      "type": "document",
+      "summary": "Detailed changelog comparing the als-storefront branch against main, breaking down per-file changes, functional summaries, and post-merge validation suggestions."
+    },
+    "document:MAINTAINERS.txt": {
+      "name": "MAINTAINERS.txt",
+      "type": "document",
+      "summary": "Short plaintext listing of the project's maintainers."
+    },
+    "document:README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Primary project overview with getting-started instructions, local engine setup, TypeScript-to-visual-editor explanation, key features, deployment options, and cache env vars."
+    },
+    "config:deno.json": {
+      "name": "deno.json",
+      "type": "config",
+      "summary": "Deno project configuration defining the @deco/deco package name, version, JSR export map, build/check/test tasks, import map, and Preact JSX compiler options."
+    },
+    "file:.gitattributes": {
+      "name": ".gitattributes",
+      "type": "file",
+      "summary": "Git attributes file controlling how Git handles specific path patterns (e.g., line endings or linguist overrides)."
+    },
+    "config:.github/release.yaml": {
+      "name": "release.yaml",
+      "type": "config",
+      "summary": "GitHub release configuration defining changelog categorization rules for auto-generated release notes."
+    },
+    "file:.understand-anything/.understandignore": {
+      "name": ".understandignore",
+      "type": "file",
+      "summary": "Ignore-pattern file listing paths excluded from the Understand-Anything analysis tooling."
+    },
+    "config:.understand-anything/config.json": {
+      "name": "config.json",
+      "type": "config",
+      "summary": "Configuration for the Understand-Anything tool, including the output language setting."
+    },
+    "document:blocks/README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Documentation explaining the Deco Block system: what blocks are, their structure, specialized block types, and a loader block example."
+    },
+    "file:commons/jwt/mod.ts": {
+      "name": "mod.ts",
+      "type": "file",
+      "summary": "Barrel module re-exporting JWT utilities such as newJwtIssuer, JwtIssuer types, and getKeyPair."
+    },
+    "file:commons/workflows/mod.ts": {
+      "name": "mod.ts",
+      "type": "file",
+      "summary": "Barrel module re-exporting the WorkflowExecution type for the workflows commons package."
+    },
+    "file:daemon/mod.ts": {
+      "name": "mod.ts",
+      "type": "file",
+      "summary": "Public entry point for the daemon package, re-exporting Git APIs, patch utilities, metadata types, and daemon event definitions."
+    },
+    "file:daemon/workers/options.ts": {
+      "name": "options.ts",
+      "type": "file",
+      "summary": "Defines configuration options used by the daemon worker subsystem."
+    },
+    "config:dev/deno.json": {
+      "name": "deno.json",
+      "type": "config",
+      "summary": "Deno package manifest for the dev tooling package, declaring its name, version, exports, and import map."
+    },
+    "file:dev/deno.ts": {
+      "name": "deno.ts",
+      "type": "file",
+      "summary": "Dependency resolution utility that recursively walks TypeScript source via SWC AST visiting and an import map resolver to collect the full transitive import graph from entry points."
+    },
+    "file:dev/tailwind.ts": {
+      "name": "tailwind.ts",
+      "type": "file",
+      "summary": "Tailwind CSS build pipeline for Deco that loads the Tailwind config, computes content roots via dependency resolution, and bundles/minifies CSS through PostCSS."
+    },
+    "document:engine/core/README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Documentation for the Deco runtime config resolver engine, covering resolvers, resolvables, the resolution algorithm, parallelism, and dangling reference handling."
+    },
+    "file:engine/mod.ts": {
+      "name": "mod.ts",
+      "type": "file",
+      "summary": "Public entry point for the engine package, re-exporting ImportMapBuilder, ImportMapResolver, loader, and parsing utilities."
+    },
+    "file:hooks/mod.ts": {
+      "name": "mod.ts",
+      "type": "file",
+      "summary": "Barrel module re-exporting Preact hooks for Deco such as useDevice, useSection, usePartialSection, useScript, and early hints helpers."
+    },
+    "file:live.gen.ts": {
+      "name": "live.gen.ts",
+      "type": "file",
+      "summary": "Auto-generated manifest file re-exporting the project Manifest type."
+    },
+    "file:live.ts": {
+      "name": "live.ts",
+      "type": "file",
+      "summary": "Top-level live entry module for the Deco runtime."
+    },
+    "file:mod.web.ts": {
+      "name": "mod.web.ts",
+      "type": "file",
+      "summary": "Browser-only public entry point re-exporting invocation utilities, proxy/stream helpers, and manifest-derived invoke types."
+    },
+    "file:plugins/styles.ts": {
+      "name": "styles.ts",
+      "type": "file",
+      "summary": "Fresh plugin that injects a styles element into rendered pages via a render middleware."
+    },
+    "file:runtime/htmx/FreshHeadCompat.ts": {
+      "name": "FreshHeadCompat.ts",
+      "type": "file",
+      "summary": "Compatibility shim re-exporting Fresh Head-related symbols for the HTMX runtime."
+    },
+    "file:runtime/htmx/mod.ts": {
+      "name": "mod.ts",
+      "type": "file",
+      "summary": "Public entry point for the HTMX runtime, re-exporting the framework, bindings, Head, and asset helpers."
+    },
+    "file:scripts/apps/watcher.ts": {
+      "name": "watcher.ts",
+      "type": "file",
+      "summary": "Development watcher script that spawns a Deno subprocess to run a module and streams its merged stdout/stderr output."
+    },
+    "file:scripts/changelog.ts": {
+      "name": "changelog.ts",
+      "type": "file",
+      "summary": "Script that fetches GitHub release tags and prints the changelog diff between semantic versions."
+    },
+    "file:scripts/codemod.ts": {
+      "name": "codemod.ts",
+      "type": "file",
+      "summary": "Large codemod script that automates upgrading Deco sites: rewriting imports, updating deno.json, swapping the Tailwind plugin, and pinning/upgrading Deco versions."
+    },
+    "config:scripts/deno.json": {
+      "name": "deno.json",
+      "type": "config",
+      "summary": "Deno package manifest for the scripts package, declaring name, version, exports, publish settings, and import map."
+    },
+    "file:scripts/dev.ts": {
+      "name": "dev.ts",
+      "type": "file",
+      "summary": "Development entry-point script that bootstraps a local Deco engine for running against a deco site during development."
+    },
+    "file:scripts/run.ts": {
+      "name": "run.ts",
+      "type": "file",
+      "summary": "Small runner script that launches the Deco engine using configuration from deno.json."
+    },
+    "file:scripts/tailwindChecker.ts": {
+      "name": "tailwindChecker.ts",
+      "type": "file",
+      "summary": "Utility script that compares Tailwind CSS classes referenced in source code against those present in a compiled CSS file to detect missing or unused classes."
+    },
+    "file:scripts/test-sandbox-ai.ts": {
+      "name": "test-sandbox-ai.ts",
+      "type": "file",
+      "summary": "Integration test script that drives a sandbox AI environment, waiting for Git readiness and issuing HTTP requests to validate behavior."
+    },
+    "file:scripts/update.run.ts": {
+      "name": "update.run.ts",
+      "type": "file",
+      "summary": "Thin runner that invokes the codemod-based update routine."
+    },
+    "file:scripts/update.ts": {
+      "name": "update.ts",
+      "type": "file",
+      "summary": "Single-line update script entry that re-exports or triggers the update workflow."
+    },
+    "file:utils/dataURI.ts": {
+      "name": "dataURI.ts",
+      "type": "file",
+      "summary": "Helpers for building data URIs, including encoding inline scripts with parameters as base64 data URIs for client-side embedding."
+    },
+    "file:utils/device.ts": {
+      "name": "device.ts",
+      "type": "file",
+      "summary": "Defines the Device type used to represent client device categories across the framework."
+    },
+    "file:utils/encoding.ts": {
+      "name": "encoding.ts",
+      "type": "file",
+      "summary": "Encoding helper that computes a hex-encoded SHA-256 hash of a string for cache keys and content addressing."
+    },
+    "file:utils/fetchAPI.ts": {
+      "name": "fetchAPI.ts",
+      "type": "file",
+      "summary": "Thin fetch wrapper that performs an HTTP request and returns parsed JSON with basic error handling."
+    },
+    "file:utils/page.ts": {
+      "name": "page.ts",
+      "type": "file",
+      "summary": "Page-related utilities including entity-name regex, blocked island schemas, filename extraction, and island validation helpers."
+    },
+    "file:utils/unique.ts": {
+      "name": "unique.ts",
+      "type": "file",
+      "summary": "Array de-duplication helpers: unique for primitive arrays and uniqBy for keyed deduplication."
+    }
+  },
+  "totalNodes": 276,
+  "totalEdges": 707
+}

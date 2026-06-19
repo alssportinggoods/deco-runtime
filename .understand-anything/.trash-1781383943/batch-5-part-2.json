@@ -1,0 +1,1247 @@
+{
+  "nodes": [
+    {
+      "id": "file:daemon/auth.ts",
+      "type": "file",
+      "name": "auth.ts",
+      "filePath": "daemon/auth.ts",
+      "summary": "Daemon authentication middleware that extracts and verifies the request JWT against trusted issuers and validates site access.",
+      "tags": [
+        "middleware",
+        "security",
+        "validation",
+        "jwt"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:daemon/auth.ts:getVerifiedJWT",
+      "type": "function",
+      "name": "getVerifiedJWT",
+      "filePath": "daemon/auth.ts",
+      "lineRange": [
+        11,
+        34
+      ],
+      "summary": "Extracts a bearer/query token from a request and verifies it against the trusted issuer's verifier.",
+      "tags": [
+        "security",
+        "jwt",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/auth.ts:createAuth",
+      "type": "function",
+      "name": "createAuth",
+      "filePath": "daemon/auth.ts",
+      "lineRange": [
+        40,
+        53
+      ],
+      "summary": "Creates Hono auth middleware that rejects requests whose verified JWT is not valid for the site.",
+      "tags": [
+        "middleware",
+        "security",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/cache.ts",
+      "type": "file",
+      "name": "cache.ts",
+      "filePath": "daemon/cache.ts",
+      "summary": "Downloads and extracts a pre-built site cache archive from remote storage into the local Deno dir.",
+      "tags": [
+        "service",
+        "cache",
+        "deployment"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/cache.ts:downloadCache",
+      "type": "function",
+      "name": "downloadCache",
+      "filePath": "daemon/cache.ts",
+      "lineRange": [
+        8,
+        50
+      ],
+      "summary": "Resolves cache configuration from the environment and downloads the site cache archive, with fallback handling.",
+      "tags": [
+        "cache",
+        "deployment",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/cache.ts:downloadAndExtract",
+      "type": "function",
+      "name": "downloadAndExtract",
+      "filePath": "daemon/cache.ts",
+      "lineRange": [
+        52,
+        116
+      ],
+      "summary": "Streams a cache archive to disk from a storage client and extracts it into the Deno dir.",
+      "tags": [
+        "cache",
+        "serialization",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:daemon/cmd.ts",
+      "type": "file",
+      "name": "cmd.ts",
+      "filePath": "daemon/cmd.ts",
+      "summary": "Spawns a Deno subprocess and registers its stdout/stderr with the logging interface.",
+      "tags": [
+        "utility",
+        "process",
+        "logging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:daemon/cmd.ts:runCmd",
+      "type": "function",
+      "name": "runCmd",
+      "filePath": "daemon/cmd.ts",
+      "lineRange": [
+        10,
+        31
+      ],
+      "summary": "Spawns a Deno command and pipes its output streams into the daemon log registry.",
+      "tags": [
+        "process",
+        "logging",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/daemon.ts",
+      "type": "file",
+      "name": "daemon.ts",
+      "filePath": "daemon/daemon.ts",
+      "summary": "Assembles the daemon's Hono application, wiring auth, git, filesystem, realtime, SSE, and logging APIs behind site routing.",
+      "tags": [
+        "entry-point",
+        "api-handler",
+        "service",
+        "orchestration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/daemon.ts:createDaemonAPIs",
+      "type": "function",
+      "name": "createDaemonAPIs",
+      "filePath": "daemon/daemon.ts",
+      "lineRange": [
+        45,
+        109
+      ],
+      "summary": "Builds the daemon Hono app, mounting auth middleware and all sub-APIs (git, fs, realtime, SSE, logs, cmd) and returning the fetch handler.",
+      "tags": [
+        "api-handler",
+        "factory",
+        "orchestration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:daemon/fs/api.ts",
+      "type": "file",
+      "name": "api.ts",
+      "filePath": "daemon/fs/api.ts",
+      "summary": "Filesystem HTTP API for the daemon: reads, patches, deletes, and greps project files with per-path read/write locking and block metadata inference.",
+      "tags": [
+        "api-handler",
+        "filesystem",
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:daemon/fs/api.ts:createFSAPIs",
+      "type": "function",
+      "name": "createFSAPIs",
+      "filePath": "daemon/fs/api.ts",
+      "lineRange": [
+        203,
+        333
+      ],
+      "summary": "Registers GET/PATCH/DELETE/grep filesystem routes on a Hono app with per-path locking and metadata enrichment.",
+      "tags": [
+        "api-handler",
+        "filesystem",
+        "factory"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:daemon/fs/api.ts:watchFS",
+      "type": "function",
+      "name": "watchFS",
+      "filePath": "daemon/fs/api.ts",
+      "lineRange": [
+        165,
+        201
+      ],
+      "summary": "Watches the working directory for file changes and broadcasts metadata/git-status updates over the SSE channel.",
+      "tags": [
+        "filesystem",
+        "event-handler",
+        "realtime"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/fs/api.ts:inferMetadata",
+      "type": "function",
+      "name": "inferMetadata",
+      "filePath": "daemon/fs/api.ts",
+      "lineRange": [
+        19,
+        57
+      ],
+      "summary": "Infers block-type metadata for a file path, parsing JSON content to determine the Deco block kind.",
+      "tags": [
+        "filesystem",
+        "data-model",
+        "metadata"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:daemon/fs/common.ts",
+      "type": "file",
+      "name": "common.ts",
+      "filePath": "daemon/fs/common.ts",
+      "summary": "Shared filesystem patch utilities for applying and generating JSON Patch / text-line patches against file content.",
+      "tags": [
+        "utility",
+        "filesystem",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/fs/common.ts:applyPatch",
+      "type": "function",
+      "name": "applyPatch",
+      "filePath": "daemon/fs/common.ts",
+      "lineRange": [
+        87,
+        121
+      ],
+      "summary": "Applies a JSON Patch or line-based patch to file content and returns the updated result.",
+      "tags": [
+        "filesystem",
+        "serialization",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/fs/common.ts:generatePatch",
+      "type": "function",
+      "name": "generatePatch",
+      "filePath": "daemon/fs/common.ts",
+      "lineRange": [
+        123,
+        146
+      ],
+      "summary": "Computes a JSON Patch or line diff between two versions of file content.",
+      "tags": [
+        "filesystem",
+        "serialization",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:daemon/fs/grep.ts",
+      "type": "file",
+      "name": "grep.ts",
+      "filePath": "daemon/fs/grep.ts",
+      "summary": "Project-wide text search that prefers the system grep binary and falls back to a pure-Deno recursive walk when unavailable.",
+      "tags": [
+        "utility",
+        "search",
+        "filesystem"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:daemon/fs/grep.ts:grep",
+      "type": "function",
+      "name": "grep",
+      "filePath": "daemon/fs/grep.ts",
+      "lineRange": [
+        382,
+        411
+      ],
+      "summary": "Entry point that runs a search using system grep when available, otherwise the in-process fallback implementation.",
+      "tags": [
+        "search",
+        "filesystem",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/fs/grep.ts:systemGrep",
+      "type": "function",
+      "name": "systemGrep",
+      "filePath": "daemon/fs/grep.ts",
+      "lineRange": [
+        61,
+        209
+      ],
+      "summary": "Runs the system grep binary with built arguments and parses its output into structured match results.",
+      "tags": [
+        "search",
+        "process",
+        "filesystem"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:daemon/fs/grep.ts:fallbackGrep",
+      "type": "function",
+      "name": "fallbackGrep",
+      "filePath": "daemon/fs/grep.ts",
+      "lineRange": [
+        255,
+        380
+      ],
+      "summary": "Pure-Deno recursive search over text files when no system grep is available.",
+      "tags": [
+        "search",
+        "filesystem",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:daemon/fs/grep.ts:grepInFile",
+      "type": "function",
+      "name": "grepInFile",
+      "filePath": "daemon/fs/grep.ts",
+      "lineRange": [
+        211,
+        253
+      ],
+      "summary": "Searches a single file's lines for a pattern and returns line/column match details.",
+      "tags": [
+        "search",
+        "filesystem",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:daemon/git.ts",
+      "type": "file",
+      "name": "git.ts",
+      "filePath": "daemon/git.ts",
+      "summary": "Git operations backbone for the daemon: clone/ensure repo, diff/status/log, publish, discard, rebase with conflict resolution, GitHub token/netrc setup, and the git HTTP API.",
+      "tags": [
+        "service",
+        "api-handler",
+        "git",
+        "orchestration"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Wraps simple-git with chained fluent calls and validates raw git subcommands against an allowlist."
+    },
+    {
+      "id": "function:daemon/git.ts:createGitAPIS",
+      "type": "function",
+      "name": "createGitAPIS",
+      "filePath": "daemon/git.ts",
+      "lineRange": [
+        897,
+        912
+      ],
+      "summary": "Registers all git HTTP routes (status, diff, log, publish, discard, rebase, raw, checkout) on a Hono app.",
+      "tags": [
+        "api-handler",
+        "git",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:daemon/git.ts:ensureGit",
+      "type": "function",
+      "name": "ensureGit",
+      "filePath": "daemon/git.ts",
+      "lineRange": [
+        707,
+        843
+      ],
+      "summary": "Ensures a valid git working copy exists for a site, cloning if needed and asserting the repo is rebased against tracking.",
+      "tags": [
+        "git",
+        "orchestration",
+        "deployment"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:daemon/git.ts:publish",
+      "type": "function",
+      "name": "publish",
+      "filePath": "daemon/git.ts",
+      "lineRange": [
+        229,
+        288
+      ],
+      "summary": "Commits and pushes working changes to origin, configuring GitHub auth and optionally triggering a build.",
+      "tags": [
+        "git",
+        "deployment",
+        "api-handler"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:daemon/git.ts:assertRebased",
+      "type": "function",
+      "name": "assertRebased",
+      "filePath": "daemon/git.ts",
+      "lineRange": [
+        629,
+        705
+      ],
+      "summary": "Verifies the working branch is rebased onto its tracking branch, rebasing or resetting as needed.",
+      "tags": [
+        "git",
+        "validation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:daemon/git.ts:setupGithubTokenNetrc",
+      "type": "function",
+      "name": "setupGithubTokenNetrc",
+      "filePath": "daemon/git.ts",
+      "lineRange": [
+        600,
+        622
+      ],
+      "summary": "Configures a .netrc with a GitHub token (App-scoped or platform token) for the current repo.",
+      "tags": [
+        "git",
+        "github",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/git.ts:getGitHubToken",
+      "type": "function",
+      "name": "getGitHubToken",
+      "filePath": "daemon/git.ts",
+      "lineRange": [
+        522,
+        559
+      ],
+      "summary": "Fetches a GitHub token for the site from the platform API.",
+      "tags": [
+        "git",
+        "github",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/git.ts:resolveConflictsRecursively",
+      "type": "function",
+      "name": "resolveConflictsRecursively",
+      "filePath": "daemon/git.ts",
+      "lineRange": [
+        421,
+        460
+      ],
+      "summary": "Recursively resolves rebase conflicts by accepting working changes, aborting on unrecoverable states.",
+      "tags": [
+        "git",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:daemon/githubApp.ts",
+      "type": "file",
+      "name": "githubApp.ts",
+      "filePath": "daemon/githubApp.ts",
+      "summary": "GitHub App integration: mints scoped installation tokens from a PEM private key, manages branch protection, resolves default branch, and writes App-auth netrc.",
+      "tags": [
+        "service",
+        "github",
+        "security",
+        "key-management"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Implements PKCS#1-to-PKCS#8 DER wrapping in pure JS to import GitHub App RSA keys via Web Crypto."
+    },
+    {
+      "id": "function:daemon/githubApp.ts:mintScopedToken",
+      "type": "function",
+      "name": "mintScopedToken",
+      "filePath": "daemon/githubApp.ts",
+      "lineRange": [
+        214,
+        221
+      ],
+      "summary": "Mints a scoped GitHub App installation token for an owner/repo with the requested permissions.",
+      "tags": [
+        "github",
+        "security",
+        "key-management"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:daemon/githubApp.ts:getInstallationToken",
+      "type": "function",
+      "name": "getInstallationToken",
+      "filePath": "daemon/githubApp.ts",
+      "lineRange": [
+        166,
+        203
+      ],
+      "summary": "Requests a GitHub App installation access token scoped to a repository and permission set.",
+      "tags": [
+        "github",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/githubApp.ts:generateAppJWT",
+      "type": "function",
+      "name": "generateAppJWT",
+      "filePath": "daemon/githubApp.ts",
+      "lineRange": [
+        101,
+        125
+      ],
+      "summary": "Generates a short-lived GitHub App JWT signed with the App's RSA private key.",
+      "tags": [
+        "github",
+        "jwt",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/githubApp.ts:setBranchProtection",
+      "type": "function",
+      "name": "setBranchProtection",
+      "filePath": "daemon/githubApp.ts",
+      "lineRange": [
+        230,
+        279
+      ],
+      "summary": "Applies branch protection rules to a repository branch via the GitHub API.",
+      "tags": [
+        "github",
+        "security",
+        "integration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/githubApp.ts:setupGitHubAppNetrc",
+      "type": "function",
+      "name": "setupGitHubAppNetrc",
+      "filePath": "daemon/githubApp.ts",
+      "lineRange": [
+        334,
+        351
+      ],
+      "summary": "Writes a .netrc file using a GitHub App installation token for repo authentication.",
+      "tags": [
+        "github",
+        "security",
+        "git"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/loggings/stream.ts",
+      "type": "file",
+      "name": "stream.ts",
+      "filePath": "daemon/loggings/stream.ts",
+      "summary": "In-memory log streaming interface that buffers process output, mirrors it to console, and dispatches log events to readers.",
+      "tags": [
+        "logging",
+        "service",
+        "event-handler"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/loggings/stream.ts:createLogsInterface",
+      "type": "function",
+      "name": "createLogsInterface",
+      "filePath": "daemon/loggings/stream.ts",
+      "lineRange": [
+        45,
+        112
+      ],
+      "summary": "Creates the daemon log interface with a ring buffer, event dispatch, and an async read iterator over log lines.",
+      "tags": [
+        "logging",
+        "event-handler",
+        "factory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/loggings/stream.ts:streamLogsFrom",
+      "type": "function",
+      "name": "streamLogsFrom",
+      "filePath": "daemon/loggings/stream.ts",
+      "lineRange": [
+        36,
+        43
+      ],
+      "summary": "Registers a process's stdout and stderr streams as log sources.",
+      "tags": [
+        "logging",
+        "process"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:daemon/auth.ts",
+      "target": "function:daemon/auth.ts:getVerifiedJWT",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/auth.ts",
+      "target": "function:daemon/auth.ts:createAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/auth.ts",
+      "target": "function:daemon/auth.ts:createAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/auth.ts",
+      "target": "file:commons/jwt/engine.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/auth.ts",
+      "target": "file:commons/jwt/jwt.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/auth.ts",
+      "target": "file:commons/jwt/trusted.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:daemon/auth.ts:getVerifiedJWT",
+      "target": "function:commons/jwt/trusted.ts:getTrustedVerifierOf",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:daemon/auth.ts:createAuth",
+      "target": "function:commons/jwt/engine.ts:tokenIsValid",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/cache.ts",
+      "target": "function:daemon/cache.ts:downloadCache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/cache.ts",
+      "target": "function:daemon/cache.ts:downloadCache",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/cache.ts",
+      "target": "function:daemon/cache.ts:downloadAndExtract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/cmd.ts",
+      "target": "function:daemon/cmd.ts:runCmd",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/cmd.ts",
+      "target": "function:daemon/cmd.ts:runCmd",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/cmd.ts",
+      "target": "file:daemon/loggings/stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:daemon/cmd.ts:runCmd",
+      "target": "function:daemon/loggings/stream.ts:streamLogsFrom",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/daemon.ts",
+      "target": "function:daemon/daemon.ts:createDaemonAPIs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/daemon.ts",
+      "target": "function:daemon/daemon.ts:createDaemonAPIs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/daemon.ts",
+      "target": "file:daemon/auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/daemon.ts",
+      "target": "file:daemon/cmd.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/daemon.ts",
+      "target": "file:daemon/fs/api.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/daemon.ts",
+      "target": "file:daemon/git.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/daemon.ts",
+      "target": "file:daemon/loggings/stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/daemon.ts",
+      "target": "file:daemon/realtime/app.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/daemon.ts",
+      "target": "file:daemon/sse/api.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/daemon.ts",
+      "target": "file:engine/decofile/constants.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:daemon/daemon.ts:createDaemonAPIs",
+      "target": "function:daemon/auth.ts:createAuth",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:daemon/daemon.ts:createDaemonAPIs",
+      "target": "function:daemon/cmd.ts:runCmd",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:daemon/daemon.ts:createDaemonAPIs",
+      "target": "function:daemon/git.ts:createGitAPIS",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:daemon/daemon.ts:createDaemonAPIs",
+      "target": "function:daemon/fs/api.ts:createFSAPIs",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/fs/api.ts",
+      "target": "function:daemon/fs/api.ts:createFSAPIs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/fs/api.ts",
+      "target": "function:daemon/fs/api.ts:createFSAPIs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/fs/api.ts",
+      "target": "function:daemon/fs/api.ts:watchFS",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/fs/api.ts",
+      "target": "function:daemon/fs/api.ts:watchFS",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/fs/api.ts",
+      "target": "function:daemon/fs/api.ts:inferMetadata",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/fs/api.ts",
+      "target": "file:daemon/async.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/fs/api.ts",
+      "target": "file:daemon/fs/common.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/fs/api.ts",
+      "target": "file:daemon/fs/grep.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/fs/api.ts",
+      "target": "file:daemon/git.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/fs/api.ts",
+      "target": "file:daemon/main.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/fs/api.ts",
+      "target": "file:daemon/meta.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/fs/api.ts",
+      "target": "file:daemon/sse/channel.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/fs/api.ts",
+      "target": "file:runtime/deps.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:daemon/fs/api.ts:createFSAPIs",
+      "target": "function:daemon/fs/common.ts:applyPatch",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:daemon/fs/api.ts:createFSAPIs",
+      "target": "function:daemon/fs/grep.ts:grep",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/fs/common.ts",
+      "target": "function:daemon/fs/common.ts:applyPatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/fs/common.ts",
+      "target": "function:daemon/fs/common.ts:applyPatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/fs/common.ts",
+      "target": "function:daemon/fs/common.ts:generatePatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/fs/common.ts",
+      "target": "function:daemon/fs/common.ts:generatePatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/fs/grep.ts",
+      "target": "function:daemon/fs/grep.ts:grep",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/fs/grep.ts",
+      "target": "function:daemon/fs/grep.ts:grep",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/fs/grep.ts",
+      "target": "function:daemon/fs/grep.ts:systemGrep",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/fs/grep.ts",
+      "target": "function:daemon/fs/grep.ts:fallbackGrep",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/fs/grep.ts",
+      "target": "function:daemon/fs/grep.ts:grepInFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/fs/grep.ts",
+      "target": "file:daemon/main.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:daemon/fs/grep.ts:grep",
+      "target": "function:daemon/fs/grep.ts:systemGrep",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:daemon/fs/grep.ts:grep",
+      "target": "function:daemon/fs/grep.ts:fallbackGrep",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "function:daemon/git.ts:createGitAPIS",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "function:daemon/git.ts:createGitAPIS",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "function:daemon/git.ts:ensureGit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "function:daemon/git.ts:ensureGit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "function:daemon/git.ts:publish",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "function:daemon/git.ts:publish",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "function:daemon/git.ts:assertRebased",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "function:daemon/git.ts:assertRebased",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "function:daemon/git.ts:setupGithubTokenNetrc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "function:daemon/git.ts:setupGithubTokenNetrc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "function:daemon/git.ts:getGitHubToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "function:daemon/git.ts:getGitHubToken",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "function:daemon/git.ts:resolveConflictsRecursively",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "file:daemon/async.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "file:daemon/daemon.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "file:daemon/githubApp.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "file:daemon/loggings/stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/git.ts",
+      "target": "file:daemon/main.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:daemon/git.ts:setupGithubTokenNetrc",
+      "target": "function:daemon/githubApp.ts:setupGitHubAppNetrc",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:daemon/git.ts:setupGithubTokenNetrc",
+      "target": "function:daemon/git.ts:getGitHubToken",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/githubApp.ts",
+      "target": "function:daemon/githubApp.ts:mintScopedToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/githubApp.ts",
+      "target": "function:daemon/githubApp.ts:mintScopedToken",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/githubApp.ts",
+      "target": "function:daemon/githubApp.ts:getInstallationToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/githubApp.ts",
+      "target": "function:daemon/githubApp.ts:generateAppJWT",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/githubApp.ts",
+      "target": "function:daemon/githubApp.ts:setBranchProtection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/githubApp.ts",
+      "target": "function:daemon/githubApp.ts:setBranchProtection",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/githubApp.ts",
+      "target": "function:daemon/githubApp.ts:setupGitHubAppNetrc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/githubApp.ts",
+      "target": "function:daemon/githubApp.ts:setupGitHubAppNetrc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:daemon/githubApp.ts:mintScopedToken",
+      "target": "function:daemon/githubApp.ts:getInstallationToken",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/loggings/stream.ts",
+      "target": "function:daemon/loggings/stream.ts:createLogsInterface",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/loggings/stream.ts",
+      "target": "function:daemon/loggings/stream.ts:streamLogsFrom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/loggings/stream.ts",
+      "target": "function:daemon/loggings/stream.ts:streamLogsFrom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}
