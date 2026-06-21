@@ -1,6 +1,6 @@
 import { cyan } from "@std/fmt/colors";
 import { walk } from "@std/fs";
-import { join, SEPARATOR, toFileUrl } from "@std/path";
+import { join, relative, SEPARATOR, toFileUrl } from "@std/path";
 import autoprefixer from "npm:autoprefixer@10.4.14";
 import cssnano from "npm:cssnano@6.0.1";
 import postcssImport from "npm:postcss-import@14.1.0";
@@ -110,7 +110,14 @@ const withReleaseContent = async (
     })
   ) {
     const path = entry.path.replaceAll(SEPARATOR, "/");
-    if (isExcluded(path)) {
+    // Exclusions are tested against the path relative to cwd, so that an
+    // exclude like ".worktrees" only skips files under cwd/.worktrees and
+    // doesn't leak when cwd itself is inside a worktree.
+    const relativePath = relative(Deno.cwd(), entry.path).replaceAll(
+      SEPARATOR,
+      "/",
+    );
+    if (isExcluded(relativePath)) {
       continue;
     }
 
