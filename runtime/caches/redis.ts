@@ -1,16 +1,17 @@
 import {
+  compress as lz4Compress,
+  decompress as lz4Decompress,
+} from "jsr:@denosaurs/lz4@^0.1.4";
+import { Buffer } from "node:buffer";
+import { Redis } from "npm:ioredis@^5.10.1";
+import {
   assertCanBeCached,
   assertNoOptions,
   baseCache,
   NOT_IMPLEMENTED,
   withCacheNamespace,
 } from "./utils.ts";
-import { Buffer } from "node:buffer";
-import { Redis } from "npm:ioredis@^5.10.1";
-import {
-  compress as lz4Compress,
-  decompress as lz4Decompress,
-} from "jsr:@denosaurs/lz4@^0.1.4";
+
 import {
   compress as zstdCompress,
   decompress as zstdDecompress,
