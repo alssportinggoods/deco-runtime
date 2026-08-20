@@ -1,0 +1,13 @@
+{
+  "projectRoot": "C:/Users/vitoo/code/als/deco",
+  "batchFiles": [
+    {"path":"CLAUDE.md","language":"markdown","sizeLines":132,"fileCategory":"docs"},
+    {"path":"CODE_OF_CONDUCT.md","language":"markdown","sizeLines":130,"fileCategory":"docs"},
+    {"path":"CONTRIBUTING.md","language":"markdown","sizeLines":62,"fileCategory":"docs"},
+    {"path":"DIFF_MAIN.md","language":"markdown","sizeLines":212,"fileCategory":"docs"},
+    {"path":"MAINTAINERS.txt","language":"txt","sizeLines":8,"fileCategory":"docs"},
+    {"path":"README.md","language":"markdown","sizeLines":292,"fileCategory":"docs"},
+    {"path":"deno.json","language":"json","sizeLines":106,"fileCategory":"config"}
+  ],
+  "batchImportData": {"CLAUDE.md":[],"CODE_OF_CONDUCT.md":[],"CONTRIBUTING.md":[],"DIFF_MAIN.md":[],"MAINTAINERS.txt":[],"README.md":[],"deno.json":[]}
+}

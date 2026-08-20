@@ -1,0 +1,676 @@
+{
+  "nodes": [
+    {
+      "id": "file:daemon/main.ts",
+      "type": "file",
+      "name": "main.ts",
+      "filePath": "daemon/main.ts",
+      "summary": "Entry point of the development daemon: bootstraps Git readiness, manifest/blocks generation, file watching, worker spawning, tunnel registration, and the site Hono app that proxies requests to the running site worker.",
+      "tags": ["entry-point", "daemon", "orchestration", "service", "worker"],
+      "complexity": "complex",
+      "languageNotes": "Heavy use of Deno runtime APIs (Deno.watchFs, Deno.Command, env) and AsyncDispose for worker lifecycle."
+    },
+    {
+      "id": "function:daemon/main.ts:makeRunCmdFactory",
+      "type": "function",
+      "name": "makeRunCmdFactory",
+      "filePath": "daemon/main.ts",
+      "lineRange": [90, 107],
+      "summary": "Builds a factory that produces the Deno run command (path, args, env) used to spawn the site worker process.",
+      "tags": ["factory", "worker", "process-spawn"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:daemon/main.ts:updateDenoAuthTokenEnv",
+      "type": "function",
+      "name": "updateDenoAuthTokenEnv",
+      "filePath": "daemon/main.ts",
+      "lineRange": [114, 129],
+      "summary": "Refreshes the DENO_AUTH_TOKENS environment variable with GitHub package tokens, throttled to avoid frequent recomputation.",
+      "tags": ["auth", "github", "env"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:daemon/main.ts:persist",
+      "type": "function",
+      "name": "persist",
+      "filePath": "daemon/main.ts",
+      "lineRange": [170, 201],
+      "summary": "Persists the current site state into a tarball archive, ensuring the target directory exists and measuring elapsed time.",
+      "tags": ["persistence", "archive", "state"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/main.ts:watch",
+      "type": "function",
+      "name": "watch",
+      "filePath": "daemon/main.ts",
+      "lineRange": [216, 266],
+      "summary": "Watches the working directory for file changes and regenerates blocks.json and manifest, refreshes auth tokens, and persists state.",
+      "tags": ["file-watcher", "codegen", "event-handler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/main.ts:createDeps",
+      "type": "function",
+      "name": "createDeps",
+      "filePath": "daemon/main.ts",
+      "lineRange": [268, 382],
+      "summary": "Creates and wires the daemon's dependency graph, ensuring the site is started before serving and exposing lazy startup orchestration.",
+      "tags": ["factory", "dependency-injection", "orchestration"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:daemon/main.ts:makeWorkerOptionsFactory",
+      "type": "function",
+      "name": "makeWorkerOptionsFactory",
+      "filePath": "daemon/main.ts",
+      "lineRange": [385, 413],
+      "summary": "Produces worker options (run command, env, ready gating) used when spawning the isolated site worker process.",
+      "tags": ["factory", "worker", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:daemon/main.ts:createSiteApp",
+      "type": "function",
+      "name": "createSiteApp",
+      "filePath": "daemon/main.ts",
+      "lineRange": [438, 498],
+      "summary": "Constructs the site's Hono app, mounting the idle handler, daemon APIs, and worker proxy that forwards traffic to the running site.",
+      "tags": ["factory", "api-handler", "hono", "worker"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/main.ts:registerTunnel",
+      "type": "function",
+      "name": "registerTunnel",
+      "filePath": "daemon/main.ts",
+      "lineRange": [513, 528],
+      "summary": "Registers the daemon with the deco tunnel using a stable environment name so the local site is reachable via a public preview URL.",
+      "tags": ["tunnel", "networking", "registration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/meta.ts",
+      "type": "file",
+      "name": "meta.ts",
+      "filePath": "daemon/meta.ts",
+      "summary": "Maintains the daemon's view of the site's schema/manifest metadata by polling the worker's /meta endpoint with ETag caching and broadcasting updates over the SSE channel.",
+      "tags": ["daemon", "metadata", "polling", "event-handler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/meta.ts:watchMeta",
+      "type": "function",
+      "name": "watchMeta",
+      "filePath": "daemon/meta.ts",
+      "lineRange": [73, 142],
+      "summary": "Long-running loop that fetches site metadata from the worker with ETag conditional requests, updates the block-type map, and broadcasts worker state changes.",
+      "tags": ["polling", "metadata", "event-handler", "worker"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/meta.ts:updateFilenameBlockTypeMapFromManifest",
+      "type": "function",
+      "name": "updateFilenameBlockTypeMapFromManifest",
+      "filePath": "daemon/meta.ts",
+      "lineRange": [145, 156],
+      "summary": "Populates the filename-to-block-type lookup map from a resolved app manifest for later block-type inference.",
+      "tags": ["metadata", "manifest", "mapping"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:daemon/meta.ts:start",
+      "type": "function",
+      "name": "start",
+      "filePath": "daemon/meta.ts",
+      "lineRange": [56, 67],
+      "summary": "Exported helper that waits for meta readiness and returns the metadata payload changed since a given timestamp.",
+      "tags": ["metadata", "initialization"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/monitor.ts",
+      "type": "file",
+      "name": "monitor.ts",
+      "filePath": "daemon/monitor.ts",
+      "summary": "Activity monitor and self-scaling logic: tracks request activity and, when idle, scales the daemon's own Kubernetes deployment to zero via the in-pod ServiceAccount or notifies an external endpoint.",
+      "tags": ["daemon", "monitoring", "self-scaling", "kubernetes", "middleware"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:daemon/monitor.ts:initSelfScale",
+      "type": "function",
+      "name": "initSelfScale",
+      "filePath": "daemon/monitor.ts",
+      "lineRange": [51, 85],
+      "summary": "Reads the in-pod ServiceAccount token and namespace and builds an HTTP client for talking to the Kubernetes API to scale the deployment.",
+      "tags": ["kubernetes", "self-scaling", "initialization"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/monitor.ts:scaleSelfToZero",
+      "type": "function",
+      "name": "scaleSelfToZero",
+      "filePath": "daemon/monitor.ts",
+      "lineRange": [87, 126],
+      "summary": "Patches the daemon's own Kubernetes Deployment to zero replicas using the in-pod ServiceAccount credentials when the instance is idle.",
+      "tags": ["kubernetes", "self-scaling", "deployment"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/monitor.ts:createIdleHandler",
+      "type": "function",
+      "name": "createIdleHandler",
+      "filePath": "daemon/monitor.ts",
+      "lineRange": [214, 252],
+      "summary": "Creates the idle-detection handler that arms an interval to fire scale-to-zero or HTTP notification once the instance has been inactive past the threshold.",
+      "tags": ["factory", "monitoring", "self-scaling", "idle"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/monitor.ts:notifyViaHttp",
+      "type": "function",
+      "name": "notifyViaHttp",
+      "filePath": "daemon/monitor.ts",
+      "lineRange": [130, 147],
+      "summary": "Sends an HTTP idle notification to an external endpoint as a fallback scaling mechanism.",
+      "tags": ["monitoring", "http", "notification"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:daemon/monitor.ts:resetActivity",
+      "type": "function",
+      "name": "resetActivity",
+      "filePath": "daemon/monitor.ts",
+      "lineRange": [200, 207],
+      "summary": "Resets the last-activity timestamp and re-arms the idle interval, marking the instance as recently active.",
+      "tags": ["monitoring", "activity", "idle"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/pty/manager.ts",
+      "type": "file",
+      "name": "manager.ts",
+      "filePath": "daemon/pty/manager.ts",
+      "summary": "Manages pseudo-terminal sessions, spawning, retrieving, listing, killing, and disposing PtySession instances keyed by id.",
+      "tags": ["daemon", "pty", "session", "manager"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:daemon/pty/manager.ts:SessionManager",
+      "type": "class",
+      "name": "SessionManager",
+      "filePath": "daemon/pty/manager.ts",
+      "lineRange": [7, 43],
+      "summary": "Registry of active PTY sessions providing lifecycle operations (spawn, get, kill, list, dispose) over a private session map.",
+      "tags": ["manager", "pty", "session", "registry"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/pty/session.ts",
+      "type": "file",
+      "name": "session.ts",
+      "filePath": "daemon/pty/session.ts",
+      "summary": "Wraps a native pseudo-terminal process with lazy native module loading, exposing read/write/resize/kill and output buffering for a single interactive session.",
+      "tags": ["daemon", "pty", "session", "process"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:daemon/pty/session.ts:PtySession",
+      "type": "class",
+      "name": "PtySession",
+      "filePath": "daemon/pty/session.ts",
+      "lineRange": [38, 185],
+      "summary": "Represents a single PTY-backed shell process, polling output, dispatching data/exit callbacks, and managing the terminal lifecycle.",
+      "tags": ["pty", "session", "process", "event-handler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:daemon/realtime/app.ts",
+      "type": "file",
+      "name": "app.ts",
+      "filePath": "daemon/realtime/app.ts",
+      "summary": "Realtime collaboration API: a Hono app exposing WebSocket and HTTP endpoints for file-system broadcast, JSON patching, and CRDT text editing of the site's decofile.",
+      "tags": ["daemon", "realtime", "api-handler", "websocket", "crdt"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:daemon/realtime/app.ts:createRealtimeAPIs",
+      "type": "function",
+      "name": "createRealtimeAPIs",
+      "filePath": "daemon/realtime/app.ts",
+      "lineRange": [50, 274],
+      "summary": "Builds the realtime Hono app: WebSocket upgrade for FS change broadcast, PATCH endpoint applying JSON and CRDT text operations, and a tree read endpoint.",
+      "tags": ["api-handler", "websocket", "crdt", "realtime", "factory"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:daemon/realtime/crdt/bit.ts",
+      "type": "file",
+      "name": "bit.ts",
+      "filePath": "daemon/realtime/crdt/bit.ts",
+      "summary": "Binary Indexed Tree (Fenwick tree) implementation used by the CRDT text engine to compute cumulative offset sums efficiently.",
+      "tags": ["crdt", "data-structure", "algorithm", "utility"],
+      "complexity": "simple",
+      "languageNotes": "Classic Fenwick tree with O(log n) prefix-sum updates and queries."
+    },
+    {
+      "id": "class:daemon/realtime/crdt/bit.ts:BinaryIndexedTree",
+      "type": "class",
+      "name": "BinaryIndexedTree",
+      "filePath": "daemon/realtime/crdt/bit.ts",
+      "lineRange": [1, 43],
+      "summary": "Fenwick tree supporting point updates and prefix/range sum queries for tracking offset shifts during CRDT text patching.",
+      "tags": ["data-structure", "algorithm", "crdt"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/realtime/crdt/text.ts",
+      "type": "file",
+      "name": "text.ts",
+      "filePath": "daemon/realtime/crdt/text.ts",
+      "summary": "CRDT text engine providing LCS-based diffing, operation shrinking, and offset-aware patch application for concurrent collaborative text editing.",
+      "tags": ["crdt", "diff", "algorithm", "text-editing"],
+      "complexity": "moderate",
+      "languageNotes": "Uses dynamic-programming LCS diffing combined with a Fenwick tree for offset bookkeeping."
+    },
+    {
+      "id": "function:daemon/realtime/crdt/text.ts:diff",
+      "type": "function",
+      "name": "diff",
+      "filePath": "daemon/realtime/crdt/text.ts",
+      "lineRange": [39, 89],
+      "summary": "Computes a minimal set of insert/delete operations transforming one string into another via an LCS dynamic-programming table.",
+      "tags": ["diff", "algorithm", "crdt"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/realtime/crdt/text.ts:applyPatch",
+      "type": "function",
+      "name": "applyPatch",
+      "filePath": "daemon/realtime/crdt/text.ts",
+      "lineRange": [97, 137],
+      "summary": "Applies a CRDT operation to a string using a Fenwick tree to translate logical positions to current offsets, recording rollbacks.",
+      "tags": ["crdt", "patch", "text-editing"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/realtime/crdt/text.ts:apply",
+      "type": "function",
+      "name": "apply",
+      "filePath": "daemon/realtime/crdt/text.ts",
+      "lineRange": [139, 154],
+      "summary": "Applies a sequence of CRDT operations to a string, rolling back on failure to keep the document consistent.",
+      "tags": ["crdt", "patch", "text-editing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/realtime/types.ts",
+      "type": "file",
+      "name": "types.ts",
+      "filePath": "daemon/realtime/types.ts",
+      "summary": "Type definitions and type-guard helpers for realtime file patch operations (JSON file patches and text file sets).",
+      "tags": ["type-definition", "realtime", "validation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/sandbox.ts",
+      "type": "file",
+      "name": "sandbox.ts",
+      "filePath": "daemon/sandbox.ts",
+      "summary": "Sandbox-mode deploy/undeploy HTTP handlers that validate a deploy payload (repo, branch, run command, envs) and switch the daemon's active site dynamically.",
+      "tags": ["daemon", "sandbox", "api-handler", "deployment"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/sandbox.ts:createSandboxHandlers",
+      "type": "function",
+      "name": "createSandboxHandlers",
+      "filePath": "daemon/sandbox.ts",
+      "lineRange": [45, 183],
+      "summary": "Builds the sandbox status/deploy/undeploy Hono handlers, validating deploy requests and invoking onDeploy/onUndeploy callbacks while managing the active site name.",
+      "tags": ["api-handler", "sandbox", "deployment", "factory", "validation"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:daemon/sse/api.ts",
+      "type": "file",
+      "name": "api.ts",
+      "filePath": "daemon/sse/api.ts",
+      "summary": "Server-Sent Events endpoint that streams daemon events (file-system, worker, and meta changes) to connected clients over a ReadableStream.",
+      "tags": ["daemon", "sse", "api-handler", "streaming"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/sse/api.ts:createSSE",
+      "type": "function",
+      "name": "createSSE",
+      "filePath": "daemon/sse/api.ts",
+      "lineRange": [12, 69],
+      "summary": "Registers the SSE GET route that opens a ReadableStream, subscribes to the broadcast channel, and replays FS/worker/meta events to the client.",
+      "tags": ["api-handler", "sse", "streaming", "event-handler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:daemon/sse/channel.ts",
+      "type": "file",
+      "name": "channel.ts",
+      "filePath": "daemon/sse/channel.ts",
+      "summary": "Shared in-process event channel and broadcast helper used to fan daemon events out to SSE subscribers.",
+      "tags": ["daemon", "sse", "event-bus", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/tunnel.ts",
+      "type": "file",
+      "name": "tunnel.ts",
+      "filePath": "daemon/tunnel.ts",
+      "summary": "Establishes and maintains the deco tunnel connection that exposes the local daemon under a public preview domain, retrying automatically on disconnect.",
+      "tags": ["daemon", "tunnel", "networking", "reconnect"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/tunnel.ts:register",
+      "type": "function",
+      "name": "register",
+      "filePath": "daemon/tunnel.ts",
+      "lineRange": [18, 78],
+      "summary": "Connects the daemon to the tunnel service, logs preview/admin URLs on registration, and self-retries with backoff on connection close or error.",
+      "tags": ["tunnel", "networking", "reconnect"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:daemon/worker.ts",
+      "type": "file",
+      "name": "worker.ts",
+      "filePath": "daemon/worker.ts",
+      "summary": "Manages the site worker lifecycle: lazily initializes the worker process, exposes a Hono proxy middleware to it, and tracks/broadcasts worker readiness state.",
+      "tags": ["daemon", "worker", "lifecycle", "middleware"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/worker.ts:createWorker",
+      "type": "function",
+      "name": "createWorker",
+      "filePath": "daemon/worker.ts",
+      "lineRange": [79, 137],
+      "summary": "Initializes the site worker from a provided options factory and returns a Hono app that proxies all requests to the running worker, handling signals and disposal.",
+      "tags": ["factory", "worker", "api-handler", "lifecycle"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/worker.ts:resolveWorkerOptions",
+      "type": "function",
+      "name": "resolveWorkerOptions",
+      "filePath": "daemon/worker.ts",
+      "lineRange": [68, 77],
+      "summary": "Resolves worker options from either a static value or a provider function, normalizing the two configuration shapes.",
+      "tags": ["worker", "configuration", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:daemon/worker.ts:worker",
+      "type": "function",
+      "name": "worker",
+      "filePath": "daemon/worker.ts",
+      "lineRange": [56, 63],
+      "summary": "Returns the current worker instance promise, starting it and waiting until ready on first access.",
+      "tags": ["worker", "lifecycle"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/workers/denoRun.ts",
+      "type": "file",
+      "name": "denoRun.ts",
+      "filePath": "daemon/workers/denoRun.ts",
+      "summary": "Spawns and supervises a site as an isolated Deno child process, building permission flags, proxying HTTP/WebSocket traffic, tracking inflight requests, and disposing cleanly when idle.",
+      "tags": ["daemon", "worker", "process-spawn", "proxy", "isolation"],
+      "complexity": "complex",
+      "languageNotes": "Builds Deno --allow-* permission flags dynamically from a permissions descriptor and uses Deno.createHttpClient for proxying."
+    },
+    {
+      "id": "class:daemon/workers/denoRun.ts:DenoRun",
+      "type": "class",
+      "name": "DenoRun",
+      "filePath": "daemon/workers/denoRun.ts",
+      "lineRange": [48, 190],
+      "summary": "Isolated Deno worker that spawns the site subprocess on an allocated port, proxies fetch/WebSocket requests to it, tracks inflight count, and disposes when traffic reaches zero.",
+      "tags": ["worker", "process-spawn", "proxy", "lifecycle"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:daemon/workers/denoRun.ts:proxyWebSocket",
+      "type": "function",
+      "name": "proxyWebSocket",
+      "filePath": "daemon/workers/denoRun.ts",
+      "lineRange": [192, 258],
+      "summary": "Bridges an incoming WebSocket to the worker's WebSocket endpoint, buffering messages in both directions until each socket is open.",
+      "tags": ["websocket", "proxy", "worker"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/workers/denoRun.ts:buildPermissionsArgs",
+      "type": "function",
+      "name": "buildPermissionsArgs",
+      "filePath": "daemon/workers/denoRun.ts",
+      "lineRange": [14, 37],
+      "summary": "Translates a permissions descriptor into Deno CLI --allow/--deny flag arguments for spawning the isolated worker.",
+      "tags": ["worker", "permissions", "process-spawn"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:daemon/workers/isolate.ts",
+      "type": "file",
+      "name": "isolate.ts",
+      "filePath": "daemon/workers/isolate.ts",
+      "summary": "Small isolate worker module wiring log streaming for an isolated worker variant.",
+      "tags": ["daemon", "worker", "isolation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/workers/portpool.ts",
+      "type": "file",
+      "name": "portpool.ts",
+      "filePath": "daemon/workers/portpool.ts",
+      "summary": "Allocates and frees TCP ports from a bounded range for worker subprocesses, probing port availability before handing them out.",
+      "tags": ["daemon", "worker", "networking", "resource-pool", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:daemon/workers/portpool.ts:PortPool",
+      "type": "class",
+      "name": "PortPool",
+      "filePath": "daemon/workers/portpool.ts",
+      "lineRange": [23, 78],
+      "summary": "Bounded pool that tracks used ports and returns the next available, listenable port within a configured range.",
+      "tags": ["resource-pool", "networking", "worker"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/workers/utils.ts",
+      "type": "file",
+      "name": "utils.ts",
+      "filePath": "daemon/workers/utils.ts",
+      "summary": "Worker helper utilities for probing whether a TCP port is listening and waiting until a worker port becomes ready.",
+      "tags": ["utility", "worker", "networking"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:daemon/workers/utils.ts:waitForPort",
+      "type": "function",
+      "name": "waitForPort",
+      "filePath": "daemon/workers/utils.ts",
+      "lineRange": [12, 32],
+      "summary": "Polls a TCP port until it accepts connections or a timeout elapses, used to detect worker readiness.",
+      "tags": ["utility", "networking", "polling"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:hypervisor/main.ts",
+      "type": "file",
+      "name": "main.ts",
+      "filePath": "hypervisor/main.ts",
+      "summary": "Thin hypervisor entry point that re-exports/runs the daemon main module.",
+      "tags": ["entry-point", "barrel", "daemon"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:utils/async.ts",
+      "type": "file",
+      "name": "async.ts",
+      "filePath": "utils/async.ts",
+      "summary": "Small async utilities: a promise-chaining throttle that coalesces calls and a delay helper.",
+      "tags": ["utility", "async", "throttle"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:utils/async.ts:throttle",
+      "type": "function",
+      "name": "throttle",
+      "filePath": "utils/async.ts",
+      "lineRange": [7, 20],
+      "summary": "Wraps a callback so concurrent invocations are coalesced onto a single in-flight promise queue.",
+      "tags": ["utility", "async", "throttle"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    { "source": "file:daemon/main.ts", "target": "file:daemon/ai/handlers.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "file:daemon/auth.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "file:daemon/cache.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "file:daemon/daemon.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "file:daemon/fs/api.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "file:daemon/git.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "file:daemon/loggings/stream.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "file:daemon/meta.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "file:daemon/monitor.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "file:daemon/sandbox.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "file:daemon/tunnel.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "file:daemon/worker.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "file:daemon/workers/portpool.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "config:deno.json", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "file:engine/decofile/constants.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "file:engine/decofile/fsFolder.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "file:scripts/apps/bundle.lib.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "file:utils/async.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/main.ts", "target": "function:daemon/main.ts:makeRunCmdFactory", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/main.ts", "target": "function:daemon/main.ts:updateDenoAuthTokenEnv", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/main.ts", "target": "function:daemon/main.ts:persist", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/main.ts", "target": "function:daemon/main.ts:watch", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/main.ts", "target": "function:daemon/main.ts:createDeps", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/main.ts", "target": "function:daemon/main.ts:makeWorkerOptionsFactory", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/main.ts", "target": "function:daemon/main.ts:createSiteApp", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/main.ts", "target": "function:daemon/main.ts:registerTunnel", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "function:daemon/main.ts:updateDenoAuthTokenEnv", "target": "function:daemon/git.ts:getGitHubPackageTokens", "type": "calls", "direction": "forward", "weight": 0.8 },
+    { "source": "function:daemon/main.ts:createBundler", "target": "function:scripts/apps/bundle.lib.ts:bundleApp", "type": "calls", "direction": "forward", "weight": 0.8 },
+    { "source": "function:daemon/main.ts:createSiteApp", "target": "function:daemon/monitor.ts:createIdleHandler", "type": "calls", "direction": "forward", "weight": 0.8 },
+    { "source": "function:daemon/main.ts:createSiteApp", "target": "function:daemon/worker.ts:createWorker", "type": "calls", "direction": "forward", "weight": 0.8 },
+    { "source": "function:daemon/main.ts:registerTunnel", "target": "function:daemon/tunnel.ts:register", "type": "calls", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:daemon/meta.ts", "target": "file:daemon/sse/channel.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/meta.ts", "target": "file:daemon/worker.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/meta.ts", "target": "file:engine/block.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/meta.ts", "target": "file:types.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/meta.ts", "target": "function:daemon/meta.ts:watchMeta", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/meta.ts", "target": "function:daemon/meta.ts:updateFilenameBlockTypeMapFromManifest", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/meta.ts", "target": "function:daemon/meta.ts:start", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/meta.ts", "target": "function:daemon/meta.ts:start", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "function:daemon/meta.ts:watchMeta", "target": "function:daemon/sse/channel.ts:broadcast", "type": "calls", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:daemon/monitor.ts", "target": "function:daemon/monitor.ts:initSelfScale", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/monitor.ts", "target": "function:daemon/monitor.ts:scaleSelfToZero", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/monitor.ts", "target": "function:daemon/monitor.ts:createIdleHandler", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/monitor.ts", "target": "function:daemon/monitor.ts:notifyViaHttp", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/monitor.ts", "target": "function:daemon/monitor.ts:resetActivity", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/monitor.ts", "target": "function:daemon/monitor.ts:resetActivity", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:daemon/monitor.ts", "target": "function:daemon/monitor.ts:createIdleHandler", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:daemon/pty/manager.ts", "target": "file:daemon/pty/session.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/pty/manager.ts", "target": "class:daemon/pty/manager.ts:SessionManager", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/pty/manager.ts", "target": "class:daemon/pty/manager.ts:SessionManager", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "class:daemon/pty/manager.ts:SessionManager", "target": "class:daemon/pty/session.ts:PtySession", "type": "depends_on", "direction": "forward", "weight": 0.6 },
+
+    { "source": "file:daemon/pty/session.ts", "target": "class:daemon/pty/session.ts:PtySession", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/pty/session.ts", "target": "class:daemon/pty/session.ts:PtySession", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:daemon/realtime/app.ts", "target": "file:daemon/git.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/realtime/app.ts", "target": "file:daemon/realtime/crdt/bit.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/realtime/app.ts", "target": "file:daemon/realtime/crdt/text.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/realtime/app.ts", "target": "file:daemon/realtime/types.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/realtime/app.ts", "target": "function:daemon/realtime/app.ts:createRealtimeAPIs", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/realtime/app.ts", "target": "function:daemon/realtime/app.ts:createRealtimeAPIs", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "function:daemon/realtime/app.ts:createRealtimeAPIs", "target": "function:daemon/realtime/crdt/text.ts:apply", "type": "calls", "direction": "forward", "weight": 0.8 },
+    { "source": "function:daemon/realtime/app.ts:createRealtimeAPIs", "target": "function:daemon/realtime/types.ts:isJSONFilePatch", "type": "calls", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:daemon/realtime/crdt/bit.ts", "target": "class:daemon/realtime/crdt/bit.ts:BinaryIndexedTree", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/realtime/crdt/bit.ts", "target": "class:daemon/realtime/crdt/bit.ts:BinaryIndexedTree", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:daemon/realtime/crdt/text.ts", "target": "file:daemon/realtime/crdt/bit.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/realtime/crdt/text.ts", "target": "file:daemon/realtime/types.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/realtime/crdt/text.ts", "target": "function:daemon/realtime/crdt/text.ts:diff", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/realtime/crdt/text.ts", "target": "function:daemon/realtime/crdt/text.ts:applyPatch", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/realtime/crdt/text.ts", "target": "function:daemon/realtime/crdt/text.ts:apply", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/realtime/crdt/text.ts", "target": "function:daemon/realtime/crdt/text.ts:diff", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:daemon/realtime/crdt/text.ts", "target": "function:daemon/realtime/crdt/text.ts:applyPatch", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:daemon/realtime/crdt/text.ts", "target": "function:daemon/realtime/crdt/text.ts:apply", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "function:daemon/realtime/crdt/text.ts:applyPatch", "target": "class:daemon/realtime/crdt/bit.ts:BinaryIndexedTree", "type": "depends_on", "direction": "forward", "weight": 0.6 },
+
+    { "source": "file:daemon/realtime/types.ts", "target": "function:daemon/realtime/types.ts:isJSONFilePatch", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/realtime/types.ts", "target": "function:daemon/realtime/types.ts:isJSONFilePatch", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:daemon/sandbox.ts", "target": "file:daemon/daemon.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/sandbox.ts", "target": "function:daemon/sandbox.ts:createSandboxHandlers", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/sandbox.ts", "target": "function:daemon/sandbox.ts:createSandboxHandlers", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:daemon/sse/api.ts", "target": "file:daemon/fs/api.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/sse/api.ts", "target": "file:daemon/meta.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/sse/api.ts", "target": "file:daemon/sse/channel.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/sse/api.ts", "target": "file:daemon/worker.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/sse/api.ts", "target": "file:runtime/deps.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/sse/api.ts", "target": "function:daemon/sse/api.ts:createSSE", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/sse/api.ts", "target": "function:daemon/sse/api.ts:createSSE", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "function:daemon/sse/api.ts:createSSE", "target": "function:daemon/meta.ts:start", "type": "calls", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:daemon/sse/channel.ts", "target": "file:daemon/fs/common.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/sse/channel.ts", "target": "file:daemon/meta.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/sse/channel.ts", "target": "file:daemon/worker.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:daemon/tunnel.ts", "target": "function:daemon/tunnel.ts:register", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/tunnel.ts", "target": "function:daemon/tunnel.ts:register", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:daemon/worker.ts", "target": "file:daemon/sse/channel.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/worker.ts", "target": "file:daemon/workers/denoRun.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/worker.ts", "target": "function:daemon/worker.ts:createWorker", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/worker.ts", "target": "function:daemon/worker.ts:resolveWorkerOptions", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/worker.ts", "target": "function:daemon/worker.ts:worker", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/worker.ts", "target": "function:daemon/worker.ts:createWorker", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:daemon/worker.ts", "target": "function:daemon/worker.ts:worker", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "function:daemon/worker.ts:createWorker", "target": "class:daemon/workers/denoRun.ts:DenoRun", "type": "depends_on", "direction": "forward", "weight": 0.6 },
+
+    { "source": "file:daemon/workers/denoRun.ts", "target": "file:daemon/loggings/stream.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/workers/denoRun.ts", "target": "file:daemon/workers/isolate.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/workers/denoRun.ts", "target": "file:daemon/workers/portpool.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/workers/denoRun.ts", "target": "file:daemon/workers/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/workers/denoRun.ts", "target": "file:deco.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:daemon/workers/denoRun.ts", "target": "class:daemon/workers/denoRun.ts:DenoRun", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/workers/denoRun.ts", "target": "function:daemon/workers/denoRun.ts:proxyWebSocket", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/workers/denoRun.ts", "target": "function:daemon/workers/denoRun.ts:buildPermissionsArgs", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/workers/denoRun.ts", "target": "class:daemon/workers/denoRun.ts:DenoRun", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "class:daemon/workers/denoRun.ts:DenoRun", "target": "function:daemon/workers/utils.ts:waitForPort", "type": "calls", "direction": "forward", "weight": 0.8 },
+    { "source": "class:daemon/workers/denoRun.ts:DenoRun", "target": "file:daemon/workers/portpool.ts", "type": "depends_on", "direction": "forward", "weight": 0.6 },
+
+    { "source": "file:daemon/workers/isolate.ts", "target": "file:daemon/loggings/stream.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:daemon/workers/portpool.ts", "target": "class:daemon/workers/portpool.ts:PortPool", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/workers/portpool.ts", "target": "class:daemon/workers/portpool.ts:PortPool", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:daemon/workers/utils.ts", "target": "function:daemon/workers/utils.ts:waitForPort", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:daemon/workers/utils.ts", "target": "function:daemon/workers/utils.ts:waitForPort", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:hypervisor/main.ts", "target": "file:daemon/main.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:utils/async.ts", "target": "function:utils/async.ts:throttle", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:utils/async.ts", "target": "function:utils/async.ts:throttle", "type": "exports", "direction": "forward", "weight": 0.8 }
+  ]
+}

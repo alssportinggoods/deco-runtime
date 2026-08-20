@@ -1,0 +1,54 @@
+{
+  "issues": [],
+  "warnings": [
+    "Node 'pipeline:.github/workflows/ci.yaml' has no edges (orphan)",
+    "Node 'pipeline:.github/workflows/issues.yaml' has no edges (orphan)",
+    "Node 'pipeline:.github/workflows/update.yml' has no edges (orphan)",
+    "Node 'document:CODE_OF_CONDUCT.md' has no edges (orphan)",
+    "Node 'document:DIFF_MAIN.md' has no edges (orphan)",
+    "Node 'document:MAINTAINERS.txt' has no edges (orphan)",
+    "Node 'file:.gitattributes' has no edges (orphan)",
+    "Node 'config:.github/release.yaml' has no edges (orphan)",
+    "Node 'file:.understand-anything/.understandignore' has no edges (orphan)",
+    "Node 'config:.understand-anything/config.json' has no edges (orphan)",
+    "Node 'document:blocks/README.md' has no edges (orphan)",
+    "Node 'file:commons/jwt/mod.ts' has no edges (orphan)",
+    "Node 'file:commons/workflows/mod.ts' has no edges (orphan)",
+    "Node 'file:daemon/mod.ts' has no edges (orphan)",
+    "Node 'file:daemon/workers/options.ts' has no edges (orphan)",
+    "Node 'file:hooks/mod.ts' has no edges (orphan)",
+    "Node 'file:live.gen.ts' has no edges (orphan)",
+    "Node 'file:live.ts' has no edges (orphan)",
+    "Node 'file:mod.web.ts' has no edges (orphan)",
+    "Node 'file:runtime/htmx/FreshHeadCompat.ts' has no edges (orphan)",
+    "Node 'file:runtime/htmx/mod.ts' has no edges (orphan)",
+    "Node 'file:scripts/update.ts' has no edges (orphan)",
+    "Node 'file:utils/device.ts' has no edges (orphan)",
+    "Node 'file:utils/page.ts' has no edges (orphan)"
+  ],
+  "stats": {
+    "totalNodes": 648,
+    "totalEdges": 1389,
+    "totalLayers": 10,
+    "tourSteps": 14,
+    "nodeTypes": {
+      "file": 252,
+      "function": 347,
+      "class": 25,
+      "pipeline": 11,
+      "document": 8,
+      "config": 5
+    },
+    "edgeTypes": {
+      "imports": 693,
+      "contains": 358,
+      "exports": 251,
+      "calls": 66,
+      "depends_on": 11,
+      "triggers": 3,
+      "documents": 4,
+      "configures": 2,
+      "tested_by": 1
+    }
+  }
+}

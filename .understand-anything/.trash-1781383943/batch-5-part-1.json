@@ -1,0 +1,871 @@
+{
+  "nodes": [
+    {
+      "id": "file:commons/jwt/engine.ts",
+      "type": "file",
+      "name": "engine.ts",
+      "filePath": "commons/jwt/engine.ts",
+      "summary": "Validates JWTs against a site by matching URN parts in the token subject, granting access when the site URN matches the token scope.",
+      "tags": [
+        "validation",
+        "security",
+        "jwt",
+        "authorization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:commons/jwt/engine.ts:tokenIsValid",
+      "type": "function",
+      "name": "tokenIsValid",
+      "filePath": "commons/jwt/engine.ts",
+      "lineRange": [
+        25,
+        35
+      ],
+      "summary": "Checks whether a decoded JWT grants access to the given site by URN-part matching of the token subject.",
+      "tags": [
+        "validation",
+        "authorization",
+        "jwt"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:commons/jwt/jwks.ts",
+      "type": "file",
+      "name": "jwks.ts",
+      "filePath": "commons/jwt/jwks.ts",
+      "summary": "Builds a trusted JWKS issuer that fetches public keys from a remote JWKS endpoint by key id, with fallback key support.",
+      "tags": [
+        "security",
+        "jwt",
+        "jwks",
+        "key-management"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:commons/jwt/jwks.ts:newTrustedJwksIssuer",
+      "type": "function",
+      "name": "newTrustedJwksIssuer",
+      "filePath": "commons/jwt/jwks.ts",
+      "lineRange": [
+        44,
+        77
+      ],
+      "summary": "Creates a trusted issuer that resolves and caches JWKS public keys remotely, falling back to a provided key when fetch fails.",
+      "tags": [
+        "jwks",
+        "key-management",
+        "factory",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:commons/jwt/jwt.ts",
+      "type": "file",
+      "name": "jwt.ts",
+      "filePath": "commons/jwt/jwt.ts",
+      "summary": "Provides factories for JWT verifiers and issuers built on imported crypto keys, supporting sign/verify with RSA/ES keys.",
+      "tags": [
+        "security",
+        "jwt",
+        "factory",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:commons/jwt/jwt.ts:newJwtVerifier",
+      "type": "function",
+      "name": "newJwtVerifier",
+      "filePath": "commons/jwt/jwt.ts",
+      "lineRange": [
+        41,
+        57
+      ],
+      "summary": "Creates a JWT verifier from a crypto key that verifies and decodes tokens.",
+      "tags": [
+        "jwt",
+        "validation",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:commons/jwt/jwt.ts:newJwtIssuer",
+      "type": "function",
+      "name": "newJwtIssuer",
+      "filePath": "commons/jwt/jwt.ts",
+      "lineRange": [
+        79,
+        93
+      ],
+      "summary": "Creates a JWT issuer from a public/private key pair that mints signed tokens for a given issuer identity.",
+      "tags": [
+        "jwt",
+        "factory",
+        "security"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:commons/jwt/keys.ts",
+      "type": "file",
+      "name": "keys.ts",
+      "filePath": "commons/jwt/keys.ts",
+      "summary": "Cryptographic key utilities: generates ECDSA key pairs, imports JWKs, and resolves the daemon key pair from environment variables.",
+      "tags": [
+        "security",
+        "key-management",
+        "crypto",
+        "utility"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Uses the Web Crypto SubtleCrypto API for key generation, export, and import."
+    },
+    {
+      "id": "function:commons/jwt/keys.ts:generateKeyPair",
+      "type": "function",
+      "name": "generateKeyPair",
+      "filePath": "commons/jwt/keys.ts",
+      "lineRange": [
+        7,
+        23
+      ],
+      "summary": "Generates an exportable ECDSA key pair and returns the public/private JWKs as base64 strings.",
+      "tags": [
+        "crypto",
+        "key-management"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:commons/jwt/keys.ts:importJWK",
+      "type": "function",
+      "name": "importJWK",
+      "filePath": "commons/jwt/keys.ts",
+      "lineRange": [
+        26,
+        36
+      ],
+      "summary": "Imports a JWK into a CryptoKey with the requested key usages.",
+      "tags": [
+        "crypto",
+        "key-management",
+        "serialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:commons/jwt/keys.ts:getOrGenerateKeyPair",
+      "type": "function",
+      "name": "getOrGenerateKeyPair",
+      "filePath": "commons/jwt/keys.ts",
+      "lineRange": [
+        47,
+        57
+      ],
+      "summary": "Returns the key pair from environment variables or generates a fresh one when none is configured.",
+      "tags": [
+        "key-management",
+        "config",
+        "crypto"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:commons/jwt/trusted.ts",
+      "type": "file",
+      "name": "trusted.ts",
+      "filePath": "commons/jwt/trusted.ts",
+      "summary": "Maintains the registry of trusted JWT issuers and resolves a cached verifier for a given issuer.",
+      "tags": [
+        "security",
+        "jwt",
+        "validation",
+        "registry"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:commons/jwt/trusted.ts:getTrustedVerifierOf",
+      "type": "function",
+      "name": "getTrustedVerifierOf",
+      "filePath": "commons/jwt/trusted.ts",
+      "lineRange": [
+        16,
+        28
+      ],
+      "summary": "Resolves and caches a JWT verifier for a trusted issuer, returning undefined for untrusted issuers.",
+      "tags": [
+        "jwt",
+        "validation",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/ai/github.ts",
+      "type": "file",
+      "name": "github.ts",
+      "filePath": "daemon/ai/github.ts",
+      "summary": "GitHub integration helpers for AI tasks: parses issue URLs, fetches issues via gh CLI, builds prompts, opens PRs, and comments on issues.",
+      "tags": [
+        "service",
+        "integration",
+        "github",
+        "ai"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:daemon/ai/github.ts:fetchIssue",
+      "type": "function",
+      "name": "fetchIssue",
+      "filePath": "daemon/ai/github.ts",
+      "lineRange": [
+        23,
+        67
+      ],
+      "summary": "Fetches a GitHub issue with its labels and comments via the gh CLI and normalizes it into a structured object.",
+      "tags": [
+        "github",
+        "integration",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/ai/github.ts:buildPromptFromIssue",
+      "type": "function",
+      "name": "buildPromptFromIssue",
+      "filePath": "daemon/ai/github.ts",
+      "lineRange": [
+        69,
+        105
+      ],
+      "summary": "Builds an AI task prompt string from an issue's title, body, labels, and comments.",
+      "tags": [
+        "ai",
+        "github",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/ai/github.ts:createPR",
+      "type": "function",
+      "name": "createPR",
+      "filePath": "daemon/ai/github.ts",
+      "lineRange": [
+        117,
+        162
+      ],
+      "summary": "Creates a pull request via the gh CLI and returns the resulting PR URL.",
+      "tags": [
+        "github",
+        "integration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/ai/github.ts:commentOnIssue",
+      "type": "function",
+      "name": "commentOnIssue",
+      "filePath": "daemon/ai/github.ts",
+      "lineRange": [
+        164,
+        210
+      ],
+      "summary": "Posts a comment on a GitHub issue via the gh CLI.",
+      "tags": [
+        "github",
+        "integration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:daemon/ai/handlers.ts",
+      "type": "file",
+      "name": "handlers.ts",
+      "filePath": "daemon/ai/handlers.ts",
+      "summary": "Hono HTTP/WebSocket handlers for managing AI tasks: create, list, inspect, stream a PTY session, and dispose tasks.",
+      "tags": [
+        "api-handler",
+        "ai",
+        "websocket",
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:daemon/ai/handlers.ts:createAIHandlers",
+      "type": "function",
+      "name": "createAIHandlers",
+      "filePath": "daemon/ai/handlers.ts",
+      "lineRange": [
+        19,
+        231
+      ],
+      "summary": "Registers all AI task routes on a Hono app, including a WebSocket bridge to the task PTY session, and returns task management helpers.",
+      "tags": [
+        "api-handler",
+        "factory",
+        "websocket",
+        "ai"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:daemon/ai/repoUrl.ts",
+      "type": "file",
+      "name": "repoUrl.ts",
+      "filePath": "daemon/ai/repoUrl.ts",
+      "summary": "Parses a repository URL into owner and repo components.",
+      "tags": [
+        "utility",
+        "parsing",
+        "github"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:daemon/ai/repoUrl.ts:parseRepoUrl",
+      "type": "function",
+      "name": "parseRepoUrl",
+      "filePath": "daemon/ai/repoUrl.ts",
+      "lineRange": [
+        2,
+        12
+      ],
+      "summary": "Extracts owner and repo name from a Git/GitHub repository URL using a regex match.",
+      "tags": [
+        "utility",
+        "parsing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/ai/task.ts",
+      "type": "file",
+      "name": "task.ts",
+      "filePath": "daemon/ai/task.ts",
+      "summary": "Core AI task orchestrator: sets up scoped GitHub tokens and git env, runs an agent in a PTY session, monitors activity, and reports task lifecycle.",
+      "tags": [
+        "ai",
+        "service",
+        "orchestration",
+        "data-model"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:daemon/ai/task.ts:AITask",
+      "type": "class",
+      "name": "AITask",
+      "filePath": "daemon/ai/task.ts",
+      "lineRange": [
+        149,
+        739
+      ],
+      "summary": "Represents a single AI agent task: provisions credentials and workspace, spawns the agent PTY, tracks output and idle activity, and exposes status/info/dispose.",
+      "tags": [
+        "ai",
+        "orchestration",
+        "lifecycle",
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:daemon/ai/task.ts:getRepoInfo",
+      "type": "function",
+      "name": "getRepoInfo",
+      "filePath": "daemon/ai/task.ts",
+      "lineRange": [
+        86,
+        129
+      ],
+      "summary": "Resolves the origin remote URL and current branch of a git working directory.",
+      "tags": [
+        "git",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/ai/task.ts:writeAgentTokenFiles",
+      "type": "function",
+      "name": "writeAgentTokenFiles",
+      "filePath": "daemon/ai/task.ts",
+      "lineRange": [
+        25,
+        41
+      ],
+      "summary": "Writes scoped GitHub token files into the agent home directory with restricted permissions.",
+      "tags": [
+        "security",
+        "github",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/ai/task_test.ts",
+      "type": "file",
+      "name": "task_test.ts",
+      "filePath": "daemon/ai/task_test.ts",
+      "summary": "Unit tests for repository URL parsing used by AI tasks.",
+      "tags": [
+        "test",
+        "ai"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/async.ts",
+      "type": "file",
+      "name": "async.ts",
+      "filePath": "daemon/async.ts",
+      "summary": "Concurrency primitives: a read/write lock and a chained locker built on disposable semaphores.",
+      "tags": [
+        "utility",
+        "concurrency",
+        "async"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Uses the `Symbol.dispose` explicit-resource-management protocol for lock release."
+    },
+    {
+      "id": "function:daemon/async.ts:createReadWriteLock",
+      "type": "function",
+      "name": "createReadWriteLock",
+      "filePath": "daemon/async.ts",
+      "lineRange": [
+        4,
+        38
+      ],
+      "summary": "Creates a read/write lock allowing concurrent readers but exclusive writers, returning disposable lock handles.",
+      "tags": [
+        "concurrency",
+        "async",
+        "factory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:daemon/async.ts:createLocker",
+      "type": "function",
+      "name": "createLocker",
+      "filePath": "daemon/async.ts",
+      "lineRange": [
+        42,
+        56
+      ],
+      "summary": "Wraps a read/write lock into a chained locker that serializes acquisition order.",
+      "tags": [
+        "concurrency",
+        "async",
+        "factory"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:commons/jwt/engine.ts",
+      "target": "function:commons/jwt/engine.ts:tokenIsValid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:commons/jwt/engine.ts",
+      "target": "function:commons/jwt/engine.ts:tokenIsValid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:commons/jwt/engine.ts",
+      "target": "file:commons/jwt/jwt.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:commons/jwt/jwks.ts",
+      "target": "function:commons/jwt/jwks.ts:newTrustedJwksIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:commons/jwt/jwks.ts",
+      "target": "function:commons/jwt/jwks.ts:newTrustedJwksIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:commons/jwt/jwks.ts",
+      "target": "file:commons/jwt/jwt.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:commons/jwt/jwks.ts",
+      "target": "file:commons/jwt/keys.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:commons/jwt/jwt.ts",
+      "target": "function:commons/jwt/jwt.ts:newJwtVerifier",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:commons/jwt/jwt.ts",
+      "target": "function:commons/jwt/jwt.ts:newJwtVerifier",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:commons/jwt/jwt.ts",
+      "target": "function:commons/jwt/jwt.ts:newJwtIssuer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:commons/jwt/jwt.ts",
+      "target": "function:commons/jwt/jwt.ts:newJwtIssuer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:commons/jwt/jwt.ts",
+      "target": "file:commons/jwt/keys.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:commons/jwt/jwt.ts:newJwtIssuer",
+      "target": "function:commons/jwt/keys.ts:importJWK",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:commons/jwt/keys.ts",
+      "target": "function:commons/jwt/keys.ts:generateKeyPair",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:commons/jwt/keys.ts",
+      "target": "function:commons/jwt/keys.ts:importJWK",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:commons/jwt/keys.ts",
+      "target": "function:commons/jwt/keys.ts:importJWK",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:commons/jwt/keys.ts",
+      "target": "function:commons/jwt/keys.ts:getOrGenerateKeyPair",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:commons/jwt/trusted.ts",
+      "target": "function:commons/jwt/trusted.ts:getTrustedVerifierOf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:commons/jwt/trusted.ts",
+      "target": "function:commons/jwt/trusted.ts:getTrustedVerifierOf",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:commons/jwt/trusted.ts",
+      "target": "file:commons/jwt/jwt.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:commons/jwt/trusted.ts:getTrustedVerifierOf",
+      "target": "function:commons/jwt/jwt.ts:newJwtVerifier",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/ai/github.ts",
+      "target": "function:daemon/ai/github.ts:fetchIssue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/ai/github.ts",
+      "target": "function:daemon/ai/github.ts:fetchIssue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/ai/github.ts",
+      "target": "function:daemon/ai/github.ts:buildPromptFromIssue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/ai/github.ts",
+      "target": "function:daemon/ai/github.ts:buildPromptFromIssue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/ai/github.ts",
+      "target": "function:daemon/ai/github.ts:createPR",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/ai/github.ts",
+      "target": "function:daemon/ai/github.ts:createPR",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/ai/github.ts",
+      "target": "function:daemon/ai/github.ts:commentOnIssue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/ai/github.ts",
+      "target": "function:daemon/ai/github.ts:commentOnIssue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/ai/handlers.ts",
+      "target": "function:daemon/ai/handlers.ts:createAIHandlers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/ai/handlers.ts",
+      "target": "function:daemon/ai/handlers.ts:createAIHandlers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/ai/handlers.ts",
+      "target": "file:daemon/ai/task.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:daemon/ai/handlers.ts:createAIHandlers",
+      "target": "class:daemon/ai/task.ts:AITask",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/ai/repoUrl.ts",
+      "target": "function:daemon/ai/repoUrl.ts:parseRepoUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/ai/repoUrl.ts",
+      "target": "function:daemon/ai/repoUrl.ts:parseRepoUrl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/ai/task.ts",
+      "target": "class:daemon/ai/task.ts:AITask",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/ai/task.ts",
+      "target": "class:daemon/ai/task.ts:AITask",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/ai/task.ts",
+      "target": "function:daemon/ai/task.ts:getRepoInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/ai/task.ts",
+      "target": "function:daemon/ai/task.ts:writeAgentTokenFiles",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/ai/task.ts",
+      "target": "file:daemon/ai/github.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/ai/task.ts",
+      "target": "file:daemon/ai/repoUrl.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/ai/task.ts",
+      "target": "file:daemon/git.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/ai/task.ts",
+      "target": "file:daemon/githubApp.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/ai/task.ts",
+      "target": "file:daemon/monitor.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/ai/task.ts",
+      "target": "file:daemon/pty/session.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:daemon/ai/task.ts:getRepoInfo",
+      "target": "function:daemon/ai/repoUrl.ts:parseRepoUrl",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:daemon/ai/task.ts:AITask",
+      "target": "function:daemon/ai/github.ts:fetchIssue",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:daemon/ai/task.ts:AITask",
+      "target": "function:daemon/ai/github.ts:buildPromptFromIssue",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:daemon/ai/task.ts:AITask",
+      "target": "function:daemon/githubApp.ts:mintScopedToken",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:daemon/ai/task.ts:AITask",
+      "target": "function:daemon/githubApp.ts:setupGitHubAppNetrc",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/ai/task_test.ts",
+      "target": "file:daemon/ai/repoUrl.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:daemon/ai/repoUrl.ts",
+      "target": "file:daemon/ai/task_test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:daemon/async.ts",
+      "target": "function:daemon/async.ts:createReadWriteLock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/async.ts",
+      "target": "function:daemon/async.ts:createReadWriteLock",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:daemon/async.ts",
+      "target": "function:daemon/async.ts:createLocker",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:daemon/async.ts",
+      "target": "function:daemon/async.ts:createLocker",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

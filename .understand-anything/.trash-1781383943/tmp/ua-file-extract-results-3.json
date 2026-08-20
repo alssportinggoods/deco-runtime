@@ -1,0 +1,3006 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 24,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "blocks/account.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 31,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "blocks/action.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 37,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "blocks/app.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 534,
+      "nonEmptyLines": 506,
+      "functions": [
+        {
+          "name": "mergeManifests",
+          "startLine": 124,
+          "endLine": 140,
+          "params": [
+            "current",
+            "manifest"
+          ]
+        },
+        {
+          "name": "mergeRuntimes",
+          "startLine": 147,
+          "endLine": 178,
+          "params": [
+            "{\n    resolvers: currentResolvers,\n    manifest: currentManifest,\n    resolvables: currentResolvables,\n    importMap: currentImportMap,\n  }",
+            "{ resolvers, manifest, resolvables, importMap }"
+          ]
+        },
+        {
+          "name": "isAppRuntime",
+          "startLine": 180,
+          "endLine": 188,
+          "params": [
+            "app"
+          ]
+        },
+        {
+          "name": "injectAppStateOnManifest",
+          "startLine": 190,
+          "endLine": 231,
+          "params": [
+            "state",
+            "manifest"
+          ]
+        },
+        {
+          "name": "isAppHttpContext",
+          "startLine": 233,
+          "endLine": 238,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "appMiddlewareToResolverMiddleware",
+          "startLine": 240,
+          "endLine": 270,
+          "params": [
+            "state",
+            "appMiddleware"
+          ]
+        },
+        {
+          "name": "buildRuntimeFromApp",
+          "startLine": 271,
+          "endLine": 305,
+          "params": [
+            "{\n    state,\n    manifest,\n    resolvables,\n    dependencies,\n    importMap,\n    middleware: appMiddleware,\n  }"
+          ]
+        },
+        {
+          "name": "injectAppState",
+          "startLine": 343,
+          "endLine": 361,
+          "params": [
+            "state",
+            "fnProps"
+          ]
+        },
+        {
+          "name": "injectAppStateOnInlineLoader",
+          "startLine": 363,
+          "endLine": 384,
+          "params": [
+            "state",
+            "loader"
+          ]
+        },
+        {
+          "name": "buildApp",
+          "startLine": 386,
+          "endLine": 404,
+          "params": [
+            "appRuntime"
+          ]
+        },
+        {
+          "name": "isAppModuleClass",
+          "startLine": 405,
+          "endLine": 410,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "validMethods",
+          "startLine": 425,
+          "endLine": 436,
+          "params": [
+            "obj"
+          ]
+        },
+        {
+          "name": "toAppModule",
+          "startLine": 440,
+          "endLine": 493,
+          "params": [
+            "path",
+            "moduleClass"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImportMap",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "mergeManifests",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "mergeRuntimes",
+          "line": 147,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mergeManifests",
+          "callee": "Object.entries",
+          "lineNumber": 131
+        },
+        {
+          "caller": "mergeManifests",
+          "callee": "Object.entries",
+          "lineNumber": 133
+        },
+        {
+          "caller": "mergeRuntimes",
+          "callee": "mergeManifests",
+          "lineNumber": 162
+        },
+        {
+          "caller": "injectAppStateOnManifest",
+          "callee": "mapObjKeys",
+          "lineNumber": 196
+        },
+        {
+          "caller": "injectAppStateOnManifest",
+          "callee": "injectAppStateOnInlineLoader",
+          "lineNumber": 200
+        },
+        {
+          "caller": "injectAppStateOnManifest",
+          "callee": "mapObjKeys",
+          "lineNumber": 203
+        },
+        {
+          "caller": "injectAppStateOnManifest",
+          "callee": "injectAppStateOnInlineLoader",
+          "lineNumber": 207
+        },
+        {
+          "caller": "injectAppStateOnManifest",
+          "callee": "mapObjKeys",
+          "lineNumber": 210
+        },
+        {
+          "caller": "injectAppStateOnManifest",
+          "callee": "mod.default",
+          "lineNumber": 215
+        },
+        {
+          "caller": "injectAppStateOnManifest",
+          "callee": "mapObjKeys",
+          "lineNumber": 218
+        },
+        {
+          "caller": "injectAppStateOnManifest",
+          "callee": "injectAppState",
+          "lineNumber": 220
+        },
+        {
+          "caller": "injectAppStateOnManifest",
+          "callee": "mapObjKeys",
+          "lineNumber": 222
+        },
+        {
+          "caller": "injectAppStateOnManifest",
+          "callee": "injectAppState",
+          "lineNumber": 226
+        },
+        {
+          "caller": "injectAppStateOnManifest",
+          "callee": "injectAppState",
+          "lineNumber": 227
+        },
+        {
+          "caller": "appMiddlewareToResolverMiddleware",
+          "callee": "Array.isArray",
+          "lineNumber": 250
+        },
+        {
+          "caller": "appMiddlewareToResolverMiddleware",
+          "callee": "middlewares.map",
+          "lineNumber": 253
+        },
+        {
+          "caller": "appMiddlewareToResolverMiddleware",
+          "callee": "isAppHttpContext",
+          "lineNumber": 255
+        },
+        {
+          "caller": "appMiddlewareToResolverMiddleware",
+          "callee": "fnContextFromHttpContext",
+          "lineNumber": 258
+        },
+        {
+          "caller": "appMiddlewareToResolverMiddleware",
+          "callee": "isInvokeCtx",
+          "lineNumber": 260
+        },
+        {
+          "caller": "appMiddlewareToResolverMiddleware",
+          "callee": "ctx.next?.bind",
+          "lineNumber": 262
+        },
+        {
+          "caller": "appMiddlewareToResolverMiddleware",
+          "callee": "mid",
+          "lineNumber": 264
+        },
+        {
+          "caller": "appMiddlewareToResolverMiddleware",
+          "callee": "ctx.next!",
+          "lineNumber": 266
+        },
+        {
+          "caller": "buildRuntimeFromApp",
+          "callee": "buildImportMap",
+          "lineNumber": 288
+        },
+        {
+          "caller": "buildRuntimeFromApp",
+          "callee": "injectAppStateOnManifest",
+          "lineNumber": 292
+        },
+        {
+          "caller": "buildRuntimeFromApp",
+          "callee": "resolversFrom",
+          "lineNumber": 294
+        },
+        {
+          "caller": "buildRuntimeFromApp",
+          "callee": "blocks",
+          "lineNumber": 296
+        },
+        {
+          "caller": "buildRuntimeFromApp",
+          "callee": "appMiddlewareToResolverMiddleware",
+          "lineNumber": 297
+        },
+        {
+          "caller": "injectAppState",
+          "callee": "fnProps",
+          "lineNumber": 352
+        },
+        {
+          "caller": "injectAppStateOnInlineLoader",
+          "callee": "propsLoader",
+          "lineNumber": 375
+        },
+        {
+          "caller": "buildApp",
+          "callee": "isAppRuntime",
+          "lineNumber": 389
+        },
+        {
+          "caller": "buildApp",
+          "callee": "buildRuntimeFromApp",
+          "lineNumber": 391
+        },
+        {
+          "caller": "buildApp",
+          "callee": "Promise.all",
+          "lineNumber": 392
+        },
+        {
+          "caller": "buildApp",
+          "callee": "(runtime.dependencies ?? []).map",
+          "lineNumber": 393
+        },
+        {
+          "caller": "buildApp",
+          "callee": "dependencies.reduce",
+          "lineNumber": 398
+        },
+        {
+          "caller": "isAppModuleClass",
+          "callee": "value.default.toString().substring",
+          "lineNumber": 409
+        },
+        {
+          "caller": "isAppModuleClass",
+          "callee": "value.default.toString",
+          "lineNumber": 409
+        },
+        {
+          "caller": "validMethods",
+          "callee": "Object.getOwnPropertyNames(obj).forEach",
+          "lineNumber": 428
+        },
+        {
+          "caller": "validMethods",
+          "callee": "Object.getOwnPropertyNames",
+          "lineNumber": 428
+        },
+        {
+          "caller": "validMethods",
+          "callee": "BUILT_IN_METHODS.includes",
+          "lineNumber": 429
+        },
+        {
+          "caller": "validMethods",
+          "callee": "methods.add",
+          "lineNumber": 430
+        },
+        {
+          "caller": "validMethods",
+          "callee": "Object.getPrototypeOf",
+          "lineNumber": 433
+        },
+        {
+          "caller": "validMethods",
+          "callee": "Array.from",
+          "lineNumber": 435
+        },
+        {
+          "caller": "toAppModule",
+          "callee": "moduleClass.default.name.toLowerCase",
+          "lineNumber": 444
+        },
+        {
+          "caller": "toAppModule",
+          "callee": "validMethods",
+          "lineNumber": 455
+        },
+        {
+          "caller": "toAppModule",
+          "callee": "methodName.startsWith",
+          "lineNumber": 461
+        },
+        {
+          "caller": "toAppModule",
+          "callee": "methodName\n            .replaceAll(LOADER_PREFIX, \"\")\n            .replaceAll",
+          "lineNumber": 465
+        },
+        {
+          "caller": "toAppModule",
+          "callee": "methodName\n            .replaceAll",
+          "lineNumber": 465
+        },
+        {
+          "caller": "toAppModule",
+          "callee": "FuncAddr.build",
+          "lineNumber": 470
+        },
+        {
+          "caller": "toAppModule",
+          "callee": "impl.bind(classInstance)",
+          "lineNumber": 476
+        },
+        {
+          "caller": "toAppModule",
+          "callee": "impl.bind",
+          "lineNumber": 476
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 3,
+        "functionCount": 13,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "blocks/appsUtil.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 169,
+      "nonEmptyLines": 159,
+      "functions": [
+        {
+          "name": "resolverIsBlock",
+          "startLine": 18,
+          "endLine": 22,
+          "params": [
+            "blk"
+          ]
+        },
+        {
+          "name": "asManifest",
+          "startLine": 24,
+          "endLine": 27,
+          "params": [
+            "d"
+          ]
+        },
+        {
+          "name": "localRef",
+          "startLine": 41,
+          "endLine": 41,
+          "params": [
+            "blkType",
+            "ref"
+          ]
+        },
+        {
+          "name": "shouldBeLocal",
+          "startLine": 42,
+          "endLine": 46,
+          "params": [
+            "block",
+            "ref"
+          ]
+        },
+        {
+          "name": "withoutLocalModules",
+          "startLine": 48,
+          "endLine": 56,
+          "params": [
+            "block",
+            "r"
+          ]
+        },
+        {
+          "name": "resolversFrom",
+          "startLine": 58,
+          "endLine": 81,
+          "params": [
+            "man",
+            "blocks",
+            "middleware"
+          ]
+        },
+        {
+          "name": "buildRuntime",
+          "startLine": 82,
+          "endLine": 169,
+          "params": [
+            "[currMan, currMap, recovers]",
+            "blk",
+            "middleware"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "wellKnownLocalMappings",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "shouldBeLocal",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "withoutLocalModules",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "resolversFrom",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "buildRuntime",
+          "line": 82,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolverIsBlock",
+          "callee": "resolver.split",
+          "lineNumber": 19
+        },
+        {
+          "caller": "resolverIsBlock",
+          "callee": "segments.some",
+          "lineNumber": 21
+        },
+        {
+          "caller": "shouldBeLocal",
+          "callee": "wellKnownLocalModules.some",
+          "lineNumber": 43
+        },
+        {
+          "caller": "shouldBeLocal",
+          "callee": "localRef",
+          "lineNumber": 44
+        },
+        {
+          "caller": "withoutLocalModules",
+          "callee": "localRef",
+          "lineNumber": 53
+        },
+        {
+          "caller": "resolversFrom",
+          "callee": "(blocks ?? []).reduce",
+          "lineNumber": 67
+        },
+        {
+          "caller": "resolversFrom",
+          "callee": "buildRuntime",
+          "lineNumber": 69
+        },
+        {
+          "caller": "buildRuntime",
+          "callee": "asManifest",
+          "lineNumber": 99
+        },
+        {
+          "caller": "buildRuntime",
+          "callee": "mapObjKeys",
+          "lineNumber": 101
+        },
+        {
+          "caller": "buildRuntime",
+          "callee": "Object.entries(decorated).reduce",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildRuntime",
+          "callee": "Object.entries",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildRuntime",
+          "callee": "usePreviewFunc",
+          "lineNumber": 109
+        },
+        {
+          "caller": "buildRuntime",
+          "callee": "Object.entries(decorated).reduce",
+          "lineNumber": 118
+        },
+        {
+          "caller": "buildRuntime",
+          "callee": "Object.entries",
+          "lineNumber": 118
+        },
+        {
+          "caller": "buildRuntime",
+          "callee": "mapObjKeys",
+          "lineNumber": 132
+        },
+        {
+          "caller": "buildRuntime",
+          "callee": "Array.isArray",
+          "lineNumber": 138
+        },
+        {
+          "caller": "buildRuntime",
+          "callee": "blk.adapt!",
+          "lineNumber": 140
+        },
+        {
+          "caller": "buildRuntime",
+          "callee": "Array.isArray",
+          "lineNumber": 141
+        },
+        {
+          "caller": "buildRuntime",
+          "callee": "compose",
+          "lineNumber": 142
+        },
+        {
+          "caller": "buildRuntime",
+          "callee": "compose",
+          "lineNumber": 148
+        },
+        {
+          "caller": "buildRuntime",
+          "callee": "localRef",
+          "lineNumber": 156
+        },
+        {
+          "caller": "buildRuntime",
+          "callee": "localRef",
+          "lineNumber": 157
+        },
+        {
+          "caller": "buildRuntime",
+          "callee": "resolverIsBlock",
+          "lineNumber": 164
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 5,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "blocks/flag.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 123,
+      "nonEmptyLines": 113,
+      "functions": [
+        {
+          "name": "isMultivariate",
+          "startLine": 45,
+          "endLine": 49,
+          "params": [
+            "f"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "device",
+          "callee": "deviceOf",
+          "lineNumber": 80
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "blocks/function.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 69,
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "blocks/handler.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 52,
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "blocks/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "defineBlock",
+          "startLine": 16,
+          "endLine": 18,
+          "params": [
+            "block"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "defineBlock",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "defineBlock",
+          "callee": "userDefinedBlocks.push",
+          "lineNumber": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "blocks/loader.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 423,
+      "nonEmptyLines": 373,
+      "functions": [
+        {
+          "name": "isWrappedError",
+          "startLine": 85,
+          "endLine": 89,
+          "params": [
+            "err"
+          ]
+        },
+        {
+          "name": "isInvokeCtx",
+          "startLine": 91,
+          "endLine": 95,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "wrapCaughtErrors",
+          "startLine": 97,
+          "endLine": 141,
+          "params": [
+            "_props",
+            "ctx"
+          ]
+        },
+        {
+          "name": "isCache",
+          "startLine": 166,
+          "endLine": 166,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "noop",
+          "startLine": 168,
+          "endLine": 168,
+          "params": []
+        },
+        {
+          "name": "wrapLoader",
+          "startLine": 181,
+          "endLine": 395,
+          "params": [
+            "{\n    default: handler,\n    cache = \"no-store\",\n    cacheKey = noop,\n    singleFlightKey,\n    ...rest\n  }",
+            "resolveChain",
+            "release"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isWrappedError",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "isInvokeCtx",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "wrapCaughtErrors",
+          "line": 97,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "wrapCaughtErrors",
+          "callee": "isInvokeCtx",
+          "lineNumber": 103
+        },
+        {
+          "caller": "wrapCaughtErrors",
+          "callee": "ctx.next!",
+          "lineNumber": 104
+        },
+        {
+          "caller": "wrapCaughtErrors",
+          "callee": "ctx.next!",
+          "lineNumber": 107
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "singleFlight",
+          "lineNumber": 195
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "singleFlight",
+          "lineNumber": 196
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "console.warn",
+          "lineNumber": 199
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "performance.now",
+          "lineNumber": 212
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "isCache",
+          "lineNumber": 215
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "cacheKey",
+          "lineNumber": 219
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "isCache",
+          "lineNumber": 233
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "resolveChain.at",
+          "lineNumber": 241
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "ctx.vary.debug.push",
+          "lineNumber": 243
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "ctx.vary?.push",
+          "lineNumber": 252
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "stats.cache.add",
+          "lineNumber": 255
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "RequestContext?.signal?.throwIfAborted",
+          "lineNumber": 257
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "handler",
+          "lineNumber": 258
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "ctx.vary?.push",
+          "lineNumber": 261
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "RequestContext?.signal?.throwIfAborted",
+          "lineNumber": 262
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "ctx.monitoring?.timings.start",
+          "lineNumber": 266
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "Deno.env.get",
+          "lineNumber": 270
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "release?.revision",
+          "lineNumber": 271
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "logger.warn",
+          "lineNumber": 274
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "timing?.end",
+          "lineNumber": 275
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "handler",
+          "lineNumber": 276
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "timing?.end",
+          "lineNumber": 279
+        },
+        {
+          "caller": "callHandlerAndCache",
+          "callee": "handler",
+          "lineNumber": 289
+        },
+        {
+          "caller": "callHandlerAndCache",
+          "callee": "textEncoder.encode",
+          "lineNumber": 292
+        },
+        {
+          "caller": "callHandlerAndCache",
+          "callee": "JSON.stringify",
+          "lineNumber": 292
+        },
+        {
+          "caller": "callHandlerAndCache",
+          "callee": "new Date(Date.now() + (cacheMaxAge * 1e3))\n            .toUTCString",
+          "lineNumber": 294
+        },
+        {
+          "caller": "callHandlerAndCache",
+          "callee": "Date.now",
+          "lineNumber": 294
+        },
+        {
+          "caller": "callHandlerAndCache",
+          "callee": "cache.put(\n            request,\n            new Response(jsonStringEncoded, {\n              headers: Object.fromEntries(headerPairs),\n            }),\n          ).catch",
+          "lineNumber": 306
+        },
+        {
+          "caller": "callHandlerAndCache",
+          "callee": "cache.put",
+          "lineNumber": 306
+        },
+        {
+          "caller": "callHandlerAndCache",
+          "callee": "Object.fromEntries",
+          "lineNumber": 309
+        },
+        {
+          "caller": "callHandlerAndCache",
+          "callee": "logger.error",
+          "lineNumber": 312
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "cache.match(request).catch",
+          "lineNumber": 326
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "cache.match",
+          "lineNumber": 326
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "stats.cache.add",
+          "lineNumber": 330
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "callHandlerAndCache",
+          "lineNumber": 332
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "matched.headers.get",
+          "lineNumber": 335
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "inFuture",
+          "lineNumber": 336
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "stats.cache.add",
+          "lineNumber": 340
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "revalidationLocker.tryAcquire(request)\n              .catch(() => true) // fail-open: locker error → allow revalidation\n              .then((acquired) => {\n                if (!acquired) return;\n                return bgFlights.do(request.url, callHandlerAndCache);\n              })\n              .catch",
+          "lineNumber": 342
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "revalidationLocker.tryAcquire(request)\n              .catch(() => true) // fail-open: locker error → allow revalidation\n              .then",
+          "lineNumber": 342
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "revalidationLocker.tryAcquire(request)\n              .catch",
+          "lineNumber": 342
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "revalidationLocker.tryAcquire",
+          "lineNumber": 342
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "bgFlights.do",
+          "lineNumber": 346
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "logger.error",
+          "lineNumber": 349
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "stats.cache.add",
+          "lineNumber": 360
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "matched.json",
+          "lineNumber": 364
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "logger.error",
+          "lineNumber": 367
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "matched.text().catch",
+          "lineNumber": 376
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "matched.text",
+          "lineNumber": 376
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "stats.cache.add",
+          "lineNumber": 380
+        },
+        {
+          "caller": "staleWhileRevalidate",
+          "callee": "callHandlerAndCache",
+          "lineNumber": 381
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "flights.do",
+          "lineNumber": 385
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "stats.latency.record",
+          "lineNumber": 389
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "performance.now",
+          "lineNumber": 389
+        },
+        {
+          "caller": "wrapLoader",
+          "callee": "ctx.monitoring?.currentSpan?.setDesc",
+          "lineNumber": 391
+        }
+      ],
+      "metrics": {
+        "importCount": 17,
+        "exportCount": 3,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "blocks/matcher.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 241,
+      "nonEmptyLines": 222,
+      "functions": [
+        {
+          "name": "isStickySessionModule",
+          "startLine": 94,
+          "endLine": 98,
+          "params": [
+            "matcher"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DECO_MATCHER_PREFIX",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "DECO_MATCHER_HEADER_QS",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "matcherFunc",
+          "callee": "fMatcher",
+          "lineNumber": 154
+        },
+        {
+          "caller": "matcherFunc",
+          "callee": "matcherFuncOrValue",
+          "lineNumber": 156
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "blocks/propsLoader.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 122,
+      "nonEmptyLines": 117,
+      "functions": [
+        {
+          "name": "isLoaderFunc",
+          "startLine": 75,
+          "endLine": 82,
+          "params": [
+            "obj"
+          ]
+        },
+        {
+          "name": "isObjLoader",
+          "startLine": 84,
+          "endLine": 91,
+          "params": [
+            "obj"
+          ]
+        },
+        {
+          "name": "propsLoader",
+          "startLine": 92,
+          "endLine": 122,
+          "params": [
+            "resolver",
+            "props",
+            "req",
+            "ctx"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "propsLoader",
+          "line": 92,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "propsLoader",
+          "callee": "isLoaderFunc",
+          "lineNumber": 98
+        },
+        {
+          "caller": "propsLoader",
+          "callee": "resolver",
+          "lineNumber": 99
+        },
+        {
+          "caller": "propsLoader",
+          "callee": "isObjLoader",
+          "lineNumber": 101
+        },
+        {
+          "caller": "propsLoader",
+          "callee": "Object.keys",
+          "lineNumber": 105
+        },
+        {
+          "caller": "propsLoader",
+          "callee": "isLoaderFunc",
+          "lineNumber": 109
+        },
+        {
+          "caller": "propsLoader",
+          "callee": "funcOrValue",
+          "lineNumber": 110
+        },
+        {
+          "caller": "propsLoader",
+          "callee": "Promise.resolve",
+          "lineNumber": 114
+        },
+        {
+          "caller": "propsLoader",
+          "callee": "waitKeys",
+          "lineNumber": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "blocks/section.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 202,
+      "nonEmptyLines": 188,
+      "functions": [
+        {
+          "name": "isSection",
+          "startLine": 31,
+          "endLine": 48,
+          "params": [
+            "s",
+            "section"
+          ]
+        },
+        {
+          "name": "createSectionBlock",
+          "startLine": 85,
+          "endLine": 191,
+          "params": [
+            "wrapper",
+            "type"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isSection",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "createSectionBlock",
+          "line": 85,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "withMainComponent",
+          "callee": "wrapper",
+          "lineNumber": 112
+        },
+        {
+          "caller": "createSectionBlock",
+          "callee": "withMainComponent",
+          "lineNumber": 119
+        },
+        {
+          "caller": "createSectionBlock",
+          "callee": "useExportDefaultComponent",
+          "lineNumber": 125
+        },
+        {
+          "caller": "createSectionBlock",
+          "callee": "useExportDefaultComponent",
+          "lineNumber": 141
+        },
+        {
+          "caller": "createSectionBlock",
+          "callee": "fnContextFromHttpContext",
+          "lineNumber": 144
+        },
+        {
+          "caller": "createSectionBlock",
+          "callee": "withMainComponent",
+          "lineNumber": 145
+        },
+        {
+          "caller": "createSectionBlock",
+          "callee": "propsLoader(\n        loaderSectionProps,\n        props,\n        request,\n        fnContext,\n      ).then((props) => {\n        return useExportDefaultComponentWithProps(props, httpCtx);\n      }).catch",
+          "lineNumber": 150
+        },
+        {
+          "caller": "createSectionBlock",
+          "callee": "propsLoader(\n        loaderSectionProps,\n        props,\n        request,\n        fnContext,\n      ).then",
+          "lineNumber": 150
+        },
+        {
+          "caller": "createSectionBlock",
+          "callee": "propsLoader",
+          "lineNumber": 150
+        },
+        {
+          "caller": "createSectionBlock",
+          "callee": "useExportDefaultComponentWithProps",
+          "lineNumber": 156
+        },
+        {
+          "caller": "createSectionBlock",
+          "callee": "withMainComponent",
+          "lineNumber": 161
+        },
+        {
+          "caller": "createSectionBlock",
+          "callee": "alwaysThrow",
+          "lineNumber": 161
+        },
+        {
+          "caller": "createSectionBlock",
+          "callee": "allowErrorBoundary",
+          "lineNumber": 162
+        },
+        {
+          "caller": "createSectionBlock",
+          "callee": "ctx.resolveChain.findLast((chain) => chain.type === \"resolver\")\n        ?.value?.toString",
+          "lineNumber": 172
+        },
+        {
+          "caller": "createSectionBlock",
+          "callee": "ctx.resolveChain.findLast",
+          "lineNumber": 172
+        },
+        {
+          "caller": "createSectionBlock",
+          "callee": "Context.active",
+          "lineNumber": 175
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "blocks/utils.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 299,
+      "nonEmptyLines": 273,
+      "functions": [
+        {
+          "name": "applyConfig",
+          "startLine": 42,
+          "endLine": 51,
+          "params": [
+            "func"
+          ]
+        },
+        {
+          "name": "applyConfigFunc",
+          "startLine": 53,
+          "endLine": 63,
+          "params": [
+            "func"
+          ]
+        },
+        {
+          "name": "createBagKey",
+          "startLine": 70,
+          "endLine": 71,
+          "params": [
+            "description"
+          ]
+        },
+        {
+          "name": "fnContextFromHttpContext",
+          "startLine": 138,
+          "endLine": 164,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "applyProps",
+          "startLine": 175,
+          "endLine": 194,
+          "params": [
+            "func"
+          ]
+        },
+        {
+          "name": "fromComponentFunc",
+          "startLine": 196,
+          "endLine": 199,
+          "params": [
+            "{ default: Component }",
+            "component"
+          ]
+        },
+        {
+          "name": "isPreactComponent",
+          "startLine": 201,
+          "endLine": 205,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "usePreviewFunc",
+          "startLine": 206,
+          "endLine": 214,
+          "params": [
+            "Component"
+          ]
+        },
+        {
+          "name": "newComponentBlock",
+          "startLine": 216,
+          "endLine": 230,
+          "params": [
+            "type",
+            "defaultDanglingRecover"
+          ]
+        },
+        {
+          "name": "newSingleFlightGroup",
+          "startLine": 232,
+          "endLine": 248,
+          "params": [
+            "singleFlightKeyFunc"
+          ]
+        },
+        {
+          "name": "buildImportMapWith",
+          "startLine": 250,
+          "endLine": 264,
+          "params": [
+            "manifest",
+            "importMapBuilder"
+          ]
+        },
+        {
+          "name": "buildImportMap",
+          "startLine": 266,
+          "endLine": 279,
+          "params": [
+            "manifest"
+          ]
+        },
+        {
+          "name": "gateKeeper",
+          "startLine": 281,
+          "endLine": 299,
+          "params": [
+            "defaultVisibility",
+            "key"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "applyConfig",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "applyConfigFunc",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "createBagKey",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "PAGE_DIRTY_KEY",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "PAGE_CACHE_ALLOWED_KEY",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "fnContextFromHttpContext",
+          "line": 138,
+          "isDefault": false
+        },
+        {
+          "name": "applyProps",
+          "line": 175,
+          "isDefault": false
+        },
+        {
+          "name": "fromComponentFunc",
+          "line": 196,
+          "isDefault": false
+        },
+        {
+          "name": "usePreviewFunc",
+          "line": 206,
+          "isDefault": false
+        },
+        {
+          "name": "newComponentBlock",
+          "line": 216,
+          "isDefault": false
+        },
+        {
+          "name": "newSingleFlightGroup",
+          "line": 232,
+          "isDefault": false
+        },
+        {
+          "name": "buildImportMapWith",
+          "line": 250,
+          "isDefault": false
+        },
+        {
+          "name": "buildImportMap",
+          "line": 266,
+          "isDefault": false
+        },
+        {
+          "name": "gateKeeper",
+          "line": 281,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "applyConfig",
+          "callee": "func.default",
+          "lineNumber": 50
+        },
+        {
+          "caller": "applyConfigFunc",
+          "callee": "func.default",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createBagKey",
+          "callee": "Symbol",
+          "lineNumber": 71
+        },
+        {
+          "caller": "fnContextFromHttpContext",
+          "callee": "isInvokeCtx",
+          "lineNumber": 152
+        },
+        {
+          "caller": "fnContextFromHttpContext",
+          "callee": "buildInvokeFunc",
+          "lineNumber": 153
+        },
+        {
+          "caller": "device",
+          "callee": "deviceOf",
+          "lineNumber": 158
+        },
+        {
+          "caller": "isBot",
+          "callee": "isUABot",
+          "lineNumber": 161
+        },
+        {
+          "caller": "isBot",
+          "callee": "simulateBot",
+          "lineNumber": 161
+        },
+        {
+          "caller": "applyProps",
+          "callee": "fnContextFromHttpContext",
+          "lineNumber": 185
+        },
+        {
+          "caller": "applyProps",
+          "callee": "RequestContext.bind",
+          "lineNumber": 188
+        },
+        {
+          "caller": "applyProps",
+          "callee": "RequestContext.active",
+          "lineNumber": 189
+        },
+        {
+          "caller": "applyProps",
+          "callee": "func.default",
+          "lineNumber": 190
+        },
+        {
+          "caller": "applyProps",
+          "callee": "boundFn",
+          "lineNumber": 193
+        },
+        {
+          "caller": "fromComponentFunc",
+          "callee": "withSection",
+          "lineNumber": 199
+        },
+        {
+          "caller": "usePreviewFunc",
+          "callee": "isPreactComponent",
+          "lineNumber": 211
+        },
+        {
+          "caller": "newSingleFlightGroup",
+          "callee": "singleFlight",
+          "lineNumber": 238
+        },
+        {
+          "caller": "newSingleFlightGroup",
+          "callee": "ctx.next!",
+          "lineNumber": 241
+        },
+        {
+          "caller": "newSingleFlightGroup",
+          "callee": "flights.do",
+          "lineNumber": 243
+        },
+        {
+          "caller": "newSingleFlightGroup",
+          "callee": "singleFlightKeyFunc",
+          "lineNumber": 244
+        },
+        {
+          "caller": "newSingleFlightGroup",
+          "callee": "ctx.next!",
+          "lineNumber": 245
+        },
+        {
+          "caller": "buildImportMapWith",
+          "callee": "Object.values",
+          "lineNumber": 257
+        },
+        {
+          "caller": "buildImportMapWith",
+          "callee": "Object.keys",
+          "lineNumber": 258
+        },
+        {
+          "caller": "buildImportMapWith",
+          "callee": "importMapBuilder",
+          "lineNumber": 259
+        },
+        {
+          "caller": "buildImportMap",
+          "callee": "URL.canParse",
+          "lineNumber": 268
+        },
+        {
+          "caller": "builder",
+          "callee": "blockKey.replace",
+          "lineNumber": 274
+        },
+        {
+          "caller": "buildImportMap",
+          "callee": "buildImportMapWith",
+          "lineNumber": 278
+        },
+        {
+          "caller": "gateKeeper",
+          "callee": "Context.active",
+          "lineNumber": 288
+        },
+        {
+          "caller": "gateKeeper",
+          "callee": "isInvokeCtx",
+          "lineNumber": 293
+        },
+        {
+          "caller": "gateKeeper",
+          "callee": "ctx.next!",
+          "lineNumber": 298
+        }
+      ],
+      "metrics": {
+        "importCount": 16,
+        "exportCount": 14,
+        "functionCount": 13,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "blocks/workflow.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 142,
+      "nonEmptyLines": 135,
+      "classes": [
+        {
+          "name": "WorkflowContext",
+          "startLine": 33,
+          "endLine": 85,
+          "methods": [
+            "constructor",
+            "invoke"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "WorkflowContext",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 41
+        },
+        {
+          "caller": "fn",
+          "callee": "ctx.invoke",
+          "lineNumber": 76
+        },
+        {
+          "caller": "invoke",
+          "callee": "Object.defineProperty",
+          "lineNumber": 78
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "clients/formdata.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 134,
+      "nonEmptyLines": 123,
+      "functions": [
+        {
+          "name": "escapeDots",
+          "startLine": 6,
+          "endLine": 8,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "unescapeDots",
+          "startLine": 15,
+          "endLine": 17,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "propsToFormData",
+          "startLine": 36,
+          "endLine": 94,
+          "params": [
+            "props"
+          ]
+        },
+        {
+          "name": "formDataToProps",
+          "startLine": 110,
+          "endLine": 134,
+          "params": [
+            "formData"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "propsToFormData",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "formDataToProps",
+          "line": 110,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "escapeDots",
+          "callee": "key.replace",
+          "lineNumber": 7
+        },
+        {
+          "caller": "unescapeDots",
+          "callee": "key.replaceAll",
+          "lineNumber": 16
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "escapeDots",
+          "lineNumber": 48
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "Array.isArray",
+          "lineNumber": 49
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "value.forEach",
+          "lineNumber": 50
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "Object.entries",
+          "lineNumber": 52
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "escapeDots",
+          "lineNumber": 53
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "formData.append",
+          "lineNumber": 55
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "formData.append",
+          "lineNumber": 57
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "String",
+          "lineNumber": 59
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "formData.append",
+          "lineNumber": 65
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "formData.append",
+          "lineNumber": 67
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "String",
+          "lineNumber": 67
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "formData.append",
+          "lineNumber": 69
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "formData.append",
+          "lineNumber": 74
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "Object.entries",
+          "lineNumber": 76
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "escapeDots",
+          "lineNumber": 77
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "appendToFormData",
+          "lineNumber": 78
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "formData.append",
+          "lineNumber": 81
+        },
+        {
+          "caller": "appendToFormData",
+          "callee": "String",
+          "lineNumber": 81
+        },
+        {
+          "caller": "propsToFormData",
+          "callee": "Array.isArray",
+          "lineNumber": 85
+        },
+        {
+          "caller": "propsToFormData",
+          "callee": "Object.entries",
+          "lineNumber": 88
+        },
+        {
+          "caller": "propsToFormData",
+          "callee": "appendToFormData",
+          "lineNumber": 89
+        },
+        {
+          "caller": "formDataToProps",
+          "callee": "formData.forEach",
+          "lineNumber": 113
+        },
+        {
+          "caller": "formDataToProps",
+          "callee": "key.split(/(?<!\\\\)\\./).map",
+          "lineNumber": 114
+        },
+        {
+          "caller": "formDataToProps",
+          "callee": "key.split",
+          "lineNumber": 114
+        },
+        {
+          "caller": "formDataToProps",
+          "callee": "isFinite",
+          "lineNumber": 119
+        },
+        {
+          "caller": "formDataToProps",
+          "callee": "Number",
+          "lineNumber": 119
+        },
+        {
+          "caller": "formDataToProps",
+          "callee": "String",
+          "lineNumber": 130
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "clients/proxy.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 104,
+      "functions": [
+        {
+          "name": "newHandler",
+          "startLine": 68,
+          "endLine": 110,
+          "params": [
+            "invoker"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "InvokeAwaiter",
+          "startLine": 22,
+          "endLine": 66,
+          "methods": [
+            "constructor",
+            "get",
+            "then"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "InvokeAwaiter",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "newHandler",
+          "line": 68,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "then",
+          "callee": "this.invoker(this.payload, this.init).then(onfulfilled).catch",
+          "lineNumber": 62
+        },
+        {
+          "caller": "then",
+          "callee": "this.invoker(this.payload, this.init).then",
+          "lineNumber": 62
+        },
+        {
+          "caller": "then",
+          "callee": "this.invoker",
+          "lineNumber": 62
+        },
+        {
+          "caller": "newHandler",
+          "callee": "invoker",
+          "lineNumber": 90
+        },
+        {
+          "caller": "newHandler",
+          "callee": "currentParts.join",
+          "lineNumber": 96
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "clients/withManifest.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 399,
+      "nonEmptyLines": 362,
+      "functions": [
+        {
+          "name": "isStreamProps",
+          "startLine": 35,
+          "endLine": 39,
+          "params": [
+            "props"
+          ]
+        },
+        {
+          "name": "isEventStreamResponse",
+          "startLine": 41,
+          "endLine": 48,
+          "params": [
+            "invokeResponse"
+          ]
+        },
+        {
+          "name": "fetchWithProps",
+          "startLine": 110,
+          "endLine": 173,
+          "params": [
+            "url",
+            "props",
+            "init"
+          ]
+        },
+        {
+          "name": "invokeKey",
+          "startLine": 175,
+          "endLine": 179,
+          "params": [
+            "key",
+            "props",
+            "init"
+          ]
+        },
+        {
+          "name": "batchInvoke",
+          "startLine": 181,
+          "endLine": 182,
+          "params": [
+            "payload",
+            "init"
+          ]
+        },
+        {
+          "name": "isInvokeAwaiter",
+          "startLine": 231,
+          "endLine": 246,
+          "params": [
+            "invoke"
+          ]
+        },
+        {
+          "name": "invoke",
+          "startLine": 253,
+          "endLine": 304,
+          "params": [
+            "fetcher"
+          ]
+        },
+        {
+          "name": "create",
+          "startLine": 306,
+          "endLine": 327,
+          "params": []
+        },
+        {
+          "name": "withManifest",
+          "startLine": 337,
+          "endLine": 355,
+          "params": []
+        },
+        {
+          "name": "proxyFor",
+          "startLine": 364,
+          "endLine": 371,
+          "params": [
+            "invoker"
+          ]
+        },
+        {
+          "name": "proxy",
+          "startLine": 376,
+          "endLine": 380,
+          "params": [
+            "fetcher"
+          ]
+        },
+        {
+          "name": "forApp",
+          "startLine": 391,
+          "endLine": 399,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "InvokeError",
+          "startLine": 100,
+          "endLine": 109,
+          "methods": [
+            "constructor"
+          ],
+          "properties": [
+            "correlationId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isStreamProps",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "isEventStreamResponse",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "invokeKey",
+          "line": 175,
+          "isDefault": false
+        },
+        {
+          "name": "invoke",
+          "line": 253,
+          "isDefault": false
+        },
+        {
+          "name": "create",
+          "line": 306,
+          "isDefault": false
+        },
+        {
+          "name": "withManifest",
+          "line": 337,
+          "isDefault": false
+        },
+        {
+          "name": "proxyFor",
+          "line": 364,
+          "isDefault": false
+        },
+        {
+          "name": "proxy",
+          "line": 376,
+          "isDefault": false
+        },
+        {
+          "name": "forApp",
+          "line": 391,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isStreamProps",
+          "callee": "Boolean",
+          "lineNumber": 38
+        },
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 106
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "console.warn",
+          "lineNumber": 116
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "headers.set",
+          "lineNumber": 124
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "headers.has",
+          "lineNumber": 126
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "console.warn",
+          "lineNumber": 127
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "headers.delete",
+          "lineNumber": 130
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "headers.has",
+          "lineNumber": 133
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "headers.set",
+          "lineNumber": 134
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "headers.get",
+          "lineNumber": 137
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "JSON.stringify",
+          "lineNumber": 138
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "propsToFormData",
+          "lineNumber": 140
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "fetcher",
+          "lineNumber": 143
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "response.headers.get",
+          "lineNumber": 155
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "readFromStream",
+          "lineNumber": 156
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "response.json",
+          "lineNumber": 158
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "response.text",
+          "lineNumber": 161
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "response.headers.get",
+          "lineNumber": 162
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "JSON.parse",
+          "lineNumber": 163
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "response.headers.get",
+          "lineNumber": 166
+        },
+        {
+          "caller": "fetchWithProps",
+          "callee": "response.headers.get",
+          "lineNumber": 171
+        },
+        {
+          "caller": "invokeKey",
+          "callee": "fetchWithProps",
+          "lineNumber": 179
+        },
+        {
+          "caller": "batchInvoke",
+          "callee": "fetchWithProps",
+          "lineNumber": 182
+        },
+        {
+          "caller": "invoke",
+          "callee": "invokeKey",
+          "lineNumber": 281
+        },
+        {
+          "caller": "invoke",
+          "callee": "Object.entries",
+          "lineNumber": 290
+        },
+        {
+          "caller": "invoke",
+          "callee": "isInvokeAwaiter",
+          "lineNumber": 291
+        },
+        {
+          "caller": "invoke",
+          "callee": "batchInvoke",
+          "lineNumber": 297
+        },
+        {
+          "caller": "invoke",
+          "callee": "batchInvoke",
+          "lineNumber": 301
+        },
+        {
+          "caller": "create",
+          "callee": "invokeKey",
+          "lineNumber": 327
+        },
+        {
+          "caller": "withManifest",
+          "callee": "invoke",
+          "lineNumber": 344
+        },
+        {
+          "caller": "withManifest",
+          "callee": "create",
+          "lineNumber": 353
+        },
+        {
+          "caller": "proxyFor",
+          "callee": "newHandler",
+          "lineNumber": 369
+        },
+        {
+          "caller": "proxyFor",
+          "callee": "invoker",
+          "lineNumber": 369
+        },
+        {
+          "caller": "proxy",
+          "callee": "proxyFor",
+          "lineNumber": 379
+        },
+        {
+          "caller": "proxy",
+          "callee": "invoke",
+          "lineNumber": 379
+        },
+        {
+          "caller": "forApp",
+          "callee": "withManifest",
+          "lineNumber": 394
+        },
+        {
+          "caller": "forApp",
+          "callee": "proxy",
+          "lineNumber": 397
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 9,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "components/JsonViewer.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "snippet",
+          "startLine": 11,
+          "endLine": 45,
+          "params": [
+            "json"
+          ]
+        },
+        {
+          "name": "JsonViewer",
+          "startLine": 53,
+          "endLine": 67,
+          "params": [
+            "p"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "JsonViewer",
+          "line": 53,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "snippet",
+          "callee": "([\n    [\"script\", { src: \"https://code.jquery.com/jquery-3.6.4.min.js\" }],\n    [\"script\", {\n      src:\n        \"https://cdnjs.cloudflare.com/ajax/libs/jquery-jsonview/1.2.3/jquery.jsonview.min.js\",\n    }],\n    [\"link\", {\n      href:\n        \"https://cdnjs.cloudflare.com/ajax/libs/jquery-jsonview/1.2.3/jquery.jsonview.min.css\",\n      type: \"text/css\",\n      rel: \"stylesheet\",\n    }],\n  ] as const).reduce",
+          "lineNumber": 12
+        },
+        {
+          "caller": "snippet",
+          "callee": "document.createElement",
+          "lineNumber": 25
+        },
+        {
+          "caller": "snippet",
+          "callee": "Object.entries(attributes).forEach",
+          "lineNumber": 26
+        },
+        {
+          "caller": "snippet",
+          "callee": "Object.entries",
+          "lineNumber": 26
+        },
+        {
+          "caller": "snippet",
+          "callee": "n.setAttribute",
+          "lineNumber": 27
+        },
+        {
+          "caller": "snippet",
+          "callee": "node.addEventListener",
+          "lineNumber": 31
+        },
+        {
+          "caller": "snippet",
+          "callee": "document.head.appendChild",
+          "lineNumber": 31
+        },
+        {
+          "caller": "snippet",
+          "callee": "document.head.appendChild",
+          "lineNumber": 34
+        },
+        {
+          "caller": "snippet",
+          "callee": "node?.addEventListener",
+          "lineNumber": 40
+        },
+        {
+          "caller": "snippet",
+          "callee": "(globalThis.window as any).jQuery(\"#json-renderer\").JSONView",
+          "lineNumber": 43
+        },
+        {
+          "caller": "snippet",
+          "callee": "(globalThis.window as any).jQuery",
+          "lineNumber": 43
+        },
+        {
+          "caller": "JsonViewer",
+          "callee": "useFramework",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "components/PreviewNotAvailable.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 5,
+      "functions": [
+        {
+          "name": "PreviewNotAvailable",
+          "startLine": 4,
+          "endLine": 6,
+          "params": [
+            "{ block }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PreviewNotAvailable",
+          "line": 4,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "components/StubSection.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 13,
+      "functions": [
+        {
+          "name": "StubSection",
+          "startLine": 8,
+          "endLine": 12,
+          "params": [
+            "{ component }"
+          ]
+        },
+        {
+          "name": "Empty",
+          "startLine": 14,
+          "endLine": 16,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "StubSection",
+          "line": 8,
+          "isDefault": true
+        },
+        {
+          "name": "Empty",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "components/section.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 290,
+      "nonEmptyLines": 267,
+      "functions": [
+        {
+          "name": "getSectionID",
+          "startLine": 42,
+          "endLine": 51,
+          "params": [
+            "resolveChain"
+          ]
+        },
+        {
+          "name": "isPreview",
+          "startLine": 53,
+          "endLine": 54,
+          "params": [
+            "[head]"
+          ]
+        },
+        {
+          "name": "alwaysThrow",
+          "startLine": 140,
+          "endLine": 143,
+          "params": [
+            "err"
+          ]
+        },
+        {
+          "name": "withSection",
+          "startLine": 145,
+          "endLine": 290,
+          "params": [
+            "resolver",
+            "ComponentFunc",
+            "LoadingFallback",
+            "ErrorFallback",
+            "loaderProps"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ErrorBoundary",
+          "startLine": 69,
+          "endLine": 120,
+          "methods": [
+            "getDerivedStateFromError",
+            "render"
+          ],
+          "properties": [
+            "state"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SectionContext",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "getSectionID",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "ErrorBoundary",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "alwaysThrow",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "withSection",
+          "line": 145,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getSectionID",
+          "callee": "hasher.hash",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getSectionID",
+          "callee": "hasher.hash",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getSectionID",
+          "callee": "hasher.result",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getSectionID",
+          "callee": "hasher.reset",
+          "lineNumber": 48
+        },
+        {
+          "caller": "render",
+          "callee": "logger.error",
+          "lineNumber": 94
+        },
+        {
+          "caller": "render",
+          "callee": "console.error",
+          "lineNumber": 101
+        },
+        {
+          "caller": "withSection",
+          "callee": "getSectionID",
+          "lineNumber": 175
+        },
+        {
+          "caller": "withSection",
+          "callee": "ctx.resolveChain.findLast((chain) => chain.type === \"resolver\")\n        ?.value?.toString",
+          "lineNumber": 183
+        },
+        {
+          "caller": "withSection",
+          "callee": "ctx.resolveChain.findLast",
+          "lineNumber": 183
+        },
+        {
+          "caller": "withSection",
+          "callee": "Context.active",
+          "lineNumber": 191
+        },
+        {
+          "caller": "withSection",
+          "callee": "useContext",
+          "lineNumber": 194
+        },
+        {
+          "caller": "withSection",
+          "callee": "useFramework",
+          "lineNumber": 196
+        },
+        {
+          "caller": "device",
+          "callee": "deviceOf",
+          "lineNumber": 217
+        },
+        {
+          "caller": "withSection",
+          "callee": "isPreview",
+          "lineNumber": 225
+        },
+        {
+          "caller": "withSection",
+          "callee": "JSON.stringify",
+          "lineNumber": 226
+        },
+        {
+          "caller": "withSection",
+          "callee": "Reflect.get",
+          "lineNumber": 243
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "engine/block.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 204,
+      "nonEmptyLines": 181,
+      "functions": [
+        {
+          "name": "isResolvableOf",
+          "startLine": 170,
+          "endLine": 179,
+          "params": [
+            "key",
+            "v"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isResolvableOf",
+          "line": 170,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/core/hints.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "traverseObject",
+          "startLine": 14,
+          "endLine": 26,
+          "params": [
+            "obj"
+          ]
+        },
+        {
+          "name": "traverseArray",
+          "startLine": 28,
+          "endLine": 40,
+          "params": [
+            "arr"
+          ]
+        },
+        {
+          "name": "traverseAny",
+          "startLine": 42,
+          "endLine": 56,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "traverse",
+          "startLine": 58,
+          "endLine": 64,
+          "params": [
+            "hints",
+            "[id, resolvable]"
+          ]
+        },
+        {
+          "name": "genHints",
+          "startLine": 72,
+          "endLine": 79,
+          "params": [
+            "resolvableMap"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "traverseAny",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "genHints",
+          "line": 72,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "traverseObject",
+          "callee": "Object.entries",
+          "lineNumber": 18
+        },
+        {
+          "caller": "traverseObject",
+          "callee": "traverseAny",
+          "lineNumber": 19
+        },
+        {
+          "caller": "traverseArray",
+          "callee": "traverseAny",
+          "lineNumber": 33
+        },
+        {
+          "caller": "traverseAny",
+          "callee": "isResolved",
+          "lineNumber": 45
+        },
+        {
+          "caller": "traverseAny",
+          "callee": "isResolvable",
+          "lineNumber": 48
+        },
+        {
+          "caller": "traverseAny",
+          "callee": "Array.isArray",
+          "lineNumber": 49
+        },
+        {
+          "caller": "traverseAny",
+          "callee": "traverseArray",
+          "lineNumber": 50
+        },
+        {
+          "caller": "traverseAny",
+          "callee": "traverseObject",
+          "lineNumber": 53
+        },
+        {
+          "caller": "traverse",
+          "callee": "traverseObject",
+          "lineNumber": 62
+        },
+        {
+          "caller": "genHints",
+          "callee": "Object.entries(resolvableMap).reduce",
+          "lineNumber": 75
+        },
+        {
+          "caller": "genHints",
+          "callee": "Object.entries",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/core/mod.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 230,
+      "nonEmptyLines": 212,
+      "functions": [
+        {
+          "name": "withOverrides",
+          "startLine": 46,
+          "endLine": 59,
+          "params": [
+            "overrides",
+            "resolvables"
+          ]
+        },
+        {
+          "name": "resolverIdFromResolveChain",
+          "startLine": 66,
+          "endLine": 82,
+          "params": [
+            "chain"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ReleaseResolver",
+          "startLine": 84,
+          "endLine": 230,
+          "methods": [
+            "constructor",
+            "getResolvers"
+          ],
+          "properties": [
+            "release",
+            "resolvers",
+            "resolvables",
+            "danglingRecover",
+            "runOncePerRelease",
+            "resolveHints",
+            "_cachedResolvers",
+            "_resolveIdCounter",
+            "with",
+            "resolverFor",
+            "resolve"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolverIdFromResolveChain",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "ReleaseResolver",
+          "line": 84,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "withOverrides",
+          "callee": "Object.entries",
+          "lineNumber": 51
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.release.onChange",
+          "lineNumber": 104
+        },
+        {
+          "caller": "constructor",
+          "callee": "dispatchEvent",
+          "lineNumber": 105
+        },
+        {
+          "caller": "getResolvers",
+          "callee": "resolve",
+          "lineNumber": 134
+        },
+        {
+          "caller": "_resolve",
+          "callee": "innerResolver",
+          "lineNumber": 221
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,2791 @@
+{
+  "name": "@deco/deco",
+  "description": "Git-based Visual CMS and full-stack TypeScript framework that generates content editor UIs from TypeScript interfaces, using Preact for server-side JSX rendering and HTMX for client-side interactivity. Note: this project has over 100 source files; consider scoping analysis to a subdirectory for faster results.",
+  "languages": [
+    "json",
+    "markdown",
+    "txt",
+    "typescript",
+    "unknown",
+    "yaml"
+  ],
+  "frameworks": [
+    "Preact",
+    "Hono",
+    "Fresh",
+    "HTMX",
+    "OpenTelemetry",
+    "GitHub Actions"
+  ],
+  "files": [
+    {
+      "path": ".gitattributes",
+      "language": "unknown",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".github/release.yaml",
+      "language": "yaml",
+      "sizeLines": 20,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".github/workflows/ci.yaml",
+      "language": "yaml",
+      "sizeLines": 49,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/issues.yaml",
+      "language": "yaml",
+      "sizeLines": 18,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/publish-ai.yaml",
+      "language": "yaml",
+      "sizeLines": 188,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/publish.yaml",
+      "language": "yaml",
+      "sizeLines": 156,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/release.yaml",
+      "language": "yaml",
+      "sizeLines": 45,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/releaser.yaml",
+      "language": "yaml",
+      "sizeLines": 375,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".github/workflows/update.yml",
+      "language": "yaml",
+      "sizeLines": 20,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".understand-anything/config.json",
+      "language": "json",
+      "sizeLines": 0,
+      "fileCategory": "config"
+    },
+    {
+      "path": "blocks/account.ts",
+      "language": "typescript",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "blocks/action.ts",
+      "language": "typescript",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "blocks/app.ts",
+      "language": "typescript",
+      "sizeLines": 534,
+      "fileCategory": "code"
+    },
+    {
+      "path": "blocks/appsUtil.ts",
+      "language": "typescript",
+      "sizeLines": 169,
+      "fileCategory": "code"
+    },
+    {
+      "path": "blocks/flag.ts",
+      "language": "typescript",
+      "sizeLines": 123,
+      "fileCategory": "code"
+    },
+    {
+      "path": "blocks/function.ts",
+      "language": "typescript",
+      "sizeLines": 73,
+      "fileCategory": "code"
+    },
+    {
+      "path": "blocks/handler.ts",
+      "language": "typescript",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": "blocks/index.ts",
+      "language": "typescript",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "blocks/loader.ts",
+      "language": "typescript",
+      "sizeLines": 423,
+      "fileCategory": "code"
+    },
+    {
+      "path": "blocks/matcher.ts",
+      "language": "typescript",
+      "sizeLines": 241,
+      "fileCategory": "code"
+    },
+    {
+      "path": "blocks/mod.ts",
+      "language": "typescript",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "blocks/page.tsx",
+      "language": "typescript",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "blocks/propsLoader.ts",
+      "language": "typescript",
+      "sizeLines": 122,
+      "fileCategory": "code"
+    },
+    {
+      "path": "blocks/README.md",
+      "language": "markdown",
+      "sizeLines": 149,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "blocks/section.ts",
+      "language": "typescript",
+      "sizeLines": 202,
+      "fileCategory": "code"
+    },
+    {
+      "path": "blocks/utils.tsx",
+      "language": "typescript",
+      "sizeLines": 299,
+      "fileCategory": "code"
+    },
+    {
+      "path": "blocks/workflow.ts",
+      "language": "typescript",
+      "sizeLines": 142,
+      "fileCategory": "code"
+    },
+    {
+      "path": "CLAUDE.md",
+      "language": "markdown",
+      "sizeLines": 132,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "clients/formdata.ts",
+      "language": "typescript",
+      "sizeLines": 134,
+      "fileCategory": "code"
+    },
+    {
+      "path": "clients/proxy.ts",
+      "language": "typescript",
+      "sizeLines": 110,
+      "fileCategory": "code"
+    },
+    {
+      "path": "clients/withManifest.ts",
+      "language": "typescript",
+      "sizeLines": 399,
+      "fileCategory": "code"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "language": "markdown",
+      "sizeLines": 130,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "commons/jwt/engine.ts",
+      "language": "typescript",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "commons/jwt/jwks.ts",
+      "language": "typescript",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "commons/jwt/jwt.ts",
+      "language": "typescript",
+      "sizeLines": 93,
+      "fileCategory": "code"
+    },
+    {
+      "path": "commons/jwt/keys.ts",
+      "language": "typescript",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "commons/jwt/mod.ts",
+      "language": "typescript",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "commons/jwt/trusted.ts",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "commons/workflows/initialize.ts",
+      "language": "typescript",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "commons/workflows/mod.ts",
+      "language": "typescript",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "commons/workflows/types.ts",
+      "language": "typescript",
+      "sizeLines": 78,
+      "fileCategory": "code"
+    },
+    {
+      "path": "components/JsonViewer.tsx",
+      "language": "typescript",
+      "sizeLines": 67,
+      "fileCategory": "code"
+    },
+    {
+      "path": "components/LiveControls.tsx",
+      "language": "typescript",
+      "sizeLines": 196,
+      "fileCategory": "code"
+    },
+    {
+      "path": "components/PreviewNotAvailable.tsx",
+      "language": "typescript",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "components/section.tsx",
+      "language": "typescript",
+      "sizeLines": 290,
+      "fileCategory": "code"
+    },
+    {
+      "path": "components/StubSection.tsx",
+      "language": "typescript",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "language": "markdown",
+      "sizeLines": 62,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "daemon/ai/github.ts",
+      "language": "typescript",
+      "sizeLines": 210,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/ai/handlers.ts",
+      "language": "typescript",
+      "sizeLines": 231,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/ai/repoUrl.ts",
+      "language": "typescript",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/ai/task_test.ts",
+      "language": "typescript",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/ai/task.ts",
+      "language": "typescript",
+      "sizeLines": 739,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/async.ts",
+      "language": "typescript",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/auth.ts",
+      "language": "typescript",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/cache.ts",
+      "language": "typescript",
+      "sizeLines": 116,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/cmd.ts",
+      "language": "typescript",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/daemon.ts",
+      "language": "typescript",
+      "sizeLines": 109,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/fs/api.ts",
+      "language": "typescript",
+      "sizeLines": 333,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/fs/common.ts",
+      "language": "typescript",
+      "sizeLines": 146,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/fs/grep.ts",
+      "language": "typescript",
+      "sizeLines": 411,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/git.ts",
+      "language": "typescript",
+      "sizeLines": 912,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/githubApp.ts",
+      "language": "typescript",
+      "sizeLines": 351,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/loggings/stream.ts",
+      "language": "typescript",
+      "sizeLines": 114,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/main.ts",
+      "language": "typescript",
+      "sizeLines": 865,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/meta.ts",
+      "language": "typescript",
+      "sizeLines": 162,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/mod.ts",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/monitor.ts",
+      "language": "typescript",
+      "sizeLines": 252,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/pty/manager.ts",
+      "language": "typescript",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/pty/session.ts",
+      "language": "typescript",
+      "sizeLines": 185,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/realtime/app.ts",
+      "language": "typescript",
+      "sizeLines": 274,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/realtime/crdt/bit.ts",
+      "language": "typescript",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/realtime/crdt/text.ts",
+      "language": "typescript",
+      "sizeLines": 154,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/realtime/types.ts",
+      "language": "typescript",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/sandbox.ts",
+      "language": "typescript",
+      "sizeLines": 183,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/sse/api.ts",
+      "language": "typescript",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/sse/channel.ts",
+      "language": "typescript",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/tunnel.ts",
+      "language": "typescript",
+      "sizeLines": 78,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/worker.ts",
+      "language": "typescript",
+      "sizeLines": 137,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/workers/denoRun.ts",
+      "language": "typescript",
+      "sizeLines": 258,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/workers/isolate.ts",
+      "language": "typescript",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/workers/options.ts",
+      "language": "typescript",
+      "sizeLines": 11,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/workers/portpool.ts",
+      "language": "typescript",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "daemon/workers/utils.ts",
+      "language": "typescript",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "deco.ts",
+      "language": "typescript",
+      "sizeLines": 203,
+      "fileCategory": "code"
+    },
+    {
+      "path": "deno.json",
+      "language": "json",
+      "sizeLines": 106,
+      "fileCategory": "config"
+    },
+    {
+      "path": "deps.ts",
+      "language": "typescript",
+      "sizeLines": 105,
+      "fileCategory": "code"
+    },
+    {
+      "path": "dev/deno.json",
+      "language": "json",
+      "sizeLines": 13,
+      "fileCategory": "config"
+    },
+    {
+      "path": "dev/deno.ts",
+      "language": "typescript",
+      "sizeLines": 161,
+      "fileCategory": "code"
+    },
+    {
+      "path": "dev/tailwind.ts",
+      "language": "typescript",
+      "sizeLines": 185,
+      "fileCategory": "code"
+    },
+    {
+      "path": "DIFF_MAIN.md",
+      "language": "markdown",
+      "sizeLines": 212,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "engine/block.ts",
+      "language": "typescript",
+      "sizeLines": 204,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/core/hints.ts",
+      "language": "typescript",
+      "sizeLines": 79,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/core/mod.ts",
+      "language": "typescript",
+      "sizeLines": 230,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/core/README.md",
+      "language": "markdown",
+      "sizeLines": 145,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "engine/core/resolver.ts",
+      "language": "typescript",
+      "sizeLines": 775,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/core/utils.ts",
+      "language": "typescript",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/decofile/constants.ts",
+      "language": "typescript",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/decofile/deconfig.ts",
+      "language": "typescript",
+      "sizeLines": 193,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/decofile/fetcher.ts",
+      "language": "typescript",
+      "sizeLines": 251,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/decofile/fs.ts",
+      "language": "typescript",
+      "sizeLines": 170,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/decofile/fsFolder.ts",
+      "language": "typescript",
+      "sizeLines": 247,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/decofile/json.ts",
+      "language": "typescript",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/decofile/provider.ts",
+      "language": "typescript",
+      "sizeLines": 156,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/decofile/realtime.ts",
+      "language": "typescript",
+      "sizeLines": 183,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/errors.ts",
+      "language": "typescript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/importmap/_util.ts",
+      "language": "typescript",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/importmap/builder.ts",
+      "language": "typescript",
+      "sizeLines": 143,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/importmap/jsr.ts",
+      "language": "typescript",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/importmap/mod.ts",
+      "language": "typescript",
+      "sizeLines": 293,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/integrity.ts",
+      "language": "typescript",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/manifest/defaults.ts",
+      "language": "typescript",
+      "sizeLines": 216,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/manifest/fresh.ts",
+      "language": "typescript",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/manifest/manifest.ts",
+      "language": "typescript",
+      "sizeLines": 497,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/manifest/manifestBuilder.ts",
+      "language": "typescript",
+      "sizeLines": 412,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/manifest/manifestGen.ts",
+      "language": "typescript",
+      "sizeLines": 120,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/manifest/utils.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/middleware.ts",
+      "language": "typescript",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/mod.ts",
+      "language": "typescript",
+      "sizeLines": 5,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/schema/builder.ts",
+      "language": "typescript",
+      "sizeLines": 396,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/schema/comments.ts",
+      "language": "typescript",
+      "sizeLines": 160,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/schema/deps.ts",
+      "language": "typescript",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/schema/gen.ts",
+      "language": "typescript",
+      "sizeLines": 161,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/schema/lazy.ts",
+      "language": "typescript",
+      "sizeLines": 173,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/schema/merge.ts",
+      "language": "typescript",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/schema/parser.ts",
+      "language": "typescript",
+      "sizeLines": 335,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/schema/reader.ts",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/schema/schemeable.ts",
+      "language": "typescript",
+      "sizeLines": 244,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/schema/transform.ts",
+      "language": "typescript",
+      "sizeLines": 1595,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/schema/utils.ts",
+      "language": "typescript",
+      "sizeLines": 99,
+      "fileCategory": "code"
+    },
+    {
+      "path": "engine/trustedAuthority.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "hooks/mod.ts",
+      "language": "typescript",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "hooks/useDevice.ts",
+      "language": "typescript",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "hooks/usePartialSection.ts",
+      "language": "typescript",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "hooks/useScript.ts",
+      "language": "typescript",
+      "sizeLines": 102,
+      "fileCategory": "code"
+    },
+    {
+      "path": "hooks/useSection.ts",
+      "language": "typescript",
+      "sizeLines": 148,
+      "fileCategory": "code"
+    },
+    {
+      "path": "hooks/useSetEarlyHints.ts",
+      "language": "typescript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "hypervisor/main.ts",
+      "language": "typescript",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "live.gen.ts",
+      "language": "typescript",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "live.ts",
+      "language": "typescript",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "MAINTAINERS.txt",
+      "language": "txt",
+      "sizeLines": 8,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "mod.ts",
+      "language": "typescript",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "mod.web.ts",
+      "language": "typescript",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "observability/http.ts",
+      "language": "typescript",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "observability/mod.ts",
+      "language": "typescript",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "observability/observe.ts",
+      "language": "typescript",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "observability/otel/config.ts",
+      "language": "typescript",
+      "sizeLines": 175,
+      "fileCategory": "code"
+    },
+    {
+      "path": "observability/otel/context.ts",
+      "language": "typescript",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "observability/otel/instrumentation/deno-runtime.ts",
+      "language": "typescript",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "observability/otel/logger.ts",
+      "language": "typescript",
+      "sizeLines": 185,
+      "fileCategory": "code"
+    },
+    {
+      "path": "observability/otel/metrics.ts",
+      "language": "typescript",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "observability/otel/samplers/debug.ts",
+      "language": "typescript",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "observability/otel/samplers/urlBased.ts",
+      "language": "typescript",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "observability/probes/handler.ts",
+      "language": "typescript",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "observability/probes/medianLatency.ts",
+      "language": "typescript",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "observability/probes/memory.ts",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "observability/probes/reqCount.ts",
+      "language": "typescript",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "observability/probes/reqInflight.ts",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "observability/probes/uptime.ts",
+      "language": "typescript",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "plugins/deco.ts",
+      "language": "typescript",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "plugins/fresh.ts",
+      "language": "typescript",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "plugins/styles.ts",
+      "language": "typescript",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 292,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "runtime/caches/cacheWriteWorker.ts",
+      "language": "typescript",
+      "sizeLines": 94,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/caches/common.ts",
+      "language": "typescript",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/caches/compose.ts",
+      "language": "typescript",
+      "sizeLines": 117,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/caches/fileSystem.ts",
+      "language": "typescript",
+      "sizeLines": 305,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/caches/headerscache.ts",
+      "language": "typescript",
+      "sizeLines": 83,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/caches/lrucache.ts",
+      "language": "typescript",
+      "sizeLines": 104,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/caches/mod.ts",
+      "language": "typescript",
+      "sizeLines": 73,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/caches/redis.ts",
+      "language": "typescript",
+      "sizeLines": 450,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/caches/tiered.ts",
+      "language": "typescript",
+      "sizeLines": 170,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/caches/utils.ts",
+      "language": "typescript",
+      "sizeLines": 137,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/deps.ts",
+      "language": "typescript",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/errors.ts",
+      "language": "typescript",
+      "sizeLines": 79,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/features/invoke.ts",
+      "language": "typescript",
+      "sizeLines": 129,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/features/meta.ts",
+      "language": "typescript",
+      "sizeLines": 134,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/features/preview.tsx",
+      "language": "typescript",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/features/render.tsx",
+      "language": "typescript",
+      "sizeLines": 171,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/features/styles.css.ts",
+      "language": "typescript",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/fetch/fetchLog.ts",
+      "language": "typescript",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/fetch/mod.ts",
+      "language": "typescript",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/fresh/Bindings.tsx",
+      "language": "typescript",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/fresh/islands/DispatchAsyncRender.tsx",
+      "language": "typescript",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/fresh/plugin.ts",
+      "language": "typescript",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/fresh/plugin.tsx",
+      "language": "typescript",
+      "sizeLines": 127,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/handler.tsx",
+      "language": "typescript",
+      "sizeLines": 179,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/htmx/Bindings.tsx",
+      "language": "typescript",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/htmx/fileCache.ts",
+      "language": "typescript",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/htmx/FreshHeadCompat.ts",
+      "language": "typescript",
+      "sizeLines": 4,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/htmx/mod.ts",
+      "language": "typescript",
+      "sizeLines": 4,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/htmx/mod.tsx",
+      "language": "typescript",
+      "sizeLines": 143,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/htmx/Renderer.tsx",
+      "language": "typescript",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/htmx/serveStatic.ts",
+      "language": "typescript",
+      "sizeLines": 118,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/middleware.ts",
+      "language": "typescript",
+      "sizeLines": 477,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/middlewares/liveness.ts",
+      "language": "typescript",
+      "sizeLines": 125,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/mod.ts",
+      "language": "typescript",
+      "sizeLines": 291,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/routes/_meta.ts",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/routes/batchInvoke.ts",
+      "language": "typescript",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/routes/blockPreview.tsx",
+      "language": "typescript",
+      "sizeLines": 153,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/routes/entrypoint.tsx",
+      "language": "typescript",
+      "sizeLines": 118,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/routes/inspect.ts",
+      "language": "typescript",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/routes/invoke.ts",
+      "language": "typescript",
+      "sizeLines": 100,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/routes/previews.tsx",
+      "language": "typescript",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/routes/release.ts",
+      "language": "typescript",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/routes/reload.ts",
+      "language": "typescript",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/routes/render.tsx",
+      "language": "typescript",
+      "sizeLines": 137,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/routes/styles.css.ts",
+      "language": "typescript",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/routes/workflow.ts",
+      "language": "typescript",
+      "sizeLines": 86,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/utils.ts",
+      "language": "typescript",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/apps/bundle.lib.ts",
+      "language": "typescript",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/apps/bundle.ts",
+      "language": "typescript",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/apps/config.ts",
+      "language": "typescript",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/apps/context.ts",
+      "language": "typescript",
+      "sizeLines": 4,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/apps/dev.ts",
+      "language": "typescript",
+      "sizeLines": 89,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/apps/init.ts",
+      "language": "typescript",
+      "sizeLines": 93,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/apps/install.ts",
+      "language": "typescript",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/apps/link.ts",
+      "language": "typescript",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/apps/templates/app.loaders.bin.ts.ts",
+      "language": "typescript",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/apps/templates/app.mod.ts.ts",
+      "language": "typescript",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/apps/templates/deco.ts.ts",
+      "language": "typescript",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/apps/templates/deno.json.ts",
+      "language": "typescript",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/apps/uninstall.ts",
+      "language": "typescript",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/apps/unlink.ts",
+      "language": "typescript",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/apps/watcher.ts",
+      "language": "typescript",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/changelog.ts",
+      "language": "typescript",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/codemod.ts",
+      "language": "typescript",
+      "sizeLines": 734,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/deno.json",
+      "language": "json",
+      "sizeLines": 30,
+      "fileCategory": "config"
+    },
+    {
+      "path": "scripts/dev.ts",
+      "language": "typescript",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/formatter.ts",
+      "language": "typescript",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/init.ts",
+      "language": "typescript",
+      "sizeLines": 247,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/order_imports.ts",
+      "language": "typescript",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/pkg.ts",
+      "language": "typescript",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/registry.ts",
+      "language": "typescript",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/release.ts",
+      "language": "typescript",
+      "sizeLines": 127,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/run.ts",
+      "language": "typescript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/tailwindChecker.ts",
+      "language": "typescript",
+      "sizeLines": 142,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/test-sandbox-ai.ts",
+      "language": "typescript",
+      "sizeLines": 269,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/update.run.ts",
+      "language": "typescript",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/update.ts",
+      "language": "typescript",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/upgrade.ts",
+      "language": "typescript",
+      "sizeLines": 885,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/utils.ts",
+      "language": "typescript",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    },
+    {
+      "path": "types.ts",
+      "language": "typescript",
+      "sizeLines": 165,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/admin.ts",
+      "language": "typescript",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/async.ts",
+      "language": "typescript",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/cookies.ts",
+      "language": "typescript",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/dataURI.ts",
+      "language": "typescript",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/device.ts",
+      "language": "typescript",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/encoding.ts",
+      "language": "typescript",
+      "sizeLines": 17,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/fetchAPI.ts",
+      "language": "typescript",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/filesystem.ts",
+      "language": "typescript",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/hasher.ts",
+      "language": "typescript",
+      "sizeLines": 137,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/http.ts",
+      "language": "typescript",
+      "sizeLines": 227,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/invoke.server.ts",
+      "language": "typescript",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/invoke.ts",
+      "language": "typescript",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/invoke.types.ts",
+      "language": "typescript",
+      "sizeLines": 257,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/json.ts",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/log.ts",
+      "language": "typescript",
+      "sizeLines": 89,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/metabase.tsx",
+      "language": "typescript",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/mod.ts",
+      "language": "typescript",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/object.ts",
+      "language": "typescript",
+      "sizeLines": 148,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/page.ts",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/patched_fetch.ts",
+      "language": "typescript",
+      "sizeLines": 166,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/promise.ts",
+      "language": "typescript",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/rand.ts",
+      "language": "typescript",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/segment.ts",
+      "language": "typescript",
+      "sizeLines": 51,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/stat.ts",
+      "language": "typescript",
+      "sizeLines": 244,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/sync.ts",
+      "language": "typescript",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/timings.ts",
+      "language": "typescript",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/unique.ts",
+      "language": "typescript",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/userAgent.ts",
+      "language": "typescript",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "utils/vary.ts",
+      "language": "typescript",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    }
+  ],
+  "totalFiles": 272,
+  "filteredByIgnore": 14,
+  "estimatedComplexity": "large",
+  "importMap": {
+    ".gitattributes": [],
+    ".github/release.yaml": [],
+    ".github/workflows/ci.yaml": [],
+    ".github/workflows/issues.yaml": [],
+    ".github/workflows/publish-ai.yaml": [],
+    ".github/workflows/publish.yaml": [],
+    ".github/workflows/release.yaml": [],
+    ".github/workflows/releaser.yaml": [],
+    ".github/workflows/update.yml": [],
+    ".understand-anything/.understandignore": [],
+    ".understand-anything/config.json": [],
+    "blocks/account.ts": [
+      "components/JsonViewer.tsx",
+      "engine/block.ts"
+    ],
+    "blocks/action.ts": [
+      "blocks/utils.tsx",
+      "components/JsonViewer.tsx",
+      "engine/block.ts"
+    ],
+    "blocks/app.ts": [
+      "blocks/appsUtil.ts",
+      "blocks/index.ts",
+      "blocks/loader.ts",
+      "blocks/propsLoader.ts",
+      "blocks/section.ts",
+      "blocks/utils.tsx",
+      "engine/block.ts",
+      "engine/core/resolver.ts",
+      "engine/core/utils.ts",
+      "engine/importmap/builder.ts",
+      "engine/middleware.ts",
+      "types.ts"
+    ],
+    "blocks/appsUtil.ts": [
+      "blocks/utils.tsx",
+      "engine/block.ts",
+      "engine/core/resolver.ts",
+      "engine/core/utils.ts",
+      "engine/manifest/defaults.ts",
+      "engine/manifest/manifest.ts",
+      "engine/middleware.ts",
+      "types.ts"
+    ],
+    "blocks/flag.ts": [
+      "blocks/matcher.ts",
+      "blocks/utils.tsx",
+      "components/JsonViewer.tsx",
+      "engine/block.ts",
+      "engine/core/resolver.ts",
+      "utils/userAgent.ts"
+    ],
+    "blocks/function.ts": [
+      "blocks/handler.ts",
+      "blocks/loader.ts",
+      "blocks/utils.tsx",
+      "components/JsonViewer.tsx",
+      "engine/block.ts",
+      "engine/manifest/manifest.ts",
+      "types.ts"
+    ],
+    "blocks/handler.ts": [
+      "blocks/utils.tsx",
+      "deps.ts",
+      "engine/block.ts",
+      "engine/core/resolver.ts",
+      "engine/core/utils.ts",
+      "types.ts"
+    ],
+    "blocks/index.ts": [
+      "blocks/account.ts",
+      "blocks/action.ts",
+      "blocks/app.ts",
+      "blocks/flag.ts",
+      "blocks/function.ts",
+      "blocks/handler.ts",
+      "blocks/loader.ts",
+      "blocks/matcher.ts",
+      "blocks/page.tsx",
+      "blocks/section.ts",
+      "blocks/workflow.ts",
+      "engine/block.ts"
+    ],
+    "blocks/loader.ts": [
+      "blocks/handler.ts",
+      "blocks/utils.tsx",
+      "components/JsonViewer.tsx",
+      "deco.ts",
+      "deps.ts",
+      "engine/block.ts",
+      "engine/core/resolver.ts",
+      "engine/core/utils.ts",
+      "engine/decofile/provider.ts",
+      "engine/errors.ts",
+      "engine/middleware.ts",
+      "mod.ts",
+      "observability/otel/config.ts",
+      "observability/otel/metrics.ts",
+      "runtime/caches/mod.ts",
+      "runtime/caches/utils.ts",
+      "utils/vary.ts"
+    ],
+    "blocks/matcher.ts": [
+      "blocks/app.ts",
+      "blocks/handler.ts",
+      "blocks/utils.tsx",
+      "clients/withManifest.ts",
+      "deps.ts",
+      "engine/block.ts",
+      "engine/core/resolver.ts",
+      "engine/core/utils.ts",
+      "utils/invoke.types.ts",
+      "utils/userAgent.ts"
+    ],
+    "blocks/mod.ts": [],
+    "blocks/page.tsx": [
+      "blocks/section.ts",
+      "engine/block.ts"
+    ],
+    "blocks/propsLoader.ts": [
+      "blocks/utils.tsx",
+      "deps.ts",
+      "engine/core/utils.ts",
+      "types.ts"
+    ],
+    "blocks/README.md": [],
+    "blocks/section.ts": [
+      "blocks/app.ts",
+      "blocks/handler.ts",
+      "blocks/propsLoader.ts",
+      "blocks/utils.tsx",
+      "components/section.tsx",
+      "components/StubSection.tsx",
+      "deco.ts",
+      "deps.ts",
+      "engine/block.ts",
+      "engine/core/resolver.ts",
+      "engine/errors.ts"
+    ],
+    "blocks/utils.tsx": [
+      "blocks/app.ts",
+      "blocks/handler.ts",
+      "blocks/loader.ts",
+      "clients/withManifest.ts",
+      "components/section.tsx",
+      "deco.ts",
+      "engine/block.ts",
+      "engine/core/resolver.ts",
+      "engine/core/utils.ts",
+      "engine/middleware.ts",
+      "types.ts",
+      "utils/http.ts",
+      "utils/invoke.server.ts",
+      "utils/invoke.types.ts",
+      "utils/userAgent.ts",
+      "utils/vary.ts"
+    ],
+    "blocks/workflow.ts": [
+      "blocks/handler.ts",
+      "blocks/utils.tsx",
+      "deps.ts",
+      "engine/block.ts",
+      "types.ts",
+      "utils/invoke.types.ts",
+      "utils/object.ts"
+    ],
+    "CLAUDE.md": [],
+    "clients/formdata.ts": [],
+    "clients/proxy.ts": [
+      "clients/withManifest.ts",
+      "types.ts",
+      "utils/invoke.types.ts",
+      "utils/object.ts",
+      "utils/promise.ts"
+    ],
+    "clients/withManifest.ts": [
+      "blocks/app.ts",
+      "clients/formdata.ts",
+      "clients/proxy.ts",
+      "mod.ts",
+      "utils/invoke.types.ts",
+      "utils/object.ts"
+    ],
+    "CODE_OF_CONDUCT.md": [],
+    "commons/jwt/engine.ts": [
+      "commons/jwt/jwt.ts"
+    ],
+    "commons/jwt/jwks.ts": [
+      "commons/jwt/jwt.ts",
+      "commons/jwt/keys.ts"
+    ],
+    "commons/jwt/jwt.ts": [
+      "commons/jwt/keys.ts"
+    ],
+    "commons/jwt/keys.ts": [],
+    "commons/jwt/mod.ts": [],
+    "commons/jwt/trusted.ts": [
+      "commons/jwt/jwt.ts"
+    ],
+    "commons/workflows/initialize.ts": [
+      "deco.ts",
+      "deps.ts"
+    ],
+    "commons/workflows/mod.ts": [],
+    "commons/workflows/types.ts": [
+      "deps.ts",
+      "engine/core/resolver.ts"
+    ],
+    "components/JsonViewer.tsx": [
+      "runtime/handler.tsx"
+    ],
+    "components/LiveControls.tsx": [
+      "deco.ts",
+      "deps.ts",
+      "types.ts"
+    ],
+    "components/PreviewNotAvailable.tsx": [],
+    "components/section.tsx": [
+      "blocks/handler.ts",
+      "blocks/utils.tsx",
+      "deco.ts",
+      "deps.ts",
+      "engine/block.ts",
+      "engine/core/resolver.ts",
+      "engine/errors.ts",
+      "observability/otel/config.ts",
+      "runtime/handler.tsx",
+      "utils/userAgent.ts"
+    ],
+    "components/StubSection.tsx": [],
+    "CONTRIBUTING.md": [],
+    "daemon/ai/github.ts": [],
+    "daemon/ai/handlers.ts": [
+      "daemon/ai/task.ts"
+    ],
+    "daemon/ai/repoUrl.ts": [],
+    "daemon/ai/task_test.ts": [
+      "daemon/ai/repoUrl.ts"
+    ],
+    "daemon/ai/task.ts": [
+      "daemon/ai/github.ts",
+      "daemon/ai/repoUrl.ts",
+      "daemon/git.ts",
+      "daemon/githubApp.ts",
+      "daemon/monitor.ts",
+      "daemon/pty/session.ts"
+    ],
+    "daemon/async.ts": [],
+    "daemon/auth.ts": [
+      "commons/jwt/engine.ts",
+      "commons/jwt/jwt.ts",
+      "commons/jwt/trusted.ts"
+    ],
+    "daemon/cache.ts": [],
+    "daemon/cmd.ts": [
+      "daemon/loggings/stream.ts"
+    ],
+    "daemon/daemon.ts": [
+      "daemon/auth.ts",
+      "daemon/cmd.ts",
+      "daemon/fs/api.ts",
+      "daemon/git.ts",
+      "daemon/loggings/stream.ts",
+      "daemon/realtime/app.ts",
+      "daemon/sse/api.ts",
+      "engine/decofile/constants.ts"
+    ],
+    "daemon/fs/api.ts": [
+      "daemon/async.ts",
+      "daemon/fs/common.ts",
+      "daemon/fs/grep.ts",
+      "daemon/git.ts",
+      "daemon/main.ts",
+      "daemon/meta.ts",
+      "daemon/sse/channel.ts",
+      "runtime/deps.ts"
+    ],
+    "daemon/fs/common.ts": [],
+    "daemon/fs/grep.ts": [
+      "daemon/main.ts"
+    ],
+    "daemon/git.ts": [
+      "daemon/async.ts",
+      "daemon/daemon.ts",
+      "daemon/githubApp.ts",
+      "daemon/loggings/stream.ts",
+      "daemon/main.ts"
+    ],
+    "daemon/githubApp.ts": [],
+    "daemon/loggings/stream.ts": [],
+    "daemon/main.ts": [
+      "daemon/ai/handlers.ts",
+      "daemon/auth.ts",
+      "daemon/cache.ts",
+      "daemon/daemon.ts",
+      "daemon/fs/api.ts",
+      "daemon/git.ts",
+      "daemon/loggings/stream.ts",
+      "daemon/meta.ts",
+      "daemon/monitor.ts",
+      "daemon/sandbox.ts",
+      "daemon/tunnel.ts",
+      "daemon/worker.ts",
+      "daemon/workers/portpool.ts",
+      "deno.json",
+      "engine/decofile/constants.ts",
+      "engine/decofile/fsFolder.ts",
+      "scripts/apps/bundle.lib.ts",
+      "utils/async.ts"
+    ],
+    "daemon/meta.ts": [
+      "daemon/sse/channel.ts",
+      "daemon/worker.ts",
+      "engine/block.ts",
+      "types.ts"
+    ],
+    "daemon/mod.ts": [],
+    "daemon/monitor.ts": [],
+    "daemon/pty/manager.ts": [
+      "daemon/pty/session.ts"
+    ],
+    "daemon/pty/session.ts": [],
+    "daemon/realtime/app.ts": [
+      "daemon/git.ts",
+      "daemon/realtime/crdt/bit.ts",
+      "daemon/realtime/crdt/text.ts",
+      "daemon/realtime/types.ts"
+    ],
+    "daemon/realtime/crdt/bit.ts": [],
+    "daemon/realtime/crdt/text.ts": [
+      "daemon/realtime/crdt/bit.ts",
+      "daemon/realtime/types.ts"
+    ],
+    "daemon/realtime/types.ts": [],
+    "daemon/sandbox.ts": [
+      "daemon/daemon.ts"
+    ],
+    "daemon/sse/api.ts": [
+      "daemon/fs/api.ts",
+      "daemon/meta.ts",
+      "daemon/sse/channel.ts",
+      "daemon/worker.ts",
+      "runtime/deps.ts"
+    ],
+    "daemon/sse/channel.ts": [
+      "daemon/fs/common.ts",
+      "daemon/meta.ts",
+      "daemon/worker.ts"
+    ],
+    "daemon/tunnel.ts": [],
+    "daemon/worker.ts": [
+      "daemon/sse/channel.ts",
+      "daemon/workers/denoRun.ts"
+    ],
+    "daemon/workers/denoRun.ts": [
+      "daemon/loggings/stream.ts",
+      "daemon/workers/isolate.ts",
+      "daemon/workers/portpool.ts",
+      "daemon/workers/utils.ts",
+      "deco.ts"
+    ],
+    "daemon/workers/isolate.ts": [
+      "daemon/loggings/stream.ts"
+    ],
+    "daemon/workers/options.ts": [],
+    "daemon/workers/portpool.ts": [],
+    "daemon/workers/utils.ts": [],
+    "deco.ts": [
+      "blocks/app.ts",
+      "blocks/utils.tsx",
+      "engine/block.ts",
+      "engine/core/mod.ts",
+      "engine/decofile/provider.ts",
+      "types.ts",
+      "utils/patched_fetch.ts",
+      "utils/rand.ts"
+    ],
+    "deno.json": [],
+    "deps.ts": [],
+    "dev/deno.json": [],
+    "dev/deno.ts": [],
+    "dev/tailwind.ts": [
+      "dev/deno.ts"
+    ],
+    "DIFF_MAIN.md": [],
+    "engine/block.ts": [
+      "deps.ts",
+      "engine/core/hints.ts",
+      "engine/core/resolver.ts",
+      "engine/core/utils.ts",
+      "engine/manifest/defaults.ts",
+      "engine/middleware.ts",
+      "engine/schema/transform.ts",
+      "types.ts"
+    ],
+    "engine/core/hints.ts": [
+      "engine/core/resolver.ts"
+    ],
+    "engine/core/mod.ts": [
+      "engine/core/hints.ts",
+      "engine/core/resolver.ts",
+      "engine/decofile/provider.ts",
+      "utils/sync.ts"
+    ],
+    "engine/core/README.md": [],
+    "engine/core/resolver.ts": [
+      "deps.ts",
+      "engine/core/hints.ts",
+      "engine/core/mod.ts",
+      "engine/core/utils.ts",
+      "utils/object.ts",
+      "utils/timings.ts"
+    ],
+    "engine/core/utils.ts": [],
+    "engine/decofile/constants.ts": [],
+    "engine/decofile/deconfig.ts": [
+      "engine/decofile/fsFolder.ts"
+    ],
+    "engine/decofile/fetcher.ts": [
+      "deco.ts",
+      "engine/decofile/deconfig.ts",
+      "engine/decofile/fs.ts",
+      "engine/decofile/fsFolder.ts",
+      "engine/decofile/provider.ts",
+      "engine/decofile/realtime.ts",
+      "engine/trustedAuthority.ts",
+      "utils/rand.ts"
+    ],
+    "engine/decofile/fs.ts": [
+      "engine/decofile/json.ts",
+      "engine/decofile/provider.ts",
+      "engine/decofile/realtime.ts",
+      "utils/filesystem.ts",
+      "utils/hasher.ts",
+      "utils/json.ts"
+    ],
+    "engine/decofile/fsFolder.ts": [
+      "blocks/index.ts",
+      "engine/decofile/constants.ts",
+      "engine/decofile/provider.ts",
+      "engine/decofile/realtime.ts",
+      "utils/filesystem.ts",
+      "utils/hasher.ts",
+      "utils/json.ts"
+    ],
+    "engine/decofile/json.ts": [],
+    "engine/decofile/provider.ts": [
+      "engine/core/resolver.ts",
+      "engine/core/utils.ts",
+      "engine/decofile/constants.ts",
+      "engine/decofile/fetcher.ts",
+      "engine/decofile/fs.ts"
+    ],
+    "engine/decofile/realtime.ts": [
+      "engine/core/resolver.ts",
+      "engine/decofile/provider.ts",
+      "observability/otel/config.ts",
+      "utils/rand.ts"
+    ],
+    "engine/errors.ts": [],
+    "engine/importmap/_util.ts": [],
+    "engine/importmap/builder.ts": [
+      "engine/importmap/jsr.ts",
+      "engine/importmap/mod.ts"
+    ],
+    "engine/importmap/jsr.ts": [],
+    "engine/importmap/mod.ts": [
+      "engine/importmap/_util.ts"
+    ],
+    "engine/integrity.ts": [
+      "engine/core/resolver.ts"
+    ],
+    "engine/manifest/defaults.ts": [
+      "components/PreviewNotAvailable.tsx",
+      "engine/core/mod.ts",
+      "engine/core/resolver.ts",
+      "utils/object.ts"
+    ],
+    "engine/manifest/fresh.ts": [
+      "engine/core/resolver.ts",
+      "engine/manifest/defaults.ts",
+      "engine/manifest/manifest.ts"
+    ],
+    "engine/manifest/manifest.ts": [
+      "blocks/app.ts",
+      "blocks/appsUtil.ts",
+      "blocks/index.ts",
+      "blocks/utils.tsx",
+      "deco.ts",
+      "engine/core/mod.ts",
+      "engine/core/resolver.ts",
+      "engine/decofile/constants.ts",
+      "engine/decofile/fs.ts",
+      "engine/decofile/provider.ts",
+      "engine/integrity.ts",
+      "engine/manifest/defaults.ts",
+      "engine/manifest/fresh.ts",
+      "engine/manifest/utils.ts",
+      "runtime/utils.ts",
+      "types.ts",
+      "utils/promise.ts",
+      "utils/rand.ts"
+    ],
+    "engine/manifest/manifestBuilder.ts": [
+      "blocks/appsUtil.ts",
+      "engine/importmap/builder.ts",
+      "types.ts"
+    ],
+    "engine/manifest/manifestGen.ts": [
+      "blocks/appsUtil.ts",
+      "blocks/index.ts",
+      "engine/block.ts",
+      "engine/importmap/builder.ts",
+      "engine/manifest/manifestBuilder.ts",
+      "utils/filesystem.ts"
+    ],
+    "engine/manifest/utils.ts": [],
+    "engine/middleware.ts": [
+      "engine/core/resolver.ts"
+    ],
+    "engine/mod.ts": [],
+    "engine/schema/builder.ts": [
+      "deps.ts",
+      "engine/importmap/builder.ts",
+      "engine/schema/merge.ts",
+      "engine/schema/schemeable.ts",
+      "engine/schema/transform.ts"
+    ],
+    "engine/schema/comments.ts": [
+      "deps.ts",
+      "engine/schema/deps.ts",
+      "engine/schema/utils.ts"
+    ],
+    "engine/schema/deps.ts": [],
+    "engine/schema/gen.ts": [
+      "blocks/app.ts",
+      "blocks/appsUtil.ts",
+      "blocks/index.ts",
+      "deps.ts",
+      "engine/block.ts",
+      "engine/importmap/builder.ts",
+      "engine/schema/builder.ts",
+      "engine/schema/parser.ts",
+      "engine/schema/transform.ts"
+    ],
+    "engine/schema/lazy.ts": [
+      "blocks/app.ts",
+      "deco.ts",
+      "deps.ts",
+      "engine/core/resolver.ts",
+      "engine/core/utils.ts",
+      "engine/schema/builder.ts",
+      "engine/schema/parser.ts",
+      "engine/schema/reader.ts",
+      "utils/admin.ts",
+      "utils/rand.ts"
+    ],
+    "engine/schema/merge.ts": [
+      "deps.ts"
+    ],
+    "engine/schema/parser.ts": [
+      "engine/schema/comments.ts",
+      "engine/schema/deps.ts"
+    ],
+    "engine/schema/reader.ts": [
+      "blocks/app.ts",
+      "deco.ts",
+      "engine/schema/gen.ts",
+      "types.ts"
+    ],
+    "engine/schema/schemeable.ts": [
+      "deps.ts",
+      "engine/schema/transform.ts"
+    ],
+    "engine/schema/transform.ts": [
+      "deps.ts",
+      "engine/block.ts",
+      "engine/importmap/builder.ts",
+      "engine/schema/comments.ts",
+      "engine/schema/deps.ts",
+      "engine/schema/parser.ts",
+      "engine/schema/utils.ts"
+    ],
+    "engine/schema/utils.ts": [],
+    "engine/trustedAuthority.ts": [],
+    "hooks/mod.ts": [],
+    "hooks/useDevice.ts": [
+      "components/section.tsx",
+      "utils/userAgent.ts"
+    ],
+    "hooks/usePartialSection.ts": [
+      "hooks/useSection.ts",
+      "runtime/fresh/islands/DispatchAsyncRender.tsx"
+    ],
+    "hooks/useScript.ts": [],
+    "hooks/useSection.ts": [
+      "components/section.tsx",
+      "deps.ts",
+      "engine/core/resolver.ts"
+    ],
+    "hooks/useSetEarlyHints.ts": [
+      "components/section.tsx"
+    ],
+    "hypervisor/main.ts": [
+      "daemon/main.ts"
+    ],
+    "live.gen.ts": [],
+    "live.ts": [],
+    "MAINTAINERS.txt": [],
+    "mod.ts": [],
+    "mod.web.ts": [],
+    "observability/http.ts": [
+      "deps.ts",
+      "observability/otel/metrics.ts"
+    ],
+    "observability/mod.ts": [],
+    "observability/observe.ts": [
+      "blocks/loader.ts",
+      "deps.ts",
+      "observability/otel/metrics.ts"
+    ],
+    "observability/otel/config.ts": [
+      "deco.ts",
+      "deno.json",
+      "deps.ts",
+      "engine/decofile/constants.ts",
+      "engine/importmap/builder.ts",
+      "observability/otel/instrumentation/deno-runtime.ts",
+      "observability/otel/logger.ts",
+      "observability/otel/samplers/debug.ts",
+      "observability/otel/samplers/urlBased.ts",
+      "utils/patched_fetch.ts"
+    ],
+    "observability/otel/context.ts": [
+      "deps.ts"
+    ],
+    "observability/otel/instrumentation/deno-runtime.ts": [
+      "deps.ts"
+    ],
+    "observability/otel/logger.ts": [
+      "deco.ts",
+      "deps.ts",
+      "observability/otel/context.ts"
+    ],
+    "observability/otel/metrics.ts": [
+      "deps.ts",
+      "observability/otel/config.ts"
+    ],
+    "observability/otel/samplers/debug.ts": [
+      "deps.ts",
+      "observability/otel/context.ts",
+      "types.ts"
+    ],
+    "observability/otel/samplers/urlBased.ts": [
+      "deps.ts",
+      "observability/otel/context.ts"
+    ],
+    "observability/probes/handler.ts": [],
+    "observability/probes/medianLatency.ts": [
+      "observability/probes/handler.ts",
+      "utils/stat.ts"
+    ],
+    "observability/probes/memory.ts": [
+      "observability/probes/handler.ts"
+    ],
+    "observability/probes/reqCount.ts": [
+      "observability/probes/handler.ts"
+    ],
+    "observability/probes/reqInflight.ts": [
+      "observability/probes/handler.ts"
+    ],
+    "observability/probes/uptime.ts": [
+      "deco.ts",
+      "observability/probes/handler.ts"
+    ],
+    "plugins/deco.ts": [
+      "runtime/fresh/plugin.ts"
+    ],
+    "plugins/fresh.ts": [
+      "plugins/deco.ts"
+    ],
+    "plugins/styles.ts": [],
+    "README.md": [],
+    "runtime/caches/cacheWriteWorker.ts": [],
+    "runtime/caches/common.ts": [
+      "deps.ts",
+      "observability/otel/config.ts",
+      "observability/otel/metrics.ts",
+      "runtime/caches/utils.ts"
+    ],
+    "runtime/caches/compose.ts": [
+      "observability/otel/config.ts"
+    ],
+    "runtime/caches/fileSystem.ts": [
+      "observability/otel/config.ts",
+      "runtime/caches/cacheWriteWorker.ts",
+      "runtime/caches/utils.ts"
+    ],
+    "runtime/caches/headerscache.ts": [
+      "runtime/caches/utils.ts"
+    ],
+    "runtime/caches/lrucache.ts": [
+      "runtime/caches/utils.ts"
+    ],
+    "runtime/caches/mod.ts": [
+      "runtime/caches/common.ts",
+      "runtime/caches/fileSystem.ts",
+      "runtime/caches/headerscache.ts",
+      "runtime/caches/lrucache.ts",
+      "runtime/caches/redis.ts",
+      "runtime/caches/tiered.ts"
+    ],
+    "runtime/caches/redis.ts": [
+      "runtime/caches/utils.ts"
+    ],
+    "runtime/caches/tiered.ts": [],
+    "runtime/caches/utils.ts": [],
+    "runtime/deps.ts": [
+      "blocks/page.tsx"
+    ],
+    "runtime/errors.ts": [],
+    "runtime/features/invoke.ts": [
+      "deco.ts",
+      "engine/core/resolver.ts",
+      "engine/errors.ts",
+      "observability/mod.ts",
+      "runtime/mod.ts",
+      "utils/invoke.server.ts",
+      "utils/invoke.types.ts"
+    ],
+    "runtime/features/meta.ts": [
+      "deco.ts",
+      "deno.json",
+      "engine/core/utils.ts",
+      "engine/schema/builder.ts",
+      "engine/schema/gen.ts",
+      "engine/schema/lazy.ts",
+      "engine/schema/parser.ts",
+      "types.ts"
+    ],
+    "runtime/features/preview.tsx": [
+      "blocks/page.tsx",
+      "runtime/mod.ts",
+      "types.ts"
+    ],
+    "runtime/features/render.tsx": [
+      "blocks/page.tsx",
+      "components/section.tsx",
+      "engine/core/resolver.ts",
+      "engine/errors.ts",
+      "hooks/useScript.ts",
+      "observability/mod.ts",
+      "runtime/handler.tsx",
+      "runtime/mod.ts",
+      "types.ts"
+    ],
+    "runtime/features/styles.css.ts": [],
+    "runtime/fetch/fetchLog.ts": [
+      "utils/log.ts"
+    ],
+    "runtime/fetch/mod.ts": [
+      "runtime/fetch/fetchLog.ts"
+    ],
+    "runtime/fresh/Bindings.tsx": [
+      "runtime/fresh/islands/DispatchAsyncRender.tsx"
+    ],
+    "runtime/fresh/islands/DispatchAsyncRender.tsx": [],
+    "runtime/fresh/plugin.ts": [],
+    "runtime/fresh/plugin.tsx": [
+      "runtime/fresh/Bindings.tsx",
+      "runtime/handler.tsx"
+    ],
+    "runtime/handler.tsx": [
+      "components/section.tsx",
+      "runtime/deps.ts",
+      "runtime/htmx/mod.tsx",
+      "runtime/middleware.ts",
+      "runtime/mod.ts",
+      "runtime/routes/_meta.ts",
+      "runtime/routes/batchInvoke.ts",
+      "runtime/routes/blockPreview.tsx",
+      "runtime/routes/entrypoint.tsx",
+      "runtime/routes/inspect.ts",
+      "runtime/routes/invoke.ts",
+      "runtime/routes/previews.tsx",
+      "runtime/routes/release.ts",
+      "runtime/routes/reload.ts",
+      "runtime/routes/render.tsx",
+      "runtime/routes/styles.css.ts",
+      "runtime/routes/workflow.ts",
+      "types.ts",
+      "utils/patched_fetch.ts"
+    ],
+    "runtime/htmx/Bindings.tsx": [
+      "components/section.tsx",
+      "hooks/useSection.ts"
+    ],
+    "runtime/htmx/fileCache.ts": [],
+    "runtime/htmx/FreshHeadCompat.ts": [],
+    "runtime/htmx/mod.ts": [],
+    "runtime/htmx/mod.tsx": [
+      "deco.ts",
+      "runtime/deps.ts",
+      "runtime/handler.tsx",
+      "runtime/htmx/Bindings.tsx",
+      "runtime/htmx/Renderer.tsx",
+      "runtime/htmx/serveStatic.ts",
+      "runtime/middleware.ts",
+      "types.ts"
+    ],
+    "runtime/htmx/Renderer.tsx": [
+      "runtime/deps.ts",
+      "runtime/htmx/Bindings.tsx"
+    ],
+    "runtime/htmx/serveStatic.ts": [
+      "deco.ts",
+      "runtime/deps.ts",
+      "runtime/htmx/fileCache.ts"
+    ],
+    "runtime/middleware.ts": [
+      "blocks/matcher.ts",
+      "blocks/utils.tsx",
+      "deco.ts",
+      "deps.ts",
+      "observability/http.ts",
+      "observability/mod.ts",
+      "observability/otel/context.ts",
+      "runtime/deps.ts",
+      "runtime/errors.ts",
+      "runtime/fetch/fetchLog.ts",
+      "runtime/middlewares/liveness.ts",
+      "runtime/mod.ts",
+      "types.ts",
+      "utils/admin.ts",
+      "utils/cookies.ts",
+      "utils/http.ts",
+      "utils/log.ts",
+      "utils/object.ts"
+    ],
+    "runtime/middlewares/liveness.ts": [
+      "deps.ts",
+      "observability/otel/config.ts",
+      "observability/otel/metrics.ts",
+      "observability/probes/memory.ts",
+      "observability/probes/reqCount.ts",
+      "observability/probes/reqInflight.ts",
+      "observability/probes/uptime.ts",
+      "runtime/middleware.ts"
+    ],
+    "runtime/mod.ts": [
+      "blocks/mod.ts",
+      "blocks/utils.tsx",
+      "deco.ts",
+      "deps.ts",
+      "engine/core/resolver.ts",
+      "engine/decofile/provider.ts",
+      "engine/manifest/manifest.ts",
+      "engine/manifest/utils.ts",
+      "mod.ts",
+      "observability/observe.ts",
+      "observability/otel/config.ts",
+      "observability/otel/context.ts",
+      "runtime/deps.ts",
+      "runtime/features/invoke.ts",
+      "runtime/features/meta.ts",
+      "runtime/features/preview.tsx",
+      "runtime/features/render.tsx",
+      "runtime/features/styles.css.ts",
+      "runtime/handler.tsx",
+      "types.ts",
+      "utils/http.ts",
+      "utils/invoke.server.ts",
+      "utils/timings.ts",
+      "utils/vary.ts"
+    ],
+    "runtime/routes/_meta.ts": [
+      "runtime/middleware.ts",
+      "utils/http.ts"
+    ],
+    "runtime/routes/batchInvoke.ts": [
+      "mod.ts",
+      "runtime/middleware.ts",
+      "utils/admin.ts",
+      "utils/http.ts",
+      "utils/invoke.server.ts",
+      "utils/invoke.ts",
+      "utils/invoke.types.ts"
+    ],
+    "runtime/routes/blockPreview.tsx": [
+      "blocks/page.tsx",
+      "engine/decofile/fetcher.ts",
+      "runtime/middleware.ts",
+      "runtime/mod.ts",
+      "runtime/routes/entrypoint.tsx",
+      "utils/http.ts"
+    ],
+    "runtime/routes/entrypoint.tsx": [
+      "blocks/handler.ts",
+      "blocks/page.tsx",
+      "engine/block.ts",
+      "runtime/middleware.ts",
+      "runtime/mod.ts",
+      "types.ts",
+      "utils/http.ts"
+    ],
+    "runtime/routes/inspect.ts": [
+      "deco.ts",
+      "deps.ts",
+      "runtime/middleware.ts"
+    ],
+    "runtime/routes/invoke.ts": [
+      "clients/formdata.ts",
+      "runtime/middleware.ts",
+      "utils/http.ts",
+      "utils/invoke.ts",
+      "utils/invoke.types.ts"
+    ],
+    "runtime/routes/previews.tsx": [
+      "blocks/page.tsx",
+      "components/LiveControls.tsx",
+      "deco.ts",
+      "engine/block.ts",
+      "runtime/middleware.ts",
+      "runtime/mod.ts"
+    ],
+    "runtime/routes/release.ts": [
+      "engine/trustedAuthority.ts",
+      "runtime/middleware.ts",
+      "utils/http.ts"
+    ],
+    "runtime/routes/reload.ts": [
+      "runtime/middleware.ts"
+    ],
+    "runtime/routes/render.tsx": [
+      "engine/core/resolver.ts",
+      "engine/errors.ts",
+      "runtime/middleware.ts",
+      "runtime/mod.ts",
+      "runtime/routes/entrypoint.tsx",
+      "utils/json.ts",
+      "utils/mod.ts"
+    ],
+    "runtime/routes/styles.css.ts": [
+      "runtime/middleware.ts"
+    ],
+    "runtime/routes/workflow.ts": [
+      "blocks/workflow.ts",
+      "commons/workflows/initialize.ts",
+      "commons/workflows/types.ts",
+      "deps.ts",
+      "runtime/middleware.ts",
+      "types.ts"
+    ],
+    "runtime/utils.ts": [
+      "blocks/utils.tsx",
+      "deco.ts",
+      "utils/http.ts",
+      "utils/vary.ts"
+    ],
+    "scripts/apps/bundle.lib.ts": [
+      "engine/manifest/manifestGen.ts",
+      "scripts/apps/config.ts",
+      "scripts/formatter.ts"
+    ],
+    "scripts/apps/bundle.ts": [
+      "scripts/apps/bundle.lib.ts"
+    ],
+    "scripts/apps/config.ts": [],
+    "scripts/apps/context.ts": [],
+    "scripts/apps/dev.ts": [
+      "scripts/apps/config.ts",
+      "utils/json.ts"
+    ],
+    "scripts/apps/init.ts": [
+      "scripts/apps/context.ts",
+      "scripts/registry.ts"
+    ],
+    "scripts/apps/install.ts": [
+      "scripts/apps/dev.ts"
+    ],
+    "scripts/apps/link.ts": [
+      "scripts/apps/dev.ts"
+    ],
+    "scripts/apps/templates/app.loaders.bin.ts.ts": [
+      "scripts/apps/context.ts",
+      "scripts/formatter.ts"
+    ],
+    "scripts/apps/templates/app.mod.ts.ts": [
+      "scripts/apps/context.ts",
+      "scripts/formatter.ts"
+    ],
+    "scripts/apps/templates/deco.ts.ts": [
+      "scripts/apps/context.ts",
+      "scripts/formatter.ts"
+    ],
+    "scripts/apps/templates/deno.json.ts": [
+      "scripts/apps/context.ts"
+    ],
+    "scripts/apps/uninstall.ts": [
+      "scripts/apps/dev.ts"
+    ],
+    "scripts/apps/unlink.ts": [
+      "scripts/apps/dev.ts"
+    ],
+    "scripts/apps/watcher.ts": [],
+    "scripts/changelog.ts": [],
+    "scripts/codemod.ts": [],
+    "scripts/deno.json": [],
+    "scripts/dev.ts": [
+      "deno.json"
+    ],
+    "scripts/formatter.ts": [],
+    "scripts/init.ts": [
+      "engine/decofile/json.ts",
+      "scripts/apps/init.ts"
+    ],
+    "scripts/order_imports.ts": [
+      "utils/json.ts"
+    ],
+    "scripts/pkg.ts": [
+      "scripts/registry.ts"
+    ],
+    "scripts/registry.ts": [],
+    "scripts/release.ts": [
+      "scripts/utils.ts"
+    ],
+    "scripts/run.ts": [
+      "deno.json"
+    ],
+    "scripts/tailwindChecker.ts": [],
+    "scripts/test-sandbox-ai.ts": [],
+    "scripts/update.run.ts": [
+      "scripts/codemod.ts"
+    ],
+    "scripts/update.ts": [],
+    "scripts/upgrade.ts": [
+      "scripts/formatter.ts",
+      "scripts/registry.ts",
+      "scripts/utils.ts"
+    ],
+    "scripts/utils.ts": [],
+    "types.ts": [
+      "blocks/account.ts",
+      "blocks/action.ts",
+      "blocks/app.ts",
+      "blocks/flag.ts",
+      "blocks/function.ts",
+      "blocks/handler.ts",
+      "blocks/loader.ts",
+      "blocks/matcher.ts",
+      "blocks/page.tsx",
+      "blocks/section.ts",
+      "blocks/utils.tsx",
+      "blocks/workflow.ts",
+      "clients/withManifest.ts",
+      "deps.ts",
+      "engine/block.ts",
+      "engine/core/resolver.ts",
+      "engine/core/utils.ts",
+      "engine/decofile/provider.ts",
+      "runtime/mod.ts",
+      "utils/invoke.types.ts",
+      "utils/timings.ts"
+    ],
+    "utils/admin.ts": [
+      "deps.ts"
+    ],
+    "utils/async.ts": [],
+    "utils/cookies.ts": [],
+    "utils/dataURI.ts": [],
+    "utils/device.ts": [],
+    "utils/encoding.ts": [],
+    "utils/fetchAPI.ts": [],
+    "utils/filesystem.ts": [],
+    "utils/hasher.ts": [],
+    "utils/http.ts": [
+      "deno.json",
+      "utils/admin.ts",
+      "utils/object.ts"
+    ],
+    "utils/invoke.server.ts": [
+      "clients/proxy.ts",
+      "clients/withManifest.ts",
+      "engine/core/mod.ts",
+      "engine/core/resolver.ts",
+      "engine/manifest/defaults.ts",
+      "types.ts",
+      "utils/invoke.types.ts"
+    ],
+    "utils/invoke.ts": [
+      "clients/withManifest.ts"
+    ],
+    "utils/invoke.types.ts": [
+      "blocks/app.ts",
+      "clients/withManifest.ts",
+      "deps.ts",
+      "engine/core/utils.ts",
+      "utils/object.ts"
+    ],
+    "utils/json.ts": [],
+    "utils/log.ts": [
+      "utils/timings.ts"
+    ],
+    "utils/metabase.tsx": [
+      "engine/block.ts"
+    ],
+    "utils/mod.ts": [],
+    "utils/object.ts": [
+      "deps.ts"
+    ],
+    "utils/page.ts": [],
+    "utils/patched_fetch.ts": [
+      "deco.ts"
+    ],
+    "utils/promise.ts": [],
+    "utils/rand.ts": [],
+    "utils/segment.ts": [
+      "blocks/matcher.ts",
+      "blocks/utils.tsx",
+      "deco.ts",
+      "deps.ts"
+    ],
+    "utils/stat.ts": [],
+    "utils/sync.ts": [
+      "engine/core/utils.ts"
+    ],
+    "utils/timings.ts": [],
+    "utils/unique.ts": [],
+    "utils/userAgent.ts": [],
+    "utils/vary.ts": [
+      "engine/core/resolver.ts"
+    ]
+  }
+}

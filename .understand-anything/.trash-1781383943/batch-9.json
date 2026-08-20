@@ -1,0 +1,440 @@
+{
+  "nodes": [
+    {
+      "id": "file:runtime/mod.ts",
+      "type": "file",
+      "name": "mod.ts",
+      "filePath": "runtime/mod.ts",
+      "summary": "Defines the main `Deco` class that bootstraps a site: initializes the manifest, decofile provider, and resolver, and exposes high-level operations (handler, fetch, resolve, render, preview, invoke, batchInvoke) plus per-request state preparation.",
+      "tags": ["entry-point", "service", "runtime", "resolver", "core"],
+      "complexity": "complex",
+      "languageNotes": "Uses a Proxy in prepareState to lazily expose request state/params to the resolver context."
+    },
+    {
+      "id": "class:runtime/mod.ts:Deco",
+      "type": "class",
+      "name": "Deco",
+      "filePath": "runtime/mod.ts",
+      "lineRange": [70, 286],
+      "summary": "Central runtime orchestrator: holds the manifest, resolver, and decofile provider, and provides the public API for handling HTTP requests, resolving blocks, rendering, previews, and invocations.",
+      "tags": ["service", "core", "runtime", "facade"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:runtime/routes/_meta.ts",
+      "type": "file",
+      "name": "_meta.ts",
+      "filePath": "runtime/routes/_meta.ts",
+      "summary": "Route handler exposing the site's meta information (schema and block metadata) over HTTP.",
+      "tags": ["api-handler", "route", "metadata"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/routes/batchInvoke.ts",
+      "type": "file",
+      "name": "batchInvoke.ts",
+      "filePath": "runtime/routes/batchInvoke.ts",
+      "summary": "Route handler that converts batch invocation payloads into resolvables and executes multiple block invocations in a single request.",
+      "tags": ["api-handler", "route", "invoke"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/routes/batchInvoke.ts:payloadToResolvable",
+      "type": "function",
+      "name": "payloadToResolvable",
+      "filePath": "runtime/routes/batchInvoke.ts",
+      "lineRange": [22, 49],
+      "summary": "Recursively transforms an invocation payload (function refs, arrays, nested objects) into a resolvable structure the engine can execute.",
+      "tags": ["serialization", "invoke", "recursion"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:runtime/routes/blockPreview.tsx",
+      "type": "file",
+      "name": "blockPreview.tsx",
+      "filePath": "runtime/routes/blockPreview.tsx",
+      "summary": "Route handler and rendering logic that previews an individual block from a serialized payload, building a fresh resolver scope for the preview.",
+      "tags": ["api-handler", "route", "preview", "component"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/routes/blockPreview.tsx:render",
+      "type": "function",
+      "name": "render",
+      "filePath": "runtime/routes/blockPreview.tsx",
+      "lineRange": [88, 153],
+      "summary": "Resolves a block from a preview URL/props, binds a fresh resolver scope, and renders the preview while recording server timings.",
+      "tags": ["preview", "rendering", "resolver"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:runtime/routes/entrypoint.tsx",
+      "type": "file",
+      "name": "entrypoint.tsx",
+      "filePath": "runtime/routes/entrypoint.tsx",
+      "summary": "Catch-all page entrypoint route exposing page/router Preact context hooks and the default Render component plus the HTTP handler.",
+      "tags": ["api-handler", "route", "hook", "component", "entry-point"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/routes/entrypoint.tsx:Render",
+      "type": "function",
+      "name": "Render",
+      "filePath": "runtime/routes/entrypoint.tsx",
+      "lineRange": [60, 79],
+      "summary": "Default page component that renders the resolved page within page and router context providers.",
+      "tags": ["component", "rendering", "context"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/routes/inspect.ts",
+      "type": "file",
+      "name": "inspect.ts",
+      "filePath": "runtime/routes/inspect.ts",
+      "summary": "Thin route handler delegating to the DOM inspector handler for live-editing inspection.",
+      "tags": ["api-handler", "route", "inspector"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/routes/invoke.ts",
+      "type": "file",
+      "name": "invoke.ts",
+      "filePath": "runtime/routes/invoke.ts",
+      "summary": "Single-invocation route handler that selects a props-parsing strategy (JSON or form data) based on content type and executes the requested block.",
+      "tags": ["api-handler", "route", "invoke", "validation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/routes/invoke.ts:getParsingStrategy",
+      "type": "function",
+      "name": "getParsingStrategy",
+      "filePath": "runtime/routes/invoke.ts",
+      "lineRange": [33, 58],
+      "summary": "Determines how to parse incoming request props by inspecting content-type and custom headers.",
+      "tags": ["validation", "http", "parsing"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:runtime/routes/previews.tsx",
+      "type": "file",
+      "name": "previews.tsx",
+      "filePath": "runtime/routes/previews.tsx",
+      "summary": "Route handler rendering page previews with live controls, deriving the page id from resolver metadata.",
+      "tags": ["api-handler", "route", "preview", "component"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/routes/previews.tsx:pageIdFromMetadata",
+      "type": "function",
+      "name": "pageIdFromMetadata",
+      "filePath": "runtime/routes/previews.tsx",
+      "lineRange": [12, 30],
+      "summary": "Walks the resolve chain in block metadata to extract the originating page id.",
+      "tags": ["preview", "metadata", "resolver"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/routes/release.ts",
+      "type": "file",
+      "name": "release.ts",
+      "filePath": "runtime/routes/release.ts",
+      "summary": "Route handler exposing the current decofile release state, guarded by trusted-authority checks.",
+      "tags": ["api-handler", "route", "security", "decofile"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/routes/reload.ts",
+      "type": "file",
+      "name": "reload.ts",
+      "filePath": "runtime/routes/reload.ts",
+      "summary": "Route handler that triggers a live reload, typically used by the development daemon to refresh the running site.",
+      "tags": ["api-handler", "route", "development"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/routes/render.tsx",
+      "type": "file",
+      "name": "render.tsx",
+      "filePath": "runtime/routes/render.tsx",
+      "summary": "Route handler that reconstructs a render request from query/body params and renders the resolved section, with validation of required fields.",
+      "tags": ["api-handler", "route", "rendering", "validation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/routes/render.tsx:fromRequest",
+      "type": "function",
+      "name": "fromRequest",
+      "filePath": "runtime/routes/render.tsx",
+      "lineRange": [27, 73],
+      "summary": "Parses and validates render parameters from the request, unwinding the resolve chain and rejecting malformed input with bad-request errors.",
+      "tags": ["validation", "http", "parsing"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:runtime/routes/styles.css.ts",
+      "type": "file",
+      "name": "styles.css.ts",
+      "filePath": "runtime/routes/styles.css.ts",
+      "summary": "Route handler serving the generated CSS stylesheet for the running site.",
+      "tags": ["api-handler", "route", "styles"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:utils/admin.ts",
+      "type": "file",
+      "name": "admin.ts",
+      "filePath": "utils/admin.ts",
+      "summary": "Helpers for detecting admin/landing-page domains, building admin URLs, and constructing resolvable references used by the Deco admin UI.",
+      "tags": ["utility", "admin", "security"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:utils/cookies.ts",
+      "type": "file",
+      "name": "cookies.ts",
+      "filePath": "utils/cookies.ts",
+      "summary": "Cookie utilities for size-aware setting, base64 encode/decode of values, and enforcing maximum cookie size.",
+      "tags": ["utility", "cookies", "http"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:utils/cookies.ts:setCookie",
+      "type": "function",
+      "name": "setCookie",
+      "filePath": "utils/cookies.ts",
+      "lineRange": [19, 49],
+      "summary": "Sets a cookie on response headers, base64-encoding the value and warning when the cookie exceeds the maximum allowed size.",
+      "tags": ["cookies", "http", "validation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:utils/http.ts",
+      "type": "file",
+      "name": "http.ts",
+      "filePath": "utils/http.ts",
+      "summary": "Broad HTTP utility module: cache-control parsing/merging, Vary handling, CSP headers, CORS helpers, HTTPS enforcement, and request body extraction from URLs.",
+      "tags": ["utility", "http", "caching", "security"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:utils/http.ts:mergeCacheControl",
+      "type": "function",
+      "name": "mergeCacheControl",
+      "filePath": "utils/http.ts",
+      "lineRange": [106, 140],
+      "summary": "Merges two cache-control header values, taking the most restrictive directives across both.",
+      "tags": ["caching", "http", "utility"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:utils/http.ts:setCSPHeaders",
+      "type": "function",
+      "name": "setCSPHeaders",
+      "filePath": "utils/http.ts",
+      "lineRange": [146, 171],
+      "summary": "Applies Content-Security-Policy frame-ancestors headers based on referer and admin domain checks.",
+      "tags": ["security", "http", "csp"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:utils/http.ts:bodyFromUrl",
+      "type": "function",
+      "name": "bodyFromUrl",
+      "filePath": "utils/http.ts",
+      "lineRange": [182, 193],
+      "summary": "Reconstructs a structured request body object from URL search params, supporting nested keys and base64-encoded JSON.",
+      "tags": ["serialization", "http", "utility"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:utils/invoke.ts",
+      "type": "file",
+      "name": "invoke.ts",
+      "filePath": "utils/invoke.ts",
+      "summary": "Converts invocation results into HTTP responses, streaming Server-Sent Events for stream props and falling back to JSON otherwise.",
+      "tags": ["utility", "invoke", "serialization", "streaming"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:utils/invoke.ts:invokeToHttpResponse",
+      "type": "function",
+      "name": "invokeToHttpResponse",
+      "filePath": "utils/invoke.ts",
+      "lineRange": [16, 58],
+      "summary": "Maps an invocation response to an HTTP Response, producing an SSE stream for event-stream responses and JSON otherwise.",
+      "tags": ["streaming", "serialization", "http"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:utils/log.ts",
+      "type": "file",
+      "name": "log.ts",
+      "filePath": "utils/log.ts",
+      "summary": "Console logging formatters for request/response lines, status colors, latency bars, and server-timing progress visualizations.",
+      "tags": ["utility", "logging", "formatting", "observability"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:utils/log.ts:formatLog",
+      "type": "function",
+      "name": "formatLog",
+      "filePath": "utils/log.ts",
+      "lineRange": [55, 89],
+      "summary": "Builds a colorized single-line request log including status, latency, and per-timing progress bars.",
+      "tags": ["logging", "formatting", "observability"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:utils/mod.ts",
+      "type": "file",
+      "name": "mod.ts",
+      "filePath": "utils/mod.ts",
+      "summary": "Barrel module re-exporting commonly used utility helpers and types (admin, streams, timings, JSON viewer, manifest builder).",
+      "tags": ["barrel", "utility", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:utils/timings.ts",
+      "type": "file",
+      "name": "timings.ts",
+      "filePath": "utils/timings.ts",
+      "summary": "Provides createServerTimings to record named timing spans and emit a Server-Timing header string for request observability.",
+      "tags": ["utility", "observability", "timing"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:utils/timings.ts:createServerTimings",
+      "type": "function",
+      "name": "createServerTimings",
+      "filePath": "utils/timings.ts",
+      "lineRange": [22, 60],
+      "summary": "Creates a server-timing recorder exposing start() and printTimings() to track and serialize per-request spans.",
+      "tags": ["observability", "timing", "factory"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {"source": "file:runtime/mod.ts", "target": "class:runtime/mod.ts:Deco", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/mod.ts", "target": "class:runtime/mod.ts:Deco", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:runtime/routes/batchInvoke.ts", "target": "function:runtime/routes/batchInvoke.ts:payloadToResolvable", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/routes/batchInvoke.ts", "target": "function:runtime/routes/batchInvoke.ts:payloadToResolvable", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:runtime/routes/blockPreview.tsx", "target": "function:runtime/routes/blockPreview.tsx:render", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/routes/blockPreview.tsx", "target": "function:runtime/routes/blockPreview.tsx:render", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:runtime/routes/entrypoint.tsx", "target": "function:runtime/routes/entrypoint.tsx:Render", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/routes/entrypoint.tsx", "target": "function:runtime/routes/entrypoint.tsx:Render", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:runtime/routes/invoke.ts", "target": "function:runtime/routes/invoke.ts:getParsingStrategy", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/routes/previews.tsx", "target": "function:runtime/routes/previews.tsx:pageIdFromMetadata", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:runtime/routes/previews.tsx", "target": "function:runtime/routes/previews.tsx:pageIdFromMetadata", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:runtime/routes/render.tsx", "target": "function:runtime/routes/render.tsx:fromRequest", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:utils/admin.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:utils/cookies.ts", "target": "function:utils/cookies.ts:setCookie", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:utils/cookies.ts", "target": "function:utils/cookies.ts:setCookie", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:utils/http.ts", "target": "function:utils/http.ts:mergeCacheControl", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:utils/http.ts", "target": "function:utils/http.ts:mergeCacheControl", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:utils/http.ts", "target": "function:utils/http.ts:setCSPHeaders", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:utils/http.ts", "target": "function:utils/http.ts:setCSPHeaders", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:utils/http.ts", "target": "function:utils/http.ts:bodyFromUrl", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:utils/http.ts", "target": "function:utils/http.ts:bodyFromUrl", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:utils/invoke.ts", "target": "function:utils/invoke.ts:invokeToHttpResponse", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:utils/invoke.ts", "target": "function:utils/invoke.ts:invokeToHttpResponse", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:utils/log.ts", "target": "function:utils/log.ts:formatLog", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:utils/log.ts", "target": "function:utils/log.ts:formatLog", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:utils/timings.ts", "target": "function:utils/timings.ts:createServerTimings", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:utils/timings.ts", "target": "function:utils/timings.ts:createServerTimings", "type": "exports", "direction": "forward", "weight": 0.8},
+
+    {"source": "file:runtime/mod.ts", "target": "file:blocks/mod.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:blocks/utils.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:deco.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:engine/core/resolver.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:engine/decofile/provider.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:engine/manifest/manifest.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:engine/manifest/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:mod.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:observability/observe.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:observability/otel/config.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:observability/otel/context.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:runtime/deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:runtime/features/invoke.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:runtime/features/meta.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:runtime/features/preview.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:runtime/features/render.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:runtime/features/styles.css.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:runtime/handler.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:types.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:utils/http.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:utils/invoke.server.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:utils/timings.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/mod.ts", "target": "file:utils/vary.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/routes/_meta.ts", "target": "file:runtime/middleware.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/_meta.ts", "target": "file:utils/http.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/routes/batchInvoke.ts", "target": "file:mod.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/batchInvoke.ts", "target": "file:runtime/middleware.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/batchInvoke.ts", "target": "file:utils/admin.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/batchInvoke.ts", "target": "file:utils/http.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/batchInvoke.ts", "target": "file:utils/invoke.server.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/batchInvoke.ts", "target": "file:utils/invoke.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/batchInvoke.ts", "target": "file:utils/invoke.types.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/routes/blockPreview.tsx", "target": "file:blocks/page.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/blockPreview.tsx", "target": "file:engine/decofile/fetcher.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/blockPreview.tsx", "target": "file:runtime/middleware.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/blockPreview.tsx", "target": "file:runtime/mod.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/blockPreview.tsx", "target": "file:runtime/routes/entrypoint.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/blockPreview.tsx", "target": "file:utils/http.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/routes/entrypoint.tsx", "target": "file:blocks/handler.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/entrypoint.tsx", "target": "file:blocks/page.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/entrypoint.tsx", "target": "file:engine/block.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/entrypoint.tsx", "target": "file:runtime/middleware.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/entrypoint.tsx", "target": "file:runtime/mod.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/entrypoint.tsx", "target": "file:types.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/entrypoint.tsx", "target": "file:utils/http.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/routes/inspect.ts", "target": "file:deco.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/inspect.ts", "target": "file:deps.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/inspect.ts", "target": "file:runtime/middleware.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/routes/invoke.ts", "target": "file:clients/formdata.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/invoke.ts", "target": "file:runtime/middleware.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/invoke.ts", "target": "file:utils/http.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/invoke.ts", "target": "file:utils/invoke.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/invoke.ts", "target": "file:utils/invoke.types.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/routes/previews.tsx", "target": "file:blocks/page.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/previews.tsx", "target": "file:components/LiveControls.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/previews.tsx", "target": "file:deco.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/previews.tsx", "target": "file:engine/block.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/previews.tsx", "target": "file:runtime/middleware.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/previews.tsx", "target": "file:runtime/mod.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/routes/release.ts", "target": "file:engine/trustedAuthority.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/release.ts", "target": "file:runtime/middleware.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/release.ts", "target": "file:utils/http.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/routes/reload.ts", "target": "file:runtime/middleware.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/routes/render.tsx", "target": "file:engine/core/resolver.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/render.tsx", "target": "file:engine/errors.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/render.tsx", "target": "file:runtime/middleware.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/render.tsx", "target": "file:runtime/mod.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/render.tsx", "target": "file:runtime/routes/entrypoint.tsx", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/render.tsx", "target": "file:utils/json.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:runtime/routes/render.tsx", "target": "file:utils/mod.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:runtime/routes/styles.css.ts", "target": "file:runtime/middleware.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:utils/http.ts", "target": "file:deno.json", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:utils/http.ts", "target": "file:utils/admin.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:utils/http.ts", "target": "file:utils/object.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:utils/invoke.ts", "target": "file:clients/withManifest.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "file:utils/log.ts", "target": "file:utils/timings.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+
+    {"source": "class:runtime/mod.ts:Deco", "target": "file:engine/core/resolver.ts", "type": "depends_on", "direction": "forward", "weight": 0.6},
+    {"source": "function:utils/http.ts:setCSPHeaders", "target": "function:utils/admin.ts:isAdmin", "type": "calls", "direction": "forward", "weight": 0.8}
+  ]
+}
