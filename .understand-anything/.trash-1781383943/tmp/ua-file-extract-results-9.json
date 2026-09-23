@@ -1,0 +1,2030 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 19,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "runtime/mod.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 291,
+      "nonEmptyLines": 266,
+      "functions": [
+        {
+          "name": "NOOP_CALL",
+          "startLine": 68,
+          "endLine": 68,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "Deco",
+          "startLine": 70,
+          "endLine": 286,
+          "methods": [
+            "constructor",
+            "init",
+            "meta",
+            "handler",
+            "fetch",
+            "resolve",
+            "styles",
+            "preview",
+            "render",
+            "invoke",
+            "batchInvoke",
+            "prepareState"
+          ],
+          "properties": [
+            "_handler"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "buildImportMap",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "ImportMap",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "Deco",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "PageData",
+          "line": 288,
+          "isDefault": false
+        },
+        {
+          "name": "DECO_SEGMENT",
+          "line": 289,
+          "isDefault": false
+        },
+        {
+          "name": "DecoMiddlewareContext",
+          "line": 289,
+          "isDefault": false
+        },
+        {
+          "name": "usePageContext",
+          "line": 291,
+          "isDefault": false
+        },
+        {
+          "name": "useRouterContext",
+          "line": 291,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "init",
+          "callee": "siteNameFromEnv",
+          "lineNumber": 81
+        },
+        {
+          "caller": "init",
+          "callee": "randomSiteName",
+          "lineNumber": 81
+        },
+        {
+          "caller": "init",
+          "callee": "getProvider",
+          "lineNumber": 82
+        },
+        {
+          "caller": "init",
+          "callee": "import(toFileUrl(join(Deno.cwd(), \"manifest.gen.ts\")).href).then",
+          "lineNumber": 84
+        },
+        {
+          "caller": "init",
+          "callee": "import",
+          "lineNumber": 84
+        },
+        {
+          "caller": "init",
+          "callee": "toFileUrl",
+          "lineNumber": 84
+        },
+        {
+          "caller": "init",
+          "callee": "join",
+          "lineNumber": 84
+        },
+        {
+          "caller": "init",
+          "callee": "Deno.cwd",
+          "lineNumber": 84
+        },
+        {
+          "caller": "init",
+          "callee": "Promise.resolve(manifest).then",
+          "lineNumber": 87
+        },
+        {
+          "caller": "init",
+          "callee": "Promise.resolve",
+          "lineNumber": 87
+        },
+        {
+          "caller": "init",
+          "callee": "newContext",
+          "lineNumber": 88
+        },
+        {
+          "caller": "init",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 92
+        },
+        {
+          "caller": "init",
+          "callee": "Context.setDefault",
+          "lineNumber": 98
+        },
+        {
+          "caller": "meta",
+          "callee": "meta",
+          "lineNumber": 103
+        },
+        {
+          "caller": "handler",
+          "callee": "handlerFor",
+          "lineNumber": 112
+        },
+        {
+          "caller": "fetch",
+          "callee": "this.handler",
+          "lineNumber": 115
+        },
+        {
+          "caller": "resolve",
+          "callee": "resolver.resolve",
+          "lineNumber": 123
+        },
+        {
+          "caller": "styles",
+          "callee": "styles",
+          "lineNumber": 127
+        },
+        {
+          "caller": "preview",
+          "callee": "preview",
+          "lineNumber": 136
+        },
+        {
+          "caller": "preview",
+          "callee": "this.prepareState",
+          "lineNumber": 141
+        },
+        {
+          "caller": "render",
+          "callee": "render",
+          "lineNumber": 150
+        },
+        {
+          "caller": "render",
+          "callee": "this.prepareState",
+          "lineNumber": 154
+        },
+        {
+          "caller": "invoke",
+          "callee": "invoke",
+          "lineNumber": 159
+        },
+        {
+          "caller": "batchInvoke",
+          "callee": "batchInvoke",
+          "lineNumber": 163
+        },
+        {
+          "caller": "prepareState",
+          "callee": "createServerTimings",
+          "lineNumber": 183
+        },
+        {
+          "caller": "prepareState",
+          "callee": "otelContext\n        .active()\n        .setValue(REQUEST_CONTEXT_KEY, req)\n        .setValue",
+          "lineNumber": 193
+        },
+        {
+          "caller": "prepareState",
+          "callee": "otelContext\n        .active()\n        .setValue",
+          "lineNumber": 193
+        },
+        {
+          "caller": "prepareState",
+          "callee": "otelContext\n        .active",
+          "lineNumber": 193
+        },
+        {
+          "caller": "prepareState",
+          "callee": "forceHttps",
+          "lineNumber": 222
+        },
+        {
+          "caller": "prepareState",
+          "callee": "request.headers.get",
+          "lineNumber": 231
+        },
+        {
+          "caller": "prepareState",
+          "callee": "vary",
+          "lineNumber": 243
+        },
+        {
+          "caller": "prepareState",
+          "callee": "resolver\n      .resolverFor(\n        {\n          context: new Proxy(context, {\n            get(target, prop, recv) {\n              if (prop === \"state\") {\n                return state;\n              }\n              if (prop === \"params\") {\n                return context.req.param();\n              }\n              return Reflect.get(target, prop, recv);\n            },\n          }),\n          request,\n        },\n        {\n          monitoring: state.monitoring,\n        },\n      )\n      .bind",
+          "lineNumber": 253
+        },
+        {
+          "caller": "prepareState",
+          "callee": "resolver\n      .resolverFor",
+          "lineNumber": 253
+        },
+        {
+          "caller": "get",
+          "callee": "context.req.param",
+          "lineNumber": 262
+        },
+        {
+          "caller": "get",
+          "callee": "Reflect.get",
+          "lineNumber": 264
+        },
+        {
+          "caller": "prepareState",
+          "callee": "buildInvokeFunc",
+          "lineNumber": 276
+        }
+      ],
+      "metrics": {
+        "importCount": 24,
+        "exportCount": 8,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "runtime/routes/_meta.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 25,
+      "exports": [
+        {
+          "name": "handler",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/routes/batchInvoke.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "isInvokeFunc",
+          "startLine": 16,
+          "endLine": 20,
+          "params": [
+            "p"
+          ]
+        },
+        {
+          "name": "payloadToResolvable",
+          "startLine": 22,
+          "endLine": 49,
+          "params": [
+            "p"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "payloadToResolvable",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "handler",
+          "line": 51,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "payloadToResolvable",
+          "callee": "isInvokeFunc",
+          "lineNumber": 25
+        },
+        {
+          "caller": "payloadToResolvable",
+          "callee": "payloadForFunc",
+          "lineNumber": 26
+        },
+        {
+          "caller": "payloadToResolvable",
+          "callee": "Array.isArray",
+          "lineNumber": 30
+        },
+        {
+          "caller": "payloadToResolvable",
+          "callee": "Object.entries",
+          "lineNumber": 45
+        },
+        {
+          "caller": "payloadToResolvable",
+          "callee": "payloadToResolvable",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/routes/blockPreview.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 153,
+      "nonEmptyLines": 139,
+      "functions": [
+        {
+          "name": "Preview",
+          "startLine": 12,
+          "endLine": 27,
+          "params": [
+            "props"
+          ]
+        },
+        {
+          "name": "getPropsFromRequest",
+          "startLine": 29,
+          "endLine": 36,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "render",
+          "startLine": 88,
+          "endLine": 153,
+          "params": [
+            "previewUrl",
+            "props",
+            "req",
+            "ctx"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Preview",
+          "line": 12,
+          "isDefault": true
+        },
+        {
+          "name": "handler",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "render",
+          "line": 88,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPropsFromRequest",
+          "callee": "req.clone().json",
+          "lineNumber": 32
+        },
+        {
+          "caller": "getPropsFromRequest",
+          "callee": "req.clone",
+          "lineNumber": 32
+        },
+        {
+          "caller": "getPropsFromRequest",
+          "callee": "bodyFromUrl",
+          "lineNumber": 33
+        },
+        {
+          "caller": "render",
+          "callee": "ctx.var.monitoring?.timings?.start",
+          "lineNumber": 95
+        },
+        {
+          "caller": "render",
+          "callee": "JSON.parse",
+          "lineNumber": 104
+        },
+        {
+          "caller": "render",
+          "callee": "fromJSON",
+          "lineNumber": 106
+        },
+        {
+          "caller": "render",
+          "callee": "currentResolver.with",
+          "lineNumber": 113
+        },
+        {
+          "caller": "render",
+          "callee": "newResolver\n      .resolverFor(\n        {\n          context: {\n            state,\n            params: ctx.req.param(),\n          },\n          request,\n        },\n        {\n          monitoring: state.monitoring,\n        },\n      )\n      .bind",
+          "lineNumber": 117
+        },
+        {
+          "caller": "render",
+          "callee": "newResolver\n      .resolverFor",
+          "lineNumber": 117
+        },
+        {
+          "caller": "render",
+          "callee": "ctx.req.param",
+          "lineNumber": 122
+        },
+        {
+          "caller": "render",
+          "callee": "ctx.var.deco.preview",
+          "lineNumber": 140
+        },
+        {
+          "caller": "render",
+          "callee": "timing?.end",
+          "lineNumber": 141
+        },
+        {
+          "caller": "render",
+          "callee": "ctx.var.monitoring?.timings?.start",
+          "lineNumber": 142
+        },
+        {
+          "caller": "render",
+          "callee": "ctx.render",
+          "lineNumber": 144
+        },
+        {
+          "caller": "render",
+          "callee": "ctx.req.param",
+          "lineNumber": 147
+        },
+        {
+          "caller": "render",
+          "callee": "timing?.end",
+          "lineNumber": 151
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/routes/entrypoint.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 118,
+      "nonEmptyLines": 110,
+      "functions": [
+        {
+          "name": "usePageContext",
+          "startLine": 31,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "useRouterContext",
+          "startLine": 46,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "Render",
+          "startLine": 60,
+          "endLine": 79,
+          "params": [
+            "{\n  params,\n  url,\n  data: {\n    page,\n    routerInfo,\n  },\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "usePageContext",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "useRouterContext",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "Render",
+          "line": 60,
+          "isDefault": true
+        },
+        {
+          "name": "handler",
+          "line": 81,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "usePageContext",
+          "callee": "useContext",
+          "lineNumber": 32
+        },
+        {
+          "caller": "usePageContext",
+          "callee": "console.warn",
+          "lineNumber": 34
+        },
+        {
+          "caller": "useRouterContext",
+          "callee": "useContext",
+          "lineNumber": 47
+        },
+        {
+          "caller": "useRouterContext",
+          "callee": "console.warn",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/routes/inspect.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 10,
+      "exports": [
+        {
+          "name": "handler",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/routes/invoke.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 86,
+      "functions": [
+        {
+          "name": "getParsingStrategy",
+          "startLine": 33,
+          "endLine": 58,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "parsePropsFromRequest",
+          "startLine": 65,
+          "endLine": 75,
+          "params": [
+            "req"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "propsParsers",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "handler",
+          "line": 76,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getParsingStrategy",
+          "callee": "req.headers.get",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getParsingStrategy",
+          "callee": "req.headers.get",
+          "lineNumber": 39
+        },
+        {
+          "caller": "getParsingStrategy",
+          "callee": "contentType?.startsWith",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getParsingStrategy",
+          "callee": "contentType.startsWith",
+          "lineNumber": 53
+        },
+        {
+          "caller": "parsePropsFromRequest",
+          "callee": "getParsingStrategy",
+          "lineNumber": 68
+        },
+        {
+          "caller": "parsePropsFromRequest",
+          "callee": "propsParsers[strategy]",
+          "lineNumber": 74
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/routes/previews.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "pageIdFromMetadata",
+          "startLine": 12,
+          "endLine": 30,
+          "params": [
+            "metadata"
+          ]
+        },
+        {
+          "name": "Preview",
+          "startLine": 31,
+          "endLine": 44,
+          "params": [
+            "props"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "pageIdFromMetadata",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "handler",
+          "line": 46,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "pageIdFromMetadata",
+          "callee": "resolveChain.findLastIndex",
+          "lineNumber": 21
+        },
+        {
+          "caller": "Preview",
+          "callee": "pageIdFromMetadata",
+          "lineNumber": 33
+        },
+        {
+          "caller": "Preview",
+          "callee": "Context.active",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/routes/release.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 22,
+      "exports": [
+        {
+          "name": "handler",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/routes/reload.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 51,
+      "exports": [
+        {
+          "name": "handler",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/routes/render.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 137,
+      "nonEmptyLines": 119,
+      "functions": [
+        {
+          "name": "fromRequest",
+          "startLine": 27,
+          "endLine": 73,
+          "params": [
+            "req"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "handler",
+          "line": 82,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fromRequest",
+          "callee": "params.get",
+          "lineNumber": 30
+        },
+        {
+          "caller": "fromRequest",
+          "callee": "params.get",
+          "lineNumber": 31
+        },
+        {
+          "caller": "fromRequest",
+          "callee": "params.get",
+          "lineNumber": 32
+        },
+        {
+          "caller": "fromRequest",
+          "callee": "params.get",
+          "lineNumber": 33
+        },
+        {
+          "caller": "fromRequest",
+          "callee": "params.get",
+          "lineNumber": 34
+        },
+        {
+          "caller": "fromRequest",
+          "callee": "params.get",
+          "lineNumber": 35
+        },
+        {
+          "caller": "fromRequest",
+          "callee": "params.get",
+          "lineNumber": 36
+        },
+        {
+          "caller": "fromRequest",
+          "callee": "badRequest",
+          "lineNumber": 43
+        },
+        {
+          "caller": "fromRequest",
+          "callee": "JSON.parse",
+          "lineNumber": 46
+        },
+        {
+          "caller": "fromRequest",
+          "callee": "badRequest",
+          "lineNumber": 49
+        },
+        {
+          "caller": "fromRequest",
+          "callee": "badRequest",
+          "lineNumber": 55
+        },
+        {
+          "caller": "fromRequest",
+          "callee": "badRequest",
+          "lineNumber": 58
+        },
+        {
+          "caller": "fromRequest",
+          "callee": "FieldResolver.unwind",
+          "lineNumber": 69
+        },
+        {
+          "caller": "fromRequest",
+          "callee": "JSON.parse",
+          "lineNumber": 69
+        },
+        {
+          "caller": "renderFn",
+          "callee": "render",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/routes/styles.css.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 23,
+      "exports": [
+        {
+          "name": "styles",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/admin.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "isAdmin",
+          "startLine": 29,
+          "endLine": 39,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "isAdminOrLocalhost",
+          "startLine": 41,
+          "endLine": 47,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "adminUrlFor",
+          "startLine": 49,
+          "endLine": 54,
+          "params": [
+            "pageId",
+            "siteId"
+          ]
+        },
+        {
+          "name": "resolvable",
+          "startLine": 56,
+          "endLine": 69,
+          "params": [
+            "ref",
+            "id"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "adminDomains",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "landingPageDomain",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "isAdmin",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "isAdminOrLocalhost",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "adminUrlFor",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "resolvable",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isAdmin",
+          "callee": "url.startsWith",
+          "lineNumber": 31
+        },
+        {
+          "caller": "isAdmin",
+          "callee": "adminDomains.includes",
+          "lineNumber": 32
+        },
+        {
+          "caller": "isAdminOrLocalhost",
+          "callee": "req.headers.get",
+          "lineNumber": 42
+        },
+        {
+          "caller": "isAdminOrLocalhost",
+          "callee": "req.headers.get",
+          "lineNumber": 42
+        },
+        {
+          "caller": "isAdminOrLocalhost",
+          "callee": "isAdmin",
+          "lineNumber": 43
+        },
+        {
+          "caller": "isAdminOrLocalhost",
+          "callee": "[\"localhost\", \"127.0.0.1\"].includes",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/cookies.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "getCookieSize",
+          "startLine": 5,
+          "endLine": 8,
+          "params": [
+            "cookie"
+          ]
+        },
+        {
+          "name": "setCookie",
+          "startLine": 19,
+          "endLine": 49,
+          "params": [
+            "headers",
+            "cookie",
+            "cookieOptions"
+          ]
+        },
+        {
+          "name": "decodeCookie",
+          "startLine": 51,
+          "endLine": 53,
+          "params": [
+            "cookie"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MAX_COOKIE_SIZE",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "getCookieSize",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "setCookie",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "decodeCookie",
+          "line": 51,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "setCookie",
+          "callee": "btoa",
+          "lineNumber": 32
+        },
+        {
+          "caller": "setCookie",
+          "callee": "encodeURIComponent",
+          "lineNumber": 32
+        },
+        {
+          "caller": "setCookie",
+          "callee": "console.warn",
+          "lineNumber": 41
+        },
+        {
+          "caller": "setCookie",
+          "callee": "stdSetCookie",
+          "lineNumber": 48
+        },
+        {
+          "caller": "decodeCookie",
+          "callee": "decodeURIComponent",
+          "lineNumber": 52
+        },
+        {
+          "caller": "decodeCookie",
+          "callee": "atob",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/http.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 227,
+      "nonEmptyLines": 205,
+      "functions": [
+        {
+          "name": "parseCacheControlSegment",
+          "startLine": 28,
+          "endLine": 61,
+          "params": [
+            "segment"
+          ]
+        },
+        {
+          "name": "parseVary",
+          "startLine": 63,
+          "endLine": 67,
+          "params": [
+            "headers"
+          ]
+        },
+        {
+          "name": "formatVary",
+          "startLine": 69,
+          "endLine": 69,
+          "params": [
+            "vary"
+          ]
+        },
+        {
+          "name": "parseCacheControl",
+          "startLine": 71,
+          "endLine": 84,
+          "params": [
+            "headers"
+          ]
+        },
+        {
+          "name": "formatCacheControl",
+          "startLine": 86,
+          "endLine": 97,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "min",
+          "startLine": 99,
+          "endLine": 104,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "mergeCacheControl",
+          "startLine": 106,
+          "endLine": 140,
+          "params": [
+            "h1",
+            "h2"
+          ]
+        },
+        {
+          "name": "setCSPHeaders",
+          "startLine": 146,
+          "endLine": 171,
+          "params": [
+            "request",
+            "response"
+          ]
+        },
+        {
+          "name": "bodyFromUrl",
+          "startLine": 182,
+          "endLine": 193,
+          "params": [
+            "param",
+            "url"
+          ]
+        },
+        {
+          "name": "allowCorsFor",
+          "startLine": 195,
+          "endLine": 196,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "allowCorsForOrigin",
+          "startLine": 198,
+          "endLine": 206,
+          "params": [
+            "...origin"
+          ]
+        },
+        {
+          "name": "forceHttps",
+          "startLine": 210,
+          "endLine": 222,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "simulateBot",
+          "startLine": 224,
+          "endLine": 227,
+          "params": [
+            "req"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DEFAULT_CACHE_CONTROL",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "parseVary",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "formatVary",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "parseCacheControl",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "formatCacheControl",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "mergeCacheControl",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "defaultHeaders",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "setCSPHeaders",
+          "line": 146,
+          "isDefault": false
+        },
+        {
+          "name": "bodyFromUrl",
+          "line": 182,
+          "isDefault": false
+        },
+        {
+          "name": "allowCorsFor",
+          "line": 195,
+          "isDefault": false
+        },
+        {
+          "name": "allowCorsForOrigin",
+          "line": 198,
+          "isDefault": false
+        },
+        {
+          "name": "readFromStream",
+          "line": 208,
+          "isDefault": false
+        },
+        {
+          "name": "forceHttps",
+          "line": 210,
+          "isDefault": false
+        },
+        {
+          "name": "simulateBot",
+          "line": 224,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseCacheControlSegment",
+          "callee": "segment.trim().split",
+          "lineNumber": 31
+        },
+        {
+          "caller": "parseCacheControlSegment",
+          "callee": "segment.trim",
+          "lineNumber": 31
+        },
+        {
+          "caller": "parseCacheControlSegment",
+          "callee": "Number",
+          "lineNumber": 35
+        },
+        {
+          "caller": "parseCacheControlSegment",
+          "callee": "Number",
+          "lineNumber": 37
+        },
+        {
+          "caller": "parseCacheControlSegment",
+          "callee": "Number",
+          "lineNumber": 39
+        },
+        {
+          "caller": "parseCacheControlSegment",
+          "callee": "Number",
+          "lineNumber": 41
+        },
+        {
+          "caller": "parseVary",
+          "callee": "headers.get",
+          "lineNumber": 64
+        },
+        {
+          "caller": "parseVary",
+          "callee": "value?.split(\",\").map",
+          "lineNumber": 66
+        },
+        {
+          "caller": "parseVary",
+          "callee": "value?.split",
+          "lineNumber": 66
+        },
+        {
+          "caller": "parseVary",
+          "callee": "x.trim",
+          "lineNumber": 66
+        },
+        {
+          "caller": "formatVary",
+          "callee": "vary.filter(Boolean).join",
+          "lineNumber": 69
+        },
+        {
+          "caller": "formatVary",
+          "callee": "vary.filter",
+          "lineNumber": 69
+        },
+        {
+          "caller": "parseCacheControl",
+          "callee": "headers.get",
+          "lineNumber": 72
+        },
+        {
+          "caller": "parseCacheControl",
+          "callee": "value\n    ?.split(\",\")\n    .map((x) => x.trim())\n    .reduce",
+          "lineNumber": 74
+        },
+        {
+          "caller": "parseCacheControl",
+          "callee": "value\n    ?.split(\",\")\n    .map",
+          "lineNumber": 74
+        },
+        {
+          "caller": "parseCacheControl",
+          "callee": "value\n    ?.split",
+          "lineNumber": 74
+        },
+        {
+          "caller": "parseCacheControl",
+          "callee": "x.trim",
+          "lineNumber": 76
+        },
+        {
+          "caller": "parseCacheControl",
+          "callee": "parseCacheControlSegment",
+          "lineNumber": 79
+        },
+        {
+          "caller": "formatCacheControl",
+          "callee": "Object\n    .entries(value)\n    .map(([key, value]) =>\n      value === true\n        ? key\n        : typeof value === \"number\"\n        ? `${key}=${value}`\n        : undefined\n    )\n    .filter(Boolean)\n    .join",
+          "lineNumber": 87
+        },
+        {
+          "caller": "formatCacheControl",
+          "callee": "Object\n    .entries(value)\n    .map(([key, value]) =>\n      value === true\n        ? key\n        : typeof value === \"number\"\n        ? `${key}=${value}`\n        : undefined\n    )\n    .filter",
+          "lineNumber": 87
+        },
+        {
+          "caller": "formatCacheControl",
+          "callee": "Object\n    .entries(value)\n    .map",
+          "lineNumber": 87
+        },
+        {
+          "caller": "formatCacheControl",
+          "callee": "Object\n    .entries",
+          "lineNumber": 87
+        },
+        {
+          "caller": "mergeCacheControl",
+          "callee": "min",
+          "lineNumber": 110
+        },
+        {
+          "caller": "mergeCacheControl",
+          "callee": "min",
+          "lineNumber": 111
+        },
+        {
+          "caller": "mergeCacheControl",
+          "callee": "min",
+          "lineNumber": 112
+        },
+        {
+          "caller": "mergeCacheControl",
+          "callee": "min",
+          "lineNumber": 116
+        },
+        {
+          "caller": "setCSPHeaders",
+          "callee": "request.headers.get",
+          "lineNumber": 153
+        },
+        {
+          "caller": "setCSPHeaders",
+          "callee": "request.headers.get",
+          "lineNumber": 154
+        },
+        {
+          "caller": "setCSPHeaders",
+          "callee": "isAdmin",
+          "lineNumber": 155
+        },
+        {
+          "caller": "setCSPHeaders",
+          "callee": "response.headers.set",
+          "lineNumber": 158
+        },
+        {
+          "caller": "setCSPHeaders",
+          "callee": "landingPageDomain.join",
+          "lineNumber": 160
+        },
+        {
+          "caller": "setCSPHeaders",
+          "callee": "adminDomains.join",
+          "lineNumber": 161
+        },
+        {
+          "caller": "setCSPHeaders",
+          "callee": "referer.startsWith",
+          "lineNumber": 164
+        },
+        {
+          "caller": "bodyFromUrl",
+          "callee": "url.searchParams.get",
+          "lineNumber": 183
+        },
+        {
+          "caller": "bodyFromUrl",
+          "callee": "url.searchParams.entries",
+          "lineNumber": 186
+        },
+        {
+          "caller": "bodyFromUrl",
+          "callee": "buildObj",
+          "lineNumber": 187
+        },
+        {
+          "caller": "bodyFromUrl",
+          "callee": "key.split",
+          "lineNumber": 187
+        },
+        {
+          "caller": "bodyFromUrl",
+          "callee": "JSON.parse",
+          "lineNumber": 192
+        },
+        {
+          "caller": "bodyFromUrl",
+          "callee": "decodeURIComponent",
+          "lineNumber": 192
+        },
+        {
+          "caller": "bodyFromUrl",
+          "callee": "atob",
+          "lineNumber": 192
+        },
+        {
+          "caller": "allowCorsFor",
+          "callee": "allowCorsForOrigin",
+          "lineNumber": 196
+        },
+        {
+          "caller": "allowCorsFor",
+          "callee": "req?.headers?.get",
+          "lineNumber": 196
+        },
+        {
+          "caller": "allowCorsForOrigin",
+          "callee": "origin.join",
+          "lineNumber": 201
+        },
+        {
+          "caller": "forceHttps",
+          "callee": "req.headers.get",
+          "lineNumber": 212
+        },
+        {
+          "caller": "forceHttps",
+          "callee": "req.url.includes",
+          "lineNumber": 213
+        },
+        {
+          "caller": "forceHttps",
+          "callee": "hostHeader.includes",
+          "lineNumber": 214
+        },
+        {
+          "caller": "forceHttps",
+          "callee": "req.url.startsWith",
+          "lineNumber": 215
+        },
+        {
+          "caller": "forceHttps",
+          "callee": "req.headers.get",
+          "lineNumber": 217
+        },
+        {
+          "caller": "simulateBot",
+          "callee": "url.searchParams.has",
+          "lineNumber": 226
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 14,
+        "functionCount": 13,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/invoke.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "invokeToHttpResponse",
+          "startLine": 16,
+          "endLine": 58,
+          "params": [
+            "req",
+            "invokeResponse"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isEventStreamResponse",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "isStreamProps",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "invokeToHttpResponse",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "invokeToHttpResponse",
+          "callee": "isEventStreamResponse",
+          "lineNumber": 28
+        },
+        {
+          "caller": "invokeToHttpResponse",
+          "callee": "invokeResponse?.return",
+          "lineNumber": 30
+        },
+        {
+          "caller": "invokeToHttpResponse",
+          "callee": "new ReadableStream<ServerSentEventMessage>({\n        async pull(controller) {\n          for await (const content of invokeResponse) {\n            controller.enqueue({\n              data: encodeURIComponent(JSON.stringify(content)),\n              id: Date.now(),\n              event: \"message\",\n            });\n          }\n          controller.close();\n        },\n        cancel() {\n          invokeResponse?.return?.();\n        },\n      }).pipeThrough",
+          "lineNumber": 34
+        },
+        {
+          "caller": "pull",
+          "callee": "controller.enqueue",
+          "lineNumber": 37
+        },
+        {
+          "caller": "pull",
+          "callee": "encodeURIComponent",
+          "lineNumber": 38
+        },
+        {
+          "caller": "pull",
+          "callee": "JSON.stringify",
+          "lineNumber": 38
+        },
+        {
+          "caller": "pull",
+          "callee": "Date.now",
+          "lineNumber": 39
+        },
+        {
+          "caller": "pull",
+          "callee": "controller.close",
+          "lineNumber": 43
+        },
+        {
+          "caller": "cancel",
+          "callee": "invokeResponse?.return",
+          "lineNumber": 46
+        },
+        {
+          "caller": "invokeToHttpResponse",
+          "callee": "Response.json",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/log.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "formatOutgoingFetch",
+          "startLine": 4,
+          "endLine": 18,
+          "params": [
+            "request",
+            "response",
+            "duration"
+          ]
+        },
+        {
+          "name": "formatStatus",
+          "startLine": 27,
+          "endLine": 30,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "formatLatency",
+          "startLine": 32,
+          "endLine": 32,
+          "params": [
+            "latency"
+          ]
+        },
+        {
+          "name": "progress",
+          "startLine": 34,
+          "endLine": 53,
+          "params": [
+            "start",
+            "end",
+            "totalStart",
+            "totalEnd"
+          ]
+        },
+        {
+          "name": "formatLog",
+          "startLine": 55,
+          "endLine": 89,
+          "params": [
+            "opts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "formatOutgoingFetch",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "formatLog",
+          "line": 55,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "formatOutgoingFetch",
+          "callee": "response.headers.get",
+          "lineNumber": 9
+        },
+        {
+          "caller": "formatOutgoingFetch",
+          "callee": "(duration / 1e3).toFixed",
+          "lineNumber": 12
+        },
+        {
+          "caller": "formatOutgoingFetch",
+          "callee": "duration.toFixed",
+          "lineNumber": 13
+        },
+        {
+          "caller": "formatOutgoingFetch",
+          "callee": "xcache.padEnd",
+          "lineNumber": 15
+        },
+        {
+          "caller": "formatOutgoingFetch",
+          "callee": "durationColor",
+          "lineNumber": 15
+        },
+        {
+          "caller": "formatOutgoingFetch",
+          "callee": "bold",
+          "lineNumber": 16
+        },
+        {
+          "caller": "formatOutgoingFetch",
+          "callee": "gray",
+          "lineNumber": 17
+        },
+        {
+          "caller": "formatStatus",
+          "callee": "(status < 300 ? green : status < 400 ? blue : status < 500 ? yellow : red)",
+          "lineNumber": 28
+        },
+        {
+          "caller": "formatLatency",
+          "callee": "`${latency.toFixed(0)}ms`.padEnd",
+          "lineNumber": 32
+        },
+        {
+          "caller": "formatLatency",
+          "callee": "latency.toFixed",
+          "lineNumber": 32
+        },
+        {
+          "caller": "progress",
+          "callee": "Math.ceil",
+          "lineNumber": 42
+        },
+        {
+          "caller": "progress",
+          "callee": "Math.ceil",
+          "lineNumber": 43
+        },
+        {
+          "caller": "progress",
+          "callee": "bar.push",
+          "lineNumber": 47
+        },
+        {
+          "caller": "progress",
+          "callee": "bar.push",
+          "lineNumber": 48
+        },
+        {
+          "caller": "progress",
+          "callee": "bar.push",
+          "lineNumber": 49
+        },
+        {
+          "caller": "progress",
+          "callee": "bar.join",
+          "lineNumber": 52
+        },
+        {
+          "caller": "formatLog",
+          "callee": "performance.now",
+          "lineNumber": 56
+        },
+        {
+          "caller": "formatLog",
+          "callee": "formatStatus",
+          "lineNumber": 57
+        },
+        {
+          "caller": "formatLog",
+          "callee": "formatLatency",
+          "lineNumber": 58
+        },
+        {
+          "caller": "formatLog",
+          "callee": "cyan",
+          "lineNumber": 59
+        },
+        {
+          "caller": "formatLog",
+          "callee": "opts.status.toString",
+          "lineNumber": 71
+        },
+        {
+          "caller": "formatLog",
+          "callee": "[totalServerTiming, ...opts.timings]\n    .map((t) => {\n      if (!t.end) return;\n\n      const duration = t.end - t.start;\n      const l = formatLatency(duration);\n      const n = gray(t.name);\n      const d = (t.desc?.toUpperCase() ?? \"\").padEnd(6);\n\n      return `${progress(t.start, t.end, opts.begin, end)} ${l} ${d} ${n} `;\n    })\n    .filter(Boolean)\n    .join",
+          "lineNumber": 74
+        },
+        {
+          "caller": "formatLog",
+          "callee": "[totalServerTiming, ...opts.timings]\n    .map((t) => {\n      if (!t.end) return;\n\n      const duration = t.end - t.start;\n      const l = formatLatency(duration);\n      const n = gray(t.name);\n      const d = (t.desc?.toUpperCase() ?? \"\").padEnd(6);\n\n      return `${progress(t.start, t.end, opts.begin, end)} ${l} ${d} ${n} `;\n    })\n    .filter",
+          "lineNumber": 74
+        },
+        {
+          "caller": "formatLog",
+          "callee": "[totalServerTiming, ...opts.timings]\n    .map",
+          "lineNumber": 74
+        },
+        {
+          "caller": "formatLog",
+          "callee": "formatLatency",
+          "lineNumber": 79
+        },
+        {
+          "caller": "formatLog",
+          "callee": "gray",
+          "lineNumber": 80
+        },
+        {
+          "caller": "formatLog",
+          "callee": "(t.desc?.toUpperCase() ?? \"\").padEnd",
+          "lineNumber": 81
+        },
+        {
+          "caller": "formatLog",
+          "callee": "t.desc?.toUpperCase",
+          "lineNumber": 81
+        },
+        {
+          "caller": "formatLog",
+          "callee": "progress",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/mod.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 18,
+      "exports": [
+        {
+          "name": "JsonViewer",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "isAwaitable",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "notUndefined",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "singleFlight",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "PromiseOrValue",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "decoManifestBuilder",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "adminUrlFor",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "isAdmin",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "resolvable",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "readFromStream",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "metabasePreview",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "tryOrDefault",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "DotNestedKeys",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "createServerTimings",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "Device",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 15,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/timings.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "createServerTimings",
+          "startLine": 22,
+          "endLine": 60,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "createServerTimings",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "start",
+          "callee": "performance.now",
+          "lineNumber": 26
+        },
+        {
+          "caller": "start",
+          "callee": "timings.push",
+          "lineNumber": 28
+        },
+        {
+          "caller": "start",
+          "callee": "performance.now",
+          "lineNumber": 32
+        },
+        {
+          "caller": "printTimings",
+          "callee": "timings\n      .map(({ name, desc, start, end }) => {\n        if (!end || !name) return;\n\n        return `${encodeURIComponent(name)}${desc ? `;desc=${desc}` : \"\"};dur=${\n          (end - start).toFixed(0)\n        }`;\n      })\n      .filter(Boolean)\n      .join",
+          "lineNumber": 42
+        },
+        {
+          "caller": "printTimings",
+          "callee": "timings\n      .map(({ name, desc, start, end }) => {\n        if (!end || !name) return;\n\n        return `${encodeURIComponent(name)}${desc ? `;desc=${desc}` : \"\"};dur=${\n          (end - start).toFixed(0)\n        }`;\n      })\n      .filter",
+          "lineNumber": 42
+        },
+        {
+          "caller": "printTimings",
+          "callee": "timings\n      .map",
+          "lineNumber": 42
+        },
+        {
+          "caller": "printTimings",
+          "callee": "encodeURIComponent",
+          "lineNumber": 46
+        },
+        {
+          "caller": "printTimings",
+          "callee": "(end - start).toFixed",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

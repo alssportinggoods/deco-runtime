@@ -1,0 +1,1086 @@
+{
+ "nodes": [
+  {
+   "id": "file:engine/schema/gen.ts",
+   "type": "file",
+   "name": "gen.ts",
+   "filePath": "engine/schema/gen.ts",
+   "summary": "Generates the complete JSON Schema for a manifest by resolving each block module, introspecting its types, and building the schema document.",
+   "tags": [
+    "schema",
+    "code-generation",
+    "json-schema"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:engine/schema/gen.ts:genSchemasFromManifest",
+   "type": "function",
+   "name": "genSchemasFromManifest",
+   "filePath": "engine/schema/gen.ts",
+   "lineRange": [
+    79,
+    161
+   ],
+   "summary": "Builds JSON Schemas from a DecoManifest by resolving block paths, introspecting their TypeScript types, and assembling the schema with the schema builder.",
+   "tags": [
+    "schema",
+    "code-generation",
+    "json-schema"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:engine/schema/gen.ts:resolveForPath",
+   "type": "function",
+   "name": "resolveForPath",
+   "filePath": "engine/schema/gen.ts",
+   "lineRange": [
+    30,
+    66
+   ],
+   "summary": "Resolves and parses a block file path to a block reference, introspecting its types when requested.",
+   "tags": [
+    "schema",
+    "resolver",
+    "introspection"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:engine/schema/lazy.ts",
+   "type": "file",
+   "name": "lazy.ts",
+   "filePath": "engine/schema/lazy.ts",
+   "summary": "Provides a request-scoped lazy schema that merges runtime-saved blocks from the active release into the generated base schema, cached by revision.",
+   "tags": [
+    "schema",
+    "caching",
+    "lazy",
+    "service"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:engine/schema/lazy.ts:lazySchemaFor",
+   "type": "function",
+   "name": "lazySchemaFor",
+   "filePath": "engine/schema/lazy.ts",
+   "lineRange": [
+    142,
+    173
+   ],
+   "summary": "Returns a per-context lazy schema accessor that single-flights schema regeneration and revalidates against the release revision.",
+   "tags": [
+    "schema",
+    "caching",
+    "lazy"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:engine/schema/lazy.ts:incorporateSavedBlocksIntoSchema",
+   "type": "function",
+   "name": "incorporateSavedBlocksIntoSchema",
+   "filePath": "engine/schema/lazy.ts",
+   "lineRange": [
+    52,
+    121
+   ],
+   "summary": "Merges blocks persisted in a release into the base JSON Schema, injecting resolvable references into the relevant anyOf unions.",
+   "tags": [
+    "schema",
+    "json-schema",
+    "merge"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:engine/schema/merge.ts",
+   "type": "file",
+   "name": "merge.ts",
+   "filePath": "engine/schema/merge.ts",
+   "summary": "Merges multiple JSON Schema definition objects by combining their anyOf branches and deduplicating entries.",
+   "tags": [
+    "schema",
+    "json-schema",
+    "merge",
+    "utility"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:engine/schema/parser.ts",
+   "type": "file",
+   "name": "parser.ts",
+   "filePath": "engine/schema/parser.ts",
+   "summary": "TypeScript source loader and parser with caching and .d.ts resolution that produces parsed AST programs for schema introspection.",
+   "tags": [
+    "parsing",
+    "schema",
+    "caching",
+    "loader"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:engine/schema/parser.ts:parsePath",
+   "type": "function",
+   "name": "parsePath",
+   "filePath": "engine/schema/parser.ts",
+   "lineRange": [
+    286,
+    330
+   ],
+   "summary": "Resolves a file path, loads its content via the cached loader, and parses it into an AST program.",
+   "tags": [
+    "parsing",
+    "loader"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:engine/schema/parser.ts:load",
+   "type": "function",
+   "name": "load",
+   "filePath": "engine/schema/parser.ts",
+   "lineRange": [
+    127,
+    187
+   ],
+   "summary": "Loads a module's source from disk or network, preferring matching .d.ts type definition files when available.",
+   "tags": [
+    "loader",
+    "filesystem",
+    "fetch"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:engine/schema/parser.ts:resolveFileExtension",
+   "type": "function",
+   "name": "resolveFileExtension",
+   "filePath": "engine/schema/parser.ts",
+   "lineRange": [
+    52,
+    121
+   ],
+   "summary": "Resolves a file path to an existing file by probing candidate extensions and index files.",
+   "tags": [
+    "filesystem",
+    "resolver"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:engine/schema/parser.ts:wrapLoaderWithDtsSupport",
+   "type": "function",
+   "name": "wrapLoaderWithDtsSupport",
+   "filePath": "engine/schema/parser.ts",
+   "lineRange": [
+    206,
+    235
+   ],
+   "summary": "Wraps a base module loader so that JS files are served from their corresponding type definition files when present.",
+   "tags": [
+    "loader",
+    "decorator"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:engine/schema/parser.ts:initLoader",
+   "type": "function",
+   "name": "initLoader",
+   "filePath": "engine/schema/parser.ts",
+   "lineRange": [
+    237,
+    262
+   ],
+   "summary": "Initializes the cached module loader backed by Deno's module cache and decoded content.",
+   "tags": [
+    "loader",
+    "caching"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:engine/schema/reader.ts",
+   "type": "file",
+   "name": "reader.ts",
+   "filePath": "engine/schema/reader.ts",
+   "summary": "Thin wrapper that generates schemas from a manifest and cleans up stale generated schema cache files.",
+   "tags": [
+    "schema",
+    "utility"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "function:engine/schema/reader.ts:genSchemas",
+   "type": "function",
+   "name": "genSchemas",
+   "filePath": "engine/schema/reader.ts",
+   "lineRange": [
+    7,
+    28
+   ],
+   "summary": "Generates schemas from a manifest and removes stale generated schema and doc cache files from the working directory.",
+   "tags": [
+    "schema",
+    "utility"
+   ],
+   "complexity": "simple"
+  },
+  {
+   "id": "file:engine/schema/schemeable.ts",
+   "type": "file",
+   "name": "schemeable.ts",
+   "filePath": "engine/schema/schemeable.ts",
+   "summary": "Converts internal schemeable type representations into JSON Schema, handling unions, arrays, objects, inheritance, and recursion via a seen map.",
+   "tags": [
+    "schema",
+    "json-schema",
+    "serialization"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:engine/schema/schemeable.ts:schemeableToJSONSchema",
+   "type": "function",
+   "name": "schemeableToJSONSchema",
+   "filePath": "engine/schema/schemeable.ts",
+   "lineRange": [
+    200,
+    244
+   ],
+   "summary": "Public entrypoint that converts a schemeable into JSON Schema with id generation and recursion guarding.",
+   "tags": [
+    "schema",
+    "json-schema",
+    "serialization"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:engine/schema/schemeable.ts:schemeableToJSONSchemaFunc",
+   "type": "function",
+   "name": "schemeableToJSONSchemaFunc",
+   "filePath": "engine/schema/schemeable.ts",
+   "lineRange": [
+    3,
+    199
+   ],
+   "summary": "Core recursive routine mapping each schemeable kind (array, union, object, record, inline) to its JSON Schema representation.",
+   "tags": [
+    "schema",
+    "json-schema",
+    "recursion"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:engine/schema/transform.ts",
+   "type": "file",
+   "name": "transform.ts",
+   "filePath": "engine/schema/transform.ts",
+   "summary": "Core TypeScript-to-schemeable transformer that walks the parsed AST resolving type names, interfaces, well-known types, and block functions into schemeable representations.",
+   "tags": [
+    "schema",
+    "ast",
+    "transformation",
+    "introspection"
+   ],
+   "complexity": "complex",
+   "languageNotes": "Large AST visitor mapping TypeScript type nodes to an intermediate schemeable representation."
+  },
+  {
+   "id": "function:engine/schema/transform.ts:tsTypeToSchemeable",
+   "type": "function",
+   "name": "tsTypeToSchemeable",
+   "filePath": "engine/schema/transform.ts",
+   "lineRange": [
+    751,
+    992
+   ],
+   "summary": "Transforms an arbitrary TypeScript type node into a schemeable, dispatching across keywords, unions, arrays, objects, and type references.",
+   "tags": [
+    "schema",
+    "ast",
+    "transformation"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:engine/schema/transform.ts:typeNameToSchemeable",
+   "type": "function",
+   "name": "typeNameToSchemeable",
+   "filePath": "engine/schema/transform.ts",
+   "lineRange": [
+    278,
+    472
+   ],
+   "summary": "Resolves a named type reference to a schemeable, following imports and parsing referenced modules as needed.",
+   "tags": [
+    "schema",
+    "ast",
+    "resolver"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:engine/schema/transform.ts:wellKnownTypeReferenceToSchemeable",
+   "type": "function",
+   "name": "wellKnownTypeReferenceToSchemeable",
+   "filePath": "engine/schema/transform.ts",
+   "lineRange": [
+    474,
+    749
+   ],
+   "summary": "Handles well-known generic types (Record, Partial, Pick, Omit, Promise, etc.) converting them into schemeable representations.",
+   "tags": [
+    "schema",
+    "ast",
+    "transformation"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:engine/schema/transform.ts:findFunc",
+   "type": "function",
+   "name": "findFunc",
+   "filePath": "engine/schema/transform.ts",
+   "lineRange": [
+    1140,
+    1314
+   ],
+   "summary": "Locates a named function or class method export within a parsed program, following re-exports and producing its JSDoc schema.",
+   "tags": [
+    "ast",
+    "introspection"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:engine/schema/transform.ts:programToBlockRef",
+   "type": "function",
+   "name": "programToBlockRef",
+   "filePath": "engine/schema/transform.ts",
+   "lineRange": [
+    1519,
+    1595
+   ],
+   "summary": "Introspects a parsed program for a given block key, deriving its input and return schemeables for schema generation.",
+   "tags": [
+    "schema",
+    "introspection",
+    "ast"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "function:engine/schema/transform.ts:findDefaultFuncExport",
+   "type": "function",
+   "name": "findDefaultFuncExport",
+   "filePath": "engine/schema/transform.ts",
+   "lineRange": [
+    1328,
+    1394
+   ],
+   "summary": "Finds the default-exported function of a parsed module and extracts its JSDoc-based schema info.",
+   "tags": [
+    "ast",
+    "introspection"
+   ],
+   "complexity": "complex"
+  },
+  {
+   "id": "file:engine/schema/utils.ts",
+   "type": "file",
+   "name": "utils.ts",
+   "filePath": "engine/schema/utils.ts",
+   "summary": "Schema-engine helpers for parsing JSDoc attributes, beautifying property names, and async/sync AST visiting.",
+   "tags": [
+    "utility",
+    "schema",
+    "jsdoc",
+    "ast"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:engine/schema/utils.ts:parseJSDocAttribute",
+   "type": "function",
+   "name": "parseJSDocAttribute",
+   "filePath": "engine/schema/utils.ts",
+   "lineRange": [
+    5,
+    42
+   ],
+   "summary": "Parses a JSDoc attribute key/value into a typed JSON Schema annotation value, coercing numbers and booleans.",
+   "tags": [
+    "jsdoc",
+    "parsing"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:runtime/features/meta.ts",
+   "type": "file",
+   "name": "meta.ts",
+   "filePath": "runtime/features/meta.ts",
+   "summary": "Implements the meta endpoint that exposes the site's manifest blocks and lazy schema, with long-polling support for schema changes via ETag.",
+   "tags": [
+    "api-handler",
+    "schema",
+    "service"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:runtime/features/meta.ts:meta",
+   "type": "function",
+   "name": "meta",
+   "filePath": "runtime/features/meta.ts",
+   "lineRange": [
+    109,
+    134
+   ],
+   "summary": "Meta endpoint handler returning the current manifest and schema, optionally waiting for changes when an If-None-Match etag is supplied.",
+   "tags": [
+    "api-handler",
+    "schema"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:runtime/features/meta.ts:waitForChanges",
+   "type": "function",
+   "name": "waitForChanges",
+   "filePath": "runtime/features/meta.ts",
+   "lineRange": [
+    63,
+    97
+   ],
+   "summary": "Long-polls for schema/manifest changes, resolving the new meta payload once the computed etag differs from the client's.",
+   "tags": [
+    "schema",
+    "long-polling"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "function:runtime/features/meta.ts:toManifestBlocks",
+   "type": "function",
+   "name": "toManifestBlocks",
+   "filePath": "runtime/features/meta.ts",
+   "lineRange": [
+    27,
+    54
+   ],
+   "summary": "Transforms a DecoManifest into the serializable manifest-blocks structure exposed by the meta endpoint.",
+   "tags": [
+    "serialization",
+    "manifest"
+   ],
+   "complexity": "moderate"
+  },
+  {
+   "id": "file:utils/patched_fetch.ts",
+   "type": "file",
+   "name": "patched_fetch.ts",
+   "filePath": "utils/patched_fetch.ts",
+   "summary": "Instruments the global fetch with listener hooks and observability metadata extraction (app name, url parts, method) for outbound requests.",
+   "tags": [
+    "utility",
+    "observability",
+    "middleware",
+    "fetch"
+   ],
+   "complexity": "moderate"
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:engine/schema/gen.ts",
+   "target": "function:engine/schema/gen.ts:genSchemasFromManifest",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/gen.ts",
+   "target": "function:engine/schema/gen.ts:resolveForPath",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/gen.ts",
+   "target": "function:engine/schema/gen.ts:genSchemasFromManifest",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/schema/gen.ts",
+   "target": "file:blocks/app.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/gen.ts",
+   "target": "file:blocks/appsUtil.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/gen.ts",
+   "target": "file:blocks/index.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/gen.ts",
+   "target": "file:deps.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/gen.ts",
+   "target": "file:engine/block.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/gen.ts",
+   "target": "file:engine/importmap/builder.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/gen.ts",
+   "target": "file:engine/schema/builder.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/gen.ts",
+   "target": "file:engine/schema/parser.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/gen.ts",
+   "target": "file:engine/schema/transform.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "function:engine/schema/gen.ts:genSchemasFromManifest",
+   "target": "function:engine/schema/builder.ts:newSchemaBuilder",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/schema/lazy.ts",
+   "target": "function:engine/schema/lazy.ts:lazySchemaFor",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/lazy.ts",
+   "target": "function:engine/schema/lazy.ts:incorporateSavedBlocksIntoSchema",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/lazy.ts",
+   "target": "function:engine/schema/lazy.ts:lazySchemaFor",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/schema/lazy.ts",
+   "target": "file:blocks/app.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/lazy.ts",
+   "target": "file:deco.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/lazy.ts",
+   "target": "file:deps.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/lazy.ts",
+   "target": "file:engine/core/resolver.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/lazy.ts",
+   "target": "file:engine/core/utils.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/lazy.ts",
+   "target": "file:engine/schema/builder.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/lazy.ts",
+   "target": "file:engine/schema/parser.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/lazy.ts",
+   "target": "file:engine/schema/reader.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/lazy.ts",
+   "target": "file:utils/admin.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/lazy.ts",
+   "target": "file:utils/rand.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/merge.ts",
+   "target": "file:deps.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/parser.ts",
+   "target": "function:engine/schema/parser.ts:parsePath",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/parser.ts",
+   "target": "function:engine/schema/parser.ts:load",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/parser.ts",
+   "target": "function:engine/schema/parser.ts:resolveFileExtension",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/parser.ts",
+   "target": "function:engine/schema/parser.ts:wrapLoaderWithDtsSupport",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/parser.ts",
+   "target": "function:engine/schema/parser.ts:initLoader",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/parser.ts",
+   "target": "function:engine/schema/parser.ts:parsePath",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/schema/parser.ts",
+   "target": "function:engine/schema/parser.ts:initLoader",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/schema/parser.ts",
+   "target": "file:engine/schema/comments.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/parser.ts",
+   "target": "file:engine/schema/deps.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/reader.ts",
+   "target": "function:engine/schema/reader.ts:genSchemas",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/reader.ts",
+   "target": "file:blocks/app.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/reader.ts",
+   "target": "file:deco.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/reader.ts",
+   "target": "file:engine/schema/gen.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/reader.ts",
+   "target": "file:types.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "function:engine/schema/reader.ts:genSchemas",
+   "target": "function:engine/schema/gen.ts:genSchemasFromManifest",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/schema/schemeable.ts",
+   "target": "function:engine/schema/schemeable.ts:schemeableToJSONSchema",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/schemeable.ts",
+   "target": "function:engine/schema/schemeable.ts:schemeableToJSONSchemaFunc",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/schemeable.ts",
+   "target": "function:engine/schema/schemeable.ts:schemeableToJSONSchema",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/schema/schemeable.ts",
+   "target": "file:deps.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/schemeable.ts",
+   "target": "file:engine/schema/transform.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/transform.ts",
+   "target": "function:engine/schema/transform.ts:tsTypeToSchemeable",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/transform.ts",
+   "target": "function:engine/schema/transform.ts:typeNameToSchemeable",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/transform.ts",
+   "target": "function:engine/schema/transform.ts:wellKnownTypeReferenceToSchemeable",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/transform.ts",
+   "target": "function:engine/schema/transform.ts:findFunc",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/transform.ts",
+   "target": "function:engine/schema/transform.ts:programToBlockRef",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/transform.ts",
+   "target": "function:engine/schema/transform.ts:findDefaultFuncExport",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/transform.ts",
+   "target": "function:engine/schema/transform.ts:tsTypeToSchemeable",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/schema/transform.ts",
+   "target": "function:engine/schema/transform.ts:typeNameToSchemeable",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/schema/transform.ts",
+   "target": "function:engine/schema/transform.ts:findDefaultFuncExport",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/schema/transform.ts",
+   "target": "function:engine/schema/transform.ts:programToBlockRef",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/schema/transform.ts",
+   "target": "file:deps.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/transform.ts",
+   "target": "file:engine/block.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/transform.ts",
+   "target": "file:engine/importmap/builder.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/transform.ts",
+   "target": "file:engine/schema/comments.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/transform.ts",
+   "target": "file:engine/schema/deps.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/transform.ts",
+   "target": "file:engine/schema/parser.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:engine/schema/transform.ts",
+   "target": "file:engine/schema/utils.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "function:engine/schema/transform.ts:typeNameToSchemeable",
+   "target": "function:engine/schema/parser.ts:parsePath",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:engine/schema/utils.ts",
+   "target": "function:engine/schema/utils.ts:parseJSDocAttribute",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:engine/schema/utils.ts",
+   "target": "function:engine/schema/utils.ts:parseJSDocAttribute",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:runtime/features/meta.ts",
+   "target": "function:runtime/features/meta.ts:meta",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:runtime/features/meta.ts",
+   "target": "function:runtime/features/meta.ts:waitForChanges",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:runtime/features/meta.ts",
+   "target": "function:runtime/features/meta.ts:toManifestBlocks",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:runtime/features/meta.ts",
+   "target": "function:runtime/features/meta.ts:meta",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:runtime/features/meta.ts",
+   "target": "file:deco.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:runtime/features/meta.ts",
+   "target": "file:deno.json",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:runtime/features/meta.ts",
+   "target": "file:engine/core/utils.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:runtime/features/meta.ts",
+   "target": "file:engine/schema/builder.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:runtime/features/meta.ts",
+   "target": "file:engine/schema/gen.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:runtime/features/meta.ts",
+   "target": "file:engine/schema/lazy.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:runtime/features/meta.ts",
+   "target": "file:engine/schema/parser.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:runtime/features/meta.ts",
+   "target": "file:types.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "function:runtime/features/meta.ts:waitForChanges",
+   "target": "function:engine/schema/lazy.ts:lazySchemaFor",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:utils/patched_fetch.ts",
+   "target": "function:utils/patched_fetch.ts:onFetch",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:utils/patched_fetch.ts",
+   "target": "function:utils/patched_fetch.ts:onFetch",
+   "type": "exports",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "file:utils/patched_fetch.ts",
+   "target": "file:deco.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  }
+ ]
+}

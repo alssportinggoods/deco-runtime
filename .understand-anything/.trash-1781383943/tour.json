@@ -1,0 +1,89 @@
+[
+  {
+    "order": 1,
+    "title": "Project Overview",
+    "description": "Start with the README to understand what Deco is: a Git-based Visual CMS and full-stack TypeScript framework. Its defining idea is that a content editor UI is generated directly from your TypeScript interfaces — no separate schema language. The README covers getting started, running a local engine against a site, deployment, and the caching model, giving you the roadmap for everything the tour explores in code.",
+    "nodeIds": ["document:README.md", "document:CLAUDE.md"]
+  },
+  {
+    "order": 2,
+    "title": "The Public Entry Point",
+    "description": "mod.ts is the top-level export of @deco/deco. It re-exports the entire public surface — the Deco class, the context system, blocks, the resolver, schema generation, and fetch utilities. Reading it gives you a map of which modules are considered the framework's API, each of which the following steps explore in turn.",
+    "nodeIds": ["file:mod.ts", "config:deno.json"],
+    "languageLesson": "Deno projects use a JSR export map in deno.json (the 'exports' field) instead of package.json. Subpath exports like '@deco/deco/blocks' map to specific source files, letting consumers import narrow slices of the framework."
+  },
+  {
+    "order": 3,
+    "title": "The Request Context",
+    "description": "deco.ts is the connective tissue of the framework, depended on by dozens of modules (one of the highest fan-in files in the codebase). It defines the global DecoContext and a request-scoped RequestContext built on AsyncLocalStorage, exposing deployment info, platform detection, and the active request. Blocks, the engine, and the runtime all read from this context to stay request-aware without threading state through every call.",
+    "nodeIds": ["file:deco.ts"],
+    "languageLesson": "AsyncLocalStorage gives each in-flight request its own isolated store that survives across await boundaries — effectively request-scoped globals without the pitfalls of true globals in a concurrent server."
+  },
+  {
+    "order": 4,
+    "title": "The Block System",
+    "description": "Blocks are Deco's fundamental abstraction: serializable, composable, typed functions registered in a DecoManifest. The blocks barrel re-exports every block type. The accompanying README explains what a block is and how its Props interface becomes an editor UI. This is the layer that realizes the README's central promise.",
+    "nodeIds": ["file:blocks/mod.ts", "document:blocks/README.md"]
+  },
+  {
+    "order": 5,
+    "title": "Loaders and Sections",
+    "description": "Building on the block concept from Step 4, these are the two block types you meet first in any Deco site. Loaders are async data fetchers with caching, stale-while-revalidate, and single-flight dedup; Sections wrap Preact components with prop loading, error boundaries, and preview rendering. Together they show how data and UI are expressed as the same kind of typed function.",
+    "nodeIds": ["file:blocks/loader.ts", "file:blocks/section.ts", "file:blocks/app.ts"]
+  },
+  {
+    "order": 6,
+    "title": "Engine: Block Introspection",
+    "description": "engine/block.ts bridges the block definitions from Steps 4-5 into the engine. It provides type guards, resolver wiring, and the schema-transform integration for every block kind. This is where a block stops being just a function and becomes something the engine can introspect and resolve.",
+    "nodeIds": ["file:engine/block.ts"]
+  },
+  {
+    "order": 7,
+    "title": "Engine: The Resolver",
+    "description": "The resolver is the heart of Deco and the second-highest fan-in module in the codebase. It executes 'resolvables' — composable async operations resolved field by field, with resolve chains, middleware, timing instrumentation, and dangling-reference recovery. ReleaseResolver layers per-release caching and resolver overrides on top. The engine README walks through the resolution algorithm if you want the formal model.",
+    "nodeIds": ["file:engine/core/resolver.ts", "file:engine/core/mod.ts", "document:engine/core/README.md"]
+  },
+  {
+    "order": 8,
+    "title": "Engine: Schema and Decofile",
+    "description": "Two engine subsystems make the visual CMS possible. Schema generation (gen.ts) introspects each block's TypeScript types and emits the JSON Schema that drives the editor UI — the mechanism behind the README's headline feature. The decofile provider composes filesystem, folder, and endpoint sources into the Git-based content store the engine resolves against.",
+    "nodeIds": ["file:engine/schema/gen.ts", "file:engine/decofile/provider.ts"]
+  },
+  {
+    "order": 9,
+    "title": "Runtime: The Deco Class",
+    "description": "runtime/mod.ts defines the Deco class — the runtime facade that ties everything before it together. It bootstraps the manifest, decofile provider, and resolver from Steps 6-8, then exposes the high-level operations a site runs on: handler, fetch, resolve, render, preview, invoke, and per-request state preparation.",
+    "nodeIds": ["file:runtime/mod.ts"]
+  },
+  {
+    "order": 10,
+    "title": "Runtime: Request Lifecycle",
+    "description": "These two files implement what happens on every HTTP request. The handler factory wires a Hono app together with Deco's middleware, the renderer, route handlers, and HTMX bindings into a single fetch handler. The middleware pipeline (a high fan-in module) prepares request-scoped state, starts OpenTelemetry tracing, and handles cookies, flags, CORS, and server-timing headers.",
+    "nodeIds": ["file:runtime/handler.tsx", "file:runtime/middleware.ts"]
+  },
+  {
+    "order": 11,
+    "title": "Runtime: HTMX Interactivity",
+    "description": "The HTMX integration delivers the client-side interactivity the README highlights. It sets up the renderer, static file serving, and a WebSocket-based hot-module-reload channel, so server-rendered Preact sections can update partially without a full client framework.",
+    "nodeIds": ["file:runtime/htmx/mod.tsx"]
+  },
+  {
+    "order": 12,
+    "title": "Observability",
+    "description": "Cutting across the whole request path, the observability layer wires OpenTelemetry into the framework. config.ts builds the resource descriptor, tracer, and sampling strategy, while the barrel exposes the logger and meter used by the middleware (Step 10) and resolver (Step 7) for distributed tracing and metrics.",
+    "nodeIds": ["file:observability/mod.ts", "file:observability/otel/config.ts"]
+  },
+  {
+    "order": 13,
+    "title": "The Dev Daemon",
+    "description": "The daemon powers the local development experience. It assembles a Hono application wiring auth, filesystem, realtime sync, SSE, and logging APIs behind site routing, with git.ts as its Git backbone — clone, diff, publish, discard, and conflict-resolving rebase. This is how Deco edits content as Git operations rather than database writes.",
+    "nodeIds": ["file:daemon/daemon.ts", "file:daemon/git.ts"]
+  },
+  {
+    "order": 14,
+    "title": "Continuous Integration",
+    "description": "As a capstone, the CI workflow shows how the framework keeps itself healthy. It builds the Deno module, fetches dependencies, and runs tests, benchmarks, lint, and formatting checks on every push and PR to main, across both Ubuntu and Windows runners — mirroring the local 'deno task check' from Step 1.",
+    "nodeIds": ["pipeline:.github/workflows/ci.yaml"],
+    "languageLesson": "GitHub Actions matrix builds run the same job across multiple OS/runtime combinations in parallel. Here testing on both Ubuntu and Windows catches platform-specific path and filesystem bugs before publishing to JSR."
+  }
+]

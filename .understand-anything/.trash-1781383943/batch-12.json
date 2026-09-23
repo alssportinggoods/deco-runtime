@@ -1,0 +1,160 @@
+{
+  "nodes": [
+    {
+      "id": "pipeline:.github/workflows/ci.yaml",
+      "type": "pipeline",
+      "name": "ci.yaml",
+      "filePath": ".github/workflows/ci.yaml",
+      "summary": "Continuous integration workflow that builds the Deno module, fetches dependencies, and runs tests, benchmarks, lint, and formatting checks on push and pull requests to main across Ubuntu and Windows runners.",
+      "tags": ["ci-cd", "infrastructure", "testing", "deno"],
+      "complexity": "simple",
+      "languageNotes": "Uses a matrix strategy to run the same job on ubuntu-latest and windows-latest, with Deno installation caching."
+    },
+    {
+      "id": "pipeline:.github/workflows/issues.yaml",
+      "type": "pipeline",
+      "name": "issues.yaml",
+      "filePath": ".github/workflows/issues.yaml",
+      "summary": "Issue automation workflow that applies a 'triage' label to newly opened or reopened GitHub issues via the gh CLI.",
+      "tags": ["ci-cd", "infrastructure", "automation", "issues"],
+      "complexity": "simple"
+    },
+    {
+      "id": "pipeline:.github/workflows/publish-ai.yaml",
+      "type": "pipeline",
+      "name": "publish-ai.yaml",
+      "filePath": ".github/workflows/publish-ai.yaml",
+      "summary": "Release publishing workflow that builds and pushes multi-arch AI daemon Docker images (Deno 1.x and 2.x variants, bundled with Node, GitHub CLI, and Claude Code) to GitHub Container Registry on tag push.",
+      "tags": ["ci-cd", "infrastructure", "deployment", "containerization"],
+      "complexity": "complex",
+      "languageNotes": "Generates Dockerfiles inline via heredoc and builds linux/amd64,linux/arm64 images with docker buildx; tags 'latest' only for non-prerelease versions."
+    },
+    {
+      "id": "pipeline:.github/workflows/publish.yaml",
+      "type": "pipeline",
+      "name": "publish.yaml",
+      "filePath": ".github/workflows/publish.yaml",
+      "summary": "Release publishing workflow that publishes the main, scripts, and dev packages to JSR and builds/pushes multi-arch builder Docker images (Deno 1.x and 2.x) to GitHub Container Registry on tag push.",
+      "tags": ["ci-cd", "infrastructure", "deployment", "containerization"],
+      "complexity": "complex",
+      "languageNotes": "Combines JSR package publishing with inline-generated Alpine Dockerfiles built via docker buildx for amd64 and arm64."
+    },
+    {
+      "id": "pipeline:.github/workflows/release.yaml",
+      "type": "pipeline",
+      "name": "release.yaml",
+      "filePath": ".github/workflows/release.yaml",
+      "summary": "Release workflow that creates a GitHub Release with auto-generated notes for pushed tags, marking prerelease when the tag contains rc-, preview, beta, alpha, or next.",
+      "tags": ["ci-cd", "infrastructure", "deployment", "release"],
+      "complexity": "simple",
+      "languageNotes": "Uses actions/github-script to call the GitHub REST API and detect prerelease tags by substring matching."
+    },
+    {
+      "id": "pipeline:.github/workflows/releaser.yaml",
+      "type": "pipeline",
+      "name": "releaser.yaml",
+      "filePath": ".github/workflows/releaser.yaml",
+      "summary": "Release tagging workflow that opens version-bump discussion comments on PRs (emoji-voting for patch/minor/major) and, on merge to main or next, determines and pushes the appropriate semantic version or prerelease tag.",
+      "tags": ["ci-cd", "infrastructure", "release", "versioning"],
+      "complexity": "complex",
+      "languageNotes": "Computes next semantic versions from git tags via shell, and uses emoji reaction counts on a PR comment to choose the bump level."
+    },
+    {
+      "id": "pipeline:.github/workflows/update.yml",
+      "type": "pipeline",
+      "name": "update.yml",
+      "filePath": ".github/workflows/update.yml",
+      "summary": "Scheduled daily workflow that runs the boywithkeyboard/updater action to open dependency-update pull requests.",
+      "tags": ["ci-cd", "infrastructure", "automation", "dependencies"],
+      "complexity": "simple",
+      "languageNotes": "Triggered by a daily cron schedule with manual workflow_dispatch fallback."
+    },
+    {
+      "id": "step:.github/workflows/releaser.yaml:tag-discussion",
+      "type": "pipeline",
+      "name": "tag-discussion",
+      "filePath": ".github/workflows/releaser.yaml",
+      "summary": "Job that calculates next patch/minor/major versions from git tags and posts a tagging-options discussion comment on PRs targeting main.",
+      "tags": ["ci-cd", "release", "versioning"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:.github/workflows/releaser.yaml:prerelease-tag-discussion",
+      "type": "pipeline",
+      "name": "prerelease-tag-discussion",
+      "filePath": ".github/workflows/releaser.yaml",
+      "summary": "Job that posts a prerelease tagging-options discussion comment on PRs targeting the next branch.",
+      "tags": ["ci-cd", "release", "versioning"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:.github/workflows/releaser.yaml:determine-tag",
+      "type": "pipeline",
+      "name": "determine-tag",
+      "filePath": ".github/workflows/releaser.yaml",
+      "summary": "Job that runs on push to main to determine and push the chosen semantic version tag based on the PR's emoji votes.",
+      "tags": ["ci-cd", "release", "versioning"],
+      "complexity": "complex"
+    },
+    {
+      "id": "step:.github/workflows/releaser.yaml:determine-prerelease-tag",
+      "type": "pipeline",
+      "name": "determine-prerelease-tag",
+      "filePath": ".github/workflows/releaser.yaml",
+      "summary": "Job that runs on push to next to determine and push the appropriate prerelease tag.",
+      "tags": ["ci-cd", "release", "versioning"],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "pipeline:.github/workflows/releaser.yaml",
+      "target": "step:.github/workflows/releaser.yaml:tag-discussion",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "pipeline:.github/workflows/releaser.yaml",
+      "target": "step:.github/workflows/releaser.yaml:prerelease-tag-discussion",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "pipeline:.github/workflows/releaser.yaml",
+      "target": "step:.github/workflows/releaser.yaml:determine-tag",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "pipeline:.github/workflows/releaser.yaml",
+      "target": "step:.github/workflows/releaser.yaml:determine-prerelease-tag",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "pipeline:.github/workflows/releaser.yaml",
+      "target": "pipeline:.github/workflows/release.yaml",
+      "type": "triggers",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "pipeline:.github/workflows/releaser.yaml",
+      "target": "pipeline:.github/workflows/publish.yaml",
+      "type": "triggers",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "pipeline:.github/workflows/releaser.yaml",
+      "target": "pipeline:.github/workflows/publish-ai.yaml",
+      "type": "triggers",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

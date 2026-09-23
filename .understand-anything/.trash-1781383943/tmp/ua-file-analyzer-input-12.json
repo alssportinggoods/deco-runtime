@@ -1,0 +1,13 @@
+{
+  "projectRoot": "C:/Users/vitoo/code/als/deco",
+  "batchFiles": [
+    {"path": ".github/workflows/ci.yaml", "language": "yaml", "sizeLines": 49, "fileCategory": "infra"},
+    {"path": ".github/workflows/issues.yaml", "language": "yaml", "sizeLines": 18, "fileCategory": "infra"},
+    {"path": ".github/workflows/publish-ai.yaml", "language": "yaml", "sizeLines": 188, "fileCategory": "infra"},
+    {"path": ".github/workflows/publish.yaml", "language": "yaml", "sizeLines": 156, "fileCategory": "infra"},
+    {"path": ".github/workflows/release.yaml", "language": "yaml", "sizeLines": 45, "fileCategory": "infra"},
+    {"path": ".github/workflows/releaser.yaml", "language": "yaml", "sizeLines": 375, "fileCategory": "infra"},
+    {"path": ".github/workflows/update.yml", "language": "yaml", "sizeLines": 20, "fileCategory": "infra"}
+  ],
+  "batchImportData": {}
+}

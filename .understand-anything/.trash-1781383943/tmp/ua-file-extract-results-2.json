@@ -1,0 +1,4019 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 31,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "commons/workflows/initialize.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "initializeOnceWhen",
+          "startLine": 12,
+          "endLine": 19,
+          "params": [
+            "f"
+          ]
+        },
+        {
+          "name": "initOnce",
+          "startLine": 22,
+          "endLine": 44,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "initOnce",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "cancel",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "get",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "history",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "signal",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "start",
+          "line": 50,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "initializeOnceWhen",
+          "callee": "initOnce",
+          "lineNumber": 16
+        },
+        {
+          "caller": "initializeOnceWhen",
+          "callee": "f",
+          "lineNumber": 17
+        },
+        {
+          "caller": "initOnce",
+          "callee": "Context.active",
+          "lineNumber": 23
+        },
+        {
+          "caller": "initOnce",
+          "callee": "Deno.env.get",
+          "lineNumber": 36
+        },
+        {
+          "caller": "initOnce",
+          "callee": "Deno.env.get",
+          "lineNumber": 41
+        },
+        {
+          "caller": "initOnce",
+          "callee": "init",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 6,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "commons/workflows/types.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 75,
+      "functions": [
+        {
+          "name": "withoutResolveType",
+          "startLine": 49,
+          "endLine": 53,
+          "params": [
+            "{ __resolveType, ...rest }"
+          ]
+        },
+        {
+          "name": "toExecution",
+          "startLine": 54,
+          "endLine": 78,
+          "params": [
+            "{ id, status, input, output, metadata, completedAt }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WorkflowQS",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "toExecution",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toExecution",
+          "callee": "withoutResolveType",
+          "lineNumber": 72
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "deps.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 105,
+      "nonEmptyLines": 101,
+      "exports": [
+        {
+          "name": "crypto",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "decodeHex",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "encodeHex",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "getCookies",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "getSetCookies",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "setCookie",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "DomInspector",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "DomInspectorActivators",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "inspectHandler",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "context",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "createContextKey",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "opentelemetry",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "diag",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "DiagConsoleLogger",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "DiagLogLevel",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "ROOT_CONTEXT",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "SpanKind",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "SpanStatusCode",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "trace",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "ValueType",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "Attributes",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "BatchObservableResult",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "Context",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "Exception",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "Link",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "Meter",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ObservableCounter",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ObservableGauge",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ObservableResult",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ObservableUpDownCounter",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "Span",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "Tracer",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "FetchInstrumentation",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "InstrumentationBase",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "instrumentationIsWrapped",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "registerInstrumentations",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "InstrumentationConfig",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "JSONSchema7",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "JSONSchema7Definition",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "JSONSchema7Type",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "JSONSchema7TypeName",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "DeepPartial",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "Diff",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "Intersection",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "OptionalKeys",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "Overwrite",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "RequiredKeys",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "UnionToIntersection",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "OTLPTraceExporter",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "Resource",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "BatchSpanProcessor",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "ParentBasedSampler",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "SamplingDecision",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "TraceIdRatioBasedSampler",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "Sampler",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "SamplingResult",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "NodeTracerProvider",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "SemanticResourceAttributes",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "ExplicitBucketHistogramAggregation",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "MeterProvider",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "PeriodicExportingMetricReader",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "View",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "logs",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "SeverityNumber",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "Logger",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "OTLPLogExporter",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "OTLPMetricExporter",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "OTLPExporterNodeConfigBase",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "detectResourcesSync",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "envDetectorSync",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "hostDetectorSync",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "osDetectorSync",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "processDetector",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "BatchLogRecordProcessor",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "ConsoleLogRecordExporter",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "LoggerProvider",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "BufferConfig",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "Murmurhash3",
+          "line": 105,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 78,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "observability/http.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "startObserve",
+          "startLine": 12,
+          "endLine": 21,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "startObserve",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "startObserve",
+          "callee": "performance.now",
+          "lineNumber": 13
+        },
+        {
+          "caller": "startObserve",
+          "callee": "httpDuration.record",
+          "lineNumber": 15
+        },
+        {
+          "caller": "startObserve",
+          "callee": "Math.round",
+          "lineNumber": 15
+        },
+        {
+          "caller": "startObserve",
+          "callee": "performance.now",
+          "lineNumber": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "observability/observe.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "observe",
+          "startLine": 14,
+          "endLine": 37,
+          "params": [
+            "op",
+            "f"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "observe",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "observe",
+          "callee": "performance.now",
+          "lineNumber": 18
+        },
+        {
+          "caller": "observe",
+          "callee": "f",
+          "lineNumber": 21
+        },
+        {
+          "caller": "observe",
+          "callee": "isWrappedError",
+          "lineNumber": 22
+        },
+        {
+          "caller": "observe",
+          "callee": "operationDuration.record",
+          "lineNumber": 31
+        },
+        {
+          "caller": "observe",
+          "callee": "performance.now",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "observability/otel/config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 175,
+      "nonEmptyLines": 160,
+      "functions": [
+        {
+          "name": "tryGetVersionOf",
+          "startLine": 24,
+          "endLine": 31,
+          "params": [
+            "pkg"
+          ]
+        },
+        {
+          "name": "parseSamplingOptions",
+          "startLine": 115,
+          "endLine": 126,
+          "params": []
+        },
+        {
+          "name": "tracerIsRecording",
+          "startLine": 152,
+          "endLine": 153,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "resource",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "OTEL_IS_ENABLED",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "logger",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "tracer",
+          "line": 148,
+          "isDefault": false
+        },
+        {
+          "name": "tracerIsRecording",
+          "line": 152,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "tryGetVersionOf",
+          "callee": "safeImportResolve(pkg).split",
+          "lineNumber": 26
+        },
+        {
+          "caller": "tryGetVersionOf",
+          "callee": "safeImportResolve",
+          "lineNumber": 26
+        },
+        {
+          "caller": "tryGetVersionOf",
+          "callee": "ver.substring",
+          "lineNumber": 27
+        },
+        {
+          "caller": "parseSamplingOptions",
+          "callee": "Deno.env.get",
+          "lineNumber": 116
+        },
+        {
+          "caller": "parseSamplingOptions",
+          "callee": "JSON.parse",
+          "lineNumber": 121
+        },
+        {
+          "caller": "parseSamplingOptions",
+          "callee": "atob",
+          "lineNumber": 121
+        },
+        {
+          "caller": "parseSamplingOptions",
+          "callee": "console.error",
+          "lineNumber": 123
+        },
+        {
+          "caller": "tracerIsRecording",
+          "callee": "opentelemetry.trace.getActiveSpan()?.isRecording",
+          "lineNumber": 153
+        },
+        {
+          "caller": "tracerIsRecording",
+          "callee": "opentelemetry.trace.getActiveSpan",
+          "lineNumber": 153
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "observability/otel/context.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "withRequestContext",
+          "startLine": 18,
+          "endLine": 23,
+          "params": [
+            "context",
+            "fn"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "REQUEST_CONTEXT_KEY",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "STATE_CONTEXT_KEY",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "requestContextStore",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "withRequestContext",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "withRequestContext",
+          "callee": "requestContextStore.run",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "observability/otel/instrumentation/deno-runtime.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 61,
+      "classes": [
+        {
+          "name": "DenoRuntimeInstrumentation",
+          "startLine": 15,
+          "endLine": 69,
+          "methods": [
+            "constructor",
+            "init",
+            "enable",
+            "disable"
+          ],
+          "properties": [
+            "component",
+            "moduleName",
+            "metrics",
+            "gatherMemoryUsage"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DenoRuntimeInstrumentation",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 20
+        },
+        {
+          "caller": "enable",
+          "callee": "this.meter\n        .createObservableUpDownCounter",
+          "lineNumber": 42
+        },
+        {
+          "caller": "enable",
+          "callee": "this.meter\n        .createObservableGauge",
+          "lineNumber": 47
+        },
+        {
+          "caller": "enable",
+          "callee": "this.meter\n        .createObservableCounter",
+          "lineNumber": 51
+        },
+        {
+          "caller": "enable",
+          "callee": "this.meter\n        .createObservableUpDownCounter",
+          "lineNumber": 56
+        },
+        {
+          "caller": "enable",
+          "callee": "this.metrics.memoryUsage.addCallback",
+          "lineNumber": 63
+        },
+        {
+          "caller": "disable",
+          "callee": "this.metrics.memoryUsage.removeCallback",
+          "lineNumber": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "observability/otel/logger.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 185,
+      "nonEmptyLines": 163,
+      "classes": [
+        {
+          "name": "OpenTelemetryHandler",
+          "startLine": 67,
+          "endLine": 185,
+          "methods": [
+            "constructor",
+            "setup",
+            "toOtelSeverityNumber",
+            "handle",
+            "extractRequestContext",
+            "log",
+            "flush",
+            "destroy"
+          ],
+          "properties": [
+            "_logger",
+            "_processor"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OpenTelemetryHandler",
+          "line": 67,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 76
+        },
+        {
+          "caller": "constructor",
+          "callee": "detectResourcesSync",
+          "lineNumber": 78
+        },
+        {
+          "caller": "constructor",
+          "callee": "detectedResource.merge",
+          "lineNumber": 101
+        },
+        {
+          "caller": "constructor",
+          "callee": "loggerProvider.addLogRecordProcessor",
+          "lineNumber": 105
+        },
+        {
+          "caller": "constructor",
+          "callee": "logs.setGlobalLoggerProvider",
+          "lineNumber": 106
+        },
+        {
+          "caller": "constructor",
+          "callee": "logs.getLogger",
+          "lineNumber": 107
+        },
+        {
+          "caller": "setup",
+          "callee": "addEventListener",
+          "lineNumber": 112
+        },
+        {
+          "caller": "handle",
+          "callee": "this.toOtelSeverityNumber",
+          "lineNumber": 136
+        },
+        {
+          "caller": "handle",
+          "callee": "this.extractRequestContext",
+          "lineNumber": 139
+        },
+        {
+          "caller": "handle",
+          "callee": "this._logger?.emit",
+          "lineNumber": 141
+        },
+        {
+          "caller": "extractRequestContext",
+          "callee": "requestContextStore.getStore",
+          "lineNumber": 159
+        },
+        {
+          "caller": "extractRequestContext",
+          "callee": "Context.active",
+          "lineNumber": 160
+        },
+        {
+          "caller": "extractRequestContext",
+          "callee": "console.error",
+          "lineNumber": 171
+        },
+        {
+          "caller": "destroy",
+          "callee": "this.flush",
+          "lineNumber": 181
+        },
+        {
+          "caller": "destroy",
+          "callee": "this._processor?.shutdown",
+          "lineNumber": 182
+        },
+        {
+          "caller": "destroy",
+          "callee": "removeEventListener",
+          "lineNumber": 183
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "observability/otel/metrics.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 57,
+      "functions": [
+        {
+          "name": "headersStringToObject",
+          "startLine": 21,
+          "endLine": 29,
+          "params": [
+            "headersString"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "OTEL_ENABLE_EXTRA_METRICS",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "OTEL_EXPORT_INTERVAL",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "meter",
+          "line": 65,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "headersStringToObject",
+          "callee": "headersString.split(\",\").map",
+          "lineNumber": 25
+        },
+        {
+          "caller": "headersStringToObject",
+          "callee": "headersString.split",
+          "lineNumber": 25
+        },
+        {
+          "caller": "headersStringToObject",
+          "callee": "keyVal.split",
+          "lineNumber": 26
+        },
+        {
+          "caller": "headersStringToObject",
+          "callee": "Object.fromEntries",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "observability/otel/samplers/debug.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 51,
+      "classes": [
+        {
+          "name": "DebugSampler",
+          "startLine": 13,
+          "endLine": 53,
+          "methods": [
+            "constructor",
+            "shouldSample",
+            "toString"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DebugSampler",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "shouldSample",
+          "callee": "context.getValue",
+          "lineNumber": 23
+        },
+        {
+          "caller": "shouldSample",
+          "callee": "context.getValue",
+          "lineNumber": 24
+        },
+        {
+          "caller": "shouldSample",
+          "callee": "req?.headers?.get",
+          "lineNumber": 26
+        },
+        {
+          "caller": "shouldSample",
+          "callee": "this.inner.shouldSample",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "observability/otel/samplers/urlBased.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 64,
+      "classes": [
+        {
+          "name": "URLBasedSampler",
+          "startLine": 24,
+          "endLine": 68,
+          "methods": [
+            "constructor",
+            "shouldSample",
+            "toString"
+          ],
+          "properties": [
+            "compiledOptions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "URLBasedSampler",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "options?.byURLPattern?.map",
+          "lineNumber": 27
+        },
+        {
+          "caller": "constructor",
+          "callee": "pattern.split",
+          "lineNumber": 28
+        },
+        {
+          "caller": "matches",
+          "callee": "urlSegments.every",
+          "lineNumber": 35
+        },
+        {
+          "caller": "shouldSample",
+          "callee": "context.getValue",
+          "lineNumber": 46
+        },
+        {
+          "caller": "shouldSample",
+          "callee": "new URL(req.url).pathname.split",
+          "lineNumber": 48
+        },
+        {
+          "caller": "shouldSample",
+          "callee": "this.compiledOptions.find",
+          "lineNumber": 52
+        },
+        {
+          "caller": "shouldSample",
+          "callee": "opt.matches",
+          "lineNumber": 52
+        },
+        {
+          "caller": "shouldSample",
+          "callee": "Math.random",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "observability/probes/handler.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 15,
+      "functions": [
+        {
+          "name": "getProbeThresholdAsNum",
+          "startLine": 11,
+          "endLine": 16,
+          "params": [
+            "checkerName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getProbeThresholdAsNum",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getProbeThresholdAsNum",
+          "callee": "Deno.env.get",
+          "lineNumber": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "observability/probes/medianLatency.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 30,
+      "exports": [
+        {
+          "name": "medianLatencyChecker",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "observability/probes/memory.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 26,
+      "exports": [
+        {
+          "name": "memoryChecker",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "observability/probes/reqCount.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 23,
+      "exports": [
+        {
+          "name": "reqCountChecker",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "observability/probes/reqInflight.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 28,
+      "exports": [
+        {
+          "name": "reqInflightChecker",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "observability/probes/uptime.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 32,
+      "exports": [
+        {
+          "name": "uptimeChecker",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/caches/cacheWriteWorker.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 76,
+      "functions": [
+        {
+          "name": "ensureCacheDir",
+          "startLine": 8,
+          "endLine": 20,
+          "params": [
+            "dir"
+          ]
+        },
+        {
+          "name": "bufferToHex",
+          "startLine": 29,
+          "endLine": 36,
+          "params": [
+            "buffer"
+          ]
+        },
+        {
+          "name": "sha1",
+          "startLine": 38,
+          "endLine": 41,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "generateCombinedBuffer",
+          "startLine": 45,
+          "endLine": 58,
+          "params": [
+            "body",
+            "headers"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ensureCacheDir",
+          "callee": "initializedDirs.has",
+          "lineNumber": 9
+        },
+        {
+          "caller": "ensureCacheDir",
+          "callee": "Deno.mkdirSync",
+          "lineNumber": 11
+        },
+        {
+          "caller": "ensureCacheDir",
+          "callee": "initializedDirs.add",
+          "lineNumber": 12
+        },
+        {
+          "caller": "ensureCacheDir",
+          "callee": "initializedDirs.add",
+          "lineNumber": 15
+        },
+        {
+          "caller": "ensureCacheDir",
+          "callee": "console.error",
+          "lineNumber": 17
+        },
+        {
+          "caller": "sha1",
+          "callee": "crypto.subtle.digest",
+          "lineNumber": 39
+        },
+        {
+          "caller": "sha1",
+          "callee": "textEncoder.encode",
+          "lineNumber": 39
+        },
+        {
+          "caller": "sha1",
+          "callee": "bufferToHex",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generateCombinedBuffer",
+          "callee": "buf.set",
+          "lineNumber": 55
+        },
+        {
+          "caller": "generateCombinedBuffer",
+          "callee": "buf.set",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/caches/common.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "getCacheStatus",
+          "startLine": 16,
+          "endLine": 25,
+          "params": [
+            "isMatch"
+          ]
+        },
+        {
+          "name": "withInstrumentation",
+          "startLine": 27,
+          "endLine": 64,
+          "params": [
+            "cache",
+            "engine"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "withInstrumentation",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getCacheStatus",
+          "callee": "isMatch.headers.get",
+          "lineNumber": 21
+        },
+        {
+          "caller": "getCacheStatus",
+          "callee": "inFuture",
+          "lineNumber": 22
+        },
+        {
+          "caller": "withInstrumentation",
+          "callee": "cache.open",
+          "lineNumber": 34
+        },
+        {
+          "caller": "withInstrumentation",
+          "callee": "cacheImpl.delete.bind",
+          "lineNumber": 37
+        },
+        {
+          "caller": "withInstrumentation",
+          "callee": "cacheImpl.put.bind",
+          "lineNumber": 38
+        },
+        {
+          "caller": "withInstrumentation",
+          "callee": "tracer.startSpan",
+          "lineNumber": 40
+        },
+        {
+          "caller": "withInstrumentation",
+          "callee": "cacheImpl.match",
+          "lineNumber": 44
+        },
+        {
+          "caller": "withInstrumentation",
+          "callee": "getCacheStatus",
+          "lineNumber": 46
+        },
+        {
+          "caller": "withInstrumentation",
+          "callee": "span.setAttribute",
+          "lineNumber": 48
+        },
+        {
+          "caller": "withInstrumentation",
+          "callee": "cacheHit.add",
+          "lineNumber": 49
+        },
+        {
+          "caller": "withInstrumentation",
+          "callee": "span.recordException",
+          "lineNumber": 55
+        },
+        {
+          "caller": "withInstrumentation",
+          "callee": "span.end",
+          "lineNumber": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/caches/compose.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 117,
+      "nonEmptyLines": 112,
+      "functions": [
+        {
+          "name": "logCacheErr",
+          "startLine": 3,
+          "endLine": 8,
+          "params": [
+            "cache",
+            "msg"
+          ]
+        },
+        {
+          "name": "compose",
+          "startLine": 10,
+          "endLine": 117,
+          "params": [
+            "...storages"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "compose",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "logCacheErr",
+          "callee": "logger.error",
+          "lineNumber": 4
+        },
+        {
+          "caller": "compose",
+          "callee": "storages.slice(1).reduce",
+          "lineNumber": 16
+        },
+        {
+          "caller": "compose",
+          "callee": "storages.slice",
+          "lineNumber": 16
+        },
+        {
+          "caller": "compose",
+          "callee": "Promise.all",
+          "lineNumber": 20
+        },
+        {
+          "caller": "compose",
+          "callee": "storage.open(cacheName).catch",
+          "lineNumber": 21
+        },
+        {
+          "caller": "compose",
+          "callee": "storage.open",
+          "lineNumber": 21
+        },
+        {
+          "caller": "compose",
+          "callee": "logCacheErr",
+          "lineNumber": 22
+        },
+        {
+          "caller": "compose",
+          "callee": "current.open(cacheName).catch",
+          "lineNumber": 24
+        },
+        {
+          "caller": "compose",
+          "callee": "current.open",
+          "lineNumber": 24
+        },
+        {
+          "caller": "compose",
+          "callee": "logCacheErr",
+          "lineNumber": 25
+        },
+        {
+          "caller": "compose",
+          "callee": "Promise.all([\n              st.delete(request, options),\n              curr.delete(request, options),\n            ]).then",
+          "lineNumber": 49
+        },
+        {
+          "caller": "compose",
+          "callee": "Promise.all",
+          "lineNumber": 49
+        },
+        {
+          "caller": "compose",
+          "callee": "st.delete",
+          "lineNumber": 50
+        },
+        {
+          "caller": "compose",
+          "callee": "curr.delete",
+          "lineNumber": 51
+        },
+        {
+          "caller": "compose",
+          "callee": "values.every",
+          "lineNumber": 52
+        },
+        {
+          "caller": "compose",
+          "callee": "st.match",
+          "lineNumber": 66
+        },
+        {
+          "caller": "compose",
+          "callee": "curr.match",
+          "lineNumber": 67
+        },
+        {
+          "caller": "compose",
+          "callee": "Promise.all([\n              fromStoragePromise,\n              currentPromise,\n            ]).then",
+          "lineNumber": 70
+        },
+        {
+          "caller": "compose",
+          "callee": "Promise.all",
+          "lineNumber": 70
+        },
+        {
+          "caller": "compose",
+          "callee": "curr.put",
+          "lineNumber": 77
+        },
+        {
+          "caller": "compose",
+          "callee": "st.put",
+          "lineNumber": 79
+        },
+        {
+          "caller": "compose",
+          "callee": "Promise.race",
+          "lineNumber": 84
+        },
+        {
+          "caller": "compose",
+          "callee": "cacheAllWhenNotPresent.then",
+          "lineNumber": 92
+        },
+        {
+          "caller": "compose",
+          "callee": "responses.filter",
+          "lineNumber": 93
+        },
+        {
+          "caller": "compose",
+          "callee": "Promise.all",
+          "lineNumber": 108
+        },
+        {
+          "caller": "compose",
+          "callee": "st.put",
+          "lineNumber": 109
+        },
+        {
+          "caller": "compose",
+          "callee": "curr.put",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/caches/fileSystem.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 305,
+      "nonEmptyLines": 274,
+      "functions": [
+        {
+          "name": "headersToUint8Array",
+          "startLine": 18,
+          "endLine": 21,
+          "params": [
+            "headers"
+          ]
+        },
+        {
+          "name": "generateCombinedBuffer",
+          "startLine": 24,
+          "endLine": 36,
+          "params": [
+            "body",
+            "headers"
+          ]
+        },
+        {
+          "name": "extractCombinedBuffer",
+          "startLine": 39,
+          "endLine": 59,
+          "params": [
+            "combinedBuffer"
+          ]
+        },
+        {
+          "name": "getIterableHeaders",
+          "startLine": 61,
+          "endLine": 72,
+          "params": [
+            "headers"
+          ]
+        },
+        {
+          "name": "getCacheWriteWorker",
+          "startLine": 83,
+          "endLine": 100,
+          "params": []
+        },
+        {
+          "name": "createFileSystemCache",
+          "startLine": 102,
+          "endLine": 294,
+          "params": []
+        },
+        {
+          "name": "hasWritePerm",
+          "startLine": 296,
+          "endLine": 300,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "isFileSystemAvailable",
+          "line": 302,
+          "isDefault": false
+        },
+        {
+          "name": "caches",
+          "line": 305,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "headersToUint8Array",
+          "callee": "JSON.stringify",
+          "lineNumber": 19
+        },
+        {
+          "caller": "headersToUint8Array",
+          "callee": "textEncoder.encode",
+          "lineNumber": 20
+        },
+        {
+          "caller": "generateCombinedBuffer",
+          "callee": "buf.set",
+          "lineNumber": 33
+        },
+        {
+          "caller": "generateCombinedBuffer",
+          "callee": "buf.set",
+          "lineNumber": 34
+        },
+        {
+          "caller": "extractCombinedBuffer",
+          "callee": "combinedBuffer.slice",
+          "lineNumber": 56
+        },
+        {
+          "caller": "extractCombinedBuffer",
+          "callee": "combinedBuffer.slice",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getIterableHeaders",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 62
+        },
+        {
+          "caller": "getIterableHeaders",
+          "callee": "JSON.parse",
+          "lineNumber": 65
+        },
+        {
+          "caller": "getIterableHeaders",
+          "callee": "headerPairs.filter",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getCacheWriteWorker",
+          "callee": "import.meta.resolve",
+          "lineNumber": 88
+        },
+        {
+          "caller": "getCacheWriteWorker",
+          "callee": "console.error",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getCacheWriteWorker",
+          "callee": "console.error",
+          "lineNumber": 97
+        },
+        {
+          "caller": "assertCacheDirectory",
+          "callee": "existsSync",
+          "lineNumber": 107
+        },
+        {
+          "caller": "assertCacheDirectory",
+          "callee": "Deno.mkdirSync",
+          "lineNumber": 109
+        },
+        {
+          "caller": "assertCacheDirectory",
+          "callee": "console.error",
+          "lineNumber": 113
+        },
+        {
+          "caller": "putFile",
+          "callee": "assertCacheDirectory",
+          "lineNumber": 122
+        },
+        {
+          "caller": "putFile",
+          "callee": "Deno.writeFile",
+          "lineNumber": 126
+        },
+        {
+          "caller": "getFile",
+          "callee": "assertCacheDirectory",
+          "lineNumber": 132
+        },
+        {
+          "caller": "getFile",
+          "callee": "Deno.readFile",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getFile",
+          "callee": "logger.error",
+          "lineNumber": 143
+        },
+        {
+          "caller": "deleteFile",
+          "callee": "assertCacheDirectory",
+          "lineNumber": 151
+        },
+        {
+          "caller": "deleteFile",
+          "callee": "Deno.remove",
+          "lineNumber": 155
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "withCacheNamespace",
+          "lineNumber": 179
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "Promise.resolve",
+          "lineNumber": 180
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "requestURLSHA1",
+          "lineNumber": 194
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "deleteFile",
+          "lineNumber": 195
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "assertNoOptions",
+          "lineNumber": 210
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "requestURLSHA1",
+          "lineNumber": 211
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "getFile",
+          "lineNumber": 212
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "extractCombinedBuffer",
+          "lineNumber": 218
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "getIterableHeaders",
+          "lineNumber": 219
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "assertCanBeCached",
+          "lineNumber": 239
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "getCacheWriteWorker",
+          "lineNumber": 245
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "response.arrayBuffer",
+          "lineNumber": 251
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "response.headers.entries",
+          "lineNumber": 253
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "worker.postMessage",
+          "lineNumber": 268
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "requestURLSHA1",
+          "lineNumber": 273
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "response.arrayBuffer",
+          "lineNumber": 274
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "headersToUint8Array",
+          "lineNumber": 275
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "response.headers.entries",
+          "lineNumber": 276
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "generateCombinedBuffer",
+          "lineNumber": 278
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "putFile(\n            cacheKey,\n            buffer,\n          ).catch",
+          "lineNumber": 280
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "putFile",
+          "lineNumber": 280
+        },
+        {
+          "caller": "createFileSystemCache",
+          "callee": "console.error",
+          "lineNumber": 285
+        },
+        {
+          "caller": "hasWritePerm",
+          "callee": "Deno.permissions.query(\n    { name: \"write\", path: FILE_SYSTEM_CACHE_DIRECTORY } as const,\n  ).then",
+          "lineNumber": 297
+        },
+        {
+          "caller": "hasWritePerm",
+          "callee": "Deno.permissions.query",
+          "lineNumber": 297
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/caches/headerscache.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 79,
+      "functions": [
+        {
+          "name": "createLruCacheStorage",
+          "startLine": 10,
+          "endLine": 81,
+          "params": [
+            "cacheStorageInner"
+          ]
+        },
+        {
+          "name": "caches",
+          "startLine": 83,
+          "endLine": 83,
+          "params": [
+            "cache"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "caches",
+          "line": 83,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "createBaseCacheStorage",
+          "lineNumber": 11
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "Promise.resolve",
+          "lineNumber": 14
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "requestURLSHA1",
+          "lineNumber": 20
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "cacheInner.delete",
+          "lineNumber": 21
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "assertNoOptions",
+          "lineNumber": 27
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "requestURLSHA1",
+          "lineNumber": 28
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "cacheInner.match",
+          "lineNumber": 29
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "assertCanBeCached",
+          "lineNumber": 36
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "requestURLSHA1",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "response.headers.get",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "response.headers.get",
+          "lineNumber": 47
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "Date.parse",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "Date.now",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "cacheInner.put",
+          "lineNumber": 51
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "new Date(ttl)\n                      .toUTCString",
+          "lineNumber": 56
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "response.arrayBuffer",
+          "lineNumber": 64
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "cacheInner.put",
+          "lineNumber": 65
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "new Date(Date.now() + (CACHE_MAX_AGE_S * 1e3))\n                  .toUTCString",
+          "lineNumber": 70
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "Date.now",
+          "lineNumber": 70
+        },
+        {
+          "caller": "caches",
+          "callee": "createLruCacheStorage",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/caches/lrucache.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 96,
+      "functions": [
+        {
+          "name": "cacheOptions",
+          "startLine": 27,
+          "endLine": 37,
+          "params": [
+            "cache"
+          ]
+        },
+        {
+          "name": "createLruCacheStorage",
+          "startLine": 39,
+          "endLine": 102,
+          "params": [
+            "cacheStorageInner"
+          ]
+        },
+        {
+          "name": "caches",
+          "startLine": 104,
+          "endLine": 104,
+          "params": [
+            "cache"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "caches",
+          "line": 104,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cacheOptions",
+          "callee": "cache.delete",
+          "lineNumber": 34
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "createBaseCacheStorage",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "cacheOptions",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "Promise.resolve",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "requestURLSHA1",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "cacheInner.delete",
+          "lineNumber": 51
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "fileCache.delete",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "assertNoOptions",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "requestURLSHA1",
+          "lineNumber": 59
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "fileCache.has",
+          "lineNumber": 60
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "cacheInner.match",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "assertCanBeCached",
+          "lineNumber": 71
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "Date.parse",
+          "lineNumber": 77
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "response.headers.get",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "Date.now",
+          "lineNumber": 85
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "requestURLSHA1",
+          "lineNumber": 87
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "response.headers.get",
+          "lineNumber": 88
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "fileCache.set",
+          "lineNumber": 92
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "parseInt",
+          "lineNumber": 93
+        },
+        {
+          "caller": "createLruCacheStorage",
+          "callee": "cacheInner.put",
+          "lineNumber": 96
+        },
+        {
+          "caller": "caches",
+          "callee": "createLruCacheStorage",
+          "lineNumber": 104
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/caches/mod.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 57,
+      "functions": [
+        {
+          "name": "getCacheStorage",
+          "startLine": 65,
+          "endLine": 71,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "revalidationLocker",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "ENABLE_LOADER_CACHE",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "cacheImplByEngine",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "caches",
+          "line": 73,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getCacheStorage",
+          "callee": "createTieredCache",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 4,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/caches/redis.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 450,
+      "nonEmptyLines": 405,
+      "functions": [
+        {
+          "name": "ensureZstd",
+          "startLine": 70,
+          "endLine": 72,
+          "params": []
+        },
+        {
+          "name": "activeCodec",
+          "startLine": 78,
+          "endLine": 94,
+          "params": []
+        },
+        {
+          "name": "_compress",
+          "startLine": 97,
+          "endLine": 137,
+          "params": [
+            "text",
+            "codec"
+          ]
+        },
+        {
+          "name": "_decompress",
+          "startLine": 139,
+          "endLine": 165,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "createRevalidationLocker",
+          "startLine": 181,
+          "endLine": 204,
+          "params": [
+            "redis",
+            "enabled",
+            "ttlSeconds"
+          ]
+        },
+        {
+          "name": "parseSentinels",
+          "startLine": 224,
+          "endLine": 231,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "createRedisClient",
+          "startLine": 239,
+          "endLine": 256,
+          "params": []
+        },
+        {
+          "name": "createReadRedisClient",
+          "startLine": 258,
+          "endLine": 264,
+          "params": []
+        },
+        {
+          "name": "wait",
+          "startLine": 266,
+          "endLine": 268,
+          "params": [
+            "ms"
+          ]
+        },
+        {
+          "name": "waitOrReject",
+          "startLine": 270,
+          "endLine": 279,
+          "params": [
+            "callback",
+            "ms"
+          ]
+        },
+        {
+          "name": "serialize",
+          "startLine": 281,
+          "endLine": 293,
+          "params": [
+            "response"
+          ]
+        },
+        {
+          "name": "deserialize",
+          "startLine": 295,
+          "endLine": 304,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "create",
+          "startLine": 306,
+          "endLine": 403,
+          "params": [
+            "redis",
+            "namespace",
+            "redisRead"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_compress",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "_decompress",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "createRevalidationLocker",
+          "line": 181,
+          "isDefault": false
+        },
+        {
+          "name": "revalidationLocker",
+          "line": 216,
+          "isDefault": false
+        },
+        {
+          "name": "isAvailable",
+          "line": 221,
+          "isDefault": false
+        },
+        {
+          "name": "create",
+          "line": 306,
+          "isDefault": false
+        },
+        {
+          "name": "caches",
+          "line": 405,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ensureZstd",
+          "callee": "zstdInit",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_compress",
+          "callee": "new TextEncoder().encode",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_compress",
+          "callee": "lz4Compress",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_compress",
+          "callee": "result.set",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_compress",
+          "callee": "ensureZstd",
+          "lineNumber": 112
+        },
+        {
+          "caller": "_compress",
+          "callee": "zstdCompress",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_compress",
+          "callee": "result.set",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_compress",
+          "callee": "codec.toString",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_compress",
+          "callee": "stream.writable.getWriter",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_compress",
+          "callee": "writer.write",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_compress",
+          "callee": "writer.close",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_compress",
+          "callee": "new Response(stream.readable).arrayBuffer",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_compress",
+          "callee": "result.set",
+          "lineNumber": 135
+        },
+        {
+          "caller": "_decompress",
+          "callee": "data.slice",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_decompress",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_decompress",
+          "callee": "lz4Decompress",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_decompress",
+          "callee": "ensureZstd",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_decompress",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 149
+        },
+        {
+          "caller": "_decompress",
+          "callee": "zstdDecompress",
+          "lineNumber": 149
+        },
+        {
+          "caller": "_decompress",
+          "callee": "codec.toString",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_decompress",
+          "callee": "stream.writable.getWriter",
+          "lineNumber": 160
+        },
+        {
+          "caller": "_decompress",
+          "callee": "writer.write",
+          "lineNumber": 161
+        },
+        {
+          "caller": "_decompress",
+          "callee": "writer.close",
+          "lineNumber": 162
+        },
+        {
+          "caller": "_decompress",
+          "callee": "new Response(stream.readable).arrayBuffer",
+          "lineNumber": 163
+        },
+        {
+          "caller": "_decompress",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 164
+        },
+        {
+          "caller": "createRevalidationLocker",
+          "callee": "withCacheNamespace(LOCK_NAMESPACE)",
+          "lineNumber": 190
+        },
+        {
+          "caller": "createRevalidationLocker",
+          "callee": "withCacheNamespace",
+          "lineNumber": 190
+        },
+        {
+          "caller": "createRevalidationLocker",
+          "callee": "waitOrReject",
+          "lineNumber": 192
+        },
+        {
+          "caller": "createRevalidationLocker",
+          "callee": "redis?.set",
+          "lineNumber": 194
+        },
+        {
+          "caller": "createRevalidationLocker",
+          "callee": "Promise.resolve",
+          "lineNumber": 195
+        },
+        {
+          "caller": "parseSentinels",
+          "callee": "raw.split(\",\").map",
+          "lineNumber": 227
+        },
+        {
+          "caller": "parseSentinels",
+          "callee": "raw.split",
+          "lineNumber": 227
+        },
+        {
+          "caller": "parseSentinels",
+          "callee": "entry.trim().split",
+          "lineNumber": 228
+        },
+        {
+          "caller": "parseSentinels",
+          "callee": "entry.trim",
+          "lineNumber": 228
+        },
+        {
+          "caller": "parseSentinels",
+          "callee": "parseInt",
+          "lineNumber": 229
+        },
+        {
+          "caller": "createRedisClient",
+          "callee": "parseSentinels",
+          "lineNumber": 243
+        },
+        {
+          "caller": "createRedisClient",
+          "callee": "Deno.env.get",
+          "lineNumber": 251
+        },
+        {
+          "caller": "wait",
+          "callee": "setTimeout",
+          "lineNumber": 267
+        },
+        {
+          "caller": "wait",
+          "callee": "resolve",
+          "lineNumber": 267
+        },
+        {
+          "caller": "waitOrReject",
+          "callee": "wait(ms).then",
+          "lineNumber": 275
+        },
+        {
+          "caller": "waitOrReject",
+          "callee": "wait",
+          "lineNumber": 275
+        },
+        {
+          "caller": "waitOrReject",
+          "callee": "reject",
+          "lineNumber": 275
+        },
+        {
+          "caller": "waitOrReject",
+          "callee": "Promise.race",
+          "lineNumber": 278
+        },
+        {
+          "caller": "waitOrReject",
+          "callee": "callback",
+          "lineNumber": 278
+        },
+        {
+          "caller": "serialize",
+          "callee": "response.text",
+          "lineNumber": 282
+        },
+        {
+          "caller": "serialize",
+          "callee": "JSON.stringify",
+          "lineNumber": 283
+        },
+        {
+          "caller": "serialize",
+          "callee": "Object.fromEntries",
+          "lineNumber": 285
+        },
+        {
+          "caller": "serialize",
+          "callee": "response.headers.entries",
+          "lineNumber": 285
+        },
+        {
+          "caller": "serialize",
+          "callee": "activeCodec",
+          "lineNumber": 288
+        },
+        {
+          "caller": "serialize",
+          "callee": "Buffer.from",
+          "lineNumber": 292
+        },
+        {
+          "caller": "serialize",
+          "callee": "_compress",
+          "lineNumber": 292
+        },
+        {
+          "caller": "deserialize",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 298
+        },
+        {
+          "caller": "deserialize",
+          "callee": "_decompress",
+          "lineNumber": 300
+        },
+        {
+          "caller": "deserialize",
+          "callee": "JSON.parse",
+          "lineNumber": 302
+        },
+        {
+          "caller": "create",
+          "callee": "console.warn",
+          "lineNumber": 312
+        },
+        {
+          "caller": "generateKey",
+          "callee": "withCacheNamespace(namespace)",
+          "lineNumber": 319
+        },
+        {
+          "caller": "generateKey",
+          "callee": "withCacheNamespace",
+          "lineNumber": 319
+        },
+        {
+          "caller": "create",
+          "callee": "assertNoOptions",
+          "lineNumber": 329
+        },
+        {
+          "caller": "create",
+          "callee": "generateKey(request)\n        .then((cacheKey: string) =>\n          waitOrReject<number>(\n            () => redis?.del(cacheKey) ?? Promise.resolve(0),\n            COMMAND_TIMEOUT,\n          )\n        )\n        .catch",
+          "lineNumber": 331
+        },
+        {
+          "caller": "create",
+          "callee": "generateKey(request)\n        .then",
+          "lineNumber": 331
+        },
+        {
+          "caller": "create",
+          "callee": "generateKey",
+          "lineNumber": 331
+        },
+        {
+          "caller": "create",
+          "callee": "waitOrReject",
+          "lineNumber": 333
+        },
+        {
+          "caller": "create",
+          "callee": "redis?.del",
+          "lineNumber": 334
+        },
+        {
+          "caller": "create",
+          "callee": "Promise.resolve",
+          "lineNumber": 334
+        },
+        {
+          "caller": "create",
+          "callee": "assertNoOptions",
+          "lineNumber": 346
+        },
+        {
+          "caller": "create",
+          "callee": "generateKey(request)\n        .then((cacheKey: string) =>\n          waitOrReject<Uint8Array | null>(\n            () =>\n              (redisRead ?? redis)?.getBuffer(cacheKey) ??\n                Promise.resolve(null),\n            COMMAND_TIMEOUT,\n          )\n        )\n        .then((result: Uint8Array | null) => {\n          if (!result) return undefined;\n          return deserialize(result);\n        })\n        .catch",
+          "lineNumber": 348
+        },
+        {
+          "caller": "create",
+          "callee": "generateKey(request)\n        .then((cacheKey: string) =>\n          waitOrReject<Uint8Array | null>(\n            () =>\n              (redisRead ?? redis)?.getBuffer(cacheKey) ??\n                Promise.resolve(null),\n            COMMAND_TIMEOUT,\n          )\n        )\n        .then",
+          "lineNumber": 348
+        },
+        {
+          "caller": "create",
+          "callee": "generateKey(request)\n        .then",
+          "lineNumber": 348
+        },
+        {
+          "caller": "create",
+          "callee": "generateKey",
+          "lineNumber": 348
+        },
+        {
+          "caller": "create",
+          "callee": "waitOrReject",
+          "lineNumber": 350
+        },
+        {
+          "caller": "create",
+          "callee": "(redisRead ?? redis)?.getBuffer",
+          "lineNumber": 352
+        },
+        {
+          "caller": "create",
+          "callee": "Promise.resolve",
+          "lineNumber": 353
+        },
+        {
+          "caller": "create",
+          "callee": "deserialize",
+          "lineNumber": 359
+        },
+        {
+          "caller": "create",
+          "callee": "assertCanBeCached",
+          "lineNumber": 370
+        },
+        {
+          "caller": "create",
+          "callee": "generateKey",
+          "lineNumber": 376
+        },
+        {
+          "caller": "create",
+          "callee": "response.headers.get",
+          "lineNumber": 378
+        },
+        {
+          "caller": "create",
+          "callee": "Date.parse",
+          "lineNumber": 379
+        },
+        {
+          "caller": "create",
+          "callee": "Number.isFinite",
+          "lineNumber": 380
+        },
+        {
+          "caller": "create",
+          "callee": "Date.now",
+          "lineNumber": 382
+        },
+        {
+          "caller": "create",
+          "callee": "Math.max",
+          "lineNumber": 383
+        },
+        {
+          "caller": "create",
+          "callee": "Math.ceil",
+          "lineNumber": 385
+        },
+        {
+          "caller": "create",
+          "callee": "Date.now",
+          "lineNumber": 386
+        },
+        {
+          "caller": "create",
+          "callee": "serialize(response)\n        .then((data) =>\n          waitOrReject<string | null>(\n            () =>\n              // deno-lint-ignore no-explicit-any\n              redis?.set(cacheKey, data as any, \"EX\", ttlSeconds) ??\n                Promise.resolve(null),\n            COMMAND_TIMEOUT,\n          )\n        )\n        .catch",
+          "lineNumber": 390
+        },
+        {
+          "caller": "create",
+          "callee": "serialize(response)\n        .then",
+          "lineNumber": 390
+        },
+        {
+          "caller": "create",
+          "callee": "serialize",
+          "lineNumber": 390
+        },
+        {
+          "caller": "create",
+          "callee": "waitOrReject",
+          "lineNumber": 392
+        },
+        {
+          "caller": "create",
+          "callee": "redis?.set",
+          "lineNumber": 395
+        },
+        {
+          "caller": "create",
+          "callee": "Promise.resolve",
+          "lineNumber": 396
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 7,
+        "functionCount": 13,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/caches/tiered.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 170,
+      "nonEmptyLines": 158,
+      "functions": [
+        {
+          "name": "inFuture",
+          "startLine": 1,
+          "endLine": 7,
+          "params": [
+            "maybeDate"
+          ]
+        },
+        {
+          "name": "responseFromBody",
+          "startLine": 14,
+          "endLine": 20,
+          "params": [
+            "body",
+            "headers",
+            "status"
+          ]
+        },
+        {
+          "name": "createTieredCache",
+          "startLine": 31,
+          "endLine": 170,
+          "params": [
+            "...tieredCaches"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createTieredCache",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createTieredCache",
+          "callee": "Promise.all",
+          "lineNumber": 51
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "tieredCaches.map",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "cache.open",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "Promise.resolve",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "Promise.all(\n            openedCaches.map((cache) => cache.delete(request, options)),\n          )\n            .then((results) => results.every((r) => r))\n            .catch",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "Promise.all(\n            openedCaches.map((cache) => cache.delete(request, options)),\n          )\n            .then",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "Promise.all",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "openedCaches.map",
+          "lineNumber": 70
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "cache.delete",
+          "lineNumber": 70
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "results.every",
+          "lineNumber": 72
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "openedCaches[0].match",
+          "lineNumber": 88
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "openedCaches.entries",
+          "lineNumber": 92
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "cache.match(request, options).catch",
+          "lineNumber": 93
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "cache.match",
+          "lineNumber": 93
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "indexOfCachesToUpdate.push",
+          "lineNumber": 98
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "matched.headers.get",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "inFuture",
+          "lineNumber": 103
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "indexOfCachesToUpdate.push",
+          "lineNumber": 109
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "matched.arrayBuffer",
+          "lineNumber": 119
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "Promise.all(\n              indexOfCachesToUpdate.map((index) =>\n                openedCaches[index].put(\n                  request,\n                  responseFromBody(body, headers, status),\n                )\n              ),\n            ).catch",
+          "lineNumber": 123
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "Promise.all",
+          "lineNumber": 123
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "indexOfCachesToUpdate.map",
+          "lineNumber": 124
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "openedCaches[index].put",
+          "lineNumber": 125
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "responseFromBody",
+          "lineNumber": 127
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "responseFromBody",
+          "lineNumber": 133
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "openedCaches[0].put",
+          "lineNumber": 153
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "response.arrayBuffer",
+          "lineNumber": 158
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "Promise.all",
+          "lineNumber": 161
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "openedCaches.map",
+          "lineNumber": 162
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "cache.put",
+          "lineNumber": 163
+        },
+        {
+          "caller": "createTieredCache",
+          "callee": "responseFromBody",
+          "lineNumber": 163
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/caches/utils.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 137,
+      "nonEmptyLines": 118,
+      "functions": [
+        {
+          "name": "bufferToHex",
+          "startLine": 8,
+          "endLine": 15,
+          "params": [
+            "buffer"
+          ]
+        },
+        {
+          "name": "sha1",
+          "startLine": 20,
+          "endLine": 36,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "NOT_IMPLEMENTED",
+          "startLine": 38,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "createBaseCacheStorage",
+          "startLine": 52,
+          "endLine": 87,
+          "params": [
+            "cacheStorageInner",
+            "openCache"
+          ]
+        },
+        {
+          "name": "assertNoOptions",
+          "startLine": 89,
+          "endLine": 95,
+          "params": [
+            "{ ignoreMethod, ignoreSearch, ignoreVary }"
+          ]
+        },
+        {
+          "name": "requestURL",
+          "startLine": 97,
+          "endLine": 103,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "withCacheNamespace",
+          "startLine": 105,
+          "endLine": 108,
+          "params": [
+            "cacheName"
+          ]
+        },
+        {
+          "name": "requestURLSHA1",
+          "startLine": 110,
+          "endLine": 112,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "assertCanBeCached",
+          "startLine": 114,
+          "endLine": 127,
+          "params": [
+            "req",
+            "response"
+          ]
+        },
+        {
+          "name": "inFuture",
+          "startLine": 129,
+          "endLine": 137,
+          "params": [
+            "maybeDate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "sha1",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "NOT_IMPLEMENTED",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "baseCache",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "createBaseCacheStorage",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "assertNoOptions",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "requestURL",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "withCacheNamespace",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "requestURLSHA1",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "assertCanBeCached",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "inFuture",
+          "line": 129,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sha1",
+          "callee": "sha1Cache.get",
+          "lineNumber": 21
+        },
+        {
+          "caller": "sha1",
+          "callee": "sha1Cache.keys().next",
+          "lineNumber": 25
+        },
+        {
+          "caller": "sha1",
+          "callee": "sha1Cache.keys",
+          "lineNumber": 25
+        },
+        {
+          "caller": "sha1",
+          "callee": "sha1Cache.delete",
+          "lineNumber": 26
+        },
+        {
+          "caller": "sha1",
+          "callee": "crypto.subtle\n    .digest(\"SHA-1\", textEncoder.encode(text))\n    .then",
+          "lineNumber": 29
+        },
+        {
+          "caller": "sha1",
+          "callee": "crypto.subtle\n    .digest",
+          "lineNumber": 29
+        },
+        {
+          "caller": "sha1",
+          "callee": "textEncoder.encode",
+          "lineNumber": 30
+        },
+        {
+          "caller": "sha1",
+          "callee": "sha1Cache.set",
+          "lineNumber": 33
+        },
+        {
+          "caller": "createBaseCacheStorage",
+          "callee": "cacheStorageInner.open",
+          "lineNumber": 74
+        },
+        {
+          "caller": "requestURLSHA1",
+          "callee": "withCacheNamespace(cacheName)(request).then",
+          "lineNumber": 76
+        },
+        {
+          "caller": "requestURLSHA1",
+          "callee": "withCacheNamespace(cacheName)",
+          "lineNumber": 76
+        },
+        {
+          "caller": "requestURLSHA1",
+          "callee": "withCacheNamespace",
+          "lineNumber": 76
+        },
+        {
+          "caller": "createBaseCacheStorage",
+          "callee": "Promise.resolve",
+          "lineNumber": 79
+        },
+        {
+          "caller": "createBaseCacheStorage",
+          "callee": "openCache",
+          "lineNumber": 80
+        },
+        {
+          "caller": "withCacheNamespace",
+          "callee": "requestURLSHA1(request).then",
+          "lineNumber": 107
+        },
+        {
+          "caller": "withCacheNamespace",
+          "callee": "requestURLSHA1",
+          "lineNumber": 107
+        },
+        {
+          "caller": "requestURLSHA1",
+          "callee": "sha1",
+          "lineNumber": 111
+        },
+        {
+          "caller": "requestURLSHA1",
+          "callee": "requestURL",
+          "lineNumber": 111
+        },
+        {
+          "caller": "assertCanBeCached",
+          "callee": "/^http(s?):\\/\\//.test",
+          "lineNumber": 115
+        },
+        {
+          "caller": "inFuture",
+          "callee": "Date.parse",
+          "lineNumber": 132
+        },
+        {
+          "caller": "inFuture",
+          "callee": "Date.now",
+          "lineNumber": 133
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 10,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/middlewares/liveness.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 125,
+      "nonEmptyLines": 115,
+      "functions": [
+        {
+          "name": "getProbeThresholdAsNum",
+          "startLine": 41,
+          "endLine": 46,
+          "params": [
+            "checkerName"
+          ]
+        },
+        {
+          "name": "buildHandler",
+          "startLine": 50,
+          "endLine": 117,
+          "params": [
+            "...checkers"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getProbeThresholdAsNum",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "liveness",
+          "line": 119,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getProbeThresholdAsNum",
+          "callee": "Deno.env.get",
+          "lineNumber": 44
+        },
+        {
+          "caller": "runChecks",
+          "callee": "checkers.map",
+          "lineNumber": 54
+        },
+        {
+          "caller": "runChecks",
+          "callee": "get",
+          "lineNumber": 56
+        },
+        {
+          "caller": "runChecks",
+          "callee": "check",
+          "lineNumber": 57
+        },
+        {
+          "caller": "runChecks",
+          "callee": "print",
+          "lineNumber": 57
+        },
+        {
+          "caller": "runChecks",
+          "callee": "console.error",
+          "lineNumber": 59
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "Deno.addSignalListener",
+          "lineNumber": 70
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "runChecks",
+          "lineNumber": 71
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "console.log",
+          "lineNumber": 72
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "self.close",
+          "lineNumber": 73
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "console.error",
+          "lineNumber": 77
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "ctx.req.path.endsWith",
+          "lineNumber": 85
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "runChecks",
+          "lineNumber": 87
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "results.find",
+          "lineNumber": 89
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "JSON.stringify",
+          "lineNumber": 90
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "probe.add",
+          "lineNumber": 93
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "logger.error",
+          "lineNumber": 97
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "console.error",
+          "lineNumber": 103
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "checkers.map",
+          "lineNumber": 109
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "observe",
+          "lineNumber": 110
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "next().then(() => response = ctx.res).finally",
+          "lineNumber": 113
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "next().then",
+          "lineNumber": 113
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "next",
+          "lineNumber": 113
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "end.forEach",
+          "lineNumber": 114
+        },
+        {
+          "caller": "buildHandler",
+          "callee": "e?.end",
+          "lineNumber": 114
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/routes/workflow.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 82,
+      "functions": [
+        {
+          "name": "runWorkflow",
+          "startLine": 27,
+          "endLine": 40,
+          "params": [
+            "props",
+            "ctx"
+          ]
+        },
+        {
+          "name": "handleProps",
+          "startLine": 42,
+          "endLine": 53,
+          "params": [
+            "props",
+            "ctx"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "handler",
+          "line": 55,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runWorkflow",
+          "callee": "workflowRemoteRunner",
+          "lineNumber": 33
+        },
+        {
+          "caller": "runWorkflow",
+          "callee": "arrToStream",
+          "lineNumber": 37
+        },
+        {
+          "caller": "runWorkflow",
+          "callee": "handler",
+          "lineNumber": 38
+        },
+        {
+          "caller": "runWorkflow",
+          "callee": "commands.nextCommand",
+          "lineNumber": 39
+        },
+        {
+          "caller": "handleProps",
+          "callee": "await ctx.var.resolve",
+          "lineNumber": 46
+        },
+        {
+          "caller": "handleProps",
+          "callee": "runWorkflow",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/stat.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 244,
+      "nonEmptyLines": 210,
+      "classes": [
+        {
+          "name": "MaxHeap",
+          "startLine": 3,
+          "endLine": 86,
+          "methods": [
+            "insert",
+            "bubbleUp",
+            "extractMax",
+            "sinkDown",
+            "getMax",
+            "size",
+            "remove"
+          ],
+          "properties": [
+            "heap"
+          ]
+        },
+        {
+          "name": "MinHeap",
+          "startLine": 88,
+          "endLine": 171,
+          "methods": [
+            "insert",
+            "bubbleUp",
+            "extractMin",
+            "sinkDown",
+            "getMin",
+            "size",
+            "remove"
+          ],
+          "properties": [
+            "heap"
+          ]
+        },
+        {
+          "name": "Median",
+          "startLine": 173,
+          "endLine": 244,
+          "methods": [
+            "constructor",
+            "add",
+            "get",
+            "addValue",
+            "removeValue",
+            "calculateMedian"
+          ],
+          "properties": [
+            "maxHeap",
+            "minHeap",
+            "removeCount",
+            "values"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Median",
+          "line": 173,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "insert",
+          "callee": "this.heap.push",
+          "lineNumber": 7
+        },
+        {
+          "caller": "insert",
+          "callee": "this.bubbleUp",
+          "lineNumber": 8
+        },
+        {
+          "caller": "bubbleUp",
+          "callee": "Math.floor",
+          "lineNumber": 14
+        },
+        {
+          "caller": "extractMax",
+          "callee": "this.heap.pop",
+          "lineNumber": 26
+        },
+        {
+          "caller": "extractMax",
+          "callee": "this.sinkDown",
+          "lineNumber": 29
+        },
+        {
+          "caller": "remove",
+          "callee": "this.heap.indexOf",
+          "lineNumber": 75
+        },
+        {
+          "caller": "remove",
+          "callee": "this.heap.pop",
+          "lineNumber": 78
+        },
+        {
+          "caller": "remove",
+          "callee": "this.bubbleUp",
+          "lineNumber": 81
+        },
+        {
+          "caller": "remove",
+          "callee": "this.sinkDown",
+          "lineNumber": 82
+        },
+        {
+          "caller": "insert",
+          "callee": "this.heap.push",
+          "lineNumber": 92
+        },
+        {
+          "caller": "insert",
+          "callee": "this.bubbleUp",
+          "lineNumber": 93
+        },
+        {
+          "caller": "bubbleUp",
+          "callee": "Math.floor",
+          "lineNumber": 99
+        },
+        {
+          "caller": "extractMin",
+          "callee": "this.heap.pop",
+          "lineNumber": 111
+        },
+        {
+          "caller": "extractMin",
+          "callee": "this.sinkDown",
+          "lineNumber": 114
+        },
+        {
+          "caller": "remove",
+          "callee": "this.heap.indexOf",
+          "lineNumber": 160
+        },
+        {
+          "caller": "remove",
+          "callee": "this.heap.pop",
+          "lineNumber": 163
+        },
+        {
+          "caller": "remove",
+          "callee": "this.bubbleUp",
+          "lineNumber": 166
+        },
+        {
+          "caller": "remove",
+          "callee": "this.sinkDown",
+          "lineNumber": 167
+        },
+        {
+          "caller": "add",
+          "callee": "this.values.push",
+          "lineNumber": 181
+        },
+        {
+          "caller": "add",
+          "callee": "this.addValue",
+          "lineNumber": 182
+        },
+        {
+          "caller": "add",
+          "callee": "this.values.shift",
+          "lineNumber": 185
+        },
+        {
+          "caller": "add",
+          "callee": "this.removeValue",
+          "lineNumber": 187
+        },
+        {
+          "caller": "get",
+          "callee": "this.calculateMedian",
+          "lineNumber": 193
+        },
+        {
+          "caller": "get",
+          "callee": "isNaN",
+          "lineNumber": 194
+        },
+        {
+          "caller": "addValue",
+          "callee": "this.maxHeap.size",
+          "lineNumber": 198
+        },
+        {
+          "caller": "addValue",
+          "callee": "this.maxHeap.getMax",
+          "lineNumber": 198
+        },
+        {
+          "caller": "addValue",
+          "callee": "this.maxHeap.insert",
+          "lineNumber": 199
+        },
+        {
+          "caller": "addValue",
+          "callee": "this.minHeap.insert",
+          "lineNumber": 201
+        },
+        {
+          "caller": "addValue",
+          "callee": "this.maxHeap.size",
+          "lineNumber": 204
+        },
+        {
+          "caller": "addValue",
+          "callee": "this.minHeap.size",
+          "lineNumber": 204
+        },
+        {
+          "caller": "addValue",
+          "callee": "this.minHeap.insert",
+          "lineNumber": 205
+        },
+        {
+          "caller": "addValue",
+          "callee": "this.maxHeap.extractMax",
+          "lineNumber": 205
+        },
+        {
+          "caller": "addValue",
+          "callee": "this.minHeap.size",
+          "lineNumber": 206
+        },
+        {
+          "caller": "addValue",
+          "callee": "this.maxHeap.size",
+          "lineNumber": 206
+        },
+        {
+          "caller": "addValue",
+          "callee": "this.maxHeap.insert",
+          "lineNumber": 207
+        },
+        {
+          "caller": "addValue",
+          "callee": "this.minHeap.extractMin",
+          "lineNumber": 207
+        },
+        {
+          "caller": "removeValue",
+          "callee": "this.maxHeap.getMax",
+          "lineNumber": 212
+        },
+        {
+          "caller": "removeValue",
+          "callee": "this.maxHeap.remove",
+          "lineNumber": 213
+        },
+        {
+          "caller": "removeValue",
+          "callee": "this.minHeap.remove",
+          "lineNumber": 217
+        },
+        {
+          "caller": "removeValue",
+          "callee": "this.maxHeap.size",
+          "lineNumber": 223
+        },
+        {
+          "caller": "removeValue",
+          "callee": "this.maxHeap.getMax",
+          "lineNumber": 223
+        },
+        {
+          "caller": "removeValue",
+          "callee": "this.maxHeap.getMax",
+          "lineNumber": 225
+        },
+        {
+          "caller": "removeValue",
+          "callee": "this.maxHeap.extractMax",
+          "lineNumber": 226
+        },
+        {
+          "caller": "removeValue",
+          "callee": "this.minHeap.size",
+          "lineNumber": 230
+        },
+        {
+          "caller": "removeValue",
+          "callee": "this.minHeap.getMin",
+          "lineNumber": 230
+        },
+        {
+          "caller": "removeValue",
+          "callee": "this.minHeap.getMin",
+          "lineNumber": 232
+        },
+        {
+          "caller": "removeValue",
+          "callee": "this.minHeap.extractMin",
+          "lineNumber": 233
+        },
+        {
+          "caller": "calculateMedian",
+          "callee": "this.maxHeap.size",
+          "lineNumber": 238
+        },
+        {
+          "caller": "calculateMedian",
+          "callee": "this.minHeap.size",
+          "lineNumber": 238
+        },
+        {
+          "caller": "calculateMedian",
+          "callee": "this.maxHeap.getMax",
+          "lineNumber": 239
+        },
+        {
+          "caller": "calculateMedian",
+          "callee": "this.maxHeap.getMax",
+          "lineNumber": 241
+        },
+        {
+          "caller": "calculateMedian",
+          "callee": "this.minHeap.getMin",
+          "lineNumber": 241
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    }
+  ]
+}

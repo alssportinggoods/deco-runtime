@@ -1,0 +1,91 @@
+{
+  "nodes": [
+    {
+      "id": "document:CLAUDE.md",
+      "type": "document",
+      "name": "CLAUDE.md",
+      "filePath": "CLAUDE.md",
+      "summary": "Guidance document for Claude Code describing the Deco framework's architecture, common Deno tasks, block system, engine, runtime, and cache environment variables.",
+      "tags": ["documentation", "architecture", "developer-guide", "overview"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:CODE_OF_CONDUCT.md",
+      "type": "document",
+      "name": "CODE_OF_CONDUCT.md",
+      "filePath": "CODE_OF_CONDUCT.md",
+      "summary": "Contributor Covenant Code of Conduct defining community standards, enforcement responsibilities, and graduated enforcement guidelines for the project.",
+      "tags": ["documentation", "community", "governance", "code-of-conduct"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:CONTRIBUTING.md",
+      "type": "document",
+      "name": "CONTRIBUTING.md",
+      "filePath": "CONTRIBUTING.md",
+      "summary": "Contribution guide explaining the stable and prerelease release channels, branch targeting, prerelease consumption, and manual release fallback for @deco/deco.",
+      "tags": ["documentation", "development", "release-process", "contributing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:DIFF_MAIN.md",
+      "type": "document",
+      "name": "DIFF_MAIN.md",
+      "filePath": "DIFF_MAIN.md",
+      "summary": "Detailed changelog comparing the als-storefront branch against main, breaking down per-file changes, functional summaries, and post-merge validation suggestions.",
+      "tags": ["documentation", "changelog", "diff", "release-notes"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:MAINTAINERS.txt",
+      "type": "document",
+      "name": "MAINTAINERS.txt",
+      "filePath": "MAINTAINERS.txt",
+      "summary": "Short plaintext listing of the project's maintainers.",
+      "tags": ["documentation", "maintainers", "governance"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Primary project overview with getting-started instructions, local engine setup, TypeScript-to-visual-editor explanation, key features, deployment options, and cache env vars.",
+      "tags": ["documentation", "entry-point", "overview", "getting-started"],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:deno.json",
+      "type": "config",
+      "name": "deno.json",
+      "filePath": "deno.json",
+      "summary": "Deno project configuration defining the @deco/deco package name, version, JSR export map, build/check/test tasks, import map, and Preact JSX compiler options.",
+      "tags": ["configuration", "deno", "build-system", "package-manifest"],
+      "complexity": "moderate",
+      "languageNotes": "Deno config with JSR exports map and Preact react-jsx import source for SSR JSX."
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:README.md",
+      "target": "config:deno.json",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:CLAUDE.md",
+      "target": "config:deno.json",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:CONTRIBUTING.md",
+      "target": "config:deno.json",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

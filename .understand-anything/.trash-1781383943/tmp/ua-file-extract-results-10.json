@@ -1,0 +1,251 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "hooks/usePartialSection.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "usePartialSection",
+          "startLine": 23,
+          "endLine": 30,
+          "params": [
+            "props"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "usePartialSection",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "setPartialTriggerMode",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "usePartialSection",
+          "callee": "useSection",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/fresh/Bindings.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 44,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/fresh/islands/DispatchAsyncRender.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "getPartialTriggerMode",
+          "startLine": 6,
+          "endLine": 6,
+          "params": []
+        },
+        {
+          "name": "setPartialTriggerMode",
+          "startLine": 7,
+          "endLine": 9,
+          "params": [
+            "newMode"
+          ]
+        },
+        {
+          "name": "DispatchAsyncRender",
+          "startLine": 16,
+          "endLine": 63,
+          "params": [
+            "{ id, partialTriggerMode }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getPartialTriggerMode",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "setPartialTriggerMode",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "DispatchAsyncRender",
+          "line": 16,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DispatchAsyncRender",
+          "callee": "useEffect",
+          "lineNumber": 17
+        },
+        {
+          "caller": "DispatchAsyncRender",
+          "callee": "document.getElementById",
+          "lineNumber": 18
+        },
+        {
+          "caller": "DispatchAsyncRender",
+          "callee": "console.error",
+          "lineNumber": 22
+        },
+        {
+          "caller": "DispatchAsyncRender",
+          "callee": "elem.click",
+          "lineNumber": 29
+        },
+        {
+          "caller": "DispatchAsyncRender",
+          "callee": "entries.forEach",
+          "lineNumber": 40
+        },
+        {
+          "caller": "DispatchAsyncRender",
+          "callee": "elem.click",
+          "lineNumber": 43
+        },
+        {
+          "caller": "DispatchAsyncRender",
+          "callee": "observer.disconnect",
+          "lineNumber": 45
+        },
+        {
+          "caller": "DispatchAsyncRender",
+          "callee": "observer.observe",
+          "lineNumber": 56
+        },
+        {
+          "caller": "DispatchAsyncRender",
+          "callee": "observer.disconnect",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/fresh/plugin.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 127,
+      "nonEmptyLines": 111,
+      "functions": [
+        {
+          "name": "component",
+          "startLine": 68,
+          "endLine": 70,
+          "params": [
+            "{ data }"
+          ]
+        },
+        {
+          "name": "createFreshHandler",
+          "startLine": 72,
+          "endLine": 82,
+          "params": [
+            "deco"
+          ]
+        },
+        {
+          "name": "decoPlugin",
+          "startLine": 84,
+          "endLine": 127,
+          "params": [
+            "opt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Plugin",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "component",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "createFreshHandler",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "decoPlugin",
+          "line": 84,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "h",
+          "callee": "deco.handler",
+          "lineNumber": 76
+        },
+        {
+          "caller": "h",
+          "callee": "ctx.render.bind",
+          "lineNumber": 77
+        },
+        {
+          "caller": "decoPlugin",
+          "callee": "Deco.init",
+          "lineNumber": 93
+        },
+        {
+          "caller": "decoPlugin",
+          "callee": "createFreshHandler(deco)",
+          "lineNumber": 112
+        },
+        {
+          "caller": "decoPlugin",
+          "callee": "createFreshHandler",
+          "lineNumber": 112
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    }
+  ]
+}

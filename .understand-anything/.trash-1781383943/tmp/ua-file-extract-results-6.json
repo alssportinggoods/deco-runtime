@@ -1,0 +1,4699 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 21,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "components/LiveControls.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 196,
+      "nonEmptyLines": 168,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 66,
+          "endLine": 174,
+          "params": []
+        },
+        {
+          "name": "LiveControls",
+          "startLine": 176,
+          "endLine": 194,
+          "params": [
+            "{ site, page, flags }"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "onKeydown",
+          "callee": "event.preventDefault",
+          "lineNumber": 88
+        },
+        {
+          "caller": "onKeydown",
+          "callee": "event.stopPropagation",
+          "lineNumber": 89
+        },
+        {
+          "caller": "onKeydown",
+          "callee": "href.searchParams.set",
+          "lineNumber": 99
+        },
+        {
+          "caller": "onKeydown",
+          "callee": "encodeURIComponent",
+          "lineNumber": 101
+        },
+        {
+          "caller": "onKeydown",
+          "callee": "href.searchParams.set",
+          "lineNumber": 105
+        },
+        {
+          "caller": "onKeydown",
+          "callee": "encodeURIComponent",
+          "lineNumber": 107
+        },
+        {
+          "caller": "onMessage",
+          "callee": "document\n          .getElementById",
+          "lineNumber": 118
+        },
+        {
+          "caller": "onMessage",
+          "callee": "document\n            .getElementById",
+          "lineNumber": 122
+        },
+        {
+          "caller": "onMessage",
+          "callee": "(findById ?? findByAlternateId)?.scrollIntoView",
+          "lineNumber": 126
+        },
+        {
+          "caller": "onMessage",
+          "callee": "inspector?.isActive",
+          "lineNumber": 135
+        },
+        {
+          "caller": "onMessage",
+          "callee": "inspector?.activate",
+          "lineNumber": 136
+        },
+        {
+          "caller": "onMessage",
+          "callee": "inspector?.isActive",
+          "lineNumber": 137
+        },
+        {
+          "caller": "onMessage",
+          "callee": "inspector?.deactivate",
+          "lineNumber": 138
+        },
+        {
+          "caller": "onMessage",
+          "callee": "eval",
+          "lineNumber": 144
+        },
+        {
+          "caller": "main",
+          "callee": "JSON.parse",
+          "lineNumber": 164
+        },
+        {
+          "caller": "main",
+          "callee": "document.getElementById",
+          "lineNumber": 164
+        },
+        {
+          "caller": "main",
+          "callee": "document.body.addEventListener",
+          "lineNumber": 170
+        },
+        {
+          "caller": "main",
+          "callee": "addEventListener",
+          "lineNumber": 173
+        },
+        {
+          "caller": "LiveControls",
+          "callee": "JSON.stringify",
+          "lineNumber": 183
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "deco.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 203,
+      "nonEmptyLines": 182,
+      "functions": [
+        {
+          "name": "getHostingPlatform",
+          "startLine": 96,
+          "endLine": 106,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "DaemonMode",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "Context",
+          "line": 125,
+          "isDefault": false
+        },
+        {
+          "name": "RequestContext",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "context",
+          "line": 203,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getHostingPlatform",
+          "callee": "Deno.env.get",
+          "lineNumber": 97
+        },
+        {
+          "caller": "signal",
+          "callee": "Context.active",
+          "lineNumber": 181
+        },
+        {
+          "caller": "framework",
+          "callee": "Context.active",
+          "lineNumber": 190
+        },
+        {
+          "caller": "blockId",
+          "callee": "Context.active",
+          "lineNumber": 199
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 4,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/importmap/_util.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 56,
+      "functions": [
+        {
+          "name": "isObject",
+          "startLine": 14,
+          "endLine": 17,
+          "params": [
+            "object"
+          ]
+        },
+        {
+          "name": "sortObject",
+          "startLine": 18,
+          "endLine": 28,
+          "params": [
+            "normalized"
+          ]
+        },
+        {
+          "name": "isImportMap",
+          "startLine": 29,
+          "endLine": 33,
+          "params": [
+            "importMap"
+          ]
+        },
+        {
+          "name": "isImports",
+          "startLine": 34,
+          "endLine": 38,
+          "params": [
+            "importsMap"
+          ]
+        },
+        {
+          "name": "isScopes",
+          "startLine": 39,
+          "endLine": 44,
+          "params": [
+            "scopes"
+          ]
+        },
+        {
+          "name": "isSpecifierMap",
+          "startLine": 45,
+          "endLine": 49,
+          "params": [
+            "specifierMap"
+          ]
+        },
+        {
+          "name": "isURL",
+          "startLine": 50,
+          "endLine": 57,
+          "params": [
+            "url"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isObject",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "sortObject",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "isImportMap",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "isImports",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "isScopes",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "isSpecifierMap",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "isURL",
+          "line": 50,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sortObject",
+          "callee": "Object.keys(normalized)\n    .sort",
+          "lineNumber": 22
+        },
+        {
+          "caller": "sortObject",
+          "callee": "Object.keys",
+          "lineNumber": 22
+        },
+        {
+          "caller": "isImportMap",
+          "callee": "isObject",
+          "lineNumber": 30
+        },
+        {
+          "caller": "isImportMap",
+          "callee": "isImports",
+          "lineNumber": 31
+        },
+        {
+          "caller": "isImportMap",
+          "callee": "isScopes",
+          "lineNumber": 32
+        },
+        {
+          "caller": "isImports",
+          "callee": "isObject",
+          "lineNumber": 37
+        },
+        {
+          "caller": "isScopes",
+          "callee": "isObject",
+          "lineNumber": 42
+        },
+        {
+          "caller": "isScopes",
+          "callee": "Object.values(scopes).every",
+          "lineNumber": 43
+        },
+        {
+          "caller": "isScopes",
+          "callee": "Object.values",
+          "lineNumber": 43
+        },
+        {
+          "caller": "isScopes",
+          "callee": "isSpecifierMap",
+          "lineNumber": 43
+        },
+        {
+          "caller": "isSpecifierMap",
+          "callee": "isObject",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/importmap/builder.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 143,
+      "nonEmptyLines": 130,
+      "functions": [
+        {
+          "name": "useEsm",
+          "startLine": 11,
+          "endLine": 14,
+          "params": [
+            "npmSpecifier"
+          ]
+        },
+        {
+          "name": "safeImportResolve",
+          "startLine": 36,
+          "endLine": 51,
+          "params": [
+            "specifier"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NativeImportMapResolver",
+          "startLine": 54,
+          "endLine": 79,
+          "methods": [
+            "resolve"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "FuncAddr",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "safeImportResolve",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "ImportMapBuilder",
+          "line": 82,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useEsm",
+          "callee": "npmSpecifier.substring",
+          "lineNumber": 12
+        },
+        {
+          "caller": "safeImportResolve",
+          "callee": "import.meta.resolve",
+          "lineNumber": 38
+        },
+        {
+          "caller": "safeImportResolve",
+          "callee": "msg.match",
+          "lineNumber": 43
+        },
+        {
+          "caller": "resolve",
+          "callee": "specifier.startsWith",
+          "lineNumber": 57
+        },
+        {
+          "caller": "resolve",
+          "callee": "safeImportResolve",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolve",
+          "callee": "specifier.startsWith",
+          "lineNumber": 63
+        },
+        {
+          "caller": "resolve",
+          "callee": "safeImportResolve",
+          "lineNumber": 64
+        },
+        {
+          "caller": "resolve",
+          "callee": "new URL(specifier, safeImportResolve(context)).toString",
+          "lineNumber": 65
+        },
+        {
+          "caller": "resolve",
+          "callee": "safeImportResolve",
+          "lineNumber": 65
+        },
+        {
+          "caller": "resolve",
+          "callee": "specifier.startsWith",
+          "lineNumber": 69
+        },
+        {
+          "caller": "resolve",
+          "callee": "useEsm",
+          "lineNumber": 70
+        },
+        {
+          "caller": "resolve",
+          "callee": "resolveJsrSpecifier",
+          "lineNumber": 74
+        },
+        {
+          "caller": "resolve",
+          "callee": "safeImportResolve",
+          "lineNumber": 74
+        },
+        {
+          "caller": "resolveSpecifier",
+          "callee": "resolver.resolve",
+          "lineNumber": 111
+        },
+        {
+          "caller": "resolveSpecifier",
+          "callee": "result.startsWith",
+          "lineNumber": 113
+        },
+        {
+          "caller": "resolveSpecifier",
+          "callee": "URL.canParse",
+          "lineNumber": 114
+        },
+        {
+          "caller": "resolveSpecifier",
+          "callee": "resolveSpecifier",
+          "lineNumber": 118
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "engine/importmap/jsr.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "parseSpecifier",
+          "startLine": 2,
+          "endLine": 20,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "fetchMetaExports",
+          "startLine": 25,
+          "endLine": 46,
+          "params": [
+            "packg",
+            "version"
+          ]
+        },
+        {
+          "name": "resolveJsrSpecifier",
+          "startLine": 47,
+          "endLine": 60,
+          "params": [
+            "specifier"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolveJsrSpecifier",
+          "line": 47,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "name",
+          "callee": "url.match",
+          "lineNumber": 5
+        },
+        {
+          "caller": "version",
+          "callee": "url.match",
+          "lineNumber": 9
+        },
+        {
+          "caller": "version",
+          "callee": "Error",
+          "lineNumber": 11
+        },
+        {
+          "caller": "version",
+          "callee": "version.startsWith",
+          "lineNumber": 13
+        },
+        {
+          "caller": "version",
+          "callee": "version.slice",
+          "lineNumber": 13
+        },
+        {
+          "caller": "files",
+          "callee": "url.match",
+          "lineNumber": 16
+        },
+        {
+          "caller": "fetchMetaExports",
+          "callee": "cachedJsrMeta.has",
+          "lineNumber": 30
+        },
+        {
+          "caller": "fetchMetaExports",
+          "callee": "cachedJsrMeta.get",
+          "lineNumber": 31
+        },
+        {
+          "caller": "fetchMetaExports",
+          "callee": "fetch(\n    `https://jsr.io/${packg}/${version}_meta.json`,\n  ).then(\n    (meta) => meta.json() as Promise<PackageMeta>,\n    // there are other fields that doesn't need to be cached as they are very large.\n  ).then",
+          "lineNumber": 33
+        },
+        {
+          "caller": "fetchMetaExports",
+          "callee": "fetch(\n    `https://jsr.io/${packg}/${version}_meta.json`,\n  ).then",
+          "lineNumber": 33
+        },
+        {
+          "caller": "fetchMetaExports",
+          "callee": "fetch",
+          "lineNumber": 33
+        },
+        {
+          "caller": "fetchMetaExports",
+          "callee": "meta.json",
+          "lineNumber": 36
+        },
+        {
+          "caller": "fetchMetaExports",
+          "callee": "cachedJsrMeta.set",
+          "lineNumber": 41
+        },
+        {
+          "caller": "fetchMetaExports",
+          "callee": "packageMetaPromise.catch",
+          "lineNumber": 42
+        },
+        {
+          "caller": "fetchMetaExports",
+          "callee": "cachedJsrMeta.delete",
+          "lineNumber": 43
+        },
+        {
+          "caller": "resolveJsrSpecifier",
+          "callee": "specifier.startsWith",
+          "lineNumber": 48
+        },
+        {
+          "caller": "resolveJsrSpecifier",
+          "callee": "parseSpecifier",
+          "lineNumber": 51
+        },
+        {
+          "caller": "resolveJsrSpecifier",
+          "callee": "jsr.name",
+          "lineNumber": 57
+        },
+        {
+          "caller": "resolveJsrSpecifier",
+          "callee": "jsr.version",
+          "lineNumber": 57
+        },
+        {
+          "caller": "resolveJsrSpecifier",
+          "callee": "jsr.files",
+          "lineNumber": 57
+        },
+        {
+          "caller": "resolveJsrSpecifier",
+          "callee": "fetchMetaExports",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolveJsrSpecifier",
+          "callee": "exports[files]?.slice",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/importmap/mod.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 293,
+      "nonEmptyLines": 282,
+      "functions": [
+        {
+          "name": "sortAndNormalizeSpecifierMap",
+          "startLine": 18,
+          "endLine": 54,
+          "params": [
+            "originalMap",
+            "baseURL"
+          ]
+        },
+        {
+          "name": "serializeURL",
+          "startLine": 56,
+          "endLine": 58,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "sortAndNormalizeScopes",
+          "startLine": 60,
+          "endLine": 94,
+          "params": [
+            "originalMap",
+            "baseURL"
+          ]
+        },
+        {
+          "name": "normalizeSpecifierKey",
+          "startLine": 96,
+          "endLine": 109,
+          "params": [
+            "specifierKey",
+            "baseURL"
+          ]
+        },
+        {
+          "name": "parseUrlLikeImportSpecifier",
+          "startLine": 111,
+          "endLine": 134,
+          "params": [
+            "specifier",
+            "baseURL"
+          ]
+        },
+        {
+          "name": "isSpecial",
+          "startLine": 145,
+          "endLine": 149,
+          "params": [
+            "asURL"
+          ]
+        },
+        {
+          "name": "resolveImportsMatch",
+          "startLine": 151,
+          "endLine": 207,
+          "params": [
+            "normalizedSpecifier",
+            "asURL",
+            "specifierMap"
+          ]
+        },
+        {
+          "name": "resolveImportMap",
+          "startLine": 210,
+          "endLine": 251,
+          "params": [
+            "importMap",
+            "baseURL"
+          ]
+        },
+        {
+          "name": "resolveModuleSpecifier",
+          "startLine": 253,
+          "endLine": 293,
+          "params": [
+            "specifier",
+            "{ imports = {}, scopes = {} }",
+            "baseURL"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ImportMap",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "resolveImportMap",
+          "line": 210,
+          "isDefault": false
+        },
+        {
+          "name": "resolveModuleSpecifier",
+          "line": 253,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sortAndNormalizeSpecifierMap",
+          "callee": "Object.entries",
+          "lineNumber": 23
+        },
+        {
+          "caller": "sortAndNormalizeSpecifierMap",
+          "callee": "normalizeSpecifierKey",
+          "lineNumber": 24
+        },
+        {
+          "caller": "sortAndNormalizeSpecifierMap",
+          "callee": "console.warn",
+          "lineNumber": 30
+        },
+        {
+          "caller": "sortAndNormalizeSpecifierMap",
+          "callee": "parseUrlLikeImportSpecifier",
+          "lineNumber": 34
+        },
+        {
+          "caller": "sortAndNormalizeSpecifierMap",
+          "callee": "console.warn",
+          "lineNumber": 37
+        },
+        {
+          "caller": "sortAndNormalizeSpecifierMap",
+          "callee": "specifierKey.endsWith",
+          "lineNumber": 42
+        },
+        {
+          "caller": "sortAndNormalizeSpecifierMap",
+          "callee": "serializeURL(addressURL).endsWith",
+          "lineNumber": 43
+        },
+        {
+          "caller": "sortAndNormalizeSpecifierMap",
+          "callee": "serializeURL",
+          "lineNumber": 43
+        },
+        {
+          "caller": "sortAndNormalizeSpecifierMap",
+          "callee": "console.warn",
+          "lineNumber": 45
+        },
+        {
+          "caller": "sortAndNormalizeSpecifierMap",
+          "callee": "serializeURL",
+          "lineNumber": 51
+        },
+        {
+          "caller": "sortAndNormalizeSpecifierMap",
+          "callee": "sortObject",
+          "lineNumber": 53
+        },
+        {
+          "caller": "sortAndNormalizeScopes",
+          "callee": "Object.entries",
+          "lineNumber": 66
+        },
+        {
+          "caller": "sortAndNormalizeScopes",
+          "callee": "isSpecifierMap",
+          "lineNumber": 70
+        },
+        {
+          "caller": "sortAndNormalizeScopes",
+          "callee": "console.warn",
+          "lineNumber": 79
+        },
+        {
+          "caller": "sortAndNormalizeScopes",
+          "callee": "serializeURL",
+          "lineNumber": 82
+        },
+        {
+          "caller": "sortAndNormalizeScopes",
+          "callee": "sortAndNormalizeSpecifierMap",
+          "lineNumber": 83
+        },
+        {
+          "caller": "sortAndNormalizeScopes",
+          "callee": "Object.keys",
+          "lineNumber": 90
+        },
+        {
+          "caller": "sortAndNormalizeScopes",
+          "callee": "sortObject",
+          "lineNumber": 91
+        },
+        {
+          "caller": "sortAndNormalizeScopes",
+          "callee": "sortObject",
+          "lineNumber": 93
+        },
+        {
+          "caller": "normalizeSpecifierKey",
+          "callee": "console.warn",
+          "lineNumber": 101
+        },
+        {
+          "caller": "normalizeSpecifierKey",
+          "callee": "parseUrlLikeImportSpecifier",
+          "lineNumber": 104
+        },
+        {
+          "caller": "normalizeSpecifierKey",
+          "callee": "serializeURL",
+          "lineNumber": 106
+        },
+        {
+          "caller": "parseUrlLikeImportSpecifier",
+          "callee": "specifier.startsWith",
+          "lineNumber": 116
+        },
+        {
+          "caller": "parseUrlLikeImportSpecifier",
+          "callee": "specifier.startsWith",
+          "lineNumber": 117
+        },
+        {
+          "caller": "parseUrlLikeImportSpecifier",
+          "callee": "specifier.startsWith",
+          "lineNumber": 118
+        },
+        {
+          "caller": "isSpecial",
+          "callee": "specialSchemes.some",
+          "lineNumber": 146
+        },
+        {
+          "caller": "isSpecial",
+          "callee": "serializeURL(asURL).startsWith",
+          "lineNumber": 147
+        },
+        {
+          "caller": "isSpecial",
+          "callee": "serializeURL",
+          "lineNumber": 147
+        },
+        {
+          "caller": "resolveImportsMatch",
+          "callee": "Object.entries",
+          "lineNumber": 157
+        },
+        {
+          "caller": "resolveImportsMatch",
+          "callee": "isURL",
+          "lineNumber": 165
+        },
+        {
+          "caller": "resolveImportsMatch",
+          "callee": "specifierKey.endsWith",
+          "lineNumber": 170
+        },
+        {
+          "caller": "resolveImportsMatch",
+          "callee": "normalizedSpecifier.startsWith",
+          "lineNumber": 171
+        },
+        {
+          "caller": "resolveImportsMatch",
+          "callee": "isSpecial",
+          "lineNumber": 172
+        },
+        {
+          "caller": "resolveImportsMatch",
+          "callee": "isURL",
+          "lineNumber": 179
+        },
+        {
+          "caller": "resolveImportsMatch",
+          "callee": "normalizedSpecifier.slice",
+          "lineNumber": 182
+        },
+        {
+          "caller": "resolveImportsMatch",
+          "callee": "resolutionResult.endsWith",
+          "lineNumber": 184
+        },
+        {
+          "caller": "resolveImportsMatch",
+          "callee": "isURL",
+          "lineNumber": 190
+        },
+        {
+          "caller": "resolveImportsMatch",
+          "callee": "serializeURL(url).startsWith",
+          "lineNumber": 193
+        },
+        {
+          "caller": "resolveImportsMatch",
+          "callee": "serializeURL",
+          "lineNumber": 193
+        },
+        {
+          "caller": "resolveImportsMatch",
+          "callee": "serializeURL",
+          "lineNumber": 198
+        },
+        {
+          "caller": "resolveImportMap",
+          "callee": "isImportMap",
+          "lineNumber": 215
+        },
+        {
+          "caller": "resolveImportMap",
+          "callee": "isImports",
+          "lineNumber": 220
+        },
+        {
+          "caller": "resolveImportMap",
+          "callee": "sortAndNormalizeSpecifierMap",
+          "lineNumber": 225
+        },
+        {
+          "caller": "resolveImportMap",
+          "callee": "isScopes",
+          "lineNumber": 232
+        },
+        {
+          "caller": "resolveImportMap",
+          "callee": "sortAndNormalizeScopes",
+          "lineNumber": 237
+        },
+        {
+          "caller": "resolveImportMap",
+          "callee": "Object.keys(importMap).find",
+          "lineNumber": 243
+        },
+        {
+          "caller": "resolveImportMap",
+          "callee": "Object.keys",
+          "lineNumber": 243
+        },
+        {
+          "caller": "resolveImportMap",
+          "callee": "console.warn",
+          "lineNumber": 245
+        },
+        {
+          "caller": "resolveModuleSpecifier",
+          "callee": "serializeURL",
+          "lineNumber": 258
+        },
+        {
+          "caller": "resolveModuleSpecifier",
+          "callee": "parseUrlLikeImportSpecifier",
+          "lineNumber": 259
+        },
+        {
+          "caller": "resolveModuleSpecifier",
+          "callee": "serializeURL",
+          "lineNumber": 260
+        },
+        {
+          "caller": "resolveModuleSpecifier",
+          "callee": "Object.entries",
+          "lineNumber": 261
+        },
+        {
+          "caller": "resolveModuleSpecifier",
+          "callee": "scopePrefix.endsWith",
+          "lineNumber": 264
+        },
+        {
+          "caller": "resolveModuleSpecifier",
+          "callee": "baseURLString.startsWith",
+          "lineNumber": 264
+        },
+        {
+          "caller": "resolveModuleSpecifier",
+          "callee": "resolveImportsMatch",
+          "lineNumber": 266
+        },
+        {
+          "caller": "resolveModuleSpecifier",
+          "callee": "resolveImportsMatch",
+          "lineNumber": 277
+        },
+        {
+          "caller": "resolveModuleSpecifier",
+          "callee": "serializeURL",
+          "lineNumber": 288
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/manifest/manifestBuilder.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 412,
+      "nonEmptyLines": 377,
+      "functions": [
+        {
+          "name": "equalClause",
+          "startLine": 18,
+          "endLine": 24,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "isDefaultClause",
+          "startLine": 26,
+          "endLine": 28,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "isObjRaw",
+          "startLine": 44,
+          "endLine": 48,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "isFunctionCall",
+          "startLine": 50,
+          "endLine": 52,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "isPrimitive",
+          "startLine": 66,
+          "endLine": 68,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "isObj",
+          "startLine": 70,
+          "endLine": 72,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "stringifyStatement",
+          "startLine": 130,
+          "endLine": 132,
+          "params": [
+            "st"
+          ]
+        },
+        {
+          "name": "stringifyImport",
+          "startLine": 134,
+          "endLine": 148,
+          "params": [
+            "[from, clauses]"
+          ]
+        },
+        {
+          "name": "stringifyObj",
+          "startLine": 150,
+          "endLine": 165,
+          "params": [
+            "obj",
+            "sortKeys"
+          ]
+        },
+        {
+          "name": "stringifyJSONValue",
+          "startLine": 167,
+          "endLine": 178,
+          "params": [
+            "obj"
+          ]
+        },
+        {
+          "name": "stringifyJS",
+          "startLine": 180,
+          "endLine": 193,
+          "params": [
+            "js"
+          ]
+        },
+        {
+          "name": "isExportType",
+          "startLine": 195,
+          "endLine": 197,
+          "params": [
+            "exp"
+          ]
+        },
+        {
+          "name": "stringifyExport",
+          "startLine": 198,
+          "endLine": 207,
+          "params": [
+            "exp"
+          ]
+        },
+        {
+          "name": "stringify",
+          "startLine": 209,
+          "endLine": 246,
+          "params": [
+            "{\n  imports,\n  manifest,\n  statements,\n  exports,\n  exportDefault,\n}"
+          ]
+        },
+        {
+          "name": "tryResolveDeco",
+          "startLine": 248,
+          "endLine": 254,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "newManifestBuilder",
+          "startLine": 256,
+          "endLine": 412,
+          "params": [
+            "initial"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "stringify",
+          "line": 209,
+          "isDefault": false
+        },
+        {
+          "name": "newManifestBuilder",
+          "line": 256,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "stringifyStatement",
+          "callee": "stringifyJS",
+          "lineNumber": 131
+        },
+        {
+          "caller": "stringifyImport",
+          "callee": "clauses\n      .map((clause) =>\n        isDefaultClause(clause)\n          ? `* as ${clause.alias}`\n          : (clause as NamedImport).import\n          ? `{ ${(clause as NamedImport).import} ${\n            clause.as ? \"as \" + clause.as : \"\"\n          }}`\n          : clause.as\n      )\n      .join",
+          "lineNumber": 136
+        },
+        {
+          "caller": "stringifyImport",
+          "callee": "clauses\n      .map",
+          "lineNumber": 136
+        },
+        {
+          "caller": "stringifyImport",
+          "callee": "isDefaultClause",
+          "lineNumber": 138
+        },
+        {
+          "caller": "stringifyObj",
+          "callee": "Object.entries",
+          "lineNumber": 151
+        },
+        {
+          "caller": "stringifyObj",
+          "callee": "entries.sort",
+          "lineNumber": 153
+        },
+        {
+          "caller": "stringifyObj",
+          "callee": "keyA.localeCompare",
+          "lineNumber": 153
+        },
+        {
+          "caller": "stringifyObj",
+          "callee": "entriesOrSorted\n      .map(([key, v]) => {\n        return `\"${key}\": ${stringifyJSONValue(v!)}`;\n      })\n      .join",
+          "lineNumber": 157
+        },
+        {
+          "caller": "stringifyObj",
+          "callee": "entriesOrSorted\n      .map",
+          "lineNumber": 157
+        },
+        {
+          "caller": "stringifyObj",
+          "callee": "stringifyJSONValue",
+          "lineNumber": 159
+        },
+        {
+          "caller": "stringifyJSONValue",
+          "callee": "isPrimitive",
+          "lineNumber": 168
+        },
+        {
+          "caller": "stringifyJSONValue",
+          "callee": "isObj",
+          "lineNumber": 174
+        },
+        {
+          "caller": "stringifyJSONValue",
+          "callee": "stringifyObj",
+          "lineNumber": 175
+        },
+        {
+          "caller": "stringifyJSONValue",
+          "callee": "stringifyJS",
+          "lineNumber": 177
+        },
+        {
+          "caller": "stringifyJS",
+          "callee": "isObjRaw",
+          "lineNumber": 181
+        },
+        {
+          "caller": "stringifyJS",
+          "callee": "JSON.stringify",
+          "lineNumber": 182
+        },
+        {
+          "caller": "stringifyJS",
+          "callee": "isFunctionCall",
+          "lineNumber": 184
+        },
+        {
+          "caller": "stringifyJS",
+          "callee": "js.raw.params\n        .map(stringifyJSONValue)\n        .join",
+          "lineNumber": 186
+        },
+        {
+          "caller": "stringifyJS",
+          "callee": "js.raw.params\n        .map",
+          "lineNumber": 186
+        },
+        {
+          "caller": "stringifyExport",
+          "callee": "isExportType",
+          "lineNumber": 199
+        },
+        {
+          "caller": "stringifyExport",
+          "callee": "stringifyJS",
+          "lineNumber": 204
+        },
+        {
+          "caller": "stringify",
+          "callee": "Object.entries(imports).toSorted(([fromA], [fromB]) =>\n      fromA.localeCompare(fromB)\n    ).map(stringifyImport).join",
+          "lineNumber": 225
+        },
+        {
+          "caller": "stringify",
+          "callee": "Object.entries(imports).toSorted(([fromA], [fromB]) =>\n      fromA.localeCompare(fromB)\n    ).map",
+          "lineNumber": 225
+        },
+        {
+          "caller": "stringify",
+          "callee": "Object.entries(imports).toSorted",
+          "lineNumber": 225
+        },
+        {
+          "caller": "stringify",
+          "callee": "Object.entries",
+          "lineNumber": 225
+        },
+        {
+          "caller": "stringify",
+          "callee": "fromA.localeCompare",
+          "lineNumber": 226
+        },
+        {
+          "caller": "stringify",
+          "callee": "stringifyObj",
+          "lineNumber": 230
+        },
+        {
+          "caller": "stringify",
+          "callee": "exports.map(stringifyExport).join",
+          "lineNumber": 234
+        },
+        {
+          "caller": "stringify",
+          "callee": "exports.map",
+          "lineNumber": 234
+        },
+        {
+          "caller": "stringify",
+          "callee": "statements.map(stringifyStatement).join",
+          "lineNumber": 235
+        },
+        {
+          "caller": "stringify",
+          "callee": "statements.map",
+          "lineNumber": 235
+        },
+        {
+          "caller": "tryResolveDeco",
+          "callee": "safeImportResolve",
+          "lineNumber": 250
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "newManifestBuilder",
+          "lineNumber": 263
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "Object.entries",
+          "lineNumber": 277
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "Object.keys",
+          "lineNumber": 282
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "withoutLocalModules",
+          "lineNumber": 283
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "\"$\".repeat",
+          "lineNumber": 286
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "innerBuilder\n              .addImports({\n                from: path.startsWith(\"$live\") && tryResolveDeco(path)\n                  ? path\n                  : path.replace(\"$live/\", \"deco/\"),\n                clauses: [{ alias: ref }],\n              })\n              .addValuesOnManifestKey",
+          "lineNumber": 288
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "innerBuilder\n              .addImports",
+          "lineNumber": 288
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "path.startsWith",
+          "lineNumber": 290
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "tryResolveDeco",
+          "lineNumber": 290
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "path.replace",
+          "lineNumber": 292
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "Object.keys",
+          "lineNumber": 314
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "Object.keys",
+          "lineNumber": 315
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "equalClause",
+          "lineNumber": 331
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "JSON.stringify",
+          "lineNumber": 337
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "JSON.stringify",
+          "lineNumber": 337
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "JSON.stringify",
+          "lineNumber": 339
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "stringify",
+          "lineNumber": 340
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "newManifestBuilder",
+          "lineNumber": 342
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "currImports[importStr.from].filter",
+          "lineNumber": 353
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "newManifestBuilder",
+          "lineNumber": 362
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "newManifestBuilder",
+          "lineNumber": 368
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "newManifestBuilder",
+          "lineNumber": 374
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "vals.reduce",
+          "lineNumber": 376
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "newManifestBuilder",
+          "lineNumber": 385
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "vals.reduce",
+          "lineNumber": 387
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "isObj",
+          "lineNumber": 390
+        },
+        {
+          "caller": "newManifestBuilder",
+          "callee": "newManifestBuilder",
+          "lineNumber": 406
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 16,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/manifest/manifestGen.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 120,
+      "nonEmptyLines": 113,
+      "functions": [
+        {
+          "name": "sanitize",
+          "startLine": 9,
+          "endLine": 10,
+          "params": [
+            "functionName"
+          ]
+        },
+        {
+          "name": "withDefinition",
+          "startLine": 11,
+          "endLine": 40,
+          "params": [
+            "man",
+            "namespace",
+            "funcImportPath",
+            "block",
+            "blockIdx",
+            "blkN"
+          ]
+        },
+        {
+          "name": "resolveAny",
+          "startLine": 42,
+          "endLine": 49,
+          "params": [
+            "importString"
+          ]
+        },
+        {
+          "name": "decoManifestBuilder",
+          "startLine": 69,
+          "endLine": 120,
+          "params": [
+            "dir",
+            "namespace",
+            "walker"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolveAny",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "decoManifestBuilder",
+          "line": 69,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sanitize",
+          "callee": "functionName.startsWith",
+          "lineNumber": 10
+        },
+        {
+          "caller": "withDefinition",
+          "callee": "fileSeparatorToSlash",
+          "lineNumber": 19
+        },
+        {
+          "caller": "withDefinition",
+          "callee": "_functionRef.startsWith",
+          "lineNumber": 20
+        },
+        {
+          "caller": "withDefinition",
+          "callee": "sanitize",
+          "lineNumber": 22
+        },
+        {
+          "caller": "withDefinition",
+          "callee": "shouldBeLocal",
+          "lineNumber": 23
+        },
+        {
+          "caller": "withDefinition",
+          "callee": "functionRef.substring",
+          "lineNumber": 25
+        },
+        {
+          "caller": "withDefinition",
+          "callee": "\"$\".repeat",
+          "lineNumber": 27
+        },
+        {
+          "caller": "withDefinition",
+          "callee": "man\n    .addImports({\n      from: functionRef,\n      clauses: [{ alias: ref }],\n    })\n    .addValuesOnManifestKey",
+          "lineNumber": 28
+        },
+        {
+          "caller": "withDefinition",
+          "callee": "man\n    .addImports",
+          "lineNumber": 28
+        },
+        {
+          "caller": "resolveAny",
+          "callee": "importString.find",
+          "lineNumber": 43
+        },
+        {
+          "caller": "resolveAny",
+          "callee": "safeImportResolve",
+          "lineNumber": 45
+        },
+        {
+          "caller": "decoManifestBuilder",
+          "callee": "newManifestBuilder",
+          "lineNumber": 74
+        },
+        {
+          "caller": "decoManifestBuilder",
+          "callee": "blocks",
+          "lineNumber": 81
+        },
+        {
+          "caller": "decoManifestBuilder",
+          "callee": "join",
+          "lineNumber": 83
+        },
+        {
+          "caller": "decoManifestBuilder",
+          "callee": "walker",
+          "lineNumber": 88
+        },
+        {
+          "caller": "decoManifestBuilder",
+          "callee": "entry.name.startsWith",
+          "lineNumber": 92
+        },
+        {
+          "caller": "decoManifestBuilder",
+          "callee": "entry.name.endsWith",
+          "lineNumber": 93
+        },
+        {
+          "caller": "decoManifestBuilder",
+          "callee": "entry.name.endsWith",
+          "lineNumber": 93
+        },
+        {
+          "caller": "decoManifestBuilder",
+          "callee": "paths.push",
+          "lineNumber": 97
+        },
+        {
+          "caller": "decoManifestBuilder",
+          "callee": "paths.sort",
+          "lineNumber": 100
+        },
+        {
+          "caller": "decoManifestBuilder",
+          "callee": "withDefinition",
+          "lineNumber": 101
+        },
+        {
+          "caller": "decoManifestBuilder",
+          "callee": "path.replace",
+          "lineNumber": 104
+        },
+        {
+          "caller": "decoManifestBuilder",
+          "callee": "initialManifest.addManifestValues([\"name\", {\n    kind: \"js\",\n    raw: namespace,\n  }])\n    .addExportDefault",
+          "lineNumber": 113
+        },
+        {
+          "caller": "decoManifestBuilder",
+          "callee": "initialManifest.addManifestValues",
+          "lineNumber": 113
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/schema/builder.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 396,
+      "nonEmptyLines": 381,
+      "functions": [
+        {
+          "name": "withNotResolveType",
+          "startLine": 51,
+          "endLine": 74,
+          "params": [
+            "resolveType",
+            "rs"
+          ]
+        },
+        {
+          "name": "blockFunctionToSchemeable",
+          "startLine": 88,
+          "endLine": 115,
+          "params": [
+            "{\n  functionKey,\n  inputSchemaId,\n  functionJSDoc,\n}"
+          ]
+        },
+        {
+          "name": "isEntrypoint",
+          "startLine": 138,
+          "endLine": 142,
+          "params": [
+            "m"
+          ]
+        },
+        {
+          "name": "parseDataUriMimeTypes",
+          "startLine": 150,
+          "endLine": 161,
+          "params": [
+            "dataUri"
+          ]
+        },
+        {
+          "name": "fileUniqueId",
+          "startLine": 163,
+          "endLine": 172,
+          "params": [
+            "fileUrl"
+          ]
+        },
+        {
+          "name": "newSchemaBuilder",
+          "startLine": 174,
+          "endLine": 396,
+          "params": [
+            "initial"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "newSchemaBuilder",
+          "line": 174,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseDataUriMimeTypes",
+          "callee": "dataUri.split",
+          "lineNumber": 152
+        },
+        {
+          "caller": "parseDataUriMimeTypes",
+          "callee": "media.split",
+          "lineNumber": 153
+        },
+        {
+          "caller": "parseDataUriMimeTypes",
+          "callee": "mimeType.split",
+          "lineNumber": 155
+        },
+        {
+          "caller": "parseDataUriMimeTypes",
+          "callee": "decodeURIComponent",
+          "lineNumber": 157
+        },
+        {
+          "caller": "fileUniqueId",
+          "callee": "fileUrl.startsWith",
+          "lineNumber": 166
+        },
+        {
+          "caller": "fileUniqueId",
+          "callee": "parseDataUriMimeTypes",
+          "lineNumber": 167
+        },
+        {
+          "caller": "fileUniqueId",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 168
+        },
+        {
+          "caller": "fileUniqueId",
+          "callee": "btoa",
+          "lineNumber": 171
+        },
+        {
+          "caller": "withBlockSchema",
+          "callee": "isEntrypoint",
+          "lineNumber": 178
+        },
+        {
+          "caller": "withBlockSchema",
+          "callee": "newSchemaBuilder",
+          "lineNumber": 179
+        },
+        {
+          "caller": "withBlockSchema",
+          "callee": "newSchemaBuilder",
+          "lineNumber": 186
+        },
+        {
+          "caller": "withBlockSchema",
+          "callee": "newSchemaBuilder",
+          "lineNumber": 197
+        },
+        {
+          "caller": "schemeableId",
+          "callee": "safeImportResolve",
+          "lineNumber": 208
+        },
+        {
+          "caller": "schemeableId",
+          "callee": "friendlyIdFor",
+          "lineNumber": 213
+        },
+        {
+          "caller": "schemeableId",
+          "callee": "fileUniqueId",
+          "lineNumber": 218
+        },
+        {
+          "caller": "schemeableId",
+          "callee": "fileHash.replaceAll",
+          "lineNumber": 220
+        },
+        {
+          "caller": "schemeableId",
+          "callee": "friendlyIdFor",
+          "lineNumber": 222
+        },
+        {
+          "caller": "genId",
+          "callee": "schemeableId",
+          "lineNumber": 226
+        },
+        {
+          "caller": "addSchemeable",
+          "callee": "schemeableId",
+          "lineNumber": 237
+        },
+        {
+          "caller": "addSchemeable",
+          "callee": "schemeableToJSONSchema",
+          "lineNumber": 243
+        },
+        {
+          "caller": "build",
+          "callee": "initial.blockModules\n        .reduce",
+          "lineNumber": 252
+        },
+        {
+          "caller": "build",
+          "callee": "addSchemeable",
+          "lineNumber": 255
+        },
+        {
+          "caller": "build",
+          "callee": "addSchemeable",
+          "lineNumber": 256
+        },
+        {
+          "caller": "build",
+          "callee": "functionRefs.reduce",
+          "lineNumber": 281
+        },
+        {
+          "caller": "build",
+          "callee": "blockFunctionToSchemeable",
+          "lineNumber": 283
+        },
+        {
+          "caller": "build",
+          "callee": "addSchemeable",
+          "lineNumber": 284
+        },
+        {
+          "caller": "build",
+          "callee": "currAnyOfs.push",
+          "lineNumber": 292
+        },
+        {
+          "caller": "build",
+          "callee": "withNotResolveType",
+          "lineNumber": 297
+        },
+        {
+          "caller": "build",
+          "callee": "mergeJSONSchemas",
+          "lineNumber": 303
+        },
+        {
+          "caller": "build",
+          "callee": "Object.keys(root).reduce",
+          "lineNumber": 341
+        },
+        {
+          "caller": "build",
+          "callee": "Object.keys",
+          "lineNumber": 341
+        },
+        {
+          "caller": "build",
+          "callee": "initial.entrypoints.reduce",
+          "lineNumber": 351
+        },
+        {
+          "caller": "build",
+          "callee": "addSchemeable",
+          "lineNumber": 353
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/schema/comments.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 160,
+      "nonEmptyLines": 142,
+      "functions": [
+        {
+          "name": "getChildren",
+          "startLine": 32,
+          "endLine": 73,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "isSpannableArray",
+          "startLine": 75,
+          "endLine": 78,
+          "params": [
+            "child"
+          ]
+        },
+        {
+          "name": "assignCommentsForSpannable",
+          "startLine": 90,
+          "endLine": 120,
+          "params": [
+            "_rootSpan"
+          ]
+        },
+        {
+          "name": "assignComments",
+          "startLine": 122,
+          "endLine": 129,
+          "params": [
+            "program"
+          ]
+        },
+        {
+          "name": "commentsFromSpannable",
+          "startLine": 131,
+          "endLine": 133,
+          "params": [
+            "item"
+          ]
+        },
+        {
+          "name": "commentsToJSONSchema",
+          "startLine": 138,
+          "endLine": 151,
+          "params": [
+            "comments"
+          ]
+        },
+        {
+          "name": "spannableToJSONSchema",
+          "startLine": 158,
+          "endLine": 160,
+          "params": [
+            "spannable"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "assignComments",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "commentsFromSpannable",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "spannableToJSONSchema",
+          "line": 158,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isSpannableArray",
+          "callee": "Array.isArray",
+          "lineNumber": 76
+        },
+        {
+          "caller": "assignCommentsForSpannable",
+          "callee": "getChildren",
+          "lineNumber": 91
+        },
+        {
+          "caller": "assignCommentsForSpannable",
+          "callee": "isSpannableArray",
+          "lineNumber": 106
+        },
+        {
+          "caller": "assignCommentsForSpannable",
+          "callee": "child.comments.push",
+          "lineNumber": 114
+        },
+        {
+          "caller": "assignCommentsForSpannable",
+          "callee": "assignCommentsForSpannable",
+          "lineNumber": 117
+        },
+        {
+          "caller": "assignCommentsForSpannable",
+          "callee": "_rootSpan.comments.slice",
+          "lineNumber": 119
+        },
+        {
+          "caller": "assignComments",
+          "callee": "assignCommentsForSpannable",
+          "lineNumber": 128
+        },
+        {
+          "caller": "commentsToJSONSchema",
+          "callee": "jsdocRegex.exec",
+          "lineNumber": 145
+        },
+        {
+          "caller": "commentsToJSONSchema",
+          "callee": "parseJSDocAttribute",
+          "lineNumber": 147
+        },
+        {
+          "caller": "commentsToJSONSchema",
+          "callee": "value.trim",
+          "lineNumber": 147
+        },
+        {
+          "caller": "spannableToJSONSchema",
+          "callee": "commentsToJSONSchema",
+          "lineNumber": 159
+        },
+        {
+          "caller": "spannableToJSONSchema",
+          "callee": "commentsFromSpannable",
+          "lineNumber": 159
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/schema/deps.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "exports": [
+        {
+          "name": "parse",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "ParsedSource",
+          "line": 2,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/schema/gen.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 161,
+      "nonEmptyLines": 153,
+      "functions": [
+        {
+          "name": "namespaceOf",
+          "startLine": 26,
+          "endLine": 28,
+          "params": [
+            "blkType",
+            "blkKey"
+          ]
+        },
+        {
+          "name": "resolveForPath",
+          "startLine": 30,
+          "endLine": 66,
+          "params": [
+            "introspect",
+            "importMapResolver",
+            "baseDir",
+            "blockKey",
+            "references"
+          ]
+        },
+        {
+          "name": "resolveImport",
+          "startLine": 68,
+          "endLine": 77,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "genSchemasFromManifest",
+          "startLine": 79,
+          "endLine": 161,
+          "params": [
+            "manifest",
+            "baseDir",
+            "importMap"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "namespaceOf",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "genSchemasFromManifest",
+          "line": 79,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "namespaceOf",
+          "callee": "blkKey.substring",
+          "lineNumber": 27
+        },
+        {
+          "caller": "namespaceOf",
+          "callee": "blkKey.indexOf",
+          "lineNumber": 27
+        },
+        {
+          "caller": "resolveForPath",
+          "callee": "importMapResolver.resolve",
+          "lineNumber": 37
+        },
+        {
+          "caller": "resolveForPath",
+          "callee": "resolveImport",
+          "lineNumber": 38
+        },
+        {
+          "caller": "resolveForPath",
+          "callee": "FuncAddr.unwind",
+          "lineNumber": 42
+        },
+        {
+          "caller": "resolveForPath",
+          "callee": "parsePath",
+          "lineNumber": 43
+        },
+        {
+          "caller": "resolveForPath",
+          "callee": "programToBlockRef",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolveImport",
+          "callee": "safeImportResolve",
+          "lineNumber": 70
+        },
+        {
+          "caller": "resolveImport",
+          "callee": "path.startsWith",
+          "lineNumber": 72
+        },
+        {
+          "caller": "resolveImport",
+          "callee": "safeImportResolve",
+          "lineNumber": 73
+        },
+        {
+          "caller": "resolveImport",
+          "callee": "path.replace",
+          "lineNumber": 73
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "toFileUrl(baseDir ? baseDir : Deno.cwd()).toString",
+          "lineNumber": 85
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "toFileUrl",
+          "lineNumber": 85
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "Deno.cwd",
+          "lineNumber": 85
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "ImportMapBuilder.new().mergeWith",
+          "lineNumber": 86
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "ImportMapBuilder.new",
+          "lineNumber": 86
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "blocks().reduce",
+          "lineNumber": 88
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "blocks",
+          "lineNumber": 88
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "newSchemaBuilder",
+          "lineNumber": 98
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "blocks",
+          "lineNumber": 108
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "Object.keys",
+          "lineNumber": 110
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "withoutLocalModules",
+          "lineNumber": 111
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "resolveForPath",
+          "lineNumber": 117
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "refPromises.push",
+          "lineNumber": 124
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "ref.then",
+          "lineNumber": 125
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "Promise.all",
+          "lineNumber": 155
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "modules.reduce",
+          "lineNumber": 156
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "builder.withBlockSchema",
+          "lineNumber": 157
+        },
+        {
+          "caller": "genSchemasFromManifest",
+          "callee": "schema.build",
+          "lineNumber": 160
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/schema/lazy.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 173,
+      "nonEmptyLines": 168,
+      "functions": [
+        {
+          "name": "getResolveType",
+          "startLine": 12,
+          "endLine": 23,
+          "params": [
+            "schema"
+          ]
+        },
+        {
+          "name": "indexedBlocks",
+          "startLine": 24,
+          "endLine": 45,
+          "params": [
+            "decoManifest"
+          ]
+        },
+        {
+          "name": "incorporateSavedBlocksIntoSchema",
+          "startLine": 52,
+          "endLine": 121,
+          "params": [
+            "manifest",
+            "schema",
+            "release"
+          ]
+        },
+        {
+          "name": "lazySchemaFor",
+          "startLine": 142,
+          "endLine": 173,
+          "params": [
+            "ctx"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "lazySchemaFor",
+          "line": 142,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "indexedBlocks",
+          "callee": "Object.entries",
+          "lineNumber": 38
+        },
+        {
+          "caller": "indexedBlocks",
+          "callee": "Object.keys",
+          "lineNumber": 39
+        },
+        {
+          "caller": "incorporateSavedBlocksIntoSchema",
+          "callee": "indexedBlocks",
+          "lineNumber": 59
+        },
+        {
+          "caller": "incorporateSavedBlocksIntoSchema",
+          "callee": "Object.entries",
+          "lineNumber": 66
+        },
+        {
+          "caller": "incorporateSavedBlocksIntoSchema",
+          "callee": "Object.entries",
+          "lineNumber": 68
+        },
+        {
+          "caller": "incorporateSavedBlocksIntoSchema",
+          "callee": "root[ref].anyOf!.push",
+          "lineNumber": 74
+        },
+        {
+          "caller": "incorporateSavedBlocksIntoSchema",
+          "callee": "resolvable",
+          "lineNumber": 75
+        },
+        {
+          "caller": "incorporateSavedBlocksIntoSchema",
+          "callee": "Object.entries",
+          "lineNumber": 89
+        },
+        {
+          "caller": "incorporateSavedBlocksIntoSchema",
+          "callee": "anyOf?.splice",
+          "lineNumber": 94
+        },
+        {
+          "caller": "incorporateSavedBlocksIntoSchema",
+          "callee": "(anyOf?.map((func) =>\n        getResolveType(func)\n      ) ?? []).filter(notUndefined).reduce",
+          "lineNumber": 96
+        },
+        {
+          "caller": "incorporateSavedBlocksIntoSchema",
+          "callee": "(anyOf?.map((func) =>\n        getResolveType(func)\n      ) ?? []).filter",
+          "lineNumber": 96
+        },
+        {
+          "caller": "incorporateSavedBlocksIntoSchema",
+          "callee": "anyOf?.map",
+          "lineNumber": 96
+        },
+        {
+          "caller": "incorporateSavedBlocksIntoSchema",
+          "callee": "getResolveType",
+          "lineNumber": 97
+        },
+        {
+          "caller": "incorporateSavedBlocksIntoSchema",
+          "callee": "Object.entries",
+          "lineNumber": 102
+        },
+        {
+          "caller": "incorporateSavedBlocksIntoSchema",
+          "callee": "definitions[ref].anyOf?.push",
+          "lineNumber": 111
+        },
+        {
+          "caller": "incorporateSavedBlocksIntoSchema",
+          "callee": "resolvable",
+          "lineNumber": 111
+        },
+        {
+          "caller": "lazySchemaFor",
+          "callee": "ctxSchema.has",
+          "lineNumber": 143
+        },
+        {
+          "caller": "lazySchemaFor",
+          "callee": "ctxSchema.get",
+          "lineNumber": 144
+        },
+        {
+          "caller": "lazySchemaFor",
+          "callee": "ulid",
+          "lineNumber": 146
+        },
+        {
+          "caller": "lazySchemaFor",
+          "callee": "singleFlight",
+          "lineNumber": 148
+        },
+        {
+          "caller": "value",
+          "callee": "sf.run",
+          "lineNumber": 151
+        },
+        {
+          "caller": "value",
+          "callee": "ctx.release!.revision",
+          "lineNumber": 152
+        },
+        {
+          "caller": "value",
+          "callee": "incorporateSavedBlocksIntoSchema",
+          "lineNumber": 155
+        },
+        {
+          "caller": "value",
+          "callee": "genSchemas",
+          "lineNumber": 157
+        },
+        {
+          "caller": "value",
+          "callee": "ctx.release!.state",
+          "lineNumber": 159
+        },
+        {
+          "caller": "revision",
+          "callee": "ctx.release!.revision",
+          "lineNumber": 168
+        },
+        {
+          "caller": "lazySchemaFor",
+          "callee": "ctxSchema.set",
+          "lineNumber": 171
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 1,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/schema/merge.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 37,
+      "functions": [
+        {
+          "name": "merge",
+          "startLine": 3,
+          "endLine": 37,
+          "params": [
+            "defObj",
+            "defOtherObj"
+          ]
+        },
+        {
+          "name": "mergeJSONSchemas",
+          "startLine": 39,
+          "endLine": 43,
+          "params": [
+            "...schemas"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "mergeJSONSchemas",
+          "line": 39,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "merge",
+          "callee": "anyOf.push",
+          "lineNumber": 14
+        },
+        {
+          "caller": "merge",
+          "callee": "anyOf.push",
+          "lineNumber": 16
+        },
+        {
+          "caller": "merge",
+          "callee": "anyOf.push",
+          "lineNumber": 20
+        },
+        {
+          "caller": "merge",
+          "callee": "anyOf.push",
+          "lineNumber": 22
+        },
+        {
+          "caller": "merge",
+          "callee": "anyOf.filter",
+          "lineNumber": 28
+        },
+        {
+          "caller": "mergeJSONSchemas",
+          "callee": "schemas.reduce",
+          "lineNumber": 42
+        },
+        {
+          "caller": "mergeJSONSchemas",
+          "callee": "merge",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/schema/parser.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 335,
+      "nonEmptyLines": 303,
+      "functions": [
+        {
+          "name": "isJsFilePath",
+          "startLine": 10,
+          "endLine": 10,
+          "params": [
+            "filePath"
+          ]
+        },
+        {
+          "name": "findTypeDefinitionFile",
+          "startLine": 17,
+          "endLine": 44,
+          "params": [
+            "jsPath"
+          ]
+        },
+        {
+          "name": "resolveFileExtension",
+          "startLine": 52,
+          "endLine": 121,
+          "params": [
+            "filePath"
+          ]
+        },
+        {
+          "name": "load",
+          "startLine": 127,
+          "endLine": 187,
+          "params": [
+            "specifier"
+          ]
+        },
+        {
+          "name": "parseContent",
+          "startLine": 194,
+          "endLine": 198,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "wrapLoaderWithDtsSupport",
+          "startLine": 206,
+          "endLine": 235,
+          "params": [
+            "baseLoader"
+          ]
+        },
+        {
+          "name": "initLoader",
+          "startLine": 237,
+          "endLine": 262,
+          "params": []
+        },
+        {
+          "name": "updateLoadCache",
+          "startLine": 272,
+          "endLine": 281,
+          "params": [
+            "path",
+            "content"
+          ]
+        },
+        {
+          "name": "parsePath",
+          "startLine": 286,
+          "endLine": 330,
+          "params": [
+            "path"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "parseContent",
+          "line": 194,
+          "isDefault": false
+        },
+        {
+          "name": "initLoader",
+          "line": 237,
+          "isDefault": false
+        },
+        {
+          "name": "schemaVersion",
+          "line": 263,
+          "isDefault": false
+        },
+        {
+          "name": "updateLoadCache",
+          "line": 272,
+          "isDefault": false
+        },
+        {
+          "name": "parsePath",
+          "line": 286,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isJsFilePath",
+          "callee": "filePath.match",
+          "lineNumber": 10
+        },
+        {
+          "caller": "findTypeDefinitionFile",
+          "callee": "jsPath.includes",
+          "lineNumber": 24
+        },
+        {
+          "caller": "findTypeDefinitionFile",
+          "callee": "isJsFilePath",
+          "lineNumber": 25
+        },
+        {
+          "caller": "findTypeDefinitionFile",
+          "callee": "pathStr.replace",
+          "lineNumber": 33
+        },
+        {
+          "caller": "findTypeDefinitionFile",
+          "callee": "Deno.stat",
+          "lineNumber": 37
+        },
+        {
+          "caller": "resolveFileExtension",
+          "callee": "pathStr.match",
+          "lineNumber": 65
+        },
+        {
+          "caller": "resolveFileExtension",
+          "callee": "Deno.stat",
+          "lineNumber": 87
+        },
+        {
+          "caller": "resolveFileExtension",
+          "callee": "Deno.stat",
+          "lineNumber": 112
+        },
+        {
+          "caller": "load",
+          "callee": "isJsFilePath",
+          "lineNumber": 135
+        },
+        {
+          "caller": "load",
+          "callee": "specifier.includes",
+          "lineNumber": 136
+        },
+        {
+          "caller": "load",
+          "callee": "findTypeDefinitionFile",
+          "lineNumber": 140
+        },
+        {
+          "caller": "load",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 143
+        },
+        {
+          "caller": "load",
+          "callee": "console.log",
+          "lineNumber": 146
+        },
+        {
+          "caller": "load",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 156
+        },
+        {
+          "caller": "load",
+          "callee": "fetch(String(url), { redirect: \"follow\" }).catch",
+          "lineNumber": 160
+        },
+        {
+          "caller": "load",
+          "callee": "fetch",
+          "lineNumber": 160
+        },
+        {
+          "caller": "load",
+          "callee": "String",
+          "lineNumber": 160
+        },
+        {
+          "caller": "load",
+          "callee": "console.log",
+          "lineNumber": 162
+        },
+        {
+          "caller": "load",
+          "callee": "fetch",
+          "lineNumber": 163
+        },
+        {
+          "caller": "load",
+          "callee": "String",
+          "lineNumber": 163
+        },
+        {
+          "caller": "load",
+          "callee": "response.text().catch",
+          "lineNumber": 166
+        },
+        {
+          "caller": "load",
+          "callee": "response.text",
+          "lineNumber": 166
+        },
+        {
+          "caller": "load",
+          "callee": "console.log",
+          "lineNumber": 167
+        },
+        {
+          "caller": "load",
+          "callee": "console.error",
+          "lineNumber": 172
+        },
+        {
+          "caller": "parseContent",
+          "callee": "parse",
+          "lineNumber": 195
+        },
+        {
+          "caller": "parseContent",
+          "callee": "assignComments",
+          "lineNumber": 196
+        },
+        {
+          "caller": "wrapLoaderWithDtsSupport",
+          "callee": "specifier.match",
+          "lineNumber": 210
+        },
+        {
+          "caller": "wrapLoaderWithDtsSupport",
+          "callee": "specifier.includes",
+          "lineNumber": 211
+        },
+        {
+          "caller": "wrapLoaderWithDtsSupport",
+          "callee": "specifier.startsWith",
+          "lineNumber": 213
+        },
+        {
+          "caller": "wrapLoaderWithDtsSupport",
+          "callee": "findTypeDefinitionFile",
+          "lineNumber": 215
+        },
+        {
+          "caller": "wrapLoaderWithDtsSupport",
+          "callee": "baseLoader",
+          "lineNumber": 218
+        },
+        {
+          "caller": "wrapLoaderWithDtsSupport",
+          "callee": "console.log",
+          "lineNumber": 223
+        },
+        {
+          "caller": "wrapLoaderWithDtsSupport",
+          "callee": "baseLoader",
+          "lineNumber": 233
+        },
+        {
+          "caller": "initLoader",
+          "callee": "createCache",
+          "lineNumber": 243
+        },
+        {
+          "caller": "cacheLoader",
+          "callee": "cache.load(specifier).then",
+          "lineNumber": 245
+        },
+        {
+          "caller": "cacheLoader",
+          "callee": "cache.load",
+          "lineNumber": 245
+        },
+        {
+          "caller": "cacheLoader",
+          "callee": "decoder.decode",
+          "lineNumber": 253
+        },
+        {
+          "caller": "initLoader",
+          "callee": "wrapLoaderWithDtsSupport",
+          "lineNumber": 256
+        },
+        {
+          "caller": "updateLoadCache",
+          "callee": "parseContent(content).catch",
+          "lineNumber": 277
+        },
+        {
+          "caller": "updateLoadCache",
+          "callee": "parseContent",
+          "lineNumber": 277
+        },
+        {
+          "caller": "updateLoadCache",
+          "callee": "console.log",
+          "lineNumber": 278
+        },
+        {
+          "caller": "parsePath",
+          "callee": "path.startsWith",
+          "lineNumber": 289
+        },
+        {
+          "caller": "parsePath",
+          "callee": "console.warn",
+          "lineNumber": 290
+        },
+        {
+          "caller": "parsePath",
+          "callee": "Promise.resolve",
+          "lineNumber": 294
+        },
+        {
+          "caller": "parsePath",
+          "callee": "path.startsWith",
+          "lineNumber": 299
+        },
+        {
+          "caller": "parsePath",
+          "callee": "resolveFileExtension",
+          "lineNumber": 300
+        },
+        {
+          "caller": "parsePath",
+          "callee": "path.match",
+          "lineNumber": 303
+        },
+        {
+          "caller": "parsePath",
+          "callee": "console.warn",
+          "lineNumber": 305
+        },
+        {
+          "caller": "parsePath",
+          "callee": "Promise.resolve",
+          "lineNumber": 309
+        },
+        {
+          "caller": "parsePath",
+          "callee": "initLoader",
+          "lineNumber": 313
+        },
+        {
+          "caller": "parsePath",
+          "callee": "mLoader(resolvedPath).then(\n    async (content) => {\n      if (!content && content !== \"\") {\n        throw new Error(`Path not found ${resolvedPath}`);\n      }\n      try {\n        return await parseContent(content);\n      } catch (err) {\n        console.log(err, resolvedPath);\n        throw err;\n      }\n    },\n  ).catch",
+          "lineNumber": 314
+        },
+        {
+          "caller": "parsePath",
+          "callee": "mLoader(resolvedPath).then",
+          "lineNumber": 314
+        },
+        {
+          "caller": "parsePath",
+          "callee": "mLoader",
+          "lineNumber": 314
+        },
+        {
+          "caller": "parsePath",
+          "callee": "parseContent",
+          "lineNumber": 320
+        },
+        {
+          "caller": "parsePath",
+          "callee": "console.log",
+          "lineNumber": 322
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 5,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/schema/reader.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "genSchemas",
+          "startLine": 7,
+          "endLine": 28,
+          "params": [
+            "manifest",
+            "importMap"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "genSchemas",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "genSchemas",
+          "callee": "Deno.cwd",
+          "lineNumber": 11
+        },
+        {
+          "caller": "genSchemas",
+          "callee": "genSchemasFromManifest",
+          "lineNumber": 12
+        },
+        {
+          "caller": "genSchemas",
+          "callee": "Deno.remove(join(Deno.cwd(), \"schemas.gen.json\")).catch",
+          "lineNumber": 19
+        },
+        {
+          "caller": "genSchemas",
+          "callee": "Deno.remove",
+          "lineNumber": 19
+        },
+        {
+          "caller": "genSchemas",
+          "callee": "join",
+          "lineNumber": 19
+        },
+        {
+          "caller": "genSchemas",
+          "callee": "Deno.cwd",
+          "lineNumber": 19
+        },
+        {
+          "caller": "genSchemas",
+          "callee": "Deno.remove(join(Deno.cwd(), \"doccache.zst\")).catch",
+          "lineNumber": 22
+        },
+        {
+          "caller": "genSchemas",
+          "callee": "Deno.remove",
+          "lineNumber": 22
+        },
+        {
+          "caller": "genSchemas",
+          "callee": "join",
+          "lineNumber": 22
+        },
+        {
+          "caller": "genSchemas",
+          "callee": "Deno.cwd",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/schema/schemeable.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 244,
+      "nonEmptyLines": 238,
+      "functions": [
+        {
+          "name": "schemeableToJSONSchemaFunc",
+          "startLine": 3,
+          "endLine": 199,
+          "params": [
+            "genId",
+            "def",
+            "schemeable",
+            "seen"
+          ]
+        },
+        {
+          "name": "schemeableToJSONSchema",
+          "startLine": 200,
+          "endLine": 244,
+          "params": [
+            "genId",
+            "def",
+            "ischemeable",
+            "seen"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "schemeableToJSONSchema",
+          "line": 200,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "schemeableToJSONSchemaFunc",
+          "callee": "schemeableToJSONSchema",
+          "lineNumber": 12
+        },
+        {
+          "caller": "schemeableToJSONSchemaFunc",
+          "callee": "schemeableToJSONSchema",
+          "lineNumber": 18
+        },
+        {
+          "caller": "schemeableToJSONSchemaFunc",
+          "callee": "Array.isArray",
+          "lineNumber": 25
+        },
+        {
+          "caller": "schemeableToJSONSchemaFunc",
+          "callee": "schemeableToJSONSchema",
+          "lineNumber": 30
+        },
+        {
+          "caller": "schemeableToJSONSchemaFunc",
+          "callee": "items.push",
+          "lineNumber": 36
+        },
+        {
+          "caller": "schemeableToJSONSchemaFunc",
+          "callee": "schemeableToJSONSchema",
+          "lineNumber": 44
+        },
+        {
+          "caller": "schemeableToJSONSchemaFunc",
+          "callee": "schemeable.value.reduce",
+          "lineNumber": 61
+        },
+        {
+          "caller": "schemeableToJSONSchemaFunc",
+          "callee": "schemeableToJSONSchema",
+          "lineNumber": 63
+        },
+        {
+          "caller": "schemeableToJSONSchemaFunc",
+          "callee": "schemeable.value.reduce",
+          "lineNumber": 81
+        },
+        {
+          "caller": "schemeableToJSONSchemaFunc",
+          "callee": "schemeableToJSONSchema",
+          "lineNumber": 83
+        },
+        {
+          "caller": "schemeableToJSONSchemaFunc",
+          "callee": "(schemeable.extends ?? []).reduce",
+          "lineNumber": 110
+        },
+        {
+          "caller": "schemeableToJSONSchemaFunc",
+          "callee": "schemeableToJSONSchema",
+          "lineNumber": 115
+        },
+        {
+          "caller": "schemeableToJSONSchemaFunc",
+          "callee": "Object.entries(\n        schemeable.value,\n      )\n        .reduce",
+          "lineNumber": 125
+        },
+        {
+          "caller": "schemeableToJSONSchemaFunc",
+          "callee": "Object.entries",
+          "lineNumber": 125
+        },
+        {
+          "caller": "schemeableToJSONSchemaFunc",
+          "callee": "schemeableToJSONSchema",
+          "lineNumber": 137
+        },
+        {
+          "caller": "schemeableToJSONSchemaFunc",
+          "callee": "schemeableToJSONSchema",
+          "lineNumber": 178
+        },
+        {
+          "caller": "schemeableToJSONSchema",
+          "callee": "genId",
+          "lineNumber": 207
+        },
+        {
+          "caller": "schemeableToJSONSchema",
+          "callee": "schemeableToJSONSchemaFunc",
+          "lineNumber": 209
+        },
+        {
+          "caller": "schemeableToJSONSchema",
+          "callee": "seen.get",
+          "lineNumber": 212
+        },
+        {
+          "caller": "schemeableToJSONSchema",
+          "callee": "seen.set",
+          "lineNumber": 217
+        },
+        {
+          "caller": "schemeableToJSONSchema",
+          "callee": "schemeableToJSONSchemaFunc",
+          "lineNumber": 218
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/schema/transform.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 1595,
+      "nonEmptyLines": 1536,
+      "functions": [
+        {
+          "name": "tsTypeElementsToObjectSchemeable",
+          "startLine": 145,
+          "endLine": 196,
+          "params": [
+            "tsTypeElements",
+            "ctx"
+          ]
+        },
+        {
+          "name": "getFromParametersFunc",
+          "startLine": 198,
+          "endLine": 232,
+          "params": [
+            "params",
+            "ctx"
+          ]
+        },
+        {
+          "name": "tsInterfaceDeclarationToSchemeable",
+          "startLine": 234,
+          "endLine": 276,
+          "params": [
+            "dec",
+            "ctx"
+          ]
+        },
+        {
+          "name": "typeNameToSchemeable",
+          "startLine": 278,
+          "endLine": 472,
+          "params": [
+            "typeName",
+            "ctx"
+          ]
+        },
+        {
+          "name": "wellKnownTypeReferenceToSchemeable",
+          "startLine": 474,
+          "endLine": 749,
+          "params": [
+            "ref",
+            "ctx"
+          ]
+        },
+        {
+          "name": "tsTypeToSchemeable",
+          "startLine": 751,
+          "endLine": 992,
+          "params": [
+            "tsType",
+            "ctx",
+            "optional"
+          ]
+        },
+        {
+          "name": "findFuncFromExportNamedDeclaration",
+          "startLine": 1012,
+          "endLine": 1063,
+          "params": [
+            "importMapResolver",
+            "funcName",
+            "item",
+            "path",
+            "parsedSource"
+          ]
+        },
+        {
+          "name": "classOf",
+          "startLine": 1065,
+          "endLine": 1085,
+          "params": [
+            "item",
+            "className"
+          ]
+        },
+        {
+          "name": "findClassMethod",
+          "startLine": 1087,
+          "endLine": 1107,
+          "params": [
+            "decl",
+            "methodName"
+          ]
+        },
+        {
+          "name": "findMethod",
+          "startLine": 1108,
+          "endLine": 1139,
+          "params": [
+            "importMapResolver",
+            "path",
+            "parsedSource",
+            "decl",
+            "methodName"
+          ]
+        },
+        {
+          "name": "findFunc",
+          "startLine": 1140,
+          "endLine": 1314,
+          "params": [
+            "importMapResolver",
+            "funcName",
+            "path",
+            "parsedSource"
+          ]
+        },
+        {
+          "name": "findFuncExport",
+          "startLine": 1315,
+          "endLine": 1326,
+          "params": [
+            "importMapResolver",
+            "funcName",
+            "path",
+            "program"
+          ]
+        },
+        {
+          "name": "findDefaultFuncExport",
+          "startLine": 1328,
+          "endLine": 1394,
+          "params": [
+            "importMapResolver",
+            "path",
+            "parsedSource"
+          ]
+        },
+        {
+          "name": "isVariableDeclaration",
+          "startLine": 1395,
+          "endLine": 1399,
+          "params": [
+            "canonical"
+          ]
+        },
+        {
+          "name": "getWellKnownLoaderType",
+          "startLine": 1402,
+          "endLine": 1423,
+          "params": [
+            "declarator"
+          ]
+        },
+        {
+          "name": "returnOf",
+          "startLine": 1424,
+          "endLine": 1436,
+          "params": [
+            "canonical"
+          ]
+        },
+        {
+          "name": "generateObject",
+          "startLine": 1445,
+          "endLine": 1468,
+          "params": [
+            "obj"
+          ]
+        },
+        {
+          "name": "paramsOf",
+          "startLine": 1469,
+          "endLine": 1502,
+          "params": [
+            "canonical"
+          ]
+        },
+        {
+          "name": "getReturnFnFunction",
+          "startLine": 1504,
+          "endLine": 1517,
+          "params": [
+            "funcNames",
+            "importMapResolver",
+            "mPath",
+            "mProgram"
+          ]
+        },
+        {
+          "name": "programToBlockRef",
+          "startLine": 1519,
+          "endLine": 1595,
+          "params": [
+            "importMapResolver",
+            "mPath",
+            "blockKey",
+            "mProgram",
+            "schemeableReferences",
+            "introspect"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "typeNameToSchemeable",
+          "line": 278,
+          "isDefault": false
+        },
+        {
+          "name": "tsTypeToSchemeable",
+          "line": 751,
+          "isDefault": false
+        },
+        {
+          "name": "findDefaultFuncExport",
+          "line": 1328,
+          "isDefault": false
+        },
+        {
+          "name": "programToBlockRef",
+          "line": 1519,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "tsTypeElementsToObjectSchemeable",
+          "callee": "key.value.startsWith",
+          "lineNumber": 163
+        },
+        {
+          "caller": "tsTypeElementsToObjectSchemeable",
+          "callee": "spannableToJSONSchema",
+          "lineNumber": 166
+        },
+        {
+          "caller": "tsTypeElementsToObjectSchemeable",
+          "callee": "keysPromise.push",
+          "lineNumber": 170
+        },
+        {
+          "caller": "tsTypeElementsToObjectSchemeable",
+          "callee": "tsTypeToSchemeable(prop.typeAnnotation.typeAnnotation, ctx, prop.optional)\n        .then",
+          "lineNumber": 171
+        },
+        {
+          "caller": "tsTypeElementsToObjectSchemeable",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 171
+        },
+        {
+          "caller": "tsTypeElementsToObjectSchemeable",
+          "callee": "beautify",
+          "lineNumber": 177
+        },
+        {
+          "caller": "tsTypeElementsToObjectSchemeable",
+          "callee": "Promise.all",
+          "lineNumber": 187
+        },
+        {
+          "caller": "getFromParametersFunc",
+          "callee": "_tryGetFromInstantiatedParameters",
+          "lineNumber": 224
+        },
+        {
+          "caller": "getFromParametersFunc",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 226
+        },
+        {
+          "caller": "tsInterfaceDeclarationToSchemeable",
+          "callee": "getFromParametersFunc",
+          "lineNumber": 245
+        },
+        {
+          "caller": "tsInterfaceDeclarationToSchemeable",
+          "callee": "allOfs.push",
+          "lineNumber": 253
+        },
+        {
+          "caller": "tsInterfaceDeclarationToSchemeable",
+          "callee": "wellKnownTypeReferenceToSchemeable({\n          typeName: expression,\n          typeParams: ext.typeArguments,\n        }, ctx).then",
+          "lineNumber": 254
+        },
+        {
+          "caller": "tsInterfaceDeclarationToSchemeable",
+          "callee": "wellKnownTypeReferenceToSchemeable",
+          "lineNumber": 254
+        },
+        {
+          "caller": "tsInterfaceDeclarationToSchemeable",
+          "callee": "typeNameToSchemeable",
+          "lineNumber": 258
+        },
+        {
+          "caller": "tsInterfaceDeclarationToSchemeable",
+          "callee": "tsTypeElementsToObjectSchemeable",
+          "lineNumber": 263
+        },
+        {
+          "caller": "tsInterfaceDeclarationToSchemeable",
+          "callee": "Promise.all",
+          "lineNumber": 274
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "tryGetFromInstantiatedParameters",
+          "lineNumber": 288
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "visit",
+          "lineNumber": 294
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "visit",
+          "lineNumber": 296
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "ctx.importMapResolver.resolve",
+          "lineNumber": 306
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "parsePath",
+          "lineNumber": 310
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "typeNameToSchemeable",
+          "lineNumber": 315
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "spannableToJSONSchema",
+          "lineNumber": 332
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "tsInterfaceDeclarationToSchemeable",
+          "lineNumber": 333
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "getFromParametersFunc",
+          "lineNumber": 340
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "spannableToJSONSchema",
+          "lineNumber": 344
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 345
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "ctx.importMapResolver.resolve",
+          "lineNumber": 370
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "parsePath",
+          "lineNumber": 374
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "typeNameToSchemeable",
+          "lineNumber": 380
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "spannableToJSONSchema",
+          "lineNumber": 397
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "tsInterfaceDeclarationToSchemeable",
+          "lineNumber": 398
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "getFromParametersFunc",
+          "lineNumber": 405
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "spannableToJSONSchema",
+          "lineNumber": 411
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 412
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "visit",
+          "lineNumber": 422
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "ctx.importMapResolver.resolve",
+          "lineNumber": 429
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "parsePath",
+          "lineNumber": 436
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "typeNameToSchemeable",
+          "lineNumber": 442
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "console.log",
+          "lineNumber": 452
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "safeImportResolve",
+          "lineNumber": 456
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "fromImport",
+          "lineNumber": 462
+        },
+        {
+          "caller": "typeNameToSchemeable",
+          "callee": "fromImport",
+          "lineNumber": 471
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 498
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 515
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 533
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "literal.value.split",
+          "lineNumber": 547
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "btoa",
+          "lineNumber": 571
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "btoa",
+          "lineNumber": 573
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 589
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 598
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "Object.entries",
+          "lineNumber": 607
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 622
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "keys.push",
+          "lineNumber": 641
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "keys.push",
+          "lineNumber": 654
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "keys.sort",
+          "lineNumber": 657
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "btoa",
+          "lineNumber": 661
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "keys.join",
+          "lineNumber": 661
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 671
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "keys.push",
+          "lineNumber": 688
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "keys.push",
+          "lineNumber": 701
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "keys.sort",
+          "lineNumber": 704
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "btoa",
+          "lineNumber": 707
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "keys.join",
+          "lineNumber": 707
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 718
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 734
+        },
+        {
+          "caller": "wellKnownTypeReferenceToSchemeable",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 743
+        },
+        {
+          "caller": "tsTypeToSchemeable",
+          "callee": "ctx.instantiatedTypeParams?.map?.((param) => param.name)?.sort?.()?.join",
+          "lineNumber": 762
+        },
+        {
+          "caller": "tsTypeToSchemeable",
+          "callee": "ctx.instantiatedTypeParams?.map?.((param) => param.name)?.sort",
+          "lineNumber": 762
+        },
+        {
+          "caller": "tsTypeToSchemeable",
+          "callee": "ctx.instantiatedTypeParams?.map",
+          "lineNumber": 762
+        },
+        {
+          "caller": "tsTypeToSchemeable",
+          "callee": "references?.get",
+          "lineNumber": 766
+        },
+        {
+          "caller": "tsTypeToSchemeable",
+          "callee": "references?.set",
+          "lineNumber": 772
+        },
+        {
+          "caller": "resolve",
+          "callee": "`${constVal}`.replaceAll",
+          "lineNumber": 791
+        },
+        {
+          "caller": "resolve",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 808
+        },
+        {
+          "caller": "resolve",
+          "callee": "Array.isArray",
+          "lineNumber": 825
+        },
+        {
+          "caller": "resolve",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 838
+        },
+        {
+          "caller": "resolve",
+          "callee": "Promise.all",
+          "lineNumber": 842
+        },
+        {
+          "caller": "resolve",
+          "callee": "type.types.map",
+          "lineNumber": 843
+        },
+        {
+          "caller": "resolve",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 843
+        },
+        {
+          "caller": "resolve",
+          "callee": "value.map((f) => f.file).filter(Boolean).join",
+          "lineNumber": 845
+        },
+        {
+          "caller": "resolve",
+          "callee": "value.map((f) => f.file).filter",
+          "lineNumber": 845
+        },
+        {
+          "caller": "resolve",
+          "callee": "value.map",
+          "lineNumber": 845
+        },
+        {
+          "caller": "resolve",
+          "callee": "value.map((v) => v.name).join",
+          "lineNumber": 849
+        },
+        {
+          "caller": "resolve",
+          "callee": "value.map",
+          "lineNumber": 849
+        },
+        {
+          "caller": "resolve",
+          "callee": "Promise.all",
+          "lineNumber": 856
+        },
+        {
+          "caller": "resolve",
+          "callee": "type.types.map",
+          "lineNumber": 857
+        },
+        {
+          "caller": "resolve",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 857
+        },
+        {
+          "caller": "resolve",
+          "callee": "value.map((f) => f.file).filter(Boolean).join",
+          "lineNumber": 859
+        },
+        {
+          "caller": "resolve",
+          "callee": "value.map((f) => f.file).filter",
+          "lineNumber": 859
+        },
+        {
+          "caller": "resolve",
+          "callee": "value.map",
+          "lineNumber": 859
+        },
+        {
+          "caller": "resolve",
+          "callee": "value.map((v) => v.name).join",
+          "lineNumber": 864
+        },
+        {
+          "caller": "resolve",
+          "callee": "value.map",
+          "lineNumber": 864
+        },
+        {
+          "caller": "resolve",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 870
+        },
+        {
+          "caller": "resolve",
+          "callee": "Promise.all",
+          "lineNumber": 889
+        },
+        {
+          "caller": "resolve",
+          "callee": "type.elemTypes.map",
+          "lineNumber": 890
+        },
+        {
+          "caller": "resolve",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 890
+        },
+        {
+          "caller": "resolve",
+          "callee": "value.map((f) => f.file).filter(Boolean).join",
+          "lineNumber": 892
+        },
+        {
+          "caller": "resolve",
+          "callee": "value.map((f) => f.file).filter",
+          "lineNumber": 892
+        },
+        {
+          "caller": "resolve",
+          "callee": "value.map",
+          "lineNumber": 892
+        },
+        {
+          "caller": "resolve",
+          "callee": "value.map((v) => v.name).join",
+          "lineNumber": 896
+        },
+        {
+          "caller": "resolve",
+          "callee": "value.map",
+          "lineNumber": 896
+        },
+        {
+          "caller": "resolve",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 903
+        },
+        {
+          "caller": "resolve",
+          "callee": "tsTypeElementsToObjectSchemeable",
+          "lineNumber": 916
+        },
+        {
+          "caller": "resolve",
+          "callee": "wellKnownTypeReferenceToSchemeable",
+          "lineNumber": 955
+        },
+        {
+          "caller": "resolve",
+          "callee": "Promise.all",
+          "lineNumber": 965
+        },
+        {
+          "caller": "resolve",
+          "callee": "parameters.map",
+          "lineNumber": 965
+        },
+        {
+          "caller": "resolve",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 966
+        },
+        {
+          "caller": "resolve",
+          "callee": "typeNameToSchemeable",
+          "lineNumber": 969
+        },
+        {
+          "caller": "resolve",
+          "callee": "typeParams.map((p) => p.name).join",
+          "lineNumber": 978
+        },
+        {
+          "caller": "resolve",
+          "callee": "typeParams.map",
+          "lineNumber": 978
+        },
+        {
+          "caller": "tsTypeToSchemeable",
+          "callee": "resolve",
+          "lineNumber": 988
+        },
+        {
+          "caller": "tsTypeToSchemeable",
+          "callee": "Object.assign",
+          "lineNumber": 989
+        },
+        {
+          "caller": "tsTypeToSchemeable",
+          "callee": "references?.delete",
+          "lineNumber": 990
+        },
+        {
+          "caller": "findFuncFromExportNamedDeclaration",
+          "callee": "funcName.split",
+          "lineNumber": 1019
+        },
+        {
+          "caller": "findFuncFromExportNamedDeclaration",
+          "callee": "importMapResolver.resolve",
+          "lineNumber": 1041
+        },
+        {
+          "caller": "findFuncFromExportNamedDeclaration",
+          "callee": "parsePath",
+          "lineNumber": 1046
+        },
+        {
+          "caller": "findFuncFromExportNamedDeclaration",
+          "callee": "findDefaultFuncExport",
+          "lineNumber": 1051
+        },
+        {
+          "caller": "findFuncFromExportNamedDeclaration",
+          "callee": "findFuncExport",
+          "lineNumber": 1053
+        },
+        {
+          "caller": "findMethod",
+          "callee": "findClassMethod",
+          "lineNumber": 1117
+        },
+        {
+          "caller": "findMethod",
+          "callee": "spannableToJSONSchema",
+          "lineNumber": 1123
+        },
+        {
+          "caller": "findMethod",
+          "callee": "findFunc",
+          "lineNumber": 1128
+        },
+        {
+          "caller": "findFunc",
+          "callee": "funcName.split",
+          "lineNumber": 1147
+        },
+        {
+          "caller": "findFunc",
+          "callee": "findFunc",
+          "lineNumber": 1157
+        },
+        {
+          "caller": "findFunc",
+          "callee": "findMethod",
+          "lineNumber": 1171
+        },
+        {
+          "caller": "findFunc",
+          "callee": "findMethod",
+          "lineNumber": 1188
+        },
+        {
+          "caller": "findFunc",
+          "callee": "findMethod",
+          "lineNumber": 1206
+        },
+        {
+          "caller": "findFunc",
+          "callee": "classOf",
+          "lineNumber": 1222
+        },
+        {
+          "caller": "findFunc",
+          "callee": "findClassMethod",
+          "lineNumber": 1224
+        },
+        {
+          "caller": "findFunc",
+          "callee": "spannableToJSONSchema",
+          "lineNumber": 1230
+        },
+        {
+          "caller": "findFunc",
+          "callee": "findFuncFromExportNamedDeclaration",
+          "lineNumber": 1235
+        },
+        {
+          "caller": "findFunc",
+          "callee": "spannableToJSONSchema",
+          "lineNumber": 1255
+        },
+        {
+          "caller": "findFunc",
+          "callee": "spannableToJSONSchema",
+          "lineNumber": 1273
+        },
+        {
+          "caller": "findFunc",
+          "callee": "spannableToJSONSchema",
+          "lineNumber": 1288
+        },
+        {
+          "caller": "findFunc",
+          "callee": "spannableToJSONSchema",
+          "lineNumber": 1308
+        },
+        {
+          "caller": "findFuncExport",
+          "callee": "findFunc",
+          "lineNumber": 1321
+        },
+        {
+          "caller": "findDefaultFuncExport",
+          "callee": "findFunc",
+          "lineNumber": 1338
+        },
+        {
+          "caller": "findDefaultFuncExport",
+          "callee": "spannableToJSONSchema",
+          "lineNumber": 1364
+        },
+        {
+          "caller": "findDefaultFuncExport",
+          "callee": "spannableToJSONSchema",
+          "lineNumber": 1377
+        },
+        {
+          "caller": "findDefaultFuncExport",
+          "callee": "findFuncFromExportNamedDeclaration",
+          "lineNumber": 1381
+        },
+        {
+          "caller": "returnOf",
+          "callee": "isVariableDeclaration",
+          "lineNumber": 1425
+        },
+        {
+          "caller": "returnOf",
+          "callee": "getWellKnownLoaderType",
+          "lineNumber": 1426
+        },
+        {
+          "caller": "generateObject",
+          "callee": "generateObject",
+          "lineNumber": 1457
+        },
+        {
+          "caller": "generateObject",
+          "callee": "obj.elements.map",
+          "lineNumber": 1461
+        },
+        {
+          "caller": "generateObject",
+          "callee": "generateObject",
+          "lineNumber": 1462
+        },
+        {
+          "caller": "paramsOf",
+          "callee": "isVariableDeclaration",
+          "lineNumber": 1472
+        },
+        {
+          "caller": "paramsOf",
+          "callee": "getWellKnownLoaderType",
+          "lineNumber": 1473
+        },
+        {
+          "caller": "paramsOf",
+          "callee": "exp.params?.map",
+          "lineNumber": 1483
+        },
+        {
+          "caller": "paramsOf",
+          "callee": "generateObject",
+          "lineNumber": 1492
+        },
+        {
+          "caller": "getReturnFnFunction",
+          "callee": "findDefaultFuncExport",
+          "lineNumber": 1512
+        },
+        {
+          "caller": "getReturnFnFunction",
+          "callee": "findFuncExport",
+          "lineNumber": 1513
+        },
+        {
+          "caller": "getReturnFnFunction",
+          "callee": "returnOf",
+          "lineNumber": 1515
+        },
+        {
+          "caller": "programToBlockRef",
+          "callee": "findDefaultFuncExport",
+          "lineNumber": 1534
+        },
+        {
+          "caller": "programToBlockRef",
+          "callee": "findFuncExport",
+          "lineNumber": 1535
+        },
+        {
+          "caller": "programToBlockRef",
+          "callee": "Array.isArray",
+          "lineNumber": 1541
+        },
+        {
+          "caller": "programToBlockRef",
+          "callee": "getReturnFnFunction",
+          "lineNumber": 1542
+        },
+        {
+          "caller": "programToBlockRef",
+          "callee": "returnOf",
+          "lineNumber": 1548
+        },
+        {
+          "caller": "programToBlockRef",
+          "callee": "includeReturn",
+          "lineNumber": 1552
+        },
+        {
+          "caller": "programToBlockRef",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 1559
+        },
+        {
+          "caller": "programToBlockRef",
+          "callee": "paramsOf",
+          "lineNumber": 1567
+        },
+        {
+          "caller": "programToBlockRef",
+          "callee": "tsTypeToSchemeable",
+          "lineNumber": 1580
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 4,
+        "functionCount": 20,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/schema/utils.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 99,
+      "nonEmptyLines": 95,
+      "functions": [
+        {
+          "name": "parseJSDocAttribute",
+          "startLine": 5,
+          "endLine": 42,
+          "params": [
+            "key",
+            "value"
+          ]
+        },
+        {
+          "name": "beautify",
+          "startLine": 50,
+          "endLine": 64,
+          "params": [
+            "propName"
+          ]
+        },
+        {
+          "name": "visitSync",
+          "startLine": 73,
+          "endLine": 85,
+          "params": [
+            "items",
+            "visitor"
+          ]
+        },
+        {
+          "name": "visit",
+          "startLine": 87,
+          "endLine": 99,
+          "params": [
+            "items",
+            "visitor"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "parseJSDocAttribute",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "beautify",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "visitSync",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "visit",
+          "line": 87,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseJSDocAttribute",
+          "callee": "value.split(\"\\n\").map",
+          "lineNumber": 8
+        },
+        {
+          "caller": "parseJSDocAttribute",
+          "callee": "value.split",
+          "lineNumber": 8
+        },
+        {
+          "caller": "parseJSDocAttribute",
+          "callee": "example.trim",
+          "lineNumber": 8
+        },
+        {
+          "caller": "parseJSDocAttribute",
+          "callee": "Number",
+          "lineNumber": 20
+        },
+        {
+          "caller": "parseJSDocAttribute",
+          "callee": "Boolean",
+          "lineNumber": 27
+        },
+        {
+          "caller": "parseJSDocAttribute",
+          "callee": "Number.isNaN",
+          "lineNumber": 37
+        },
+        {
+          "caller": "beautify",
+          "callee": "propName\n      // insert a space before all caps\n      .replace(/([A-Z])/g, \" $1\")\n      // uppercase the first character\n      .replace(/^./, function (str) {\n        return str.toUpperCase();\n      })\n      // Remove startsWith(\"/\"\")\n      .replace(/^\\//, \"\")\n      // Remove endsdWith('.ts' or '.tsx')\n      .replace",
+          "lineNumber": 52
+        },
+        {
+          "caller": "beautify",
+          "callee": "propName\n      // insert a space before all caps\n      .replace(/([A-Z])/g, \" $1\")\n      // uppercase the first character\n      .replace(/^./, function (str) {\n        return str.toUpperCase();\n      })\n      // Remove startsWith(\"/\"\")\n      .replace",
+          "lineNumber": 52
+        },
+        {
+          "caller": "beautify",
+          "callee": "propName\n      // insert a space before all caps\n      .replace(/([A-Z])/g, \" $1\")\n      // uppercase the first character\n      .replace",
+          "lineNumber": 52
+        },
+        {
+          "caller": "beautify",
+          "callee": "propName\n      // insert a space before all caps\n      .replace",
+          "lineNumber": 52
+        },
+        {
+          "caller": "beautify",
+          "callee": "str.toUpperCase",
+          "lineNumber": 57
+        },
+        {
+          "caller": "visitSync",
+          "callee": "visitFunc",
+          "lineNumber": 80
+        },
+        {
+          "caller": "visit",
+          "callee": "visitFunc",
+          "lineNumber": 94
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/features/meta.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 134,
+      "nonEmptyLines": 119,
+      "functions": [
+        {
+          "name": "toManifestBlocks",
+          "startLine": 27,
+          "endLine": 54,
+          "params": [
+            "decoManifest"
+          ]
+        },
+        {
+          "name": "etagFor",
+          "startLine": 60,
+          "endLine": 61,
+          "params": [
+            "lazySchema"
+          ]
+        },
+        {
+          "name": "waitForChanges",
+          "startLine": 63,
+          "endLine": 97,
+          "params": [
+            "ifNoneMatch",
+            "signal"
+          ]
+        },
+        {
+          "name": "meta",
+          "startLine": 109,
+          "endLine": 134,
+          "params": [
+            "_context",
+            "opts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "mschema",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "meta",
+          "line": 109,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toManifestBlocks",
+          "callee": "Object.entries",
+          "lineNumber": 41
+        },
+        {
+          "caller": "toManifestBlocks",
+          "callee": "Object.keys",
+          "lineNumber": 42
+        },
+        {
+          "caller": "toManifestBlocks",
+          "callee": "btoa",
+          "lineNumber": 45
+        },
+        {
+          "caller": "toManifestBlocks",
+          "callee": "namespaceOf(blkType, blkKey).replace",
+          "lineNumber": 46
+        },
+        {
+          "caller": "toManifestBlocks",
+          "callee": "namespaceOf",
+          "lineNumber": 46
+        },
+        {
+          "caller": "toManifestBlocks",
+          "callee": "Context.active",
+          "lineNumber": 48
+        },
+        {
+          "caller": "waitForChanges",
+          "callee": "Context.active",
+          "lineNumber": 65
+        },
+        {
+          "caller": "waitForChanges",
+          "callee": "lazySchemaFor",
+          "lineNumber": 66
+        },
+        {
+          "caller": "waitForChanges",
+          "callee": "etagFor",
+          "lineNumber": 67
+        },
+        {
+          "caller": "waitForChanges",
+          "callee": "sf.do",
+          "lineNumber": 70
+        },
+        {
+          "caller": "waitForChanges",
+          "callee": "toManifestBlocks",
+          "lineNumber": 72
+        },
+        {
+          "caller": "waitForChanges",
+          "callee": "parse",
+          "lineNumber": 79
+        },
+        {
+          "caller": "waitForChanges",
+          "callee": "Deno.env.get",
+          "lineNumber": 86
+        },
+        {
+          "caller": "waitForChanges",
+          "callee": "setTimeout",
+          "lineNumber": 95
+        },
+        {
+          "caller": "meta",
+          "callee": "ctrl.abort",
+          "lineNumber": 116
+        },
+        {
+          "caller": "meta",
+          "callee": "Context.active",
+          "lineNumber": 118
+        },
+        {
+          "caller": "meta",
+          "callee": "Context.isDefault",
+          "lineNumber": 119
+        },
+        {
+          "caller": "meta",
+          "callee": "setTimeout",
+          "lineNumber": 122
+        },
+        {
+          "caller": "meta",
+          "callee": "ctrl.abort",
+          "lineNumber": 122
+        },
+        {
+          "caller": "meta",
+          "callee": "lazySchemaFor",
+          "lineNumber": 123
+        },
+        {
+          "caller": "meta",
+          "callee": "etagFor",
+          "lineNumber": 124
+        },
+        {
+          "caller": "meta",
+          "callee": "waitForChanges",
+          "lineNumber": 130
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/patched_fetch.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 166,
+      "nonEmptyLines": 147,
+      "functions": [
+        {
+          "name": "hasSignal",
+          "startLine": 9,
+          "endLine": 13,
+          "params": [
+            "init"
+          ]
+        },
+        {
+          "name": "extractAppName",
+          "startLine": 19,
+          "endLine": 23,
+          "params": [
+            "blockId"
+          ]
+        },
+        {
+          "name": "extractUrl",
+          "startLine": 28,
+          "endLine": 32,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "extractMethod",
+          "startLine": 37,
+          "endLine": 44,
+          "params": [
+            "input",
+            "init"
+          ]
+        },
+        {
+          "name": "onFetch",
+          "startLine": 85,
+          "endLine": 93,
+          "params": [
+            "listener"
+          ]
+        },
+        {
+          "name": "parseUrlParts",
+          "startLine": 98,
+          "endLine": 107,
+          "params": [
+            "urlStr"
+          ]
+        },
+        {
+          "name": "notifyListeners",
+          "startLine": 109,
+          "endLine": 117,
+          "params": [
+            "event"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "onFetch",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "parseUrlParts",
+          "line": 98,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "extractAppName",
+          "callee": "blockId.indexOf",
+          "lineNumber": 21
+        },
+        {
+          "caller": "extractAppName",
+          "callee": "blockId.substring",
+          "lineNumber": 22
+        },
+        {
+          "caller": "onFetch",
+          "callee": "listeners.push",
+          "lineNumber": 86
+        },
+        {
+          "caller": "onFetch",
+          "callee": "listeners.indexOf",
+          "lineNumber": 88
+        },
+        {
+          "caller": "onFetch",
+          "callee": "listeners.splice",
+          "lineNumber": 90
+        },
+        {
+          "caller": "parseUrlParts",
+          "callee": "urlStr.split(\"?\")[0].split",
+          "lineNumber": 105
+        },
+        {
+          "caller": "parseUrlParts",
+          "callee": "urlStr.split",
+          "lineNumber": 105
+        },
+        {
+          "caller": "notifyListeners",
+          "callee": "listener",
+          "lineNumber": 112
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    }
+  ]
+}

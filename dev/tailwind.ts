@@ -1,8 +1,9 @@
 import { cyan } from "@std/fmt/colors";
 import { walk } from "@std/fs";
-import { join, SEPARATOR, toFileUrl } from "@std/path";
+import { join, relative, SEPARATOR, toFileUrl } from "@std/path";
 import autoprefixer from "npm:autoprefixer@10.4.14";
 import cssnano from "npm:cssnano@6.0.1";
+import postcssImport from "npm:postcss-import@14.1.0";
 import postcss, { type AcceptedPlugin } from "npm:postcss@8.4.27";
 import tailwindcss, { type Config } from "npm:tailwindcss@3.4.1";
 import { resolveDeps } from "./deno.ts";
@@ -42,6 +43,7 @@ const bundle = async (
   const start = performance.now();
 
   const plugins: AcceptedPlugin[] = [
+    postcssImport(),
     tailwindcss(config),
     autoprefixer(),
   ];
@@ -65,7 +67,7 @@ const bundle = async (
     }`,
   );
 
-  return content.css;
+  return `/* mode:${mode} */\n${content.css}`;
 };
 
 const TAILWIND_FILE = "tailwind.css";
@@ -73,8 +75,30 @@ const TAILWIND_FILE = "tailwind.css";
 const isDev = Deno.env.get("DECO_PREVIEW") === "true" ||
   Deno.env.get("TAILWIND_DEV_MODE") === "true";
 
-const withReleaseContent = async (config: Config): Promise<Config> => {
+interface BuildOptions {
+  exclude?: string[];
+}
+
+const withReleaseContent = async (
+  config: Config,
+  options: BuildOptions = {},
+): Promise<Config> => {
   const allTsxFiles = new Map<string, string>();
+
+  const excludes = [...new Set(
+    options.exclude?.map((exclude) =>
+      exclude.replaceAll("\\", "/").replace(/^\.\//, "").replace(/^\//, "")
+    ) ?? [],
+  ).values()];
+
+  const isExcluded = (path: string): boolean => {
+    return excludes.some((exclude) =>
+      path === exclude ||
+      path.startsWith(`${exclude}/`) ||
+      path.endsWith(`/${exclude}`) ||
+      path.includes(`/${exclude}/`)
+    );
+  };
 
   // init search graph with local FS
   const roots = new Set<string>();
@@ -86,6 +110,17 @@ const withReleaseContent = async (config: Config): Promise<Config> => {
     })
   ) {
     const path = entry.path.replaceAll(SEPARATOR, "/");
+    // Exclusions are tested against the path relative to cwd, so that an
+    // exclude like ".worktrees" only skips files under cwd/.worktrees and
+    // doesn't leak when cwd itself is inside a worktree.
+    const relativePath = relative(Deno.cwd(), entry.path).replaceAll(
+      SEPARATOR,
+      "/",
+    );
+    if (isExcluded(relativePath)) {
+      continue;
+    }
+
     if (path.endsWith(".tsx") || path.includes("/apps/")) {
       roots.add(toFileUrl(entry.path).href);
     }
@@ -129,23 +164,29 @@ const withReleaseContent = async (config: Config): Promise<Config> => {
   };
 };
 
-const getCSS = async (config: Config): Promise<string> => {
+const getCSS = async (
+  config: Config,
+  options: BuildOptions = {},
+): Promise<string> => {
   return await bundle({
     from: TAILWIND_FILE,
     mode: isDev ? "dev" : "prod",
-    config: await withReleaseContent(config),
+    config: await withReleaseContent(config, options),
   });
 };
 
 const TO: string = join(Deno.cwd(), "static", TAILWIND_FILE);
 
-export const build = async (): Promise<void> => {
-  await getCSS(tailwindConfig ??= await loadTailwindConfig(Deno.cwd())).then(
-    (txt) => Deno.writeTextFile(TO, txt),
-  );
-};
+let buildOptions: BuildOptions;
 let tailwindConfig: null | Config = null;
 
+export const build = async (options: BuildOptions = {}): Promise<void> => {
+  await getCSS(
+    tailwindConfig ??= await loadTailwindConfig(Deno.cwd()),
+    buildOptions ??= options,
+  ).then((txt) => Deno.writeTextFile(TO, txt));
+};
+
 addEventListener("hmr", async () => {
-  await build();
+  await build(buildOptions);
 });

@@ -1,0 +1,188 @@
+{
+  "nodes": [
+    {
+      "id": "file:hooks/usePartialSection.ts",
+      "type": "file",
+      "name": "usePartialSection.ts",
+      "filePath": "hooks/usePartialSection.ts",
+      "summary": "Preact hook that wraps useSection to render a section as an HTMX partial, wiring up the async dispatch trigger mode for client-side rendering.",
+      "tags": ["hook", "htmx", "partial", "section"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:hooks/usePartialSection.ts:usePartialSection",
+      "type": "function",
+      "name": "usePartialSection",
+      "filePath": "hooks/usePartialSection.ts",
+      "lineRange": [23, 30],
+      "summary": "Returns props for rendering a section as an HTMX partial by delegating to useSection with the partial trigger configuration.",
+      "tags": ["hook", "htmx", "partial"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/fresh/Bindings.tsx",
+      "type": "file",
+      "name": "Bindings.tsx",
+      "filePath": "runtime/fresh/Bindings.tsx",
+      "summary": "Defines Fresh framework bindings that connect Deco rendering primitives to the DispatchAsyncRender island for partial/async section dispatch.",
+      "tags": ["runtime", "fresh", "bindings", "island"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/fresh/islands/DispatchAsyncRender.tsx",
+      "type": "file",
+      "name": "DispatchAsyncRender.tsx",
+      "filePath": "runtime/fresh/islands/DispatchAsyncRender.tsx",
+      "summary": "Fresh island that triggers asynchronous partial rendering on the client by clicking a hidden HTMX trigger element, either immediately or lazily via an IntersectionObserver.",
+      "tags": ["island", "htmx", "partial", "intersection-observer", "client"],
+      "complexity": "moderate",
+      "languageNotes": "Uses IntersectionObserver for lazy/viewport-triggered partial rendering and a module-level trigger-mode setting."
+    },
+    {
+      "id": "function:runtime/fresh/islands/DispatchAsyncRender.tsx:DispatchAsyncRender",
+      "type": "function",
+      "name": "DispatchAsyncRender",
+      "filePath": "runtime/fresh/islands/DispatchAsyncRender.tsx",
+      "lineRange": [16, 63],
+      "summary": "Island component that, on mount, locates a hidden trigger element and fires it immediately or when it scrolls into view to drive HTMX partial rendering.",
+      "tags": ["island", "htmx", "intersection-observer", "event-handler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:runtime/fresh/plugin.tsx",
+      "type": "file",
+      "name": "plugin.tsx",
+      "filePath": "runtime/fresh/plugin.tsx",
+      "summary": "Fresh plugin that initializes a Deco instance and wires its HTTP handler and rendering into the Fresh framework lifecycle.",
+      "tags": ["runtime", "fresh", "plugin", "entry-point"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/fresh/plugin.tsx:decoPlugin",
+      "type": "function",
+      "name": "decoPlugin",
+      "filePath": "runtime/fresh/plugin.tsx",
+      "lineRange": [84, 127],
+      "summary": "Factory that builds a Fresh Plugin by initializing Deco and registering its handler and render middleware into the Fresh route pipeline.",
+      "tags": ["plugin", "factory", "fresh", "bootstrap"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:runtime/fresh/plugin.tsx:createFreshHandler",
+      "type": "function",
+      "name": "createFreshHandler",
+      "filePath": "runtime/fresh/plugin.tsx",
+      "lineRange": [72, 82],
+      "summary": "Creates a Fresh-compatible request handler that bridges incoming requests to the Deco handler and Fresh's render method.",
+      "tags": ["factory", "handler", "fresh"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:hooks/usePartialSection.ts",
+      "target": "function:hooks/usePartialSection.ts:usePartialSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:hooks/usePartialSection.ts",
+      "target": "function:hooks/usePartialSection.ts:usePartialSection",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:hooks/usePartialSection.ts",
+      "target": "file:hooks/useSection.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:hooks/usePartialSection.ts",
+      "target": "file:runtime/fresh/islands/DispatchAsyncRender.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:hooks/usePartialSection.ts:usePartialSection",
+      "target": "function:hooks/useSection.ts:useSection",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:runtime/fresh/Bindings.tsx",
+      "target": "file:runtime/fresh/islands/DispatchAsyncRender.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:runtime/fresh/islands/DispatchAsyncRender.tsx",
+      "target": "function:runtime/fresh/islands/DispatchAsyncRender.tsx:DispatchAsyncRender",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:runtime/fresh/islands/DispatchAsyncRender.tsx",
+      "target": "function:runtime/fresh/islands/DispatchAsyncRender.tsx:DispatchAsyncRender",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:runtime/fresh/plugin.tsx",
+      "target": "function:runtime/fresh/plugin.tsx:decoPlugin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:runtime/fresh/plugin.tsx",
+      "target": "function:runtime/fresh/plugin.tsx:createFreshHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:runtime/fresh/plugin.tsx",
+      "target": "function:runtime/fresh/plugin.tsx:decoPlugin",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:runtime/fresh/plugin.tsx",
+      "target": "function:runtime/fresh/plugin.tsx:createFreshHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:runtime/fresh/plugin.tsx:decoPlugin",
+      "target": "function:runtime/fresh/plugin.tsx:createFreshHandler",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:runtime/fresh/plugin.tsx",
+      "target": "file:runtime/fresh/Bindings.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:runtime/fresh/plugin.tsx",
+      "target": "file:runtime/handler.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

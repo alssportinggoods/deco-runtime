@@ -1,0 +1,1098 @@
+{
+  "nodes": [
+    {
+      "id": "file:clients/withManifest.ts",
+      "type": "file",
+      "name": "withManifest.ts",
+      "filePath": "clients/withManifest.ts",
+      "summary": "Typed manifest client: invokes loaders and actions over HTTP with prop serialization, streaming detection, batch invoke, and proxy generation.",
+      "tags": [
+        "client",
+        "invoke",
+        "manifest",
+        "http"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:clients/withManifest.ts:isStreamProps",
+      "type": "function",
+      "name": "isStreamProps",
+      "filePath": "clients/withManifest.ts",
+      "lineRange": [
+        35,
+        39
+      ],
+      "summary": "Function isStreamProps in withManifest.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:clients/withManifest.ts:isEventStreamResponse",
+      "type": "function",
+      "name": "isEventStreamResponse",
+      "filePath": "clients/withManifest.ts",
+      "lineRange": [
+        41,
+        48
+      ],
+      "summary": "Function isEventStreamResponse in withManifest.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:clients/withManifest.ts:fetchWithProps",
+      "type": "function",
+      "name": "fetchWithProps",
+      "filePath": "clients/withManifest.ts",
+      "lineRange": [
+        110,
+        173
+      ],
+      "summary": "Function fetchWithProps in withManifest.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:clients/withManifest.ts:invokeKey",
+      "type": "function",
+      "name": "invokeKey",
+      "filePath": "clients/withManifest.ts",
+      "lineRange": [
+        175,
+        179
+      ],
+      "summary": "Function invokeKey in withManifest.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:clients/withManifest.ts:isInvokeAwaiter",
+      "type": "function",
+      "name": "isInvokeAwaiter",
+      "filePath": "clients/withManifest.ts",
+      "lineRange": [
+        231,
+        246
+      ],
+      "summary": "Function isInvokeAwaiter in withManifest.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:clients/withManifest.ts:invoke",
+      "type": "function",
+      "name": "invoke",
+      "filePath": "clients/withManifest.ts",
+      "lineRange": [
+        253,
+        304
+      ],
+      "summary": "Function invoke in withManifest.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:clients/withManifest.ts:create",
+      "type": "function",
+      "name": "create",
+      "filePath": "clients/withManifest.ts",
+      "lineRange": [
+        306,
+        327
+      ],
+      "summary": "Function create in withManifest.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:clients/withManifest.ts:withManifest",
+      "type": "function",
+      "name": "withManifest",
+      "filePath": "clients/withManifest.ts",
+      "lineRange": [
+        337,
+        355
+      ],
+      "summary": "Function withManifest in withManifest.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:clients/withManifest.ts:proxyFor",
+      "type": "function",
+      "name": "proxyFor",
+      "filePath": "clients/withManifest.ts",
+      "lineRange": [
+        364,
+        371
+      ],
+      "summary": "Function proxyFor in withManifest.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:clients/withManifest.ts:proxy",
+      "type": "function",
+      "name": "proxy",
+      "filePath": "clients/withManifest.ts",
+      "lineRange": [
+        376,
+        380
+      ],
+      "summary": "Function proxy in withManifest.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:clients/withManifest.ts:forApp",
+      "type": "function",
+      "name": "forApp",
+      "filePath": "clients/withManifest.ts",
+      "lineRange": [
+        391,
+        399
+      ],
+      "summary": "Function forApp in withManifest.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:components/JsonViewer.tsx",
+      "type": "file",
+      "name": "JsonViewer.tsx",
+      "filePath": "components/JsonViewer.tsx",
+      "summary": "Preact component rendering a collapsible JSON tree using jQuery JSONView loaded from CDN, used for block previews.",
+      "tags": [
+        "component",
+        "preact",
+        "debug",
+        "preview"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:components/JsonViewer.tsx:snippet",
+      "type": "function",
+      "name": "snippet",
+      "filePath": "components/JsonViewer.tsx",
+      "lineRange": [
+        11,
+        45
+      ],
+      "summary": "Function snippet in JsonViewer.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:components/JsonViewer.tsx:JsonViewer",
+      "type": "function",
+      "name": "JsonViewer",
+      "filePath": "components/JsonViewer.tsx",
+      "lineRange": [
+        53,
+        67
+      ],
+      "summary": "Function JsonViewer in JsonViewer.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:components/PreviewNotAvailable.tsx",
+      "type": "file",
+      "name": "PreviewNotAvailable.tsx",
+      "filePath": "components/PreviewNotAvailable.tsx",
+      "summary": "Fallback Preact component shown when a block has no preview implementation.",
+      "tags": [
+        "component",
+        "preact",
+        "preview"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:components/PreviewNotAvailable.tsx:PreviewNotAvailable",
+      "type": "function",
+      "name": "PreviewNotAvailable",
+      "filePath": "components/PreviewNotAvailable.tsx",
+      "lineRange": [
+        4,
+        6
+      ],
+      "summary": "Function PreviewNotAvailable in PreviewNotAvailable.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:components/StubSection.tsx",
+      "type": "file",
+      "name": "StubSection.tsx",
+      "filePath": "components/StubSection.tsx",
+      "summary": "Minimal stub section components used as placeholders during section rendering.",
+      "tags": [
+        "component",
+        "preact",
+        "section",
+        "stub"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:components/StubSection.tsx:StubSection",
+      "type": "function",
+      "name": "StubSection",
+      "filePath": "components/StubSection.tsx",
+      "lineRange": [
+        8,
+        12
+      ],
+      "summary": "Function StubSection in StubSection.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:components/StubSection.tsx:Empty",
+      "type": "function",
+      "name": "Empty",
+      "filePath": "components/StubSection.tsx",
+      "lineRange": [
+        14,
+        16
+      ],
+      "summary": "Function Empty in StubSection.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:components/section.tsx",
+      "type": "file",
+      "name": "section.tsx",
+      "filePath": "components/section.tsx",
+      "summary": "Core section rendering wrapper: provides SectionContext, error boundary, device detection, preview handling, and lazy section hydration.",
+      "tags": [
+        "component",
+        "section",
+        "preact",
+        "error-boundary",
+        "rendering"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:components/section.tsx:getSectionID",
+      "type": "function",
+      "name": "getSectionID",
+      "filePath": "components/section.tsx",
+      "lineRange": [
+        42,
+        51
+      ],
+      "summary": "Function getSectionID in section.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:components/section.tsx:alwaysThrow",
+      "type": "function",
+      "name": "alwaysThrow",
+      "filePath": "components/section.tsx",
+      "lineRange": [
+        140,
+        143
+      ],
+      "summary": "Function alwaysThrow in section.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:components/section.tsx:withSection",
+      "type": "function",
+      "name": "withSection",
+      "filePath": "components/section.tsx",
+      "lineRange": [
+        145,
+        290
+      ],
+      "summary": "Function withSection in section.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:components/section.tsx:ErrorBoundary",
+      "type": "class",
+      "name": "ErrorBoundary",
+      "filePath": "components/section.tsx",
+      "lineRange": [
+        69,
+        120
+      ],
+      "summary": "Class ErrorBoundary defined in section.tsx.",
+      "tags": [
+        "class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:engine/block.ts",
+      "type": "file",
+      "name": "block.ts",
+      "filePath": "engine/block.ts",
+      "summary": "Engine block type definitions and introspection: type guards, resolver wiring, and schema transform integration for all block kinds.",
+      "tags": [
+        "engine",
+        "block-definition",
+        "type-definition",
+        "introspection"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:engine/block.ts:isResolvableOf",
+      "type": "function",
+      "name": "isResolvableOf",
+      "filePath": "engine/block.ts",
+      "lineRange": [
+        170,
+        179
+      ],
+      "summary": "Function isResolvableOf in block.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:engine/core/hints.ts",
+      "type": "file",
+      "name": "hints.ts",
+      "filePath": "engine/core/hints.ts",
+      "summary": "Generates resolve hints by traversing resolvable maps to pre-compute paths of nested resolvables for faster resolution.",
+      "tags": [
+        "engine",
+        "resolver",
+        "optimization",
+        "traversal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:engine/core/hints.ts:traverseObject",
+      "type": "function",
+      "name": "traverseObject",
+      "filePath": "engine/core/hints.ts",
+      "lineRange": [
+        14,
+        26
+      ],
+      "summary": "Function traverseObject in hints.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:engine/core/hints.ts:traverseArray",
+      "type": "function",
+      "name": "traverseArray",
+      "filePath": "engine/core/hints.ts",
+      "lineRange": [
+        28,
+        40
+      ],
+      "summary": "Function traverseArray in hints.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:engine/core/hints.ts:traverseAny",
+      "type": "function",
+      "name": "traverseAny",
+      "filePath": "engine/core/hints.ts",
+      "lineRange": [
+        42,
+        56
+      ],
+      "summary": "Function traverseAny in hints.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:engine/core/hints.ts:genHints",
+      "type": "function",
+      "name": "genHints",
+      "filePath": "engine/core/hints.ts",
+      "lineRange": [
+        72,
+        79
+      ],
+      "summary": "Function genHints in hints.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:engine/core/mod.ts",
+      "type": "file",
+      "name": "mod.ts",
+      "filePath": "engine/core/mod.ts",
+      "summary": "Defines ReleaseResolver, the core engine resolver that manages resolvables, resolver overrides, hints, and per-release caching.",
+      "tags": [
+        "engine",
+        "resolver",
+        "core",
+        "caching"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:engine/core/mod.ts:withOverrides",
+      "type": "function",
+      "name": "withOverrides",
+      "filePath": "engine/core/mod.ts",
+      "lineRange": [
+        46,
+        59
+      ],
+      "summary": "Function withOverrides in mod.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:engine/core/mod.ts:resolverIdFromResolveChain",
+      "type": "function",
+      "name": "resolverIdFromResolveChain",
+      "filePath": "engine/core/mod.ts",
+      "lineRange": [
+        66,
+        82
+      ],
+      "summary": "Function resolverIdFromResolveChain in mod.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:engine/core/mod.ts:ReleaseResolver",
+      "type": "class",
+      "name": "ReleaseResolver",
+      "filePath": "engine/core/mod.ts",
+      "lineRange": [
+        84,
+        230
+      ],
+      "summary": "Class ReleaseResolver defined in mod.ts.",
+      "tags": [
+        "class"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:isStreamProps",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:isStreamProps",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:isEventStreamResponse",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:isEventStreamResponse",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:fetchWithProps",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:invokeKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:invokeKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:isInvokeAwaiter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:invoke",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:invoke",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:create",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:create",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:withManifest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:withManifest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:proxyFor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:proxyFor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:proxy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:proxy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:forApp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "function:clients/withManifest.ts:forApp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "file:blocks/app.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "file:clients/formdata.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "file:clients/proxy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "file:mod.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "file:utils/invoke.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:clients/withManifest.ts",
+      "target": "file:utils/object.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/JsonViewer.tsx",
+      "target": "function:components/JsonViewer.tsx:snippet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:components/JsonViewer.tsx",
+      "target": "function:components/JsonViewer.tsx:JsonViewer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:components/JsonViewer.tsx",
+      "target": "function:components/JsonViewer.tsx:JsonViewer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/JsonViewer.tsx",
+      "target": "file:runtime/handler.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/PreviewNotAvailable.tsx",
+      "target": "function:components/PreviewNotAvailable.tsx:PreviewNotAvailable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:components/PreviewNotAvailable.tsx",
+      "target": "function:components/PreviewNotAvailable.tsx:PreviewNotAvailable",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/StubSection.tsx",
+      "target": "function:components/StubSection.tsx:StubSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:components/StubSection.tsx",
+      "target": "function:components/StubSection.tsx:StubSection",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/StubSection.tsx",
+      "target": "function:components/StubSection.tsx:Empty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:components/StubSection.tsx",
+      "target": "function:components/StubSection.tsx:Empty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "function:components/section.tsx:getSectionID",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "function:components/section.tsx:getSectionID",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "function:components/section.tsx:alwaysThrow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "function:components/section.tsx:alwaysThrow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "function:components/section.tsx:withSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "function:components/section.tsx:withSection",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "class:components/section.tsx:ErrorBoundary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "class:components/section.tsx:ErrorBoundary",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "file:blocks/handler.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "file:blocks/utils.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "file:deco.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "file:deps.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "file:engine/block.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "file:engine/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "file:engine/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "file:observability/otel/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "file:runtime/handler.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:components/section.tsx",
+      "target": "file:utils/userAgent.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:engine/block.ts",
+      "target": "function:engine/block.ts:isResolvableOf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:engine/block.ts",
+      "target": "function:engine/block.ts:isResolvableOf",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:engine/block.ts",
+      "target": "file:deps.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:engine/block.ts",
+      "target": "file:engine/core/hints.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:engine/block.ts",
+      "target": "file:engine/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:engine/block.ts",
+      "target": "file:engine/core/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:engine/block.ts",
+      "target": "file:engine/manifest/defaults.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:engine/block.ts",
+      "target": "file:engine/middleware.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:engine/block.ts",
+      "target": "file:engine/schema/transform.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:engine/block.ts",
+      "target": "file:types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:engine/core/hints.ts",
+      "target": "function:engine/core/hints.ts:traverseObject",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:engine/core/hints.ts",
+      "target": "function:engine/core/hints.ts:traverseArray",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:engine/core/hints.ts",
+      "target": "function:engine/core/hints.ts:traverseAny",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:engine/core/hints.ts",
+      "target": "function:engine/core/hints.ts:traverseAny",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:engine/core/hints.ts",
+      "target": "function:engine/core/hints.ts:genHints",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:engine/core/hints.ts",
+      "target": "function:engine/core/hints.ts:genHints",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:engine/core/hints.ts",
+      "target": "file:engine/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:engine/core/mod.ts",
+      "target": "function:engine/core/mod.ts:withOverrides",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:engine/core/mod.ts",
+      "target": "function:engine/core/mod.ts:resolverIdFromResolveChain",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:engine/core/mod.ts",
+      "target": "function:engine/core/mod.ts:resolverIdFromResolveChain",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:engine/core/mod.ts",
+      "target": "class:engine/core/mod.ts:ReleaseResolver",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:engine/core/mod.ts",
+      "target": "class:engine/core/mod.ts:ReleaseResolver",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:engine/core/mod.ts",
+      "target": "file:engine/core/hints.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:engine/core/mod.ts",
+      "target": "file:engine/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:engine/core/mod.ts",
+      "target": "file:engine/decofile/provider.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:engine/core/mod.ts",
+      "target": "file:utils/sync.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

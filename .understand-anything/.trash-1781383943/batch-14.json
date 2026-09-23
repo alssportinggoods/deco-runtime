@@ -1,0 +1,583 @@
+{
+  "nodes": [
+    {
+      "id": "file:.gitattributes",
+      "type": "file",
+      "name": ".gitattributes",
+      "filePath": ".gitattributes",
+      "summary": "Git attributes file controlling how Git handles specific path patterns (e.g., line endings or linguist overrides).",
+      "tags": ["config", "git", "vcs"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.github/release.yaml",
+      "type": "config",
+      "name": "release.yaml",
+      "filePath": ".github/release.yaml",
+      "summary": "GitHub release configuration defining changelog categorization rules for auto-generated release notes.",
+      "tags": ["configuration", "ci-cd", "release", "github"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:.understand-anything/.understandignore",
+      "type": "file",
+      "name": ".understandignore",
+      "filePath": ".understand-anything/.understandignore",
+      "summary": "Ignore-pattern file listing paths excluded from the Understand-Anything analysis tooling.",
+      "tags": ["config", "tooling", "ignore-rules"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.understand-anything/config.json",
+      "type": "config",
+      "name": "config.json",
+      "filePath": ".understand-anything/config.json",
+      "summary": "Configuration for the Understand-Anything tool, including the output language setting.",
+      "tags": ["configuration", "tooling"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:blocks/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "blocks/README.md",
+      "summary": "Documentation explaining the Deco Block system: what blocks are, their structure, specialized block types, and a loader block example.",
+      "tags": ["documentation", "blocks", "architecture", "overview"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:commons/jwt/mod.ts",
+      "type": "file",
+      "name": "mod.ts",
+      "filePath": "commons/jwt/mod.ts",
+      "summary": "Barrel module re-exporting JWT utilities such as newJwtIssuer, JwtIssuer types, and getKeyPair.",
+      "tags": ["barrel", "entry-point", "jwt", "security"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:commons/workflows/mod.ts",
+      "type": "file",
+      "name": "mod.ts",
+      "filePath": "commons/workflows/mod.ts",
+      "summary": "Barrel module re-exporting the WorkflowExecution type for the workflows commons package.",
+      "tags": ["barrel", "entry-point", "workflows", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/mod.ts",
+      "type": "file",
+      "name": "mod.ts",
+      "filePath": "daemon/mod.ts",
+      "summary": "Public entry point for the daemon package, re-exporting Git APIs, patch utilities, metadata types, and daemon event definitions.",
+      "tags": ["barrel", "entry-point", "daemon", "git"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:daemon/workers/options.ts",
+      "type": "file",
+      "name": "options.ts",
+      "filePath": "daemon/workers/options.ts",
+      "summary": "Defines configuration options used by the daemon worker subsystem.",
+      "tags": ["config", "daemon", "worker", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:dev/deno.json",
+      "type": "config",
+      "name": "deno.json",
+      "filePath": "dev/deno.json",
+      "summary": "Deno package manifest for the dev tooling package, declaring its name, version, exports, and import map.",
+      "tags": ["configuration", "deno", "build-system", "package-manifest"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dev/deno.ts",
+      "type": "file",
+      "name": "deno.ts",
+      "filePath": "dev/deno.ts",
+      "summary": "Dependency resolution utility that recursively walks TypeScript source via SWC AST visiting and an import map resolver to collect the full transitive import graph from entry points.",
+      "tags": ["utility", "dependency-resolution", "ast", "deno", "build-system"],
+      "complexity": "moderate",
+      "languageNotes": "Uses SWC program visiting to extract import/export specifiers and resolves them through a Deno import map."
+    },
+    {
+      "id": "function:dev/deno.ts:visit",
+      "type": "function",
+      "name": "visit",
+      "filePath": "dev/deno.ts",
+      "lineRange": [11, 26],
+      "summary": "Recursively traverses an SWC AST program, invoking a visitor callback per node type.",
+      "tags": ["utility", "ast", "traversal"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:dev/deno.ts:importsFrom",
+      "type": "function",
+      "name": "importsFrom",
+      "filePath": "dev/deno.ts",
+      "lineRange": [28, 68],
+      "summary": "Parses a source file and collects all import/export specifier strings referenced within it.",
+      "tags": ["utility", "ast", "imports", "parsing"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:dev/deno.ts:skipPath",
+      "type": "function",
+      "name": "skipPath",
+      "filePath": "dev/deno.ts",
+      "lineRange": [72, 85],
+      "summary": "Determines whether a given path should be skipped during dependency resolution based on extension and path heuristics.",
+      "tags": ["utility", "filter", "dependency-resolution"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:dev/deno.ts:resolveRecursively",
+      "type": "function",
+      "name": "resolveRecursively",
+      "filePath": "dev/deno.ts",
+      "lineRange": [87, 120],
+      "summary": "Recursively resolves a module path and all its transitive imports through the import map resolver, caching visited entries.",
+      "tags": ["utility", "dependency-resolution", "recursion", "caching"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:dev/deno.ts:readImportMap",
+      "type": "function",
+      "name": "readImportMap",
+      "filePath": "dev/deno.ts",
+      "lineRange": [122, 138],
+      "summary": "Reads and parses the project's import_map.json or deno.json to obtain the import map.",
+      "tags": ["utility", "import-map", "deno", "io"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:dev/deno.ts:resolveDeps",
+      "type": "function",
+      "name": "resolveDeps",
+      "filePath": "dev/deno.ts",
+      "lineRange": [140, 161],
+      "summary": "Entry point that builds the import map, initializes the loader, and resolves the transitive dependency set for the given entries.",
+      "tags": ["utility", "dependency-resolution", "entry-point"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:dev/tailwind.ts",
+      "type": "file",
+      "name": "tailwind.ts",
+      "filePath": "dev/tailwind.ts",
+      "summary": "Tailwind CSS build pipeline for Deco that loads the Tailwind config, computes content roots via dependency resolution, and bundles/minifies CSS through PostCSS.",
+      "tags": ["build-system", "tailwind", "css", "deno", "styling"],
+      "complexity": "moderate",
+      "languageNotes": "Runs PostCSS with tailwindcss, autoprefixer, and cssnano; derives content roots dynamically using resolveDeps."
+    },
+    {
+      "id": "function:dev/tailwind.ts:loadTailwindConfig",
+      "type": "function",
+      "name": "loadTailwindConfig",
+      "filePath": "dev/tailwind.ts",
+      "lineRange": [25, 34],
+      "summary": "Dynamically imports the project's tailwind.config.ts, falling back gracefully with a warning when absent.",
+      "tags": ["utility", "tailwind", "config-loading"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:dev/tailwind.ts:bundle",
+      "type": "function",
+      "name": "bundle",
+      "filePath": "dev/tailwind.ts",
+      "lineRange": [36, 71],
+      "summary": "Runs the PostCSS processor (import, tailwind, autoprefixer, optional cssnano) over the source CSS and returns the bundled output.",
+      "tags": ["build-system", "css", "postcss", "bundling"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:dev/tailwind.ts:withReleaseContent",
+      "type": "function",
+      "name": "withReleaseContent",
+      "filePath": "dev/tailwind.ts",
+      "lineRange": [82, 158],
+      "summary": "Augments the Tailwind config content array by walking the project for .tsx files, applying exclusion rules, and resolving their dependency graph.",
+      "tags": ["build-system", "tailwind", "content-discovery", "dependency-resolution"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:dev/tailwind.ts:getCSS",
+      "type": "function",
+      "name": "getCSS",
+      "filePath": "dev/tailwind.ts",
+      "lineRange": [160, 169],
+      "summary": "Produces the final CSS by bundling with the release-augmented Tailwind content config.",
+      "tags": ["build-system", "css", "tailwind"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:dev/tailwind.ts:build",
+      "type": "function",
+      "name": "build",
+      "filePath": "dev/tailwind.ts",
+      "lineRange": [176, 181],
+      "summary": "Loads config and options as needed, generates the CSS, and writes the result to disk.",
+      "tags": ["build-system", "css", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:engine/core/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "engine/core/README.md",
+      "summary": "Documentation for the Deco runtime config resolver engine, covering resolvers, resolvables, the resolution algorithm, parallelism, and dangling reference handling.",
+      "tags": ["documentation", "engine", "resolver", "architecture"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:engine/mod.ts",
+      "type": "file",
+      "name": "mod.ts",
+      "filePath": "engine/mod.ts",
+      "summary": "Public entry point for the engine package, re-exporting ImportMapBuilder, ImportMapResolver, loader, and parsing utilities.",
+      "tags": ["barrel", "entry-point", "engine"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:hooks/mod.ts",
+      "type": "file",
+      "name": "mod.ts",
+      "filePath": "hooks/mod.ts",
+      "summary": "Barrel module re-exporting Preact hooks for Deco such as useDevice, useSection, usePartialSection, useScript, and early hints helpers.",
+      "tags": ["barrel", "entry-point", "hooks", "preact"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:live.gen.ts",
+      "type": "file",
+      "name": "live.gen.ts",
+      "filePath": "live.gen.ts",
+      "summary": "Auto-generated manifest file re-exporting the project Manifest type.",
+      "tags": ["generated", "manifest", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:live.ts",
+      "type": "file",
+      "name": "live.ts",
+      "filePath": "live.ts",
+      "summary": "Top-level live entry module for the Deco runtime.",
+      "tags": ["entry-point", "runtime"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:mod.web.ts",
+      "type": "file",
+      "name": "mod.web.ts",
+      "filePath": "mod.web.ts",
+      "summary": "Browser-only public entry point re-exporting invocation utilities, proxy/stream helpers, and manifest-derived invoke types.",
+      "tags": ["barrel", "entry-point", "web", "invocation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:plugins/styles.ts",
+      "type": "file",
+      "name": "styles.ts",
+      "filePath": "plugins/styles.ts",
+      "summary": "Fresh plugin that injects a styles element into rendered pages via a render middleware.",
+      "tags": ["plugin", "styling", "fresh", "middleware"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:plugins/styles.ts:stylesPlugin",
+      "type": "function",
+      "name": "stylesPlugin",
+      "filePath": "plugins/styles.ts",
+      "lineRange": [5, 16],
+      "summary": "Factory creating a Fresh plugin that wraps rendering to inject a styles element with a fixed element id.",
+      "tags": ["plugin", "factory", "styling", "fresh"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/htmx/FreshHeadCompat.ts",
+      "type": "file",
+      "name": "FreshHeadCompat.ts",
+      "filePath": "runtime/htmx/FreshHeadCompat.ts",
+      "summary": "Compatibility shim re-exporting Fresh Head-related symbols for the HTMX runtime.",
+      "tags": ["compat", "htmx", "fresh", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:runtime/htmx/mod.ts",
+      "type": "file",
+      "name": "mod.ts",
+      "filePath": "runtime/htmx/mod.ts",
+      "summary": "Public entry point for the HTMX runtime, re-exporting the framework, bindings, Head, and asset helpers.",
+      "tags": ["barrel", "entry-point", "htmx", "runtime"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/apps/watcher.ts",
+      "type": "file",
+      "name": "watcher.ts",
+      "filePath": "scripts/apps/watcher.ts",
+      "summary": "Development watcher script that spawns a Deno subprocess to run a module and streams its merged stdout/stderr output.",
+      "tags": ["script", "watcher", "dev-tooling", "subprocess"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/apps/watcher.ts:runModule",
+      "type": "function",
+      "name": "runModule",
+      "filePath": "scripts/apps/watcher.ts",
+      "lineRange": [4, 17],
+      "summary": "Spawns a Deno subprocess to execute the resolved target module with the provided arguments.",
+      "tags": ["utility", "subprocess", "deno"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/apps/watcher.ts:printStdout",
+      "type": "function",
+      "name": "printStdout",
+      "filePath": "scripts/apps/watcher.ts",
+      "lineRange": [18, 26],
+      "summary": "Merges a process's stdout and stderr readable streams and pipes them to the console output.",
+      "tags": ["utility", "streams", "logging"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/changelog.ts",
+      "type": "file",
+      "name": "changelog.ts",
+      "filePath": "scripts/changelog.ts",
+      "summary": "Script that fetches GitHub release tags and prints the changelog diff between semantic versions.",
+      "tags": ["script", "changelog", "github", "release"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/changelog.ts:printDiff",
+      "type": "function",
+      "name": "printDiff",
+      "filePath": "scripts/changelog.ts",
+      "lineRange": [11, 30],
+      "summary": "Requests release data from a GitHub repository and prints versions newer than the given semantic version.",
+      "tags": ["utility", "github", "semver", "changelog"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/codemod.ts",
+      "type": "file",
+      "name": "codemod.ts",
+      "filePath": "scripts/codemod.ts",
+      "summary": "Large codemod script that automates upgrading Deco sites: rewriting imports, updating deno.json, swapping the Tailwind plugin, and pinning/upgrading Deco versions.",
+      "tags": ["script", "codemod", "migration", "upgrade", "tooling"],
+      "complexity": "complex",
+      "languageNotes": "Heavy use of chained string replacements and JSR latest-version lookups to migrate project configuration."
+    },
+    {
+      "id": "function:scripts/codemod.ts:runCodeMod",
+      "type": "function",
+      "name": "runCodeMod",
+      "filePath": "scripts/codemod.ts",
+      "lineRange": [58, 734],
+      "summary": "Orchestrates the full Deco site migration: resolves latest JSR package versions, rewrites imports and config, swaps the Tailwind plugin, and applies version pinning/upgrade transforms.",
+      "tags": ["codemod", "migration", "orchestration", "upgrade"],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:scripts/deno.json",
+      "type": "config",
+      "name": "deno.json",
+      "filePath": "scripts/deno.json",
+      "summary": "Deno package manifest for the scripts package, declaring name, version, exports, publish settings, and import map.",
+      "tags": ["configuration", "deno", "build-system", "package-manifest"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:dev/deno.ts",
+      "target": "function:dev/deno.ts:visit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dev/deno.ts",
+      "target": "function:dev/deno.ts:importsFrom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dev/deno.ts",
+      "target": "function:dev/deno.ts:skipPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dev/deno.ts",
+      "target": "function:dev/deno.ts:resolveRecursively",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dev/deno.ts",
+      "target": "function:dev/deno.ts:readImportMap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dev/deno.ts",
+      "target": "function:dev/deno.ts:resolveDeps",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dev/deno.ts",
+      "target": "function:dev/deno.ts:resolveDeps",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:dev/tailwind.ts",
+      "target": "file:dev/deno.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:dev/tailwind.ts",
+      "target": "function:dev/tailwind.ts:loadTailwindConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dev/tailwind.ts",
+      "target": "function:dev/tailwind.ts:bundle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dev/tailwind.ts",
+      "target": "function:dev/tailwind.ts:withReleaseContent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dev/tailwind.ts",
+      "target": "function:dev/tailwind.ts:getCSS",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dev/tailwind.ts",
+      "target": "function:dev/tailwind.ts:build",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:dev/tailwind.ts",
+      "target": "function:dev/tailwind.ts:loadTailwindConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:dev/tailwind.ts",
+      "target": "function:dev/tailwind.ts:build",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:dev/tailwind.ts:withReleaseContent",
+      "target": "function:dev/deno.ts:resolveDeps",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:plugins/styles.ts",
+      "target": "function:plugins/styles.ts:stylesPlugin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:plugins/styles.ts",
+      "target": "function:plugins/styles.ts:stylesPlugin",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/apps/watcher.ts",
+      "target": "function:scripts/apps/watcher.ts:runModule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/apps/watcher.ts",
+      "target": "function:scripts/apps/watcher.ts:printStdout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/changelog.ts",
+      "target": "function:scripts/changelog.ts:printDiff",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/changelog.ts",
+      "target": "function:scripts/changelog.ts:printDiff",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/codemod.ts",
+      "target": "function:scripts/codemod.ts:runCodeMod",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/codemod.ts",
+      "target": "function:scripts/codemod.ts:runCodeMod",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "document:engine/core/README.md",
+      "target": "file:engine/mod.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:dev/deno.json",
+      "target": "file:dev/deno.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:scripts/deno.json",
+      "target": "file:scripts/codemod.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

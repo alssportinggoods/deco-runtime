@@ -1,0 +1,3865 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 20,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "daemon/main.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 865,
+      "nonEmptyLines": 776,
+      "functions": [
+        {
+          "name": "getEnvVar",
+          "startLine": 85,
+          "endLine": 86,
+          "params": [
+            "envName",
+            "varName"
+          ]
+        },
+        {
+          "name": "makeRunCmdFactory",
+          "startLine": 90,
+          "endLine": 107,
+          "params": [
+            "runCmd",
+            "runArgs",
+            "extraEnv"
+          ]
+        },
+        {
+          "name": "updateDenoAuthTokenEnv",
+          "startLine": 114,
+          "endLine": 129,
+          "params": []
+        },
+        {
+          "name": "createBundler",
+          "startLine": 158,
+          "endLine": 168,
+          "params": [
+            "appName"
+          ]
+        },
+        {
+          "name": "persist",
+          "startLine": 170,
+          "endLine": 201,
+          "params": []
+        },
+        {
+          "name": "watch",
+          "startLine": 216,
+          "endLine": 266,
+          "params": [
+            "signal"
+          ]
+        },
+        {
+          "name": "createDeps",
+          "startLine": 268,
+          "endLine": 382,
+          "params": [
+            "signal",
+            "opts"
+          ]
+        },
+        {
+          "name": "makeWorkerOptionsFactory",
+          "startLine": 385,
+          "endLine": 413,
+          "params": [
+            "runCmdFactory",
+            "gitReady"
+          ]
+        },
+        {
+          "name": "createSiteApp",
+          "startLine": 438,
+          "endLine": 498,
+          "params": [
+            "{\r\n  siteName,\r\n  runCmdFactory,\r\n  repoUrl,\r\n  branch,\r\n}"
+          ]
+        },
+        {
+          "name": "stableEnvironmentName",
+          "startLine": 500,
+          "endLine": 509,
+          "params": []
+        },
+        {
+          "name": "registerTunnel",
+          "startLine": 513,
+          "endLine": 528,
+          "params": [
+            "siteName",
+            "envNameOverride"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DENO_DEPLOYMENT_ID",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "VERBOSE",
+          "line": 58,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getEnvVar",
+          "callee": "Deno.env.get",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getEnvVar",
+          "callee": "Deno.env.get",
+          "lineNumber": 86
+        },
+        {
+          "caller": "makeRunCmdFactory",
+          "callee": "Deno.execPath",
+          "lineNumber": 96
+        },
+        {
+          "caller": "makeRunCmdFactory",
+          "callee": "getEnvVar",
+          "lineNumber": 104
+        },
+        {
+          "caller": "makeRunCmdFactory",
+          "callee": "getEnvVar",
+          "lineNumber": 105
+        },
+        {
+          "caller": "updateDenoAuthTokenEnv",
+          "callee": "Date.now",
+          "lineNumber": 117
+        },
+        {
+          "caller": "updateDenoAuthTokenEnv",
+          "callee": "Date.now",
+          "lineNumber": 121
+        },
+        {
+          "caller": "updateDenoAuthTokenEnv",
+          "callee": "getGitHubPackageTokens",
+          "lineNumber": 123
+        },
+        {
+          "caller": "updateDenoAuthTokenEnv",
+          "callee": "Deno.env.set",
+          "lineNumber": 125
+        },
+        {
+          "caller": "updateDenoAuthTokenEnv",
+          "callee": "appTokens.map((token) => `${token}@raw.githubusercontent.com`).join",
+          "lineNumber": 127
+        },
+        {
+          "caller": "updateDenoAuthTokenEnv",
+          "callee": "appTokens.map",
+          "lineNumber": 127
+        },
+        {
+          "caller": "createBundler",
+          "callee": "bundleApp",
+          "lineNumber": 159
+        },
+        {
+          "caller": "createBundler",
+          "callee": "Deno.cwd",
+          "lineNumber": 159
+        },
+        {
+          "caller": "createBundler",
+          "callee": "bundler",
+          "lineNumber": 163
+        },
+        {
+          "caller": "createBundler",
+          "callee": "console.error",
+          "lineNumber": 165
+        },
+        {
+          "caller": "persist",
+          "callee": "performance.now",
+          "lineNumber": 176
+        },
+        {
+          "caller": "persist",
+          "callee": "join",
+          "lineNumber": 178
+        },
+        {
+          "caller": "persist",
+          "callee": "dirname",
+          "lineNumber": 179
+        },
+        {
+          "caller": "persist",
+          "callee": "ensureDir",
+          "lineNumber": 182
+        },
+        {
+          "caller": "persist",
+          "callee": "dirname",
+          "lineNumber": 182
+        },
+        {
+          "caller": "persist",
+          "callee": "Deno.cwd",
+          "lineNumber": 185
+        },
+        {
+          "caller": "persist",
+          "callee": "tar.spawn",
+          "lineNumber": 189
+        },
+        {
+          "caller": "persist",
+          "callee": "console.log",
+          "lineNumber": 191
+        },
+        {
+          "caller": "persist",
+          "callee": "(performance.now() - start).toFixed",
+          "lineNumber": 192
+        },
+        {
+          "caller": "persist",
+          "callee": "performance.now",
+          "lineNumber": 192
+        },
+        {
+          "caller": "persist",
+          "callee": "console.error",
+          "lineNumber": 199
+        },
+        {
+          "caller": "watch",
+          "callee": "Deno.watchFs",
+          "lineNumber": 218
+        },
+        {
+          "caller": "watch",
+          "callee": "Deno.cwd",
+          "lineNumber": 218
+        },
+        {
+          "caller": "watch",
+          "callee": "signal?.addEventListener",
+          "lineNumber": 219
+        },
+        {
+          "caller": "watch",
+          "callee": "watcher.close",
+          "lineNumber": 219
+        },
+        {
+          "caller": "watch",
+          "callee": "lockerGitAPI.lock.rlock",
+          "lineNumber": 224
+        },
+        {
+          "caller": "watch",
+          "callee": "event.paths.some",
+          "lineNumber": 225
+        },
+        {
+          "caller": "watch",
+          "callee": "path.includes",
+          "lineNumber": 227
+        },
+        {
+          "caller": "watch",
+          "callee": "path.includes",
+          "lineNumber": 227
+        },
+        {
+          "caller": "watch",
+          "callee": "path.includes",
+          "lineNumber": 228
+        },
+        {
+          "caller": "watch",
+          "callee": "path.includes",
+          "lineNumber": 228
+        },
+        {
+          "caller": "watch",
+          "callee": "console.log",
+          "lineNumber": 236
+        },
+        {
+          "caller": "watch",
+          "callee": "event.paths.some",
+          "lineNumber": 240
+        },
+        {
+          "caller": "watch",
+          "callee": "path.includes",
+          "lineNumber": 241
+        },
+        {
+          "caller": "watch",
+          "callee": "genBlocksJSON",
+          "lineNumber": 245
+        },
+        {
+          "caller": "watch",
+          "callee": "event.paths.some",
+          "lineNumber": 251
+        },
+        {
+          "caller": "watch",
+          "callee": "/\\.tsx?$/.test",
+          "lineNumber": 252
+        },
+        {
+          "caller": "watch",
+          "callee": "path.includes",
+          "lineNumber": 252
+        },
+        {
+          "caller": "watch",
+          "callee": "genManifestTS",
+          "lineNumber": 256
+        },
+        {
+          "caller": "watch",
+          "callee": "updateDenoAuthTokenEnv",
+          "lineNumber": 260
+        },
+        {
+          "caller": "watch",
+          "callee": "persistState",
+          "lineNumber": 264
+        },
+        {
+          "caller": "start",
+          "callee": "getSiteName",
+          "lineNumber": 281
+        },
+        {
+          "caller": "start",
+          "callee": "performance.now",
+          "lineNumber": 285
+        },
+        {
+          "caller": "start",
+          "callee": "ensureGit",
+          "lineNumber": 287
+        },
+        {
+          "caller": "start",
+          "callee": "readyResolve",
+          "lineNumber": 292
+        },
+        {
+          "caller": "start",
+          "callee": "readyReject",
+          "lineNumber": 294
+        },
+        {
+          "caller": "start",
+          "callee": "logs.push",
+          "lineNumber": 297
+        },
+        {
+          "caller": "start",
+          "callee": "colors.bold",
+          "lineNumber": 299
+        },
+        {
+          "caller": "start",
+          "callee": "(\r\n          performance.now() - start\r\n        ).toFixed",
+          "lineNumber": 300
+        },
+        {
+          "caller": "start",
+          "callee": "performance.now",
+          "lineNumber": 301
+        },
+        {
+          "caller": "start",
+          "callee": "performance.now",
+          "lineNumber": 307
+        },
+        {
+          "caller": "start",
+          "callee": "downloadCache(siteName).catch",
+          "lineNumber": 308
+        },
+        {
+          "caller": "start",
+          "callee": "downloadCache",
+          "lineNumber": 308
+        },
+        {
+          "caller": "start",
+          "callee": "console.warn",
+          "lineNumber": 309
+        },
+        {
+          "caller": "start",
+          "callee": "logs.push",
+          "lineNumber": 311
+        },
+        {
+          "caller": "start",
+          "callee": "colors.bold",
+          "lineNumber": 313
+        },
+        {
+          "caller": "start",
+          "callee": "(performance.now() - start).toFixed",
+          "lineNumber": 314
+        },
+        {
+          "caller": "start",
+          "callee": "performance.now",
+          "lineNumber": 314
+        },
+        {
+          "caller": "start",
+          "callee": "performance.now",
+          "lineNumber": 319
+        },
+        {
+          "caller": "start",
+          "callee": "genManifestTS",
+          "lineNumber": 320
+        },
+        {
+          "caller": "start",
+          "callee": "logs.push",
+          "lineNumber": 321
+        },
+        {
+          "caller": "start",
+          "callee": "colors.bold",
+          "lineNumber": 323
+        },
+        {
+          "caller": "start",
+          "callee": "(\r\n          performance.now() - start\r\n        ).toFixed",
+          "lineNumber": 324
+        },
+        {
+          "caller": "start",
+          "callee": "performance.now",
+          "lineNumber": 325
+        },
+        {
+          "caller": "start",
+          "callee": "performance.now",
+          "lineNumber": 330
+        },
+        {
+          "caller": "start",
+          "callee": "genBlocksJSON",
+          "lineNumber": 331
+        },
+        {
+          "caller": "start",
+          "callee": "logs.push",
+          "lineNumber": 332
+        },
+        {
+          "caller": "start",
+          "callee": "colors.bold",
+          "lineNumber": 334
+        },
+        {
+          "caller": "start",
+          "callee": "(\r\n          performance.now() - start\r\n        ).toFixed",
+          "lineNumber": 335
+        },
+        {
+          "caller": "start",
+          "callee": "performance.now",
+          "lineNumber": 336
+        },
+        {
+          "caller": "start",
+          "callee": "watch(signal).catch",
+          "lineNumber": 341
+        },
+        {
+          "caller": "start",
+          "callee": "watch",
+          "lineNumber": 341
+        },
+        {
+          "caller": "start",
+          "callee": "watchMeta(signal).catch",
+          "lineNumber": 342
+        },
+        {
+          "caller": "start",
+          "callee": "watchMeta",
+          "lineNumber": 342
+        },
+        {
+          "caller": "start",
+          "callee": "watchFS(signal).catch",
+          "lineNumber": 343
+        },
+        {
+          "caller": "start",
+          "callee": "watchFS",
+          "lineNumber": 343
+        },
+        {
+          "caller": "start",
+          "callee": "logs.push",
+          "lineNumber": 345
+        },
+        {
+          "caller": "start",
+          "callee": "colors.bold",
+          "lineNumber": 348
+        },
+        {
+          "caller": "ensureStarted",
+          "callee": "start",
+          "lineNumber": 356
+        },
+        {
+          "caller": "createDeps",
+          "callee": "Object\r\n    .assign",
+          "lineNumber": 362
+        },
+        {
+          "caller": "createDeps",
+          "callee": "ensureStarted",
+          "lineNumber": 369
+        },
+        {
+          "caller": "createDeps",
+          "callee": "ok?.then",
+          "lineNumber": 370
+        },
+        {
+          "caller": "createDeps",
+          "callee": "console.log",
+          "lineNumber": 372
+        },
+        {
+          "caller": "makeWorkerOptionsFactory",
+          "callee": "updateDenoAuthTokenEnv",
+          "lineNumber": 394
+        },
+        {
+          "caller": "makeWorkerOptionsFactory",
+          "callee": "setTimeout",
+          "lineNumber": 403
+        },
+        {
+          "caller": "makeWorkerOptionsFactory",
+          "callee": "Deno.exit",
+          "lineNumber": 404
+        },
+        {
+          "caller": "makeWorkerOptionsFactory",
+          "callee": "runCmdFactory",
+          "lineNumber": 409
+        },
+        {
+          "caller": "createSiteApp",
+          "callee": "siteApp.get",
+          "lineNumber": 449
+        },
+        {
+          "caller": "createSiteApp",
+          "callee": "createIdleHandler",
+          "lineNumber": 449
+        },
+        {
+          "caller": "createSiteApp",
+          "callee": "createDeps",
+          "lineNumber": 451
+        },
+        {
+          "caller": "createSiteApp",
+          "callee": "siteApp.use",
+          "lineNumber": 452
+        },
+        {
+          "caller": "createSiteApp",
+          "callee": "siteApp.use",
+          "lineNumber": 453
+        },
+        {
+          "caller": "createSiteApp",
+          "callee": "siteApp.use",
+          "lineNumber": 455
+        },
+        {
+          "caller": "createSiteApp",
+          "callee": "createDaemonAPIs",
+          "lineNumber": 455
+        },
+        {
+          "caller": "createSiteApp",
+          "callee": "siteApp.route",
+          "lineNumber": 458
+        },
+        {
+          "caller": "createSiteApp",
+          "callee": "createWorker",
+          "lineNumber": 460
+        },
+        {
+          "caller": "createSiteApp",
+          "callee": "makeWorkerOptionsFactory",
+          "lineNumber": 460
+        },
+        {
+          "caller": "dispose",
+          "callee": "Promise.race",
+          "lineNumber": 467
+        },
+        {
+          "caller": "dispose",
+          "callee": "worker().then",
+          "lineNumber": 468
+        },
+        {
+          "caller": "dispose",
+          "callee": "worker",
+          "lineNumber": 468
+        },
+        {
+          "caller": "dispose",
+          "callee": "setTimeout",
+          "lineNumber": 469
+        },
+        {
+          "caller": "dispose",
+          "callee": "r",
+          "lineNumber": 469
+        },
+        {
+          "caller": "dispose",
+          "callee": "w[Symbol.asyncDispose]",
+          "lineNumber": 472
+        },
+        {
+          "caller": "dispose",
+          "callee": "console.log",
+          "lineNumber": 473
+        },
+        {
+          "caller": "dispose",
+          "callee": "ac.abort",
+          "lineNumber": 480
+        },
+        {
+          "caller": "dispose",
+          "callee": "console.log",
+          "lineNumber": 481
+        },
+        {
+          "caller": "dispose",
+          "callee": "Deno.cwd",
+          "lineNumber": 484
+        },
+        {
+          "caller": "dispose",
+          "callee": "Deno.readDir",
+          "lineNumber": 485
+        },
+        {
+          "caller": "dispose",
+          "callee": "join",
+          "lineNumber": 486
+        },
+        {
+          "caller": "dispose",
+          "callee": "Deno.remove(path, { recursive: true }).catch",
+          "lineNumber": 487
+        },
+        {
+          "caller": "dispose",
+          "callee": "Deno.remove",
+          "lineNumber": 487
+        },
+        {
+          "caller": "dispose",
+          "callee": "console.log",
+          "lineNumber": 489
+        },
+        {
+          "caller": "stableEnvironmentName",
+          "callee": "localStorage.getItem",
+          "lineNumber": 501
+        },
+        {
+          "caller": "stableEnvironmentName",
+          "callee": "crypto.randomUUID().slice",
+          "lineNumber": 506
+        },
+        {
+          "caller": "stableEnvironmentName",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 506
+        },
+        {
+          "caller": "stableEnvironmentName",
+          "callee": "localStorage.setItem",
+          "lineNumber": 507
+        },
+        {
+          "caller": "registerTunnel",
+          "callee": "stableEnvironmentName",
+          "lineNumber": 518
+        },
+        {
+          "caller": "registerTunnel",
+          "callee": "Deno.env.has",
+          "lineNumber": 519
+        },
+        {
+          "caller": "registerTunnel",
+          "callee": "register",
+          "lineNumber": 520
+        },
+        {
+          "caller": "aiAuth",
+          "callee": "getSiteName",
+          "lineNumber": 690
+        },
+        {
+          "caller": "aiAuth",
+          "callee": "c.json",
+          "lineNumber": 692
+        },
+        {
+          "caller": "aiAuth",
+          "callee": "c.json",
+          "lineNumber": 695
+        },
+        {
+          "caller": "aiAuth",
+          "callee": "createAuth({ site })",
+          "lineNumber": 697
+        },
+        {
+          "caller": "aiAuth",
+          "callee": "createAuth",
+          "lineNumber": 697
+        }
+      ],
+      "metrics": {
+        "importCount": 18,
+        "exportCount": 2,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/meta.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 162,
+      "nonEmptyLines": 134,
+      "functions": [
+        {
+          "name": "metaRequest",
+          "startLine": 39,
+          "endLine": 48,
+          "params": [
+            "etag"
+          ]
+        },
+        {
+          "name": "isPromiseLike",
+          "startLine": 50,
+          "endLine": 54,
+          "params": [
+            "x"
+          ]
+        },
+        {
+          "name": "start",
+          "startLine": 56,
+          "endLine": 67,
+          "params": [
+            "since"
+          ]
+        },
+        {
+          "name": "ensureMetaIsReady",
+          "startLine": 70,
+          "endLine": 71,
+          "params": []
+        },
+        {
+          "name": "watchMeta",
+          "startLine": 73,
+          "endLine": 142,
+          "params": [
+            "signal"
+          ]
+        },
+        {
+          "name": "updateFilenameBlockTypeMapFromManifest",
+          "startLine": 145,
+          "endLine": 156,
+          "params": [
+            "manifest"
+          ]
+        },
+        {
+          "name": "inferBlockType",
+          "startLine": 159,
+          "endLine": 162,
+          "params": [
+            "filename"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "start",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "ensureMetaIsReady",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "watchMeta",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "inferBlockType",
+          "line": 159,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "start",
+          "callee": "ensureMetaIsReady",
+          "lineNumber": 57
+        },
+        {
+          "caller": "ensureMetaIsReady",
+          "callee": "isPromiseLike",
+          "lineNumber": 71
+        },
+        {
+          "caller": "setMeta",
+          "callee": "isPromiseLike",
+          "lineNumber": 79
+        },
+        {
+          "caller": "setMeta",
+          "callee": "meta.resolve",
+          "lineNumber": 80
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "isWorkerDisabled",
+          "lineNumber": 85
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "worker",
+          "lineNumber": 87
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "w.fetch",
+          "lineNumber": 89
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "metaRequest",
+          "lineNumber": 89
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "response.headers.get",
+          "lineNumber": 95
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "setTimeout",
+          "lineNumber": 96
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "response.json",
+          "lineNumber": 103
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "response.headers.get",
+          "lineNumber": 105
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "Date.now",
+          "lineNumber": 106
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "updateFilenameBlockTypeMapFromManifest",
+          "lineNumber": 108
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "setMeta",
+          "lineNumber": 110
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "broadcast",
+          "lineNumber": 112
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "dispatchWorkerState",
+          "lineNumber": 113
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "setMeta",
+          "lineNumber": 126
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "broadcast",
+          "lineNumber": 127
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "dispatchWorkerState",
+          "lineNumber": 128
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "dispatchWorkerState",
+          "lineNumber": 132
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "console.error",
+          "lineNumber": 133
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "isWorkerDisabled",
+          "lineNumber": 139
+        },
+        {
+          "caller": "watchMeta",
+          "callee": "setMeta",
+          "lineNumber": 140
+        },
+        {
+          "caller": "inferBlockType",
+          "callee": "ensureMetaIsReady",
+          "lineNumber": 160
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 4,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/monitor.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 252,
+      "nonEmptyLines": 230,
+      "functions": [
+        {
+          "name": "isIdle",
+          "startLine": 26,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "initSelfScale",
+          "startLine": 51,
+          "endLine": 85,
+          "params": []
+        },
+        {
+          "name": "scaleSelfToZero",
+          "startLine": 87,
+          "endLine": 126,
+          "params": []
+        },
+        {
+          "name": "notifyViaHttp",
+          "startLine": 130,
+          "endLine": 147,
+          "params": [
+            "notificationUrl"
+          ]
+        },
+        {
+          "name": "fireOnce",
+          "startLine": 159,
+          "endLine": 176,
+          "params": [
+            "notificationUrl"
+          ]
+        },
+        {
+          "name": "armIdleInterval",
+          "startLine": 192,
+          "endLine": 198,
+          "params": [
+            "notificationUrl"
+          ]
+        },
+        {
+          "name": "resetActivity",
+          "startLine": 200,
+          "endLine": 207,
+          "params": []
+        },
+        {
+          "name": "activityMonitor",
+          "startLine": 209,
+          "endLine": 212,
+          "params": [
+            "_ctx",
+            "next"
+          ]
+        },
+        {
+          "name": "createIdleHandler",
+          "startLine": 214,
+          "endLine": 252,
+          "params": [
+            "site",
+            "envName"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "resetActivity",
+          "line": 200,
+          "isDefault": false
+        },
+        {
+          "name": "activityMonitor",
+          "line": 209,
+          "isDefault": false
+        },
+        {
+          "name": "createIdleHandler",
+          "line": 214,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isIdle",
+          "callee": "Date.now",
+          "lineNumber": 28
+        },
+        {
+          "caller": "initSelfScale",
+          "callee": "Promise.all",
+          "lineNumber": 61
+        },
+        {
+          "caller": "initSelfScale",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 62
+        },
+        {
+          "caller": "initSelfScale",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 63
+        },
+        {
+          "caller": "initSelfScale",
+          "callee": "Deno.env.get",
+          "lineNumber": 65
+        },
+        {
+          "caller": "initSelfScale",
+          "callee": "Deno.env.get",
+          "lineNumber": 66
+        },
+        {
+          "caller": "initSelfScale",
+          "callee": "console.error",
+          "lineNumber": 68
+        },
+        {
+          "caller": "initSelfScale",
+          "callee": "namespace.trim",
+          "lineNumber": 76
+        },
+        {
+          "caller": "initSelfScale",
+          "callee": "Deno.createHttpClient",
+          "lineNumber": 77
+        },
+        {
+          "caller": "initSelfScale",
+          "callee": "console.error",
+          "lineNumber": 81
+        },
+        {
+          "caller": "scaleSelfToZero",
+          "callee": "initSelfScale",
+          "lineNumber": 88
+        },
+        {
+          "caller": "scaleSelfToZero",
+          "callee": "(await Deno.readTextFile(SA_TOKEN_PATH)).trim",
+          "lineNumber": 92
+        },
+        {
+          "caller": "scaleSelfToZero",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 92
+        },
+        {
+          "caller": "scaleSelfToZero",
+          "callee": "console.error",
+          "lineNumber": 94
+        },
+        {
+          "caller": "scaleSelfToZero",
+          "callee": "fetch",
+          "lineNumber": 100
+        },
+        {
+          "caller": "scaleSelfToZero",
+          "callee": "JSON.stringify",
+          "lineNumber": 106
+        },
+        {
+          "caller": "scaleSelfToZero",
+          "callee": "resp.text",
+          "lineNumber": 110
+        },
+        {
+          "caller": "scaleSelfToZero",
+          "callee": "console.error",
+          "lineNumber": 111
+        },
+        {
+          "caller": "scaleSelfToZero",
+          "callee": "resp.body?.cancel",
+          "lineNumber": 117
+        },
+        {
+          "caller": "scaleSelfToZero",
+          "callee": "console.log",
+          "lineNumber": 118
+        },
+        {
+          "caller": "scaleSelfToZero",
+          "callee": "console.error",
+          "lineNumber": 123
+        },
+        {
+          "caller": "notifyViaHttp",
+          "callee": "fetch",
+          "lineNumber": 132
+        },
+        {
+          "caller": "notifyViaHttp",
+          "callee": "console.error",
+          "lineNumber": 134
+        },
+        {
+          "caller": "notifyViaHttp",
+          "callee": "resp\n          .text",
+          "lineNumber": 135
+        },
+        {
+          "caller": "notifyViaHttp",
+          "callee": "resp.body?.cancel",
+          "lineNumber": 141
+        },
+        {
+          "caller": "notifyViaHttp",
+          "callee": "console.error",
+          "lineNumber": 144
+        },
+        {
+          "caller": "fireOnce",
+          "callee": "console.log",
+          "lineNumber": 160
+        },
+        {
+          "caller": "fireOnce",
+          "callee": "scaleSelfToZero",
+          "lineNumber": 167
+        },
+        {
+          "caller": "fireOnce",
+          "callee": "notifyViaHttp",
+          "lineNumber": 170
+        },
+        {
+          "caller": "fireOnce",
+          "callee": "clearInterval",
+          "lineNumber": 173
+        },
+        {
+          "caller": "armIdleInterval",
+          "callee": "setInterval",
+          "lineNumber": 194
+        },
+        {
+          "caller": "armIdleInterval",
+          "callee": "checkActivity",
+          "lineNumber": 195
+        },
+        {
+          "caller": "resetActivity",
+          "callee": "Date.now",
+          "lineNumber": 201
+        },
+        {
+          "caller": "resetActivity",
+          "callee": "armIdleInterval",
+          "lineNumber": 205
+        },
+        {
+          "caller": "activityMonitor",
+          "callee": "resetActivity",
+          "lineNumber": 210
+        },
+        {
+          "caller": "activityMonitor",
+          "callee": "next",
+          "lineNumber": 211
+        },
+        {
+          "caller": "createIdleHandler",
+          "callee": "(() => {\n        const u = new URL(DECO_IDLE_NOTIFICATION_ENDPOINT!);\n        u.searchParams.set(\"site\", site);\n        u.searchParams.set(\"name\", envName);\n        return u;\n      })",
+          "lineNumber": 229
+        },
+        {
+          "caller": "createIdleHandler",
+          "callee": "u.searchParams.set",
+          "lineNumber": 231
+        },
+        {
+          "caller": "createIdleHandler",
+          "callee": "u.searchParams.set",
+          "lineNumber": 232
+        },
+        {
+          "caller": "createIdleHandler",
+          "callee": "armIdleInterval",
+          "lineNumber": 237
+        },
+        {
+          "caller": "createIdleHandler",
+          "callee": "isIdle",
+          "lineNumber": 240
+        },
+        {
+          "caller": "createIdleHandler",
+          "callee": "new Date(lastActivity).toISOString",
+          "lineNumber": 243
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/pty/manager.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 35,
+      "classes": [
+        {
+          "name": "SessionManager",
+          "startLine": 7,
+          "endLine": 43,
+          "methods": [
+            "spawn",
+            "get",
+            "kill",
+            "list",
+            "dispose"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SessionManager",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "spawn",
+          "callee": "PtySession.create",
+          "lineNumber": 11
+        },
+        {
+          "caller": "spawn",
+          "callee": "this.#sessions.set",
+          "lineNumber": 12
+        },
+        {
+          "caller": "spawn",
+          "callee": "session.onExit",
+          "lineNumber": 14
+        },
+        {
+          "caller": "get",
+          "callee": "this.#sessions.get",
+          "lineNumber": 22
+        },
+        {
+          "caller": "kill",
+          "callee": "this.#sessions.get",
+          "lineNumber": 26
+        },
+        {
+          "caller": "kill",
+          "callee": "session.kill",
+          "lineNumber": 28
+        },
+        {
+          "caller": "kill",
+          "callee": "this.#sessions.delete",
+          "lineNumber": 29
+        },
+        {
+          "caller": "list",
+          "callee": "Array.from(this.#sessions.values()).map",
+          "lineNumber": 34
+        },
+        {
+          "caller": "list",
+          "callee": "Array.from",
+          "lineNumber": 34
+        },
+        {
+          "caller": "list",
+          "callee": "this.#sessions.values",
+          "lineNumber": 34
+        },
+        {
+          "caller": "list",
+          "callee": "s.info",
+          "lineNumber": 34
+        },
+        {
+          "caller": "dispose",
+          "callee": "this.#sessions.values",
+          "lineNumber": 38
+        },
+        {
+          "caller": "dispose",
+          "callee": "session.dispose",
+          "lineNumber": 39
+        },
+        {
+          "caller": "dispose",
+          "callee": "this.#sessions.clear",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "daemon/pty/session.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 185,
+      "nonEmptyLines": 158,
+      "functions": [
+        {
+          "name": "loadPty",
+          "startLine": 26,
+          "endLine": 36,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "PtySession",
+          "startLine": 38,
+          "endLine": 185,
+          "methods": [
+            "status",
+            "exitCode",
+            "outputBuffer",
+            "constructor",
+            "create",
+            "write",
+            "resize",
+            "kill",
+            "onData",
+            "onExit",
+            "info",
+            "dispose"
+          ],
+          "properties": [
+            "id",
+            "createdAt",
+            "cmd"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PtySession",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "loadPty",
+          "callee": "import",
+          "lineNumber": 29
+        },
+        {
+          "caller": "loadPty",
+          "callee": "console.error",
+          "lineNumber": 32
+        },
+        {
+          "caller": "constructor",
+          "callee": "crypto.randomUUID().slice",
+          "lineNumber": 67
+        },
+        {
+          "caller": "constructor",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 67
+        },
+        {
+          "caller": "constructor",
+          "callee": "Date.now",
+          "lineNumber": 68
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.#pty.resize",
+          "lineNumber": 73
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.#startPolling",
+          "lineNumber": 76
+        },
+        {
+          "caller": "create",
+          "callee": "loadPty",
+          "lineNumber": 80
+        },
+        {
+          "caller": "write",
+          "callee": "this.#pty.write",
+          "lineNumber": 138
+        },
+        {
+          "caller": "resize",
+          "callee": "this.#pty.resize",
+          "lineNumber": 142
+        },
+        {
+          "caller": "kill",
+          "callee": "this.#pty.close",
+          "lineNumber": 146
+        },
+        {
+          "caller": "onData",
+          "callee": "this.#dataCallbacks.push",
+          "lineNumber": 150
+        },
+        {
+          "caller": "onData",
+          "callee": "this.#dataCallbacks.filter",
+          "lineNumber": 152
+        },
+        {
+          "caller": "onExit",
+          "callee": "cb",
+          "lineNumber": 158
+        },
+        {
+          "caller": "onExit",
+          "callee": "this.#exitCallbacks.push",
+          "lineNumber": 161
+        },
+        {
+          "caller": "onExit",
+          "callee": "this.#exitCallbacks.filter",
+          "lineNumber": 163
+        },
+        {
+          "caller": "dispose",
+          "callee": "this.kill",
+          "lineNumber": 179
+        },
+        {
+          "caller": "dispose",
+          "callee": "clearInterval",
+          "lineNumber": 181
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "daemon/realtime/app.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 274,
+      "nonEmptyLines": 234,
+      "functions": [
+        {
+          "name": "inflight",
+          "startLine": 30,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "toPosix",
+          "startLine": 40,
+          "endLine": 40,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "ignoreNotFound",
+          "startLine": 42,
+          "endLine": 48,
+          "params": [
+            "e"
+          ]
+        },
+        {
+          "name": "createRealtimeAPIs",
+          "startLine": 50,
+          "endLine": 274,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "createRealtimeAPIs",
+          "line": 50,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "inflight",
+          "callee": "Promise.resolve",
+          "lineNumber": 31
+        },
+        {
+          "caller": "inflight",
+          "callee": "promise.catch(() => {}).then",
+          "lineNumber": 34
+        },
+        {
+          "caller": "inflight",
+          "callee": "promise.catch",
+          "lineNumber": 34
+        },
+        {
+          "caller": "toPosix",
+          "callee": "path.replaceAll",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Deno.cwd",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Date.now",
+          "lineNumber": 57
+        },
+        {
+          "caller": "broadcast",
+          "callee": "sessions.forEach",
+          "lineNumber": 60
+        },
+        {
+          "caller": "broadcast",
+          "callee": "session.socket.send",
+          "lineNumber": 60
+        },
+        {
+          "caller": "broadcast",
+          "callee": "JSON.stringify",
+          "lineNumber": 60
+        },
+        {
+          "caller": "broadcastFS",
+          "callee": "Deno.watchFs",
+          "lineNumber": 63
+        },
+        {
+          "caller": "broadcastFS",
+          "callee": "path.includes",
+          "lineNumber": 73
+        },
+        {
+          "caller": "broadcastFS",
+          "callee": "path.includes",
+          "lineNumber": 73
+        },
+        {
+          "caller": "broadcastFS",
+          "callee": "path.includes",
+          "lineNumber": 74
+        },
+        {
+          "caller": "broadcastFS",
+          "callee": "path.includes",
+          "lineNumber": 74
+        },
+        {
+          "caller": "broadcastFS",
+          "callee": "broadcast",
+          "lineNumber": 79
+        },
+        {
+          "caller": "broadcastFS",
+          "callee": "toPosix(path).replace",
+          "lineNumber": 80
+        },
+        {
+          "caller": "broadcastFS",
+          "callee": "toPosix",
+          "lineNumber": 80
+        },
+        {
+          "caller": "broadcastFS",
+          "callee": "Date.now",
+          "lineNumber": 81
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "app.use",
+          "lineNumber": 87
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "app.use",
+          "lineNumber": 88
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "inflight",
+          "lineNumber": 88
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "app.get",
+          "lineNumber": 89
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "c.req.header",
+          "lineNumber": 90
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Deno.upgradeWebSocket",
+          "lineNumber": 96
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "socket.addEventListener",
+          "lineNumber": 98
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "console.log",
+          "lineNumber": 101
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "colors.bold",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "colors.red",
+          "lineNumber": 104
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "sessions.findIndex",
+          "lineNumber": 106
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "sessions.splice",
+          "lineNumber": 108
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "socket.addEventListener",
+          "lineNumber": 113
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "console.log",
+          "lineNumber": 116
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "colors.bold",
+          "lineNumber": 117
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "colors.green",
+          "lineNumber": 119
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "sessions.push",
+          "lineNumber": 123
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "app.patch",
+          "lineNumber": 127
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "c.req.json",
+          "lineNumber": 128
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "isJSONFilePatch",
+          "lineNumber": 133
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Deno.readTextFile(join(cwd, path))\n          .catch",
+          "lineNumber": 136
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 136
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "join",
+          "lineNumber": 136
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "JSON.stringify",
+          "lineNumber": 140
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "operations.reduce",
+          "lineNumber": 141
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "JSON.parse",
+          "lineNumber": 141
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "results.push",
+          "lineNumber": 144
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "console.error",
+          "lineNumber": 151
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "results.push",
+          "lineNumber": 152
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "isTextFileSet",
+          "lineNumber": 154
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "join",
+          "lineNumber": 157
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "ensureFile",
+          "lineNumber": 158
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 159
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "results.push",
+          "lineNumber": 160
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "results.push",
+          "lineNumber": 167
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Deno.readTextFile(join(cwd, path))\n          .catch",
+          "lineNumber": 171
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 171
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "join",
+          "lineNumber": 171
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "textState.has",
+          "lineNumber": 173
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "results.push",
+          "lineNumber": 174
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "textState.get",
+          "lineNumber": 177
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "apply",
+          "lineNumber": 179
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "textState.set",
+          "lineNumber": 181
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "results.push",
+          "lineNumber": 182
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "results.push",
+          "lineNumber": 188
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Date.now",
+          "lineNumber": 197
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "textState.set",
+          "lineNumber": 198
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "results.every",
+          "lineNumber": 199
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Promise.all",
+          "lineNumber": 202
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "results.map",
+          "lineNumber": 203
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "join",
+          "lineNumber": 205
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Deno.remove",
+          "lineNumber": 207
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "ensureFile",
+          "lineNumber": 209
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 210
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "console.error",
+          "lineNumber": 213
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Response.json",
+          "lineNumber": 220
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "app.get",
+          "lineNumber": 227
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "url.pathname.split",
+          "lineNumber": 229
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "segments.join",
+          "lineNumber": 230
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "c.req.query",
+          "lineNumber": 231
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "join",
+          "lineNumber": 234
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "walk",
+          "lineNumber": 237
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "toPosix",
+          "lineNumber": 244
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "entry.path.replace",
+          "lineNumber": 244
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "key.includes",
+          "lineNumber": 246
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "key.includes",
+          "lineNumber": 246
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Deno.readTextFile(entry.path).catch",
+          "lineNumber": 252
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 252
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "toPosix",
+          "lineNumber": 261
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Deno.readTextFile(root).catch",
+          "lineNumber": 263
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 263
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "Response.json",
+          "lineNumber": 268
+        },
+        {
+          "caller": "createRealtimeAPIs",
+          "callee": "broadcastFS",
+          "lineNumber": 271
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/realtime/crdt/bit.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 37,
+      "classes": [
+        {
+          "name": "BinaryIndexedTree",
+          "startLine": 1,
+          "endLine": 43,
+          "methods": [
+            "constructor",
+            "increase",
+            "update",
+            "getSum",
+            "query",
+            "rangeQuery"
+          ],
+          "properties": [
+            "bit",
+            "upperLimit"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BinaryIndexedTree",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "increase",
+          "callee": "this.bit.get",
+          "lineNumber": 11
+        },
+        {
+          "caller": "increase",
+          "callee": "this.bit.set",
+          "lineNumber": 12
+        },
+        {
+          "caller": "update",
+          "callee": "this.increase",
+          "lineNumber": 19
+        },
+        {
+          "caller": "getSum",
+          "callee": "this.bit.get",
+          "lineNumber": 27
+        },
+        {
+          "caller": "query",
+          "callee": "this.getSum",
+          "lineNumber": 36
+        },
+        {
+          "caller": "rangeQuery",
+          "callee": "this.query",
+          "lineNumber": 41
+        },
+        {
+          "caller": "rangeQuery",
+          "callee": "this.query",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "daemon/realtime/crdt/text.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 154,
+      "nonEmptyLines": 139,
+      "functions": [
+        {
+          "name": "shrinkOperations",
+          "startLine": 4,
+          "endLine": 37,
+          "params": [
+            "operations"
+          ]
+        },
+        {
+          "name": "diff",
+          "startLine": 39,
+          "endLine": 89,
+          "params": [
+            "oldStr",
+            "newStr"
+          ]
+        },
+        {
+          "name": "isDeleteOperation",
+          "startLine": 91,
+          "endLine": 95,
+          "params": [
+            "op"
+          ]
+        },
+        {
+          "name": "applyPatch",
+          "startLine": 97,
+          "endLine": 137,
+          "params": [
+            "offsets",
+            "rollbacks"
+          ]
+        },
+        {
+          "name": "apply",
+          "startLine": 139,
+          "endLine": 154,
+          "params": [
+            "str",
+            "ops",
+            "offsets"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "diff",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "applyPatch",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "apply",
+          "line": 139,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "shrinkOperations",
+          "callee": "operations.slice",
+          "lineNumber": 11
+        },
+        {
+          "caller": "shrinkOperations",
+          "callee": "groupedOperations.push",
+          "lineNumber": 26
+        },
+        {
+          "caller": "shrinkOperations",
+          "callee": "groupedOperations.push",
+          "lineNumber": 33
+        },
+        {
+          "caller": "diff",
+          "callee": "Array.from",
+          "lineNumber": 45
+        },
+        {
+          "caller": "diff",
+          "callee": "Array(n + 1).fill",
+          "lineNumber": 47
+        },
+        {
+          "caller": "diff",
+          "callee": "Array",
+          "lineNumber": 47
+        },
+        {
+          "caller": "diff",
+          "callee": "Math.max",
+          "lineNumber": 56
+        },
+        {
+          "caller": "diff",
+          "callee": "operations.unshift",
+          "lineNumber": 77
+        },
+        {
+          "caller": "diff",
+          "callee": "newStr.substr",
+          "lineNumber": 79
+        },
+        {
+          "caller": "diff",
+          "callee": "operations.unshift",
+          "lineNumber": 83
+        },
+        {
+          "caller": "diff",
+          "callee": "shrinkOperations",
+          "lineNumber": 88
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "isDeleteOperation",
+          "lineNumber": 106
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "offsets.query",
+          "lineNumber": 108
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "str.slice",
+          "lineNumber": 112
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "str.slice",
+          "lineNumber": 113
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "offsets.update",
+          "lineNumber": 116
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "rollbacks.push",
+          "lineNumber": 117
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "offsets.update",
+          "lineNumber": 118
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "offsets.query",
+          "lineNumber": 123
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "str.slice",
+          "lineNumber": 128
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "str.slice",
+          "lineNumber": 129
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "offsets.update",
+          "lineNumber": 132
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "rollbacks.push",
+          "lineNumber": 133
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "offsets.update",
+          "lineNumber": 134
+        },
+        {
+          "caller": "apply",
+          "callee": "ops.reduce",
+          "lineNumber": 145
+        },
+        {
+          "caller": "apply",
+          "callee": "applyPatch",
+          "lineNumber": 146
+        },
+        {
+          "caller": "apply",
+          "callee": "rollbacks.forEach",
+          "lineNumber": 150
+        },
+        {
+          "caller": "apply",
+          "callee": "rb",
+          "lineNumber": 150
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/realtime/types.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 45,
+      "functions": [
+        {
+          "name": "isJSONFilePatch",
+          "startLine": 53,
+          "endLine": 55,
+          "params": [
+            "patch"
+          ]
+        },
+        {
+          "name": "isTextFileSet",
+          "startLine": 57,
+          "endLine": 59,
+          "params": [
+            "patch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isJSONFilePatch",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "isTextFileSet",
+          "line": 57,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/sandbox.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 183,
+      "nonEmptyLines": 153,
+      "functions": [
+        {
+          "name": "siteNameFromRepo",
+          "startLine": 9,
+          "endLine": 15,
+          "params": [
+            "repo"
+          ]
+        },
+        {
+          "name": "createSandboxHandlers",
+          "startLine": 45,
+          "endLine": 183,
+          "params": [
+            "{ onDeploy, onUndeploy }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DeployParams",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "createSandboxHandlers",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "siteNameFromRepo",
+          "callee": "repo.split(\"/\").pop()?.replace",
+          "lineNumber": 10
+        },
+        {
+          "caller": "siteNameFromRepo",
+          "callee": "repo.split(\"/\").pop",
+          "lineNumber": 10
+        },
+        {
+          "caller": "siteNameFromRepo",
+          "callee": "repo.split",
+          "lineNumber": 10
+        },
+        {
+          "caller": "status",
+          "callee": "getSiteName",
+          "lineNumber": 51
+        },
+        {
+          "caller": "status",
+          "callee": "c.json",
+          "lineNumber": 52
+        },
+        {
+          "caller": "deploy",
+          "callee": "getSiteName",
+          "lineNumber": 61
+        },
+        {
+          "caller": "deploy",
+          "callee": "c.json",
+          "lineNumber": 62
+        },
+        {
+          "caller": "deploy",
+          "callee": "c.req.json",
+          "lineNumber": 76
+        },
+        {
+          "caller": "deploy",
+          "callee": "c.json",
+          "lineNumber": 78
+        },
+        {
+          "caller": "deploy",
+          "callee": "c.json",
+          "lineNumber": 84
+        },
+        {
+          "caller": "deploy",
+          "callee": "c.json",
+          "lineNumber": 88
+        },
+        {
+          "caller": "deploy",
+          "callee": "c.json",
+          "lineNumber": 92
+        },
+        {
+          "caller": "deploy",
+          "callee": "c.json",
+          "lineNumber": 99
+        },
+        {
+          "caller": "deploy",
+          "callee": "c.json",
+          "lineNumber": 103
+        },
+        {
+          "caller": "deploy",
+          "callee": "Array.isArray",
+          "lineNumber": 108
+        },
+        {
+          "caller": "deploy",
+          "callee": "runCommand.every",
+          "lineNumber": 109
+        },
+        {
+          "caller": "deploy",
+          "callee": "c.json",
+          "lineNumber": 111
+        },
+        {
+          "caller": "deploy",
+          "callee": "Array.isArray",
+          "lineNumber": 116
+        },
+        {
+          "caller": "deploy",
+          "callee": "Object.values(envs).every",
+          "lineNumber": 117
+        },
+        {
+          "caller": "deploy",
+          "callee": "Object.values",
+          "lineNumber": 117
+        },
+        {
+          "caller": "deploy",
+          "callee": "c.json",
+          "lineNumber": 119
+        },
+        {
+          "caller": "deploy",
+          "callee": "siteNameFromRepo",
+          "lineNumber": 127
+        },
+        {
+          "caller": "deploy",
+          "callee": "onDeploy",
+          "lineNumber": 131
+        },
+        {
+          "caller": "deploy",
+          "callee": "console.error",
+          "lineNumber": 142
+        },
+        {
+          "caller": "deploy",
+          "callee": "c.json",
+          "lineNumber": 143
+        },
+        {
+          "caller": "deploy",
+          "callee": "setSiteName",
+          "lineNumber": 146
+        },
+        {
+          "caller": "deploy",
+          "callee": "console.log",
+          "lineNumber": 150
+        },
+        {
+          "caller": "deploy",
+          "callee": "runCommand.join",
+          "lineNumber": 152
+        },
+        {
+          "caller": "deploy",
+          "callee": "c.json",
+          "lineNumber": 156
+        },
+        {
+          "caller": "undeploy",
+          "callee": "getSiteName",
+          "lineNumber": 160
+        },
+        {
+          "caller": "undeploy",
+          "callee": "c.json",
+          "lineNumber": 162
+        },
+        {
+          "caller": "undeploy",
+          "callee": "console.log",
+          "lineNumber": 165
+        },
+        {
+          "caller": "undeploy",
+          "callee": "onUndeploy",
+          "lineNumber": 168
+        },
+        {
+          "caller": "undeploy",
+          "callee": "console.error",
+          "lineNumber": 170
+        },
+        {
+          "caller": "undeploy",
+          "callee": "c.json",
+          "lineNumber": 171
+        },
+        {
+          "caller": "undeploy",
+          "callee": "resetSiteName",
+          "lineNumber": 173
+        },
+        {
+          "caller": "undeploy",
+          "callee": "console.log",
+          "lineNumber": 177
+        },
+        {
+          "caller": "undeploy",
+          "callee": "c.json",
+          "lineNumber": 179
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/sse/api.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "createSSE",
+          "startLine": 12,
+          "endLine": 69,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "createSSE",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createSSE",
+          "callee": "app.get",
+          "lineNumber": 15
+        },
+        {
+          "caller": "createSSE",
+          "callee": "Promise.withResolvers",
+          "lineNumber": 17
+        },
+        {
+          "caller": "createSSE",
+          "callee": "Number",
+          "lineNumber": 18
+        },
+        {
+          "caller": "createSSE",
+          "callee": "c.req.query",
+          "lineNumber": 18
+        },
+        {
+          "caller": "enqueue",
+          "callee": "controller.enqueue",
+          "lineNumber": 24
+        },
+        {
+          "caller": "enqueue",
+          "callee": "encodeURIComponent",
+          "lineNumber": 25
+        },
+        {
+          "caller": "enqueue",
+          "callee": "JSON.stringify",
+          "lineNumber": 25
+        },
+        {
+          "caller": "createSSE",
+          "callee": "new ReadableStream<ServerSentEventMessage>({\n        async start(controller) {\n          console.log(colors.bold(`[sse]:`), \"stream is\", colors.green(\"open\"));\n\n          const handler = (e: CustomEvent<DaemonEvent>) =>\n            enqueue(controller, e.detail);\n\n          // @ts-expect-error TS does not handle well this case\n          channel.addEventListener(\"broadcast\", handler);\n          done.promise.then(() => {\n            // @ts-expect-error TS does not handle well this case\n            channel.removeEventListener(\"broadcast\", handler);\n          });\n\n          for await (const event of startFS(since)) {\n            if (signal.aborted) {\n              return;\n            }\n            enqueue(controller, event);\n          }\n\n          enqueue(controller, startWorker());\n\n          startMeta(since)\n            .then((meta) => meta && enqueue(controller, meta))\n            .catch(console.error);\n\n          return done.promise;\n        },\n        cancel() {\n          done.resolve();\n          console.log(colors.bold(`[sse]:`), \"stream is\", colors.red(\"closed\"));\n        },\n      }).pipeThrough",
+          "lineNumber": 30
+        },
+        {
+          "caller": "start",
+          "callee": "console.log",
+          "lineNumber": 32
+        },
+        {
+          "caller": "start",
+          "callee": "colors.bold",
+          "lineNumber": 32
+        },
+        {
+          "caller": "start",
+          "callee": "colors.green",
+          "lineNumber": 32
+        },
+        {
+          "caller": "handler",
+          "callee": "enqueue",
+          "lineNumber": 35
+        },
+        {
+          "caller": "start",
+          "callee": "channel.addEventListener",
+          "lineNumber": 38
+        },
+        {
+          "caller": "start",
+          "callee": "done.promise.then",
+          "lineNumber": 39
+        },
+        {
+          "caller": "start",
+          "callee": "channel.removeEventListener",
+          "lineNumber": 41
+        },
+        {
+          "caller": "start",
+          "callee": "startFS",
+          "lineNumber": 44
+        },
+        {
+          "caller": "start",
+          "callee": "enqueue",
+          "lineNumber": 48
+        },
+        {
+          "caller": "start",
+          "callee": "enqueue",
+          "lineNumber": 51
+        },
+        {
+          "caller": "start",
+          "callee": "startWorker",
+          "lineNumber": 51
+        },
+        {
+          "caller": "start",
+          "callee": "startMeta(since)\n            .then((meta) => meta && enqueue(controller, meta))\n            .catch",
+          "lineNumber": 53
+        },
+        {
+          "caller": "start",
+          "callee": "startMeta(since)\n            .then",
+          "lineNumber": 53
+        },
+        {
+          "caller": "start",
+          "callee": "startMeta",
+          "lineNumber": 53
+        },
+        {
+          "caller": "start",
+          "callee": "enqueue",
+          "lineNumber": 54
+        },
+        {
+          "caller": "cancel",
+          "callee": "done.resolve",
+          "lineNumber": 60
+        },
+        {
+          "caller": "cancel",
+          "callee": "console.log",
+          "lineNumber": 61
+        },
+        {
+          "caller": "cancel",
+          "callee": "colors.bold",
+          "lineNumber": 61
+        },
+        {
+          "caller": "cancel",
+          "callee": "colors.red",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/sse/channel.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 8,
+      "functions": [
+        {
+          "name": "broadcast",
+          "startLine": 9,
+          "endLine": 11,
+          "params": [
+            "msg"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "channel",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "broadcast",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "broadcast",
+          "callee": "channel.dispatchEvent",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/tunnel.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "register",
+          "startLine": 18,
+          "endLine": 78,
+          "params": [
+            "{ env, site, port, decoHost }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "register",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "register",
+          "callee": "connect",
+          "lineNumber": 32
+        },
+        {
+          "caller": "register",
+          "callee": "Deno.env.get",
+          "lineNumber": 36
+        },
+        {
+          "caller": "register",
+          "callee": "r.registered.then(() => {\n    const admin = new URL(\n      `/sites/${site}/spaces/dashboard?env=${env}`,\n      \"https://admin.deco.cx\",\n    );\n\n    console.log(\n      `\\ndeco.cx started environment ${colors.green(env)} for site ${\n        colors.brightBlue(site)\n      }\\n   -> 🌐 ${colors.bold(\"Preview\")}: ${\n        colors.cyan(`https://${domain}`)\n      }\\n   -> ✏️ ${colors.bold(\"Admin\")}: ${colors.cyan(admin.href)}\\n`,\n    );\n  }).catch",
+          "lineNumber": 40
+        },
+        {
+          "caller": "register",
+          "callee": "r.registered.then",
+          "lineNumber": 40
+        },
+        {
+          "caller": "register",
+          "callee": "console.log",
+          "lineNumber": 46
+        },
+        {
+          "caller": "register",
+          "callee": "colors.green",
+          "lineNumber": 47
+        },
+        {
+          "caller": "register",
+          "callee": "colors.brightBlue",
+          "lineNumber": 48
+        },
+        {
+          "caller": "register",
+          "callee": "colors.bold",
+          "lineNumber": 49
+        },
+        {
+          "caller": "register",
+          "callee": "colors.cyan",
+          "lineNumber": 50
+        },
+        {
+          "caller": "register",
+          "callee": "colors.bold",
+          "lineNumber": 51
+        },
+        {
+          "caller": "register",
+          "callee": "colors.cyan",
+          "lineNumber": 51
+        },
+        {
+          "caller": "register",
+          "callee": "console.error",
+          "lineNumber": 54
+        },
+        {
+          "caller": "register",
+          "callee": "r.closed.then(async (reason) => {\n    if (reason && \"intentional\" in reason && reason.intentional) return;\n    console.log(\n      \"tunnel connection error retrying in 500ms...\",\n      VERBOSE ? reason : \"\",\n    );\n    await new Promise((resolve) => setTimeout(resolve, 500));\n    return register({ env, site, port, decoHost });\n  }).catch",
+          "lineNumber": 57
+        },
+        {
+          "caller": "register",
+          "callee": "r.closed.then",
+          "lineNumber": 57
+        },
+        {
+          "caller": "register",
+          "callee": "console.log",
+          "lineNumber": 59
+        },
+        {
+          "caller": "register",
+          "callee": "setTimeout",
+          "lineNumber": 63
+        },
+        {
+          "caller": "register",
+          "callee": "register",
+          "lineNumber": 64
+        },
+        {
+          "caller": "register",
+          "callee": "console.log",
+          "lineNumber": 69
+        },
+        {
+          "caller": "register",
+          "callee": "setTimeout",
+          "lineNumber": 73
+        },
+        {
+          "caller": "register",
+          "callee": "register",
+          "lineNumber": 74
+        },
+        {
+          "caller": "register",
+          "callee": "r.close",
+          "lineNumber": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/worker.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 137,
+      "nonEmptyLines": 111,
+      "functions": [
+        {
+          "name": "dispatchWorkerState",
+          "startLine": 24,
+          "endLine": 27,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "start",
+          "startLine": 29,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "makeWp",
+          "startLine": 34,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "isWorkerDisabled",
+          "startLine": 47,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "resetWorkerState",
+          "startLine": 51,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "worker",
+          "startLine": 56,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "isProviderFn",
+          "startLine": 65,
+          "endLine": 66,
+          "params": [
+            "provider"
+          ]
+        },
+        {
+          "name": "resolveWorkerOptions",
+          "startLine": 68,
+          "endLine": 77,
+          "params": [
+            "provider"
+          ]
+        },
+        {
+          "name": "createWorker",
+          "startLine": 79,
+          "endLine": 137,
+          "params": [
+            "optionsProvider"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "dispatchWorkerState",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "start",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "isWorkerDisabled",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "resetWorkerState",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "worker",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "createWorker",
+          "line": 79,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "dispatchWorkerState",
+          "callee": "broadcast",
+          "lineNumber": 26
+        },
+        {
+          "caller": "makeWp",
+          "callee": "Promise.withResolvers",
+          "lineNumber": 35
+        },
+        {
+          "caller": "makeWp",
+          "callee": "w.promise.catch",
+          "lineNumber": 38
+        },
+        {
+          "caller": "resetWorkerState",
+          "callee": "makeWp",
+          "lineNumber": 53
+        },
+        {
+          "caller": "worker",
+          "callee": "w.start",
+          "lineNumber": 59
+        },
+        {
+          "caller": "worker",
+          "callee": "w.waitUntilReady",
+          "lineNumber": 60
+        },
+        {
+          "caller": "resolveWorkerOptions",
+          "callee": "isProviderFn",
+          "lineNumber": 73
+        },
+        {
+          "caller": "resolveWorkerOptions",
+          "callee": "provider",
+          "lineNumber": 74
+        },
+        {
+          "caller": "initializeWorker",
+          "callee": "resolveWorkerOptions",
+          "lineNumber": 87
+        },
+        {
+          "caller": "initializeWorker",
+          "callee": "wp.resolve",
+          "lineNumber": 88
+        },
+        {
+          "caller": "initializeWorker",
+          "callee": "wp.reject",
+          "lineNumber": 91
+        },
+        {
+          "caller": "createWorker",
+          "callee": "initializeWorker",
+          "lineNumber": 95
+        },
+        {
+          "caller": "createWorker",
+          "callee": "app.use",
+          "lineNumber": 98
+        },
+        {
+          "caller": "createWorker",
+          "callee": "worker",
+          "lineNumber": 100
+        },
+        {
+          "caller": "createWorker",
+          "callee": "next",
+          "lineNumber": 101
+        },
+        {
+          "caller": "createWorker",
+          "callee": "console.error",
+          "lineNumber": 103
+        },
+        {
+          "caller": "createWorker",
+          "callee": "app.all",
+          "lineNumber": 109
+        },
+        {
+          "caller": "createWorker",
+          "callee": "wp.promise.then",
+          "lineNumber": 109
+        },
+        {
+          "caller": "createWorker",
+          "callee": "w.fetch",
+          "lineNumber": 109
+        },
+        {
+          "caller": "createWorker",
+          "callee": "Deno.addSignalListener",
+          "lineNumber": 115
+        },
+        {
+          "caller": "createWorker",
+          "callee": "console.log",
+          "lineNumber": 116
+        },
+        {
+          "caller": "createWorker",
+          "callee": "resolveWorkerOptions",
+          "lineNumber": 119
+        },
+        {
+          "caller": "createWorker",
+          "callee": "opts.persist",
+          "lineNumber": 120
+        },
+        {
+          "caller": "createWorker",
+          "callee": "console.error",
+          "lineNumber": 122
+        },
+        {
+          "caller": "createWorker",
+          "callee": "wp.promise.then",
+          "lineNumber": 125
+        },
+        {
+          "caller": "createWorker",
+          "callee": "w.signal",
+          "lineNumber": 126
+        },
+        {
+          "caller": "createWorker",
+          "callee": "w[Symbol.asyncDispose]",
+          "lineNumber": 127
+        },
+        {
+          "caller": "createWorker",
+          "callee": "self.close",
+          "lineNumber": 129
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 6,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/workers/denoRun.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 258,
+      "nonEmptyLines": 236,
+      "functions": [
+        {
+          "name": "buildPermissionsArgs",
+          "startLine": 14,
+          "endLine": 37,
+          "params": [
+            "perm"
+          ]
+        },
+        {
+          "name": "isCmdIsolate",
+          "startLine": 43,
+          "endLine": 47,
+          "params": [
+            "cmd"
+          ]
+        },
+        {
+          "name": "proxyWebSocket",
+          "startLine": 192,
+          "endLine": 258,
+          "params": [
+            "url",
+            "nReq"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DenoRun",
+          "startLine": 48,
+          "endLine": 190,
+          "methods": [
+            "constructor",
+            "signal",
+            "start",
+            "dispose",
+            "fetch",
+            "isRunning",
+            "waitUntilReady",
+            "spawn"
+          ],
+          "properties": [
+            "ctrl",
+            "child",
+            "inflightRequests",
+            "inflightZeroEmitter",
+            "port",
+            "command",
+            "disposed",
+            "proxyUrl",
+            "client"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DenoRun",
+          "line": 48,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "buildPermissionsArgs",
+          "callee": "Object.entries",
+          "lineNumber": 21
+        },
+        {
+          "caller": "buildPermissionsArgs",
+          "callee": "Deno.permissions.querySync",
+          "lineNumber": 23
+        },
+        {
+          "caller": "buildPermissionsArgs",
+          "callee": "args.push",
+          "lineNumber": 27
+        },
+        {
+          "caller": "buildPermissionsArgs",
+          "callee": "args.push",
+          "lineNumber": 29
+        },
+        {
+          "caller": "buildPermissionsArgs",
+          "callee": "Array.isArray",
+          "lineNumber": 30
+        },
+        {
+          "caller": "buildPermissionsArgs",
+          "callee": "Array.isArray",
+          "lineNumber": 31
+        },
+        {
+          "caller": "buildPermissionsArgs",
+          "callee": "args.push",
+          "lineNumber": 32
+        },
+        {
+          "caller": "buildPermissionsArgs",
+          "callee": "values.join",
+          "lineNumber": 32
+        },
+        {
+          "caller": "constructor",
+          "callee": "isCmdIsolate",
+          "lineNumber": 61
+        },
+        {
+          "caller": "constructor",
+          "callee": "portPool.get",
+          "lineNumber": 65
+        },
+        {
+          "caller": "constructor",
+          "callee": "Deno.execPath",
+          "lineNumber": 66
+        },
+        {
+          "caller": "constructor",
+          "callee": "buildPermissionsArgs",
+          "lineNumber": 72
+        },
+        {
+          "caller": "constructor",
+          "callee": "Deno.createHttpClient",
+          "lineNumber": 88
+        },
+        {
+          "caller": "signal",
+          "callee": "this.child?.kill",
+          "lineNumber": 99
+        },
+        {
+          "caller": "start",
+          "callee": "this.isRunning",
+          "lineNumber": 105
+        },
+        {
+          "caller": "start",
+          "callee": "Promise.withResolvers",
+          "lineNumber": 109
+        },
+        {
+          "caller": "start",
+          "callee": "this.dispose.bind",
+          "lineNumber": 110
+        },
+        {
+          "caller": "start",
+          "callee": "this.spawn",
+          "lineNumber": 111
+        },
+        {
+          "caller": "start",
+          "callee": "logs.register",
+          "lineNumber": 113
+        },
+        {
+          "caller": "start",
+          "callee": "iteratorFrom",
+          "lineNumber": 113
+        },
+        {
+          "caller": "start",
+          "callee": "logs.register",
+          "lineNumber": 114
+        },
+        {
+          "caller": "start",
+          "callee": "iteratorFrom",
+          "lineNumber": 114
+        },
+        {
+          "caller": "dispose",
+          "callee": "Promise.withResolvers",
+          "lineNumber": 120
+        },
+        {
+          "caller": "dispose",
+          "callee": "this.inflightZeroEmitter.on",
+          "lineNumber": 122
+        },
+        {
+          "caller": "dispose",
+          "callee": "inflightZero.resolve",
+          "lineNumber": 123
+        },
+        {
+          "caller": "dispose",
+          "callee": "inflightZero.resolve",
+          "lineNumber": 126
+        },
+        {
+          "caller": "dispose",
+          "callee": "Promise.race",
+          "lineNumber": 128
+        },
+        {
+          "caller": "dispose",
+          "callee": "delay",
+          "lineNumber": 128
+        },
+        {
+          "caller": "dispose",
+          "callee": "this.child?.kill",
+          "lineNumber": 130
+        },
+        {
+          "caller": "dispose",
+          "callee": "portPool.free",
+          "lineNumber": 134
+        },
+        {
+          "caller": "dispose",
+          "callee": "this.disposed?.resolve",
+          "lineNumber": 135
+        },
+        {
+          "caller": "fetch",
+          "callee": "request.headers.get",
+          "lineNumber": 144
+        },
+        {
+          "caller": "fetch",
+          "callee": "proxyWebSocket",
+          "lineNumber": 145
+        },
+        {
+          "caller": "fetch",
+          "callee": "headers.set",
+          "lineNumber": 149
+        },
+        {
+          "caller": "fetch",
+          "callee": "request.headers.get",
+          "lineNumber": 149
+        },
+        {
+          "caller": "fetch",
+          "callee": "fetch(this.client ? request.url : url, {\n      method: request.method,\n      headers,\n      body: request.body,\n      redirect: \"manual\",\n      ...this.client ? { client: this.client } : {},\n    }).finally",
+          "lineNumber": 151
+        },
+        {
+          "caller": "fetch",
+          "callee": "fetch",
+          "lineNumber": 151
+        },
+        {
+          "caller": "fetch",
+          "callee": "this.inflightZeroEmitter.emit",
+          "lineNumber": 160
+        },
+        {
+          "caller": "waitUntilReady",
+          "callee": "waitForPort",
+          "lineNumber": 176
+        },
+        {
+          "caller": "spawn",
+          "callee": "this.command.spawn",
+          "lineNumber": 183
+        },
+        {
+          "caller": "spawn",
+          "callee": "child.status.then",
+          "lineNumber": 184
+        },
+        {
+          "caller": "spawn",
+          "callee": "console.error",
+          "lineNumber": 185
+        },
+        {
+          "caller": "spawn",
+          "callee": "this.ctrl?.abort",
+          "lineNumber": 186
+        },
+        {
+          "caller": "proxyWebSocket",
+          "callee": "Deno.upgradeWebSocket",
+          "lineNumber": 194
+        },
+        {
+          "caller": "proxyWebSocket",
+          "callee": "flushProxyMessageQueue",
+          "lineNumber": 204
+        },
+        {
+          "caller": "proxyWebSocket",
+          "callee": "flushTargetMessageQueue",
+          "lineNumber": 211
+        },
+        {
+          "caller": "proxyWebSocket",
+          "callee": "socket.send",
+          "lineNumber": 217
+        },
+        {
+          "caller": "proxyWebSocket",
+          "callee": "proxyMessageQueue.push",
+          "lineNumber": 219
+        },
+        {
+          "caller": "proxyWebSocket",
+          "callee": "proxySocket.send",
+          "lineNumber": 225
+        },
+        {
+          "caller": "proxyWebSocket",
+          "callee": "targetMessageQueue.push",
+          "lineNumber": 227
+        },
+        {
+          "caller": "proxyWebSocket",
+          "callee": "proxySocket.close",
+          "lineNumber": 233
+        },
+        {
+          "caller": "proxyWebSocket",
+          "callee": "socket.close",
+          "lineNumber": 238
+        },
+        {
+          "caller": "flushProxyMessageQueue",
+          "callee": "proxyMessageQueue.shift",
+          "lineNumber": 244
+        },
+        {
+          "caller": "flushProxyMessageQueue",
+          "callee": "socket.send",
+          "lineNumber": 245
+        },
+        {
+          "caller": "flushTargetMessageQueue",
+          "callee": "targetMessageQueue.shift",
+          "lineNumber": 252
+        },
+        {
+          "caller": "flushTargetMessageQueue",
+          "callee": "proxySocket.send",
+          "lineNumber": 253
+        },
+        {
+          "caller": "proxyWebSocket",
+          "callee": "Promise.resolve",
+          "lineNumber": 257
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "daemon/workers/isolate.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 15,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/workers/portpool.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "makeRange",
+          "startLine": 4,
+          "endLine": 17,
+          "params": [
+            "from",
+            "to"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PortPool",
+          "startLine": 23,
+          "endLine": 78,
+          "methods": [
+            "constructor",
+            "get",
+            "free",
+            "generateAvailablePorts",
+            "checkPort"
+          ],
+          "properties": [
+            "usedPorts",
+            "minPort",
+            "maxPort"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "portPool",
+          "line": 82,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "makeRange",
+          "callee": "ports.push",
+          "lineNumber": 15
+        },
+        {
+          "caller": "get",
+          "callee": "this.generateAvailablePorts",
+          "lineNumber": 41
+        },
+        {
+          "caller": "get",
+          "callee": "availablePorts.pop",
+          "lineNumber": 45
+        },
+        {
+          "caller": "get",
+          "callee": "this.usedPorts.add",
+          "lineNumber": 49
+        },
+        {
+          "caller": "free",
+          "callee": "this.usedPorts.delete",
+          "lineNumber": 54
+        },
+        {
+          "caller": "generateAvailablePorts",
+          "callee": "makeRange",
+          "lineNumber": 58
+        },
+        {
+          "caller": "generateAvailablePorts",
+          "callee": "allPorts.filter",
+          "lineNumber": 59
+        },
+        {
+          "caller": "generateAvailablePorts",
+          "callee": "this.checkPort",
+          "lineNumber": 60
+        },
+        {
+          "caller": "generateAvailablePorts",
+          "callee": "this.usedPorts.has",
+          "lineNumber": 61
+        },
+        {
+          "caller": "checkPort",
+          "callee": "Deno.listen",
+          "lineNumber": 69
+        },
+        {
+          "caller": "checkPort",
+          "callee": "server.close",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "daemon/workers/utils.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "isListening",
+          "startLine": 1,
+          "endLine": 10,
+          "params": [
+            "port"
+          ]
+        },
+        {
+          "name": "waitForPort",
+          "startLine": 12,
+          "endLine": 32,
+          "params": [
+            "port",
+            "options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isListening",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "waitForPort",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isListening",
+          "callee": "Deno.connect",
+          "lineNumber": 4
+        },
+        {
+          "caller": "isListening",
+          "callee": "conn.close",
+          "lineNumber": 5
+        },
+        {
+          "caller": "waitForPort",
+          "callee": "Date.now",
+          "lineNumber": 17
+        },
+        {
+          "caller": "waitForPort",
+          "callee": "isListening",
+          "lineNumber": 19
+        },
+        {
+          "caller": "waitForPort",
+          "callee": "Date.now",
+          "lineNumber": 23
+        },
+        {
+          "caller": "waitForPort",
+          "callee": "setTimeout",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "hypervisor/main.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "utils/async.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "throttle",
+          "startLine": 7,
+          "endLine": 20,
+          "params": [
+            "cb"
+          ]
+        },
+        {
+          "name": "delay",
+          "startLine": 23,
+          "endLine": 24,
+          "params": [
+            "ms"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "throttle",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "delay",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "throttle",
+          "callee": "Promise.resolve",
+          "lineNumber": 8
+        },
+        {
+          "caller": "throttle",
+          "callee": "queue.catch(() => undefined).then",
+          "lineNumber": 14
+        },
+        {
+          "caller": "throttle",
+          "callee": "queue.catch",
+          "lineNumber": 14
+        },
+        {
+          "caller": "throttle",
+          "callee": "cb",
+          "lineNumber": 15
+        },
+        {
+          "caller": "delay",
+          "callee": "setTimeout",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    }
+  ]
+}

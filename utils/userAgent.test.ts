@@ -1,5 +1,5 @@
 import { assertEquals } from "@std/assert";
-import { deviceOf } from "./userAgent.ts";
+import { deviceOf, isBot } from "./userAgent.ts";
 
 const MOBILE_UA =
   "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1";
@@ -56,5 +56,17 @@ Deno.test("deviceOf", async (t) => {
 
   await t.step("normalizes unsupported device types to desktop", () => {
     assertEquals(deviceOf(req({ deviceHint: "smarttv" })), "desktop");
+  });
+});
+
+Deno.test("isBot", async (t) => {
+  await t.step("flags Storebot-Google, which ua-parser reads as Chrome", () => {
+    const ua =
+      "Mozilla/5.0 (X11; Linux x86_64; Storebot-Google/1.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36";
+    assertEquals(isBot(req({ ua })), true);
+  });
+
+  await t.step("does not flag a regular browser", () => {
+    assertEquals(isBot(req({ ua: DESKTOP_UA })), false);
   });
 });

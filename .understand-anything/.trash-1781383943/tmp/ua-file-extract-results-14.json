@@ -1,0 +1,1696 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".gitattributes",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "metrics": {}
+    },
+    {
+      "path": ".github/release.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 20,
+      "nonEmptyLines": 20,
+      "sections": [
+        {
+          "heading": "changelog",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 45,
+      "metrics": {}
+    },
+    {
+      "path": ".understand-anything/config.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "sections": [
+        {
+          "heading": "outputLanguage",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "blocks/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 149,
+      "nonEmptyLines": 123,
+      "sections": [
+        {
+          "heading": "Blocks Overview",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "What is a Block?",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "Key Features of Blocks",
+          "level": 3,
+          "line": 20
+        },
+        {
+          "heading": "Block Structure",
+          "level": 3,
+          "line": 33
+        },
+        {
+          "heading": "Specialized Blocks",
+          "level": 3,
+          "line": 70
+        },
+        {
+          "heading": "Example: Loader Block",
+          "level": 3,
+          "line": 90
+        },
+        {
+          "heading": "Summary",
+          "level": 3,
+          "line": 130
+        },
+        {
+          "heading": "Manifest File",
+          "level": 3,
+          "line": 138
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "commons/jwt/mod.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "exports": [
+        {
+          "name": "newJwtIssuer",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "JwtIssuer",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "JwtPayloadWithClaims",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "getKeyPair",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "commons/workflows/mod.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "exports": [
+        {
+          "name": "WorkflowExecution",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/mod.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 28,
+      "exports": [
+        {
+          "name": "CmdAPI",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "DeleteAPI",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "GrepAPI",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "ListAPI",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "PatchAPI",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "ReadAPI",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "applyPatch",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "generatePatch",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "BlockMetadata",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "GitStatus",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "Metadata",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "PageBlockMetadata",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "Patch",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "SyncUpdate",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "CheckoutAPI",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "CheckoutBranchAPI",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "GitDiffAPI",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "GitLogAPI",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "GitRawAPI",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "GitStatusAPI",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "PublishAPI",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "RebaseAPI",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "DaemonEvent",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 23,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/workers/options.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 11,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "dev/deno.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 13,
+      "nonEmptyLines": 13,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "exports",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "imports",
+          "level": 1,
+          "line": 7
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "dev/deno.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 161,
+      "nonEmptyLines": 135,
+      "functions": [
+        {
+          "name": "visit",
+          "startLine": 11,
+          "endLine": 26,
+          "params": [
+            "program",
+            "visitor"
+          ]
+        },
+        {
+          "name": "importsFrom",
+          "startLine": 28,
+          "endLine": 68,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "skipPath",
+          "startLine": 72,
+          "endLine": 85,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "resolveRecursively",
+          "startLine": 87,
+          "endLine": 120,
+          "params": [
+            "path",
+            "context",
+            "loader",
+            "importMapResolver",
+            "cache"
+          ]
+        },
+        {
+          "name": "readImportMap",
+          "startLine": 122,
+          "endLine": 138,
+          "params": []
+        },
+        {
+          "name": "resolveDeps",
+          "startLine": 140,
+          "endLine": 161,
+          "params": [
+            "entries",
+            "cache"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolveDeps",
+          "line": 140,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "visit",
+          "callee": "Object.values",
+          "lineNumber": 15
+        },
+        {
+          "caller": "visit",
+          "callee": "visitor[nodeType]",
+          "lineNumber": 19
+        },
+        {
+          "caller": "visit",
+          "callee": "visit",
+          "lineNumber": 23
+        },
+        {
+          "caller": "importsFrom",
+          "callee": "parsePath",
+          "lineNumber": 29
+        },
+        {
+          "caller": "importsFrom",
+          "callee": "visit",
+          "lineNumber": 37
+        },
+        {
+          "caller": "importsFrom",
+          "callee": "imports.add",
+          "lineNumber": 41
+        },
+        {
+          "caller": "importsFrom",
+          "callee": "imports.add",
+          "lineNumber": 49
+        },
+        {
+          "caller": "importsFrom",
+          "callee": "imports.add",
+          "lineNumber": 63
+        },
+        {
+          "caller": "importsFrom",
+          "callee": "imports.values",
+          "lineNumber": 67
+        },
+        {
+          "caller": "skipPath",
+          "callee": "path.endsWith",
+          "lineNumber": 73
+        },
+        {
+          "caller": "skipPath",
+          "callee": "path.endsWith",
+          "lineNumber": 78
+        },
+        {
+          "caller": "skipPath",
+          "callee": "path.endsWith",
+          "lineNumber": 78
+        },
+        {
+          "caller": "skipPath",
+          "callee": "path.includes",
+          "lineNumber": 79
+        },
+        {
+          "caller": "resolveRecursively",
+          "callee": "importMapResolver.resolve",
+          "lineNumber": 94
+        },
+        {
+          "caller": "resolveRecursively",
+          "callee": "skipPath",
+          "lineNumber": 96
+        },
+        {
+          "caller": "resolveRecursively",
+          "callee": "cache.has",
+          "lineNumber": 96
+        },
+        {
+          "caller": "resolveRecursively",
+          "callee": "Promise.all",
+          "lineNumber": 100
+        },
+        {
+          "caller": "resolveRecursively",
+          "callee": "loader",
+          "lineNumber": 101
+        },
+        {
+          "caller": "resolveRecursively",
+          "callee": "importsFrom",
+          "lineNumber": 102
+        },
+        {
+          "caller": "resolveRecursively",
+          "callee": "cache.set",
+          "lineNumber": 109
+        },
+        {
+          "caller": "resolveRecursively",
+          "callee": "Promise.all",
+          "lineNumber": 111
+        },
+        {
+          "caller": "resolveRecursively",
+          "callee": "imports.map",
+          "lineNumber": 111
+        },
+        {
+          "caller": "resolveRecursively",
+          "callee": "resolveRecursively",
+          "lineNumber": 112
+        },
+        {
+          "caller": "readImportMap",
+          "callee": "Promise.all",
+          "lineNumber": 123
+        },
+        {
+          "caller": "readImportMap",
+          "callee": "Deno.readTextFile(\"./import_map.json\").then(JSON.parse).catch",
+          "lineNumber": 124
+        },
+        {
+          "caller": "readImportMap",
+          "callee": "Deno.readTextFile(\"./import_map.json\").then",
+          "lineNumber": 124
+        },
+        {
+          "caller": "readImportMap",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 124
+        },
+        {
+          "caller": "readImportMap",
+          "callee": "Deno.readTextFile(\"./deno.json\").then(JSON.parse).catch",
+          "lineNumber": 125
+        },
+        {
+          "caller": "readImportMap",
+          "callee": "Deno.readTextFile(\"./deno.json\").then",
+          "lineNumber": 125
+        },
+        {
+          "caller": "readImportMap",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 125
+        },
+        {
+          "caller": "resolveDeps",
+          "callee": "readImportMap",
+          "lineNumber": 144
+        },
+        {
+          "caller": "resolveDeps",
+          "callee": "initLoader",
+          "lineNumber": 145
+        },
+        {
+          "caller": "resolveDeps",
+          "callee": "ImportMapBuilder.new().mergeWith",
+          "lineNumber": 147
+        },
+        {
+          "caller": "resolveDeps",
+          "callee": "ImportMapBuilder.new",
+          "lineNumber": 147
+        },
+        {
+          "caller": "resolveDeps",
+          "callee": "toFileUrl",
+          "lineNumber": 149
+        },
+        {
+          "caller": "resolveDeps",
+          "callee": "join",
+          "lineNumber": 149
+        },
+        {
+          "caller": "resolveDeps",
+          "callee": "Deno.cwd",
+          "lineNumber": 149
+        },
+        {
+          "caller": "resolveDeps",
+          "callee": "resolveRecursively",
+          "lineNumber": 153
+        },
+        {
+          "caller": "resolveDeps",
+          "callee": "Deno.cwd",
+          "lineNumber": 155
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "dev/tailwind.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 185,
+      "nonEmptyLines": 154,
+      "functions": [
+        {
+          "name": "loadTailwindConfig",
+          "startLine": 25,
+          "endLine": 34,
+          "params": [
+            "root"
+          ]
+        },
+        {
+          "name": "bundle",
+          "startLine": 36,
+          "endLine": 71,
+          "params": [
+            "{ from, mode, config }"
+          ]
+        },
+        {
+          "name": "withReleaseContent",
+          "startLine": 82,
+          "endLine": 158,
+          "params": [
+            "config",
+            "options"
+          ]
+        },
+        {
+          "name": "getCSS",
+          "startLine": 160,
+          "endLine": 169,
+          "params": [
+            "config",
+            "options"
+          ]
+        },
+        {
+          "name": "build",
+          "startLine": 176,
+          "endLine": 181,
+          "params": [
+            "options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Config",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "loadTailwindConfig",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "build",
+          "line": 176,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "loadTailwindConfig",
+          "callee": "import(toFileUrl(join(root, \"tailwind.config.ts\")).href)\n    .then((mod) => mod.default)\n    .catch",
+          "lineNumber": 26
+        },
+        {
+          "caller": "loadTailwindConfig",
+          "callee": "import(toFileUrl(join(root, \"tailwind.config.ts\")).href)\n    .then",
+          "lineNumber": 26
+        },
+        {
+          "caller": "loadTailwindConfig",
+          "callee": "import",
+          "lineNumber": 26
+        },
+        {
+          "caller": "loadTailwindConfig",
+          "callee": "toFileUrl",
+          "lineNumber": 26
+        },
+        {
+          "caller": "loadTailwindConfig",
+          "callee": "join",
+          "lineNumber": 26
+        },
+        {
+          "caller": "loadTailwindConfig",
+          "callee": "console.warn",
+          "lineNumber": 29
+        },
+        {
+          "caller": "bundle",
+          "callee": "performance.now",
+          "lineNumber": 43
+        },
+        {
+          "caller": "bundle",
+          "callee": "postcssImport",
+          "lineNumber": 46
+        },
+        {
+          "caller": "bundle",
+          "callee": "tailwindcss",
+          "lineNumber": 47
+        },
+        {
+          "caller": "bundle",
+          "callee": "autoprefixer",
+          "lineNumber": 48
+        },
+        {
+          "caller": "bundle",
+          "callee": "plugins.push",
+          "lineNumber": 52
+        },
+        {
+          "caller": "bundle",
+          "callee": "cssnano",
+          "lineNumber": 53
+        },
+        {
+          "caller": "bundle",
+          "callee": "postcss",
+          "lineNumber": 57
+        },
+        {
+          "caller": "bundle",
+          "callee": "processor.process",
+          "lineNumber": 59
+        },
+        {
+          "caller": "bundle",
+          "callee": "Deno.readTextFile(from).catch",
+          "lineNumber": 60
+        },
+        {
+          "caller": "bundle",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 60
+        },
+        {
+          "caller": "bundle",
+          "callee": "console.info",
+          "lineNumber": 64
+        },
+        {
+          "caller": "bundle",
+          "callee": "cyan",
+          "lineNumber": 66
+        },
+        {
+          "caller": "bundle",
+          "callee": "((performance.now() - start) / 1e3).toFixed",
+          "lineNumber": 66
+        },
+        {
+          "caller": "bundle",
+          "callee": "performance.now",
+          "lineNumber": 66
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "new Set(\n    options.exclude?.map((exclude) =>\n      exclude.replaceAll(\"\\\\\", \"/\").replace(/^\\.\\//, \"\").replace(/^\\//, \"\")\n    ) ?? [],\n  ).values",
+          "lineNumber": 88
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "options.exclude?.map",
+          "lineNumber": 89
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "exclude.replaceAll(\"\\\\\", \"/\").replace(/^\\.\\//, \"\").replace",
+          "lineNumber": 90
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "exclude.replaceAll(\"\\\\\", \"/\").replace",
+          "lineNumber": 90
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "exclude.replaceAll",
+          "lineNumber": 90
+        },
+        {
+          "caller": "isExcluded",
+          "callee": "excludes.some",
+          "lineNumber": 95
+        },
+        {
+          "caller": "isExcluded",
+          "callee": "path.startsWith",
+          "lineNumber": 97
+        },
+        {
+          "caller": "isExcluded",
+          "callee": "path.endsWith",
+          "lineNumber": 98
+        },
+        {
+          "caller": "isExcluded",
+          "callee": "path.includes",
+          "lineNumber": 99
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "walk",
+          "lineNumber": 107
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "Deno.cwd",
+          "lineNumber": 107
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "entry.path.replaceAll",
+          "lineNumber": 112
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "isExcluded",
+          "lineNumber": 113
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "path.endsWith",
+          "lineNumber": 117
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "path.includes",
+          "lineNumber": 117
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "roots.add",
+          "lineNumber": 118
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "toFileUrl",
+          "lineNumber": 118
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "performance.now",
+          "lineNumber": 122
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "resolveDeps",
+          "lineNumber": 123
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "roots.values",
+          "lineNumber": 123
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "(performance.now() - start).toFixed",
+          "lineNumber": 124
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "performance.now",
+          "lineNumber": 124
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "console.log",
+          "lineNumber": 126
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "allTsxFiles.values().map",
+          "lineNumber": 131
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "allTsxFiles.values",
+          "lineNumber": 131
+        },
+        {
+          "caller": "withReleaseContent",
+          "callee": "Array.isArray",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getCSS",
+          "callee": "bundle",
+          "lineNumber": 164
+        },
+        {
+          "caller": "getCSS",
+          "callee": "withReleaseContent",
+          "lineNumber": 167
+        },
+        {
+          "caller": "build",
+          "callee": "getCSS(\n    tailwindConfig ??= await loadTailwindConfig(Deno.cwd()),\n    buildOptions ??= options,\n  ).then",
+          "lineNumber": 177
+        },
+        {
+          "caller": "build",
+          "callee": "getCSS",
+          "lineNumber": 177
+        },
+        {
+          "caller": "build",
+          "callee": "loadTailwindConfig",
+          "lineNumber": 178
+        },
+        {
+          "caller": "build",
+          "callee": "Deno.cwd",
+          "lineNumber": 178
+        },
+        {
+          "caller": "build",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 180
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "engine/core/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 145,
+      "nonEmptyLines": 117,
+      "sections": [
+        {
+          "heading": "deco Runtime - Config Resolver Engine",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Key Concepts",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "Resolvers",
+          "level": 3,
+          "line": 12
+        },
+        {
+          "heading": "Resolvables",
+          "level": 3,
+          "line": 32
+        },
+        {
+          "heading": "Example",
+          "level": 4,
+          "line": 39
+        },
+        {
+          "heading": "Resolution Algorithm",
+          "level": 3,
+          "line": 63
+        },
+        {
+          "heading": "Optimization in Version 1.15.1",
+          "level": 3,
+          "line": 93
+        },
+        {
+          "heading": "Parallelism in Resolution",
+          "level": 3,
+          "line": 111
+        },
+        {
+          "heading": "Handling Dangling References",
+          "level": 2,
+          "line": 129
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "engine/mod.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 5,
+      "exports": [
+        {
+          "name": "ImportMapBuilder",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "ImportMapResolver",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "ParsedSource",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "initLoader",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "parsePath",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "fromEndpoint",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "fromJSON",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "hooks/mod.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 13,
+      "exports": [
+        {
+          "name": "useDevice",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "setPartialTriggerMode",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "usePartialSection",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "minify",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "useScript",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "useScriptAsDataURI",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "addAllowedQS",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "addBlockedQS",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "unstable_blockUseSectionHrefQueryStrings",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "useSection",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "useSetEarlyHints",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "live.gen.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "exports": [
+        {
+          "name": "Manifest",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "live.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "mod.web.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 20,
+      "exports": [
+        {
+          "name": "InvokeAwaiter",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "forApp",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "isEventStreamResponse",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "proxy",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "readFromStream",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "withManifest",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "InvocationFunc",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "AvailableActions",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "AvailableFunctions",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "AvailableLoaders",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "Invoke",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "InvokeAsPayload",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "InvokeResult",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "ManifestAction",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "ManifestFunction",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "ManifestLoader",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 16,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "plugins/styles.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "stylesPlugin",
+          "startLine": 5,
+          "endLine": 16,
+          "params": [
+            "styles"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "STYLE_ELEMENT_ID",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "stylesPlugin",
+          "line": 5,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "render",
+          "callee": "ctx.render",
+          "lineNumber": 9
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/htmx/FreshHeadCompat.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 3,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "runtime/htmx/mod.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "exports": [
+        {
+          "name": "framework",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "bindings",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "Head",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "asset",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/apps/watcher.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "runModule",
+          "startLine": 4,
+          "endLine": 17,
+          "params": [
+            "module",
+            "...args"
+          ]
+        },
+        {
+          "name": "printStdout",
+          "startLine": 18,
+          "endLine": 26,
+          "params": [
+            "process"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runModule",
+          "callee": "Deno.execPath",
+          "lineNumber": 5
+        },
+        {
+          "caller": "runModule",
+          "callee": "join",
+          "lineNumber": 10
+        },
+        {
+          "caller": "runModule",
+          "callee": "Deno.cwd",
+          "lineNumber": 10
+        },
+        {
+          "caller": "runModule",
+          "callee": "import.meta.resolve",
+          "lineNumber": 11
+        },
+        {
+          "caller": "printStdout",
+          "callee": "mergeReadableStreams",
+          "lineNumber": 20
+        },
+        {
+          "caller": "printStdout",
+          "callee": "joined.pipeTo",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/changelog.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "printDiff",
+          "startLine": 11,
+          "endLine": 30,
+          "params": [
+            "ver",
+            "ownerRepo"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "printDiff",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "printDiff",
+          "callee": "ownerRepo.split",
+          "lineNumber": 12
+        },
+        {
+          "caller": "printDiff",
+          "callee": "_client.request",
+          "lineNumber": 13
+        },
+        {
+          "caller": "printDiff",
+          "callee": "semver.parse",
+          "lineNumber": 21
+        },
+        {
+          "caller": "printDiff",
+          "callee": "semver.lessThan",
+          "lineNumber": 25
+        },
+        {
+          "caller": "printDiff",
+          "callee": "console.log",
+          "lineNumber": 26
+        },
+        {
+          "caller": "printDiff",
+          "callee": "bold",
+          "lineNumber": 26
+        },
+        {
+          "caller": "printDiff",
+          "callee": "blue",
+          "lineNumber": 26
+        },
+        {
+          "caller": "printDiff",
+          "callee": "version.toString",
+          "lineNumber": 26
+        },
+        {
+          "caller": "printDiff",
+          "callee": "console.log",
+          "lineNumber": 27
+        },
+        {
+          "caller": "printDiff",
+          "callee": "bold",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/codemod.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 734,
+      "nonEmptyLines": 727,
+      "functions": [
+        {
+          "name": "runCodeMod",
+          "startLine": 58,
+          "endLine": 734,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "runCodeMod",
+          "line": 58,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runCodeMod",
+          "callee": "Promise.all(\n    newJsrPackages.map((pkg) =>\n      jsrLatest(pkg).then((jsrPkg) => [pkg, jsrPkg] as [string, string])\n    ),\n  ).then",
+          "lineNumber": 59
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "Promise.all",
+          "lineNumber": 59
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "newJsrPackages.map",
+          "lineNumber": 60
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "jsrLatest(pkg).then",
+          "lineNumber": 61
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "jsrLatest",
+          "lineNumber": 61
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "codeMod",
+          "lineNumber": 65
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "rewriteImports",
+          "lineNumber": 69
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "denoJSON",
+          "lineNumber": 653
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "bundleCmd.split",
+          "lineNumber": 659
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "txt.content.replace(\n              regex,\n              `import { plugins } from \"deco/plugins/deco.ts\";`,\n            ).replace(`import tailwind from \"./tailwind.config.ts\";\\n`, \"\")\n              .replace(\"tailwind,\\n\", \"\").replace(\n                `tailwind: tailwind as any,`,\n                \"\",\n              ).replace",
+          "lineNumber": 691
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "txt.content.replace(\n              regex,\n              `import { plugins } from \"deco/plugins/deco.ts\";`,\n            ).replace(`import tailwind from \"./tailwind.config.ts\";\\n`, \"\")\n              .replace(\"tailwind,\\n\", \"\").replace",
+          "lineNumber": 691
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "txt.content.replace(\n              regex,\n              `import { plugins } from \"deco/plugins/deco.ts\";`,\n            ).replace(`import tailwind from \"./tailwind.config.ts\";\\n`, \"\")\n              .replace",
+          "lineNumber": 691
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "txt.content.replace(\n              regex,\n              `import { plugins } from \"deco/plugins/deco.ts\";`,\n            ).replace",
+          "lineNumber": 691
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "txt.content.replace",
+          "lineNumber": 691
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "upgradeDeps",
+          "lineNumber": 705
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "ctx.fs.exists",
+          "lineNumber": 709
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "join",
+          "lineNumber": 709
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "ctx.fs.cwd",
+          "lineNumber": 709
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "upgradeDecoVersion.apply",
+          "lineNumber": 711
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "pinDecoVersion.apply",
+          "lineNumber": 713
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "txt.content.includes",
+          "lineNumber": 721
+        },
+        {
+          "caller": "runCodeMod",
+          "callee": "txt.content.replace",
+          "lineNumber": 727
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/deno.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 30,
+      "nonEmptyLines": 30,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "exports",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "publish",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "imports",
+          "level": 1,
+          "line": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    }
+  ]
+}

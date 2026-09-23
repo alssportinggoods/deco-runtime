@@ -1,0 +1,884 @@
+{
+  "nodes": [
+    {
+      "id": "file:engine/decofile/constants.ts",
+      "type": "file",
+      "name": "constants.ts",
+      "filePath": "engine/decofile/constants.ts",
+      "summary": "Defines shared constant identifiers (folder names, JSON file names, entrypoint key) used across the decofile provider system.",
+      "tags": ["utility", "constants", "decofile", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:engine/decofile/deconfig.ts",
+      "type": "file",
+      "name": "deconfig.ts",
+      "filePath": "engine/decofile/deconfig.ts",
+      "summary": "Implements a Deconfig client that reads/writes blocks over HTTP and exposes a watchable filesystem-like provider via an event-source iterator.",
+      "tags": ["service", "decofile", "client", "realtime"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:engine/decofile/fetcher.ts",
+      "type": "file",
+      "name": "fetcher.ts",
+      "filePath": "engine/decofile/fetcher.ts",
+      "summary": "Loads decofile state from HTTP endpoints, event sources, JSON, or local providers, dispatching to the appropriate provider based on the endpoint specifier.",
+      "tags": ["service", "decofile", "data-fetching", "factory"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:engine/decofile/fs.ts",
+      "type": "file",
+      "name": "fs.ts",
+      "filePath": "engine/decofile/fs.ts",
+      "summary": "Filesystem-backed decofile provider that reads, decompresses, hashes, and watches a single .decofile JSON for changes.",
+      "tags": ["service", "decofile", "filesystem", "data-model"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:engine/decofile/fsFolder.ts",
+      "type": "file",
+      "name": "fsFolder.ts",
+      "filePath": "engine/decofile/fsFolder.ts",
+      "summary": "Folder-based decofile provider that loads each block from individual JSON files, infers metadata by block type, and watches the directory for changes.",
+      "tags": ["service", "decofile", "filesystem", "data-model"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:engine/decofile/json.ts",
+      "type": "file",
+      "name": "json.ts",
+      "filePath": "engine/decofile/json.ts",
+      "summary": "Transforms a Decofile object into the JSON release format consumed by the engine, scoping block references under the app name.",
+      "tags": ["utility", "decofile", "serialization"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:engine/decofile/provider.ts",
+      "type": "file",
+      "name": "provider.ts",
+      "filePath": "engine/decofile/provider.ts",
+      "summary": "Composes multiple decofile providers into one and selects the active provider (filesystem, folder, or endpoint) based on environment configuration.",
+      "tags": ["service", "decofile", "factory", "composition"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:engine/decofile/realtime.ts",
+      "type": "file",
+      "name": "realtime.ts",
+      "filePath": "engine/decofile/realtime.ts",
+      "summary": "Wraps a decofile provider with realtime subscription, polling fallback with jittered retry, and change notification to subscribers.",
+      "tags": ["service", "decofile", "realtime", "event-handler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:engine/trustedAuthority.ts",
+      "type": "file",
+      "name": "trustedAuthority.ts",
+      "filePath": "engine/trustedAuthority.ts",
+      "summary": "Asserts that a given URL belongs to the configured allow-list of trusted authorities before it is used for remote decofile fetching.",
+      "tags": ["utility", "security", "validation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/apps/bundle.lib.ts",
+      "type": "file",
+      "name": "bundle.lib.ts",
+      "filePath": "scripts/apps/bundle.lib.ts",
+      "summary": "Builds and writes the generated manifest for each configured app by running the deco manifest builder and formatting the output.",
+      "tags": ["script", "build-system", "manifest"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/apps/bundle.ts",
+      "type": "file",
+      "name": "bundle.ts",
+      "filePath": "scripts/apps/bundle.ts",
+      "summary": "CLI entrypoint that invokes the app bundling routine to regenerate manifests.",
+      "tags": ["script", "entry-point", "build-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/apps/config.ts",
+      "type": "file",
+      "name": "config.ts",
+      "filePath": "scripts/apps/config.ts",
+      "summary": "Resolves the deco app configuration by reading workspace deno.json files and dynamically importing the deco.ts config module.",
+      "tags": ["script", "configuration", "workspace"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:scripts/apps/context.ts",
+      "type": "file",
+      "name": "context.ts",
+      "filePath": "scripts/apps/context.ts",
+      "summary": "Provides shared context constants and types for the app scaffolding template scripts.",
+      "tags": ["script", "configuration", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/apps/dev.ts",
+      "type": "file",
+      "name": "dev.ts",
+      "filePath": "scripts/apps/dev.ts",
+      "summary": "Development helper that links or unlinks local deco apps by editing the import map and generating per-app entry files.",
+      "tags": ["script", "development", "import-map"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:scripts/apps/init.ts",
+      "type": "file",
+      "name": "init.ts",
+      "filePath": "scripts/apps/init.ts",
+      "summary": "Scaffolds a new deco app from templates, recursively writing template files and subdirectories into the target project.",
+      "tags": ["script", "scaffolding", "templates"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:scripts/apps/install.ts",
+      "type": "file",
+      "name": "install.ts",
+      "filePath": "scripts/apps/install.ts",
+      "summary": "CLI entrypoint that installs deco app links by delegating to the dev helper.",
+      "tags": ["script", "entry-point", "development"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/apps/link.ts",
+      "type": "file",
+      "name": "link.ts",
+      "filePath": "scripts/apps/link.ts",
+      "summary": "CLI entrypoint that links a local deco app via the dev helper.",
+      "tags": ["script", "entry-point", "development"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/apps/templates/app.loaders.bin.ts.ts",
+      "type": "file",
+      "name": "app.loaders.bin.ts.ts",
+      "filePath": "scripts/apps/templates/app.loaders.bin.ts.ts",
+      "summary": "Template generator emitting the loaders binary module source for a scaffolded deco app.",
+      "tags": ["script", "templates", "scaffolding"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/apps/templates/app.mod.ts.ts",
+      "type": "file",
+      "name": "app.mod.ts.ts",
+      "filePath": "scripts/apps/templates/app.mod.ts.ts",
+      "summary": "Template generator emitting the app mod.ts module source for a scaffolded deco app.",
+      "tags": ["script", "templates", "scaffolding"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/apps/templates/deco.ts.ts",
+      "type": "file",
+      "name": "deco.ts.ts",
+      "filePath": "scripts/apps/templates/deco.ts.ts",
+      "summary": "Template generator emitting the deco.ts configuration module source for a scaffolded deco app.",
+      "tags": ["script", "templates", "scaffolding"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/apps/templates/deno.json.ts",
+      "type": "file",
+      "name": "deno.json.ts",
+      "filePath": "scripts/apps/templates/deno.json.ts",
+      "summary": "Template generator emitting the deno.json manifest source for a scaffolded deco app pinned to a specific deco version.",
+      "tags": ["script", "templates", "scaffolding"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/apps/uninstall.ts",
+      "type": "file",
+      "name": "uninstall.ts",
+      "filePath": "scripts/apps/uninstall.ts",
+      "summary": "CLI entrypoint that uninstalls deco app links via the dev helper.",
+      "tags": ["script", "entry-point", "development"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/apps/unlink.ts",
+      "type": "file",
+      "name": "unlink.ts",
+      "filePath": "scripts/apps/unlink.ts",
+      "summary": "CLI entrypoint that unlinks a local deco app via the dev helper.",
+      "tags": ["script", "entry-point", "development"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/formatter.ts",
+      "type": "file",
+      "name": "formatter.ts",
+      "filePath": "scripts/formatter.ts",
+      "summary": "Re-exports a source code formatting helper used by template generators and bundling scripts.",
+      "tags": ["utility", "formatting", "barrel"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/init.ts",
+      "type": "file",
+      "name": "init.ts",
+      "filePath": "scripts/init.ts",
+      "summary": "Interactive CLI that initializes a new deco site by downloading a template archive, generating the decofile JSON, and printing setup instructions.",
+      "tags": ["script", "entry-point", "scaffolding"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:scripts/order_imports.ts",
+      "type": "file",
+      "name": "order_imports.ts",
+      "filePath": "scripts/order_imports.ts",
+      "summary": "Sorts and normalizes import map entries in deno.json, deduplicating and alphabetizing specifiers before writing back.",
+      "tags": ["script", "import-map", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/pkg.ts",
+      "type": "file",
+      "name": "pkg.ts",
+      "filePath": "scripts/pkg.ts",
+      "summary": "Resolves package version information from a registry import URL, selecting the latest eligible (optionally pre-release) version.",
+      "tags": ["script", "versioning", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/registry.ts",
+      "type": "file",
+      "name": "registry.ts",
+      "filePath": "scripts/registry.ts",
+      "summary": "Defines the set of registries used for resolving deco package versions.",
+      "tags": ["script", "configuration", "constants"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/release.ts",
+      "type": "file",
+      "name": "release.ts",
+      "filePath": "scripts/release.ts",
+      "summary": "Release automation script that bumps version numbers across deno.json files and commits the changes.",
+      "tags": ["script", "release", "automation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:scripts/upgrade.ts",
+      "type": "file",
+      "name": "upgrade.ts",
+      "filePath": "scripts/upgrade.ts",
+      "summary": "Comprehensive migration tool that upgrades a deco site to a new version by rewriting import maps, entrypoints, config files, and applying patches.",
+      "tags": ["script", "migration", "upgrade", "automation"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:scripts/utils.ts",
+      "type": "file",
+      "name": "utils.ts",
+      "filePath": "scripts/utils.ts",
+      "summary": "Shared script utilities for splitting and executing shell commands, capturing stdout/stderr.",
+      "tags": ["script", "utility", "shell"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:utils/filesystem.ts",
+      "type": "file",
+      "name": "filesystem.ts",
+      "filePath": "utils/filesystem.ts",
+      "summary": "Filesystem helpers for path separator normalization and tolerant file-URL conversion.",
+      "tags": ["utility", "filesystem", "path"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:utils/hasher.ts",
+      "type": "file",
+      "name": "hasher.ts",
+      "filePath": "utils/hasher.ts",
+      "summary": "MurmurHash3 implementation providing fast incremental non-cryptographic hashing used for revision/state hashing.",
+      "tags": ["utility", "hashing", "algorithm"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:utils/json.ts",
+      "type": "file",
+      "name": "json.ts",
+      "filePath": "utils/json.ts",
+      "summary": "JSON serialization helpers providing stable (key-sorted) stringification and a write-friendly formatter.",
+      "tags": ["utility", "serialization", "json"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:utils/rand.ts",
+      "type": "file",
+      "name": "rand.ts",
+      "filePath": "utils/rand.ts",
+      "summary": "Generates short random identifiers used for transient keys across the runtime.",
+      "tags": ["utility", "random", "id-generation"],
+      "complexity": "simple"
+    },
+
+    {
+      "id": "function:engine/decofile/deconfig.ts:toAsyncIterator",
+      "type": "function",
+      "name": "toAsyncIterator",
+      "filePath": "engine/decofile/deconfig.ts",
+      "lineRange": [57, 92],
+      "summary": "Converts an event emitter into a backpressure-aware async iterator that yields parsed messages as they arrive.",
+      "tags": ["utility", "async-iterator", "event-handler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:engine/decofile/deconfig.ts:createClient",
+      "type": "function",
+      "name": "createClient",
+      "filePath": "engine/decofile/deconfig.ts",
+      "lineRange": [94, 143],
+      "summary": "Creates a Deconfig HTTP client exposing tool-call methods and a watch stream over server-sent events.",
+      "tags": ["factory", "client", "http"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:engine/decofile/deconfig.ts:deconfigFs",
+      "type": "function",
+      "name": "deconfigFs",
+      "filePath": "engine/decofile/deconfig.ts",
+      "lineRange": [145, 193],
+      "summary": "Builds a filesystem-like interface over Deconfig that lists, reads, writes, and watches files via the remote client.",
+      "tags": ["factory", "filesystem", "decofile"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:engine/decofile/fetcher.ts:fetchFromHttp",
+      "type": "function",
+      "name": "fetchFromHttp",
+      "filePath": "engine/decofile/fetcher.ts",
+      "lineRange": [21, 62],
+      "summary": "Fetches decofile content over HTTP with retry-on-failure and extracts the etag revision marker.",
+      "tags": ["data-fetching", "http", "retry"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:engine/decofile/fetcher.ts:fromEventSource",
+      "type": "function",
+      "name": "fromEventSource",
+      "filePath": "engine/decofile/fetcher.ts",
+      "lineRange": [65, 133],
+      "summary": "Creates a decofile provider backed by a server-sent event source, applying incremental patches and resyncing full state on demand.",
+      "tags": ["factory", "realtime", "event-handler"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:engine/decofile/fetcher.ts:fromJSON",
+      "type": "function",
+      "name": "fromJSON",
+      "filePath": "engine/decofile/fetcher.ts",
+      "lineRange": [140, 167],
+      "summary": "Builds an in-memory decofile provider from a parsed JSON state with subscriber notification support.",
+      "tags": ["factory", "decofile", "in-memory"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:engine/decofile/fetcher.ts:decofileLoader",
+      "type": "function",
+      "name": "decofileLoader",
+      "filePath": "engine/decofile/fetcher.ts",
+      "lineRange": [168, 214],
+      "summary": "Resolves an endpoint specifier to the correct decofile provider (folder, file, event source, HTTP, or deconfig).",
+      "tags": ["factory", "decofile", "dispatch"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:engine/decofile/fetcher.ts:fromEndpoint",
+      "type": "function",
+      "name": "fromEndpoint",
+      "filePath": "engine/decofile/fetcher.ts",
+      "lineRange": [216, 251],
+      "summary": "Exposes a cached, lazily-resolved decofile provider for a given endpoint, proxying state, change, and revision access.",
+      "tags": ["factory", "decofile", "caching"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:engine/decofile/fs.ts:readAndDecompressFile",
+      "type": "function",
+      "name": "readAndDecompressFile",
+      "filePath": "engine/decofile/fs.ts",
+      "lineRange": [41, 61],
+      "summary": "Reads a decofile from disk, decompressing gzip-encoded base64 content when present, otherwise parsing plain JSON.",
+      "tags": ["filesystem", "decompression", "serialization"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:engine/decofile/fs.ts:newFsProviderFromPath",
+      "type": "function",
+      "name": "newFsProviderFromPath",
+      "filePath": "engine/decofile/fs.ts",
+      "lineRange": [65, 163],
+      "summary": "Creates a filesystem decofile provider that initializes from disk (or a remote copy), watches for changes, and notifies subscribers.",
+      "tags": ["factory", "filesystem", "decofile"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:engine/decofile/fsFolder.ts:inferMetadata",
+      "type": "function",
+      "name": "inferMetadata",
+      "filePath": "engine/decofile/fsFolder.ts",
+      "lineRange": [45, 71],
+      "summary": "Infers block metadata (type and path) from block content and the set of known block types.",
+      "tags": ["utility", "metadata", "inference"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:engine/decofile/fsFolder.ts:genMetadata",
+      "type": "function",
+      "name": "genMetadata",
+      "filePath": "engine/decofile/fsFolder.ts",
+      "lineRange": [87, 121],
+      "summary": "Walks the blocks folder, infers metadata for each block file, and writes an aggregated metadata JSON file.",
+      "tags": ["filesystem", "metadata", "generation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:engine/decofile/fsFolder.ts:newFsFolderProviderFromPath",
+      "type": "function",
+      "name": "newFsFolderProviderFromPath",
+      "filePath": "engine/decofile/fsFolder.ts",
+      "lineRange": [123, 226],
+      "summary": "Creates a folder-based decofile provider that loads each block file, debounces filesystem change batches, and notifies subscribers.",
+      "tags": ["factory", "filesystem", "decofile"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:engine/decofile/json.ts:getDecofileJSONFromDecofile",
+      "type": "function",
+      "name": "getDecofileJSONFromDecofile",
+      "filePath": "engine/decofile/json.ts",
+      "lineRange": [1, 43],
+      "summary": "Transforms a Decofile into the engine release JSON format, namespacing block references under the app name.",
+      "tags": ["serialization", "decofile", "transformation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:engine/decofile/provider.ts:compose",
+      "type": "function",
+      "name": "compose",
+      "filePath": "engine/decofile/provider.ts",
+      "lineRange": [52, 97],
+      "summary": "Combines multiple decofile providers into a single provider, merging their states, revisions, and change notifications.",
+      "tags": ["factory", "composition", "decofile"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:engine/decofile/provider.ts:getProvider",
+      "type": "function",
+      "name": "getProvider",
+      "filePath": "engine/decofile/provider.ts",
+      "lineRange": [121, 156],
+      "summary": "Selects and composes the active decofile providers based on environment variables and local-storage-only constraints.",
+      "tags": ["factory", "decofile", "configuration"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:engine/decofile/realtime.ts:newRealtime",
+      "type": "function",
+      "name": "newRealtime",
+      "filePath": "engine/decofile/realtime.ts",
+      "lineRange": [49, 183],
+      "summary": "Wraps a provider with realtime subscription and polling fallback, maintaining current resolvables and notifying change subscribers.",
+      "tags": ["factory", "realtime", "event-handler"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:engine/trustedAuthority.ts:assertAllowedAuthority",
+      "type": "function",
+      "name": "assertAllowedAuthority",
+      "filePath": "engine/trustedAuthority.ts",
+      "lineRange": [8, 15],
+      "summary": "Throws if the given URL's authority is not in the configured allow-list of trusted authorities.",
+      "tags": ["security", "validation", "guard"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/apps/bundle.lib.ts:bundleApp",
+      "type": "function",
+      "name": "bundleApp",
+      "filePath": "scripts/apps/bundle.lib.ts",
+      "lineRange": [7, 20],
+      "summary": "Generates and writes the formatted manifest file for a single app directory.",
+      "tags": ["build-system", "manifest", "script"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/apps/bundle.lib.ts:bundleApps",
+      "type": "function",
+      "name": "bundleApps",
+      "filePath": "scripts/apps/bundle.lib.ts",
+      "lineRange": [22, 34],
+      "summary": "Reads the deco config and bundles manifests for all configured apps in parallel.",
+      "tags": ["build-system", "manifest", "script"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/apps/config.ts:workspaceConfig",
+      "type": "function",
+      "name": "workspaceConfig",
+      "filePath": "scripts/apps/config.ts",
+      "lineRange": [14, 38],
+      "summary": "Reads the workspace deno.json and resolves each member's app name and directory.",
+      "tags": ["configuration", "workspace", "script"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/apps/config.ts:getDecoConfig",
+      "type": "function",
+      "name": "getDecoConfig",
+      "filePath": "scripts/apps/config.ts",
+      "lineRange": [39, 65],
+      "summary": "Resolves the deco config by combining workspace members with a dynamically imported deco.ts default export.",
+      "tags": ["configuration", "factory", "script"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/apps/dev.ts:dev",
+      "type": "function",
+      "name": "dev",
+      "filePath": "scripts/apps/dev.ts",
+      "lineRange": [18, 89],
+      "summary": "Links or unlinks local deco apps by mutating the import map and writing per-app entry files.",
+      "tags": ["development", "import-map", "script"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:scripts/apps/init.ts:createFromTemplate",
+      "type": "function",
+      "name": "createFromTemplate",
+      "filePath": "scripts/apps/init.ts",
+      "lineRange": [22, 57],
+      "summary": "Recursively renders a template (and its nested sub-templates) into files and directories on disk.",
+      "tags": ["scaffolding", "templates", "recursion"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/apps/init.ts:init",
+      "type": "function",
+      "name": "init",
+      "filePath": "scripts/apps/init.ts",
+      "lineRange": [68, 83],
+      "summary": "Initializes a new app by resolving the deco version and writing the template files into a new directory.",
+      "tags": ["scaffolding", "entry-point", "script"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/apps/templates/deno.json.ts:DenoJson",
+      "type": "function",
+      "name": "DenoJson",
+      "filePath": "scripts/apps/templates/deno.json.ts",
+      "lineRange": [3, 44],
+      "summary": "Renders a deno.json template string pinned to the provided deco version.",
+      "tags": ["templates", "scaffolding", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/init.ts:initProject",
+      "type": "function",
+      "name": "initProject",
+      "filePath": "scripts/init.ts",
+      "lineRange": [68, 129],
+      "summary": "Downloads and extracts a site template archive, then generates the initial decofile JSON and release file.",
+      "tags": ["scaffolding", "download", "script"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:scripts/init.ts:logInstructions",
+      "type": "function",
+      "name": "logInstructions",
+      "filePath": "scripts/init.ts",
+      "lineRange": [131, 158],
+      "summary": "Prints post-init setup instructions and optionally launches the dev task for the new site.",
+      "tags": ["cli", "script", "ux"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/init.ts:initSite",
+      "type": "function",
+      "name": "initSite",
+      "filePath": "scripts/init.ts",
+      "lineRange": [160, 210],
+      "summary": "Interactively prompts for a site name and template, then initializes the project and prints instructions.",
+      "tags": ["cli", "scaffolding", "script"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/init.ts:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "scripts/init.ts",
+      "lineRange": [214, 245],
+      "summary": "Entry routine that prompts the user to scaffold either a new app or a new site.",
+      "tags": ["entry-point", "cli", "script"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/order_imports.ts:orderImports",
+      "type": "function",
+      "name": "orderImports",
+      "filePath": "scripts/order_imports.ts",
+      "lineRange": [3, 32],
+      "summary": "Reads, normalizes, alphabetizes, and rewrites the import map entries in deno.json.",
+      "tags": ["import-map", "script", "utility"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/pkg.ts:pkgInfo",
+      "type": "function",
+      "name": "pkgInfo",
+      "filePath": "scripts/pkg.ts",
+      "lineRange": [18, 36],
+      "summary": "Looks up registry version information for an import URL and returns the eligible latest version.",
+      "tags": ["versioning", "registry", "script"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/release.ts:bump",
+      "type": "function",
+      "name": "bump",
+      "filePath": "scripts/release.ts",
+      "lineRange": [69, 98],
+      "summary": "Bumps the version field across the provided deno.json files and writes them back.",
+      "tags": ["release", "versioning", "script"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/upgrade.ts:namespaceFromGit",
+      "type": "function",
+      "name": "namespaceFromGit",
+      "filePath": "scripts/upgrade.ts",
+      "lineRange": [44, 63],
+      "summary": "Derives the project namespace from the git remote origin URL.",
+      "tags": ["git", "upgrade", "script"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/upgrade.ts:getDenoJson",
+      "type": "function",
+      "name": "getDenoJson",
+      "filePath": "scripts/upgrade.ts",
+      "lineRange": [663, 675],
+      "summary": "Locates and parses the project's deno.json or import_map.json, returning its content and path.",
+      "tags": ["upgrade", "configuration", "script"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:scripts/upgrade.ts:UpgradeError",
+      "type": "class",
+      "name": "UpgradeError",
+      "filePath": "scripts/upgrade.ts",
+      "lineRange": [92, 96],
+      "summary": "Custom error type signaling a failure during the site upgrade/migration process.",
+      "tags": ["error", "upgrade", "type-definition"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/utils.ts:exec",
+      "type": "function",
+      "name": "exec",
+      "filePath": "scripts/utils.ts",
+      "lineRange": [28, 74],
+      "summary": "Runs a shell command and captures its stdout, stderr, and exit status.",
+      "tags": ["shell", "utility", "script"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:utils/hasher.ts:MurmurHash3",
+      "type": "class",
+      "name": "MurmurHash3",
+      "filePath": "utils/hasher.ts",
+      "lineRange": [1, 118],
+      "summary": "Incremental MurmurHash3 hasher supporting streaming input, result extraction, and reset for reuse.",
+      "tags": ["hashing", "algorithm", "utility"],
+      "complexity": "moderate",
+      "languageNotes": "Bit-twiddling non-cryptographic hash using 32-bit integer arithmetic emulated in JS number space."
+    },
+    {
+      "id": "function:utils/json.ts:stableStringify",
+      "type": "function",
+      "name": "stableStringify",
+      "filePath": "utils/json.ts",
+      "lineRange": [12, 28],
+      "summary": "Serializes a value to JSON with deterministically sorted object keys for stable hashing/comparison.",
+      "tags": ["serialization", "json", "utility"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    { "source": "file:engine/decofile/deconfig.ts", "target": "file:engine/decofile/fsFolder.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:engine/decofile/fetcher.ts", "target": "file:deco.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fetcher.ts", "target": "file:engine/decofile/deconfig.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fetcher.ts", "target": "file:engine/decofile/fs.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fetcher.ts", "target": "file:engine/decofile/fsFolder.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fetcher.ts", "target": "file:engine/decofile/provider.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fetcher.ts", "target": "file:engine/decofile/realtime.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fetcher.ts", "target": "file:engine/trustedAuthority.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fetcher.ts", "target": "file:utils/rand.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:engine/decofile/fs.ts", "target": "file:engine/decofile/json.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fs.ts", "target": "file:engine/decofile/provider.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fs.ts", "target": "file:engine/decofile/realtime.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fs.ts", "target": "file:utils/filesystem.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fs.ts", "target": "file:utils/hasher.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fs.ts", "target": "file:utils/json.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:engine/decofile/fsFolder.ts", "target": "file:blocks/index.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fsFolder.ts", "target": "file:engine/decofile/constants.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fsFolder.ts", "target": "file:engine/decofile/provider.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fsFolder.ts", "target": "file:engine/decofile/realtime.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fsFolder.ts", "target": "file:utils/filesystem.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fsFolder.ts", "target": "file:utils/hasher.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/fsFolder.ts", "target": "file:utils/json.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:engine/decofile/provider.ts", "target": "file:engine/core/resolver.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/provider.ts", "target": "file:engine/core/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/provider.ts", "target": "file:engine/decofile/constants.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/provider.ts", "target": "file:engine/decofile/fetcher.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/provider.ts", "target": "file:engine/decofile/fs.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:engine/decofile/realtime.ts", "target": "file:engine/core/resolver.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/realtime.ts", "target": "file:engine/decofile/provider.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/realtime.ts", "target": "file:observability/otel/config.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:engine/decofile/realtime.ts", "target": "file:utils/rand.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:scripts/apps/bundle.lib.ts", "target": "file:engine/manifest/manifestGen.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:scripts/apps/bundle.lib.ts", "target": "file:scripts/apps/config.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:scripts/apps/bundle.lib.ts", "target": "file:scripts/formatter.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:scripts/apps/bundle.ts", "target": "file:scripts/apps/bundle.lib.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:scripts/apps/dev.ts", "target": "file:scripts/apps/config.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:scripts/apps/dev.ts", "target": "file:utils/json.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:scripts/apps/init.ts", "target": "file:scripts/apps/context.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:scripts/apps/init.ts", "target": "file:scripts/registry.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:scripts/apps/install.ts", "target": "file:scripts/apps/dev.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:scripts/apps/link.ts", "target": "file:scripts/apps/dev.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:scripts/apps/templates/app.loaders.bin.ts.ts", "target": "file:scripts/apps/context.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:scripts/apps/templates/app.loaders.bin.ts.ts", "target": "file:scripts/formatter.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:scripts/apps/templates/app.mod.ts.ts", "target": "file:scripts/apps/context.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:scripts/apps/templates/app.mod.ts.ts", "target": "file:scripts/formatter.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:scripts/apps/templates/deco.ts.ts", "target": "file:scripts/apps/context.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:scripts/apps/templates/deco.ts.ts", "target": "file:scripts/formatter.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:scripts/apps/templates/deno.json.ts", "target": "file:scripts/apps/context.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:scripts/apps/uninstall.ts", "target": "file:scripts/apps/dev.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:scripts/apps/unlink.ts", "target": "file:scripts/apps/dev.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:scripts/init.ts", "target": "file:engine/decofile/json.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:scripts/init.ts", "target": "file:scripts/apps/init.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:scripts/order_imports.ts", "target": "file:utils/json.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:scripts/pkg.ts", "target": "file:scripts/registry.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:scripts/release.ts", "target": "file:scripts/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:scripts/upgrade.ts", "target": "file:scripts/formatter.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:scripts/upgrade.ts", "target": "file:scripts/registry.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+    { "source": "file:scripts/upgrade.ts", "target": "file:scripts/utils.ts", "type": "imports", "direction": "forward", "weight": 0.7 },
+
+    { "source": "file:engine/decofile/deconfig.ts", "target": "function:engine/decofile/deconfig.ts:toAsyncIterator", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/decofile/deconfig.ts", "target": "function:engine/decofile/deconfig.ts:createClient", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/decofile/deconfig.ts", "target": "function:engine/decofile/deconfig.ts:deconfigFs", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/decofile/deconfig.ts", "target": "function:engine/decofile/deconfig.ts:toAsyncIterator", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:engine/decofile/deconfig.ts", "target": "function:engine/decofile/deconfig.ts:deconfigFs", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:engine/decofile/fetcher.ts", "target": "function:engine/decofile/fetcher.ts:fetchFromHttp", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/decofile/fetcher.ts", "target": "function:engine/decofile/fetcher.ts:fromEventSource", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/decofile/fetcher.ts", "target": "function:engine/decofile/fetcher.ts:fromJSON", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/decofile/fetcher.ts", "target": "function:engine/decofile/fetcher.ts:decofileLoader", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/decofile/fetcher.ts", "target": "function:engine/decofile/fetcher.ts:fromEndpoint", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/decofile/fetcher.ts", "target": "function:engine/decofile/fetcher.ts:fromJSON", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:engine/decofile/fetcher.ts", "target": "function:engine/decofile/fetcher.ts:fromEndpoint", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "function:engine/decofile/fetcher.ts:decofileLoader", "target": "function:engine/decofile/fsFolder.ts:newFsFolderProviderFromPath", "type": "calls", "direction": "forward", "weight": 0.8 },
+    { "source": "function:engine/decofile/fetcher.ts:decofileLoader", "target": "function:engine/decofile/deconfig.ts:deconfigFs", "type": "calls", "direction": "forward", "weight": 0.8 },
+    { "source": "function:engine/decofile/fetcher.ts:decofileLoader", "target": "function:engine/decofile/realtime.ts:newRealtime", "type": "calls", "direction": "forward", "weight": 0.8 },
+    { "source": "function:engine/decofile/fetcher.ts:decofileLoader", "target": "function:engine/trustedAuthority.ts:assertAllowedAuthority", "type": "calls", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:engine/decofile/fs.ts", "target": "function:engine/decofile/fs.ts:readAndDecompressFile", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/decofile/fs.ts", "target": "function:engine/decofile/fs.ts:newFsProviderFromPath", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/decofile/fs.ts", "target": "function:engine/decofile/fs.ts:newFsProviderFromPath", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "function:engine/decofile/fs.ts:newFsProviderFromPath", "target": "function:engine/decofile/json.ts:getDecofileJSONFromDecofile", "type": "calls", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:engine/decofile/fsFolder.ts", "target": "function:engine/decofile/fsFolder.ts:inferMetadata", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/decofile/fsFolder.ts", "target": "function:engine/decofile/fsFolder.ts:genMetadata", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/decofile/fsFolder.ts", "target": "function:engine/decofile/fsFolder.ts:newFsFolderProviderFromPath", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/decofile/fsFolder.ts", "target": "function:engine/decofile/fsFolder.ts:genMetadata", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:engine/decofile/fsFolder.ts", "target": "function:engine/decofile/fsFolder.ts:newFsFolderProviderFromPath", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:engine/decofile/json.ts", "target": "function:engine/decofile/json.ts:getDecofileJSONFromDecofile", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/decofile/json.ts", "target": "function:engine/decofile/json.ts:getDecofileJSONFromDecofile", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:engine/decofile/provider.ts", "target": "function:engine/decofile/provider.ts:compose", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/decofile/provider.ts", "target": "function:engine/decofile/provider.ts:getProvider", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/decofile/provider.ts", "target": "function:engine/decofile/provider.ts:compose", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:engine/decofile/provider.ts", "target": "function:engine/decofile/provider.ts:getProvider", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "function:engine/decofile/provider.ts:getProvider", "target": "function:engine/decofile/fetcher.ts:fromEndpoint", "type": "calls", "direction": "forward", "weight": 0.8 },
+    { "source": "function:engine/decofile/provider.ts:getProvider", "target": "function:engine/decofile/provider.ts:compose", "type": "calls", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:engine/decofile/realtime.ts", "target": "function:engine/decofile/realtime.ts:newRealtime", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/decofile/realtime.ts", "target": "function:engine/decofile/realtime.ts:newRealtime", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:engine/trustedAuthority.ts", "target": "function:engine/trustedAuthority.ts:assertAllowedAuthority", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:engine/trustedAuthority.ts", "target": "function:engine/trustedAuthority.ts:assertAllowedAuthority", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:scripts/apps/bundle.lib.ts", "target": "function:scripts/apps/bundle.lib.ts:bundleApp", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:scripts/apps/bundle.lib.ts", "target": "function:scripts/apps/bundle.lib.ts:bundleApps", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:scripts/apps/bundle.lib.ts", "target": "function:scripts/apps/bundle.lib.ts:bundleApp", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "file:scripts/apps/bundle.lib.ts", "target": "function:scripts/apps/bundle.lib.ts:bundleApps", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "function:scripts/apps/bundle.lib.ts:bundleApps", "target": "function:scripts/apps/config.ts:getDecoConfig", "type": "calls", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:scripts/apps/config.ts", "target": "function:scripts/apps/config.ts:workspaceConfig", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:scripts/apps/config.ts", "target": "function:scripts/apps/config.ts:getDecoConfig", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:scripts/apps/config.ts", "target": "function:scripts/apps/config.ts:getDecoConfig", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:scripts/apps/dev.ts", "target": "function:scripts/apps/dev.ts:dev", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:scripts/apps/dev.ts", "target": "function:scripts/apps/dev.ts:dev", "type": "exports", "direction": "forward", "weight": 0.8 },
+    { "source": "function:scripts/apps/dev.ts:dev", "target": "function:scripts/apps/config.ts:getDecoConfig", "type": "calls", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:scripts/apps/init.ts", "target": "function:scripts/apps/init.ts:createFromTemplate", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:scripts/apps/init.ts", "target": "function:scripts/apps/init.ts:init", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:scripts/apps/init.ts", "target": "function:scripts/apps/init.ts:init", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:scripts/apps/templates/deno.json.ts", "target": "function:scripts/apps/templates/deno.json.ts:DenoJson", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:scripts/apps/templates/deno.json.ts", "target": "function:scripts/apps/templates/deno.json.ts:DenoJson", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:scripts/init.ts", "target": "function:scripts/init.ts:initProject", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:scripts/init.ts", "target": "function:scripts/init.ts:logInstructions", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:scripts/init.ts", "target": "function:scripts/init.ts:initSite", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:scripts/init.ts", "target": "function:scripts/init.ts:main", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "function:scripts/init.ts:initProject", "target": "function:engine/decofile/json.ts:getDecofileJSONFromDecofile", "type": "calls", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:scripts/order_imports.ts", "target": "function:scripts/order_imports.ts:orderImports", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:scripts/order_imports.ts", "target": "function:scripts/order_imports.ts:orderImports", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:scripts/pkg.ts", "target": "function:scripts/pkg.ts:pkgInfo", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:scripts/pkg.ts", "target": "function:scripts/pkg.ts:pkgInfo", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:scripts/release.ts", "target": "function:scripts/release.ts:bump", "type": "contains", "direction": "forward", "weight": 1.0 },
+
+    { "source": "file:scripts/upgrade.ts", "target": "function:scripts/upgrade.ts:namespaceFromGit", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:scripts/upgrade.ts", "target": "function:scripts/upgrade.ts:getDenoJson", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:scripts/upgrade.ts", "target": "class:scripts/upgrade.ts:UpgradeError", "type": "contains", "direction": "forward", "weight": 1.0 },
+
+    { "source": "file:scripts/utils.ts", "target": "function:scripts/utils.ts:exec", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:scripts/utils.ts", "target": "function:scripts/utils.ts:exec", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:utils/hasher.ts", "target": "class:utils/hasher.ts:MurmurHash3", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:utils/hasher.ts", "target": "class:utils/hasher.ts:MurmurHash3", "type": "exports", "direction": "forward", "weight": 0.8 },
+
+    { "source": "file:utils/json.ts", "target": "function:utils/json.ts:stableStringify", "type": "contains", "direction": "forward", "weight": 1.0 },
+    { "source": "file:utils/json.ts", "target": "function:utils/json.ts:stableStringify", "type": "exports", "direction": "forward", "weight": 0.8 }
+  ]
+}

@@ -1,0 +1,5404 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 21,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "commons/jwt/engine.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "matchPart",
+          "startLine": 3,
+          "endLine": 4,
+          "params": [
+            "urnPart",
+            "otherUrnPart"
+          ]
+        },
+        {
+          "name": "matchParts",
+          "startLine": 5,
+          "endLine": 7,
+          "params": [
+            "urn",
+            "resource"
+          ]
+        },
+        {
+          "name": "matches",
+          "startLine": 8,
+          "endLine": 21,
+          "params": [
+            "urnParts"
+          ]
+        },
+        {
+          "name": "siteUrn",
+          "startLine": 23,
+          "endLine": 23,
+          "params": [
+            "site"
+          ]
+        },
+        {
+          "name": "tokenIsValid",
+          "startLine": 25,
+          "endLine": 35,
+          "params": [
+            "site",
+            "jwt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "tokenIsValid",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "matchParts",
+          "callee": "urn.every",
+          "lineNumber": 6
+        },
+        {
+          "caller": "matchParts",
+          "callee": "matchPart",
+          "lineNumber": 6
+        },
+        {
+          "caller": "matches",
+          "callee": "resourceUrn\n    .split",
+          "lineNumber": 9
+        },
+        {
+          "caller": "matches",
+          "callee": "resourceParts.every",
+          "lineNumber": 12
+        },
+        {
+          "caller": "matches",
+          "callee": "matchParts",
+          "lineNumber": 17
+        },
+        {
+          "caller": "matches",
+          "callee": "part.split",
+          "lineNumber": 17
+        },
+        {
+          "caller": "matches",
+          "callee": "urnParts[idx].split",
+          "lineNumber": 17
+        },
+        {
+          "caller": "tokenIsValid",
+          "callee": "matches",
+          "lineNumber": 33
+        },
+        {
+          "caller": "tokenIsValid",
+          "callee": "sub.split",
+          "lineNumber": 33
+        },
+        {
+          "caller": "tokenIsValid",
+          "callee": "matchWithSite",
+          "lineNumber": 34
+        },
+        {
+          "caller": "tokenIsValid",
+          "callee": "siteUrn",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "commons/jwt/jwks.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "fetchKeyFromAddr",
+          "startLine": 21,
+          "endLine": 38,
+          "params": [
+            "address",
+            "kid"
+          ]
+        },
+        {
+          "name": "newTrustedJwksIssuer",
+          "startLine": 44,
+          "endLine": 77,
+          "params": [
+            "{ fallbackPublicKey, remoteAddress, kid }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "newTrustedJwksIssuer",
+          "line": 44,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fetchKeyFromAddr",
+          "callee": "fetch",
+          "lineNumber": 28
+        },
+        {
+          "caller": "fetchKeyFromAddr",
+          "callee": "response.json",
+          "lineNumber": 32
+        },
+        {
+          "caller": "fetchKeyFromAddr",
+          "callee": "keys.find",
+          "lineNumber": 33
+        },
+        {
+          "caller": "fetchKeyFromAddr",
+          "callee": "importJWK",
+          "lineNumber": 37
+        },
+        {
+          "caller": "newTrustedJwksIssuer",
+          "callee": "fetchKeyFromAddr",
+          "lineNumber": 51
+        },
+        {
+          "caller": "newTrustedJwksIssuer",
+          "callee": "currentKey.then",
+          "lineNumber": 52
+        },
+        {
+          "caller": "newTrustedJwksIssuer",
+          "callee": "importJWKFromString",
+          "lineNumber": 54
+        },
+        {
+          "caller": "newTrustedJwksIssuer",
+          "callee": "cb",
+          "lineNumber": 63
+        },
+        {
+          "caller": "newTrustedJwksIssuer",
+          "callee": "fetchKeyFromAddr",
+          "lineNumber": 67
+        },
+        {
+          "caller": "newTrustedJwksIssuer",
+          "callee": "cb",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "commons/jwt/jwt.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 93,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "newJwtVerifier",
+          "startLine": 41,
+          "endLine": 57,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "newJwtVerifierWithJWK",
+          "startLine": 59,
+          "endLine": 67,
+          "params": [
+            "pubKey"
+          ]
+        },
+        {
+          "name": "importKey",
+          "startLine": 69,
+          "endLine": 77,
+          "params": [
+            "key",
+            "usages"
+          ]
+        },
+        {
+          "name": "newJwtIssuer",
+          "startLine": 79,
+          "endLine": 93,
+          "params": [
+            "{ private: privkey, public: pubkey }",
+            "iss"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "newJwtVerifier",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "newJwtVerifierWithJWK",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "newJwtIssuer",
+          "line": 79,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "newJwtVerifier",
+          "callee": "verify",
+          "lineNumber": 46
+        },
+        {
+          "caller": "newJwtVerifier",
+          "callee": "decode",
+          "lineNumber": 51
+        },
+        {
+          "caller": "newJwtVerifierWithJWK",
+          "callee": "importKey",
+          "lineNumber": 62
+        },
+        {
+          "caller": "newJwtVerifierWithJWK",
+          "callee": "newJwtVerifier",
+          "lineNumber": 66
+        },
+        {
+          "caller": "importKey",
+          "callee": "importJWKFromString",
+          "lineNumber": 74
+        },
+        {
+          "caller": "importKey",
+          "callee": "importJWK",
+          "lineNumber": 76
+        },
+        {
+          "caller": "newJwtIssuer",
+          "callee": "Promise.all",
+          "lineNumber": 83
+        },
+        {
+          "caller": "newJwtIssuer",
+          "callee": "newJwtVerifierWithJWK",
+          "lineNumber": 84
+        },
+        {
+          "caller": "newJwtIssuer",
+          "callee": "importKey",
+          "lineNumber": 85
+        },
+        {
+          "caller": "newJwtIssuer",
+          "callee": "create",
+          "lineNumber": 90
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "commons/jwt/keys.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "generateKeyPair",
+          "startLine": 7,
+          "endLine": 23,
+          "params": []
+        },
+        {
+          "name": "parseJWK",
+          "startLine": 25,
+          "endLine": 25,
+          "params": [
+            "jwk"
+          ]
+        },
+        {
+          "name": "importJWK",
+          "startLine": 26,
+          "endLine": 36,
+          "params": [
+            "jwk",
+            "usages"
+          ]
+        },
+        {
+          "name": "importJWKFromString",
+          "startLine": 38,
+          "endLine": 45,
+          "params": [
+            "jwk",
+            "usages"
+          ]
+        },
+        {
+          "name": "getOrGenerateKeyPair",
+          "startLine": 47,
+          "endLine": 57,
+          "params": []
+        },
+        {
+          "name": "setFromString",
+          "startLine": 61,
+          "endLine": 69,
+          "params": [
+            "publicKey",
+            "privateKey"
+          ]
+        },
+        {
+          "name": "getKeyPair",
+          "startLine": 74,
+          "endLine": 77,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "alg",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "hash",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "parseJWK",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "importJWK",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "importJWKFromString",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "keys",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "setFromString",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "getKeyPair",
+          "line": 74,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateKeyPair",
+          "callee": "crypto.subtle.generateKey",
+          "lineNumber": 8
+        },
+        {
+          "caller": "generateKeyPair",
+          "callee": "Promise.all",
+          "lineNumber": 19
+        },
+        {
+          "caller": "generateKeyPair",
+          "callee": "crypto.subtle.exportKey",
+          "lineNumber": 20
+        },
+        {
+          "caller": "generateKeyPair",
+          "callee": "crypto.subtle.exportKey",
+          "lineNumber": 21
+        },
+        {
+          "caller": "parseJWK",
+          "callee": "JSON.parse",
+          "lineNumber": 25
+        },
+        {
+          "caller": "parseJWK",
+          "callee": "atob",
+          "lineNumber": 25
+        },
+        {
+          "caller": "importJWK",
+          "callee": "crypto.subtle.importKey",
+          "lineNumber": 30
+        },
+        {
+          "caller": "importJWKFromString",
+          "callee": "importJWK",
+          "lineNumber": 42
+        },
+        {
+          "caller": "importJWKFromString",
+          "callee": "parseJWK",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getOrGenerateKeyPair",
+          "callee": "Deno.env.get",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getOrGenerateKeyPair",
+          "callee": "Deno.env.get",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getOrGenerateKeyPair",
+          "callee": "generateKeyPair",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getOrGenerateKeyPair",
+          "callee": "parseJWK",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getOrGenerateKeyPair",
+          "callee": "parseJWK",
+          "lineNumber": 55
+        },
+        {
+          "caller": "setFromString",
+          "callee": "Promise.resolve",
+          "lineNumber": 65
+        },
+        {
+          "caller": "setFromString",
+          "callee": "parseJWK",
+          "lineNumber": 66
+        },
+        {
+          "caller": "setFromString",
+          "callee": "parseJWK",
+          "lineNumber": 67
+        },
+        {
+          "caller": "getKeyPair",
+          "callee": "getOrGenerateKeyPair",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "commons/jwt/trusted.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "getTrustedVerifierOf",
+          "startLine": 16,
+          "endLine": 28,
+          "params": [
+            "issuer"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "trustedIssuers",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "getTrustedVerifierOf",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getTrustedVerifierOf",
+          "callee": "Promise.resolve",
+          "lineNumber": 21
+        },
+        {
+          "caller": "getTrustedVerifierOf",
+          "callee": "verifiers.get",
+          "lineNumber": 23
+        },
+        {
+          "caller": "getTrustedVerifierOf",
+          "callee": "newJwtVerifierWithJWK",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/ai/github.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 210,
+      "nonEmptyLines": 177,
+      "functions": [
+        {
+          "name": "parseIssueUrl",
+          "startLine": 11,
+          "endLine": 21,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "fetchIssue",
+          "startLine": 23,
+          "endLine": 67,
+          "params": [
+            "url",
+            "token"
+          ]
+        },
+        {
+          "name": "buildPromptFromIssue",
+          "startLine": 69,
+          "endLine": 105,
+          "params": [
+            "issue"
+          ]
+        },
+        {
+          "name": "createPR",
+          "startLine": 117,
+          "endLine": 162,
+          "params": [
+            "opts"
+          ]
+        },
+        {
+          "name": "commentOnIssue",
+          "startLine": 164,
+          "endLine": 210,
+          "params": [
+            "opts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "parseIssueUrl",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "fetchIssue",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "buildPromptFromIssue",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "createPR",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "commentOnIssue",
+          "line": 164,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseIssueUrl",
+          "callee": "url.match",
+          "lineNumber": 14
+        },
+        {
+          "caller": "parseIssueUrl",
+          "callee": "parseInt",
+          "lineNumber": 20
+        },
+        {
+          "caller": "fetchIssue",
+          "callee": "parseIssueUrl",
+          "lineNumber": 27
+        },
+        {
+          "caller": "fetchIssue",
+          "callee": "Deno.env.get",
+          "lineNumber": 42
+        },
+        {
+          "caller": "fetchIssue",
+          "callee": "issueCmd.output",
+          "lineNumber": 45
+        },
+        {
+          "caller": "fetchIssue",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 47
+        },
+        {
+          "caller": "fetchIssue",
+          "callee": "JSON.parse",
+          "lineNumber": 51
+        },
+        {
+          "caller": "fetchIssue",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 51
+        },
+        {
+          "caller": "fetchIssue",
+          "callee": "(data.labels ?? []).map",
+          "lineNumber": 59
+        },
+        {
+          "caller": "fetchIssue",
+          "callee": "(data.comments ?? []).map",
+          "lineNumber": 60
+        },
+        {
+          "caller": "buildPromptFromIssue",
+          "callee": "issue.comments\n      .map((c) => `### Comment by @${c.author}:\\n${c.body}`)\n      .join",
+          "lineNumber": 71
+        },
+        {
+          "caller": "buildPromptFromIssue",
+          "callee": "issue.comments\n      .map",
+          "lineNumber": 71
+        },
+        {
+          "caller": "buildPromptFromIssue",
+          "callee": "issue.labels.join",
+          "lineNumber": 82
+        },
+        {
+          "caller": "createPR",
+          "callee": "Deno.env.get",
+          "lineNumber": 146
+        },
+        {
+          "caller": "createPR",
+          "callee": "cmd.output",
+          "lineNumber": 149
+        },
+        {
+          "caller": "createPR",
+          "callee": "new TextDecoder().decode(output.stdout).trim",
+          "lineNumber": 150
+        },
+        {
+          "caller": "createPR",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 150
+        },
+        {
+          "caller": "createPR",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 153
+        },
+        {
+          "caller": "createPR",
+          "callee": "console.error",
+          "lineNumber": 154
+        },
+        {
+          "caller": "createPR",
+          "callee": "stdout.match",
+          "lineNumber": 158
+        },
+        {
+          "caller": "commentOnIssue",
+          "callee": "Deno.env.get",
+          "lineNumber": 202
+        },
+        {
+          "caller": "commentOnIssue",
+          "callee": "cmd.output",
+          "lineNumber": 205
+        },
+        {
+          "caller": "commentOnIssue",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 207
+        },
+        {
+          "caller": "commentOnIssue",
+          "callee": "console.error",
+          "lineNumber": 208
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/ai/handlers.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 231,
+      "nonEmptyLines": 198,
+      "functions": [
+        {
+          "name": "createAIHandlers",
+          "startLine": 19,
+          "endLine": 231,
+          "params": [
+            "opts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createAIHandlers",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createAIHandlers",
+          "callee": "app.post",
+          "lineNumber": 24
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.req.json",
+          "lineNumber": 31
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.json",
+          "lineNumber": 33
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.json",
+          "lineNumber": 39
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.json",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.json",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.json",
+          "lineNumber": 57
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "tasks.set",
+          "lineNumber": 72
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "task.start",
+          "lineNumber": 75
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "tasks.delete",
+          "lineNumber": 77
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "console.error",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.json",
+          "lineNumber": 79
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "console.log",
+          "lineNumber": 82
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.json",
+          "lineNumber": 86
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "app.get",
+          "lineNumber": 93
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "Array.from(tasks.values()).map",
+          "lineNumber": 94
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "Array.from",
+          "lineNumber": 94
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "tasks.values",
+          "lineNumber": 94
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "t.info",
+          "lineNumber": 94
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.json",
+          "lineNumber": 95
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "app.get",
+          "lineNumber": 99
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "tasks.get",
+          "lineNumber": 100
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.req.param",
+          "lineNumber": 100
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.json",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.json",
+          "lineNumber": 104
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "task.info",
+          "lineNumber": 104
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "app.get",
+          "lineNumber": 108
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "tasks.get",
+          "lineNumber": 109
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.req.param",
+          "lineNumber": 109
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.json",
+          "lineNumber": 111
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.json",
+          "lineNumber": 116
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "Deno.upgradeWebSocket",
+          "lineNumber": 119
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "socket.send",
+          "lineNumber": 127
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "socket.send",
+          "lineNumber": 132
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "JSON.stringify",
+          "lineNumber": 132
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "socket.close",
+          "lineNumber": 133
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "session.onData",
+          "lineNumber": 138
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "socket.send",
+          "lineNumber": 140
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "session.onExit",
+          "lineNumber": 145
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "socket.send",
+          "lineNumber": 147
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "JSON.stringify",
+          "lineNumber": 147
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "socket.close",
+          "lineNumber": 148
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "JSON.parse",
+          "lineNumber": 155
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "session.write",
+          "lineNumber": 157
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "session.resize",
+          "lineNumber": 162
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "unsubData",
+          "lineNumber": 171
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "unsubExit",
+          "lineNumber": 172
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "app.delete",
+          "lineNumber": 179
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.req.param",
+          "lineNumber": 180
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "tasks.get",
+          "lineNumber": 181
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.json",
+          "lineNumber": 183
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "task.dispose",
+          "lineNumber": 186
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "tasks.delete",
+          "lineNumber": 187
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "console.log",
+          "lineNumber": 189
+        },
+        {
+          "caller": "createAIHandlers",
+          "callee": "c.json",
+          "lineNumber": 190
+        },
+        {
+          "caller": "dispose",
+          "callee": "tasks.values",
+          "lineNumber": 195
+        },
+        {
+          "caller": "dispose",
+          "callee": "task.dispose",
+          "lineNumber": 196
+        },
+        {
+          "caller": "dispose",
+          "callee": "tasks.clear",
+          "lineNumber": 198
+        },
+        {
+          "caller": "getTask",
+          "callee": "tasks.get",
+          "lineNumber": 201
+        },
+        {
+          "caller": "createTask",
+          "callee": "tasks.set",
+          "lineNumber": 220
+        },
+        {
+          "caller": "createTask",
+          "callee": "task.start",
+          "lineNumber": 222
+        },
+        {
+          "caller": "createTask",
+          "callee": "tasks.delete",
+          "lineNumber": 224
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/ai/repoUrl.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 12,
+      "functions": [
+        {
+          "name": "parseRepoUrl",
+          "startLine": 2,
+          "endLine": 12,
+          "params": [
+            "url"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "parseRepoUrl",
+          "line": 2,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseRepoUrl",
+          "callee": "url.match",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/ai/task.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 739,
+      "nonEmptyLines": 674,
+      "functions": [
+        {
+          "name": "writeAgentTokenFiles",
+          "startLine": 25,
+          "endLine": 41,
+          "params": [
+            "agentHome",
+            "token"
+          ]
+        },
+        {
+          "name": "getRepoInfo",
+          "startLine": 86,
+          "endLine": 129,
+          "params": [
+            "cwd"
+          ]
+        },
+        {
+          "name": "gitEnv",
+          "startLine": 132,
+          "endLine": 147,
+          "params": [
+            "githubToken"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AITask",
+          "startLine": 149,
+          "endLine": 739,
+          "methods": [
+            "status",
+            "session",
+            "constructor",
+            "start",
+            "info",
+            "dispose"
+          ],
+          "properties": [
+            "taskId",
+            "createdAt",
+            "issue",
+            "prompt",
+            "type"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AITask",
+          "line": 149,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "writeAgentTokenFiles",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 32
+        },
+        {
+          "caller": "writeAgentTokenFiles",
+          "callee": "Deno.chmod",
+          "lineNumber": 33
+        },
+        {
+          "caller": "writeAgentTokenFiles",
+          "callee": "Deno.mkdirSync",
+          "lineNumber": 37
+        },
+        {
+          "caller": "writeAgentTokenFiles",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 40
+        },
+        {
+          "caller": "getRepoInfo",
+          "callee": "cmd.output",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getRepoInfo",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getRepoInfo",
+          "callee": "new TextDecoder().decode(output.stdout).trim",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getRepoInfo",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 100
+        },
+        {
+          "caller": "getRepoInfo",
+          "callee": "parseRepoUrl",
+          "lineNumber": 101
+        },
+        {
+          "caller": "getRepoInfo",
+          "callee": "refCmd.output",
+          "lineNumber": 111
+        },
+        {
+          "caller": "getRepoInfo",
+          "callee": "new TextDecoder().decode(refOutput.stdout).trim",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getRepoInfo",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getRepoInfo",
+          "callee": "ref.replace",
+          "lineNumber": 114
+        },
+        {
+          "caller": "getRepoInfo",
+          "callee": "console.warn",
+          "lineNumber": 122
+        },
+        {
+          "caller": "gitEnv",
+          "callee": "Deno.env.get",
+          "lineNumber": 133
+        },
+        {
+          "caller": "gitEnv",
+          "callee": "Deno.env.get",
+          "lineNumber": 136
+        },
+        {
+          "caller": "constructor",
+          "callee": "crypto.randomUUID().slice",
+          "lineNumber": 181
+        },
+        {
+          "caller": "constructor",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 181
+        },
+        {
+          "caller": "constructor",
+          "callee": "Date.now",
+          "lineNumber": 182
+        },
+        {
+          "caller": "start",
+          "callee": "headCmd.output",
+          "lineNumber": 199
+        },
+        {
+          "caller": "start",
+          "callee": "new TextDecoder().decode(headOutput.stdout).trim",
+          "lineNumber": 205
+        },
+        {
+          "caller": "start",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 205
+        },
+        {
+          "caller": "start",
+          "callee": "getRepoInfo",
+          "lineNumber": 213
+        },
+        {
+          "caller": "start",
+          "callee": "setupGitHubAppNetrc",
+          "lineNumber": 215
+        },
+        {
+          "caller": "start",
+          "callee": "mintScopedToken",
+          "lineNumber": 222
+        },
+        {
+          "caller": "start",
+          "callee": "resolveDefaultBranch",
+          "lineNumber": 231
+        },
+        {
+          "caller": "start",
+          "callee": "console.warn",
+          "lineNumber": 238
+        },
+        {
+          "caller": "start",
+          "callee": "setBranchProtection",
+          "lineNumber": 246
+        },
+        {
+          "caller": "start",
+          "callee": "console.warn",
+          "lineNumber": 253
+        },
+        {
+          "caller": "start",
+          "callee": "console.warn",
+          "lineNumber": 258
+        },
+        {
+          "caller": "start",
+          "callee": "mintScopedToken",
+          "lineNumber": 262
+        },
+        {
+          "caller": "start",
+          "callee": "console.error",
+          "lineNumber": 268
+        },
+        {
+          "caller": "start",
+          "callee": "setupGithubTokenNetrc",
+          "lineNumber": 273
+        },
+        {
+          "caller": "start",
+          "callee": "getGitHubToken",
+          "lineNumber": 274
+        },
+        {
+          "caller": "start",
+          "callee": "console.error",
+          "lineNumber": 276
+        },
+        {
+          "caller": "start",
+          "callee": "fetchIssue",
+          "lineNumber": 287
+        },
+        {
+          "caller": "start",
+          "callee": "buildPromptFromIssue",
+          "lineNumber": 291
+        },
+        {
+          "caller": "start",
+          "callee": "Deno.env.get",
+          "lineNumber": 299
+        },
+        {
+          "caller": "start",
+          "callee": "Deno.mkdirSync",
+          "lineNumber": 301
+        },
+        {
+          "caller": "start",
+          "callee": "Deno.stat",
+          "lineNumber": 306
+        },
+        {
+          "caller": "start",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 308
+        },
+        {
+          "caller": "start",
+          "callee": "JSON.stringify",
+          "lineNumber": 310
+        },
+        {
+          "caller": "start",
+          "callee": "new Date().toISOString",
+          "lineNumber": 313
+        },
+        {
+          "caller": "start",
+          "callee": "[\n        Deno.env.get(\"PATH\") ?? \"\",\n        `${realHome}/.local/bin`,\n        `${realHome}/.deno/bin`,\n        \"/usr/local/bin\",\n      ].join",
+          "lineNumber": 321
+        },
+        {
+          "caller": "start",
+          "callee": "Deno.env.get",
+          "lineNumber": 322
+        },
+        {
+          "caller": "start",
+          "callee": "writeAgentTokenFiles",
+          "lineNumber": 344
+        },
+        {
+          "caller": "start",
+          "callee": "setInterval",
+          "lineNumber": 347
+        },
+        {
+          "caller": "start",
+          "callee": "setupGitHubAppNetrc",
+          "lineNumber": 352
+        },
+        {
+          "caller": "start",
+          "callee": "mintScopedToken",
+          "lineNumber": 357
+        },
+        {
+          "caller": "start",
+          "callee": "setupGithubTokenNetrc",
+          "lineNumber": 363
+        },
+        {
+          "caller": "start",
+          "callee": "getGitHubToken",
+          "lineNumber": 364
+        },
+        {
+          "caller": "start",
+          "callee": "writeAgentTokenFiles",
+          "lineNumber": 368
+        },
+        {
+          "caller": "start",
+          "callee": "console.log",
+          "lineNumber": 369
+        },
+        {
+          "caller": "start",
+          "callee": "console.error",
+          "lineNumber": 372
+        },
+        {
+          "caller": "start",
+          "callee": "PtySession.create",
+          "lineNumber": 388
+        },
+        {
+          "caller": "start",
+          "callee": "this.#session.onData",
+          "lineNumber": 403
+        },
+        {
+          "caller": "start",
+          "callee": "data.replace",
+          "lineNumber": 406
+        },
+        {
+          "caller": "start",
+          "callee": "this.#stdoutBuffer.slice",
+          "lineNumber": 410
+        },
+        {
+          "caller": "start",
+          "callee": "this.#stdoutBuffer.match",
+          "lineNumber": 416
+        },
+        {
+          "caller": "start",
+          "callee": "match[0].trim().replace",
+          "lineNumber": 420
+        },
+        {
+          "caller": "start",
+          "callee": "match[0].trim",
+          "lineNumber": 420
+        },
+        {
+          "caller": "start",
+          "callee": "console.log",
+          "lineNumber": 421
+        },
+        {
+          "caller": "start",
+          "callee": "this.#session.onExit",
+          "lineNumber": 426
+        },
+        {
+          "caller": "start",
+          "callee": "this.#onComplete(code).catch",
+          "lineNumber": 427
+        },
+        {
+          "caller": "start",
+          "callee": "this.#onComplete",
+          "lineNumber": 427
+        },
+        {
+          "caller": "start",
+          "callee": "console.error",
+          "lineNumber": 428
+        },
+        {
+          "caller": "start",
+          "callee": "resetActivity",
+          "lineNumber": 435
+        },
+        {
+          "caller": "start",
+          "callee": "setInterval",
+          "lineNumber": 436
+        },
+        {
+          "caller": "start",
+          "callee": "resetActivity",
+          "lineNumber": 437
+        },
+        {
+          "caller": "start",
+          "callee": "clearInterval",
+          "lineNumber": 442
+        },
+        {
+          "caller": "dispose",
+          "callee": "clearInterval",
+          "lineNumber": 728
+        },
+        {
+          "caller": "dispose",
+          "callee": "clearInterval",
+          "lineNumber": 732
+        },
+        {
+          "caller": "dispose",
+          "callee": "this.#session.dispose",
+          "lineNumber": 736
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "daemon/ai/task_test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 56,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/async.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "createReadWriteLock",
+          "startLine": 4,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "createLocker",
+          "startLine": 42,
+          "endLine": 56,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "createReadWriteLock",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "createLocker",
+          "line": 42,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "wlock",
+          "callee": "Promise.all",
+          "lineNumber": 9
+        },
+        {
+          "caller": "wlock",
+          "callee": "write.acquire",
+          "lineNumber": 10
+        },
+        {
+          "caller": "wlock",
+          "callee": "read.acquire",
+          "lineNumber": 11
+        },
+        {
+          "caller": "wlock",
+          "callee": "w[Symbol.dispose]",
+          "lineNumber": 16
+        },
+        {
+          "caller": "wlock",
+          "callee": "r[Symbol.dispose]",
+          "lineNumber": 17
+        },
+        {
+          "caller": "rlock",
+          "callee": "write.acquire",
+          "lineNumber": 24
+        },
+        {
+          "caller": "rlock",
+          "callee": "read.acquire",
+          "lineNumber": 27
+        },
+        {
+          "caller": "rlock",
+          "callee": "w[Symbol.dispose]",
+          "lineNumber": 31
+        },
+        {
+          "caller": "rlock",
+          "callee": "r.then",
+          "lineNumber": 32
+        },
+        {
+          "caller": "rlock",
+          "callee": "r[Symbol.dispose]",
+          "lineNumber": 32
+        },
+        {
+          "caller": "createLocker",
+          "callee": "createReadWriteLock",
+          "lineNumber": 43
+        },
+        {
+          "caller": "wlock",
+          "callee": "lock.wlock",
+          "lineNumber": 46
+        },
+        {
+          "caller": "wlock",
+          "callee": "next",
+          "lineNumber": 47
+        },
+        {
+          "caller": "rlock",
+          "callee": "lock.rlock",
+          "lineNumber": 51
+        },
+        {
+          "caller": "rlock",
+          "callee": "next",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/auth.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "getVerifiedJWT",
+          "startLine": 11,
+          "endLine": 34,
+          "params": [
+            "req"
+          ]
+        },
+        {
+          "name": "createAuth",
+          "startLine": 40,
+          "endLine": 53,
+          "params": [
+            "{ site }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createAuth",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getVerifiedJWT",
+          "callee": "getTrustedVerifierOf",
+          "lineNumber": 12
+        },
+        {
+          "caller": "getVerifiedJWT",
+          "callee": "url.searchParams.get",
+          "lineNumber": 18
+        },
+        {
+          "caller": "getVerifiedJWT",
+          "callee": "req.headers.get",
+          "lineNumber": 19
+        },
+        {
+          "caller": "getVerifiedJWT",
+          "callee": "credentials.split",
+          "lineNumber": 24
+        },
+        {
+          "caller": "getVerifiedJWT",
+          "callee": "verifier.verify(parts[1]).then((token) => {\n    return token;\n  }).catch",
+          "lineNumber": 29
+        },
+        {
+          "caller": "getVerifiedJWT",
+          "callee": "verifier.verify(parts[1]).then",
+          "lineNumber": 29
+        },
+        {
+          "caller": "getVerifiedJWT",
+          "callee": "verifier.verify",
+          "lineNumber": 29
+        },
+        {
+          "caller": "createAuth",
+          "callee": "getVerifiedJWT",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createAuth",
+          "callee": "tokenIsValid",
+          "lineNumber": 47
+        },
+        {
+          "caller": "createAuth",
+          "callee": "next",
+          "lineNumber": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/cache.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 98,
+      "functions": [
+        {
+          "name": "downloadCache",
+          "startLine": 8,
+          "endLine": 50,
+          "params": [
+            "site"
+          ]
+        },
+        {
+          "name": "downloadAndExtract",
+          "startLine": 52,
+          "endLine": 116,
+          "params": [
+            "client",
+            "site",
+            "cacheFile",
+            "denoDir"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "downloadCache",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "downloadCache",
+          "callee": "Deno.env.get",
+          "lineNumber": 9
+        },
+        {
+          "caller": "downloadCache",
+          "callee": "Deno.env.get",
+          "lineNumber": 10
+        },
+        {
+          "caller": "downloadCache",
+          "callee": "console.warn",
+          "lineNumber": 13
+        },
+        {
+          "caller": "downloadCache",
+          "callee": "Deno.env.get",
+          "lineNumber": 17
+        },
+        {
+          "caller": "downloadCache",
+          "callee": "console.warn",
+          "lineNumber": 19
+        },
+        {
+          "caller": "downloadCache",
+          "callee": "downloadAndExtract",
+          "lineNumber": 34
+        },
+        {
+          "caller": "downloadCache",
+          "callee": "console.log",
+          "lineNumber": 37
+        },
+        {
+          "caller": "downloadCache",
+          "callee": "downloadAndExtract",
+          "lineNumber": 43
+        },
+        {
+          "caller": "downloadCache",
+          "callee": "Deno.env.delete",
+          "lineNumber": 47
+        },
+        {
+          "caller": "downloadCache",
+          "callee": "Deno.env.delete",
+          "lineNumber": 48
+        },
+        {
+          "caller": "downloadAndExtract",
+          "callee": "client.send",
+          "lineNumber": 61
+        },
+        {
+          "caller": "downloadAndExtract",
+          "callee": "Deno.open",
+          "lineNumber": 70
+        },
+        {
+          "caller": "downloadAndExtract",
+          "callee": "stream.on",
+          "lineNumber": 77
+        },
+        {
+          "caller": "downloadAndExtract",
+          "callee": "file.write",
+          "lineNumber": 79
+        },
+        {
+          "caller": "downloadAndExtract",
+          "callee": "file.close",
+          "lineNumber": 81
+        },
+        {
+          "caller": "downloadAndExtract",
+          "callee": "reject",
+          "lineNumber": 82
+        },
+        {
+          "caller": "downloadAndExtract",
+          "callee": "stream.on",
+          "lineNumber": 86
+        },
+        {
+          "caller": "downloadAndExtract",
+          "callee": "file.close",
+          "lineNumber": 87
+        },
+        {
+          "caller": "downloadAndExtract",
+          "callee": "reject",
+          "lineNumber": 88
+        },
+        {
+          "caller": "downloadAndExtract",
+          "callee": "stream.on",
+          "lineNumber": 91
+        },
+        {
+          "caller": "downloadAndExtract",
+          "callee": "file.close",
+          "lineNumber": 92
+        },
+        {
+          "caller": "downloadAndExtract",
+          "callee": "resolve",
+          "lineNumber": 93
+        },
+        {
+          "caller": "downloadAndExtract",
+          "callee": "cacheFile.endsWith",
+          "lineNumber": 97
+        },
+        {
+          "caller": "downloadAndExtract",
+          "callee": "extractCmd.output",
+          "lineNumber": 109
+        },
+        {
+          "caller": "downloadAndExtract",
+          "callee": "Deno.remove(localTar).catch",
+          "lineNumber": 115
+        },
+        {
+          "caller": "downloadAndExtract",
+          "callee": "Deno.remove",
+          "lineNumber": 115
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/cmd.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "runCmd",
+          "startLine": 10,
+          "endLine": 31,
+          "params": [
+            "...cmd"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "runCmd",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runCmd",
+          "callee": "Deno.execPath",
+          "lineNumber": 14
+        },
+        {
+          "caller": "runCmd",
+          "callee": "denoCmd.spawn",
+          "lineNumber": 21
+        },
+        {
+          "caller": "runCmd",
+          "callee": "logs.register",
+          "lineNumber": 22
+        },
+        {
+          "caller": "runCmd",
+          "callee": "iteratorFrom",
+          "lineNumber": 22
+        },
+        {
+          "caller": "runCmd",
+          "callee": "logs.register",
+          "lineNumber": 23
+        },
+        {
+          "caller": "runCmd",
+          "callee": "iteratorFrom",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/daemon.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 92,
+      "functions": [
+        {
+          "name": "getSiteName",
+          "startLine": 22,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "setSiteName",
+          "startLine": 26,
+          "endLine": 28,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "resetSiteName",
+          "startLine": 30,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "createDaemonAPIs",
+          "startLine": 45,
+          "endLine": 109,
+          "params": [
+            "options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SANDBOX_MODE",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "getSiteName",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "setSiteName",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "resetSiteName",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "DECO_ENV_NAME",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "DECO_HOST",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "createDaemonAPIs",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "app.all",
+          "lineNumber": 51
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "c.req.param",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "Deno.env.get",
+          "lineNumber": 53
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "app.use",
+          "lineNumber": 60
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "createAuth",
+          "lineNumber": 60
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "app.post",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "runCmd",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "app.route",
+          "lineNumber": 62
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "createGitAPIS",
+          "lineNumber": 62
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "app.all",
+          "lineNumber": 64
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "logs.read",
+          "lineNumber": 65
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "new ReadableStream<ServerSentEventMessage>({\n        async pull(controller) {\n          for await (const content of l) {\n            controller.enqueue({\n              data: encodeURIComponent(JSON.stringify(content)),\n              id: Date.now(),\n              event: \"message\",\n            });\n          }\n          controller.close();\n        },\n        cancel() {\n        },\n      }).pipeThrough",
+          "lineNumber": 72
+        },
+        {
+          "caller": "pull",
+          "callee": "controller.enqueue",
+          "lineNumber": 75
+        },
+        {
+          "caller": "pull",
+          "callee": "encodeURIComponent",
+          "lineNumber": 76
+        },
+        {
+          "caller": "pull",
+          "callee": "JSON.stringify",
+          "lineNumber": 76
+        },
+        {
+          "caller": "pull",
+          "callee": "Date.now",
+          "lineNumber": 77
+        },
+        {
+          "caller": "pull",
+          "callee": "controller.close",
+          "lineNumber": 81
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "app.route",
+          "lineNumber": 94
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "createRealtimeAPIs",
+          "lineNumber": 94
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "app.route",
+          "lineNumber": 95
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "createFSAPIs",
+          "lineNumber": 95
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "app.route",
+          "lineNumber": 96
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "createSSE",
+          "lineNumber": 96
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "c.req.header",
+          "lineNumber": 99
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "c.req.header",
+          "lineNumber": 100
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "c.req.query",
+          "lineNumber": 101
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "next",
+          "lineNumber": 104
+        },
+        {
+          "caller": "createDaemonAPIs",
+          "callee": "app.fetch",
+          "lineNumber": 107
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 7,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/fs/api.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 333,
+      "nonEmptyLines": 280,
+      "functions": [
+        {
+          "name": "inferMetadata",
+          "startLine": 19,
+          "endLine": 57,
+          "params": [
+            "filepath"
+          ]
+        },
+        {
+          "name": "mtimeFor",
+          "startLine": 59,
+          "endLine": 70,
+          "params": [
+            "filepath"
+          ]
+        },
+        {
+          "name": "onNotFound",
+          "startLine": 72,
+          "endLine": 77,
+          "params": [
+            "fallback"
+          ]
+        },
+        {
+          "name": "shouldIgnore",
+          "startLine": 111,
+          "endLine": 116,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "systemPathFromBrowser",
+          "startLine": 118,
+          "endLine": 124,
+          "params": [
+            "pathAndQuery"
+          ]
+        },
+        {
+          "name": "browserPathFromSystem",
+          "startLine": 126,
+          "endLine": 127,
+          "params": [
+            "filepath"
+          ]
+        },
+        {
+          "name": "watchFS",
+          "startLine": 165,
+          "endLine": 201,
+          "params": [
+            "signal"
+          ]
+        },
+        {
+          "name": "createFSAPIs",
+          "startLine": 203,
+          "endLine": 333,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "watchFS",
+          "line": 165,
+          "isDefault": false
+        },
+        {
+          "name": "createFSAPIs",
+          "line": 203,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "inferMetadata",
+          "callee": "filepath.endsWith",
+          "lineNumber": 21
+        },
+        {
+          "caller": "inferMetadata",
+          "callee": "JSON.parse",
+          "lineNumber": 24
+        },
+        {
+          "caller": "inferMetadata",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 25
+        },
+        {
+          "caller": "inferMetadata",
+          "callee": "inferBlockType",
+          "lineNumber": 30
+        },
+        {
+          "caller": "mtimeFor",
+          "callee": "Deno.stat",
+          "lineNumber": 61
+        },
+        {
+          "caller": "mtimeFor",
+          "callee": "stats.mtime?.getTime",
+          "lineNumber": 63
+        },
+        {
+          "caller": "mtimeFor",
+          "callee": "Date.now",
+          "lineNumber": 63
+        },
+        {
+          "caller": "mtimeFor",
+          "callee": "Date.now",
+          "lineNumber": 66
+        },
+        {
+          "caller": "shouldIgnore",
+          "callee": "basename",
+          "lineNumber": 112
+        },
+        {
+          "caller": "shouldIgnore",
+          "callee": "path.includes",
+          "lineNumber": 113
+        },
+        {
+          "caller": "shouldIgnore",
+          "callee": "path.includes",
+          "lineNumber": 114
+        },
+        {
+          "caller": "shouldIgnore",
+          "callee": "path.includes",
+          "lineNumber": 115
+        },
+        {
+          "caller": "shouldIgnore",
+          "callee": "path.includes",
+          "lineNumber": 116
+        },
+        {
+          "caller": "systemPathFromBrowser",
+          "callee": "pathAndQuery.split",
+          "lineNumber": 119
+        },
+        {
+          "caller": "systemPathFromBrowser",
+          "callee": "url.split",
+          "lineNumber": 120
+        },
+        {
+          "caller": "systemPathFromBrowser",
+          "callee": "segments.join",
+          "lineNumber": 121
+        },
+        {
+          "caller": "systemPathFromBrowser",
+          "callee": "join",
+          "lineNumber": 123
+        },
+        {
+          "caller": "systemPathFromBrowser",
+          "callee": "Deno.cwd",
+          "lineNumber": 123
+        },
+        {
+          "caller": "browserPathFromSystem",
+          "callee": "filepath.replace(Deno.cwd(), \"\").replaceAll",
+          "lineNumber": 127
+        },
+        {
+          "caller": "browserPathFromSystem",
+          "callee": "filepath.replace",
+          "lineNumber": 127
+        },
+        {
+          "caller": "browserPathFromSystem",
+          "callee": "Deno.cwd",
+          "lineNumber": 127
+        },
+        {
+          "caller": "watchFS",
+          "callee": "Deno.watchFs",
+          "lineNumber": 167
+        },
+        {
+          "caller": "watchFS",
+          "callee": "Deno.cwd",
+          "lineNumber": 167
+        },
+        {
+          "caller": "watchFS",
+          "callee": "signal?.addEventListener",
+          "lineNumber": 168
+        },
+        {
+          "caller": "watchFS",
+          "callee": "watcher.close",
+          "lineNumber": 168
+        },
+        {
+          "caller": "watchFS",
+          "callee": "shouldIgnore",
+          "lineNumber": 178
+        },
+        {
+          "caller": "watchFS",
+          "callee": "console.log",
+          "lineNumber": 182
+        },
+        {
+          "caller": "watchFS",
+          "callee": "Promise.all",
+          "lineNumber": 185
+        },
+        {
+          "caller": "watchFS",
+          "callee": "git.status",
+          "lineNumber": 186
+        },
+        {
+          "caller": "watchFS",
+          "callee": "inferMetadata",
+          "lineNumber": 187
+        },
+        {
+          "caller": "watchFS",
+          "callee": "mtimeFor",
+          "lineNumber": 188
+        },
+        {
+          "caller": "watchFS",
+          "callee": "broadcast",
+          "lineNumber": 191
+        },
+        {
+          "caller": "watchFS",
+          "callee": "browserPathFromSystem",
+          "lineNumber": 197
+        },
+        {
+          "caller": "getRwLock",
+          "callee": "lockByPath.has",
+          "lineNumber": 208
+        },
+        {
+          "caller": "getRwLock",
+          "callee": "lockByPath.set",
+          "lineNumber": 209
+        },
+        {
+          "caller": "getRwLock",
+          "callee": "createReadWriteLock",
+          "lineNumber": 209
+        },
+        {
+          "caller": "getRwLock",
+          "callee": "lockByPath.get",
+          "lineNumber": 212
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "app.use",
+          "lineNumber": 215
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "app.get",
+          "lineNumber": 217
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "systemPathFromBrowser",
+          "lineNumber": 218
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "getRwLock(filepath)?.rlock",
+          "lineNumber": 219
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "getRwLock",
+          "lineNumber": 219
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "Promise.all",
+          "lineNumber": 226
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "inferMetadata",
+          "lineNumber": 227
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 228
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "Deno.stat",
+          "lineNumber": 229
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "stats.mtime?.getTime",
+          "lineNumber": 232
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "Date.now",
+          "lineNumber": 232
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "c.json",
+          "lineNumber": 234
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "c.status",
+          "lineNumber": 237
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "c.json",
+          "lineNumber": 238
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "Date.now",
+          "lineNumber": 238
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "app.patch",
+          "lineNumber": 244
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "systemPathFromBrowser",
+          "lineNumber": 245
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "await c.req.json",
+          "lineNumber": 249
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "getRwLock(filepath)?.wlock",
+          "lineNumber": 250
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "getRwLock",
+          "lineNumber": 250
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "Promise.all",
+          "lineNumber": 252
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "mtimeFor",
+          "lineNumber": 253
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "Deno.readTextFile(filepath).catch",
+          "lineNumber": 254
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 254
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "onNotFound",
+          "lineNumber": 254
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "applyPatch",
+          "lineNumber": 257
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "ensureFile",
+          "lineNumber": 260
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 261
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "Promise.all",
+          "lineNumber": 264
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "git.status",
+          "lineNumber": 265
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "inferMetadata",
+          "lineNumber": 266
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "mtimeFor",
+          "lineNumber": 267
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "c.json",
+          "lineNumber": 280
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "app.delete",
+          "lineNumber": 283
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "systemPathFromBrowser",
+          "lineNumber": 284
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "getRwLock(filepath)?.wlock",
+          "lineNumber": 285
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "getRwLock",
+          "lineNumber": 285
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "Deno.remove",
+          "lineNumber": 287
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "git.status",
+          "lineNumber": 291
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "Date.now",
+          "lineNumber": 293
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "c.json",
+          "lineNumber": 297
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "app.get",
+          "lineNumber": 300
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "c.req.query",
+          "lineNumber": 301
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "c.req.query",
+          "lineNumber": 303
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "c.req.query",
+          "lineNumber": 304
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "c.req.query",
+          "lineNumber": 305
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "c.req.query",
+          "lineNumber": 306
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "parseInt",
+          "lineNumber": 307
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "c.req.query",
+          "lineNumber": 307
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "c.req.query",
+          "lineNumber": 308
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "c.status",
+          "lineNumber": 311
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "c.json",
+          "lineNumber": 312
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "grep",
+          "lineNumber": 325
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "c.json",
+          "lineNumber": 326
+        },
+        {
+          "caller": "createFSAPIs",
+          "callee": "c.json",
+          "lineNumber": 328
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 2,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/fs/common.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 146,
+      "nonEmptyLines": 125,
+      "functions": [
+        {
+          "name": "applyJSONPatch",
+          "startLine": 67,
+          "endLine": 85,
+          "params": [
+            "content",
+            "patch"
+          ]
+        },
+        {
+          "name": "applyPatch",
+          "startLine": 87,
+          "endLine": 121,
+          "params": [
+            "content",
+            "patch"
+          ]
+        },
+        {
+          "name": "generatePatch",
+          "startLine": 123,
+          "endLine": 146,
+          "params": [
+            "from",
+            "to"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "applyPatch",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "generatePatch",
+          "line": 123,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "applyJSONPatch",
+          "callee": "patch.reduce",
+          "lineNumber": 71
+        },
+        {
+          "caller": "applyJSONPatch",
+          "callee": "console.error",
+          "lineNumber": 82
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "applyJSONPatch",
+          "lineNumber": 92
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "JSON.parse",
+          "lineNumber": 92
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "JSON.stringify",
+          "lineNumber": 102
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "applyJSONPatch",
+          "lineNumber": 106
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "content?.split",
+          "lineNumber": 106
+        },
+        {
+          "caller": "applyPatch",
+          "callee": "result.content.join",
+          "lineNumber": 116
+        },
+        {
+          "caller": "generatePatch",
+          "callee": "fjp.compare",
+          "lineNumber": 130
+        },
+        {
+          "caller": "generatePatch",
+          "callee": "JSON.parse",
+          "lineNumber": 131
+        },
+        {
+          "caller": "generatePatch",
+          "callee": "JSON.parse",
+          "lineNumber": 132
+        },
+        {
+          "caller": "generatePatch",
+          "callee": "fjp.compare",
+          "lineNumber": 139
+        },
+        {
+          "caller": "generatePatch",
+          "callee": "from?.split",
+          "lineNumber": 140
+        },
+        {
+          "caller": "generatePatch",
+          "callee": "to?.split",
+          "lineNumber": 141
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/fs/grep.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 411,
+      "nonEmptyLines": 353,
+      "functions": [
+        {
+          "name": "shouldIgnore",
+          "startLine": 31,
+          "endLine": 33,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "browserPathFromSystem",
+          "startLine": 35,
+          "endLine": 36,
+          "params": [
+            "filepath"
+          ]
+        },
+        {
+          "name": "checkSystemGrep",
+          "startLine": 41,
+          "endLine": 59,
+          "params": []
+        },
+        {
+          "name": "systemGrep",
+          "startLine": 61,
+          "endLine": 209,
+          "params": [
+            "query",
+            "options"
+          ]
+        },
+        {
+          "name": "grepInFile",
+          "startLine": 211,
+          "endLine": 253,
+          "params": [
+            "filepath",
+            "pattern"
+          ]
+        },
+        {
+          "name": "fallbackGrep",
+          "startLine": 255,
+          "endLine": 380,
+          "params": [
+            "query",
+            "options"
+          ]
+        },
+        {
+          "name": "grep",
+          "startLine": 382,
+          "endLine": 411,
+          "params": [
+            "query",
+            "options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "grep",
+          "line": 382,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "shouldIgnore",
+          "callee": "path.includes",
+          "lineNumber": 32
+        },
+        {
+          "caller": "shouldIgnore",
+          "callee": "path.includes",
+          "lineNumber": 33
+        },
+        {
+          "caller": "browserPathFromSystem",
+          "callee": "filepath.replace(Deno.cwd(), \"\").replaceAll",
+          "lineNumber": 36
+        },
+        {
+          "caller": "browserPathFromSystem",
+          "callee": "filepath.replace",
+          "lineNumber": 36
+        },
+        {
+          "caller": "browserPathFromSystem",
+          "callee": "Deno.cwd",
+          "lineNumber": 36
+        },
+        {
+          "caller": "checkSystemGrep",
+          "callee": "cmd.output",
+          "lineNumber": 52
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "args.push",
+          "lineNumber": 73
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "args.push",
+          "lineNumber": 77
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "options.filepath.startsWith",
+          "lineNumber": 87
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "join",
+          "lineNumber": 89
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "Deno.cwd",
+          "lineNumber": 89
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "Deno.stat",
+          "lineNumber": 90
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "args.push",
+          "lineNumber": 99
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "args.push",
+          "lineNumber": 103
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "args.push",
+          "lineNumber": 107
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "args.push",
+          "lineNumber": 114
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "Deno.cwd",
+          "lineNumber": 118
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "cmd.output",
+          "lineNumber": 123
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 129
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "output.trim().split(\"\\n\").filter",
+          "lineNumber": 130
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "output.trim().split",
+          "lineNumber": 130
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "output.trim",
+          "lineNumber": 130
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "line.indexOf",
+          "lineNumber": 138
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "line.indexOf",
+          "lineNumber": 139
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "line.substring",
+          "lineNumber": 143
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "parseInt",
+          "lineNumber": 144
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "line.substring",
+          "lineNumber": 145
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "line.substring",
+          "lineNumber": 147
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "browserPathFromSystem",
+          "lineNumber": 149
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "results.has",
+          "lineNumber": 151
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "results.set",
+          "lineNumber": 155
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "results.get",
+          "lineNumber": 162
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "pattern.exec",
+          "lineNumber": 171
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "query.toLowerCase",
+          "lineNumber": 178
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "content.toLowerCase",
+          "lineNumber": 181
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "searchLine.indexOf",
+          "lineNumber": 183
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "fileResult.matches.push",
+          "lineNumber": 190
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "Array.from",
+          "lineNumber": 200
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "results.values",
+          "lineNumber": 200
+        },
+        {
+          "caller": "systemGrep",
+          "callee": "console.error",
+          "lineNumber": 205
+        },
+        {
+          "caller": "grepInFile",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 216
+        },
+        {
+          "caller": "grepInFile",
+          "callee": "content.split",
+          "lineNumber": 217
+        },
+        {
+          "caller": "grepInFile",
+          "callee": "pattern.exec",
+          "lineNumber": 227
+        },
+        {
+          "caller": "grepInFile",
+          "callee": "matches.push",
+          "lineNumber": 228
+        },
+        {
+          "caller": "grepInFile",
+          "callee": "browserPathFromSystem",
+          "lineNumber": 242
+        },
+        {
+          "caller": "grepInFile",
+          "callee": "console.error",
+          "lineNumber": 249
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "query.replace",
+          "lineNumber": 266
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "options.filepath.startsWith",
+          "lineNumber": 275
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "join",
+          "lineNumber": 277
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "Deno.cwd",
+          "lineNumber": 277
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "Deno.cwd",
+          "lineNumber": 278
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "Deno.stat",
+          "lineNumber": 282
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "grepInFile",
+          "lineNumber": 285
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "results.push",
+          "lineNumber": 287
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "console.error",
+          "lineNumber": 295
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "walk",
+          "lineNumber": 299
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "shouldIgnore",
+          "lineNumber": 311
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "entry.path.split(\".\").pop()?.toLowerCase",
+          "lineNumber": 316
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "entry.path.split(\".\").pop",
+          "lineNumber": 316
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "entry.path.split",
+          "lineNumber": 316
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "textExtensions.includes",
+          "lineNumber": 364
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "entry.name.startsWith",
+          "lineNumber": 364
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "grepInFile",
+          "lineNumber": 368
+        },
+        {
+          "caller": "fallbackGrep",
+          "callee": "results.push",
+          "lineNumber": 370
+        },
+        {
+          "caller": "grep",
+          "callee": "checkSystemGrep",
+          "lineNumber": 387
+        },
+        {
+          "caller": "grep",
+          "callee": "console.log",
+          "lineNumber": 391
+        },
+        {
+          "caller": "grep",
+          "callee": "systemGrep",
+          "lineNumber": 394
+        },
+        {
+          "caller": "grep",
+          "callee": "console.log",
+          "lineNumber": 401
+        },
+        {
+          "caller": "grep",
+          "callee": "console.log",
+          "lineNumber": 406
+        },
+        {
+          "caller": "grep",
+          "callee": "fallbackGrep",
+          "lineNumber": 410
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/git.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 912,
+      "nonEmptyLines": 771,
+      "functions": [
+        {
+          "name": "parseGitHubOwnerRepo",
+          "startLine": 30,
+          "endLine": 49,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "isGitHubUrl",
+          "startLine": 52,
+          "endLine": 54,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "getMergeBase",
+          "startLine": 73,
+          "endLine": 89,
+          "params": []
+        },
+        {
+          "name": "isTextFile",
+          "startLine": 122,
+          "endLine": 129,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "diff",
+          "startLine": 131,
+          "endLine": 157,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "resetToMergeBase",
+          "startLine": 166,
+          "endLine": 169,
+          "params": []
+        },
+        {
+          "name": "status",
+          "startLine": 172,
+          "endLine": 186,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "persist",
+          "startLine": 201,
+          "endLine": 225,
+          "params": [
+            "oid"
+          ]
+        },
+        {
+          "name": "publish",
+          "startLine": 229,
+          "endLine": 288,
+          "params": [
+            "{ build }"
+          ]
+        },
+        {
+          "name": "discard",
+          "startLine": 299,
+          "endLine": 313,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "validateRawArgs",
+          "startLine": 390,
+          "endLine": 412,
+          "params": [
+            "args"
+          ]
+        },
+        {
+          "name": "abortRebase",
+          "startLine": 414,
+          "endLine": 419,
+          "params": []
+        },
+        {
+          "name": "resolveConflictsRecursively",
+          "startLine": 421,
+          "endLine": 460,
+          "params": [
+            "wip"
+          ]
+        },
+        {
+          "name": "rebase",
+          "startLine": 467,
+          "endLine": 482,
+          "params": []
+        },
+        {
+          "name": "log",
+          "startLine": 491,
+          "endLine": 504,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "updateNetrc",
+          "startLine": 507,
+          "endLine": 520,
+          "params": [
+            "token"
+          ]
+        },
+        {
+          "name": "getGitHubToken",
+          "startLine": 522,
+          "endLine": 559,
+          "params": []
+        },
+        {
+          "name": "getGitHubPackageTokens",
+          "startLine": 561,
+          "endLine": 598,
+          "params": []
+        },
+        {
+          "name": "setupGithubTokenNetrc",
+          "startLine": 600,
+          "endLine": 622,
+          "params": [
+            "repoOverride"
+          ]
+        },
+        {
+          "name": "assertRebased",
+          "startLine": 629,
+          "endLine": 705,
+          "params": []
+        },
+        {
+          "name": "ensureGit",
+          "startLine": 707,
+          "endLine": 843,
+          "params": [
+            "{\n  site,\n  repoUrl,\n  branch,\n}"
+          ]
+        },
+        {
+          "name": "gitRaw",
+          "startLine": 850,
+          "endLine": 861,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "checkoutBranch",
+          "startLine": 863,
+          "endLine": 873,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "checkoutExistingBranch",
+          "startLine": 875,
+          "endLine": 895,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "createGitAPIS",
+          "startLine": 897,
+          "endLine": 912,
+          "params": [
+            "options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "lockerGitAPI",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "git",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "diff",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "status",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "publish",
+          "line": 229,
+          "isDefault": false
+        },
+        {
+          "name": "discard",
+          "line": 299,
+          "isDefault": false
+        },
+        {
+          "name": "rebase",
+          "line": 467,
+          "isDefault": false
+        },
+        {
+          "name": "log",
+          "line": 491,
+          "isDefault": false
+        },
+        {
+          "name": "getGitHubToken",
+          "line": 522,
+          "isDefault": false
+        },
+        {
+          "name": "getGitHubPackageTokens",
+          "line": 561,
+          "isDefault": false
+        },
+        {
+          "name": "setupGithubTokenNetrc",
+          "line": 600,
+          "isDefault": false
+        },
+        {
+          "name": "assertRebased",
+          "line": 629,
+          "isDefault": false
+        },
+        {
+          "name": "ensureGit",
+          "line": 707,
+          "isDefault": false
+        },
+        {
+          "name": "gitRaw",
+          "line": 850,
+          "isDefault": false
+        },
+        {
+          "name": "checkoutBranch",
+          "line": 863,
+          "isDefault": false
+        },
+        {
+          "name": "checkoutExistingBranch",
+          "line": 875,
+          "isDefault": false
+        },
+        {
+          "name": "createGitAPIS",
+          "line": 897,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseGitHubOwnerRepo",
+          "callee": "parsed.pathname.replace(/\\.git$/, \"\").split(\"/\").filter",
+          "lineNumber": 37
+        },
+        {
+          "caller": "parseGitHubOwnerRepo",
+          "callee": "parsed.pathname.replace(/\\.git$/, \"\").split",
+          "lineNumber": 37
+        },
+        {
+          "caller": "parseGitHubOwnerRepo",
+          "callee": "parsed.pathname.replace",
+          "lineNumber": 37
+        },
+        {
+          "caller": "parseGitHubOwnerRepo",
+          "callee": "url.match",
+          "lineNumber": 46
+        },
+        {
+          "caller": "isGitHubUrl",
+          "callee": "parseGitHubOwnerRepo",
+          "lineNumber": 53
+        },
+        {
+          "caller": "getMergeBase",
+          "callee": "git.status",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getMergeBase",
+          "callee": "git.raw",
+          "lineNumber": 88
+        },
+        {
+          "caller": "isTextFile",
+          "callee": "extname",
+          "lineNumber": 123
+        },
+        {
+          "caller": "isTextFile",
+          "callee": "WELL_KNOWN_TEXT_FILE_TYPES.has",
+          "lineNumber": 125
+        },
+        {
+          "caller": "isTextFile",
+          "callee": "WELL_KNOWN_TEXT_FILE_TYPES.has",
+          "lineNumber": 127
+        },
+        {
+          "caller": "diff",
+          "callee": "url.searchParams.get",
+          "lineNumber": 133
+        },
+        {
+          "caller": "diff",
+          "callee": "rawPath?.startsWith",
+          "lineNumber": 134
+        },
+        {
+          "caller": "diff",
+          "callee": "rawPath.slice",
+          "lineNumber": 134
+        },
+        {
+          "caller": "diff",
+          "callee": "isTextFile",
+          "lineNumber": 140
+        },
+        {
+          "caller": "diff",
+          "callee": "JSON.stringify",
+          "lineNumber": 141
+        },
+        {
+          "caller": "diff",
+          "callee": "getMergeBase",
+          "lineNumber": 147
+        },
+        {
+          "caller": "diff",
+          "callee": "Promise.all",
+          "lineNumber": 148
+        },
+        {
+          "caller": "diff",
+          "callee": "git.show(`${base}:${path}`).catch",
+          "lineNumber": 149
+        },
+        {
+          "caller": "diff",
+          "callee": "git.show",
+          "lineNumber": 149
+        },
+        {
+          "caller": "diff",
+          "callee": "Deno.readTextFile(path).catch",
+          "lineNumber": 150
+        },
+        {
+          "caller": "diff",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 150
+        },
+        {
+          "caller": "diff",
+          "callee": "JSON.stringify",
+          "lineNumber": 153
+        },
+        {
+          "caller": "resetToMergeBase",
+          "callee": "getMergeBase",
+          "lineNumber": 167
+        },
+        {
+          "caller": "resetToMergeBase",
+          "callee": "git.reset([\".\"]).reset",
+          "lineNumber": 168
+        },
+        {
+          "caller": "resetToMergeBase",
+          "callee": "git.reset",
+          "lineNumber": 168
+        },
+        {
+          "caller": "status",
+          "callee": "url.searchParams.get",
+          "lineNumber": 174
+        },
+        {
+          "caller": "status",
+          "callee": "git.fetch([\"-p\"]).submoduleUpdate",
+          "lineNumber": 177
+        },
+        {
+          "caller": "status",
+          "callee": "git.fetch",
+          "lineNumber": 177
+        },
+        {
+          "caller": "status",
+          "callee": "resetToMergeBase",
+          "lineNumber": 180
+        },
+        {
+          "caller": "status",
+          "callee": "JSON.stringify",
+          "lineNumber": 182
+        },
+        {
+          "caller": "status",
+          "callee": "git.status",
+          "lineNumber": 182
+        },
+        {
+          "caller": "persist",
+          "callee": "performance.now",
+          "lineNumber": 206
+        },
+        {
+          "caller": "persist",
+          "callee": "join",
+          "lineNumber": 208
+        },
+        {
+          "caller": "persist",
+          "callee": "basename",
+          "lineNumber": 208
+        },
+        {
+          "caller": "persist",
+          "callee": "ensureDir",
+          "lineNumber": 209
+        },
+        {
+          "caller": "persist",
+          "callee": "dirname",
+          "lineNumber": 209
+        },
+        {
+          "caller": "persist",
+          "callee": "Deno.cwd",
+          "lineNumber": 212
+        },
+        {
+          "caller": "persist",
+          "callee": "tar.spawn",
+          "lineNumber": 216
+        },
+        {
+          "caller": "persist",
+          "callee": "console.log",
+          "lineNumber": 218
+        },
+        {
+          "caller": "persist",
+          "callee": "(performance.now() - start).toFixed",
+          "lineNumber": 219
+        },
+        {
+          "caller": "persist",
+          "callee": "performance.now",
+          "lineNumber": 219
+        },
+        {
+          "caller": "doBuild",
+          "callee": "buildMap.get",
+          "lineNumber": 233
+        },
+        {
+          "caller": "doBuild",
+          "callee": "(async () => {\n        try {\n          await build?.spawn()?.status;\n          await persist(oid);\n        } catch (e) {\n          console.error(\"Building failed with:\", e);\n        } finally {\n          buildMap.delete(oid);\n        }\n      })",
+          "lineNumber": 234
+        },
+        {
+          "caller": "doBuild",
+          "callee": "build?.spawn",
+          "lineNumber": 236
+        },
+        {
+          "caller": "doBuild",
+          "callee": "persist",
+          "lineNumber": 237
+        },
+        {
+          "caller": "doBuild",
+          "callee": "console.error",
+          "lineNumber": 239
+        },
+        {
+          "caller": "doBuild",
+          "callee": "buildMap.delete",
+          "lineNumber": 241
+        },
+        {
+          "caller": "doBuild",
+          "callee": "buildMap.set",
+          "lineNumber": 245
+        },
+        {
+          "caller": "publish",
+          "callee": "c.req.json",
+          "lineNumber": 251
+        },
+        {
+          "caller": "publish",
+          "callee": "git.remote([\"get-url\", \"origin\"]).catch",
+          "lineNumber": 258
+        },
+        {
+          "caller": "publish",
+          "callee": "git.remote",
+          "lineNumber": 258
+        },
+        {
+          "caller": "publish",
+          "callee": "isGitHubUrl",
+          "lineNumber": 261
+        },
+        {
+          "caller": "publish",
+          "callee": "parseGitHubOwnerRepo",
+          "lineNumber": 262
+        },
+        {
+          "caller": "publish",
+          "callee": "setupGithubTokenNetrc",
+          "lineNumber": 264
+        },
+        {
+          "caller": "publish",
+          "callee": "c.req.header",
+          "lineNumber": 266
+        },
+        {
+          "caller": "publish",
+          "callee": "updateNetrc",
+          "lineNumber": 268
+        },
+        {
+          "caller": "publish",
+          "callee": "git.fetch([\"-p\"]).submoduleUpdate",
+          "lineNumber": 272
+        },
+        {
+          "caller": "publish",
+          "callee": "git.fetch",
+          "lineNumber": 272
+        },
+        {
+          "caller": "publish",
+          "callee": "resetToMergeBase",
+          "lineNumber": 274
+        },
+        {
+          "caller": "publish",
+          "callee": "git.add([\".\"]).commit",
+          "lineNumber": 276
+        },
+        {
+          "caller": "publish",
+          "callee": "git.add",
+          "lineNumber": 276
+        },
+        {
+          "caller": "publish",
+          "callee": "git.push",
+          "lineNumber": 281
+        },
+        {
+          "caller": "publish",
+          "callee": "doBuild",
+          "lineNumber": 284
+        },
+        {
+          "caller": "publish",
+          "callee": "Response.json",
+          "lineNumber": 286
+        },
+        {
+          "caller": "discard",
+          "callee": "c.req.json",
+          "lineNumber": 300
+        },
+        {
+          "caller": "discard",
+          "callee": "git.fetch([\"-p\"]).submoduleUpdate",
+          "lineNumber": 302
+        },
+        {
+          "caller": "discard",
+          "callee": "git.fetch",
+          "lineNumber": 302
+        },
+        {
+          "caller": "discard",
+          "callee": "resetToMergeBase",
+          "lineNumber": 304
+        },
+        {
+          "caller": "discard",
+          "callee": "git\n    .checkout(\n      filepaths.map((path) => (path.startsWith(\"/\") ? path.slice(1) : path)),\n    )\n    .status",
+          "lineNumber": 306
+        },
+        {
+          "caller": "discard",
+          "callee": "git\n    .checkout",
+          "lineNumber": 306
+        },
+        {
+          "caller": "discard",
+          "callee": "filepaths.map",
+          "lineNumber": 308
+        },
+        {
+          "caller": "discard",
+          "callee": "path.startsWith",
+          "lineNumber": 308
+        },
+        {
+          "caller": "discard",
+          "callee": "path.slice",
+          "lineNumber": 308
+        },
+        {
+          "caller": "discard",
+          "callee": "Response.json",
+          "lineNumber": 312
+        },
+        {
+          "caller": "validateRawArgs",
+          "callee": "ALLOWED_SUBCOMMANDS.has",
+          "lineNumber": 394
+        },
+        {
+          "caller": "validateRawArgs",
+          "callee": "[...ALLOWED_SUBCOMMANDS].join",
+          "lineNumber": 395
+        },
+        {
+          "caller": "validateRawArgs",
+          "callee": "args.find",
+          "lineNumber": 398
+        },
+        {
+          "caller": "validateRawArgs",
+          "callee": "arg.startsWith",
+          "lineNumber": 399
+        },
+        {
+          "caller": "validateRawArgs",
+          "callee": "BLOCKED_FLAGS.has",
+          "lineNumber": 400
+        },
+        {
+          "caller": "validateRawArgs",
+          "callee": "arg.split",
+          "lineNumber": 400
+        },
+        {
+          "caller": "validateRawArgs",
+          "callee": "arg.startsWith",
+          "lineNumber": 402
+        },
+        {
+          "caller": "validateRawArgs",
+          "callee": "[...arg.slice(1)].some",
+          "lineNumber": 403
+        },
+        {
+          "caller": "validateRawArgs",
+          "callee": "arg.slice",
+          "lineNumber": 403
+        },
+        {
+          "caller": "validateRawArgs",
+          "callee": "BLOCKED_FLAGS.has",
+          "lineNumber": 403
+        },
+        {
+          "caller": "abortRebase",
+          "callee": "git.rebase",
+          "lineNumber": 415
+        },
+        {
+          "caller": "resolveConflictsRecursively",
+          "callee": "abortRebase",
+          "lineNumber": 424
+        },
+        {
+          "caller": "resolveConflictsRecursively",
+          "callee": "git.status",
+          "lineNumber": 428
+        },
+        {
+          "caller": "resolveConflictsRecursively",
+          "callee": "status.files.find",
+          "lineNumber": 431
+        },
+        {
+          "caller": "resolveConflictsRecursively",
+          "callee": "abortRebase",
+          "lineNumber": 434
+        },
+        {
+          "caller": "resolveConflictsRecursively",
+          "callee": "git.rm",
+          "lineNumber": 438
+        },
+        {
+          "caller": "resolveConflictsRecursively",
+          "callee": "git.add",
+          "lineNumber": 440
+        },
+        {
+          "caller": "resolveConflictsRecursively",
+          "callee": "git.status",
+          "lineNumber": 444
+        },
+        {
+          "caller": "resolveConflictsRecursively",
+          "callee": "abortRebase",
+          "lineNumber": 446
+        },
+        {
+          "caller": "resolveConflictsRecursively",
+          "callee": "git.rebase",
+          "lineNumber": 449
+        },
+        {
+          "caller": "resolveConflictsRecursively",
+          "callee": "error.message?.includes",
+          "lineNumber": 453
+        },
+        {
+          "caller": "resolveConflictsRecursively",
+          "callee": "console.error",
+          "lineNumber": 454
+        },
+        {
+          "caller": "resolveConflictsRecursively",
+          "callee": "abortRebase",
+          "lineNumber": 455
+        },
+        {
+          "caller": "resolveConflictsRecursively",
+          "callee": "resolveConflictsRecursively",
+          "lineNumber": 458
+        },
+        {
+          "caller": "rebase",
+          "callee": "git\n      .fetch([\"-p\"])\n      .submoduleUpdate([\"--depth\", \"1\"])\n      .add(\".\")\n      .commit(\"Before rebase\", { \"--no-verify\": null })\n      .rebase",
+          "lineNumber": 469
+        },
+        {
+          "caller": "rebase",
+          "callee": "git\n      .fetch([\"-p\"])\n      .submoduleUpdate([\"--depth\", \"1\"])\n      .add(\".\")\n      .commit",
+          "lineNumber": 469
+        },
+        {
+          "caller": "rebase",
+          "callee": "git\n      .fetch([\"-p\"])\n      .submoduleUpdate([\"--depth\", \"1\"])\n      .add",
+          "lineNumber": 469
+        },
+        {
+          "caller": "rebase",
+          "callee": "git\n      .fetch([\"-p\"])\n      .submoduleUpdate",
+          "lineNumber": 469
+        },
+        {
+          "caller": "rebase",
+          "callee": "git\n      .fetch",
+          "lineNumber": 469
+        },
+        {
+          "caller": "rebase",
+          "callee": "resolveConflictsRecursively",
+          "lineNumber": 476
+        },
+        {
+          "caller": "rebase",
+          "callee": "resetToMergeBase",
+          "lineNumber": 479
+        },
+        {
+          "caller": "rebase",
+          "callee": "Response.json",
+          "lineNumber": 481
+        },
+        {
+          "caller": "rebase",
+          "callee": "git.status",
+          "lineNumber": 481
+        },
+        {
+          "caller": "log",
+          "callee": "Number",
+          "lineNumber": 493
+        },
+        {
+          "caller": "log",
+          "callee": "url.searchParams.get",
+          "lineNumber": 493
+        },
+        {
+          "caller": "log",
+          "callee": "git.log",
+          "lineNumber": 495
+        },
+        {
+          "caller": "log",
+          "callee": "JSON.stringify",
+          "lineNumber": 498
+        },
+        {
+          "caller": "log",
+          "callee": "log.all.slice",
+          "lineNumber": 498
+        },
+        {
+          "caller": "updateNetrc",
+          "callee": "Deno.env.get",
+          "lineNumber": 508
+        },
+        {
+          "caller": "updateNetrc",
+          "callee": "join",
+          "lineNumber": 512
+        },
+        {
+          "caller": "updateNetrc",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 517
+        },
+        {
+          "caller": "updateNetrc",
+          "callee": "Deno.chmod",
+          "lineNumber": 519
+        },
+        {
+          "caller": "getGitHubToken",
+          "callee": "getSiteName",
+          "lineNumber": 527
+        },
+        {
+          "caller": "getGitHubToken",
+          "callee": "fetch",
+          "lineNumber": 532
+        },
+        {
+          "caller": "getGitHubToken",
+          "callee": "console.log",
+          "lineNumber": 545
+        },
+        {
+          "caller": "getGitHubToken",
+          "callee": "response.json",
+          "lineNumber": 551
+        },
+        {
+          "caller": "getGitHubPackageTokens",
+          "callee": "getSiteName",
+          "lineNumber": 566
+        },
+        {
+          "caller": "getGitHubPackageTokens",
+          "callee": "fetch",
+          "lineNumber": 571
+        },
+        {
+          "caller": "getGitHubPackageTokens",
+          "callee": "console.log",
+          "lineNumber": 584
+        },
+        {
+          "caller": "getGitHubPackageTokens",
+          "callee": "response.json",
+          "lineNumber": 590
+        },
+        {
+          "caller": "setupGithubTokenNetrc",
+          "callee": "getSiteName",
+          "lineNumber": 605
+        },
+        {
+          "caller": "setupGithubTokenNetrc",
+          "callee": "setupGitHubAppNetrc",
+          "lineNumber": 613
+        },
+        {
+          "caller": "setupGithubTokenNetrc",
+          "callee": "getGitHubToken",
+          "lineNumber": 618
+        },
+        {
+          "caller": "setupGithubTokenNetrc",
+          "callee": "updateNetrc",
+          "lineNumber": 621
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "git.fetch([\"-p\"]).submoduleUpdate",
+          "lineNumber": 631
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "git.fetch",
+          "lineNumber": 631
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "git.status",
+          "lineNumber": 634
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "console.log",
+          "lineNumber": 638
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "status.conflicted.join",
+          "lineNumber": 640
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "console.log",
+          "lineNumber": 650
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "getMergeBase",
+          "lineNumber": 656
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "console.log",
+          "lineNumber": 661
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "git.raw",
+          "lineNumber": 668
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "parseInt",
+          "lineNumber": 673
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "isUpToDate.trim",
+          "lineNumber": 673
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "resetToMergeBase",
+          "lineNumber": 675
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "git.raw",
+          "lineNumber": 680
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "parseInt",
+          "lineNumber": 685
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "behindCount.trim",
+          "lineNumber": 685
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "console.log",
+          "lineNumber": 690
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "git.rebase",
+          "lineNumber": 695
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "resetToMergeBase",
+          "lineNumber": 696
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "console.log",
+          "lineNumber": 698
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "console.log",
+          "lineNumber": 700
+        },
+        {
+          "caller": "assertRebased",
+          "callee": "resetToMergeBase",
+          "lineNumber": 702
+        },
+        {
+          "caller": "assertNoIndexLock",
+          "callee": "join",
+          "lineNumber": 720
+        },
+        {
+          "caller": "assertNoIndexLock",
+          "callee": "Deno.cwd",
+          "lineNumber": 720
+        },
+        {
+          "caller": "assertNoIndexLock",
+          "callee": "Deno.stat(lockIndexPath)\n      .then(() => true)\n      .catch",
+          "lineNumber": 722
+        },
+        {
+          "caller": "assertNoIndexLock",
+          "callee": "Deno.stat(lockIndexPath)\n      .then",
+          "lineNumber": 722
+        },
+        {
+          "caller": "assertNoIndexLock",
+          "callee": "Deno.stat",
+          "lineNumber": 722
+        },
+        {
+          "caller": "assertNoIndexLock",
+          "callee": "console.log",
+          "lineNumber": 726
+        },
+        {
+          "caller": "assertNoIndexLock",
+          "callee": "Deno.remove",
+          "lineNumber": 729
+        },
+        {
+          "caller": "assertGitBinary",
+          "callee": "cmd.spawn",
+          "lineNumber": 738
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "Deno.stat(join(Deno.cwd(), \".git\"))\n      .then(() => true)\n      .catch",
+          "lineNumber": 746
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "Deno.stat(join(Deno.cwd(), \".git\"))\n      .then",
+          "lineNumber": 746
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "Deno.stat",
+          "lineNumber": 746
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "join",
+          "lineNumber": 746
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "Deno.cwd",
+          "lineNumber": 746
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "git\n      .addConfig(\"safe.directory\", Deno.cwd(), true, GitConfigScope.global)\n      .addConfig",
+          "lineNumber": 750
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "git\n      .addConfig",
+          "lineNumber": 750
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "Deno.cwd",
+          "lineNumber": 751
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "Promise.all",
+          "lineNumber": 754
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "git.getConfig",
+          "lineNumber": 755
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "git.getConfig",
+          "lineNumber": 756
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "git.addConfig",
+          "lineNumber": 760
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "git.addConfig",
+          "lineNumber": 764
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "isGitHubUrl",
+          "lineNumber": 777
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "parseGitHubOwnerRepo",
+          "lineNumber": 778
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "setupGithubTokenNetrc",
+          "lineNumber": 782
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "resetToMergeBase",
+          "lineNumber": 786
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "git\n      .clone(cloneUrl, \".\", [\n        \"--depth\",\n        \"1\",\n        \"--single-branch\",\n        \"--branch\",\n        branch ?? DEFAULT_TRACKING_BRANCH,\n      ])\n      .submoduleInit()\n      .submoduleUpdate",
+          "lineNumber": 797
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "git\n      .clone(cloneUrl, \".\", [\n        \"--depth\",\n        \"1\",\n        \"--single-branch\",\n        \"--branch\",\n        branch ?? DEFAULT_TRACKING_BRANCH,\n      ])\n      .submoduleInit",
+          "lineNumber": 797
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "git\n      .clone",
+          "lineNumber": 797
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "join",
+          "lineNumber": 809
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "Deno.cwd",
+          "lineNumber": 809
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "Deno.readTextFile(excludeFile).catch",
+          "lineNumber": 811
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "Deno.readTextFile",
+          "lineNumber": 811
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "entries.filter",
+          "lineNumber": 813
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "existing.includes",
+          "lineNumber": 813
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 815
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "existing.trimEnd",
+          "lineNumber": 817
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "toAdd.join",
+          "lineNumber": 817
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "copyBuildFiles.output",
+          "lineNumber": 830
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "console.log",
+          "lineNumber": 831
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 831
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "console.log",
+          "lineNumber": 832
+        },
+        {
+          "caller": "assertGitFolder",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 832
+        },
+        {
+          "caller": "ensureGit",
+          "callee": "assertNoIndexLock",
+          "lineNumber": 836
+        },
+        {
+          "caller": "ensureGit",
+          "callee": "Promise.all",
+          "lineNumber": 837
+        },
+        {
+          "caller": "ensureGit",
+          "callee": "assertGitBinary",
+          "lineNumber": 837
+        },
+        {
+          "caller": "ensureGit",
+          "callee": "assertGitFolder",
+          "lineNumber": 837
+        },
+        {
+          "caller": "ensureGit",
+          "callee": "assertRebased",
+          "lineNumber": 841
+        },
+        {
+          "caller": "gitRaw",
+          "callee": "c.req.json",
+          "lineNumber": 851
+        },
+        {
+          "caller": "gitRaw",
+          "callee": "validateRawArgs",
+          "lineNumber": 853
+        },
+        {
+          "caller": "gitRaw",
+          "callee": "git.raw",
+          "lineNumber": 858
+        },
+        {
+          "caller": "gitRaw",
+          "callee": "Response.json",
+          "lineNumber": 860
+        },
+        {
+          "caller": "checkoutBranch",
+          "callee": "c.req.json",
+          "lineNumber": 864
+        },
+        {
+          "caller": "checkoutBranch",
+          "callee": "/^[a-zA-Z0-9_\\-./]+$/.test",
+          "lineNumber": 866
+        },
+        {
+          "caller": "checkoutBranch",
+          "callee": "git.checkoutLocalBranch",
+          "lineNumber": 870
+        },
+        {
+          "caller": "checkoutBranch",
+          "callee": "Response.json",
+          "lineNumber": 872
+        },
+        {
+          "caller": "checkoutExistingBranch",
+          "callee": "c.req.json",
+          "lineNumber": 877
+        },
+        {
+          "caller": "checkoutExistingBranch",
+          "callee": "/^[a-zA-Z0-9_\\-./]+$/.test",
+          "lineNumber": 879
+        },
+        {
+          "caller": "checkoutExistingBranch",
+          "callee": "git.branch",
+          "lineNumber": 883
+        },
+        {
+          "caller": "checkoutExistingBranch",
+          "callee": "Object.keys(branches.branches).some",
+          "lineNumber": 884
+        },
+        {
+          "caller": "checkoutExistingBranch",
+          "callee": "Object.keys",
+          "lineNumber": 884
+        },
+        {
+          "caller": "checkoutExistingBranch",
+          "callee": "git.checkout",
+          "lineNumber": 892
+        },
+        {
+          "caller": "checkoutExistingBranch",
+          "callee": "Response.json",
+          "lineNumber": 894
+        },
+        {
+          "caller": "createGitAPIS",
+          "callee": "app.use",
+          "lineNumber": 900
+        },
+        {
+          "caller": "createGitAPIS",
+          "callee": "app.get",
+          "lineNumber": 901
+        },
+        {
+          "caller": "createGitAPIS",
+          "callee": "app.get",
+          "lineNumber": 902
+        },
+        {
+          "caller": "createGitAPIS",
+          "callee": "app.get",
+          "lineNumber": 903
+        },
+        {
+          "caller": "createGitAPIS",
+          "callee": "app.post",
+          "lineNumber": 904
+        },
+        {
+          "caller": "createGitAPIS",
+          "callee": "publish",
+          "lineNumber": 904
+        },
+        {
+          "caller": "createGitAPIS",
+          "callee": "app.post",
+          "lineNumber": 905
+        },
+        {
+          "caller": "createGitAPIS",
+          "callee": "app.post",
+          "lineNumber": 906
+        },
+        {
+          "caller": "createGitAPIS",
+          "callee": "app.post",
+          "lineNumber": 907
+        },
+        {
+          "caller": "createGitAPIS",
+          "callee": "app.post",
+          "lineNumber": 908
+        },
+        {
+          "caller": "createGitAPIS",
+          "callee": "app.post",
+          "lineNumber": 909
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 17,
+        "functionCount": 25,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/githubApp.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 351,
+      "nonEmptyLines": 315,
+      "functions": [
+        {
+          "name": "stripGitSuffix",
+          "startLine": 21,
+          "endLine": 23,
+          "params": [
+            "repo"
+          ]
+        },
+        {
+          "name": "pemToBytes",
+          "startLine": 32,
+          "endLine": 43,
+          "params": [
+            "pem"
+          ]
+        },
+        {
+          "name": "wrapPkcs1InPkcs8",
+          "startLine": 56,
+          "endLine": 72,
+          "params": [
+            "pkcs1"
+          ]
+        },
+        {
+          "name": "derEncode",
+          "startLine": 75,
+          "endLine": 89,
+          "params": [
+            "tag",
+            "value"
+          ]
+        },
+        {
+          "name": "pemToArrayBuffer",
+          "startLine": 92,
+          "endLine": 99,
+          "params": [
+            "pem"
+          ]
+        },
+        {
+          "name": "generateAppJWT",
+          "startLine": 101,
+          "endLine": 125,
+          "params": []
+        },
+        {
+          "name": "getInstallationId",
+          "startLine": 127,
+          "endLine": 164,
+          "params": [
+            "owner",
+            "repo"
+          ]
+        },
+        {
+          "name": "getInstallationToken",
+          "startLine": 166,
+          "endLine": 203,
+          "params": [
+            "installationId",
+            "repo",
+            "permissions"
+          ]
+        },
+        {
+          "name": "mintScopedToken",
+          "startLine": 214,
+          "endLine": 221,
+          "params": [
+            "owner",
+            "repo",
+            "permissions"
+          ]
+        },
+        {
+          "name": "setBranchProtection",
+          "startLine": 230,
+          "endLine": 279,
+          "params": [
+            "owner",
+            "repo",
+            "branch",
+            "adminToken"
+          ]
+        },
+        {
+          "name": "resolveDefaultBranch",
+          "startLine": 282,
+          "endLine": 310,
+          "params": [
+            "owner",
+            "repo",
+            "token"
+          ]
+        },
+        {
+          "name": "getGitHubAppToken",
+          "startLine": 312,
+          "endLine": 332,
+          "params": [
+            "owner",
+            "repo"
+          ]
+        },
+        {
+          "name": "setupGitHubAppNetrc",
+          "startLine": 334,
+          "endLine": 351,
+          "params": [
+            "owner",
+            "repo"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GITHUB_APP_CONFIGURED",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "AGENT_PERMISSIONS",
+          "line": 206,
+          "isDefault": false
+        },
+        {
+          "name": "mintScopedToken",
+          "line": 214,
+          "isDefault": false
+        },
+        {
+          "name": "setBranchProtection",
+          "line": 230,
+          "isDefault": false
+        },
+        {
+          "name": "resolveDefaultBranch",
+          "line": 282,
+          "isDefault": false
+        },
+        {
+          "name": "getGitHubAppToken",
+          "line": 312,
+          "isDefault": false
+        },
+        {
+          "name": "setupGitHubAppNetrc",
+          "line": 334,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "stripGitSuffix",
+          "callee": "repo.replace",
+          "lineNumber": 22
+        },
+        {
+          "caller": "pemToBytes",
+          "callee": "pem\n    .replace(/-----BEGIN [A-Z ]+-----/, \"\")\n    .replace(/-----END [A-Z ]+-----/, \"\")\n    .replace",
+          "lineNumber": 33
+        },
+        {
+          "caller": "pemToBytes",
+          "callee": "pem\n    .replace(/-----BEGIN [A-Z ]+-----/, \"\")\n    .replace",
+          "lineNumber": 33
+        },
+        {
+          "caller": "pemToBytes",
+          "callee": "pem\n    .replace",
+          "lineNumber": 33
+        },
+        {
+          "caller": "pemToBytes",
+          "callee": "atob",
+          "lineNumber": 37
+        },
+        {
+          "caller": "pemToBytes",
+          "callee": "binary.charCodeAt",
+          "lineNumber": 40
+        },
+        {
+          "caller": "wrapPkcs1InPkcs8",
+          "callee": "derEncode",
+          "lineNumber": 66
+        },
+        {
+          "caller": "wrapPkcs1InPkcs8",
+          "callee": "inner.set",
+          "lineNumber": 68
+        },
+        {
+          "caller": "wrapPkcs1InPkcs8",
+          "callee": "inner.set",
+          "lineNumber": 69
+        },
+        {
+          "caller": "wrapPkcs1InPkcs8",
+          "callee": "derEncode",
+          "lineNumber": 71
+        },
+        {
+          "caller": "derEncode",
+          "callee": "result.set",
+          "lineNumber": 86
+        },
+        {
+          "caller": "derEncode",
+          "callee": "result.set",
+          "lineNumber": 87
+        },
+        {
+          "caller": "pemToArrayBuffer",
+          "callee": "pem.includes",
+          "lineNumber": 93
+        },
+        {
+          "caller": "pemToArrayBuffer",
+          "callee": "pemToBytes",
+          "lineNumber": 94
+        },
+        {
+          "caller": "pemToArrayBuffer",
+          "callee": "wrapPkcs1InPkcs8",
+          "lineNumber": 96
+        },
+        {
+          "caller": "generateAppJWT",
+          "callee": "pemToArrayBuffer",
+          "lineNumber": 108
+        },
+        {
+          "caller": "generateAppJWT",
+          "callee": "crypto.subtle.importKey",
+          "lineNumber": 109
+        },
+        {
+          "caller": "generateAppJWT",
+          "callee": "Math.floor",
+          "lineNumber": 117
+        },
+        {
+          "caller": "generateAppJWT",
+          "callee": "Date.now",
+          "lineNumber": 117
+        },
+        {
+          "caller": "generateAppJWT",
+          "callee": "create",
+          "lineNumber": 124
+        },
+        {
+          "caller": "getInstallationId",
+          "callee": "stripGitSuffix",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getInstallationId",
+          "callee": "installationIdCache.get",
+          "lineNumber": 133
+        },
+        {
+          "caller": "getInstallationId",
+          "callee": "generateAppJWT",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getInstallationId",
+          "callee": "fetch",
+          "lineNumber": 137
+        },
+        {
+          "caller": "getInstallationId",
+          "callee": "response.text",
+          "lineNumber": 149
+        },
+        {
+          "caller": "getInstallationId",
+          "callee": "response.json",
+          "lineNumber": 155
+        },
+        {
+          "caller": "getInstallationId",
+          "callee": "Number.isFinite",
+          "lineNumber": 157
+        },
+        {
+          "caller": "getInstallationId",
+          "callee": "JSON.stringify",
+          "lineNumber": 159
+        },
+        {
+          "caller": "getInstallationId",
+          "callee": "installationIdCache.set",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getInstallationToken",
+          "callee": "stripGitSuffix",
+          "lineNumber": 171
+        },
+        {
+          "caller": "getInstallationToken",
+          "callee": "generateAppJWT",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getInstallationToken",
+          "callee": "fetch",
+          "lineNumber": 173
+        },
+        {
+          "caller": "getInstallationToken",
+          "callee": "JSON.stringify",
+          "lineNumber": 182
+        },
+        {
+          "caller": "getInstallationToken",
+          "callee": "response.text",
+          "lineNumber": 190
+        },
+        {
+          "caller": "getInstallationToken",
+          "callee": "response.json",
+          "lineNumber": 196
+        },
+        {
+          "caller": "getInstallationToken",
+          "callee": "JSON.stringify",
+          "lineNumber": 199
+        },
+        {
+          "caller": "mintScopedToken",
+          "callee": "getInstallationId",
+          "lineNumber": 219
+        },
+        {
+          "caller": "mintScopedToken",
+          "callee": "getInstallationToken",
+          "lineNumber": 220
+        },
+        {
+          "caller": "setBranchProtection",
+          "callee": "encodeURIComponent",
+          "lineNumber": 242
+        },
+        {
+          "caller": "setBranchProtection",
+          "callee": "fetch",
+          "lineNumber": 246
+        },
+        {
+          "caller": "setBranchProtection",
+          "callee": "console.log",
+          "lineNumber": 249
+        },
+        {
+          "caller": "setBranchProtection",
+          "callee": "existing.text",
+          "lineNumber": 256
+        },
+        {
+          "caller": "setBranchProtection",
+          "callee": "console.warn",
+          "lineNumber": 257
+        },
+        {
+          "caller": "setBranchProtection",
+          "callee": "fetch",
+          "lineNumber": 263
+        },
+        {
+          "caller": "setBranchProtection",
+          "callee": "JSON.stringify",
+          "lineNumber": 266
+        },
+        {
+          "caller": "setBranchProtection",
+          "callee": "response.text",
+          "lineNumber": 274
+        },
+        {
+          "caller": "setBranchProtection",
+          "callee": "console.warn",
+          "lineNumber": 275
+        },
+        {
+          "caller": "resolveDefaultBranch",
+          "callee": "fetch",
+          "lineNumber": 287
+        },
+        {
+          "caller": "resolveDefaultBranch",
+          "callee": "response.text",
+          "lineNumber": 298
+        },
+        {
+          "caller": "resolveDefaultBranch",
+          "callee": "response.json",
+          "lineNumber": 303
+        },
+        {
+          "caller": "resolveDefaultBranch",
+          "callee": "JSON.stringify",
+          "lineNumber": 306
+        },
+        {
+          "caller": "getGitHubAppToken",
+          "callee": "stripGitSuffix",
+          "lineNumber": 316
+        },
+        {
+          "caller": "getGitHubAppToken",
+          "callee": "tokenCache.get",
+          "lineNumber": 318
+        },
+        {
+          "caller": "getGitHubAppToken",
+          "callee": "Date.now",
+          "lineNumber": 319
+        },
+        {
+          "caller": "getGitHubAppToken",
+          "callee": "getInstallationId",
+          "lineNumber": 323
+        },
+        {
+          "caller": "getGitHubAppToken",
+          "callee": "getInstallationToken",
+          "lineNumber": 324
+        },
+        {
+          "caller": "getGitHubAppToken",
+          "callee": "tokenCache.set",
+          "lineNumber": 326
+        },
+        {
+          "caller": "getGitHubAppToken",
+          "callee": "Date.now",
+          "lineNumber": 328
+        },
+        {
+          "caller": "setupGitHubAppNetrc",
+          "callee": "getGitHubAppToken",
+          "lineNumber": 338
+        },
+        {
+          "caller": "setupGitHubAppNetrc",
+          "callee": "Deno.env.get",
+          "lineNumber": 339
+        },
+        {
+          "caller": "setupGitHubAppNetrc",
+          "callee": "join",
+          "lineNumber": 343
+        },
+        {
+          "caller": "setupGitHubAppNetrc",
+          "callee": "Deno.writeTextFile",
+          "lineNumber": 348
+        },
+        {
+          "caller": "setupGitHubAppNetrc",
+          "callee": "Deno.chmod",
+          "lineNumber": 349
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 13,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "daemon/loggings/stream.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 114,
+      "nonEmptyLines": 98,
+      "functions": [
+        {
+          "name": "streamLogsFrom",
+          "startLine": 36,
+          "endLine": 43,
+          "params": [
+            "process"
+          ]
+        },
+        {
+          "name": "createLogsInterface",
+          "startLine": 45,
+          "endLine": 112,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "streamLogsFrom",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "logs",
+          "line": 114,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "streamLogsFrom",
+          "callee": "iteratorFrom",
+          "lineNumber": 39
+        },
+        {
+          "caller": "streamLogsFrom",
+          "callee": "iteratorFrom",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createLogsInterface",
+          "callee": "target.addEventListener",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createLogsInterface",
+          "callee": "console.error",
+          "lineNumber": 56
+        },
+        {
+          "caller": "createLogsInterface",
+          "callee": "line.message?.replace",
+          "lineNumber": 56
+        },
+        {
+          "caller": "createLogsInterface",
+          "callee": "console.log",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createLogsInterface",
+          "callee": "line.message?.replace",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createLogsInterface",
+          "callee": "buffer.push",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createLogsInterface",
+          "callee": "buffer.shift",
+          "lineNumber": 63
+        },
+        {
+          "caller": "listen",
+          "callee": "target.addEventListener",
+          "lineNumber": 70
+        },
+        {
+          "caller": "listen",
+          "callee": "resolve",
+          "lineNumber": 70
+        },
+        {
+          "caller": "createLogsInterface",
+          "callee": "listen",
+          "lineNumber": 81
+        },
+        {
+          "caller": "push",
+          "callee": "Date.now",
+          "lineNumber": 86
+        },
+        {
+          "caller": "push",
+          "callee": "target.dispatchEvent",
+          "lineNumber": 90
+        },
+        {
+          "caller": "push",
+          "callee": "message.slice",
+          "lineNumber": 96
+        },
+        {
+          "caller": "createLogsInterface",
+          "callee": "push",
+          "lineNumber": 106
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    }
+  ]
+}

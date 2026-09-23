@@ -1,0 +1,15 @@
+{
+  "projectRoot": "C:/Users/vitoo/code/als/deco",
+  "batchFiles": [
+    {"path": "hooks/usePartialSection.ts", "language": "typescript", "sizeLines": 32, "fileCategory": "code"},
+    {"path": "runtime/fresh/Bindings.tsx", "language": "typescript", "sizeLines": 48, "fileCategory": "code"},
+    {"path": "runtime/fresh/islands/DispatchAsyncRender.tsx", "language": "typescript", "sizeLines": 63, "fileCategory": "code"},
+    {"path": "runtime/fresh/plugin.tsx", "language": "typescript", "sizeLines": 127, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "hooks/usePartialSection.ts": ["hooks/useSection.ts","runtime/fresh/islands/DispatchAsyncRender.tsx"],
+    "runtime/fresh/Bindings.tsx": ["runtime/fresh/islands/DispatchAsyncRender.tsx"],
+    "runtime/fresh/islands/DispatchAsyncRender.tsx": [],
+    "runtime/fresh/plugin.tsx": ["runtime/fresh/Bindings.tsx","runtime/handler.tsx"]
+  }
+}

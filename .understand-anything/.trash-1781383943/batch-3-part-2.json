@@ -1,0 +1,1294 @@
+{
+  "nodes": [
+    {
+      "id": "file:blocks/loader.ts",
+      "type": "file",
+      "name": "loader.ts",
+      "filePath": "blocks/loader.ts",
+      "summary": "Implements the Loader block: async data fetchers with caching, stale-while-revalidate, single-flight dedup, error wrapping, and observability.",
+      "tags": [
+        "block-definition",
+        "loader",
+        "caching",
+        "swr",
+        "observability"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:blocks/loader.ts:isWrappedError",
+      "type": "function",
+      "name": "isWrappedError",
+      "filePath": "blocks/loader.ts",
+      "lineRange": [
+        85,
+        89
+      ],
+      "summary": "Function isWrappedError in loader.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/loader.ts:isInvokeCtx",
+      "type": "function",
+      "name": "isInvokeCtx",
+      "filePath": "blocks/loader.ts",
+      "lineRange": [
+        91,
+        95
+      ],
+      "summary": "Function isInvokeCtx in loader.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/loader.ts:wrapCaughtErrors",
+      "type": "function",
+      "name": "wrapCaughtErrors",
+      "filePath": "blocks/loader.ts",
+      "lineRange": [
+        97,
+        141
+      ],
+      "summary": "Function wrapCaughtErrors in loader.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:blocks/loader.ts:wrapLoader",
+      "type": "function",
+      "name": "wrapLoader",
+      "filePath": "blocks/loader.ts",
+      "lineRange": [
+        181,
+        395
+      ],
+      "summary": "Function wrapLoader in loader.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:blocks/matcher.ts",
+      "type": "file",
+      "name": "matcher.ts",
+      "filePath": "blocks/matcher.ts",
+      "summary": "Defines the Matcher block for route and audience matching, supporting sticky sessions and cookie-based segment persistence.",
+      "tags": [
+        "block-definition",
+        "matcher",
+        "routing"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:blocks/propsLoader.ts",
+      "type": "file",
+      "name": "propsLoader.ts",
+      "filePath": "blocks/propsLoader.ts",
+      "summary": "Resolves props for blocks by detecting loader functions versus object loaders and awaiting nested loader keys.",
+      "tags": [
+        "loader",
+        "props",
+        "resolver",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:blocks/propsLoader.ts:propsLoader",
+      "type": "function",
+      "name": "propsLoader",
+      "filePath": "blocks/propsLoader.ts",
+      "lineRange": [
+        92,
+        122
+      ],
+      "summary": "Function propsLoader in propsLoader.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:blocks/section.ts",
+      "type": "file",
+      "name": "section.ts",
+      "filePath": "blocks/section.ts",
+      "summary": "Defines the Section block factory, wrapping Preact components with prop loading, error boundaries, and preview rendering.",
+      "tags": [
+        "block-definition",
+        "section",
+        "component",
+        "preact"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:blocks/section.ts:isSection",
+      "type": "function",
+      "name": "isSection",
+      "filePath": "blocks/section.ts",
+      "lineRange": [
+        31,
+        48
+      ],
+      "summary": "Function isSection in section.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/section.ts:createSectionBlock",
+      "type": "function",
+      "name": "createSectionBlock",
+      "filePath": "blocks/section.ts",
+      "lineRange": [
+        85,
+        191
+      ],
+      "summary": "Function createSectionBlock in section.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:blocks/utils.tsx",
+      "type": "file",
+      "name": "utils.tsx",
+      "filePath": "blocks/utils.tsx",
+      "summary": "Shared block utilities: applying props and config, building FnContext from HTTP context, single-flight groups, import-map building, and visibility gatekeeping.",
+      "tags": [
+        "utility",
+        "block-helpers",
+        "context",
+        "import-map"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:blocks/utils.tsx:applyConfig",
+      "type": "function",
+      "name": "applyConfig",
+      "filePath": "blocks/utils.tsx",
+      "lineRange": [
+        42,
+        51
+      ],
+      "summary": "Function applyConfig in utils.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/utils.tsx:applyConfigFunc",
+      "type": "function",
+      "name": "applyConfigFunc",
+      "filePath": "blocks/utils.tsx",
+      "lineRange": [
+        53,
+        63
+      ],
+      "summary": "Function applyConfigFunc in utils.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/utils.tsx:createBagKey",
+      "type": "function",
+      "name": "createBagKey",
+      "filePath": "blocks/utils.tsx",
+      "lineRange": [
+        70,
+        71
+      ],
+      "summary": "Function createBagKey in utils.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/utils.tsx:fnContextFromHttpContext",
+      "type": "function",
+      "name": "fnContextFromHttpContext",
+      "filePath": "blocks/utils.tsx",
+      "lineRange": [
+        138,
+        164
+      ],
+      "summary": "Function fnContextFromHttpContext in utils.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:blocks/utils.tsx:applyProps",
+      "type": "function",
+      "name": "applyProps",
+      "filePath": "blocks/utils.tsx",
+      "lineRange": [
+        175,
+        194
+      ],
+      "summary": "Function applyProps in utils.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:blocks/utils.tsx:fromComponentFunc",
+      "type": "function",
+      "name": "fromComponentFunc",
+      "filePath": "blocks/utils.tsx",
+      "lineRange": [
+        196,
+        199
+      ],
+      "summary": "Function fromComponentFunc in utils.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/utils.tsx:usePreviewFunc",
+      "type": "function",
+      "name": "usePreviewFunc",
+      "filePath": "blocks/utils.tsx",
+      "lineRange": [
+        206,
+        214
+      ],
+      "summary": "Function usePreviewFunc in utils.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/utils.tsx:newComponentBlock",
+      "type": "function",
+      "name": "newComponentBlock",
+      "filePath": "blocks/utils.tsx",
+      "lineRange": [
+        216,
+        230
+      ],
+      "summary": "Function newComponentBlock in utils.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/utils.tsx:newSingleFlightGroup",
+      "type": "function",
+      "name": "newSingleFlightGroup",
+      "filePath": "blocks/utils.tsx",
+      "lineRange": [
+        232,
+        248
+      ],
+      "summary": "Function newSingleFlightGroup in utils.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/utils.tsx:buildImportMapWith",
+      "type": "function",
+      "name": "buildImportMapWith",
+      "filePath": "blocks/utils.tsx",
+      "lineRange": [
+        250,
+        264
+      ],
+      "summary": "Function buildImportMapWith in utils.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/utils.tsx:buildImportMap",
+      "type": "function",
+      "name": "buildImportMap",
+      "filePath": "blocks/utils.tsx",
+      "lineRange": [
+        266,
+        279
+      ],
+      "summary": "Function buildImportMap in utils.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:blocks/utils.tsx:gateKeeper",
+      "type": "function",
+      "name": "gateKeeper",
+      "filePath": "blocks/utils.tsx",
+      "lineRange": [
+        281,
+        299
+      ],
+      "summary": "Function gateKeeper in utils.tsx.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:blocks/workflow.ts",
+      "type": "file",
+      "name": "workflow.ts",
+      "filePath": "blocks/workflow.ts",
+      "summary": "Defines the Workflow block and WorkflowContext, enabling durable invocation of loaders and actions within workflow execution.",
+      "tags": [
+        "block-definition",
+        "workflow",
+        "durable"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:blocks/workflow.ts:WorkflowContext",
+      "type": "class",
+      "name": "WorkflowContext",
+      "filePath": "blocks/workflow.ts",
+      "lineRange": [
+        33,
+        85
+      ],
+      "summary": "Class WorkflowContext defined in workflow.ts.",
+      "tags": [
+        "class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:clients/formdata.ts",
+      "type": "file",
+      "name": "formdata.ts",
+      "filePath": "clients/formdata.ts",
+      "summary": "Bidirectional conversion between block props objects and FormData, with dot-escaping for nested keys and file handling.",
+      "tags": [
+        "serialization",
+        "formdata",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:clients/formdata.ts:propsToFormData",
+      "type": "function",
+      "name": "propsToFormData",
+      "filePath": "clients/formdata.ts",
+      "lineRange": [
+        36,
+        94
+      ],
+      "summary": "Function propsToFormData in formdata.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:clients/formdata.ts:formDataToProps",
+      "type": "function",
+      "name": "formDataToProps",
+      "filePath": "clients/formdata.ts",
+      "lineRange": [
+        110,
+        134
+      ],
+      "summary": "Function formDataToProps in formdata.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:clients/proxy.ts",
+      "type": "file",
+      "name": "proxy.ts",
+      "filePath": "clients/proxy.ts",
+      "summary": "Builds typed proxy invokers via InvokeAwaiter, deferring invocation until awaited and routing through the manifest invoke handler.",
+      "tags": [
+        "client",
+        "proxy",
+        "invoke"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:clients/proxy.ts:newHandler",
+      "type": "function",
+      "name": "newHandler",
+      "filePath": "clients/proxy.ts",
+      "lineRange": [
+        68,
+        110
+      ],
+      "summary": "Function newHandler in proxy.ts.",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:clients/proxy.ts:InvokeAwaiter",
+      "type": "class",
+      "name": "InvokeAwaiter",
+      "filePath": "clients/proxy.ts",
+      "lineRange": [
+        22,
+        66
+      ],
+      "summary": "Class InvokeAwaiter defined in proxy.ts.",
+      "tags": [
+        "class"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "function:blocks/loader.ts:isWrappedError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "function:blocks/loader.ts:isWrappedError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "function:blocks/loader.ts:isInvokeCtx",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "function:blocks/loader.ts:isInvokeCtx",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "function:blocks/loader.ts:wrapCaughtErrors",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "function:blocks/loader.ts:wrapCaughtErrors",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "function:blocks/loader.ts:wrapLoader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "file:blocks/handler.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "file:blocks/utils.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "file:components/JsonViewer.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "file:deco.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "file:deps.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "file:engine/block.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "file:engine/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "file:engine/core/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "file:engine/decofile/provider.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "file:engine/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "file:engine/middleware.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "file:mod.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "file:observability/otel/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "file:observability/otel/metrics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "file:runtime/caches/mod.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "file:runtime/caches/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/loader.ts",
+      "target": "file:utils/vary.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/matcher.ts",
+      "target": "file:blocks/app.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/matcher.ts",
+      "target": "file:blocks/handler.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/matcher.ts",
+      "target": "file:blocks/utils.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/matcher.ts",
+      "target": "file:clients/withManifest.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/matcher.ts",
+      "target": "file:deps.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/matcher.ts",
+      "target": "file:engine/block.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/matcher.ts",
+      "target": "file:engine/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/matcher.ts",
+      "target": "file:engine/core/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/matcher.ts",
+      "target": "file:utils/invoke.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/matcher.ts",
+      "target": "file:utils/userAgent.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/propsLoader.ts",
+      "target": "function:blocks/propsLoader.ts:propsLoader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/propsLoader.ts",
+      "target": "function:blocks/propsLoader.ts:propsLoader",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/propsLoader.ts",
+      "target": "file:blocks/utils.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/propsLoader.ts",
+      "target": "file:deps.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/propsLoader.ts",
+      "target": "file:engine/core/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/propsLoader.ts",
+      "target": "file:types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/section.ts",
+      "target": "function:blocks/section.ts:isSection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/section.ts",
+      "target": "function:blocks/section.ts:isSection",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/section.ts",
+      "target": "function:blocks/section.ts:createSectionBlock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/section.ts",
+      "target": "function:blocks/section.ts:createSectionBlock",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/section.ts",
+      "target": "file:blocks/app.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/section.ts",
+      "target": "file:blocks/handler.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/section.ts",
+      "target": "file:blocks/propsLoader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/section.ts",
+      "target": "file:blocks/utils.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/section.ts",
+      "target": "file:components/section.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/section.ts",
+      "target": "file:components/StubSection.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/section.ts",
+      "target": "file:deco.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/section.ts",
+      "target": "file:deps.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/section.ts",
+      "target": "file:engine/block.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/section.ts",
+      "target": "file:engine/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/section.ts",
+      "target": "file:engine/errors.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:applyConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:applyConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:applyConfigFunc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:applyConfigFunc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:createBagKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:createBagKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:fnContextFromHttpContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:fnContextFromHttpContext",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:applyProps",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:applyProps",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:fromComponentFunc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:fromComponentFunc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:usePreviewFunc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:usePreviewFunc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:newComponentBlock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:newComponentBlock",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:newSingleFlightGroup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:newSingleFlightGroup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:buildImportMapWith",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:buildImportMapWith",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:buildImportMap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:buildImportMap",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:gateKeeper",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "function:blocks/utils.tsx:gateKeeper",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "file:blocks/app.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "file:blocks/handler.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "file:blocks/loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "file:clients/withManifest.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "file:components/section.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "file:deco.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "file:engine/block.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "file:engine/core/resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "file:engine/core/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "file:engine/middleware.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "file:types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "file:utils/http.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "file:utils/invoke.server.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "file:utils/invoke.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "file:utils/userAgent.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/utils.tsx",
+      "target": "file:utils/vary.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/workflow.ts",
+      "target": "class:blocks/workflow.ts:WorkflowContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:blocks/workflow.ts",
+      "target": "class:blocks/workflow.ts:WorkflowContext",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:blocks/workflow.ts",
+      "target": "file:blocks/handler.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/workflow.ts",
+      "target": "file:blocks/utils.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/workflow.ts",
+      "target": "file:deps.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/workflow.ts",
+      "target": "file:engine/block.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/workflow.ts",
+      "target": "file:types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/workflow.ts",
+      "target": "file:utils/invoke.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:blocks/workflow.ts",
+      "target": "file:utils/object.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:clients/formdata.ts",
+      "target": "function:clients/formdata.ts:propsToFormData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:clients/formdata.ts",
+      "target": "function:clients/formdata.ts:propsToFormData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:clients/formdata.ts",
+      "target": "function:clients/formdata.ts:formDataToProps",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:clients/formdata.ts",
+      "target": "function:clients/formdata.ts:formDataToProps",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:clients/proxy.ts",
+      "target": "function:clients/proxy.ts:newHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:clients/proxy.ts",
+      "target": "function:clients/proxy.ts:newHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:clients/proxy.ts",
+      "target": "class:clients/proxy.ts:InvokeAwaiter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:clients/proxy.ts",
+      "target": "class:clients/proxy.ts:InvokeAwaiter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:clients/proxy.ts",
+      "target": "file:clients/withManifest.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:clients/proxy.ts",
+      "target": "file:types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:clients/proxy.ts",
+      "target": "file:utils/invoke.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:clients/proxy.ts",
+      "target": "file:utils/object.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:clients/proxy.ts",
+      "target": "file:utils/promise.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}
