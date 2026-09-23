@@ -42,11 +42,13 @@ const UABotParser = new UAParser(Bots);
 // Ahrefs crawlers are not in ua-parser's Bots list, so without an explicit
 // entry they receive the deferred (LoadingFallback) render and audit our
 // degraded HTML instead of what search engines see. AhrefsSiteAudit is the
-// Site Audit crawler; AhrefsBot is the backlink crawler.
+// Site Audit crawler; AhrefsBot is the backlink crawler. Storebot-Google
+// (Google Shopping) is missing too: ua-parser reads its UA as plain Chrome.
 const KNOWN_BOTS = [
   "Google-InspectionTool",
   "AhrefsSiteAudit",
   "AhrefsBot",
+  "Storebot-Google",
 ];
 
 export const isBot = (req: Request) => {
