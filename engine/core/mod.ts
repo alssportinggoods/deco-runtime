@@ -90,6 +90,21 @@ export class ReleaseResolver<TContext extends BaseContext = BaseContext> {
   private resolveHints: ResolveHints;
   private _cachedResolvers: ResolverMap<BaseContext> | null = null;
   private _resolveIdCounter = 0;
+  /**
+   * `{ ...state, ...this.resolvables }` copies the whole decofile (thousands of
+   * keys) and `resolve` runs many times per request. The release hands back the
+   * same state object until it changes, so the merge is reused while that
+   * identity holds. Nothing writes to `ctx.resolvables`, so sharing it is safe.
+   */
+  private _merged: { state: ResolvableMap; merged: ResolvableMap } | null =
+    null;
+  /**
+   * Subscription to the release's `onChange`. Kept so it can be disposed when
+   * this resolver is replaced — otherwise every superseded resolver stays
+   * reachable from the provider's listener list and leaks its whole
+   * `resolvables`/`resolvers`/`resolveHints` graph.
+   */
+  private releaseSubscription: Disposable | undefined;
   constructor(
     config: ResolverOptions<TContext>,
     hints?: ResolveHints,
@@ -101,7 +116,7 @@ export class ReleaseResolver<TContext extends BaseContext = BaseContext> {
     this.danglingRecover = config.danglingRecover;
     this.resolveHints = hints ?? {};
     this.runOncePerRelease = oncePerRelease ?? {};
-    this.release.onChange(() => {
+    this.releaseSubscription = this.release.onChange(() => {
       dispatchEvent(new Event("deco:hmr"));
       this.runOncePerRelease = {};
       this.resolveHints = {};
@@ -109,23 +124,61 @@ export class ReleaseResolver<TContext extends BaseContext = BaseContext> {
     });
   }
 
+  /**
+   * Unsubscribes this resolver from its release.
+   *
+   * `installApps` rebuilds the resolver on every decofile change
+   * (`currentResolver = currentResolver.with({ resolvers, resolvables })`), and
+   * each `new ReleaseResolver` subscribes to the same provider. Without
+   * dropping the previous subscription the superseded resolver is still
+   * referenced by the provider's listener list and can never be collected, so
+   * every publish permanently retains one full resolver graph.
+   *
+   * Safe to call on a superseded resolver: in-flight requests holding a
+   * reference keep working, they simply stop being notified of release changes
+   * they no longer serve. Idempotent.
+   */
+  public dispose = (): void => {
+    this.releaseSubscription?.[Symbol.dispose]();
+    this.releaseSubscription = undefined;
+  };
+
+  /**
+   * Alias, not a forwarding method: a prototype method that calls
+   * `this.dispose()` throws once it is detached from the instance
+   * (`const d = resolver[Symbol.dispose]; d()`), while the bound field above
+   * survives it.
+   */
+  readonly [Symbol.dispose] = this.dispose;
+
   public with = (
     { resolvers, resolvables, release, danglingRecover }: ExtensionOptions<
       TContext
     >,
-  ): ReleaseResolver<TContext> =>
-    new ReleaseResolver<TContext>(
+  ): ReleaseResolver<TContext> => {
+    // Hints are derived from the release's resolvables and cached by resolveType
+    // (block id). When the release is swapped — as Fast Preview does to bind a
+    // request-scoped draft (`resolver.with({ release: draftProvider })`) — the
+    // base hints are stale: the SAME block id can now resolve to different
+    // content (e.g. a page whose `sections` was a plain array in the published
+    // release but a `multivariate` flag in the draft). Inheriting them makes the
+    // draft resolve against the published shape and silently drop everything the
+    // old hints don't cover. The once-per-release memo is stale the same way:
+    // it holds the published route table, so a page that exists only in the
+    // draft gets no route. This mirrors the `release.onChange` invariant in the
+    // constructor, which clears both whenever the release changes.
+    const releaseChanged = release !== undefined && release !== this.release;
+    return new ReleaseResolver<TContext>(
       {
         release: release ?? this.release,
         danglingRecover: danglingRecover ?? this.danglingRecover,
         resolvables: { ...this.resolvables, ...resolvables },
         resolvers: { ...this.resolvers, ...resolvers },
       },
-      { ...this.resolveHints },
-      {
-        ...this.runOncePerRelease,
-      },
+      releaseChanged ? {} : { ...this.resolveHints },
+      releaseChanged ? {} : { ...this.runOncePerRelease },
     );
+  };
 
   public getResolvers(): ResolverMap<BaseContext> {
     return this._cachedResolvers ??= {
@@ -151,6 +204,13 @@ export class ReleaseResolver<TContext extends BaseContext = BaseContext> {
     });
   };
 
+  private mergeWithOwn(state: ResolvableMap): ResolvableMap {
+    if (this._merged?.state !== state) {
+      this._merged = { state, merged: { ...state, ...this.resolvables } };
+    }
+    return this._merged.merged;
+  }
+
   public resolve = async <T = any>(
     typeOrResolvable: string | Resolvable<T>,
     context: Omit<TContext, keyof BaseContext>,
@@ -173,7 +233,7 @@ export class ReleaseResolver<TContext extends BaseContext = BaseContext> {
     }
 
     const mergedResolvables = this.resolvables
-      ? { ...resolvables, ...this.resolvables }
+      ? this.mergeWithOwn(resolvables)
       : resolvables;
     const nresolvables = options?.overrides
       ? withOverrides(options.overrides, mergedResolvables)
