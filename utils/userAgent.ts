@@ -39,13 +39,34 @@ export const deviceOf = (request: Request) => {
 
 const UABotParser = new UAParser(Bots);
 
-// Ahrefs crawlers are not in ua-parser's Bots list, so without an explicit
-// entry they receive the deferred (LoadingFallback) render and audit our
-// degraded HTML instead of what search engines see. AhrefsSiteAudit is the
-// Site Audit crawler; AhrefsBot is the backlink crawler. Storebot-Google
-// (Google Shopping) is missing too: ua-parser reads its UA as plain Chrome.
+/**
+ * Crawlers the ua-parser-js bot list doesn't recognize. Mostly AI agents and
+ * answer engines: they don't run JS, so without this they get deferred
+ * sections as empty skeletons instead of the server-rendered content.
+ */
 const KNOWN_BOTS = [
   "Google-InspectionTool",
+  "Google-CloudVertexBot",
+  // OpenAI (GPTBot is already detected by ua-parser-js)
+  "ChatGPT-User",
+  "OAI-SearchBot",
+  // Anthropic
+  "ClaudeBot",
+  "Claude-User",
+  "Claude-SearchBot",
+  // Perplexity
+  "PerplexityBot",
+  "Perplexity-User",
+  // Others
+  "Applebot",
+  "Amazonbot",
+  "meta-externalagent",
+  "meta-externalfetcher",
+  "Bytespider",
+  "CCBot",
+  "DuckAssistBot",
+  "MistralAI-User",
+  // SEO audit crawlers and Google Shopping (ua-parser reads Storebot-Google as Chrome)
   "AhrefsSiteAudit",
   "AhrefsBot",
   "Storebot-Google",

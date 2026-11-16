@@ -66,7 +66,42 @@ Deno.test("isBot", async (t) => {
     assertEquals(isBot(req({ ua })), true);
   });
 
-  await t.step("does not flag a regular browser", () => {
+  const AI_AGENTS = [
+    "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot",
+    "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot",
+    "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ClaudeBot/1.0; +claudebot@anthropic.com)",
+    "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Claude-User/1.0; +Claude-User@anthropic.com)",
+    "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)",
+    "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Perplexity-User/1.0; +https://perplexity.ai/perplexity-user)",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)",
+    "meta-externalagent/1.1 (+https://developers.facebook.com/docs/sharing/webmasters/crawler)",
+    "CCBot/2.0 (https://commoncrawl.org/faq/)",
+  ];
+
+  await t.step("detects AI agents ua-parser-js doesn't know", () => {
+    for (const ua of AI_AGENTS) {
+      assertEquals(isBot(req({ ua })), true, ua);
+    }
+  });
+
+  await t.step("still detects crawlers known by ua-parser-js", () => {
+    assertEquals(
+      isBot(req({
+        ua:
+          "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+      })),
+      true,
+    );
+  });
+
+  await t.step("trusts cf-verified-bot", () => {
+    const headers = new Headers({ "cf-verified-bot": "true" });
+    assertEquals(isBot(new Request("https://example.com/", { headers })), true);
+  });
+
+  await t.step("browsers are not bots", () => {
     assertEquals(isBot(req({ ua: DESKTOP_UA })), false);
+    assertEquals(isBot(req({ ua: MOBILE_UA })), false);
+    assertEquals(isBot(req({})), false);
   });
 });

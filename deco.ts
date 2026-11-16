@@ -45,6 +45,7 @@ export type RequestContext = {
 export type WellKnownHostingPlatform =
   | "kubernetes"
   | "denodeploy"
+  | "cloudflare"
   | "localhost";
 
 export type DecodMode = "sidecar" | "embedded";
@@ -93,11 +94,18 @@ const deploymentId = Deno.env.get("DENO_DEPLOYMENT_ID");
 const isPreview = Deno.env.get("DECO_PREVIEW") === "true";
 const isDeploy = Boolean(deploymentId);
 
+// Cloudflare Workers (workerd) identify themselves in navigator.userAgent.
+const isWorkerd =
+  (globalThis as { navigator?: { userAgent?: string } }).navigator
+    ?.userAgent === "Cloudflare-Workers";
+
 const getHostingPlatform = (): WellKnownHostingPlatform => {
   const kService = Deno.env.get("K_SERVICE") !== undefined;
 
   if (kService) {
     return "kubernetes";
+  } else if (isWorkerd) {
+    return "cloudflare";
   } else if (isDeploy) {
     return "denodeploy";
   } else {
