@@ -66,6 +66,10 @@ const KNOWN_BOTS = [
   "CCBot",
   "DuckAssistBot",
   "MistralAI-User",
+  // SEO audit crawlers and Google Shopping (ua-parser reads Storebot-Google as Chrome)
+  "AhrefsSiteAudit",
+  "AhrefsBot",
+  "Storebot-Google",
 ];
 
 export const isBot = (req: Request) => {

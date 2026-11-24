@@ -60,6 +60,12 @@ Deno.test("deviceOf", async (t) => {
 });
 
 Deno.test("isBot", async (t) => {
+  await t.step("flags Storebot-Google, which ua-parser reads as Chrome", () => {
+    const ua =
+      "Mozilla/5.0 (X11; Linux x86_64; Storebot-Google/1.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36";
+    assertEquals(isBot(req({ ua })), true);
+  });
+
   const AI_AGENTS = [
     "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot",
     "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-SearchBot/1.0; +https://openai.com/searchbot",
