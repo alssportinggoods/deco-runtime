@@ -5,6 +5,7 @@ import {
   runWithExecutionContext,
 } from "./context.ts";
 import { installDenoShim } from "./deno.ts";
+import { installDenoFetch, sendAsIs } from "./encoding.ts";
 import { listFromEnv, servePage } from "./pageCache.ts";
 
 /** Fresh's request handler, as returned by `createHandler`. */
@@ -58,6 +59,36 @@ export interface Worker {
 const firstNonEmpty = (...values: unknown[]): string | undefined =>
   values.find((v): v is string => typeof v === "string" && v.trim() !== "");
 
+/** Where `scripts/workerd.ts` embeds the Fresh snapshot (islands' build id). */
+export const SNAPSHOT_FILE = "/app/_fresh/snapshot.json";
+
+/** The Fresh build id of the islands bundled in this Worker, if any. */
+export function snapshotBuildId(
+  files: Record<string, string>,
+): string | undefined {
+  try {
+    return firstNonEmpty(JSON.parse(files[SNAPSHOT_FILE] ?? "{}")?.build_id);
+  } catch {
+    return undefined;
+  }
+}
+
+/**
+ * The page cache version: the deploy id (the commit, from the builder) plus the
+ * Fresh build id of the islands bundled in this Worker. A rebuild of the same
+ * commit gets new `/_frsh/js/<build_id>/` URLs, so cached pages from the
+ * previous build would point at islands that no longer exist (404, dead UI).
+ * Without a deploy id the version is empty, which keeps the page cache off.
+ */
+export function pageCacheVersion(
+  env: Record<string, unknown>,
+  buildId?: string,
+): string {
+  const deployId = firstNonEmpty(env.BUILD_HASH, env.DENO_DEPLOYMENT_ID);
+  if (!deployId) return "";
+  return buildId ? `${deployId}:${buildId}` : deployId;
+}
+
 /** Where `scripts/workerd.ts` embeds the precomputed editor schemas. */
 export const SCHEMAS_FILE = "/app/.deco/schemas.gen.json";
 
@@ -69,6 +100,7 @@ export const SCHEMAS_FILE = "/app/.deco/schemas.gen.json";
  *   values and I/O while modules are evaluated, so the bundle body has to
  *   run inside a request);
  * - makes loader cache writes part of the request's `waitUntil`;
+ * - handles Content-Encoding as Deno does (`encoding.ts`);
  * - caches the pages deco marks public (`pageCache.ts`), as the CDN does on
  *   Deno: a Worker route runs before Cloudflare's own cache.
  */
@@ -76,47 +108,78 @@ interface AssetsBinding {
   fetch(req: Request): Promise<Response>;
 }
 
+/**
+ * The app boot, shared by the isolate's requests.
+ *
+ * The boot runs inside the request that starts it (workerd forbids I/O outside
+ * a request). If that request is cancelled before the boot settles (its client
+ * disconnected), workerd fails every other request waiting on it with "This
+ * promise was created by a request that has since ended". So the request that
+ * starts the boot keeps itself alive until the boot settles (`waitUntil`), and
+ * a request whose wait fails on a boot another request started boots again,
+ * once, in its own context. A failed boot is never cached.
+ */
+export function sharedBoot<T>(): (
+  ctx: ExecutionContextLike,
+  start: () => Promise<T>,
+) => Promise<T> {
+  let current: Promise<T> | undefined;
+  return async (ctx, start) => {
+    for (let attempt = 0;; attempt++) {
+      let startedHere = false;
+      if (!current) {
+        current = start();
+        startedHere = true;
+        ctx.waitUntil(current.catch(() => {}));
+      }
+      const booting = current;
+      try {
+        return await booting;
+      } catch (err) {
+        if (current === booting) current = undefined;
+        if (startedHere || attempt > 0) throw err;
+      }
+    }
+  };
+}
+
 export function createWorker(
   { files, boot, lazyFiles, pageCache }: WorkerOptions,
 ): Worker {
-  let app: Promise<FreshHandler> | undefined;
+  const app = sharedBoot<FreshHandler>();
+  const buildId = snapshotBuildId(files);
   return {
     async fetch(
       req: Request,
       env: Record<string, unknown>,
       ctx: ExecutionContextLike,
     ): Promise<Response> {
-      app ??= runWithExecutionContext(ctx, () => {
-        installDenoShim({
-          env: {
-            ...env,
-            // A Worker is always a deploy: without a deployment id deco runs in
-            // dev mode (section errors rendered to visitors, a missing site
-            // name tolerated). The control-plane builder passes the commit as
-            // BUILD_HASH; fall back to a fixed id for hand-made deploys.
-            DENO_DEPLOYMENT_ID: firstNonEmpty(
-              env.DENO_DEPLOYMENT_ID,
-              env.BUILD_HASH,
-            ) ?? "workerd",
-            // /deco/meta reads the build-time schemas (no TS parsing on workerd).
-            ...(SCHEMAS_FILE in files
-              ? { DECO_SCHEMAS_FILE: SCHEMAS_FILE }
-              : {}),
-          },
-          files,
-          ...fromAssets(lazyFiles, env.ASSETS),
+      const start = () =>
+        runWithExecutionContext(ctx, () => {
+          installDenoShim({
+            env: {
+              ...env,
+              // A Worker is always a deploy: without a deployment id deco runs in
+              // dev mode (section errors rendered to visitors, a missing site
+              // name tolerated). The control-plane builder passes the commit as
+              // BUILD_HASH; fall back to a fixed id for hand-made deploys.
+              DENO_DEPLOYMENT_ID: firstNonEmpty(
+                env.DENO_DEPLOYMENT_ID,
+                env.BUILD_HASH,
+              ) ?? "workerd",
+              // /deco/meta reads the build-time schemas (no TS parsing on workerd).
+              ...(SCHEMAS_FILE in files
+                ? { DECO_SCHEMAS_FILE: SCHEMAS_FILE }
+                : {}),
+            },
+            files,
+            ...fromAssets(lazyFiles, env.ASSETS),
+          });
+          keepCacheWritesAlive();
+          installDenoFetch();
+          return boot();
         });
-        keepCacheWritesAlive();
-        return boot();
-      });
-      let handler: FreshHandler;
-      try {
-        handler = await app;
-      } catch (err) {
-        // Let the next request retry instead of caching the failure.
-        app = undefined;
-        throw err;
-      }
+      const handler = await app(ctx, start);
       const render = () =>
         runWithExecutionContext(ctx, () =>
           handler(req, {
@@ -128,15 +191,17 @@ export function createWorker(
             completed: Promise.resolve(),
           }));
       if (pageCache === false || env.DECO_WORKER_PAGE_CACHE === "false") {
-        return render();
+        return sendAsIs(await render());
       }
-      return servePage(req, ctx, render, {
-        version: firstNonEmpty(env.BUILD_HASH, env.DENO_DEPLOYMENT_ID) ?? "",
-        keyCookies: pageCache?.keyCookies ??
-          listFromEnv(env.DECO_PAGE_CACHE_KEY_COOKIES),
-        bypassCookies: pageCache?.bypassCookies ??
-          listFromEnv(env.DECO_PAGE_CACHE_BYPASS_COOKIES),
-      });
+      return sendAsIs(
+        await servePage(req, ctx, render, {
+          version: pageCacheVersion(env, buildId),
+          keyCookies: pageCache?.keyCookies ??
+            listFromEnv(env.DECO_PAGE_CACHE_KEY_COOKIES),
+          bypassCookies: pageCache?.bypassCookies ??
+            listFromEnv(env.DECO_PAGE_CACHE_BYPASS_COOKIES),
+        }),
+      );
     },
   };
 }

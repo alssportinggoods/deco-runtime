@@ -1,10 +1,12 @@
-import { assert, assertEquals } from "@std/assert";
+import { assert, assertEquals, assertThrows } from "@std/assert";
 import {
   codeOf,
+  decofileLocalFiles,
   IMPORT_RESOLVER,
   importResolver,
   isSiteModule,
   moduleMarker,
+  nodeModeInterop,
   offersItself,
   resolvedTargets,
   rewriteModuleUrls,
@@ -212,6 +214,27 @@ Deno.test("rewriteModuleUrls: an untokenizable bundle falls back to lines, and s
   assertEquals(seen.length, 1);
   assert(out.includes('"file:///app/components/bad.tsx"'));
   assert(out.includes(`${IMPORT_RESOLVER}(p)`));
+});
+
+Deno.test("rewriteModuleUrls: a keyword property inside a template doesn't derail it", () => {
+  // acorn's standalone tokenizer loses the template after `?.class` and then
+  // reads the rest with strings and code swapped; the parser's tokens don't.
+  const seen: string[] = [];
+  const body = [
+    "// components/x.tsx",
+    "var c = `a ${props?.class} b`;",
+    "var u = import.meta.url;",
+    'var s = "import(";',
+    "var w = `w-1/2 2xl:w-2/3`;",
+  ].join("\n");
+  const out = rewriteModuleUrls(body, {
+    ...opts,
+    onFallback: (m) => seen.push(m),
+  }).split("\n");
+  assertEquals(seen, []);
+  assertEquals(out[1], "var c = `a ${props?.class} b`;");
+  assertEquals(out[2], 'var u = "file:///app/components/x.tsx";');
+  assertEquals(out[3], 'var s = "import(";');
 });
 
 Deno.test("rewriteModuleUrls: a `// path` line inside a template is not a module marker", () => {
@@ -456,4 +479,125 @@ Deno.test("sourceTopLevelValues: generics in .tsx and a type named like a value"
     ),
     ["this"],
   );
+});
+
+// esbuild's CommonJS helpers as `deno bundle` emits them (Deno 2.6.5).
+const INTEROP_PREAMBLE = `var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+`;
+const toEsm = (condition: string) =>
+  `var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  ${condition} ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+`;
+const BEFORE_2_9 = toEsm("isNodeMode || !mod || !mod.__esModule");
+const SINCE_2_9 = toEsm("1");
+
+// What `import tslib from "tslib"` yields: tslib sets `__esModule`.
+const defaultImport = (helpers: string) => {
+  const tslib = { __esModule: true, __extends: () => {} };
+  return new Function("mod", `${helpers}\nreturn __toESM(mod).default;`)(
+    tslib,
+  ) as unknown;
+};
+
+Deno.test("nodeModeInterop: Deno < 2.9 helper becomes Deno 2.9's", () => {
+  const body = `${INTEROP_PREAMBLE}${BEFORE_2_9}var x = 1;\n`;
+  assertEquals(
+    nodeModeInterop(body),
+    `${INTEROP_PREAMBLE}${SINCE_2_9}var x = 1;\n`,
+  );
+});
+
+Deno.test("nodeModeInterop: renamed parameters (mod2)", () => {
+  const renamed = BEFORE_2_9.replaceAll("mod", "mod2");
+  assertEquals(nodeModeInterop(renamed), SINCE_2_9.replaceAll("mod", "mod2"));
+});
+
+Deno.test("nodeModeInterop: only the __toESM helper changes", () => {
+  const user = "const ok = a || !b || !b.__esModule ? 1 : 2;\n";
+  const body = `${user}${INTEROP_PREAMBLE}${BEFORE_2_9}${user}`;
+  assertEquals(
+    nodeModeInterop(body),
+    `${user}${INTEROP_PREAMBLE}${SINCE_2_9}${user}`,
+  );
+});
+
+Deno.test("nodeModeInterop: an __esModule CommonJS module gets its default", () => {
+  assertEquals(defaultImport(INTEROP_PREAMBLE + BEFORE_2_9), undefined);
+  const fixed = defaultImport(nodeModeInterop(INTEROP_PREAMBLE + BEFORE_2_9));
+  assertEquals(typeof (fixed as { __extends: unknown }).__extends, "function");
+});
+
+Deno.test("nodeModeInterop: nothing to change on Deno 2.9+ or without CommonJS", () => {
+  const since = `${INTEROP_PREAMBLE}${SINCE_2_9}`;
+  assertEquals(nodeModeInterop(since), since);
+  assertEquals(nodeModeInterop("var a = 1;\n"), "var a = 1;\n");
+});
+
+Deno.test("nodeModeInterop: an unknown __esModule check fails the build", () => {
+  // Same helper, another shape of the check (not one this knows).
+  const other = BEFORE_2_9.replace(
+    "isNodeMode || !mod || !mod.__esModule",
+    "!(mod && mod.__esModule) || isNodeMode",
+  ).replace("__toESM", "__toESM2");
+  assertThrows(() => nodeModeInterop(other), Error, "__toESM2");
+});
+
+Deno.test("decofileLocalFiles: site CSVs the decofile reads by path", () => {
+  const blocks = [
+    {
+      routes: [
+        {
+          __resolveType: "website/loaders/redirectsFromCsv.ts",
+          from: "/redirect.csv",
+        },
+        {
+          __resolveType: "website/loaders/redirectsFromCsv.ts",
+          from: "./a/b.CSV",
+        },
+        { from: "/redirect.csv" },
+      ],
+    },
+    { list: ["data/x.csv", { nested: "/data/x.csv" }] },
+  ];
+  assertEquals(decofileLocalFiles(blocks), [
+    "a/b.CSV",
+    "data/x.csv",
+    "redirect.csv",
+  ]);
+});
+
+Deno.test("decofileLocalFiles: no URLs, static files or paths outside the site", () => {
+  const blocks = [{
+    a: "https://example.com/redirects.csv",
+    b: "file:///etc/x.csv",
+    c: "/static/redirects.csv",
+    d: "../outside.csv",
+    e: "/a/../../x.csv",
+    f: "/redirects.csv?x=1",
+    g: "/redirects.json",
+    // The loader reads `from` untrimmed, and rejects this one.
+    j: "/redirects.csv ",
+    h: 1,
+    i: null,
+  }];
+  assertEquals(decofileLocalFiles(blocks), []);
 });

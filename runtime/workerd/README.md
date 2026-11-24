@@ -68,13 +68,22 @@ request runs the Worker.
   `write` as denied, so a disk cache (`WEB_CACHE_ENGINE=FILE_SYSTEM`) falls back
   to the Cache API instead of filling the isolate's memory. Subprocesses,
   `Deno.serve`, KV and cron throw `Deno.errors.NotSupported`.
-  `Deno.upgradeWebSocket` uses `WebSocketPair`.
+  `Deno.upgradeWebSocket` uses `WebSocketPair`. `Deno.test` and `Deno.bench`
+  (and their `.ignore` / `.only` forms) are no-ops, as outside `deno test`, so a
+  test file that ends up in the manifest loads cleanly.
 - `keepCacheWritesAlive()` wraps `caches.open()` so `put`/`delete` join the
   current request's `waitUntil`. deco writes loader results without awaiting
   them; without this, workerd cancels the write when the response is sent and
   later hits read truncated JSON.
 - `runWithExecutionContext(ctx, fn)` / `waitUntil(promise)` keep background work
   alive for the current request.
+- `Content-Encoding` works as on Deno (`encoding.ts`): `fetch` drops
+  `Content-Encoding` / `Content-Length` from a body workerd decoded (`gzip`,
+  `br`; not with `encodeResponseBody: "manual"`, which keeps the raw body and
+  its headers), and a response that carries `Content-Encoding` is sent as is
+  (`encodeBody: "manual"`). Without it, a site that compresses its own HTML in
+  `_middleware.ts` was compressed twice, and forwarding a `fetch` response
+  depended on workerd re-encoding it.
 - `createWorker({ files, boot })` is the Worker module the build generates; it
   wires the pieces above, answers through the page cache (below), and sets
   `DENO_DEPLOYMENT_ID` when it is missing or empty (from `BUILD_HASH`, else
@@ -149,6 +158,12 @@ Turn it off with `DECO_WORKER_PAGE_CACHE=false` (or `pageCache: false`).
   from npm packages). Server code must use `globalThis.location?.x` instead of
   `window.location?.x`; aliasing `window` globally makes npm packages such as
   `brotli` take their browser path and crash.
+- A CommonJS default import is `module.exports`, as on Deno and Node.
+  `deno bundle` before Deno 2.9 leaves `default` undefined for a CommonJS module
+  marked `__esModule` (tslib, used by `@supabase/supabase-js`), so the build
+  rewrites esbuild's `__toESM` helper the way Deno 2.9 emits it
+  (`nodeModeInterop` in `scripts/workerd_rewrite.ts`). On Deno 2.9+ there is
+  nothing to rewrite; a helper shape it doesn't know fails the build.
 - Do not use `--keep-names`: esbuild then injects `__name()` into functions that
   deco serializes to the browser.
 - Code must not rely on `Function.prototype.name` (bundlers rename functions).
